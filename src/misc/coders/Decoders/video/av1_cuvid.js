@@ -3,49 +3,58 @@ import React from 'react';
 import Helper from '../../helper';
 
 function init(initialState) {
-	const state = {
-		gpu: '0',
-		resize: 'auto',
-		...initialState,
-	};
+  const state = {
+    gpu: '0',
+    resize: 'auto',
+    ...initialState,
+  };
 
-	return state;
+  return state;
 }
 
 function createMapping(settings, stream, skills) {
-	stream = Helper.InitStream(stream);
-	skills = Helper.InitSkills(skills);
+  stream = Helper.InitStream(stream);
+  skills = Helper.InitSkills(skills);
 
-	const mapping = {
-		global: [],
-		local: ['-hwaccel', 'cuda', '-c:v', 'av1_cuvid'],
-		filter: [],
-	};
+  const mapping = {
+    global: [],
+    local: ['-hwaccel', 'cuda', '-c:v', 'av1_cuvid'],
+    filter: [],
+  };
 
-	return mapping;
+  return mapping;
 }
 
-function Coder({ stream = {}, settings = {}, skills = {}, onChange = function (settings, mapping) {} }) {
-	settings = init(settings);
-	stream = Helper.InitStream(stream);
-	skills = Helper.InitSkills(skills);
+function Coder({
+  stream = {},
+  settings = {},
+  skills = {},
+  onChange = function (settings, mapping) {},
+}) {
+  settings = init(settings);
+  stream = Helper.InitStream(stream);
+  skills = Helper.InitSkills(skills);
 
-	const handleChange = (newSettings) => {
-		let automatic = false;
-		if (!newSettings) {
-			newSettings = settings;
-			automatic = true;
-		}
+  const handleChange = (newSettings) => {
+    let automatic = false;
+    if (!newSettings) {
+      newSettings = settings;
+      automatic = true;
+    }
 
-		onChange(newSettings, createMapping(newSettings, stream, skills), automatic);
-	};
+    onChange(
+      newSettings,
+      createMapping(newSettings, stream, skills),
+      automatic,
+    );
+  };
 
-	React.useEffect(() => {
-		handleChange(null);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+  React.useEffect(() => {
+    handleChange(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-	return null;
+  return null;
 }
 
 // -hwaccel nvdec
@@ -57,12 +66,12 @@ const type = 'video';
 const hwaccel = true;
 
 function defaults(stream, skills) {
-	const settings = init({});
+  const settings = init({});
 
-	return {
-		settings: settings,
-		mapping: createMapping(settings, stream, skills),
-	};
+  return {
+    settings: settings,
+    mapping: createMapping(settings, stream, skills),
+  };
 }
 
 export { coder, name, codecs, type, hwaccel, defaults, Coder as component };

@@ -1,48 +1,47 @@
+import * as Loudnorm from './audio/Loudnorm';
+import * as Pan from './audio/Pan';
 // Audio Filter
 import * as AResample from './audio/Resample';
-import * as Pan from './audio/Pan';
 import * as Volume from './audio/Volume';
-import * as Loudnorm from './audio/Loudnorm';
-
 // Video Filter
 import * as Bwdif from './video/Bwdif';
 import * as Framerate from './video/Framerate';
+import * as HFlip from './video/HFlip';
 import * as Scale from './video/Scale';
 import * as Transpose from './video/Transpose';
-import * as HFlip from './video/HFlip';
 import * as VFlip from './video/VFlip';
 
 // Register filters type: audio/video
 class Registry {
-	constructor(type) {
-		this.type = type;
-		this.services = new Map();
-	}
+  constructor(type) {
+    this.type = type;
+    this.services = new Map();
+  }
 
-	Register(service) {
-		if (service.type !== this.type) {
-			return;
-		}
+  Register(service) {
+    if (service.type !== this.type) {
+      return;
+    }
 
-		this.services.set(service.filter, service);
-	}
+    this.services.set(service.filter, service);
+  }
 
-	Get(filter) {
-		const service = this.services.get(filter);
-		if (service) {
-			return service;
-		}
+  Get(filter) {
+    const service = this.services.get(filter);
+    if (service) {
+      return service;
+    }
 
-		return null;
-	}
+    return null;
+  }
 
-	Filters() {
-		return Array.from(this.services.keys());
-	}
+  Filters() {
+    return Array.from(this.services.keys());
+  }
 
-	List() {
-		return Array.from(this.services.values());
-	}
+  List() {
+    return Array.from(this.services.values());
+  }
 }
 
 // Audio Filters

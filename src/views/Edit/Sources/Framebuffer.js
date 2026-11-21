@@ -1,130 +1,143 @@
-import React from 'react';
-
 import { faImages } from '@fortawesome/free-solid-svg-icons';
-import { useLingui } from '@lingui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans, t } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
+import { useLingui } from '@lingui/react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import makeStyles from '@mui/styles/makeStyles';
+import React from 'react';
 
+import Video from '../../../misc/coders/settings/Video';
 import FormInlineButton from '../../../misc/FormInlineButton';
 import SelectCustom from '../../../misc/SelectCustom';
-import Video from '../../../misc/coders/settings/Video';
 
 const useStyles = makeStyles((theme) => ({
-	gridContainer: {
-		marginTop: '0.5em',
-	},
+  gridContainer: {
+    marginTop: '0.5em',
+  },
 }));
 
 const initSettings = (initialSettings) => {
-	if (!initialSettings) {
-		initialSettings = {};
-	}
+  if (!initialSettings) {
+    initialSettings = {};
+  }
 
-	const settings = {
-		device: 'none',
-		framerate: '25',
-		...initialSettings,
-	};
+  const settings = {
+    device: 'none',
+    framerate: '25',
+    ...initialSettings,
+  };
 
-	return settings;
+  return settings;
 };
 
 const createInputs = (settings) => {
-	const address = settings.device === 'custom' || settings.device === 'none' ? settings.deviceCustom : settings.device;
-	const input = {
-		address: address,
-		options: [],
-	};
+  const address =
+    settings.device === 'custom' || settings.device === 'none'
+      ? settings.deviceCustom
+      : settings.device;
+  const input = {
+    address: address,
+    options: [],
+  };
 
-	input.options.push('-f', 'fbdev');
-	input.options.push('-framerate', '' + settings.framerate);
+  input.options.push('-f', 'fbdev');
+  input.options.push('-framerate', '' + settings.framerate);
 
-	return [input];
+  return [input];
 };
 
 function Source({
-	knownDevices = [],
-	settings = {},
-	onChange = function (settings) {},
-	onProbe = function (settings, inputs) {},
-	onRefresh = function () {},
-	onStore = function (name, data) {
-		return '';
-	},
+  knownDevices = [],
+  settings = {},
+  onChange = function (settings) {},
+  onProbe = function (settings, inputs) {},
+  onRefresh = function () {},
+  onStore = function (name, data) {
+    return '';
+  },
 }) {
-	const classes = useStyles();
-	const { i18n } = useLingui();
-	settings = initSettings(settings);
+  const classes = useStyles();
+  const { i18n } = useLingui();
+  settings = initSettings(settings);
 
-	const handleChange = (what) => (event) => {
-		let data = {};
+  const handleChange = (what) => (event) => {
+    let data = {};
 
-		if (['device', 'framerate'].includes(what)) {
-			data[what] = event.target.value;
-		}
+    if (['device', 'framerate'].includes(what)) {
+      data[what] = event.target.value;
+    }
 
-		onChange({
-			...settings,
-			...data,
-		});
-	};
+    onChange({
+      ...settings,
+      ...data,
+    });
+  };
 
-	const handleProbe = () => {
-		onProbe(settings, createInputs(settings));
-	};
+  const handleProbe = () => {
+    onProbe(settings, createInputs(settings));
+  };
 
-	const filteredDevices = knownDevices.filter((device) => device.extra !== '');
-	const options = filteredDevices.map((device) => {
-		return {
-			value: device.id,
-			label: device.name + ' (' + device.extra + ')',
-		};
-	});
+  const filteredDevices = knownDevices.filter((device) => device.extra !== '');
+  const options = filteredDevices.map((device) => {
+    return {
+      value: device.id,
+      label: device.name + ' (' + device.extra + ')',
+    };
+  });
 
-	options.unshift({
-		value: 'none',
-		label: i18n._(t`Choose an input device ...`),
-		disabled: true,
-	});
+  options.unshift({
+    value: 'none',
+    label: i18n._(t`Choose an input device ...`),
+    disabled: true,
+  });
 
-	const videoDevices = (
-		<SelectCustom
-			options={options}
-			label={<Trans>Device</Trans>}
-			customLabel={<Trans>Custom device</Trans>}
-			value={settings.device}
-			onChange={handleChange('device')}
-			variant="outlined"
-		/>
-	);
+  const videoDevices = (
+    <SelectCustom
+      options={options}
+      label={<Trans>Device</Trans>}
+      customLabel={<Trans>Custom device</Trans>}
+      value={settings.device}
+      onChange={handleChange('device')}
+      variant="outlined"
+    />
+  );
 
-	return (
-		<Grid container alignItems="flex-start" spacing={2} className={classes.gridContainer}>
-			<Grid item xs={12}>
-				<Typography>
-					<Trans>Select a device:</Trans>
-				</Typography>
-			</Grid>
-			<Grid item xs={12}>
-				{videoDevices}
-			</Grid>
-			<Grid item xs={12}>
-				<Video.Framerate value={settings.framerate} onChange={handleChange('framerate')} allowCustom />
-			</Grid>
-			<Grid item xs={12}>
-				<FormInlineButton onClick={handleProbe}>
-					<Trans>Probe</Trans>
-				</FormInlineButton>
-			</Grid>
-		</Grid>
-	);
+  return (
+    <Grid
+      container
+      alignItems="flex-start"
+      spacing={2}
+      className={classes.gridContainer}
+    >
+      <Grid item xs={12}>
+        <Typography>
+          <Trans>Select a device:</Trans>
+        </Typography>
+      </Grid>
+      <Grid item xs={12}>
+        {videoDevices}
+      </Grid>
+      <Grid item xs={12}>
+        <Video.Framerate
+          value={settings.framerate}
+          onChange={handleChange('framerate')}
+          allowCustom
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <FormInlineButton onClick={handleProbe}>
+          <Trans>Probe</Trans>
+        </FormInlineButton>
+      </Grid>
+    </Grid>
+  );
 }
 
 function SourceIcon(props) {
-	return <FontAwesomeIcon icon={faImages} style={{ color: '#FFF' }} {...props} />;
+  return (
+    <FontAwesomeIcon icon={faImages} style={{ color: '#FFF' }} {...props} />
+  );
 }
 
 const id = 'fbdev';
@@ -133,8 +146,16 @@ const capabilities = ['video'];
 const ffversion = '^4.1.0 || ^5.0.0 || ^6.1.0 || ^7.0.0 || ^8.1.0 || ^9.0.0';
 
 const func = {
-	initSettings,
-	createInputs,
+  initSettings,
+  createInputs,
 };
 
-export { id, name, capabilities, ffversion, SourceIcon as icon, Source as component, func };
+export {
+  id,
+  name,
+  capabilities,
+  ffversion,
+  SourceIcon as icon,
+  Source as component,
+  func,
+};

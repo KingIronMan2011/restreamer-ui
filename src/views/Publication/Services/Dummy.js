@@ -1,10 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import { Trans } from '@lingui/macro';
 import ExtensionIcon from '@mui/icons-material/Extension';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import Checkbox from '../../../misc/Checkbox';
 
@@ -23,23 +22,31 @@ const stream_key_link = '';
 
 // description is a brief description of this service and it will be
 // displayed in the UI.
-const description = <Trans>This is a dummy service that explains to you the concepts of service.</Trans>;
+const description = (
+  <Trans>
+    This is a dummy service that explains to you the concepts of service.
+  </Trans>
+);
 
 // image_copyright is a short explanation regarding the copyrights for
 // the target of this service. Ideally it should contain also a link
 // to a webpage with more information.
-const image_copyright = <Trans>This is to mention the copyright regulations for the target of this service.</Trans>;
+const image_copyright = (
+  <Trans>
+    This is to mention the copyright regulations for the target of this service.
+  </Trans>
+);
 
 // author mentiones the author of this service.
 const author = {
-	creator: {
-		name: 'datarhei',
-		link: 'https://github.com/datarhei',
-	},
-	maintainer: {
-		name: 'datarhei',
-		link: 'https://github.com/datarhei',
-	},
+  creator: {
+    name: 'datarhei',
+    link: 'https://github.com/datarhei',
+  },
+  maintainer: {
+    name: 'datarhei',
+    link: 'https://github.com/datarhei',
+  },
 };
 
 // category is the category this service belongs to. It has to be
@@ -125,25 +132,25 @@ const category = 'platform';
 // Note that you only specify the wanted codecs (i.e.
 // for H264 encoding you list 'h264' and not 'libx264' )
 const requires = {
-	protocols: ['dummy'],
-	formats: ['flv'],
+  protocols: ['dummy'],
+  formats: ['flv'],
 };
 
 // ServiceIcon is a React component and returns the icon for this service
 function ServiceIcon(props) {
-	return <ExtensionIcon style={{ color: '#FFFFFF' }} {...props} />;
+  return <ExtensionIcon style={{ color: '#FFFFFF' }} {...props} />;
 }
 
 // Initialize the settings, i.e. set defaults for fields that are not defined
 function init(settings) {
-	const initSettings = {
-		stream_key: '',
-		rtmp_primary: true,
-		rtmp_backup: false,
-		...settings,
-	};
+  const initSettings = {
+    stream_key: '',
+    rtmp_primary: true,
+    rtmp_backup: false,
+    ...settings,
+  };
 
-	return initSettings;
+  return initSettings;
 }
 
 // createOutput creates the FFmpeg output options based on the settings,
@@ -154,28 +161,29 @@ function init(settings) {
 // outside in case e.g. the streams changed (due to changes in the encoding
 // settings) and the output options depend on that information.
 function createOutputs(settings, skills, metadata, streams) {
-	settings = init(settings);
-	const outputs = [];
+  settings = init(settings);
+  const outputs = [];
 
-	if (settings.stream_key.length === 0) {
-		return outputs;
-	}
+  if (settings.stream_key.length === 0) {
+    return outputs;
+  }
 
-	if (settings.rtmp_primary) {
-		outputs.push({
-			address: 'rtmp://a.rtmp.youtube.com/live2/' + settings.stream_key,
-			options: ['-codec', 'copy', '-f', 'flv'],
-		});
-	}
+  if (settings.rtmp_primary) {
+    outputs.push({
+      address: 'rtmp://a.rtmp.youtube.com/live2/' + settings.stream_key,
+      options: ['-codec', 'copy', '-f', 'flv'],
+    });
+  }
 
-	if (settings.rtmp_backup) {
-		outputs.push({
-			address: 'rtmp://b.rtmp.youtube.com/live2?backup=1/' + settings.stream_key,
-			options: ['-codec', 'copy', '-f', 'flv'],
-		});
-	}
+  if (settings.rtmp_backup) {
+    outputs.push({
+      address:
+        'rtmp://b.rtmp.youtube.com/live2?backup=1/' + settings.stream_key,
+      options: ['-codec', 'copy', '-f', 'flv'],
+    });
+  }
 
-	return outputs;
+  return outputs;
 }
 
 // Service is a React component that implements a service.
@@ -253,59 +261,79 @@ function createOutputs(settings, skills, metadata, streams) {
 //
 // 'settings' is the settings object where you store the settings for the
 // service. Its state is managed by the parent React component.
-function Service({ settings = {}, skills = {}, metadata = {}, streams = [], onChange = function (output, settings) {} }) {
-	settings = init(settings);
+function Service({
+  settings = {},
+  skills = {},
+  metadata = {},
+  streams = [],
+  onChange = function (output, settings) {},
+}) {
+  settings = init(settings);
 
-	const handleChange = (what) => (event) => {
-		const value = event.target.value;
+  const handleChange = (what) => (event) => {
+    const value = event.target.value;
 
-		if (['rtmp_primary', 'rtmp_backup'].includes(what)) {
-			settings[what] = !settings[what];
-		} else {
-			settings[what] = value;
-		}
+    if (['rtmp_primary', 'rtmp_backup'].includes(what)) {
+      settings[what] = !settings[what];
+    } else {
+      settings[what] = value;
+    }
 
-		const outputs = createOutputs(settings, skills, metadata, streams);
+    const outputs = createOutputs(settings, skills, metadata, streams);
 
-		onChange(outputs, settings);
-	};
+    onChange(outputs, settings);
+  };
 
-	if (skills === null) {
-		return null;
-	}
+  if (skills === null) {
+    return null;
+  }
 
-	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
-				<TextField variant="outlined" fullWidth label={<Trans>Stream key</Trans>} value={settings.stream_key} onChange={handleChange('stream_key')} />
-			</Grid>
-			<Grid item xs={12}>
-				<Checkbox label={<Trans>Enable primary stream</Trans>} checked={settings.rtmp_primary} onChange={handleChange('rtmp_primary')} />
-				<Checkbox label={<Trans>Enable backup stream</Trans>} checked={settings.rtmp_backup} onChange={handleChange('rtmp_backup')} />
-			</Grid>
-		</Grid>
-	);
+  return (
+    <Grid container spacing={2}>
+      <Grid item xs={12}>
+        <TextField
+          variant="outlined"
+          fullWidth
+          label={<Trans>Stream key</Trans>}
+          value={settings.stream_key}
+          onChange={handleChange('stream_key')}
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <Checkbox
+          label={<Trans>Enable primary stream</Trans>}
+          checked={settings.rtmp_primary}
+          onChange={handleChange('rtmp_primary')}
+        />
+        <Checkbox
+          label={<Trans>Enable backup stream</Trans>}
+          checked={settings.rtmp_backup}
+          onChange={handleChange('rtmp_backup')}
+        />
+      </Grid>
+    </Grid>
+  );
 }
 
 Service.propTypes = {
-	metadata: PropTypes.object.isRequired,
-	onChange: PropTypes.func.isRequired,
-	settings: PropTypes.object.isRequired,
-	skills: PropTypes.object,
-	streams: PropTypes.array.isRequired,
+  metadata: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+  settings: PropTypes.object.isRequired,
+  skills: PropTypes.object,
+  streams: PropTypes.array.isRequired,
 };
 
 export {
-	id,
-	name,
-	version,
-	stream_key_link,
-	description,
-	image_copyright,
-	author,
-	category,
-	requires,
-	ServiceIcon as icon,
-	Service as component,
-	createOutputs,
+  id,
+  name,
+  version,
+  stream_key_link,
+  description,
+  image_copyright,
+  author,
+  category,
+  requires,
+  ServiceIcon as icon,
+  Service as component,
+  createOutputs,
 };

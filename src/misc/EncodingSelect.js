@@ -1,252 +1,280 @@
-import React from 'react';
-
-import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import React from 'react';
 
-import * as Encoders from './coders/Encoders';
-import * as Decoders from './coders/Decoders';
-import Select from './Select';
 import H from '../utils/help';
+import * as Decoders from './coders/Decoders';
+import * as Encoders from './coders/Encoders';
+import Select from './Select';
 
 export default function EncodingSelect({
-	type = '',
-	streams = [],
-	profile = {},
-	codecs = [],
-	skills = {},
-	onChange = function (encoder, decoder, automatic) {},
+  type = '',
+  streams = [],
+  profile = {},
+  codecs = [],
+  skills = {},
+  onChange = function (encoder, decoder, automatic) {},
 }) {
-	const { i18n } = useLingui();
+  const { i18n } = useLingui();
 
-	let availableEncoders = [];
-	let availableDecoders = [];
+  let availableEncoders = [];
+  let availableDecoders = [];
 
-	if (type === 'video') {
-		availableEncoders = skills.encoders.video;
-		availableDecoders = skills.decoders.video;
-	} else if (type === 'audio') {
-		availableEncoders = skills.encoders.audio;
-	}
+  if (type === 'video') {
+    availableEncoders = skills.encoders.video;
+    availableDecoders = skills.decoders.video;
+  } else if (type === 'audio') {
+    availableEncoders = skills.encoders.audio;
+  }
 
-	const handleDecoderChange = (event) => {
-		const decoder = profile.decoder;
-		const stream = streams[profile.stream];
-		decoder.coder = event.target.value;
+  const handleDecoderChange = (event) => {
+    const decoder = profile.decoder;
+    const stream = streams[profile.stream];
+    decoder.coder = event.target.value;
 
-		// If the coder changes, use the coder's default settings
-		let c = null;
-		if (type === 'audio') {
-			c = Decoders.Audio.Get(decoder.coder);
-		} else if (type === 'video') {
-			c = Decoders.Video.Get(decoder.coder);
-		}
+    // If the coder changes, use the coder's default settings
+    let c = null;
+    if (type === 'audio') {
+      c = Decoders.Audio.Get(decoder.coder);
+    } else if (type === 'video') {
+      c = Decoders.Video.Get(decoder.coder);
+    }
 
-		if (c !== null) {
-			const defaults = c.defaults(stream, skills);
-			decoder.settings = defaults.settings;
-			decoder.mapping = defaults.mapping;
-		}
+    if (c !== null) {
+      const defaults = c.defaults(stream, skills);
+      decoder.settings = defaults.settings;
+      decoder.mapping = defaults.mapping;
+    }
 
-		onChange(profile.encoder, decoder, false);
-	};
+    onChange(profile.encoder, decoder, false);
+  };
 
-	const handleDecoderSettingsChange = (settings, mapping, automatic) => {
-		const decoder = profile.decoder;
+  const handleDecoderSettingsChange = (settings, mapping, automatic) => {
+    const decoder = profile.decoder;
 
-		decoder.settings = settings;
-		decoder.mapping = mapping;
+    decoder.settings = settings;
+    decoder.mapping = mapping;
 
-		onChange(profile.encoder, decoder, automatic);
-	};
+    onChange(profile.encoder, decoder, automatic);
+  };
 
-	const handleEncoderChange = (event) => {
-		const encoder = profile.encoder;
-		const stream = streams[profile.stream];
-		encoder.coder = event.target.value;
+  const handleEncoderChange = (event) => {
+    const encoder = profile.encoder;
+    const stream = streams[profile.stream];
+    encoder.coder = event.target.value;
 
-		// If the coder changes, use the coder's default settings
-		let c = null;
-		if (type === 'audio') {
-			c = Encoders.Audio.Get(encoder.coder);
-		} else if (type === 'video') {
-			c = Encoders.Video.Get(encoder.coder);
-		}
+    // If the coder changes, use the coder's default settings
+    let c = null;
+    if (type === 'audio') {
+      c = Encoders.Audio.Get(encoder.coder);
+    } else if (type === 'video') {
+      c = Encoders.Video.Get(encoder.coder);
+    }
 
-		if (c !== null) {
-			const defaults = c.defaults(stream, skills);
-			encoder.settings = defaults.settings;
-			encoder.mapping = defaults.mapping;
-		}
+    if (c !== null) {
+      const defaults = c.defaults(stream, skills);
+      encoder.settings = defaults.settings;
+      encoder.mapping = defaults.mapping;
+    }
 
-		onChange(encoder, profile.decoder, false);
-	};
+    onChange(encoder, profile.decoder, false);
+  };
 
-	const handleEncoderSettingsChange = (settings, mapping, automatic) => {
-		const encoder = profile.encoder;
+  const handleEncoderSettingsChange = (settings, mapping, automatic) => {
+    const encoder = profile.encoder;
 
-		encoder.settings = settings;
-		encoder.mapping = mapping;
+    encoder.settings = settings;
+    encoder.mapping = mapping;
 
-		onChange(encoder, profile.decoder, automatic);
-	};
+    onChange(encoder, profile.decoder, automatic);
+  };
 
-	const handleEncoderHelp = (topic) => (event) => {
-		event.preventDefault();
-		H('encoder-' + topic);
-	};
+  const handleEncoderHelp = (topic) => (event) => {
+    event.preventDefault();
+    H('encoder-' + topic);
+  };
 
-	let stream = null;
+  let stream = null;
 
-	if (profile.stream >= 0) {
-		if (profile.stream < streams.length) {
-			stream = streams[profile.stream];
-		}
-	}
+  if (profile.stream >= 0) {
+    if (profile.stream < streams.length) {
+      stream = streams[profile.stream];
+    }
+  }
 
-	if (stream === null) {
-		return null;
-	}
+  if (stream === null) {
+    return null;
+  }
 
-	if (stream.type !== type) {
-		return null;
-	}
+  if (stream.type !== type) {
+    return null;
+  }
 
-	let allowCopy = codecs.includes(stream.codec);
-	let encoderRegistry = null;
-	let decoderRegistry = null;
+  let allowCopy = codecs.includes(stream.codec);
+  let encoderRegistry = null;
+  let decoderRegistry = null;
 
-	if (type === 'video') {
-		encoderRegistry = Encoders.Video;
-		decoderRegistry = Decoders.Video;
-	} else if (type === 'audio') {
-		encoderRegistry = Encoders.Audio;
-		decoderRegistry = Decoders.Audio;
-	} else {
-		return null;
-	}
+  if (type === 'video') {
+    encoderRegistry = Encoders.Video;
+    decoderRegistry = Decoders.Video;
+  } else if (type === 'audio') {
+    encoderRegistry = Encoders.Audio;
+    decoderRegistry = Decoders.Audio;
+  } else {
+    return null;
+  }
 
-	let encoderSettings = null;
-	let encoderSettingsHelp = null;
+  let encoderSettings = null;
+  let encoderSettingsHelp = null;
 
-	let coder = encoderRegistry.Get(profile.encoder.coder);
-	if (coder !== null && availableEncoders.includes(coder.coder)) {
-		const Settings = coder.component;
+  let coder = encoderRegistry.Get(profile.encoder.coder);
+  if (coder !== null && availableEncoders.includes(coder.coder)) {
+    const Settings = coder.component;
 
-		encoderSettings = <Settings stream={stream} settings={profile.encoder.settings} skills={skills} onChange={handleEncoderSettingsChange} />;
+    encoderSettings = (
+      <Settings
+        stream={stream}
+        settings={profile.encoder.settings}
+        skills={skills}
+        onChange={handleEncoderSettingsChange}
+      />
+    );
 
-		if (type === 'video' && !['copy', 'none', 'rawvideo'].includes(coder.coder)) {
-			encoderSettingsHelp = handleEncoderHelp(coder.coder);
-		}
-	}
+    if (
+      type === 'video' &&
+      !['copy', 'none', 'rawvideo'].includes(coder.coder)
+    ) {
+      encoderSettingsHelp = handleEncoderHelp(coder.coder);
+    }
+  }
 
-	let encoderList = [];
+  let encoderList = [];
 
-	for (let c of encoderRegistry.List()) {
-		// Does ffmpeg support the coder?
-		if (!availableEncoders.includes(c.coder)) {
-			continue;
-		}
+  for (let c of encoderRegistry.List()) {
+    // Does ffmpeg support the coder?
+    if (!availableEncoders.includes(c.coder)) {
+      continue;
+    }
 
-		// Is the encoder in the list of codec we allow as target?
-		if (!codecs.includes(c.codec)) {
-			continue;
-		}
+    // Is the encoder in the list of codec we allow as target?
+    if (!codecs.includes(c.codec)) {
+      continue;
+    }
 
-		if (c.coder === 'copy') {
-			if (allowCopy === true) {
-				encoderList.push(
-					<MenuItem value={c.coder} key={c.coder}>
-						{c.name}
-					</MenuItem>,
-				);
-			}
-		} else {
-			encoderList.push(
-				<MenuItem value={c.coder} key={c.coder}>
-					{c.name}
-				</MenuItem>,
-			);
-		}
-	}
+    if (c.coder === 'copy') {
+      if (allowCopy === true) {
+        encoderList.push(
+          <MenuItem value={c.coder} key={c.coder}>
+            {c.name}
+          </MenuItem>,
+        );
+      }
+    } else {
+      encoderList.push(
+        <MenuItem value={c.coder} key={c.coder}>
+          {c.name}
+        </MenuItem>,
+      );
+    }
+  }
 
-	if (encoderSettings === null || encoderList.length === 0) {
-		return (
-			<Grid container spacing={2}>
-				<Grid item xs={12}>
-					<Typography>
-						<Trans>No suitable encoder found.</Trans>
-					</Typography>
-				</Grid>
-			</Grid>
-		);
-	}
+  if (encoderSettings === null || encoderList.length === 0) {
+    return (
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Typography>
+            <Trans>No suitable encoder found.</Trans>
+          </Typography>
+        </Grid>
+      </Grid>
+    );
+  }
 
-	let decoderSettings = null;
-	let decoderList = [];
+  let decoderSettings = null;
+  let decoderList = [];
 
-	if (coder.coder !== 'copy' && coder.coder !== 'none') {
-		let c = decoderRegistry.Get(profile.decoder.coder);
-		if (c !== null && availableDecoders.includes(c.coder)) {
-			const Settings = c.component;
+  if (coder.coder !== 'copy' && coder.coder !== 'none') {
+    let c = decoderRegistry.Get(profile.decoder.coder);
+    if (c !== null && availableDecoders.includes(c.coder)) {
+      const Settings = c.component;
 
-			decoderSettings = <Settings stream={stream} settings={profile.decoder.settings} skills={skills} onChange={handleDecoderSettingsChange} />;
-		}
+      decoderSettings = (
+        <Settings
+          stream={stream}
+          settings={profile.decoder.settings}
+          skills={skills}
+          onChange={handleDecoderSettingsChange}
+        />
+      );
+    }
 
-		// List all decoders for the codec of the stream
-		for (let c of decoderRegistry.GetCodersForCodec(stream.codec, availableDecoders, 'any')) {
-			decoderList.push(
-				<MenuItem value={c.coder} key={c.coder}>
-					{c.name}
-				</MenuItem>,
-			);
-		}
-	}
+    // List all decoders for the codec of the stream
+    for (let c of decoderRegistry.GetCodersForCodec(
+      stream.codec,
+      availableDecoders,
+      'any',
+    )) {
+      decoderList.push(
+        <MenuItem value={c.coder} key={c.coder}>
+          {c.name}
+        </MenuItem>,
+      );
+    }
+  }
 
-	// TODO: in case there's no decoder for a codec it should be mentioned.
+  // TODO: in case there's no decoder for a codec it should be mentioned.
 
-	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
-				<Typography>
-					<Trans>Select your encoding setting:</Trans>
-				</Typography>
-			</Grid>
-			<Grid item xs={12}>
-				<Select label={<Trans>Codec</Trans>} value={profile.encoder.coder} onChange={handleEncoderChange}>
-					<MenuItem value="none" disabled>
-						{i18n._(t`Choose codec ...`)}
-					</MenuItem>
-					{encoderList}
-				</Select>
-			</Grid>
-			{decoderList.length >= 2 && (
-				<React.Fragment>
-					<Grid item xs={12}>
-						<Select label={<Trans>Decoder</Trans>} value={profile.decoder.coder} onChange={handleDecoderChange}>
-							{decoderList}
-						</Select>
-					</Grid>
-					<Grid item xs={12}>
-						{decoderSettings}
-					</Grid>
-				</React.Fragment>
-			)}
-			<Grid item xs={12}>
-				{encoderSettings}
-			</Grid>
-			{encoderSettingsHelp !== null && (
-				<Grid item xs={12}>
-					<Trans>
-						<Link color="secondary" href="#" onClick={encoderSettingsHelp}>
-							Compatibility list
-						</Link>
-					</Trans>
-				</Grid>
-			)}
-		</Grid>
-	);
+  return (
+    <Grid container spacing={2}>
+      <Grid item xs={12}>
+        <Typography>
+          <Trans>Select your encoding setting:</Trans>
+        </Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Select
+          label={<Trans>Codec</Trans>}
+          value={profile.encoder.coder}
+          onChange={handleEncoderChange}
+        >
+          <MenuItem value="none" disabled>
+            {i18n._(t`Choose codec ...`)}
+          </MenuItem>
+          {encoderList}
+        </Select>
+      </Grid>
+      {decoderList.length >= 2 && (
+        <React.Fragment>
+          <Grid item xs={12}>
+            <Select
+              label={<Trans>Decoder</Trans>}
+              value={profile.decoder.coder}
+              onChange={handleDecoderChange}
+            >
+              {decoderList}
+            </Select>
+          </Grid>
+          <Grid item xs={12}>
+            {decoderSettings}
+          </Grid>
+        </React.Fragment>
+      )}
+      <Grid item xs={12}>
+        {encoderSettings}
+      </Grid>
+      {encoderSettingsHelp !== null && (
+        <Grid item xs={12}>
+          <Trans>
+            <Link color="secondary" href="#" onClick={encoderSettingsHelp}>
+              Compatibility list
+            </Link>
+          </Trans>
+        </Grid>
+      )}
+    </Grid>
+  );
 }

@@ -5,4 +5,4 @@ allowBuilds:
 packageExtensions:
   react-scripts@*:
     peerDependencies:
-      eslint-config-react-app: "*"
+      eslint-config-react-app: '*'

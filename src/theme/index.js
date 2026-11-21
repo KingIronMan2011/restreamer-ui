@@ -1,8 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
 import base from './base';
-import globals from './global';
-
 import accordion from './components/accordion';
 import accordionSummary from './components/accordionSummary';
 import alert from './components/alert';
@@ -12,7 +10,6 @@ import box from './components/box';
 import button from './components/button';
 import checkobox from './components/checkbox';
 import chip from './components/chip';
-import ctypography from './components/typography';
 import dialog from './components/dialog';
 import divider from './components/divider';
 import fab from './components/fab';
@@ -39,55 +36,57 @@ import tabScrollButton from './components/tabScrollButton';
 import toggleButton from './components/toggleButton';
 import toggleButtonGroup from './components/toggleButtonGroup';
 import tooltip from './components/tooltip';
+import ctypography from './components/typography';
+import globals from './global';
 
 // https://mui.com/customization/default-theme/
 
 const theme = createTheme({
-	...base,
+  ...base,
 
-	components: {
-		MuiCssBaseline: {
-			styleOverrides: {
-				...globals,
-			},
-		},
-		MuiAccordion: { ...accordion },
-		MuiAccordionSummary: { ...accordionSummary },
-		MuiAlert: { ...alert },
-		MuiAppBar: { ...appBar },
-		MuiBackdrop: { ...backdrop },
-		MuiBox: { ...box },
-		MuiButton: { ...button },
-		MuiCheckbox: { ...checkobox },
-		MuiChip: { ...chip },
-		MuiDialog: { ...dialog },
-		MuiDivider: { ...divider },
-		MuiFab: { ...fab },
-		MuiFormControlLabel: { ...formControlLabel },
-		MuiFormHelperText: { ...formHelperText },
-		MuiFormLabel: { ...formLabel },
-		MuiIconButton: { ...iconButton },
-		MuiInputLabel: { ...inputLabel },
-		MuiLink: { ...link },
-		MuiListItem: { ...listItem },
-		MuiListSubheader: { ...listSubheader },
-		MuiMenu: { ...menu },
-		MuiMenuItem: { ...menuItem },
-		MuiModal: { ...modal },
-		MuiOutlinedInput: { ...outlinedInput },
-		MuiPaper: { ...paper },
-		MuiPopover: { ...popover },
-		MuiSelect: { ...select },
-		MuiSnackbar: { ...snackbar },
-		MuiTab: { ...tab },
-		MuiTabPanel: { ...tabPanel },
-		MuiTabs: { ...tabs },
-		MuiTabScrollButton: { ...tabScrollButton },
-		MuiToggleButton: { ...toggleButton },
-		MuiToggleButtonGroup: { ...toggleButtonGroup },
-		MuiTooltip: { ...tooltip },
-		MuiTypography: { ...ctypography },
-	},
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        ...globals,
+      },
+    },
+    MuiAccordion: { ...accordion },
+    MuiAccordionSummary: { ...accordionSummary },
+    MuiAlert: { ...alert },
+    MuiAppBar: { ...appBar },
+    MuiBackdrop: { ...backdrop },
+    MuiBox: { ...box },
+    MuiButton: { ...button },
+    MuiCheckbox: { ...checkobox },
+    MuiChip: { ...chip },
+    MuiDialog: { ...dialog },
+    MuiDivider: { ...divider },
+    MuiFab: { ...fab },
+    MuiFormControlLabel: { ...formControlLabel },
+    MuiFormHelperText: { ...formHelperText },
+    MuiFormLabel: { ...formLabel },
+    MuiIconButton: { ...iconButton },
+    MuiInputLabel: { ...inputLabel },
+    MuiLink: { ...link },
+    MuiListItem: { ...listItem },
+    MuiListSubheader: { ...listSubheader },
+    MuiMenu: { ...menu },
+    MuiMenuItem: { ...menuItem },
+    MuiModal: { ...modal },
+    MuiOutlinedInput: { ...outlinedInput },
+    MuiPaper: { ...paper },
+    MuiPopover: { ...popover },
+    MuiSelect: { ...select },
+    MuiSnackbar: { ...snackbar },
+    MuiTab: { ...tab },
+    MuiTabPanel: { ...tabPanel },
+    MuiTabs: { ...tabs },
+    MuiTabScrollButton: { ...tabScrollButton },
+    MuiToggleButton: { ...toggleButton },
+    MuiToggleButtonGroup: { ...toggleButtonGroup },
+    MuiTooltip: { ...tooltip },
+    MuiTypography: { ...ctypography },
+  },
 });
 
 export default theme;

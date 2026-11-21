@@ -2,8 +2,8 @@
 
 The user interface of the Restreamer for the connection to the [datarhei Core](https://github.com/datarhei/core) application.
 
--   React
--   Material-UI (MUI)
+- React
+- Material-UI (MUI)
 
 ## Development
 
@@ -16,6 +16,7 @@ $ git clone --branch dev github.com/datarhei/restreamer-ui
 $ cd restreamer-ui
 $ pnpm install
 $ pnpm start
+$ pnpm lint
 ```
 
 Connect the UI with a [datarhei Core](https://github.com/datarhei/core):

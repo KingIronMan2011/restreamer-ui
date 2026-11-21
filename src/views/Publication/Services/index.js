@@ -30,47 +30,49 @@ import * as RTMP from './RTMP';
 import * as RTSP from './RTSP';
 import * as Rumble from './Rumble';
 import * as SRT from './SRT';
+import * as Telegram from './Telegram';
 import * as TikTok from './TikTok';
 import * as Trovo from './Trovo';
-import * as Telegram from './Telegram';
 import * as Twitch from './Twitch';
 import * as Twitter from './Twitter';
 import * as UDP from './UDP';
 import * as Vimeo from './Vimeo';
-import * as WOWZA from './WOWZA';
 import * as Wettercom from './Wettercom';
+import * as WOWZA from './WOWZA';
 import * as Youtube from './Youtube';
 
 class Registry {
-	constructor() {
-		this.services = new Map();
-	}
+  constructor() {
+    this.services = new Map();
+  }
 
-	Register(service) {
-		if (service.id.match(/[^0-9a-z]/)) {
-			console.warn(`the service.id "${service.id}" is invalid. only [0-9a-z] is allowed.`);
-			return;
-		}
+  Register(service) {
+    if (service.id.match(/[^0-9a-z]/)) {
+      console.warn(
+        `the service.id "${service.id}" is invalid. only [0-9a-z] is allowed.`,
+      );
+      return;
+    }
 
-		this.services.set(service.id, service);
-	}
+    this.services.set(service.id, service);
+  }
 
-	Get(id) {
-		const service = this.services.get(id);
-		if (service) {
-			return service;
-		}
+  Get(id) {
+    const service = this.services.get(id);
+    if (service) {
+      return service;
+    }
 
-		return null;
-	}
+    return null;
+  }
 
-	IDs() {
-		return Array.from(this.services.keys());
-	}
+  IDs() {
+    return Array.from(this.services.keys());
+  }
 
-	List() {
-		return Array.from(this.services.values());
-	}
+  List() {
+    return Array.from(this.services.values());
+  }
 }
 
 const registry = new Registry();

@@ -1,72 +1,92 @@
+import Grid from '@mui/material/Grid';
 import React from 'react';
 
-import Grid from '@mui/material/Grid';
-
-import Audio from '../../settings/Audio';
 import Helper from '../../helper';
+import Audio from '../../settings/Audio';
 
 function init(initialState) {
-	const state = {
-		bitrate: '64',
-		...initialState,
-	};
+  const state = {
+    bitrate: '64',
+    ...initialState,
+  };
 
-	return state;
+  return state;
 }
 
 function createMapping(settings, stream, skills) {
-	stream = Helper.InitStream(stream);
-	skills = Helper.InitSkills(skills);
+  stream = Helper.InitStream(stream);
+  skills = Helper.InitSkills(skills);
 
-	const local = ['-codec:a', 'vorbis', '-b:a', `${settings.bitrate}k`, '-qscale:a', '3', '-shortest'];
+  const local = [
+    '-codec:a',
+    'vorbis',
+    '-b:a',
+    `${settings.bitrate}k`,
+    '-qscale:a',
+    '3',
+    '-shortest',
+  ];
 
-	const mapping = {
-		global: [['-vsync', 'drop']],
-		local: local,
-		filter: [],
-	};
+  const mapping = {
+    global: [['-vsync', 'drop']],
+    local: local,
+    filter: [],
+  };
 
-	return mapping;
+  return mapping;
 }
 
-function Coder({ stream = {}, settings = {}, skills = {}, onChange = function (settings, mapping) {} }) {
-	settings = init(settings);
-	stream = Helper.InitStream(stream);
-	skills = Helper.InitSkills(skills);
+function Coder({
+  stream = {},
+  settings = {},
+  skills = {},
+  onChange = function (settings, mapping) {},
+}) {
+  settings = init(settings);
+  stream = Helper.InitStream(stream);
+  skills = Helper.InitSkills(skills);
 
-	const handleChange = (newSettings) => {
-		let automatic = false;
-		if (!newSettings) {
-			newSettings = settings;
-			automatic = true;
-		}
+  const handleChange = (newSettings) => {
+    let automatic = false;
+    if (!newSettings) {
+      newSettings = settings;
+      automatic = true;
+    }
 
-		onChange(newSettings, createMapping(newSettings, stream, skills), automatic);
-	};
+    onChange(
+      newSettings,
+      createMapping(newSettings, stream, skills),
+      automatic,
+    );
+  };
 
-	const update = (what) => (event) => {
-		const value = event.target.value;
+  const update = (what) => (event) => {
+    const value = event.target.value;
 
-		const newSettings = {
-			...settings,
-			[what]: value,
-		};
+    const newSettings = {
+      ...settings,
+      [what]: value,
+    };
 
-		handleChange(newSettings);
-	};
+    handleChange(newSettings);
+  };
 
-	React.useEffect(() => {
-		handleChange(null);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+  React.useEffect(() => {
+    handleChange(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
-				<Audio.Bitrate value={settings.bitrate} onChange={update('bitrate')} allowCustom />
-			</Grid>
-		</Grid>
-	);
+  return (
+    <Grid container spacing={2}>
+      <Grid item xs={12}>
+        <Audio.Bitrate
+          value={settings.bitrate}
+          onChange={update('bitrate')}
+          allowCustom
+        />
+      </Grid>
+    </Grid>
+  );
 }
 
 const coder = 'vorbis';
@@ -76,16 +96,25 @@ const type = 'audio';
 const hwaccel = false;
 
 function summarize(settings) {
-	return `${name}, ${settings.bitrate} kbit/s`;
+  return `${name}, ${settings.bitrate} kbit/s`;
 }
 
 function defaults(stream, skills) {
-	const settings = init({});
+  const settings = init({});
 
-	return {
-		settings: settings,
-		mapping: createMapping(settings, stream, skills),
-	};
+  return {
+    settings: settings,
+    mapping: createMapping(settings, stream, skills),
+  };
 }
 
-export { coder, name, codec, type, hwaccel, summarize, defaults, Coder as component };
+export {
+  coder,
+  name,
+  codec,
+  type,
+  hwaccel,
+  summarize,
+  defaults,
+  Coder as component,
+};

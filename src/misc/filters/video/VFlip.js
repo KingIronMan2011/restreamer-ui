@@ -1,7 +1,6 @@
-import React from 'react';
-
 import { Trans } from '@lingui/macro';
 import Grid from '@mui/material/Grid';
+import React from 'react';
 
 import Checkbox from '../../Checkbox';
 
@@ -9,62 +8,69 @@ import Checkbox from '../../Checkbox';
 // http://ffmpeg.org/ffmpeg-all.html#vflip
 
 function init(initialState) {
-	const state = {
-		enabled: false,
-		...initialState,
-	};
+  const state = {
+    enabled: false,
+    ...initialState,
+  };
 
-	return state;
+  return state;
 }
 
 function createGraph(settings) {
-	settings = init(settings);
+  settings = init(settings);
 
-	const mapping = [];
+  const mapping = [];
 
-	if (settings.enabled) {
-		mapping.push('vflip');
-	}
+  if (settings.enabled) {
+    mapping.push('vflip');
+  }
 
-	return mapping.join(',');
+  return mapping.join(',');
 }
 
-function Filter({ settings = {}, onChange = function (settings, graph, automatic) {} }) {
-	settings = init(settings);
+function Filter({
+  settings = {},
+  onChange = function (settings, graph, automatic) {},
+}) {
+  settings = init(settings);
 
-	const handleChange = (newSettings) => {
-		let automatic = false;
-		if (!newSettings) {
-			newSettings = settings;
-			automatic = true;
-		}
+  const handleChange = (newSettings) => {
+    let automatic = false;
+    if (!newSettings) {
+      newSettings = settings;
+      automatic = true;
+    }
 
-		onChange(newSettings, createGraph(newSettings), automatic);
-	};
+    onChange(newSettings, createGraph(newSettings), automatic);
+  };
 
-	const update = (what) => (event) => {
-		const newSettings = {
-			...settings,
-		};
-		if (['enabled'].includes(what)) {
-			newSettings[what] = !settings.enabled;
-		} else {
-			newSettings[what] = event.target.value;
-		}
+  const update = (what) => (event) => {
+    const newSettings = {
+      ...settings,
+    };
+    if (['enabled'].includes(what)) {
+      newSettings[what] = !settings.enabled;
+    } else {
+      newSettings[what] = event.target.value;
+    }
 
-		handleChange(newSettings);
-	};
+    handleChange(newSettings);
+  };
 
-	React.useEffect(() => {
-		handleChange(null);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+  React.useEffect(() => {
+    handleChange(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-	return (
-		<Grid item>
-			<Checkbox label={<Trans>Vertical Flip</Trans>} checked={settings.enabled} onChange={update('enabled')} />
-		</Grid>
-	);
+  return (
+    <Grid item>
+      <Checkbox
+        label={<Trans>Vertical Flip</Trans>}
+        checked={settings.enabled}
+        onChange={update('enabled')}
+      />
+    </Grid>
+  );
 }
 
 const filter = 'vflip';
@@ -73,16 +79,25 @@ const type = 'video';
 const hwaccel = false;
 
 function summarize(settings) {
-	return `${name}`;
+  return `${name}`;
 }
 
 function defaults() {
-	const settings = init({});
+  const settings = init({});
 
-	return {
-		settings: settings,
-		graph: createGraph(settings),
-	};
+  return {
+    settings: settings,
+    graph: createGraph(settings),
+  };
 }
 
-export { name, filter, type, hwaccel, summarize, defaults, createGraph, Filter as component };
+export {
+  name,
+  filter,
+  type,
+  hwaccel,
+  summarize,
+  defaults,
+  createGraph,
+  Filter as component,
+};

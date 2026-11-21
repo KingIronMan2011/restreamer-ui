@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { render, act } from '../../utils/testing';
 import '@testing-library/jest-dom';
 
@@ -11,22 +12,22 @@ const audioencoders = Encoders.Audio.List();
 const videoencoders = Encoders.Video.List();
 
 const testfunc = async (coder) => {
-	const defaults = coder.defaults();
+  const defaults = coder.defaults();
 
-	let $settings = {};
-	let $mapping = {};
+  let $settings = {};
+  let $mapping = {};
 
-	const handleChange = (settings, mapping) => {
-		$settings = settings;
-		$mapping = mapping;
-	};
+  const handleChange = (settings, mapping) => {
+    $settings = settings;
+    $mapping = mapping;
+  };
 
-	await act(async () => {
-		render(<coder.component onChange={handleChange} />);
-	});
+  await act(async () => {
+    render(<coder.component onChange={handleChange} />);
+  });
 
-	expect($settings).toStrictEqual(defaults.settings);
-	expect($mapping).toStrictEqual(defaults.mapping);
+  expect($settings).toStrictEqual(defaults.settings);
+  expect($mapping).toStrictEqual(defaults.mapping);
 };
 
 test.each(audiodecoders)('coder:decoder:$type $coder', testfunc);

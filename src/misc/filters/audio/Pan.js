@@ -1,9 +1,8 @@
-import React from 'react';
-
 import { Trans } from '@lingui/macro';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
+import React from 'react';
 
 import Select from '../../Select';
 
@@ -11,90 +10,93 @@ import Select from '../../Select';
 // https://ffmpeg.org/ffmpeg-filters.html#pan-1
 
 function init(initialState) {
-	const state = {
-		value: 'inherit',
-		...initialState,
-	};
+  const state = {
+    value: 'inherit',
+    ...initialState,
+  };
 
-	return state;
+  return state;
 }
 
 function createGraph(settings) {
-	settings = init(settings);
+  settings = init(settings);
 
-	const mapping = [];
+  const mapping = [];
 
-	switch (settings.value) {
-		case 'mute_left':
-			mapping.push('pan=stereo|c1=c1');
-			break;
-		case 'mute_right':
-			mapping.push('pan=stereo|c0=c0');
-			break;
-		default:
-			break;
-	}
+  switch (settings.value) {
+    case 'mute_left':
+      mapping.push('pan=stereo|c1=c1');
+      break;
+    case 'mute_right':
+      mapping.push('pan=stereo|c0=c0');
+      break;
+    default:
+      break;
+  }
 
-	return mapping;
+  return mapping;
 }
 
 // filter
 function Pan({ value = '', onChange = function (event) {} }) {
-	return (
-		<React.Fragment>
-			<Select label={<Trans>Pan</Trans>} value={value} onChange={onChange}>
-				<MenuItem value="inherit">
-					<Trans>Inherit</Trans>
-				</MenuItem>
-				<MenuItem value="mute_left">
-					<Trans>Mute left</Trans>
-				</MenuItem>
-				<MenuItem value="mute_right">
-					<Trans>Mute right</Trans>
-				</MenuItem>
-			</Select>
-			<Typography variant="caption">
-				<Trans>Mute a channel.</Trans>
-			</Typography>
-		</React.Fragment>
-	);
+  return (
+    <React.Fragment>
+      <Select label={<Trans>Pan</Trans>} value={value} onChange={onChange}>
+        <MenuItem value="inherit">
+          <Trans>Inherit</Trans>
+        </MenuItem>
+        <MenuItem value="mute_left">
+          <Trans>Mute left</Trans>
+        </MenuItem>
+        <MenuItem value="mute_right">
+          <Trans>Mute right</Trans>
+        </MenuItem>
+      </Select>
+      <Typography variant="caption">
+        <Trans>Mute a channel.</Trans>
+      </Typography>
+    </React.Fragment>
+  );
 }
 
-function Filter({ settings = {}, onChange = function (settings, graph, automatic) {} }) {
-	settings = init(settings);
+function Filter({
+  settings = {},
+  onChange = function (settings, graph, automatic) {},
+}) {
+  settings = init(settings);
 
-	const handleChange = (newSettings) => {
-		let automatic = false;
-		if (!newSettings) {
-			newSettings = settings;
-			automatic = true;
-		}
+  const handleChange = (newSettings) => {
+    let automatic = false;
+    if (!newSettings) {
+      newSettings = settings;
+      automatic = true;
+    }
 
-		onChange(newSettings, createGraph(newSettings), automatic);
-	};
+    onChange(newSettings, createGraph(newSettings), automatic);
+  };
 
-	const update = (what) => (event) => {
-		const newSettings = {
-			...settings,
-		};
+  const update = (what) => (event) => {
+    const newSettings = {
+      ...settings,
+    };
 
-		newSettings[what] = event.target.value;
+    newSettings[what] = event.target.value;
 
-		handleChange(newSettings);
-	};
+    handleChange(newSettings);
+  };
 
-	React.useEffect(() => {
-		handleChange(null);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+  React.useEffect(() => {
+    handleChange(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-	return (
-		<React.Fragment>
-			<Grid item xs={12}>
-				<Pan value={settings.value} onChange={update('value')} allowCustom />
-			</Grid>
-		</React.Fragment>
-	);
+  return (
+    <React.Fragment>
+      <Grid item xs={12}>
+        <Pan value={settings.value} onChange={update('value')} allowCustom />
+      </Grid>
+    </React.Fragment>
+  );
 }
 
 const filter = 'pan';
@@ -103,16 +105,25 @@ const type = 'audio';
 const hwaccel = false;
 
 function summarize(settings) {
-	return `${name} (${settings.value.replace(/_/i, ' ')})`;
+  return `${name} (${settings.value.replace(/_/i, ' ')})`;
 }
 
 function defaults() {
-	const settings = init({});
+  const settings = init({});
 
-	return {
-		settings: settings,
-		graph: createGraph(settings),
-	};
+  return {
+    settings: settings,
+    graph: createGraph(settings),
+  };
 }
 
-export { name, filter, type, hwaccel, summarize, defaults, createGraph, Filter as component };
+export {
+  name,
+  filter,
+  type,
+  hwaccel,
+  summarize,
+  defaults,
+  createGraph,
+  Filter as component,
+};

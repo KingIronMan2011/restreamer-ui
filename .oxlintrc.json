@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "import", "jsx-a11y", "react"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "ignorePatterns": ["src/locales/*/messages.js"],
+  "rules": {
+    "import/no-anonymous-default-export": "off",
+    "no-unused-vars": ["warn", { "args": "none", "caughtErrors": "none" }],
+    "react/immutability": "off"
+  }
+}
