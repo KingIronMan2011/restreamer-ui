@@ -6,4 +6,3 @@ const UI = pkg.bundle ? pkg.bundle : pkg.name + ' v' + pkg.version;
 const Version = pkg.version;
 
 export { Core, FFmpeg, UI, Version };
-

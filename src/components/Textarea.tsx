@@ -7,8 +7,8 @@ import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import React, { useContext } from 'react';
 
-import NotifyContext from './contexts/Notify';
 import Palette from '../lib/theme/base/palette';
+import NotifyContext from './contexts/Notify';
 import TextareaModal from './modals/Textarea';
 
 export default function Component({

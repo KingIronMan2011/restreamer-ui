@@ -1,8 +1,8 @@
 {
-	"Segment length (seconds)": {
-		"origin": [["src/components/controls/HLS.js", 32]]
-	},
-	"List size (segments)": {
-		"origin": [["src/components/controls/HLS.js", 35]]
-	}
+  "Segment length (seconds)": {
+    "origin": [["src/components/controls/HLS.js", 32]]
+  },
+  "List size (segments)": {
+    "origin": [["src/components/controls/HLS.js", 35]]
+  }
 }

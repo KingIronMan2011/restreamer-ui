@@ -14,9 +14,8 @@ import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import NotifyContext from '../../components/contexts/Notify';
-import useInterval from '../../hooks/useInterval';
 import BoxText from '../../components/BoxText';
+import NotifyContext from '../../components/contexts/Notify';
 import LimitsControl from '../../components/controls/Limits';
 import ProcessControl from '../../components/controls/Process';
 import SourceControl from '../../components/controls/Source';
@@ -30,6 +29,7 @@ import PaperFooter from '../../components/PaperFooter';
 import PaperHeader from '../../components/PaperHeader';
 import TabPanel from '../../components/TabPanel';
 import TabsVerticalGrid from '../../components/TabsVerticalGrid';
+import useInterval from '../../hooks/useInterval';
 import H from '../../utils/help';
 import * as M from '../../utils/metadata';
 import * as helper from './helper';

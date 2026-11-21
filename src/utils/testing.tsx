@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
-import I18n from '../languages/Provider';
+import I18n from '../i18n';
 import theme from '../lib/theme';
 
 /*

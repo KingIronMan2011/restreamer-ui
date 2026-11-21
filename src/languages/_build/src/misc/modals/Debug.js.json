@@ -1,8 +1,8 @@
 {
-	"Debug Log": {
-		"origin": [["src/components/modals/Debug.js", 22]]
-	},
-	"Close": {
-		"origin": [["src/components/modals/Debug.js", 34]]
-	}
+  "Debug Log": {
+    "origin": [["src/components/modals/Debug.js", 22]]
+  },
+  "Close": {
+    "origin": [["src/components/modals/Debug.js", 34]]
+  }
 }

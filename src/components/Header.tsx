@@ -23,12 +23,12 @@ import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 
+import * as Version from '../lib/version';
+import * as Storage from '../utils/storage';
 import LanguageSelect from './LanguageSelect';
 import Logo from './Logo/rsLogo';
 import ModalContent from './ModalContent';
 import PaperThumb from './PaperThumb';
-import * as Storage from '../utils/storage';
-import * as Version from '../lib/version';
 
 const useStyles = makeStyles((theme) => ({
   header: {

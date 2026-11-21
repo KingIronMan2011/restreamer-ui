@@ -2,22 +2,22 @@ import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 import React from 'react';
 
-import { messages as DA } from './da/messages.js';
-import { messages as DE } from './de/messages.js';
-import { messages as EL } from './el/messages.js';
-import { messages as EN } from './en/messages.js';
-import { messages as ES } from './es/messages.js';
-import { messages as FR } from './fr/messages.js';
-import { messages as IT } from './it/messages.js';
-import { messages as KO } from './ko/messages.js';
-import { messages as PL } from './pl/messages.js';
-import { messages as PT } from './pt-br/messages.js';
-import { messages as RU } from './ru/messages.js';
-import { messages as SL } from './sl/messages.js';
-import { messages as TR } from './tr/messages.js';
-import { messages as UK } from './uk/messages.js';
-import { messages as ZH } from './zh-hans/messages.js';
-import * as Storage from '../utils/storage';
+import { messages as DA } from './languages/da/messages.js';
+import { messages as DE } from './languages/de/messages.js';
+import { messages as EL } from './languages/el/messages.js';
+import { messages as EN } from './languages/en/messages.js';
+import { messages as ES } from './languages/es/messages.js';
+import { messages as FR } from './languages/fr/messages.js';
+import { messages as IT } from './languages/it/messages.js';
+import { messages as KO } from './languages/ko/messages.js';
+import { messages as PL } from './languages/pl/messages.js';
+import { messages as PT } from './languages/pt-br/messages.js';
+import { messages as RU } from './languages/ru/messages.js';
+import { messages as SL } from './languages/sl/messages.js';
+import { messages as TR } from './languages/tr/messages.js';
+import { messages as UK } from './languages/uk/messages.js';
+import { messages as ZH } from './languages/zh-hans/messages.js';
+import * as Storage from './utils/storage';
 
 i18n.load({
   en: EN,
@@ -97,5 +97,5 @@ i18n.activate(
 );
 
 export default function Provider(props: any) {
-  return <I18nProvider i18n={i18n}>{props.children}</I18nProvider>;
+  return React.createElement(I18nProvider, { i18n }, props.children);
 }

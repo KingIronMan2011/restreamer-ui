@@ -5,22 +5,26 @@ import Grid from '@mui/material/Grid';
 import Snackbar from '@mui/material/Snackbar';
 import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import {
+  Navigate,
+  Route,
+  Routes,
+  HashRouter as DOMRouter,
+} from 'react-router-dom';
 import SemverGt from 'semver/functions/gt';
 import SemverValid from 'semver/functions/valid';
 
-import { NotifyProvider } from '../contexts/Notify';
-import Footer from '../Footer';
-import Header from '../Header';
-import useInterval from '../../hooks/useInterval';
-import I18n from '../../languages/Provider';
-import Changelog from '../Changelog';
-import ChannelList from '../ChannelList';
-import Router from './Router';
-import * as auth0 from '../../utils/auth0';
-import * as M from '../../utils/metadata';
-import Restreamer from '../../utils/restreamer';
-import { UI as Version } from '../../lib/version';
-import Views from '../../views';
+import Changelog from './components/Changelog';
+import ChannelList from './components/ChannelList';
+import { NotifyProvider } from './components/contexts/Notify';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import useInterval from './hooks/useInterval';
+import { UI as Version } from './lib/version';
+import * as auth0 from './utils/auth0';
+import * as M from './utils/metadata';
+import Restreamer from './utils/restreamer';
+import Views from './views';
 
 const useStyles = makeStyles((theme) => ({
   MainHeader: {
@@ -38,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RestreamerUI({ address = '' }: any) {
+export default function App({ address = '' }: any) {
   const classes = useStyles();
 
   const [$state, setState] = React.useState<Record<string, any>>({
@@ -518,7 +522,7 @@ export default function RestreamerUI({ address = '' }: any) {
         />
       );
     } else {
-      view = <Router restreamer={restreamer.current} />;
+      view = <AppRoutes restreamer={restreamer.current} />;
       getResources = handleResources;
     }
   }
@@ -527,89 +531,149 @@ export default function RestreamerUI({ address = '' }: any) {
     $state.connected && $state.compatibility.compatible && !$state.password;
 
   return (
-    <I18n>
-      <NotifyProvider value={{ Dispatch: notify }}>
-        <Grid
-          container
-          direction="column"
-          justifyContent="flex-start"
-          alignItems="stretch"
-          spacing={0}
-        >
-          <Grid className={classes.MainHeader}>
-            <Header
-              expand={expand}
-              showPlayersite={$state.ingest}
-              showSettings={$state.compatibility.compatible}
-              hasUpdates={$state.updates}
-              hasService={$state.service}
-              onChannel={handleChannelList}
-              onPlayersite={handlePlayersite}
-              onSettings={handleSettings}
-              onLogout={handleLogout}
-            />
-          </Grid>
-          <Grid item className={classes.MainContent}>
-            <Grid
-              container
-              className="MainContent-container"
-              justifyContent="center"
-              alignItems="center"
-              spacing={0}
-            >
-              <Grid item sm={1}></Grid>
-              <Grid item xs={12} sm={10} className="MainContent-item">
-                {view}
-              </Grid>
-              <Grid item sm={1}></Grid>
+    <NotifyProvider value={{ Dispatch: notify }}>
+      <Grid
+        container
+        direction="column"
+        justifyContent="flex-start"
+        alignItems="stretch"
+        spacing={0}
+      >
+        <Grid className={classes.MainHeader}>
+          <Header
+            expand={expand}
+            showPlayersite={$state.ingest}
+            showSettings={$state.compatibility.compatible}
+            hasUpdates={$state.updates}
+            hasService={$state.service}
+            onChannel={handleChannelList}
+            onPlayersite={handlePlayersite}
+            onSettings={handleSettings}
+            onLogout={handleLogout}
+          />
+        </Grid>
+        <Grid item className={classes.MainContent}>
+          <Grid
+            container
+            className="MainContent-container"
+            justifyContent="center"
+            alignItems="center"
+            spacing={0}
+          >
+            <Grid item sm={1}></Grid>
+            <Grid item xs={12} sm={10} className="MainContent-item">
+              {view}
             </Grid>
+            <Grid item sm={1}></Grid>
           </Grid>
         </Grid>
-        <Footer
-          expand={$state.connected}
-          app={app}
-          version={version}
-          name={name}
-          getResources={getResources}
-        />
-        <Snackbar
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          open={$snack.open}
-          autoHideDuration={6000}
+      </Grid>
+      <Footer
+        expand={$state.connected}
+        app={app}
+        version={version}
+        name={name}
+        getResources={getResources}
+      />
+      <Snackbar
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        open={$snack.open}
+        autoHideDuration={6000}
+        onClose={handleCloseSnack}
+      >
+        <Alert
+          variant="filled"
+          elevation={6}
           onClose={handleCloseSnack}
+          severity={$snack.severity}
         >
-          <Alert
-            variant="filled"
-            elevation={6}
-            onClose={handleCloseSnack}
-            severity={$snack.severity}
-          >
-            {$snack.message}
-          </Alert>
-        </Snackbar>
-        {expand && (
-          <ChannelList
-            open={$channelList.open}
-            allChannels={$channelList.channels}
-            channelid={$channelList.channelid}
-            onClose={handleCloseChannelList}
-            onClick={handleSelectChannel}
-            onAdd={handleAddChannel}
-            onState={handleStateChannel}
-          />
-        )}
-        {expand && $changelog.open && (
-          <Changelog
-            open={$changelog.open}
-            onClose={handleCloseChangelog}
-            current={$changelog.current}
-            previous={$changelog.previous}
-          />
-        )}
-      </NotifyProvider>
-    </I18n>
+          {$snack.message}
+        </Alert>
+      </Snackbar>
+      {expand && (
+        <ChannelList
+          open={$channelList.open}
+          allChannels={$channelList.channels}
+          channelid={$channelList.channelid}
+          onClose={handleCloseChannelList}
+          onClick={handleSelectChannel}
+          onAdd={handleAddChannel}
+          onState={handleStateChannel}
+        />
+      )}
+      {expand && $changelog.open && (
+        <Changelog
+          open={$changelog.open}
+          onClose={handleCloseChangelog}
+          current={$changelog.current}
+          previous={$changelog.previous}
+        />
+      )}
+    </NotifyProvider>
+  );
+}
+
+function AppRoutes({ restreamer }: any) {
+  if (restreamer === null) {
+    return null;
+  }
+
+  const channelid = restreamer.GetCurrentChannelID();
+
+  return (
+    <DOMRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={<Views.ChannelSelect channelid={channelid} />}
+        />
+        <Route
+          path="/playersite"
+          element={<Views.Playersite restreamer={restreamer} />}
+        />
+        <Route
+          path="/settings"
+          element={<Views.Settings restreamer={restreamer} />}
+        />
+        <Route
+          path="/settings/:tab"
+          element={<Views.Settings restreamer={restreamer} />}
+        />
+        <Route
+          path="/:channelid"
+          element={<Views.Main key={channelid} restreamer={restreamer} />}
+        />
+        <Route
+          path="/:channelid/edit"
+          element={<Views.Edit key={channelid} restreamer={restreamer} />}
+        />
+        <Route
+          path="/:channelid/edit/wizard"
+          element={<Views.Wizard key={channelid} restreamer={restreamer} />}
+        />
+        <Route
+          path="/:channelid/edit/:tab"
+          element={<Views.Edit key={channelid} restreamer={restreamer} />}
+        />
+        <Route
+          path="/:channelid/publication"
+          element={<Views.AddService key={channelid} restreamer={restreamer} />}
+        />
+        <Route
+          path="/:channelid/publication/player"
+          element={<Views.EditPlayer key={channelid} restreamer={restreamer} />}
+        />
+        <Route
+          path="/:channelid/publication/:service/:index"
+          element={
+            <Views.EditService key={channelid} restreamer={restreamer} />
+          }
+        />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </DOMRouter>
   );
 }

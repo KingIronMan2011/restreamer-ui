@@ -1,14 +1,14 @@
 {
-	"Reconnect Delay (seconds)": {
-		"origin": [["src/components/controls/Process.js", 41]]
-	},
-	"Stale Timeout (seconds)": {
-		"origin": [["src/components/controls/Process.js", 44]]
-	},
-	"Autostart": {
-		"origin": [["src/components/controls/Process.js", 47]]
-	},
-	"Reconnect": {
-		"origin": [["src/components/controls/Process.js", 50]]
-	}
+  "Reconnect Delay (seconds)": {
+    "origin": [["src/components/controls/Process.js", 41]]
+  },
+  "Stale Timeout (seconds)": {
+    "origin": [["src/components/controls/Process.js", 44]]
+  },
+  "Autostart": {
+    "origin": [["src/components/controls/Process.js", 47]]
+  },
+  "Reconnect": {
+    "origin": [["src/components/controls/Process.js", 50]]
+  }
 }

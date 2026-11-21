@@ -5,8 +5,9 @@ import '@fontsource/dosis';
 import '@fontsource/roboto';
 import { createRoot } from 'react-dom/client';
 
-import RestreamerUI from '../components/app/RestreamerUI';
-import theme from './theme';
+import I18n from './i18n';
+import theme from './lib/theme';
+import Root from './Root';
 
 let address = window.location.protocol + '//' + window.location.host;
 if (window.location.pathname.endsWith('/ui/')) {
@@ -22,7 +23,9 @@ createRoot(document.getElementById('root')!).render(
   <StyledEngineProvider injectFirst>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <RestreamerUI address={address} />
+      <I18n>
+        <Root address={address} />
+      </I18n>
     </ThemeProvider>
   </StyledEngineProvider>,
 );

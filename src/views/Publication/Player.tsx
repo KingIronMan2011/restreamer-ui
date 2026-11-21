@@ -12,8 +12,8 @@ import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import NotifyContext from '../../components/contexts/Notify';
 import Checkbox from '../../components/Checkbox';
+import NotifyContext from '../../components/contexts/Notify';
 import Filesize from '../../components/Filesize';
 import Dialog from '../../components/modals/Dialog';
 import Paper from '../../components/Paper';

@@ -4,8 +4,8 @@ import FileCopyIcon from '@mui/icons-material/FileCopy';
 import Button from '@mui/material/Button';
 import React, { useContext } from 'react';
 
-import NotifyContext from './contexts/Notify';
 import CopyToClipboard from '../utils/clipboard';
+import NotifyContext from './contexts/Notify';
 
 export default function CopyButton({
   variant = 'outlined',

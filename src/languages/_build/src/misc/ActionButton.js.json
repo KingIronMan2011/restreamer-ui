@@ -1,17 +1,17 @@
 {
-	"Connecting ...": {
-		"origin": [["src/components/ActionButton.js", 11]]
-	},
-	"Disconnecting ...": {
-		"origin": [["src/components/ActionButton.js", 14]]
-	},
-	"Disconnect": {
-		"origin": [["src/components/ActionButton.js", 17]]
-	},
-	"Connect": {
-		"origin": [["src/components/ActionButton.js", 20]]
-	},
-	"Reconnect": {
-		"origin": [["src/components/ActionButton.js", 23]]
-	}
+  "Connecting ...": {
+    "origin": [["src/components/ActionButton.js", 11]]
+  },
+  "Disconnecting ...": {
+    "origin": [["src/components/ActionButton.js", 14]]
+  },
+  "Disconnect": {
+    "origin": [["src/components/ActionButton.js", 17]]
+  },
+  "Connect": {
+    "origin": [["src/components/ActionButton.js", 20]]
+  },
+  "Reconnect": {
+    "origin": [["src/components/ActionButton.js", 23]]
+  }
 }

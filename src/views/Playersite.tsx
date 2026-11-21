@@ -14,9 +14,9 @@ import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import NotifyContext from '../components/contexts/Notify';
 import Checkbox from '../components/Checkbox';
 import ColorPicker from '../components/ColorPicker';
+import NotifyContext from '../components/contexts/Notify';
 import Filesize from '../components/Filesize';
 import FormInlineButton from '../components/FormInlineButton';
 import Dialog from '../components/modals/Dialog';

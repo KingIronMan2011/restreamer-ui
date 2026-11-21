@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { render, fireEvent, act, screen } from '../../../utils/testing';
 import Wizard from '.';
+import { render, fireEvent, act, screen } from '../../../utils/testing';
 
 let lastUpsertIngest = null;
 

@@ -1,17 +1,17 @@
 {
-	"Uptime": {
-		"origin": [["src/components/Progress.js", 31]]
-	},
-	"FPS": {
-		"origin": [["src/components/Progress.js", 38]]
-	},
-	"kbit/s": {
-		"origin": [["src/components/Progress.js", 45]]
-	},
-	"Quality": {
-		"origin": [["src/components/Progress.js", 52]]
-	},
-	"Speed": {
-		"origin": [["src/components/Progress.js", 59]]
-	}
+  "Uptime": {
+    "origin": [["src/components/Progress.js", 31]]
+  },
+  "FPS": {
+    "origin": [["src/components/Progress.js", 38]]
+  },
+  "kbit/s": {
+    "origin": [["src/components/Progress.js", 45]]
+  },
+  "Quality": {
+    "origin": [["src/components/Progress.js", 52]]
+  },
+  "Speed": {
+    "origin": [["src/components/Progress.js", 59]]
+  }
 }

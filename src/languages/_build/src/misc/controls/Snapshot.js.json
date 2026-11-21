@@ -1,8 +1,8 @@
 {
-	"Enable Snapshots": {
-		"origin": [["src/components/controls/Snapshot.js", 39]]
-	},
-	"Interval (seconds)": {
-		"origin": [["src/components/controls/Snapshot.js", 42]]
-	}
+  "Enable Snapshots": {
+    "origin": [["src/components/controls/Snapshot.js", 39]]
+  },
+  "Interval (seconds)": {
+    "origin": [["src/components/controls/Snapshot.js", 42]]
+  }
 }

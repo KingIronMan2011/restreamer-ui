@@ -8,8 +8,8 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import makeStyles from '@mui/styles/makeStyles';
 import React, { useContext } from 'react';
 
-import NotifyContext from './contexts/Notify';
 import CopyToClipboard from '../utils/clipboard';
+import NotifyContext from './contexts/Notify';
 
 const useStyles = makeStyles((theme) => ({
   root: {

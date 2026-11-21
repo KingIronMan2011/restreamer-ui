@@ -10,7 +10,6 @@ import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import useInterval from '../../hooks/useInterval';
 import ActionButton from '../../components/ActionButton';
 import CopyButton from '../../components/CopyButton';
 import DebugModal from '../../components/modals/Debug';
@@ -18,6 +17,7 @@ import ProcessModal from '../../components/modals/Process';
 import Paper from '../../components/Paper';
 import PaperHeader from '../../components/PaperHeader';
 import Player from '../../components/Player';
+import useInterval from '../../hooks/useInterval';
 import { anonymize } from '../../utils/anonymizer';
 import H from '../../utils/help';
 import * as M from '../../utils/metadata';
