@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/EncodingSelect.tsx:279
+#: src/components/EncodingSelect.tsx:280
 msgid "<0>Compatibility list</0>"
 msgstr "<0>호환 목록</0>"
 
@@ -43,18 +43,18 @@ msgid "7 (+ fragmented MP4 format)"
 msgstr "7 (+ 조각난 MP4 형식)"
 
 #: src/components/ChannelList.tsx:517
-#: src/views/Edit/index.tsx:790
-#: src/views/Edit/index.tsx:820
+#: src/views/Edit/index.tsx:791
+#: src/views/Edit/index.tsx:821
 #: src/views/Edit/Profile.tsx:662
 #: src/views/Edit/Wizard/Abort.tsx:21
-#: src/views/Publication/Edit.tsx:762
-#: src/views/Settings.tsx:2737
-#: src/views/Settings.tsx:2764
+#: src/views/Publication/Edit.tsx:763
+#: src/views/Settings.tsx:2738
+#: src/views/Settings.tsx:2765
 msgid "Abort"
 msgstr "취소"
 
-#: src/Header.tsx:332
-#: src/Header.tsx:386
+#: src/components/Header.tsx:332
+#: src/components/Header.tsx:386
 msgid "About"
 msgstr "정보"
 
@@ -66,7 +66,7 @@ msgstr "추가"
 msgid "Add Audio"
 msgstr ""
 
-#: src/views/Playersite.tsx:761
+#: src/views/Playersite.tsx:762
 msgid "Add external widgets and styles to the publication site. You can find some examples on the help page."
 msgstr "송출 사이트에 외부 위젯과 스타일을 추가합니다. 도움말에서 예시를 찾을 수 있습니다."
 
@@ -74,63 +74,64 @@ msgstr "송출 사이트에 외부 위젯과 스타일을 추가합니다. 도�
 msgid "Add new channel"
 msgstr "새로운 채널 추가"
 
-#: src/views/Publication/Add.tsx:407
+#: src/views/Publication/Add.tsx:408
 msgid "Add Publication"
 msgstr "송출 대상 추가하기"
 
-#: src/views/Publication/Add.tsx:410
+#. placeholder {0}: service.name
+#: src/views/Publication/Add.tsx:411
 msgid "Add: {0}"
 msgstr "추가: {0}"
 
-#: src/views/Playersite.tsx:408
+#: src/views/Playersite.tsx:409
 msgid "Additional channels"
 msgstr ""
 
-#: src/views/Playersite.tsx:440
+#: src/views/Playersite.tsx:441
 msgid "Additional channels to display on the playersite."
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:975
+#: src/views/Edit/Sources/Network.tsx:976
 #: src/views/Edit/Wizard/Sources/Network.tsx:77
 #: src/views/Publication/Services/Azure.tsx:112
 #: src/views/Publication/Services/Brightcove.tsx:112
 #: src/views/Publication/Services/Core.tsx:263
-#: src/views/Publication/Services/DASH.tsx:220
-#: src/views/Publication/Services/HLS.tsx:211
+#: src/views/Publication/Services/DASH.tsx:213
+#: src/views/Publication/Services/HLS.tsx:208
 #: src/views/Publication/Services/Icecast.tsx:197
-#: src/views/Publication/Services/Image2.tsx:150
+#: src/views/Publication/Services/Image2.tsx:147
 #: src/views/Publication/Services/Linkedin.tsx:112
-#: src/views/Publication/Services/MPEGTS.tsx:206
+#: src/views/Publication/Services/MPEGTS.tsx:203
 #: src/views/Publication/Services/Red5.tsx:141
-#: src/views/Publication/Services/RTMP.tsx:184
-#: src/views/Publication/Services/RTSP.tsx:169
-#: src/views/Publication/Services/SRT.tsx:187
-#: src/views/Publication/Services/UDP.tsx:154
+#: src/views/Publication/Services/RTMP.tsx:181
+#: src/views/Publication/Services/RTSP.tsx:166
+#: src/views/Publication/Services/SRT.tsx:184
+#: src/views/Publication/Services/UDP.tsx:151
 #: src/views/Publication/Services/WOWZA.tsx:157
-#: src/views/Settings.tsx:1593
+#: src/views/Settings.tsx:1594
 msgid "Address"
 msgstr "주소"
 
-#: src/views/Playersite.tsx:693
+#: src/views/Playersite.tsx:694
 msgid "Address for the background image."
 msgstr "배경 이미지의 주소입니다."
 
-#: src/views/Settings.tsx:1630
+#: src/views/Settings.tsx:1631
 msgid "Address to listen on for HTTP requests."
 msgstr "HTTP 요청을 수신할 주소입니다."
 
-#: src/views/Settings.tsx:1647
+#: src/views/Settings.tsx:1648
 msgid "Address to listen on for HTTPS requests."
 msgstr "HTTPS 요청을 수신할 주소입니다."
 
-#: src/views/Edit/Sources/Network.tsx:1288
-#: src/views/Edit/Sources/Network.tsx:1415
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:146
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:146
+#: src/views/Edit/Sources/Network.tsx:1289
+#: src/views/Edit/Sources/Network.tsx:1416
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:147
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:147
 msgid "Address:"
 msgstr "주소:"
 
-#: src/views/Playersite.tsx:576
+#: src/views/Playersite.tsx:577
 msgid "Adjust publication site colors and background as you like."
 msgstr "송출 사이트의 색상과 배경을 원하는대로 설정합니다."
 
@@ -138,16 +139,16 @@ msgstr "송출 사이트의 색상과 배경을 원하는대로 설정합니다.
 msgid "Advanced monitoring"
 msgstr "심화 모니터링"
 
-#: src/views/Edit/Sources/Network.tsx:615
-#: src/views/Publication/Services/DASH.tsx:251
-#: src/views/Publication/Services/HLS.tsx:242
+#: src/views/Edit/Sources/Network.tsx:616
+#: src/views/Publication/Services/DASH.tsx:244
+#: src/views/Publication/Services/HLS.tsx:239
 #: src/views/Publication/Services/Icecast.tsx:211
-#: src/views/Publication/Services/Image2.tsx:163
-#: src/views/Publication/Services/MPEGTS.tsx:219
-#: src/views/Publication/Services/RTMP.tsx:206
-#: src/views/Publication/Services/RTSP.tsx:200
-#: src/views/Publication/Services/SRT.tsx:208
-#: src/views/Publication/Services/UDP.tsx:166
+#: src/views/Publication/Services/Image2.tsx:160
+#: src/views/Publication/Services/MPEGTS.tsx:216
+#: src/views/Publication/Services/RTMP.tsx:203
+#: src/views/Publication/Services/RTSP.tsx:197
+#: src/views/Publication/Services/SRT.tsx:205
+#: src/views/Publication/Services/UDP.tsx:163
 msgid "Advanced settings"
 msgstr "심화 설정"
 
@@ -155,8 +156,8 @@ msgstr "심화 설정"
 msgid "Advanced setup"
 msgstr "심화 구성"
 
-#: src/views/Playersite.tsx:463
-#: src/views/Publication/Player.tsx:590
+#: src/views/Playersite.tsx:464
+#: src/views/Publication/Player.tsx:591
 msgid "AirPlay"
 msgstr "AirPlay"
 
@@ -164,7 +165,7 @@ msgstr "AirPlay"
 msgid "Alerting by email"
 msgstr "이메일로 알림"
 
-#: src/views/Publication/Add.tsx:430
+#: src/views/Publication/Add.tsx:431
 msgid "All"
 msgstr "모두"
 
@@ -172,23 +173,23 @@ msgstr "모두"
 msgid "All frames"
 msgstr "모든 프레임"
 
-#: src/views/Settings.tsx:1401
+#: src/views/Settings.tsx:1402
 msgid "All important system settings."
 msgstr "모든 중요한 시스템 설정입니다."
 
-#: src/views/Settings.tsx:1836
+#: src/views/Settings.tsx:1837
 msgid "Allow all referrer"
 msgstr "모든 접속 허용"
 
-#: src/views/Settings.tsx:1889
+#: src/views/Settings.tsx:1890
 msgid "Allow counting how many viewers the stream has."
 msgstr "스트림의 시청자 수를 셉니다."
 
-#: src/views/Edit/Sources/ALSA.tsx:184
+#: src/views/Edit/Sources/ALSA.tsx:185
 msgid "ALSA"
 msgstr "ALSA"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:153
+#: src/views/Edit/Sources/VirtualAudio.tsx:154
 msgid "Amplitude"
 msgstr "음량"
 
@@ -196,15 +197,15 @@ msgstr "음량"
 msgid "An environment variable sets this value."
 msgstr "환경 변수로 이 값을 설정합니다."
 
-#: src/views/Settings.tsx:1050
+#: src/views/Settings.tsx:1051
 msgid "API endpoint not found. Settings not saved."
 msgstr "API 엔드포인트를 찾을 수 없습니다. 설정이 저장되지 않습니다."
 
-#: src/views/Settings.tsx:2378
+#: src/views/Settings.tsx:2379
 msgid "App"
 msgstr "앱"
 
-#: src/Footer.tsx:251
+#: src/components/Footer.tsx:251
 #: src/views/Publication/Services/Red5.tsx:152
 #: src/views/Publication/Services/WOWZA.tsx:177
 msgid "Application"
@@ -214,31 +215,31 @@ msgstr "애플리케이션"
 msgid "Are you sure you want to abort the wizard?"
 msgstr "정말 설정 마법사를 취소하시겠습니까?"
 
-#: src/views/Publication/Add.tsx:604
+#: src/views/Publication/Add.tsx:605
 msgid "Audio"
 msgstr "소리"
 
-#: src/views/Edit/Sources/ALSA.tsx:129
-#: src/views/Edit/Sources/AVFoundation.tsx:171
+#: src/views/Edit/Sources/ALSA.tsx:130
+#: src/views/Edit/Sources/AVFoundation.tsx:172
 msgid "Audio device"
 msgstr "소리 장치"
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:133
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:134
 msgid "Audio Device"
 msgstr "소리 장치"
 
-#: src/views/Edit/Wizard/Audio.tsx:99
-#: src/views/Edit/Wizard/Audio.tsx:119
+#: src/views/Edit/Wizard/Audio.tsx:100
+#: src/views/Edit/Wizard/Audio.tsx:120
 msgid "Audio from device"
 msgstr "장치의 소리"
 
 #: src/views/Edit/Profile.tsx:682
 #: src/views/Edit/ProfileSummary.tsx:93
-#: src/views/Publication/Edit.tsx:682
+#: src/views/Publication/Edit.tsx:683
 msgid "Audio settings"
 msgstr "소리 설정"
 
-#: src/views/Edit/Wizard/Audio.tsx:40
+#: src/views/Edit/Wizard/Audio.tsx:41
 msgid "Audio setup"
 msgstr "소리 구성"
 
@@ -258,8 +259,8 @@ msgstr "Auth0 테넌트"
 msgid "Author"
 msgstr "저작자"
 
-#: src/views/Settings.tsx:1342
-#: src/views/Settings.tsx:1755
+#: src/views/Settings.tsx:1343
+#: src/views/Settings.tsx:1756
 msgid "Authorization"
 msgstr "사용자 인증"
 
@@ -271,38 +272,38 @@ msgstr "자동"
 msgid "Automatic cleanup of all media data"
 msgstr "모든 미디어 데이터를 자동으로 청소합니다."
 
-#: src/views/Publication/Player.tsx:575
+#: src/views/Publication/Player.tsx:576
 msgid "Autoplay"
 msgstr "자동재생"
 
-#: src/views/Playersite.tsx:491
+#: src/views/Playersite.tsx:492
 msgid "Available"
 msgstr "가능"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:256
+#: src/views/Edit/Sources/AVFoundation.tsx:257
 msgid "AVFoundation"
 msgstr "AVFoundation"
 
-#: src/views/Edit/Sources/Network.tsx:884
+#: src/views/Edit/Sources/Network.tsx:885
 msgid "avoid_negative_ts"
 msgstr "avoid_negative_ts"
 
 #: src/views/Edit/Profile.tsx:846
 #: src/views/Edit/Wizard/Abort.tsx:42
-#: src/views/Edit/Wizard/Audio.tsx:157
+#: src/views/Edit/Wizard/Audio.tsx:158
 #: src/views/Edit/Wizard/License.tsx:50
 #: src/views/Edit/Wizard/Metadata.tsx:49
 #: src/views/Edit/Wizard/Video.tsx:92
 #: src/views/Edit/Wizard/VideoProfile.tsx:107
-#: src/views/Publication/Add.tsx:646
+#: src/views/Publication/Add.tsx:647
 msgid "Back"
 msgstr "뒤로"
 
-#: src/views/Playersite.tsx:627
+#: src/views/Playersite.tsx:628
 msgid "Background colors"
 msgstr "배경 색상"
 
-#: src/views/Playersite.tsx:680
+#: src/views/Playersite.tsx:681
 msgid "Background image"
 msgstr "배경 이미지"
 
@@ -310,11 +311,11 @@ msgstr "배경 이미지"
 msgid "Backup server"
 msgstr "백업 서버"
 
-#: src/views/Publication/Services/Youtube.tsx:240
+#: src/views/Publication/Services/Youtube.tsx:237
 msgid "Backup stream"
 msgstr "백업 스트림"
 
-#: src/views/Publication/Services/Facebook.tsx:140
+#: src/views/Publication/Services/Facebook.tsx:133
 msgid "Backup stream key"
 msgstr "백업 스트림 키"
 
@@ -322,12 +323,12 @@ msgstr "백업 스트림 키"
 msgid "Backup URL"
 msgstr "백업 URL"
 
-#: src/Footer.tsx:290
-#: src/Footer.tsx:304
+#: src/components/Footer.tsx:290
+#: src/components/Footer.tsx:304
 msgid "Bandwidth"
 msgstr "대역폭"
 
-#: src/views/Settings.tsx:1702
+#: src/views/Settings.tsx:1703
 msgid "Bandwidth control"
 msgstr "대역폭 설정"
 
@@ -336,24 +337,24 @@ msgid "Banner"
 msgstr "요약 보고"
 
 #: src/views/Login.tsx:254
-#: src/views/Settings.tsx:1760
+#: src/views/Settings.tsx:1761
 msgid "Basic"
 msgstr "기본"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:190
+#: src/views/Edit/Sources/VirtualAudio.tsx:191
 msgid "Beep factor"
 msgstr "비프 인수"
 
-#: src/components/coders/settings/Audio.tsx:13
-#: src/components/coders/settings/Video.tsx:15
+#: src/components/coders/settings/Audio.tsx:14
+#: src/components/coders/settings/Video.tsx:16
 msgid "Bitrate"
 msgstr "비트율"
 
-#: src/views/Settings.tsx:2264
+#: src/views/Settings.tsx:2265
 msgid "Block cache types"
 msgstr "불허할 캐시 유형"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:141
+#: src/views/Edit/Sources/VirtualAudio.tsx:142
 msgid "blue"
 msgstr "파란색"
 
@@ -361,16 +362,16 @@ msgstr "파란색"
 msgid "Bottom field"
 msgstr "하단 필드"
 
-#: src/views/Edit/index.tsx:703
+#: src/views/Edit/index.tsx:704
 #: src/views/Edit/Wizard/Metadata.tsx:35
 msgid "Briefly describe what the audience will see during the live stream."
 msgstr "이 영상이 어떤 것인지 시청자에게 간략히 설명해주세요."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:140
+#: src/views/Edit/Sources/VirtualAudio.tsx:141
 msgid "brown"
 msgstr "갈색"
 
-#: src/views/Publication/Player.tsx:459
+#: src/views/Publication/Player.tsx:460
 msgid "Button color"
 msgstr "버튼 색상"
 
@@ -382,15 +383,15 @@ msgstr "높이 맞춤"
 msgid "By width"
 msgstr "폭 맞춤"
 
-#: src/views/Settings.tsx:2124
+#: src/views/Settings.tsx:2125
 msgid "Cache for files on /data."
 msgstr "/data 위치에 있는 파일을 위한 캐시입니다."
 
-#: src/views/Settings.tsx:2182
+#: src/views/Settings.tsx:2183
 msgid "Cache time (Seconds)"
 msgstr "캐시 시간 (초)"
 
-#: src/views/Settings.tsx:2240
+#: src/views/Settings.tsx:2241
 msgid "Cache types"
 msgstr "캐시 유형"
 
@@ -398,66 +399,67 @@ msgstr "캐시 유형"
 msgid "Capture buffer"
 msgstr "버퍼 캡쳐"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:237
+#: src/views/Edit/Sources/AVFoundation.tsx:238
 msgid "Capture clicks"
 msgstr "클릭 캡쳐"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:230
+#: src/views/Edit/Sources/AVFoundation.tsx:231
 msgid "Capture cursor"
 msgstr "커서 캡쳐"
 
-#: src/views/Edit/Sources/Channel.tsx:134
+#: src/views/Edit/Sources/Channel.tsx:135
 msgid "Channel"
 msgstr ""
 
-#: src/views/Edit/index.tsx:404
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx:405
 msgid "Channel \"{0}\" saved"
 msgstr "\"{0}\" 채널을 저장했습니다."
 
-#: src/views/Edit/Sources/ALSA.tsx:156
+#: src/views/Edit/Sources/ALSA.tsx:157
 msgid "Channels"
 msgstr "채널"
 
-#: src/views/Settings.tsx:1411
+#: src/views/Settings.tsx:1412
 msgid "Check for updates"
 msgstr "업데이트 확인"
 
-#: src/views/Publication/Add.tsx:360
+#: src/views/Publication/Add.tsx:361
 msgid "Check the requirements"
 msgstr "요구사항 확인"
 
-#: src/views/Edit/StreamSelect.tsx:60
+#: src/views/Edit/StreamSelect.tsx:61
 msgid "Choose a video stream"
 msgstr "영상 스트림 선택"
 
-#: src/views/Edit/StreamSelect.tsx:75
+#: src/views/Edit/StreamSelect.tsx:76
 msgid "Choose an audio stream"
 msgstr "소리 스트림 선택"
 
-#: src/views/Edit/Sources/Channel.tsx:84
+#: src/views/Edit/Sources/Channel.tsx:85
 msgid "Choose an input channel ..."
 msgstr ""
 
-#: src/views/Edit/Sources/ALSA.tsx:106
+#: src/views/Edit/Sources/ALSA.tsx:107
 #: src/views/Edit/Sources/Framebuffer.tsx:93
 #: src/views/Edit/Sources/Raspicam.tsx:103
 #: src/views/Edit/Sources/V4L.tsx:103
-#: src/views/Edit/Sources/X11grab.tsx:155
+#: src/views/Edit/Sources/X11grab.tsx:156
 msgid "Choose an input device ..."
 msgstr "입력 장치 선택..."
 
-#: src/views/Edit/Sources/Network.tsx:1249
-#: src/views/Edit/Sources/Network.tsx:1376
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:110
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:110
+#: src/views/Edit/Sources/Network.tsx:1250
+#: src/views/Edit/Sources/Network.tsx:1377
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:111
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:111
 msgid "Choose an input stream ..."
 msgstr "입력 스트림 선택 ..."
 
-#: src/components/coders/settings/Video.tsx:371
+#: src/components/coders/settings/Video.tsx:372
 msgid "Choose between CFR and VFR (Auto)"
 msgstr "CFR과 VFR(자동) 중 선택"
 
-#: src/components/EncodingSelect.tsx:253
+#: src/components/EncodingSelect.tsx:254
 msgid "Choose codec ..."
 msgstr "코덱 선택..."
 
@@ -465,40 +467,40 @@ msgstr "코덱 선택..."
 msgid "Choose tenant ..."
 msgstr "테넌트 선택 ..."
 
-#: src/views/Playersite.tsx:455
-#: src/views/Publication/Player.tsx:585
+#: src/views/Playersite.tsx:456
+#: src/views/Publication/Player.tsx:586
 msgid "Chromecast"
 msgstr "크롬캐스트"
 
-#: src/views/Publication/Services/DASH.tsx:381
-#: src/views/Publication/Services/HLS.tsx:315
+#: src/views/Publication/Services/DASH.tsx:374
+#: src/views/Publication/Services/HLS.tsx:312
 msgid "Chunk"
 msgstr "조각"
 
 #: src/components/Changelog.tsx:182
 #: src/components/ModalContent.tsx:101
 #: src/components/modals/Hint.tsx:212
-#: src/views/Edit/index.tsx:752
-#: src/views/Playersite.tsx:859
-#: src/views/Publication/Add.tsx:452
-#: src/views/Publication/Add.tsx:639
-#: src/views/Publication/Edit.tsx:712
-#: src/views/Publication/Player.tsx:602
-#: src/views/Settings.tsx:2658
+#: src/views/Edit/index.tsx:753
+#: src/views/Playersite.tsx:860
+#: src/views/Publication/Add.tsx:453
+#: src/views/Publication/Add.tsx:640
+#: src/views/Publication/Edit.tsx:713
+#: src/views/Publication/Player.tsx:603
+#: src/views/Settings.tsx:2659
 msgid "Close"
 msgstr "닫기"
 
-#: src/views/Playersite.tsx:333
+#: src/views/Playersite.tsx:334
 msgid "Code injection"
 msgstr "코드 삽입"
 
-#: src/components/EncodingSelect.tsx:248
+#: src/components/EncodingSelect.tsx:249
 #: src/components/modals/Hint.tsx:68
 #: src/components/modals/Hint.tsx:95
 msgid "Codec"
 msgstr "코덱"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:134
+#: src/views/Edit/Sources/VirtualAudio.tsx:135
 msgid "Color"
 msgstr "색상"
 
@@ -506,7 +508,7 @@ msgstr "색상"
 msgid "Command"
 msgstr "명령"
 
-#: src/views/Settings.tsx:1570
+#: src/views/Settings.tsx:1571
 msgid "Config"
 msgstr "설정"
 
@@ -518,7 +520,7 @@ msgstr "비밀번호 확인"
 msgid "Connect"
 msgstr "연결"
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:180
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:181
 msgid "Connected device"
 msgstr "연결된 장치"
 
@@ -540,7 +542,7 @@ msgstr "Restreamer Core에 연결 중 ..."
 msgid "Connecting to Restreamer Core failed probably because of mixed content."
 msgstr "복합적인 문제로 Restreamer Core에 연결하지 못했습니다."
 
-#: src/components/coders/settings/Video.tsx:365
+#: src/components/coders/settings/Video.tsx:366
 msgid "Constant frame rate (CFR)"
 msgstr "고정 프레임율 (CFR)"
 
@@ -549,8 +551,8 @@ msgid "Constant Quantizer Mode (-1 to 255)."
 msgstr "상수 퀀타이저 모드(-1~255)."
 
 #: src/components/controls/Metadata.tsx:72
-#: src/views/Playersite.tsx:728
-#: src/views/Playersite.tsx:745
+#: src/views/Playersite.tsx:729
+#: src/views/Playersite.tsx:746
 msgid "Content"
 msgstr "내용"
 
@@ -558,11 +560,11 @@ msgstr "내용"
 msgid "Content URL"
 msgstr "내용 URL"
 
-#: src/views/Edit/Sources/Network.tsx:866
+#: src/views/Edit/Sources/Network.tsx:867
 msgid "copyts"
 msgstr "copyts"
 
-#: src/Footer.tsx:225
+#: src/components/Footer.tsx:225
 msgid "Cores"
 msgstr "코어"
 
@@ -578,53 +580,53 @@ msgstr "CPU 제한(퍼센트)"
 msgid "CPU usage limit in percent (0-100%), 0 for unlimited."
 msgstr "CPU 사용량 제한(%)(0-100%), 무제한은 0입니다."
 
-#: src/components/controls/License/index.tsx:115
+#: src/components/controls/License/index.tsx:116
 msgid "Creative Commons"
 msgstr "크리에이티브 커먼즈"
 
-#: src/components/coders/Encoders/audio/opus.tsx:80
-#: src/components/coders/settings/Audio.tsx:32
-#: src/components/coders/settings/Audio.tsx:119
-#: src/components/coders/settings/Audio.tsx:169
-#: src/components/coders/settings/Video.tsx:39
-#: src/components/coders/settings/Video.tsx:77
-#: src/components/coders/settings/Video.tsx:121
-#: src/components/coders/settings/Video.tsx:181
-#: src/components/coders/settings/Video.tsx:222
-#: src/components/coders/settings/Video.tsx:264
-#: src/components/coders/settings/Video.tsx:302
-#: src/components/coders/settings/Video.tsx:338
-#: src/components/filters/audio/Resample.tsx:71
-#: src/components/filters/audio/Resample.tsx:121
+#: src/components/coders/Encoders/audio/opus.tsx:81
+#: src/components/coders/settings/Audio.tsx:33
+#: src/components/coders/settings/Audio.tsx:120
+#: src/components/coders/settings/Audio.tsx:170
+#: src/components/coders/settings/Video.tsx:40
+#: src/components/coders/settings/Video.tsx:78
+#: src/components/coders/settings/Video.tsx:122
+#: src/components/coders/settings/Video.tsx:182
+#: src/components/coders/settings/Video.tsx:223
+#: src/components/coders/settings/Video.tsx:265
+#: src/components/coders/settings/Video.tsx:303
+#: src/components/coders/settings/Video.tsx:339
+#: src/components/filters/audio/Resample.tsx:72
+#: src/components/filters/audio/Resample.tsx:122
 #: src/components/filters/audio/Volume.tsx:57
-#: src/components/filters/video/Framerate.tsx:54
-#: src/views/Edit/Sources/ALSA.tsx:111
-#: src/views/Edit/Sources/AVFoundation.tsx:130
-#: src/views/Edit/Sources/AVFoundation.tsx:165
+#: src/components/filters/video/Framerate.tsx:55
+#: src/views/Edit/Sources/ALSA.tsx:112
+#: src/views/Edit/Sources/AVFoundation.tsx:131
+#: src/views/Edit/Sources/AVFoundation.tsx:166
 #: src/views/Edit/Sources/V4L.tsx:109
-#: src/views/Edit/Sources/X11grab.tsx:81
-#: src/views/Edit/Sources/X11grab.tsx:161
+#: src/views/Edit/Sources/X11grab.tsx:82
+#: src/views/Edit/Sources/X11grab.tsx:162
 msgid "Custom ..."
 msgstr "직접설정 ..."
 
-#: src/views/Edit/Sources/ALSA.tsx:130
+#: src/views/Edit/Sources/ALSA.tsx:131
 msgid "Custom audio device"
 msgstr "소리 장치 직접 설정"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:172
+#: src/views/Edit/Sources/AVFoundation.tsx:173
 msgid "Custom audio index"
 msgstr "소리 목록 직접 설정"
 
-#: src/components/coders/settings/Audio.tsx:14
-#: src/components/coders/settings/Video.tsx:16
+#: src/components/coders/settings/Audio.tsx:15
+#: src/components/coders/settings/Video.tsx:17
 msgid "Custom bitrate (kbit/s)"
 msgstr "비트율 직접 설정 (kbit/s)"
 
-#: src/views/Playersite.tsx:756
+#: src/views/Playersite.tsx:757
 msgid "Custom code injection"
 msgstr "코드 직접 삽입"
 
-#: src/components/coders/Encoders/audio/opus.tsx:65
+#: src/components/coders/Encoders/audio/opus.tsx:66
 msgid "Custom delay"
 msgstr "딜레이 직접 입력"
 
@@ -632,35 +634,35 @@ msgstr "딜레이 직접 입력"
 msgid "Custom device"
 msgstr "장치 직접 입력"
 
-#: src/components/coders/settings/Video.tsx:286
-#: src/components/coders/settings/Video.tsx:324
+#: src/components/coders/settings/Video.tsx:287
+#: src/components/coders/settings/Video.tsx:325
 msgid "Custom format"
 msgstr "양식 직접 입력"
 
-#: src/components/coders/settings/Video.tsx:99
-#: src/components/filters/video/Framerate.tsx:36
+#: src/components/coders/settings/Video.tsx:100
+#: src/components/filters/video/Framerate.tsx:37
 msgid "Custom framerate"
 msgstr "프레임률 직접 입력"
 
-#: src/views/Settings.tsx:1579
+#: src/views/Settings.tsx:1580
 msgid "Custom JSON config for datarhei Core."
 msgstr "datarhei Core의 JSON Config를 직접 설정합니다."
 
-#: src/components/coders/settings/Video.tsx:61
+#: src/components/coders/settings/Video.tsx:62
 msgid "Custom keyframe interval"
 msgstr "키프레임 간격 직접 입력"
 
-#: src/components/coders/settings/Audio.tsx:61
-#: src/components/filters/audio/Resample.tsx:53
+#: src/components/coders/settings/Audio.tsx:62
+#: src/components/filters/audio/Resample.tsx:54
 msgid "Custom layout"
 msgstr "레이아웃 직접 입력"
 
-#: src/components/coders/settings/Audio.tsx:147
-#: src/components/filters/audio/Resample.tsx:99
+#: src/components/coders/settings/Audio.tsx:148
+#: src/components/filters/audio/Resample.tsx:100
 msgid "Custom sampling (Hz)"
 msgstr "샘플률 직접 입력 (Hz)"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:188
+#: src/views/Edit/Sources/VirtualVideo.tsx:189
 msgid "Custom scale"
 msgstr "비율 직접 입력"
 
@@ -673,18 +675,18 @@ msgstr "비율 직접 입력"
 #: src/components/coders/Decoders/video/vc1_cuvid.tsx:81
 #: src/components/coders/Decoders/video/vp8_cuvid.tsx:81
 #: src/components/coders/Decoders/video/vp9_cuvid.tsx:81
-#: src/components/coders/settings/Video.tsx:155
-#: src/components/coders/settings/Video.tsx:203
-#: src/components/coders/settings/Video.tsx:244
+#: src/components/coders/settings/Video.tsx:156
+#: src/components/coders/settings/Video.tsx:204
+#: src/components/coders/settings/Video.tsx:245
 msgid "Custom size"
 msgstr "크기 직접 입력"
 
 #: src/views/Edit/Sources/V4L.tsx:128
-#: src/views/Edit/Sources/X11grab.tsx:180
+#: src/views/Edit/Sources/X11grab.tsx:181
 msgid "Custom video device"
 msgstr "영상 장치 직접 입력"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:137
+#: src/views/Edit/Sources/AVFoundation.tsx:138
 msgid "Custom video index"
 msgstr "영상 목록 직접 입력"
 
@@ -694,7 +696,7 @@ msgstr "영상 목록 직접 입력"
 msgid "Data copied to clipboard"
 msgstr "데이터를 클립보드로 복사함"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:224
+#: src/views/Edit/Sources/VirtualVideo.tsx:225
 msgid "Death color"
 msgstr "비활성화 색상"
 
@@ -702,26 +704,29 @@ msgstr "비활성화 색상"
 msgid "Decibels (dB)"
 msgstr "데시벨(dB)"
 
-#: src/components/EncodingSelect.tsx:262
+#: src/components/EncodingSelect.tsx:263
 #: src/views/Edit/Wizard/VideoProfile.tsx:81
 msgid "Decoder"
 msgstr "디코더"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:125
-#: src/views/Edit/Sources/AVFoundation.tsx:161
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:91
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:126
-#: src/views/Playersite.tsx:501
-#: src/views/Playersite.tsx:590
-#: src/views/Playersite.tsx:634
+#: src/views/Edit/Sources/AVFoundation.tsx:126
+#: src/views/Edit/Sources/AVFoundation.tsx:162
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:92
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:127
+#: src/views/Playersite.tsx:502
+#: src/views/Playersite.tsx:591
+#: src/views/Playersite.tsx:635
 msgid "Default"
 msgstr "기본"
 
-#: src/views/Edit/Sources/Network.tsx:800
+#. placeholder {0}: 2500
+#: src/views/Edit/Sources/Network.tsx:801
 msgid "Default {0}"
 msgstr "기본 {0}"
 
-#: src/views/Edit/Sources/Network.tsx:840
+#. placeholder {0}: 5000000
+#. placeholder {1}: 5
+#: src/views/Edit/Sources/Network.tsx:841
 msgid "Default {0} ({1} seconds)"
 msgstr "기본 {0}({1}초)"
 
@@ -741,28 +746,28 @@ msgstr "디인터레이스 모드"
 msgid "Deinterlace parity"
 msgstr "디인터레이스 기준(parity)"
 
-#: src/components/coders/Encoders/audio/opus.tsx:64
+#: src/components/coders/Encoders/audio/opus.tsx:65
 msgid "Delay"
 msgstr "딜레이"
 
-#: src/views/Edit/Sources/ALSA.tsx:165
+#: src/views/Edit/Sources/ALSA.tsx:166
 msgid "Delay (ms)"
 msgstr "딜레이 (ms)"
 
-#: src/views/Edit/index.tsx:774
-#: src/views/Edit/index.tsx:829
-#: src/views/Playersite.tsx:525
-#: src/views/Publication/Edit.tsx:731
-#: src/views/Publication/Edit.tsx:771
+#: src/views/Edit/index.tsx:775
+#: src/views/Edit/index.tsx:830
+#: src/views/Playersite.tsx:526
+#: src/views/Publication/Edit.tsx:732
+#: src/views/Publication/Edit.tsx:772
 msgid "Delete"
 msgstr "삭제"
 
-#: src/views/Publication/Edit.tsx:776
+#: src/views/Publication/Edit.tsx:777
 msgid "Deleting a publication service cannot be reversed. The publication stops immediately."
 msgstr "송출 서비스의 삭제는 되돌릴 수 없습니다. 해당 송출은 즉시 멈춥니다."
 
-#: src/views/Publication/Services/Twitter.tsx:168
-#: src/views/Publication/Services/Youtube.tsx:211
+#: src/views/Publication/Services/Twitter.tsx:161
+#: src/views/Publication/Services/Youtube.tsx:208
 msgid "Delivering mode"
 msgstr "전송 방식"
 
@@ -771,14 +776,14 @@ msgstr "전송 방식"
 msgid "Description"
 msgstr "설명"
 
-#: src/views/Playersite.tsx:321
-#: src/views/Playersite.tsx:571
+#: src/views/Playersite.tsx:322
+#: src/views/Playersite.tsx:572
 msgid "Design"
 msgstr "디자인"
 
 #: src/views/Edit/Sources/Framebuffer.tsx:100
-#: src/views/Edit/Wizard/Audio.tsx:124
-#: src/views/Publication/Services/Framebuffer.tsx:108
+#: src/views/Edit/Wizard/Audio.tsx:125
+#: src/views/Publication/Services/Framebuffer.tsx:101
 msgid "Device"
 msgstr "장치"
 
@@ -788,7 +793,7 @@ msgstr "장치"
 msgid "Disconnect"
 msgstr "연결 해제"
 
-#: src/views/Edit/index.tsx:799
+#: src/views/Edit/index.tsx:800
 msgid "Disconnect & Continue"
 msgstr "연결 끊고 계속"
 
@@ -798,54 +803,56 @@ msgid "Disconnecting ..."
 msgstr "연결 끊는 중..."
 
 #: src/components/controls/HLS.tsx:76
-#: src/views/Settings.tsx:2078
+#: src/views/Settings.tsx:2079
 msgid "Disk"
 msgstr "디스크"
 
-#: src/views/Settings.tsx:2121
-#: src/views/Settings.tsx:2129
+#: src/views/Settings.tsx:2122
+#: src/views/Settings.tsx:2130
 msgid "Disk cache"
 msgstr "저장소 캐시"
 
-#: src/Footer.tsx:352
-#: src/Footer.tsx:366
+#: src/components/Footer.tsx:352
+#: src/components/Footer.tsx:366
 msgid "Disk storage"
 msgstr "저장소 사용량"
 
-#: src/views/Settings.tsx:2774
+#: src/views/Settings.tsx:2775
 msgid "Do you really want to restart the application now?"
 msgstr "바로 애플리케이션을 다시 시작할까요?"
 
-#: src/views/Edit/index.tsx:813
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx:814
 msgid "Do you want to delete \"{0}\"?"
 msgstr "\"{0}\"을(를) 삭제하시겠습니까?"
 
-#: src/views/Publication/Edit.tsx:755
+#: src/views/Publication/Edit.tsx:756
 msgid "Do you want to delete {title}?"
 msgstr "{title}을(를) 삭제할까요?"
 
-#: src/views/Edit/index.tsx:783
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx:784
 msgid "Do you want to disconnect \"{0}\"?"
 msgstr "\"{0}\"의 연결을 끊겠습니까?"
 
-#: src/Header.tsx:342
-#: src/Header.tsx:396
+#: src/components/Header.tsx:342
+#: src/components/Header.tsx:396
 msgid "Docs"
 msgstr "문서"
 
-#: src/views/Publication/Services/DASH.tsx:597
-#: src/views/Publication/Services/HLS.tsx:576
+#: src/views/Publication/Services/DASH.tsx:590
+#: src/views/Publication/Services/HLS.tsx:573
 #: src/views/Publication/Services/Icecast.tsx:279
-#: src/views/Publication/Services/Image2.tsx:219
-#: src/views/Publication/Services/MPEGTS.tsx:430
-#: src/views/Publication/Services/RTMP.tsx:318
-#: src/views/Publication/Services/RTSP.tsx:288
-#: src/views/Publication/Services/SRT.tsx:490
-#: src/views/Publication/Services/UDP.tsx:282
+#: src/views/Publication/Services/Image2.tsx:216
+#: src/views/Publication/Services/MPEGTS.tsx:427
+#: src/views/Publication/Services/RTMP.tsx:315
+#: src/views/Publication/Services/RTSP.tsx:285
+#: src/views/Publication/Services/SRT.tsx:487
+#: src/views/Publication/Services/UDP.tsx:279
 msgid "Documentation"
 msgstr "문서"
 
-#: src/views/Edit/Sources/X11grab.tsx:260
+#: src/views/Edit/Sources/X11grab.tsx:261
 msgid "Draw mouse"
 msgstr ""
 
@@ -861,31 +868,31 @@ msgstr "각 필드"
 msgid "Each frames"
 msgstr "각 프레임"
 
-#: src/views/Edit/index.tsx:471
+#: src/views/Edit/index.tsx:472
 msgid "Edit"
 msgstr "수정"
 
-#: src/views/Edit/index.tsx:518
+#: src/views/Edit/index.tsx:519
 msgid "Edit the audio and video sources for the live stream. Add a description, and set your desired content license."
 msgstr "실시간 송출을 위한 영상과 소리 원본을 설정하세요. 설명을 더하고, 원하는 저작권 정책을 책정할 수 있습니다."
 
-#: src/views/Publication/Edit.tsx:487
+#: src/views/Publication/Edit.tsx:488
 msgid "Edit: {title}"
 msgstr "수정: {title}"
 
-#: src/views/Publication/Player.tsx:365
+#: src/views/Publication/Player.tsx:366
 msgid "EDIT: Player"
 msgstr "편집: 재생기"
 
-#: src/views/Playersite.tsx:295
+#: src/views/Playersite.tsx:296
 msgid "EDIT: Publication Website"
 msgstr "편집: 송출 웹사이트"
 
-#: src/views/Settings.tsx:1679
+#: src/views/Settings.tsx:1680
 msgid "Email"
 msgstr "이메일"
 
-#: src/views/Publication/Player.tsx:413
+#: src/views/Publication/Player.tsx:414
 msgid "Embed"
 msgstr "포함"
 
@@ -894,12 +901,12 @@ msgstr "포함"
 msgid "Enable"
 msgstr "활성화"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:195
+#: src/views/Edit/Sources/VirtualAudio.tsx:196
 msgid "Enable a periodic beep every second with this value times the carrier frequency"
 msgstr "이 값에 반송 주파수를 곱한 값으로 매초 삐 소리 활성화"
 
 #: src/views/Publication/Services/Dummy.tsx:313
-#: src/views/Publication/Services/Facebook.tsx:160
+#: src/views/Publication/Services/Facebook.tsx:153
 msgid "Enable backup stream"
 msgstr "백업 스트림 활성화"
 
@@ -907,7 +914,7 @@ msgstr "백업 스트림 활성화"
 msgid "Enable browser-compatible H.264 stream"
 msgstr ""
 
-#: src/views/Publication/Player.tsx:564
+#: src/views/Publication/Player.tsx:565
 msgid "Enable nerd statistics"
 msgstr "무지 상세한 통계 활성화"
 
@@ -917,12 +924,12 @@ msgid "Enable now"
 msgstr "바로 활성화"
 
 #: src/views/Publication/Services/Dummy.tsx:308
-#: src/views/Publication/Services/Facebook.tsx:155
+#: src/views/Publication/Services/Facebook.tsx:148
 msgid "Enable primary stream"
 msgstr "기본 스트림 활성화"
 
-#: src/views/Edit/Sources/Network.tsx:1228
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:91
+#: src/views/Edit/Sources/Network.tsx:1229
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:92
 msgid "Enable RTMP server ..."
 msgstr "RTMP 서버 활성화..."
 
@@ -934,16 +941,16 @@ msgstr "RTMPS 전송 활성화"
 msgid "Enable snapshots"
 msgstr "스냅샷 활성화"
 
-#: src/views/Edit/Sources/Network.tsx:1355
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:91
+#: src/views/Edit/Sources/Network.tsx:1356
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:92
 msgid "Enable SRT server ..."
 msgstr "SRT 서버 활성화..."
 
-#: src/views/Settings.tsx:1778
+#: src/views/Settings.tsx:1779
 msgid "Enabling authorization is strongly advised. Otherwise, anybody can access this instance."
 msgstr "사용자 인증을 사용할 것을 강력히 권장합니다. 그러지 않으면 누구나 접속이 가능해집니다."
 
-#: src/views/Settings.tsx:1989
+#: src/views/Settings.tsx:1990
 msgid "Enabling basic auth is strongly advised. Otherwise, anybody could write data to /memfs."
 msgstr "기본 보안을 활성화할 것을 강력히 권장합니다. 그러지 않으면 누구나 /memfs 에 데이터를 쓸 수 있게 됩니다."
 
@@ -951,15 +958,15 @@ msgstr "기본 보안을 활성화할 것을 강력히 권장합니다. 그러�
 msgid "Encoder"
 msgstr "인코더"
 
-#: src/views/Edit/Summary.tsx:94
-#: src/views/Publication/Add.tsx:566
-#: src/views/Publication/Edit.tsx:644
+#: src/views/Edit/Summary.tsx:95
+#: src/views/Publication/Add.tsx:567
+#: src/views/Publication/Edit.tsx:645
 msgid "Encoding"
 msgstr "인코딩"
 
-#: src/views/Publication/Services/HLS.tsx:521
-#: src/views/Publication/Services/RTMP.tsx:290
-#: src/views/Publication/Services/SRT.tsx:430
+#: src/views/Publication/Services/HLS.tsx:518
+#: src/views/Publication/Services/RTMP.tsx:287
+#: src/views/Publication/Services/SRT.tsx:427
 msgid "Encryption"
 msgstr "암호화"
 
@@ -971,7 +978,7 @@ msgstr "새로운 채널의 이름을 입력하세요."
 msgid "Enter password"
 msgstr "비밀번호 입력"
 
-#: src/views/Edit/Sources/Network.tsx:968
+#: src/views/Edit/Sources/Network.tsx:969
 #: src/views/Edit/Wizard/Sources/Network.tsx:70
 msgid "Enter the address of your network source:"
 msgstr "네트워크상에 있는 원본의 주소를 입력하세요:"
@@ -988,7 +995,7 @@ msgstr "엔트로피 부호화"
 #: src/views/Incompatible.tsx:29
 #: src/views/Invalid.tsx:31
 #: src/views/Publication/Process.tsx:64
-#: src/views/Settings.tsx:1278
+#: src/views/Settings.tsx:1279
 msgid "Error"
 msgstr "오류"
 
@@ -998,20 +1005,22 @@ msgstr "오류"
 msgid "Error while copying data to clipboard"
 msgstr "데이터를 클립보드로 복사하는 중 오류 발생"
 
+#. placeholder {0}: anonymize($state.progress.error) || 'unknown'
+#. placeholder {0}: progress.error
 #: src/views/Main/index.tsx:403
 #: src/views/Publication/Process.tsx:65
 msgid "Error: {0}"
 msgstr "오류: {0}"
 
-#: src/views/Playersite.tsx:804
+#: src/views/Playersite.tsx:805
 msgid "Expands the area above the channel list (live chat)."
 msgstr "채널 목록 윗 공간을 넓힙니다(실시간 채팅)."
 
-#: src/views/Playersite.tsx:826
+#: src/views/Playersite.tsx:827
 msgid "Expands the area under the channel description (comment boxes)."
 msgstr "채널 설명 아랫 공간을 넓힙니다(댓글상자)."
 
-#: src/views/Settings.tsx:1459
+#: src/views/Settings.tsx:1460
 msgid "Expert mode"
 msgstr "전문가 모드"
 
@@ -1019,31 +1028,32 @@ msgstr "전문가 모드"
 msgid "EXT-X-VERSION"
 msgstr "EXT-X-VERSION"
 
-#: src/views/Playersite.tsx:789
+#: src/views/Playersite.tsx:790
 msgid "Extend channel list"
 msgstr "채널 목록 확장"
 
-#: src/views/Playersite.tsx:811
+#: src/views/Playersite.tsx:812
 msgid "Extend content"
 msgstr "내용 확장"
 
-#: src/views/Playersite.tsx:834
+#: src/views/Playersite.tsx:835
 msgid "Extend footer"
 msgstr "하단 확장"
 
-#: src/views/Playersite.tsx:769
+#: src/views/Playersite.tsx:770
 msgid "Extend header"
 msgstr "헤더 확장"
 
-#: src/views/Edit/Sources/Network.tsx:912
+#: src/views/Edit/Sources/Network.tsx:913
 msgid "Extention settings"
 msgstr ""
 
-#: src/views/Publication/Add.tsx:270
+#. placeholder {0}: err.message
+#: src/views/Publication/Add.tsx:271
 msgid "Failed to create publication service ({0})"
 msgstr "송출 서비스 생성 실패 ({0})"
 
-#: src/views/Playersite.tsx:247
+#: src/views/Playersite.tsx:248
 msgid "Failed to create publication website files."
 msgstr "송출 웹사이트 파일을 만드는데 실패했습니다."
 
@@ -1052,52 +1062,57 @@ msgstr "송출 웹사이트 파일을 만드는데 실패했습니다."
 msgid "Failed to probe the source. Please check the <0>probe details</0>."
 msgstr "원본을 확인하지 못했습니다. <0>확인 결과</0>를 검토해주세요."
 
+#. placeholder {0}: err.message
 #: src/utils/restreamer.ts:517
 msgid "Failed to refresh token: {0}"
 msgstr "토큰 갱신 실패: {0}"
 
-#: src/views/Edit/index.tsx:343
+#: src/views/Edit/index.tsx:344
 msgid "Failed to save ingest metadata"
 msgstr "삽입 메타데이터 저장 실패"
 
-#: src/views/Edit/index.tsx:188
+#: src/views/Edit/index.tsx:189
 msgid "Failed to stop process"
 msgstr "프로세스 중지 실패"
 
-#: src/views/Playersite.tsx:236
+#: src/views/Playersite.tsx:237
 msgid "Failed to store player size setting."
 msgstr "재생기 크기 설정을 저장하는데 실패했습니다."
 
-#: src/views/Publication/Edit.tsx:324
+#. placeholder {0}: err.message
+#: src/views/Publication/Edit.tsx:325
 msgid "Failed to store publication service ({0})"
 msgstr "송출 서비스 저장 실패 ({0})"
 
-#: src/views/Edit/index.tsx:363
+#. placeholder {0}: err.message
+#: src/views/Edit/index.tsx:364
 msgid "Failed to update ingest preview process ({0})"
 msgstr ""
 
-#: src/views/Edit/index.tsx:332
+#. placeholder {0}: err.message
+#: src/views/Edit/index.tsx:333
 msgid "Failed to update ingest process ({0})"
 msgstr "삽입 프로세스 갱신 실패 ({0})"
 
-#: src/views/Edit/index.tsx:353
+#. placeholder {0}: err.message
+#: src/views/Edit/index.tsx:354
 msgid "Failed to update ingest snapshot process ({0})"
 msgstr "삽입 스냅샷 프로세스 갱신 실패 ({0})"
 
-#: src/views/Edit/index.tsx:373
+#: src/views/Edit/index.tsx:374
 msgid "Failed to update the player"
 msgstr "재생기 갱신 실패"
 
-#: src/views/Edit/index.tsx:383
+#: src/views/Edit/index.tsx:384
 msgid "Failed to update the playersite"
 msgstr "재생 사이트 갱신 실패"
 
-#: src/views/Edit/Wizard/Audio.tsx:53
+#: src/views/Edit/Wizard/Audio.tsx:54
 #: src/views/Edit/Wizard/Video.tsx:49
 msgid "Failed to verify the source. Please check the address."
 msgstr "원본 검증에 실패했습니다. 주소를 확인해주세요."
 
-#: src/views/Settings.tsx:2614
+#: src/views/Settings.tsx:2615
 msgid "FFmpeg"
 msgstr "FFmpeg"
 
@@ -1107,7 +1122,7 @@ msgstr "FFmpeg"
 msgid "File path"
 msgstr "파일 경로"
 
-#: src/views/Edit/Summary.tsx:100
+#: src/views/Edit/Summary.tsx:101
 msgid "Filter"
 msgstr "필터"
 
@@ -1119,24 +1134,24 @@ msgstr "완료"
 msgid "Fix size"
 msgstr "크기 고정"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:242
+#: src/views/Edit/Sources/VirtualVideo.tsx:243
 msgid "Flags"
 msgstr "플래그"
 
-#: src/views/Edit/Sources/X11grab.tsx:87
 #: src/views/Edit/Sources/X11grab.tsx:88
+#: src/views/Edit/Sources/X11grab.tsx:89
 msgid "Follow mouse"
 msgstr ""
 
-#: src/views/Playersite.tsx:849
+#: src/views/Playersite.tsx:850
 msgid "For Javascripts."
 msgstr "자바스크립트를 입력합니다."
 
-#: src/views/Playersite.tsx:784
+#: src/views/Playersite.tsx:785
 msgid "For Stylesheets."
 msgstr "스타일시트를 입력합니다."
 
-#: src/views/Edit/Sources/Network.tsx:690
+#: src/views/Edit/Sources/Network.tsx:691
 msgid "Force input framerate"
 msgstr "입력 프레임률 고정"
 
@@ -1144,7 +1159,7 @@ msgstr "입력 프레임률 고정"
 msgid "Force key frames"
 msgstr "키 프레임 강제"
 
-#: src/components/coders/settings/Video.tsx:285
+#: src/components/coders/settings/Video.tsx:286
 msgid "Format"
 msgstr "형식"
 
@@ -1157,80 +1172,80 @@ msgstr "FPS"
 msgid "Frame drops"
 msgstr "프레임 드롭"
 
-#: src/components/coders/settings/Video.tsx:362
+#: src/components/coders/settings/Video.tsx:363
 msgid "Frame is passed through (Passthrough)"
 msgstr "프레임을 그대로 사용합니다 (Passthrogh)"
 
-#: src/views/Edit/Sources/Framebuffer.tsx:146
+#: src/views/Edit/Sources/Framebuffer.tsx:144
 msgid "Framebuffer"
 msgstr "프레임버퍼"
 
-#: src/components/coders/settings/Video.tsx:98
-#: src/components/filters/video/Framerate.tsx:35
-#: src/views/Edit/Sources/Network.tsx:703
+#: src/components/coders/settings/Video.tsx:99
+#: src/components/filters/video/Framerate.tsx:36
+#: src/views/Edit/Sources/Network.tsx:704
 msgid "Framerate"
 msgstr "프레임률"
 
-#: src/components/filters/video/Framerate.tsx:108
+#: src/components/filters/video/Framerate.tsx:109
 msgid "Framerate conversion (frame interpolation)"
 msgstr "프레임 속도 변환(프레임 보간)"
 
-#: src/components/coders/settings/Video.tsx:357
+#: src/components/coders/settings/Video.tsx:358
 msgid "Framerate mode"
 msgstr "프레임율 방식"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:178
+#: src/views/Edit/Sources/VirtualAudio.tsx:179
 msgid "Frequency (Hz)"
 msgstr "주파수 (Hz)"
 
-#: src/views/Edit/index.tsx:487
-#: src/views/Edit/index.tsx:513
-#: src/views/Edit/Sources/Network.tsx:756
-#: src/views/Playersite.tsx:310
-#: src/views/Playersite.tsx:348
-#: src/views/Publication/Add.tsx:470
-#: src/views/Publication/Edit.tsx:504
-#: src/views/Publication/Services/DASH.tsx:258
-#: src/views/Publication/Services/HLS.tsx:249
+#: src/views/Edit/index.tsx:488
+#: src/views/Edit/index.tsx:514
+#: src/views/Edit/Sources/Network.tsx:757
+#: src/views/Playersite.tsx:311
+#: src/views/Playersite.tsx:349
+#: src/views/Publication/Add.tsx:471
+#: src/views/Publication/Edit.tsx:505
+#: src/views/Publication/Services/DASH.tsx:251
+#: src/views/Publication/Services/HLS.tsx:246
 #: src/views/Publication/Services/Icecast.tsx:218
-#: src/views/Publication/Services/Image2.tsx:170
-#: src/views/Publication/Services/RTMP.tsx:213
-#: src/views/Publication/Services/RTSP.tsx:207
-#: src/views/Publication/Services/SRT.tsx:215
-#: src/views/Settings.tsx:1322
-#: src/views/Settings.tsx:1396
+#: src/views/Publication/Services/Image2.tsx:167
+#: src/views/Publication/Services/RTMP.tsx:210
+#: src/views/Publication/Services/RTSP.tsx:204
+#: src/views/Publication/Services/SRT.tsx:212
+#: src/views/Settings.tsx:1323
+#: src/views/Settings.tsx:1397
 msgid "General"
 msgstr "일반"
 
 #: src/views/Publication/Services/DLive.tsx:89
 #: src/views/Publication/Services/EarthCam.tsx:108
-#: src/views/Publication/Services/Facebook.tsx:131
-#: src/views/Publication/Services/Facebook.tsx:149
-#: src/views/Publication/Services/Instagram.tsx:102
+#: src/views/Publication/Services/Facebook.tsx:124
+#: src/views/Publication/Services/Facebook.tsx:142
+#: src/views/Publication/Services/Instagram.tsx:95
 #: src/views/Publication/Services/Kick.tsx:124
 #: src/views/Publication/Services/MediaNetwork.tsx:91
 #: src/views/Publication/Services/NimoTv.tsx:123
 #: src/views/Publication/Services/PeerTube.tsx:113
 #: src/views/Publication/Services/Restream.tsx:147
 #: src/views/Publication/Services/Rumble.tsx:124
-#: src/views/Publication/Services/TikTok.tsx:127
+#: src/views/Publication/Services/TikTok.tsx:124
 #: src/views/Publication/Services/Trovo.tsx:89
-#: src/views/Publication/Services/Twitch.tsx:230
-#: src/views/Publication/Services/Twitter.tsx:223
+#: src/views/Publication/Services/Twitch.tsx:227
+#: src/views/Publication/Services/Twitter.tsx:216
 #: src/views/Publication/Services/Wettercom.tsx:129
-#: src/views/Publication/Services/Youtube.tsx:230
+#: src/views/Publication/Services/Youtube.tsx:227
 msgid "GET"
 msgstr "얻기"
 
-#: src/views/Publication/Player.tsx:547
+#: src/views/Publication/Player.tsx:548
 msgid "Google Analytics ID"
 msgstr "Google 애널리틱스 ID"
 
-#: src/views/Publication/Player.tsx:557
+#: src/views/Publication/Player.tsx:558
 msgid "Google Analytics Tracker Name"
 msgstr "Google 애널리틱스 추적 도구 이름"
 
-#: src/components/coders/settings/Video.tsx:380
+#: src/components/coders/settings/Video.tsx:381
 msgid "GPU"
 msgstr ""
 
@@ -1239,15 +1254,15 @@ msgstr ""
 msgid "Hardware device"
 msgstr "하드웨어 장치"
 
-#: src/views/Playersite.tsx:643
+#: src/views/Playersite.tsx:644
 msgid "Header"
 msgstr "헤더"
 
-#: src/views/Playersite.tsx:599
+#: src/views/Playersite.tsx:600
 msgid "Headline"
 msgstr "헤드라인"
 
-#: src/components/coders/settings/Video.tsx:202
+#: src/components/coders/settings/Video.tsx:203
 msgid "Height"
 msgstr "높이"
 
@@ -1259,7 +1274,7 @@ msgstr "HLS"
 msgid "HLS @ H.264"
 msgstr ""
 
-#: src/views/Edit/index.tsx:577
+#: src/views/Edit/index.tsx:578
 msgid "HLS output"
 msgstr "HLS 출력"
 
@@ -1267,7 +1282,7 @@ msgstr "HLS 출력"
 msgid "HLS server"
 msgstr "HLS 서버"
 
-#: src/views/Settings.tsx:1877
+#: src/views/Settings.tsx:1878
 msgid "HLS statistic for the In-memory storage"
 msgstr "HLS 통계를 메모리에 저장"
 
@@ -1279,52 +1294,52 @@ msgstr "좌/우 뒤집기"
 msgid "Hosted Restreamer interface"
 msgstr "Restreamer 인터페이스 제공"
 
-#: src/views/Edit/Sources/Network.tsx:680
+#: src/views/Edit/Sources/Network.tsx:681
 msgid "HTTP and HTTPS"
 msgstr "HTTP와 HTTPS"
 
-#: src/views/Settings.tsx:1619
+#: src/views/Settings.tsx:1620
 msgid "HTTP port"
 msgstr "HTTP 포트"
 
-#: src/views/Settings.tsx:1655
+#: src/views/Settings.tsx:1656
 msgid "HTTPS (SSL/TLS)"
 msgstr "HTTPS (SSL/TLS)"
 
-#: src/views/Settings.tsx:1636
+#: src/views/Settings.tsx:1637
 msgid "HTTPS port"
 msgstr "HTTPS 포트"
 
-#: src/views/Settings.tsx:1544
+#: src/views/Settings.tsx:1545
 msgid "Human readable name on the service."
 msgstr "사용자에게 표시할 서비스 이름을 입력해주세요."
 
-#: src/views/Settings.tsx:2704
+#: src/views/Settings.tsx:2705
 msgid "If you changed the ports, it might be that Restreamer Core restarted already, but it is now available on a different port."
 msgstr "포트를 변경한 경우, 이미 Restreamer 코어를 재시작 하였더라도, 다른 포트에서 사용할 수 있습니다."
 
-#: src/views/Settings.tsx:2696
+#: src/views/Settings.tsx:2697
 msgid "If you enabled Let's Encrypt TLS it might take some time to acquire the certificates. Make sure that Restreamer Core is reachable via port 80 from the internet. Please check the console log of Restreamer Core."
 msgstr "Let's Encrypt의 TLS 접속을 활성하려면 인증을 진행하기까지 시간이 소요됩니다. 네트워크의 80포트로 Restreamer Core에 접근할 수 있게 하세요. Restreamer Core의 콘솔 기록을 검토해주세요."
 
-#: src/views/Publication/Player.tsx:436
+#: src/views/Publication/Player.tsx:437
 msgid "iframe code"
 msgstr "아이프레임 코드"
 
-#: src/views/Settings.tsx:1898
+#: src/views/Settings.tsx:1899
 msgid "Ignore IP ranges"
 msgstr "기록하지 않을 IP 범위"
 
-#: src/views/Playersite.tsx:688
-#: src/views/Publication/Player.tsx:473
+#: src/views/Playersite.tsx:689
+#: src/views/Publication/Player.tsx:474
 msgid "Image URL"
 msgstr "이미지 URL"
 
-#: src/views/Playersite.tsx:718
+#: src/views/Playersite.tsx:719
 msgid "Imprint"
 msgstr "각인"
 
-#: src/views/Playersite.tsx:353
+#: src/views/Playersite.tsx:354
 msgid "In addition to the player, the Restreamer offers a complete landingpage, which you can use to present your live stream easily and quickly."
 msgstr "재생기에 더하여, Restreamer는 현재 라이브 스트림을 쉽고 빠르게 확인할 수 있는 페이지를 제공합니다."
 
@@ -1334,48 +1349,48 @@ msgid "In order to proceed anyways, you can provide <0>hints</0> about the avail
 msgstr ""
 
 #: src/components/controls/HLS.tsx:73
-#: src/views/Settings.tsx:1970
+#: src/views/Settings.tsx:1971
 msgid "In-memory"
 msgstr "메모리"
 
-#: src/Footer.tsx:321
-#: src/Footer.tsx:335
+#: src/components/Footer.tsx:321
+#: src/components/Footer.tsx:335
 msgid "In-memory storage"
 msgstr "메모리 저장소"
 
-#: src/views/Publication/Add.tsx:357
+#: src/views/Publication/Add.tsx:358
 msgid "Incompatible"
 msgstr "호환되지 않음"
 
-#: src/components/coders/settings/Audio.tsx:115
-#: src/components/coders/settings/Audio.tsx:165
+#: src/components/coders/settings/Audio.tsx:116
+#: src/components/coders/settings/Audio.tsx:166
 #: src/components/filters/audio/Pan.tsx:46
-#: src/components/filters/audio/Resample.tsx:67
-#: src/components/filters/audio/Resample.tsx:117
+#: src/components/filters/audio/Resample.tsx:68
+#: src/components/filters/audio/Resample.tsx:118
 #: src/components/filters/audio/Volume.tsx:45
 msgid "Inherit"
 msgstr "상속"
 
-#: src/views/Playersite.tsx:779
+#: src/views/Playersite.tsx:780
 msgid "Inject 1"
 msgstr "삽입 1"
 
-#: src/views/Playersite.tsx:799
+#: src/views/Playersite.tsx:800
 msgid "Inject 2"
 msgstr "삽입 2"
 
-#: src/views/Playersite.tsx:821
+#: src/views/Playersite.tsx:822
 msgid "Inject 3"
 msgstr "삽입 3"
 
-#: src/views/Playersite.tsx:844
+#: src/views/Playersite.tsx:845
 msgid "Inject 4"
 msgstr "삽입 4"
 
-#: src/views/Edit/Sources/Network.tsx:1269
-#: src/views/Edit/Sources/Network.tsx:1396
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:127
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:127
+#: src/views/Edit/Sources/Network.tsx:1270
+#: src/views/Edit/Sources/Network.tsx:1397
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:128
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:128
 msgid "Input stream"
 msgstr "입력 스트림"
 
@@ -1383,7 +1398,7 @@ msgstr "입력 스트림"
 msgid "Instance domain"
 msgstr "인스턴스 도메인"
 
-#: src/views/Edit/Sources/Network.tsx:671
+#: src/views/Edit/Sources/Network.tsx:672
 msgid "Internal SRT latency in milliseconds."
 msgstr ""
 
@@ -1391,8 +1406,8 @@ msgstr ""
 msgid "Interval (seconds)"
 msgstr "간격 (초)"
 
-#: src/Header.tsx:352
-#: src/Header.tsx:406
+#: src/components/Header.tsx:352
+#: src/components/Header.tsx:406
 msgid "Issue alert"
 msgstr "문제 알리기"
 
@@ -1402,24 +1417,24 @@ msgstr "문제 알리기"
 msgid "kbit/s"
 msgstr "kbit/s"
 
-#: src/components/coders/settings/Video.tsx:60
+#: src/components/coders/settings/Video.tsx:61
 msgid "Keyframe interval (seconds)"
 msgstr "키프레임 간격 (초)"
 
-#: src/views/Edit/Sources/Network.tsx:666
+#: src/views/Edit/Sources/Network.tsx:667
 msgid "Latency (milliseconds)"
 msgstr ""
 
-#: src/components/coders/settings/Audio.tsx:60
-#: src/components/filters/audio/Resample.tsx:52
+#: src/components/coders/settings/Audio.tsx:61
+#: src/components/filters/audio/Resample.tsx:53
 msgid "Layout"
 msgstr "레이아웃"
 
-#: src/views/Settings.tsx:1660
+#: src/views/Settings.tsx:1661
 msgid "Let's Encrypt certification"
 msgstr "Let's Encrypt 인증"
 
-#: src/views/Settings.tsx:1671
+#: src/views/Settings.tsx:1672
 msgid "Let's Encrypt requires one or more public domain names and an accessible port 80/TCP."
 msgstr "Let's Encrypt로 인증하려면 하나 이상의 공공 도메인 이름과 80포트의 TCP 접속이 가능해야 합니다."
 
@@ -1429,27 +1444,27 @@ msgstr "Let's Encrypt로 인증하려면 하나 이상의 공공 도메인 이�
 msgid "Level"
 msgstr "레벨"
 
-#: src/views/Settings.tsx:2592
+#: src/views/Settings.tsx:2593
 msgid "Level of system protocol."
 msgstr "시스템 프로토콜의 레벨입니다."
 
-#: src/views/Edit/index.tsx:502
-#: src/views/Edit/index.tsx:724
+#: src/views/Edit/index.tsx:503
+#: src/views/Edit/index.tsx:725
 #: src/views/Edit/Wizard/License.tsx:25
 msgid "License"
 msgstr "라이선스"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:233
+#: src/views/Edit/Sources/VirtualVideo.tsx:234
 msgid "Life color"
 msgstr "활성화 색상"
 
-#: src/views/Edit/index.tsx:683
-#: src/views/Publication/Add.tsx:527
-#: src/views/Publication/Edit.tsx:561
+#: src/views/Edit/index.tsx:684
+#: src/views/Publication/Add.tsx:528
+#: src/views/Publication/Edit.tsx:562
 msgid "Limits"
 msgstr "제한"
 
-#: src/views/Playersite.tsx:670
+#: src/views/Playersite.tsx:671
 msgid "Linecolor"
 msgstr "행 색상"
 
@@ -1457,28 +1472,28 @@ msgstr "행 색상"
 msgid "Lines"
 msgstr "라인"
 
-#: src/views/Playersite.tsx:608
-#: src/views/Publication/Player.tsx:508
+#: src/views/Playersite.tsx:609
+#: src/views/Publication/Player.tsx:509
 msgid "Link"
 msgstr "링크"
 
-#: src/views/Playersite.tsx:617
+#: src/views/Playersite.tsx:618
 msgid "Link, mouseover"
 msgstr "링크에 마우스를 올릴 때"
 
-#: src/views/Edit/Sources/Network.tsx:737
+#: src/views/Edit/Sources/Network.tsx:738
 msgid "List of additional HTTP headers, one per line."
 msgstr ""
 
-#: src/views/Settings.tsx:2278
+#: src/views/Settings.tsx:2279
 msgid "List of file extensions not to cache (e.g. \".m3u8\"), one per line. Leave empty for none."
 msgstr "캐시하지 않을 파일 확장자(예: \".m3u8\")를 한 줄에 하나씩 입력하세요. 없으면 비워두세요."
 
-#: src/views/Settings.tsx:2254
+#: src/views/Settings.tsx:2255
 msgid "List of file extensions to cache (e.g. \".html\"), one per line. Leave empty to cache all file types."
 msgstr "캐시할 파일 확장자 목록(예: \".html\")은 한 줄에 하나씩 입력해주세요. 모든 파일 유형을 캐시하려면 비워두세요."
 
-#: src/views/Settings.tsx:1911
+#: src/views/Settings.tsx:1912
 msgid "List of IP ranges in CIDR notation, e.g., 127.0.0.1/32, that the statistics will not record—one IP range per line. Leave empty to record all sessions."
 msgstr "CIDR로 표기된, 통계를 기록하지 않을 IP 범위입니다(예: 127.0.0.1/32). 한 줄에 하나의 IP범위만 입력합니다. 모든 세션의 통계를 기록하려면 비워두세요."
 
@@ -1486,7 +1501,7 @@ msgstr "CIDR로 표기된, 통계를 기록하지 않을 IP 범위입니다(예:
 msgid "List size (segments)"
 msgstr "목록 크기 (세그먼트)"
 
-#: src/views/Edit/Sources/Network.tsx:920
+#: src/views/Edit/Sources/Network.tsx:921
 msgid "Live stabilization"
 msgstr ""
 
@@ -1494,11 +1509,11 @@ msgstr ""
 msgid "Live-Streaming to dlive Live RTMP Service."
 msgstr "dlive Live RTMP Service로 송출합니다."
 
-#: src/views/Publication/Services/Facebook.tsx:16
+#: src/views/Publication/Services/Facebook.tsx:15
 msgid "Live-Streaming to Facebook Live RTMP service"
 msgstr "Facebook Live RTMP 서비스로 송출"
 
-#: src/views/Publication/Services/Instagram.tsx:16
+#: src/views/Publication/Services/Instagram.tsx:15
 msgid "Live-Streaming to Instagram Live RTMP Service."
 msgstr ""
 
@@ -1514,11 +1529,11 @@ msgstr "PeerTube V3 RTMP/S Service로 송출합니다."
 msgid "Live-Streaming to Trovo Live RTMP Service."
 msgstr "Trovo Live RTMP Service로 송출합니다."
 
-#: src/views/Publication/Services/Twitch.tsx:16
+#: src/views/Publication/Services/Twitch.tsx:15
 msgid "Live-Streaming to Twitch Live RTMP Service."
 msgstr "Twitch 라이브 RTMP 서비스로 송출합니다."
 
-#: src/views/Publication/Services/Vimeo.tsx:11
+#: src/views/Publication/Services/Vimeo.tsx:10
 msgid "Live-Streaming to Vimeo Live RTMP Service"
 msgstr "Vimeo 라이브 RTMP 서비스로 송출합니다."
 
@@ -1526,13 +1541,13 @@ msgstr "Vimeo 라이브 RTMP 서비스로 송출합니다."
 msgid "Livesource ID"
 msgstr "Livesource ID"
 
-#: src/views/Settings.tsx:2541
+#: src/views/Settings.tsx:2542
 msgid "Log level"
 msgstr "기록 단계"
 
 #: src/components/modals/Process.tsx:173
-#: src/views/Settings.tsx:1377
-#: src/views/Settings.tsx:2512
+#: src/views/Settings.tsx:1378
+#: src/views/Settings.tsx:2513
 msgid "Logging"
 msgstr "기록"
 
@@ -1543,6 +1558,7 @@ msgstr "기록"
 msgid "Login"
 msgstr "접속"
 
+#. placeholder {0}: err.message
 #: src/utils/restreamer.ts:297
 #: src/utils/restreamer.ts:343
 msgid "Login failed: {0}"
@@ -1555,15 +1571,15 @@ msgstr "접속 실패: {0}"
 msgid "Login failed: Couldn't load API details"
 msgstr "접속 실패: API 세부사항을 불러올 수 없습니다"
 
-#: src/views/Settings.tsx:1765
+#: src/views/Settings.tsx:1766
 msgid "Login/JWT authorization"
 msgstr "로그인/JWT 인증"
 
-#: src/views/Publication/Player.tsx:414
+#: src/views/Publication/Player.tsx:415
 msgid "Logo"
 msgstr "로고"
 
-#: src/Header.tsx:364
+#: src/components/Header.tsx:364
 msgid "Logout"
 msgstr "로그아웃"
 
@@ -1581,11 +1597,11 @@ msgid "Low latency (Buffer)"
 msgstr "낮은 지연시간 (버퍼)"
 
 #: src/views/Main/index.tsx:316
-#: src/views/Playersite.tsx:379
+#: src/views/Playersite.tsx:380
 msgid "Main channel"
 msgstr "주 채널"
 
-#: src/views/Publication/Player.tsx:113
+#: src/views/Publication/Player.tsx:114
 msgid "Main channel not found"
 msgstr "기본 채널 없음"
 
@@ -1593,11 +1609,11 @@ msgstr "기본 채널 없음"
 msgid "Main channel saved"
 msgstr "기본 채널 저장됨"
 
-#: src/views/Playersite.tsx:402
+#: src/views/Playersite.tsx:403
 msgid "Main page channel (index.html)."
 msgstr "접속시 보여질 채널입니다(index.html)."
 
-#: src/views/Edit/index.tsx:460
+#: src/views/Edit/index.tsx:461
 msgid "Main Source"
 msgstr "기본 원본"
 
@@ -1621,62 +1637,62 @@ msgstr "표시된 프레임"
 msgid "Master playlist (increases browser/client compatibility)"
 msgstr "마스터 플레이리스트 (브라우저/클라이언트 호환성 증대)"
 
-#: src/views/Settings.tsx:2176
+#: src/views/Settings.tsx:2177
 msgid "Maximum allowed cache size, 0 for unlimited."
 msgstr "최대 캐시 크기를 입력해주세요. 0은 제한을 두지 않습니다."
 
-#: src/views/Settings.tsx:2047
+#: src/views/Settings.tsx:2048
 msgid "Maximum allowed megabytes of RAM for /memfs, 0 for unlimited."
 msgstr "/memfs에 할당된 RAM을 MB단위로 입력해주세요. 0은 제한을 두지 않습니다."
 
-#: src/views/Settings.tsx:2110
+#: src/views/Settings.tsx:2111
 msgid "Maximum allowed megabytes to consume from hard disk. 0 for unlimited."
 msgstr "디스크에 할당할 공간을 메가바이트 단위로 입력합니다. 0은 제한을 두지 않습니다."
 
-#: src/views/Settings.tsx:1729
+#: src/views/Settings.tsx:1730
 msgid "Maximum bandwidth Mbit/s"
 msgstr "최대 대역폭 (Mbits/s)"
 
-#: src/components/coders/Encoders/audio/opus.tsx:95
+#: src/components/coders/Encoders/audio/opus.tsx:96
 msgid "Maximum delay in milliseconds."
 msgstr "최대 딜레이를 밀리초로 입력합니다."
 
-#: src/views/Settings.tsx:2202
+#: src/views/Settings.tsx:2203
 msgid "Maximum file size (Megabytes)"
 msgstr "최대 파일 크기 (메가바이트)"
 
-#: src/views/Settings.tsx:2233
+#: src/views/Settings.tsx:2234
 msgid "Maximum file size to put in cache."
 msgstr "캐시에 저장할 최대 파일 크기입니다."
 
-#: src/views/Settings.tsx:2637
+#: src/views/Settings.tsx:2638
 msgid "Maximum log histroy"
 msgstr "최대 기록 역사"
 
-#: src/views/Settings.tsx:2598
-#: src/views/Settings.tsx:2620
+#: src/views/Settings.tsx:2599
+#: src/views/Settings.tsx:2621
 msgid "Maximum log lines"
 msgstr "최대 기록 줄"
 
-#: src/views/Settings.tsx:2036
-#: src/views/Settings.tsx:2099
-#: src/views/Settings.tsx:2143
+#: src/views/Settings.tsx:2037
+#: src/views/Settings.tsx:2100
+#: src/views/Settings.tsx:2144
 msgid "Maximum size (Megabytes)"
 msgstr "최대 크기 (메가바이트)"
 
-#: src/views/Settings.tsx:1921
+#: src/views/Settings.tsx:1922
 msgid "Maximum viewer idle time (Seconds)"
 msgstr "시청 기록이 없는 시간 (초)"
 
-#: src/views/Settings.tsx:1708
+#: src/views/Settings.tsx:1709
 msgid "Maximum viewers"
 msgstr "최대 시청자"
 
-#: src/Footer.tsx:241
+#: src/components/Footer.tsx:241
 msgid "MB"
 msgstr "MB"
 
-#: src/Footer.tsx:234
+#: src/components/Footer.tsx:234
 #: src/components/Progress.tsx:147
 msgid "Memory"
 msgstr "메모리"
@@ -1689,51 +1705,53 @@ msgstr "메모리 제한(메가바이트)"
 msgid "Memory usage limit in megabytes, 0 for unlimited."
 msgstr "메모리 사용량 제한은 메가바이트 단위로, 무제한은 0입니다."
 
-#: src/views/Edit/index.tsx:497
+#: src/views/Edit/index.tsx:498
 msgid "Meta information"
 msgstr "메타 정보"
 
-#: src/views/Edit/index.tsx:698
+#: src/views/Edit/index.tsx:699
 #: src/views/Edit/Wizard/Metadata.tsx:25
 msgid "Metadata"
 msgstr "메타데이터"
 
-#: src/views/Edit/Sources/Network.tsx:783
-#: src/views/Edit/Sources/X11grab.tsx:219
+#. placeholder {0}: 32
+#. placeholder {1}: 5000000
+#: src/views/Edit/Sources/Network.tsx:784
+#: src/views/Edit/Sources/X11grab.tsx:220
 msgid "Mininum {0}, default {1}"
 msgstr "최소 {0}, 기본 {1}"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:206
+#: src/views/Edit/Sources/VirtualVideo.tsx:207
 msgid "Mold"
 msgstr "몰드"
 
-#: src/views/Publication/Services/Facebook.tsx:17
-#: src/views/Publication/Services/Twitch.tsx:17
-#: src/views/Publication/Services/Vimeo.tsx:13
+#: src/views/Publication/Services/Facebook.tsx:16
+#: src/views/Publication/Services/Twitch.tsx:16
+#: src/views/Publication/Services/Vimeo.tsx:12
 msgid "More about licenses here"
 msgstr "저작권 안내 입력"
 
-#: src/views/Settings.tsx:1501
+#: src/views/Settings.tsx:1502
 msgid "More about the service"
 msgstr "서비스 세부사항"
 
-#: src/views/Publication/Services/Twitter.tsx:34
+#: src/views/Publication/Services/Twitter.tsx:33
 msgid "More about Twitter's copyright <0>here</0>."
 msgstr "Twitter의 저작권 정책은 <0>여기</0>에서 확인할 수 있습니다."
 
-#: src/views/Publication/Services/Youtube.tsx:35
+#: src/views/Publication/Services/Youtube.tsx:34
 msgid "More about YouTube's copyright <0>here</0>."
 msgstr "YouTube의 저작권 정책은 <0>여기</0>에서 확인할 수 있습니다."
 
-#: src/views/Settings.tsx:2163
+#: src/views/Settings.tsx:2164
 msgid "Must be larger than maximum file size in cache."
 msgstr "캐시의 최대 파일 크기보다 커야 합니다."
 
-#: src/views/Settings.tsx:2222
+#: src/views/Settings.tsx:2223
 msgid "Must be smaller than maximum cache size."
 msgstr "최대 캐시 크기보다 작아야 합니다."
 
-#: src/views/Publication/Player.tsx:580
+#: src/views/Publication/Player.tsx:581
 msgid "Mute"
 msgstr "음소거"
 
@@ -1752,26 +1770,26 @@ msgstr "오른쪽 음소거"
 #: src/components/ChannelList.tsx:544
 #: src/components/controls/Metadata.tsx:81
 #: src/components/controls/Metadata.tsx:106
-#: src/views/Playersite.tsx:540
-#: src/views/Settings.tsx:1533
+#: src/views/Playersite.tsx:541
+#: src/views/Settings.tsx:1534
 msgid "Name"
 msgstr "이름"
 
-#: src/views/Playersite.tsx:545
+#: src/views/Playersite.tsx:546
 msgid "Name for the template. If the name already exists, it will be overwritten."
 msgstr "템플릿의 이름입니다. 이미 존재할 경우 덮어씁니다."
 
-#: src/views/Settings.tsx:1336
-#: src/views/Settings.tsx:1588
+#: src/views/Settings.tsx:1337
+#: src/views/Settings.tsx:1589
 msgid "Network"
 msgstr "네트워크"
 
-#: src/views/Edit/Sources/Network.tsx:1563
+#: src/views/Edit/Sources/Network.tsx:1564
 #: src/views/Edit/Wizard/Sources/Network.tsx:133
 msgid "Network source"
 msgstr "네트워크 원본"
 
-#: src/views/Edit/Wizard/Audio.tsx:162
+#: src/views/Edit/Wizard/Audio.tsx:163
 #: src/views/Edit/Wizard/Metadata.tsx:54
 #: src/views/Edit/Wizard/Video.tsx:103
 #: src/views/Edit/Wizard/VideoProfile.tsx:118
@@ -1791,11 +1809,11 @@ msgid "No"
 msgstr "아니오"
 
 #: src/views/Edit/Sources/NoAudio.tsx:42
-#: src/views/Edit/Wizard/Audio.tsx:145
+#: src/views/Edit/Wizard/Audio.tsx:146
 msgid "No audio"
 msgstr "소리 없음"
 
-#: src/views/Edit/StreamSelect.tsx:69
+#: src/views/Edit/StreamSelect.tsx:70
 msgid "No audio stream available"
 msgstr "소리 스트림 없음"
 
@@ -1803,7 +1821,7 @@ msgstr "소리 스트림 없음"
 msgid "No H.264 Stream availabe."
 msgstr ""
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:85
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:86
 #: src/views/Edit/Wizard/Sources/V4L.tsx:114
 msgid "No input device available"
 msgstr "입력 장치가 없습니다."
@@ -1812,7 +1830,7 @@ msgstr "입력 장치가 없습니다."
 msgid "No live stream was detected. Please check the software that sends the stream."
 msgstr "송출중인 스트림이 감지되지 않았습니다. 송출 소프트웨어를 점검해주세요."
 
-#: src/views/Edit/Summary.tsx:26
+#: src/views/Edit/Summary.tsx:27
 msgid "No source selected"
 msgstr "소리 원본 선택되지 않음"
 
@@ -1820,7 +1838,7 @@ msgstr "소리 원본 선택되지 않음"
 msgid "No sources available"
 msgstr "원본이 없습니다."
 
-#: src/components/EncodingSelect.tsx:198
+#: src/components/EncodingSelect.tsx:199
 msgid "No suitable encoder found."
 msgstr "적절한 인코더가 없습니다."
 
@@ -1829,41 +1847,41 @@ msgid "No suitable filter found."
 msgstr "적절한 필터를 찾을 수 없습니다."
 
 #: src/views/Main/index.tsx:365
-#: src/views/Publication/Player.tsx:384
+#: src/views/Publication/Player.tsx:385
 msgid "No video"
 msgstr "비디오 없음"
 
-#: src/views/Edit/StreamSelect.tsx:54
+#: src/views/Edit/StreamSelect.tsx:55
 msgid "No video stream available"
 msgstr "영상 스트림이 없음"
 
-#: src/views/Settings.tsx:1521
+#: src/views/Settings.tsx:1522
 msgid "Node ID"
 msgstr "Node ID"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:102
+#: src/views/Edit/Sources/VirtualAudio.tsx:103
 msgid "Noise"
 msgstr "잡음"
 
 #: src/components/filters/video/Scale.tsx:44
-#: src/views/Edit/Sources/AVFoundation.tsx:157
-#: src/views/Edit/Summary.tsx:28
-#: src/views/Edit/Summary.tsx:108
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:119
+#: src/views/Edit/Sources/AVFoundation.tsx:158
+#: src/views/Edit/Summary.tsx:29
+#: src/views/Edit/Summary.tsx:109
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:120
 msgid "None"
 msgstr "없음"
 
-#: src/views/Playersite.tsx:327
-#: src/views/Playersite.tsx:713
+#: src/views/Playersite.tsx:328
+#: src/views/Playersite.tsx:714
 msgid "Notes"
 msgstr "비고"
 
-#: src/views/Settings.tsx:2609
-#: src/views/Settings.tsx:2631
+#: src/views/Settings.tsx:2610
+#: src/views/Settings.tsx:2632
 msgid "Number of log lines to keep."
 msgstr "유지할 로그 줄 수입니다."
 
-#: src/views/Settings.tsx:2648
+#: src/views/Settings.tsx:2649
 msgid "Number of logs to keep for each process."
 msgstr "프로세스 당 유지할 기록의 개수입니다."
 
@@ -1886,16 +1904,16 @@ msgstr "인코딩할 타일 행의 개수입니다."
 #: src/views/Edit/Sources/AudioLoop.tsx:225
 #: src/views/Edit/Sources/SDP.tsx:206
 #: src/views/Edit/Sources/VideoLoop.tsx:233
-#: src/views/Playersite.tsx:890
-#: src/views/Publication/Player.tsx:641
+#: src/views/Playersite.tsx:891
+#: src/views/Publication/Player.tsx:642
 msgid "OK"
 msgstr "확인"
 
-#: src/views/Settings.tsx:1861
+#: src/views/Settings.tsx:1862
 msgid "One referrer per line, e.g. http://www.example.com"
 msgstr "한 줄에 하나의 리퍼러만 입력합니다. 예) http://www.example.com"
 
-#: src/views/Playersite.tsx:875
+#: src/views/Playersite.tsx:876
 msgid "Open"
 msgstr "열기"
 
@@ -1908,60 +1926,60 @@ msgid "Pan"
 msgstr "좌/우"
 
 #: src/views/Publication/Services/Core.tsx:277
-#: src/views/Settings.tsx:2476
+#: src/views/Settings.tsx:2477
 msgid "Passphrase"
 msgstr "암호문"
 
-#: src/views/Settings.tsx:2503
+#: src/views/Settings.tsx:2504
 msgid "Passphrase for SRT encryption."
 msgstr "SRT 암호화를 위한 암호문"
 
-#: src/views/Settings.tsx:2490
+#: src/views/Settings.tsx:2491
 msgid "Passphrase must be between 10 and 79 characters long"
 msgstr "암호문은 10에서 79자 사이여야 합니다."
 
-#: src/views/Publication/Edit.tsx:649
+#: src/views/Publication/Edit.tsx:650
 msgid "Passthrough (copy) should only be disabled if necessary. Each encoding requires additional CPU/GPU resources."
 msgstr "필요할때만 \"그대로 전달(복사)\" 옵션을 해제하세요. 인코딩을 하려면 더 많은 CPU/GPU 자원이 필요합니다."
 
-#: src/views/Edit/Sources/Network.tsx:1020
+#: src/views/Edit/Sources/Network.tsx:1021
 #: src/views/Edit/Wizard/Sources/Network.tsx:114
 #: src/views/Login.tsx:295
 #: src/views/Publication/Services/Akamai.tsx:147
 #: src/views/Publication/Services/DaCast.tsx:176
-#: src/views/Publication/Services/DASH.tsx:238
-#: src/views/Publication/Services/HLS.tsx:229
+#: src/views/Publication/Services/DASH.tsx:231
+#: src/views/Publication/Services/HLS.tsx:226
 #: src/views/Publication/Services/Red5.tsx:183
-#: src/views/Publication/Services/RTSP.tsx:187
+#: src/views/Publication/Services/RTSP.tsx:184
 #: src/views/Publication/Services/WOWZA.tsx:207
-#: src/views/Settings.tsx:1808
-#: src/views/Settings.tsx:2016
+#: src/views/Settings.tsx:1809
+#: src/views/Settings.tsx:2017
 msgid "Password"
 msgstr "비밀번호"
 
-#: src/views/Settings.tsx:1817
-#: src/views/Settings.tsx:2030
+#: src/views/Settings.tsx:1818
+#: src/views/Settings.tsx:2031
 msgid "Password for authorization."
 msgstr "사용자 인증을 위한 비밀번호입니다."
 
-#: src/views/Edit/Sources/Network.tsx:1025
+#: src/views/Edit/Sources/Network.tsx:1026
 #: src/views/Edit/Wizard/Sources/Network.tsx:120
 msgid "Password for the device."
 msgstr "장치의 비밀번호입니다."
 
-#: src/views/Settings.tsx:1943
+#: src/views/Settings.tsx:1944
 msgid "Persist viewer statistics"
 msgstr "시청자 통계 유지"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:139
+#: src/views/Edit/Sources/VirtualAudio.tsx:140
 msgid "pink"
 msgstr "분홍색"
 
-#: src/views/Publication/Services/Framebuffer.tsx:122
+#: src/views/Publication/Services/Framebuffer.tsx:115
 msgid "Pixel format"
 msgstr "픽셀 유형"
 
-#: src/components/coders/settings/Video.tsx:323
+#: src/components/coders/settings/Video.tsx:324
 msgid "Pixel Format"
 msgstr ""
 
@@ -1969,13 +1987,13 @@ msgstr ""
 msgid "Plan: <0>Starter</0>"
 msgstr "플랜: <0>스타터</0>"
 
-#: src/views/Publication/Add.tsx:433
+#: src/views/Publication/Add.tsx:434
 msgid "Platforms"
 msgstr "플랫폼"
 
-#: src/views/Publication/Player.tsx:422
-#: src/views/Settings.tsx:1349
-#: src/views/Settings.tsx:1826
+#: src/views/Publication/Player.tsx:423
+#: src/views/Settings.tsx:1350
+#: src/views/Settings.tsx:1827
 msgid "Playback"
 msgstr "재생"
 
@@ -1983,25 +2001,25 @@ msgstr "재생"
 msgid "Player"
 msgstr "재생기"
 
-#: src/views/Edit/index.tsx:654
+#: src/views/Edit/index.tsx:655
 msgid "Player Playback"
 msgstr ""
 
-#: src/views/Publication/Player.tsx:311
+#: src/views/Publication/Player.tsx:312
 msgid "Player settings saved"
 msgstr "플레이어 설정 저장됨"
 
-#: src/views/Publication/Player.tsx:430
+#: src/views/Publication/Player.tsx:431
 msgid "Player URL"
 msgstr "재생기 URL"
 
-#: src/Header.tsx:313
-#: src/views/Playersite.tsx:362
+#: src/components/Header.tsx:313
+#: src/views/Playersite.tsx:363
 msgid "Playersite"
 msgstr "재생사이트"
 
-#: src/views/Publication/Services/DASH.tsx:420
-#: src/views/Publication/Services/HLS.tsx:354
+#: src/views/Publication/Services/DASH.tsx:413
+#: src/views/Publication/Services/HLS.tsx:351
 msgid "Playlist"
 msgstr "재생목록"
 
@@ -2027,27 +2045,27 @@ msgstr "<0>프로세스 기록</0>을 검토해주세요."
 #: src/views/Publication/Services/CDN77.tsx:27
 #: src/views/Publication/Services/Core.tsx:34
 #: src/views/Publication/Services/DaCast.tsx:30
-#: src/views/Publication/Services/DASH.tsx:40
-#: src/views/Publication/Services/HLS.tsx:41
+#: src/views/Publication/Services/DASH.tsx:39
+#: src/views/Publication/Services/HLS.tsx:40
 #: src/views/Publication/Services/Icecast.tsx:34
-#: src/views/Publication/Services/Image2.tsx:38
+#: src/views/Publication/Services/Image2.tsx:37
 #: src/views/Publication/Services/Linkedin.tsx:29
 #: src/views/Publication/Services/Livepush.tsx:26
 #: src/views/Publication/Services/Livespotting.tsx:28
-#: src/views/Publication/Services/MPEGTS.tsx:39
+#: src/views/Publication/Services/MPEGTS.tsx:38
 #: src/views/Publication/Services/NimoTv.tsx:27
 #: src/views/Publication/Services/PicartoTv.tsx:30
 #: src/views/Publication/Services/Red5.tsx:30
 #: src/views/Publication/Services/Restream.tsx:28
-#: src/views/Publication/Services/RTMP.tsx:37
-#: src/views/Publication/Services/RTSP.tsx:40
-#: src/views/Publication/Services/SRT.tsx:38
-#: src/views/Publication/Services/UDP.tsx:36
+#: src/views/Publication/Services/RTMP.tsx:36
+#: src/views/Publication/Services/RTSP.tsx:39
+#: src/views/Publication/Services/SRT.tsx:37
+#: src/views/Publication/Services/UDP.tsx:35
 #: src/views/Publication/Services/WOWZA.tsx:33
 msgid "Please contact the operator of the service and check what happens."
 msgstr "서비스 운영자에게 문의하시기 바랍니다."
 
-#: src/views/Settings.tsx:1690
+#: src/views/Settings.tsx:1691
 msgid "Please enter your email address to signify agreement with the Let's Encrypt CA's terms of service and to be notified in case of issues."
 msgstr "Let's Encrypt CA의 이용약관에 동의하고 문제 발생시 알림을 받으려면 이메일 주소를 입력해주세요."
 
@@ -2057,7 +2075,7 @@ msgstr "Let's Encrypt CA의 이용약관에 동의하고 문제 발생시 알림
 #: src/views/Publication/Services/Owncast.tsx:27
 #: src/views/Publication/Services/Rumble.tsx:28
 #: src/views/Publication/Services/Telegram.tsx:14
-#: src/views/Publication/Services/TikTok.tsx:29
+#: src/views/Publication/Services/TikTok.tsx:28
 #: src/views/Publication/Services/Wettercom.tsx:28
 msgid "Please get in touch with the operator of the service and check what happens."
 msgstr "운영자에게 무슨 일이 일어났는지 문의하세요."
@@ -2065,12 +2083,12 @@ msgstr "운영자에게 무슨 일이 일어났는지 문의하세요."
 #: src/views/Edit/Sources/AudioLoop.tsx:114
 #: src/views/Edit/Sources/SDP.tsx:100
 #: src/views/Edit/Sources/VideoLoop.tsx:122
-#: src/views/Playersite.tsx:174
-#: src/views/Publication/Player.tsx:202
+#: src/views/Playersite.tsx:175
+#: src/views/Publication/Player.tsx:203
 msgid "Please select a file to upload."
 msgstr "업로드할 파일을 선택해주세요."
 
-#: src/views/Publication/Add.tsx:571
+#: src/views/Publication/Add.tsx:572
 msgid "Please use \"Passthrough (copy)\" if possible. Encoding requires additional CPU/GPU resources."
 msgstr "가능한 한 \"그대로 전달(복사)\" 옵션을 사용하세요. 인코딩을 하려면 더 많은 CPU/GPU 자원이 필요합니다."
 
@@ -2082,19 +2100,19 @@ msgstr "스트림 데이터를 확인하고 있습니다. 잠시만 기다려주
 msgid "Please wait. Setting up the stream ..."
 msgstr "스트림을 설정합니다. 잠시만 기다려주세요..."
 
-#: src/views/Settings.tsx:2439
+#: src/views/Settings.tsx:2440
 msgid "Port"
 msgstr "포트"
 
-#: src/views/Publication/Player.tsx:493
+#: src/views/Publication/Player.tsx:494
 msgid "Position"
 msgstr "위치"
 
-#: src/views/Publication/Player.tsx:417
+#: src/views/Publication/Player.tsx:418
 msgid "Poster"
 msgstr "포스터"
 
-#: src/views/Publication/Player.tsx:522
+#: src/views/Publication/Player.tsx:523
 msgid "Poster image URL"
 msgstr "포스터 이미지 URL"
 
@@ -2106,60 +2124,60 @@ msgstr "포스터 이미지 URL"
 msgid "Preset"
 msgstr "사전설정"
 
-#: src/views/Publication/Services/Youtube.tsx:235
+#: src/views/Publication/Services/Youtube.tsx:232
 msgid "Primary stream"
 msgstr "기본 스트림"
 
-#: src/views/Publication/Services/Facebook.tsx:122
+#: src/views/Publication/Services/Facebook.tsx:115
 msgid "Primary stream key"
 msgstr "프라이머리 스트림 키"
 
-#: src/views/Edit/Sources/ALSA.tsx:172
+#: src/views/Edit/Sources/ALSA.tsx:173
 #: src/views/Edit/Sources/AudioLoop.tsx:212
-#: src/views/Edit/Sources/AVFoundation.tsx:244
-#: src/views/Edit/Sources/Channel.tsx:122
+#: src/views/Edit/Sources/AVFoundation.tsx:245
+#: src/views/Edit/Sources/Channel.tsx:123
 #: src/views/Edit/Sources/Framebuffer.tsx:132
-#: src/views/Edit/Sources/Network.tsx:1045
-#: src/views/Edit/Sources/Network.tsx:1185
-#: src/views/Edit/Sources/Network.tsx:1309
-#: src/views/Edit/Sources/Network.tsx:1436
+#: src/views/Edit/Sources/Network.tsx:1046
+#: src/views/Edit/Sources/Network.tsx:1186
+#: src/views/Edit/Sources/Network.tsx:1310
+#: src/views/Edit/Sources/Network.tsx:1437
 #: src/views/Edit/Sources/Raspicam.tsx:163
 #: src/views/Edit/Sources/SDP.tsx:193
 #: src/views/Edit/Sources/V4L.tsx:166
 #: src/views/Edit/Sources/VideoLoop.tsx:220
-#: src/views/Edit/Sources/VirtualAudio.tsx:205
-#: src/views/Edit/Sources/VirtualVideo.tsx:254
-#: src/views/Edit/Sources/X11grab.tsx:278
+#: src/views/Edit/Sources/VirtualAudio.tsx:206
+#: src/views/Edit/Sources/VirtualVideo.tsx:255
+#: src/views/Edit/Sources/X11grab.tsx:279
 msgid "Probe"
 msgstr "확인하기"
 
-#: src/views/Edit/index.tsx:669
-#: src/views/Publication/Add.tsx:513
-#: src/views/Publication/Edit.tsx:547
+#: src/views/Edit/index.tsx:670
+#: src/views/Publication/Add.tsx:514
+#: src/views/Publication/Edit.tsx:548
 msgid "Process"
 msgstr "프로세스"
 
-#: src/views/Publication/Add.tsx:480
-#: src/views/Publication/Edit.tsx:514
+#: src/views/Publication/Add.tsx:481
+#: src/views/Publication/Edit.tsx:515
 msgid "Process control"
 msgstr "프로세스 조절"
 
 #: src/views/Main/index.tsx:639
 #: src/views/Main/index.tsx:661
-#: src/views/Publication/Edit.tsx:599
-#: src/views/Publication/Edit.tsx:740
+#: src/views/Publication/Edit.tsx:600
+#: src/views/Publication/Edit.tsx:741
 msgid "Process details"
 msgstr "프로세스 상세"
 
 #: src/views/Main/index.tsx:648
 #: src/views/Main/index.tsx:669
-#: src/views/Publication/Edit.tsx:607
-#: src/views/Publication/Edit.tsx:748
+#: src/views/Publication/Edit.tsx:608
+#: src/views/Publication/Edit.tsx:749
 msgid "Process report"
 msgstr "프로세스 보고서"
 
-#: src/views/Edit/index.tsx:492
-#: src/views/Edit/index.tsx:569
+#: src/views/Edit/index.tsx:493
+#: src/views/Edit/index.tsx:570
 msgid "Processing & Control"
 msgstr "프로세싱과 조절"
 
@@ -2169,24 +2187,24 @@ msgstr "프로세싱과 조절"
 #: src/components/coders/Encoders/video/hevc_vaapi.tsx:91
 #: src/components/coders/Encoders/video/hevc_videotoolbox.tsx:65
 #: src/components/coders/Encoders/video/vp9_vaapi.tsx:91
-#: src/components/coders/settings/Video.tsx:139
+#: src/components/coders/settings/Video.tsx:140
 #: src/views/Edit/Wizard/VideoProfile.tsx:50
 msgid "Profile"
 msgstr "프로파일"
 
-#: src/views/Edit/Sources/Network.tsx:925
+#: src/views/Edit/Sources/Network.tsx:926
 msgid "Protect: None"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:931
+#: src/views/Edit/Sources/Network.tsx:932
 msgid "Protect: Video and audio channel"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:928
+#: src/views/Edit/Sources/Network.tsx:929
 msgid "Protect: Video channel"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:1101
+#: src/views/Edit/Sources/Network.tsx:1102
 #: src/views/Publication/Services/Akamai.tsx:157
 #: src/views/Publication/Services/Akamai.tsx:199
 #: src/views/Publication/Services/Azure.tsx:100
@@ -2195,37 +2213,37 @@ msgstr ""
 #: src/views/Publication/Services/Core.tsx:258
 #: src/views/Publication/Services/DaCast.tsx:141
 #: src/views/Publication/Services/DaCast.tsx:206
-#: src/views/Publication/Services/DASH.tsx:208
-#: src/views/Publication/Services/HLS.tsx:199
+#: src/views/Publication/Services/DASH.tsx:201
+#: src/views/Publication/Services/HLS.tsx:196
 #: src/views/Publication/Services/Icecast.tsx:187
-#: src/views/Publication/Services/Image2.tsx:138
+#: src/views/Publication/Services/Image2.tsx:135
 #: src/views/Publication/Services/Linkedin.tsx:100
-#: src/views/Publication/Services/MPEGTS.tsx:196
+#: src/views/Publication/Services/MPEGTS.tsx:193
 #: src/views/Publication/Services/Owncast.tsx:102
 #: src/views/Publication/Services/Red5.tsx:128
-#: src/views/Publication/Services/RTMP.tsx:167
-#: src/views/Publication/Services/RTSP.tsx:159
-#: src/views/Publication/Services/SRT.tsx:177
+#: src/views/Publication/Services/RTMP.tsx:164
+#: src/views/Publication/Services/RTSP.tsx:156
+#: src/views/Publication/Services/SRT.tsx:174
 #: src/views/Publication/Services/Telegram.tsx:88
-#: src/views/Publication/Services/UDP.tsx:143
+#: src/views/Publication/Services/UDP.tsx:140
 #: src/views/Publication/Services/WOWZA.tsx:144
 msgid "Protocol"
 msgstr "프로토콜"
 
-#: src/views/Publication/Add.tsx:439
+#: src/views/Publication/Add.tsx:440
 msgid "Protocols"
 msgstr "프로토콜"
 
-#: src/views/Settings.tsx:1598
+#: src/views/Settings.tsx:1599
 msgid "Public domain/s"
 msgstr "퍼블릭 도메인"
 
-#: src/views/Publication/Edit.tsx:128
-#: src/views/Publication/Edit.tsx:142
+#: src/views/Publication/Edit.tsx:129
+#: src/views/Publication/Edit.tsx:143
 msgid "Publication service not found"
 msgstr "송출 서비스를 찾을 수 없음"
 
-#: src/views/Playersite.tsx:260
+#: src/views/Playersite.tsx:261
 msgid "Publication website settings saved"
 msgstr "송출 웹사이트 설정 저장"
 
@@ -2233,11 +2251,11 @@ msgstr "송출 웹사이트 설정 저장"
 msgid "Publications"
 msgstr "공개"
 
-#: src/views/Edit/Sources/Network.tsx:1530
+#: src/views/Edit/Sources/Network.tsx:1531
 msgid "Pull Mode"
 msgstr "Pull 모드"
 
-#: src/views/Edit/Sources/Network.tsx:1526
+#: src/views/Edit/Sources/Network.tsx:1527
 msgid "Pull or recieve the data:"
 msgstr "데이터 수신:"
 
@@ -2256,8 +2274,8 @@ msgstr "품질"
 msgid "Quality and compression efficiency vs speed trade-off."
 msgstr ""
 
-#: src/views/Edit/Sources/Raspicam.tsx:181
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:131
+#: src/views/Edit/Sources/Raspicam.tsx:175
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:124
 msgid "Raspberry Pi camera"
 msgstr "Raspberry Pi 카메라"
 
@@ -2270,7 +2288,7 @@ msgstr "Raspberry Pi 카메라"
 msgid "Rate control"
 msgstr "비율 조정"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:215
+#: src/views/Edit/Sources/VirtualVideo.tsx:216
 msgid "Ratio"
 msgstr "비율"
 
@@ -2278,11 +2296,11 @@ msgstr "비율"
 msgid "rav1e Parameters"
 msgstr "rav1e 매개변수"
 
-#: src/views/Edit/Sources/Network.tsx:685
+#: src/views/Edit/Sources/Network.tsx:686
 msgid "Read input at native speed"
 msgstr "원본 속도로 입력 읽어들이기"
 
-#: src/views/Edit/Sources/Network.tsx:1531
+#: src/views/Edit/Sources/Network.tsx:1532
 msgid "Receive Mode"
 msgstr "수신 모드"
 
@@ -2296,13 +2314,15 @@ msgstr "재연결"
 msgid "Reconnect delay (seconds)"
 msgstr "재연결 지연시간 (초)"
 
+#. placeholder {0}: $state.progress.reconnect
+#. placeholder {0}: progress.reconnect
 #: src/views/Main/index.tsx:422
 #: src/views/Publication/Process.tsx:72
 #: src/views/Publication/Process.tsx:91
 msgid "Reconnecting in {0}s"
 msgstr "{0}초 후 재연결"
 
-#: src/views/Settings.tsx:2690
+#: src/views/Settings.tsx:2691
 msgid "Reconnecting to Restreamer Core failed for the last {RETRIES} seconds."
 msgstr "{RETRIES} 동안 Restreamer Core 접속에 실패하였습니다."
 
@@ -2310,17 +2330,17 @@ msgstr "{RETRIES} 동안 Restreamer Core 접속에 실패하였습니다."
 msgid "Reconnecting to Restreamer Core failed."
 msgstr "Restreamer Core 접속에 실패했습니다."
 
-#: src/views/Edit/Sources/ALSA.tsx:142
-#: src/views/Edit/Sources/AVFoundation.tsx:203
-#: src/views/Edit/Sources/Channel.tsx:114
-#: src/views/Edit/Sources/Network.tsx:1281
-#: src/views/Edit/Sources/Network.tsx:1408
+#: src/views/Edit/Sources/ALSA.tsx:143
+#: src/views/Edit/Sources/AVFoundation.tsx:204
+#: src/views/Edit/Sources/Channel.tsx:115
+#: src/views/Edit/Sources/Network.tsx:1282
+#: src/views/Edit/Sources/Network.tsx:1409
 #: src/views/Edit/Sources/Raspicam.tsx:137
 #: src/views/Edit/Sources/V4L.tsx:140
-#: src/views/Edit/Sources/X11grab.tsx:192
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:165
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:139
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:139
+#: src/views/Edit/Sources/X11grab.tsx:193
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:166
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:140
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:140
 #: src/views/Edit/Wizard/Sources/V4L.tsx:144
 msgid "Refresh"
 msgstr "다시 보기"
@@ -2328,9 +2348,9 @@ msgstr "다시 보기"
 #: src/views/Publication/Services/Livepush.tsx:100
 #: src/views/Publication/Services/PicartoTv.tsx:104
 #: src/views/Publication/Services/Restream.tsx:102
-#: src/views/Publication/Services/Twitch.tsx:107
-#: src/views/Publication/Services/Twitter.tsx:181
-#: src/views/Publication/Services/Twitter.tsx:201
+#: src/views/Publication/Services/Twitch.tsx:104
+#: src/views/Publication/Services/Twitter.tsx:174
+#: src/views/Publication/Services/Twitter.tsx:194
 msgid "Region"
 msgstr "지역"
 
@@ -2339,7 +2359,7 @@ msgid "Register user"
 msgstr "사용자 등록"
 
 #: src/views/Password.tsx:217
-#: src/views/Settings.tsx:2721
+#: src/views/Settings.tsx:2722
 msgid "Reload"
 msgstr "다시 불러오기"
 
@@ -2347,19 +2367,19 @@ msgstr "다시 불러오기"
 msgid "Remove Audio"
 msgstr ""
 
-#: src/views/Settings.tsx:2056
+#: src/views/Settings.tsx:2057
 msgid "Remove the oldest entries if the /memfs is full"
 msgstr "/memfs가 가득 차면 오래된 것부터 지움"
 
-#: src/views/Settings.tsx:2318
+#: src/views/Settings.tsx:2319
 msgid "Requires activation"
 msgstr "활성화 필요"
 
-#: src/views/Publication/Player.tsx:616
+#: src/views/Publication/Player.tsx:617
 msgid "Reset logo"
 msgstr "로고 초기화"
 
-#: src/views/Publication/Player.tsx:625
+#: src/views/Publication/Player.tsx:626
 msgid "Reset poster"
 msgstr "포스터 초기화"
 
@@ -2375,28 +2395,28 @@ msgstr "포스터 초기화"
 msgid "Resize"
 msgstr ""
 
-#: src/views/Settings.tsx:1473
-#: src/views/Settings.tsx:2742
-#: src/views/Settings.tsx:2756
-#: src/views/Settings.tsx:2769
+#: src/views/Settings.tsx:1474
+#: src/views/Settings.tsx:2743
+#: src/views/Settings.tsx:2757
+#: src/views/Settings.tsx:2770
 msgid "Restart"
 msgstr "재시작"
 
-#: src/views/Settings.tsx:2729
+#: src/views/Settings.tsx:2730
 msgid "Restart required"
 msgstr "다시 시작 필요"
 
 #: src/views/Password.tsx:186
-#: src/views/Settings.tsx:2678
+#: src/views/Settings.tsx:2679
 msgid "Restarting"
 msgstr "다시 시작"
 
 #: src/views/Password.tsx:191
-#: src/views/Settings.tsx:2683
+#: src/views/Settings.tsx:2684
 msgid "Restarting Restreamer Core ..."
 msgstr "Restreamer Core를 다시 시작합니다 ..."
 
-#: src/views/Settings.tsx:1180
+#: src/views/Settings.tsx:1181
 msgid "Restarting the application failed."
 msgstr "애플리케이션을 다시 시작하는데 실패했습니다."
 
@@ -2404,7 +2424,7 @@ msgstr "애플리케이션을 다시 시작하는데 실패했습니다."
 msgid "Restreamer instructions"
 msgstr "Restreamer 사용법"
 
-#: src/views/Settings.tsx:1508
+#: src/views/Settings.tsx:1509
 msgid "Restreamer Service"
 msgstr "Restreamer 서비스"
 
@@ -2414,11 +2434,11 @@ msgstr "스트림 데이터 검색중..."
 
 #: src/views/Edit/Wizard/Error.tsx:35
 #: src/views/Invalid.tsx:56
-#: src/views/Settings.tsx:1289
+#: src/views/Settings.tsx:1290
 msgid "Retry"
 msgstr "재시도"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:132
+#: src/views/Edit/Sources/VirtualVideo.tsx:133
 msgid "RGB test pattern"
 msgstr "RGB 테스트 패턴"
 
@@ -2427,79 +2447,79 @@ msgid "Rotate"
 msgstr "회전"
 
 #: src/views/Main/index.tsx:581
-#: src/views/Settings.tsx:1364
-#: src/views/Settings.tsx:2290
+#: src/views/Settings.tsx:1365
+#: src/views/Settings.tsx:2291
 msgid "RTMP"
 msgstr "RTMP"
 
-#: src/views/Settings.tsx:2389
+#: src/views/Settings.tsx:2390
 msgid "RTMP app for publishing."
 msgstr "송출을 위한 RTMP 앱입니다."
 
-#: src/views/Edit/index.tsx:595
+#: src/views/Edit/index.tsx:596
 msgid "RTMP output"
 msgstr "RTMP 출력"
 
-#: src/views/Settings.tsx:2338
+#: src/views/Settings.tsx:2339
 msgid "RTMP Port"
 msgstr "RTMP 포트"
 
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:169
-#: src/views/Settings.tsx:2295
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:170
+#: src/views/Settings.tsx:2296
 msgid "RTMP server"
 msgstr "RTMP 서버"
 
-#: src/views/Edit/Sources/Network.tsx:1217
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:80
+#: src/views/Edit/Sources/Network.tsx:1218
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:81
 msgid "RTMP server is not enabled"
 msgstr "RTMP서버가 활성화되지 않음"
 
-#: src/views/Settings.tsx:2352
+#: src/views/Settings.tsx:2353
 msgid "RTMP server listen address."
 msgstr "RTMP 수신을 위한 서버 주소입니다."
 
-#: src/views/Settings.tsx:2405
+#: src/views/Settings.tsx:2406
 msgid "RTMP streamkey for publishing and playing. The streamkey needs to be appended to the URL."
 msgstr ""
 
-#: src/views/Settings.tsx:2358
+#: src/views/Settings.tsx:2359
 msgid "RTMPS Port"
 msgstr "RTMPS 포트"
 
-#: src/views/Settings.tsx:2306
+#: src/views/Settings.tsx:2307
 msgid "RTMPS server"
 msgstr "RTMPS 서버"
 
-#: src/views/Settings.tsx:2373
+#: src/views/Settings.tsx:2374
 msgid "RTMPS server listen address."
 msgstr "RTMPS 수신을 위한 서버 주소"
 
-#: src/views/Edit/Sources/Network.tsx:624
+#: src/views/Edit/Sources/Network.tsx:625
 msgid "RTSP"
 msgstr "RTSP"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:197
+#: src/views/Edit/Sources/VirtualVideo.tsx:198
 msgid "Rule"
 msgstr "룰"
 
-#: src/components/coders/settings/Audio.tsx:146
-#: src/components/filters/audio/Resample.tsx:98
+#: src/components/coders/settings/Audio.tsx:147
+#: src/components/filters/audio/Resample.tsx:99
 msgid "Sampling"
 msgstr "샘플링"
 
 #: src/components/modals/Hint.tsx:217
-#: src/views/Edit/index.tsx:767
+#: src/views/Edit/index.tsx:768
 #: src/views/Edit/Wizard/License.tsx:55
-#: src/views/Playersite.tsx:865
-#: src/views/Publication/Add.tsx:657
-#: src/views/Publication/Edit.tsx:723
-#: src/views/Publication/Player.tsx:608
-#: src/views/Settings.tsx:2668
+#: src/views/Playersite.tsx:866
+#: src/views/Publication/Add.tsx:658
+#: src/views/Publication/Edit.tsx:724
+#: src/views/Publication/Player.tsx:609
+#: src/views/Settings.tsx:2669
 msgid "Save"
 msgstr "저장"
 
 #: src/components/filters/video/Scale.tsx:42
-#: src/views/Edit/Sources/VirtualVideo.tsx:187
+#: src/views/Edit/Sources/VirtualVideo.tsx:188
 msgid "Scale"
 msgstr "축척"
 
@@ -2513,7 +2533,7 @@ msgstr "비율 크기"
 msgid "SDP"
 msgstr ""
 
-#: src/views/Settings.tsx:2196
+#: src/views/Settings.tsx:2197
 msgid "Seconds to keep files in cache."
 msgstr "파일을 캐시로 유지할 시간(초)입니다."
 
@@ -2529,7 +2549,7 @@ msgstr "잘못된 프로세스를 종료하기 까지 기다릴 시간(초)입�
 msgid "Seconds until the snapshot/thumbnail of the video source is updated."
 msgstr "영상 원본의 스냅샷/썸네일이 갱신되기 까지의 시간(초)입니다."
 
-#: src/views/Settings.tsx:1831
+#: src/views/Settings.tsx:1832
 msgid "Security"
 msgstr "보안"
 
@@ -2537,7 +2557,7 @@ msgstr "보안"
 msgid "Security token"
 msgstr "보안 토큰"
 
-#: src/views/Publication/Player.tsx:449
+#: src/views/Publication/Player.tsx:450
 msgid "Seekbar color"
 msgstr "탐색줄 색상"
 
@@ -2549,41 +2569,41 @@ msgstr "조각 길이 (초)"
 msgid "Segment will be cut on the following keyframe after this time has passed. 2 is recommended."
 msgstr "세그먼트는 길이로 조각납니다. 2를 권장합니다."
 
-#: src/views/Publication/Services/DASH.tsx:525
-#: src/views/Publication/Services/HLS.tsx:434
+#: src/views/Publication/Services/DASH.tsx:518
+#: src/views/Publication/Services/HLS.tsx:431
 msgid "Segmentation"
 msgstr "조각화"
 
-#: src/views/Edit/Sources/Channel.tsx:97
+#: src/views/Edit/Sources/Channel.tsx:98
 msgid "Select a channel:"
 msgstr ""
 
-#: src/views/Edit/Sources/ALSA.tsx:123
-#: src/views/Edit/Sources/AVFoundation.tsx:189
+#: src/views/Edit/Sources/ALSA.tsx:124
+#: src/views/Edit/Sources/AVFoundation.tsx:190
 #: src/views/Edit/Sources/Framebuffer.tsx:117
 #: src/views/Edit/Sources/Raspicam.tsx:126
 #: src/views/Edit/Sources/V4L.tsx:121
-#: src/views/Edit/Sources/X11grab.tsx:173
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:145
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:109
+#: src/views/Edit/Sources/X11grab.tsx:174
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:146
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:108
 #: src/views/Edit/Wizard/Sources/V4L.tsx:133
 msgid "Select a device:"
 msgstr "장치 선택:"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:92
+#: src/views/Edit/Sources/VirtualAudio.tsx:93
 msgid "Select audio source:"
 msgstr "소리 원본 선택:"
 
-#: src/views/Publication/Add.tsx:552
-#: src/views/Publication/Edit.tsx:630
+#: src/views/Publication/Add.tsx:553
+#: src/views/Publication/Edit.tsx:631
 msgid "Select RTMP or SRT (if enabled) for less latency."
 msgstr "가능하다면, RTMP나 SRT를 선택하여 지연시간을 낮출 수 있습니다."
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:126
+#: src/views/Edit/Sources/VirtualVideo.tsx:127
 msgid "Select source ..."
 msgstr "원본 선택..."
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:116
+#: src/views/Edit/Sources/VirtualVideo.tsx:117
 msgid "Select video source:"
 msgstr "비디오 원본 선택:"
 
@@ -2591,7 +2611,7 @@ msgstr "비디오 원본 선택:"
 msgid "Select whether you pull the stream from a <0>network source</0> (such as a network camera) or the <1>internal RTMP server</1> (e.g., OBS streams to the Restreamer)."
 msgstr "스트림을 <0>네트워크 소스</0>(네트워크 카메라 등) 혹은 <1>내부 RTMP 서버</1>(Restreamer로 전달된 OBS 스트림 등)에서 받아올지 선택합니다."
 
-#: src/components/EncodingSelect.tsx:243
+#: src/components/EncodingSelect.tsx:244
 msgid "Select your encoding setting:"
 msgstr "인코딩 설정 선택:"
 
@@ -2599,35 +2619,35 @@ msgstr "인코딩 설정 선택:"
 msgid "Select your filter settings (optional):"
 msgstr "필터 설정을 고르세요(선택사항)"
 
-#: src/views/Playersite.tsx:652
+#: src/views/Playersite.tsx:653
 msgid "Selected"
 msgstr "선택됨"
 
-#: src/views/Playersite.tsx:385
+#: src/views/Playersite.tsx:386
 msgid "Selected channel"
 msgstr "선택된 채널"
 
-#: src/views/Playersite.tsx:496
+#: src/views/Playersite.tsx:497
 msgid "Selection"
 msgstr "선택"
 
-#: src/views/Settings.tsx:1443
+#: src/views/Settings.tsx:1444
 msgid "Send anonymous metrics (helps us for future development)"
 msgstr "익명으로 통계 전송 (개발에 도움이 됩니다)"
 
-#: src/views/Edit/Sources/Network.tsx:1255
-#: src/views/Edit/Sources/Network.tsx:1382
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:116
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:116
+#: src/views/Edit/Sources/Network.tsx:1256
+#: src/views/Edit/Sources/Network.tsx:1383
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:117
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:117
 msgid "Send stream to address ..."
 msgstr "주소로 스트림 보내기 ..."
 
-#: src/views/Edit/Sources/Network.tsx:1169
+#: src/views/Edit/Sources/Network.tsx:1170
 #: src/views/Edit/Wizard/Sources/InternalHLS.tsx:54
 msgid "Send stream to this address:"
 msgstr "스트림을 전달할 주소:"
 
-#: src/views/Publication/Services/Framebuffer.tsx:15
+#: src/views/Publication/Services/Framebuffer.tsx:14
 msgid "Send video to Framebuffer"
 msgstr "영상을 프레임버퍼로 전송"
 
@@ -2639,27 +2659,27 @@ msgstr "서버"
 #: src/views/Publication/Services/Owncast.tsx:114
 #: src/views/Publication/Services/Rumble.tsx:101
 #: src/views/Publication/Services/Telegram.tsx:100
-#: src/views/Publication/Services/TikTok.tsx:104
+#: src/views/Publication/Services/TikTok.tsx:101
 msgid "Server URL"
 msgstr "서버 URL"
 
-#: src/Header.tsx:303
+#: src/components/Header.tsx:303
 #: src/views/Login.tsx:259
-#: src/views/Settings.tsx:1329
-#: src/views/Settings.tsx:1490
+#: src/views/Settings.tsx:1330
+#: src/views/Settings.tsx:1491
 msgid "Service"
 msgstr "서비스"
 
-#: src/views/Publication/Add.tsx:493
-#: src/views/Publication/Edit.tsx:527
+#: src/views/Publication/Add.tsx:494
+#: src/views/Publication/Edit.tsx:528
 msgid "Service name"
 msgstr "서비스 이름"
 
-#: src/views/Settings.tsx:1560
+#: src/views/Settings.tsx:1561
 msgid "Service token for monitoring."
 msgstr "확인을 위한 서비스 토큰입니다."
 
-#: src/Footer.tsx:274
+#: src/components/Footer.tsx:274
 msgid "Sessions"
 msgstr "세션"
 
@@ -2667,43 +2687,43 @@ msgstr "세션"
 msgid "Set the rav1e configuration using a :-separated list of key=value parameters."
 msgstr "키=값 매개변수의 :로 구분된 목록을 사용하여 rav1e 구성을 설정합니다."
 
-#: src/views/Settings.tsx:1740
+#: src/views/Settings.tsx:1741
 msgid "Sets a bandwidth limit in Mbit per second for outgoing HLS data transfer. All services, such as RTMP and outgoing processes, are included in the calculation. If the bandwidth is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
 msgstr "송출할 HLS 데이터의 전송 대역폭을 초당 메가비트로 설정합니다. RTMP를 포함한 모든 송출 프로세스가 합산됩니다. 대역폭이 가득 차면 HLS 시청자에게 HTTP 오류 509를 반환합니다(대역폭 제한 초과). 제한을 두지 않으려면 0을 입력하세요."
 
-#: src/views/Settings.tsx:1719
+#: src/views/Settings.tsx:1720
 msgid "Sets a viewer limit for HLS sessions. If the limit is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
 msgstr "HLS 세션당 시청자를 제한합니다. 한계에 달하면 HTTP 오류 509를 반환합니다(대역폭 제한 초과). 제한을 두지 않으려면 0을 입력하세요."
 
-#: src/views/Settings.tsx:1495
+#: src/views/Settings.tsx:1496
 msgid "Setting for connection to the service."
 msgstr "서비스 접속 설정입니다."
 
-#: src/views/Settings.tsx:1299
+#: src/views/Settings.tsx:1300
 msgid "Settings"
 msgstr "설정"
 
-#: src/views/Settings.tsx:1301
+#: src/views/Settings.tsx:1302
 msgid "Settings (expert mode)"
 msgstr "설정 (전문가 모드)"
 
-#: src/views/Settings.tsx:2081
-msgid "Settings for /data path. The access is protected by"
-msgstr "/data 경로에 대한 설정입니다. 이 접근은 다음으로 보호됩니다:"
+#: src/views/Settings.tsx:2082
+msgid "Settings for /data path. The access is protected by "
+msgstr ""
 
-#: src/views/Settings.tsx:1973
+#: src/views/Settings.tsx:1974
 msgid "Settings for /memfs path."
 msgstr "/memfs 경로에 대한 설정입니다."
 
-#: src/views/Settings.tsx:1118
+#: src/views/Settings.tsx:1119
 msgid "Settings saved. All changes will be applied after restarting the application."
 msgstr "설정을 저장했습니다. 변경 사항은 애플리케이션을 다시 시작할 때 반영됩니다."
 
-#: src/views/Playersite.tsx:447
+#: src/views/Playersite.tsx:448
 msgid "Share button"
 msgstr "고유 버튼"
 
-#: src/views/Playersite.tsx:477
+#: src/views/Playersite.tsx:478
 msgid "Shows a reference to the project."
 msgstr "프로젝트에 대한 참조를 보여줍니다."
 
@@ -2711,27 +2731,27 @@ msgstr "프로젝트에 대한 참조를 보여줍니다."
 msgid "Sign up (free)"
 msgstr "가입 (무료)"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:101
+#: src/views/Edit/Sources/VirtualAudio.tsx:102
 msgid "Silence"
 msgstr "무음"
 
-#: src/views/Edit/Wizard/Audio.tsx:138
+#: src/views/Edit/Wizard/Audio.tsx:139
 msgid "Silence Audio"
 msgstr "무음 소리"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:103
+#: src/views/Edit/Sources/VirtualAudio.tsx:104
 msgid "Sine"
 msgstr "사인파"
 
-#: src/views/Playersite.tsx:371
+#: src/views/Playersite.tsx:372
 msgid "Sitename"
 msgstr "사이트 이름"
 
-#: src/components/coders/settings/Video.tsx:154
+#: src/components/coders/settings/Video.tsx:155
 msgid "Size"
 msgstr "크기"
 
-#: src/views/Edit/index.tsx:640
+#: src/views/Edit/index.tsx:641
 #: src/views/Main/index.tsx:603
 msgid "Snapshot"
 msgstr "스냅샷"
@@ -2740,26 +2760,26 @@ msgstr "스냅샷"
 msgid "Social-login (OAuth2, 2FA)"
 msgstr "소셜 로그인 (OAuth2, 2FA)"
 
-#: src/views/Edit/Sources/Network.tsx:648
+#: src/views/Edit/Sources/Network.tsx:649
 msgid "Socket timeout (microseconds)"
 msgstr "소켓 타임아웃 (마이크로초)"
 
-#: src/views/Publication/Add.tsx:436
+#: src/views/Publication/Add.tsx:437
 msgid "Software"
 msgstr "소프트웨어"
 
 #: src/components/controls/Source.tsx:86
-#: src/views/Edit/Sources/VirtualAudio.tsx:97
-#: src/views/Edit/Sources/VirtualVideo.tsx:121
-#: src/views/Publication/Add.tsx:547
-#: src/views/Publication/Edit.tsx:625
+#: src/views/Edit/Sources/VirtualAudio.tsx:98
+#: src/views/Edit/Sources/VirtualVideo.tsx:122
+#: src/views/Publication/Add.tsx:548
+#: src/views/Publication/Edit.tsx:626
 msgid "Source"
 msgstr "원본"
 
-#: src/views/Publication/Add.tsx:475
-#: src/views/Publication/Add.tsx:542
-#: src/views/Publication/Edit.tsx:509
-#: src/views/Publication/Edit.tsx:620
+#: src/views/Publication/Add.tsx:476
+#: src/views/Publication/Add.tsx:543
+#: src/views/Publication/Edit.tsx:510
+#: src/views/Publication/Edit.tsx:621
 msgid "Source & Encoding"
 msgstr "원본과 인코딩"
 
@@ -2771,32 +2791,32 @@ msgstr "속도"
 msgid "Speed Preset"
 msgstr "속도 프리셋"
 
-#: src/views/Edit/Sources/Network.tsx:659
+#: src/views/Edit/Sources/Network.tsx:660
 #: src/views/Main/index.tsx:591
-#: src/views/Settings.tsx:1370
-#: src/views/Settings.tsx:2417
+#: src/views/Settings.tsx:1371
+#: src/views/Settings.tsx:2418
 msgid "SRT"
 msgstr "SRT"
 
-#: src/views/Edit/index.tsx:621
+#: src/views/Edit/index.tsx:622
 msgid "SRT output"
 msgstr "SRT 출력"
 
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:169
-#: src/views/Settings.tsx:2422
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:170
+#: src/views/Settings.tsx:2423
 msgid "SRT server"
 msgstr "SRT 서버"
 
-#: src/views/Edit/Sources/Network.tsx:1344
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:80
+#: src/views/Edit/Sources/Network.tsx:1345
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:81
 msgid "SRT server is not enabled"
 msgstr "SRT 서버가 활성화되지 않았습니다."
 
-#: src/views/Settings.tsx:2450
+#: src/views/Settings.tsx:2451
 msgid "SRT server listen address."
 msgstr "SRT 수신을 위한 서버 주소"
 
-#: src/views/Settings.tsx:2467
+#: src/views/Settings.tsx:2468
 msgid "SRT token for publishing and playing. The token is the value of the streamid parameter 'token.'"
 msgstr "SRT 송출과 재생을 위한 토큰입니다. streamid 파라메터의 'token' 값입니다."
 
@@ -2804,28 +2824,28 @@ msgstr "SRT 송출과 재생을 위한 토큰입니다. streamid 파라메터의
 msgid "Stale timeout (seconds)"
 msgstr "시간 경과 (초)"
 
-#: src/views/Edit/Sources/Network.tsx:871
+#: src/views/Edit/Sources/Network.tsx:872
 msgid "start_at_zero"
 msgstr "start_at_zero"
 
-#: src/views/Settings.tsx:1871
+#: src/views/Settings.tsx:1872
 msgid "Statistics"
 msgstr "통계"
 
 #: src/components/controls/HLS.tsx:68
-#: src/views/Settings.tsx:1357
-#: src/views/Settings.tsx:1965
+#: src/views/Settings.tsx:1358
+#: src/views/Settings.tsx:1966
 msgid "Storage"
 msgstr "저장공간"
 
-#: src/views/Settings.tsx:1956
+#: src/views/Settings.tsx:1957
 msgid "Stores the viewer statistics to the disk."
 msgstr "시청자 통계를 디스크에 저장합니다."
 
-#: src/views/Edit/StreamSelect.tsx:35
-#: src/views/Edit/StreamSelect.tsx:42
-#: src/views/Edit/StreamSelect.tsx:89
-#: src/views/Edit/Wizard/Audio.tsx:104
+#: src/views/Edit/StreamSelect.tsx:36
+#: src/views/Edit/StreamSelect.tsx:43
+#: src/views/Edit/StreamSelect.tsx:90
+#: src/views/Edit/Wizard/Audio.tsx:105
 msgid "Stream"
 msgstr "스트림"
 
@@ -2839,7 +2859,7 @@ msgstr ""
 #: src/views/Publication/Services/DLive.tsx:82
 #: src/views/Publication/Services/Dummy.tsx:301
 #: src/views/Publication/Services/EarthCam.tsx:101
-#: src/views/Publication/Services/Instagram.tsx:94
+#: src/views/Publication/Services/Instagram.tsx:87
 #: src/views/Publication/Services/Kick.tsx:117
 #: src/views/Publication/Services/Livepush.tsx:125
 #: src/views/Publication/Services/MediaNetwork.tsx:84
@@ -2850,17 +2870,17 @@ msgstr ""
 #: src/views/Publication/Services/Restream.tsx:140
 #: src/views/Publication/Services/Rumble.tsx:117
 #: src/views/Publication/Services/Telegram.tsx:110
-#: src/views/Publication/Services/TikTok.tsx:120
+#: src/views/Publication/Services/TikTok.tsx:117
 #: src/views/Publication/Services/Trovo.tsx:82
-#: src/views/Publication/Services/Twitch.tsx:223
-#: src/views/Publication/Services/Twitter.tsx:216
-#: src/views/Publication/Services/Vimeo.tsx:83
+#: src/views/Publication/Services/Twitch.tsx:220
+#: src/views/Publication/Services/Twitter.tsx:209
+#: src/views/Publication/Services/Vimeo.tsx:80
 #: src/views/Publication/Services/Wettercom.tsx:122
-#: src/views/Publication/Services/Youtube.tsx:223
+#: src/views/Publication/Services/Youtube.tsx:220
 msgid "Stream key"
 msgstr "스트림 키"
 
-#: src/views/Publication/Services/RTMP.tsx:193
+#: src/views/Publication/Services/RTMP.tsx:190
 msgid "Stream Key"
 msgstr "스트림 키"
 
@@ -2884,22 +2904,22 @@ msgstr "송출 서비스로 전달 (시험기능)"
 msgid "Stream URL"
 msgstr "스트림 URL"
 
-#: src/views/Settings.tsx:2394
+#: src/views/Settings.tsx:2395
 msgid "Streamkey"
 msgstr ""
 
-#: src/views/Playersite.tsx:471
+#: src/views/Playersite.tsx:472
 msgid "Support datarhei Restreamer"
 msgstr "datarhei Restreamer 지지"
 
-#: src/views/Edit/Sources/Network.tsx:981
+#: src/views/Edit/Sources/Network.tsx:982
 #: src/views/Edit/Wizard/Sources/Network.tsx:83
 msgid "Supports HTTP (HLS, DASH), RTP, RTSP, RTMP, SRT and more."
 msgstr "HTTP(HPS, DASH), RTP, RTSP, RTMP, SRT 등을 지원합니다."
 
-#: src/Footer.tsx:212
-#: src/Header.tsx:324
-#: src/views/Settings.tsx:2517
+#: src/components/Footer.tsx:212
+#: src/components/Header.tsx:324
+#: src/views/Settings.tsx:2518
 msgid "System"
 msgstr "시스템"
 
@@ -2907,60 +2927,62 @@ msgstr "시스템"
 msgid "Target address"
 msgstr "목표 주소"
 
-#: src/views/Playersite.tsx:315
-#: src/views/Playersite.tsx:486
+#: src/views/Playersite.tsx:316
+#: src/views/Playersite.tsx:487
 msgid "Template"
 msgstr "템플릿"
 
-#: src/views/Playersite.tsx:512
+#: src/views/Playersite.tsx:513
 msgid "Template to be used for creating the publication website. The delete button removes the selection from the system."
 msgstr "송출 웹사이트를 만들기 위한 템플릿입니다. 삭제 버튼을 누르면 선택된 템플릿을 삭제합니다."
 
-#: src/views/Playersite.tsx:735
+#: src/views/Playersite.tsx:736
 msgid "Terms"
 msgstr "이용조건"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:128
+#: src/views/Edit/Sources/VirtualVideo.tsx:129
 msgid "Test pattern"
 msgstr "테스트 패턴"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:130
+#: src/views/Edit/Sources/VirtualVideo.tsx:131
 msgid "Test pattern (extended)"
 msgstr "테스트 패턴 (확장)"
 
-#: src/views/Playersite.tsx:583
+#: src/views/Playersite.tsx:584
 msgid "Text colors"
 msgstr "글씨 색상"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:158
+#: src/views/Edit/Sources/VirtualAudio.tsx:159
 msgid "The amplitude (0.0 - 1.0) of the generated audio stream"
 msgstr "생성된 소리 스트림의 음량(0.0 - 1.0)"
 
-#: src/views/Settings.tsx:1477
+#: src/views/Settings.tsx:1478
 msgid "The application is using an older version of the settings."
 msgstr "애플리케이션이 구버전의 설정을 사용중입니다."
 
-#: src/views/Edit/Sources/Network.tsx:1079
+#: src/views/Edit/Sources/Network.tsx:1080
 msgid "The available FFmpeg binary doesn't support any of the required protocols."
 msgstr "현재 FFmpeg 바이너리는 필요한 프로토콜을 지원하지 않습니다."
 
-#: src/components/coders/settings/Audio.tsx:47
+#: src/components/coders/settings/Audio.tsx:48
 msgid "The bitrate of the audio stream."
 msgstr "소리 스트림의 비트율입니다."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:183
+#: src/views/Edit/Sources/VirtualAudio.tsx:184
 msgid "The carrier frequency"
 msgstr "반송주파수"
 
-#: src/views/Edit/index.tsx:433
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx:434
 msgid "The channel \"{0}\" could not be deleted"
 msgstr "\"{0}\" 채널을 삭제할 수 없음"
 
-#: src/views/Edit/index.tsx:446
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx:447
 msgid "The channel \"{0}\" has been deleted"
 msgstr "\"{0}\" 채널 삭제함"
 
-#: src/views/Edit/index.tsx:834
+#: src/views/Edit/index.tsx:835
 msgid "The deletion of this channel can not be recovered. All publications of this channel will be removed."
 msgstr "채널 삭제는 되돌릴 수 없습니다. 이 채널에 연결된 모든 송출 서비스도 삭제됩니다."
 
@@ -2968,18 +2990,18 @@ msgstr "채널 삭제는 되돌릴 수 없습니다. 이 채널에 연결된 모
 msgid "The H.264 encoder used."
 msgstr ""
 
-#: src/views/Edit/index.tsx:314
+#: src/views/Edit/index.tsx:315
 #: src/views/Edit/Wizard/index.tsx:192
-#: src/views/Publication/Edit.tsx:305
+#: src/views/Publication/Edit.tsx:306
 msgid "The input profile is not complete. Please define a video and audio source."
 msgstr "프로파일 입력이 완료되지 않았습니다. 영상과 소리 원본을 정의해주세요."
 
-#: src/views/Publication/Add.tsx:251
+#: src/views/Publication/Add.tsx:252
 msgid "The input profile is not complete. Please define a video and/or audio source."
 msgstr "입력 프로필이 완료되지 않았습니다. 비디오 및/또는 오디오 소스를 정의해 주세요."
 
-#: src/components/coders/settings/Audio.tsx:134
-#: src/components/filters/audio/Resample.tsx:86
+#: src/components/coders/settings/Audio.tsx:135
+#: src/components/filters/audio/Resample.tsx:87
 msgid "The layout of the audio stream."
 msgstr "소리 스트림의 레이아웃입니다."
 
@@ -2987,31 +3009,34 @@ msgstr "소리 스트림의 레이아웃입니다."
 msgid "The maximum number of playlist segments. 0 will contain all the segments. 6 is recommended."
 msgstr "재색목록의 최대 세그먼트 수 입니다. 0은 모든 세그먼트를 포함합니다. 6을 권장합니다."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:146
+#: src/views/Edit/Sources/VirtualAudio.tsx:147
 msgid "The noise color"
 msgstr "잡음 종류"
 
-#: src/components/controls/License/index.tsx:62
+#: src/components/controls/License/index.tsx:63
 msgid "The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission."
 msgstr "저작물에 이 일반권리증서를 첨부한 자는 법이 정한 범위 내에서 저작인접권을 포함해 저작권법에 따라 전세계적으로 해당 저작물에 대해 자신이 갖는 일체의 권리를 포기함으로써 저작물을 퍼블릭 도메인으로 양도하였습니다. 저작권자의 허락을 구하지 않아도 이 저작물을 상업적인 목적을 포함 모든 목적으로 복사, 수정, 배포, 실연하실 수 있습니다."
 
-#: src/views/Settings.tsx:1609
+#: src/views/Settings.tsx:1610
 msgid "The public reachable domain name of the host this Restreamer is running on. Separate multiple domain names by a comma."
 msgstr "현재 Restreamer에 접근할 수 있는 도메인 주소입니다. 여러 도메인은 쉼표로 구분해주세요."
 
-#: src/views/Publication/Edit.tsx:381
+#. placeholder {0}: $settings.name
+#: src/views/Publication/Edit.tsx:382
 msgid "The publication service \"{0}\" could not be deleted"
 msgstr "송출 서비스 \"{0}\"은(는) 삭제할 수 없습니다."
 
-#: src/views/Publication/Add.tsx:280
+#. placeholder {0}: $settings.name
+#: src/views/Publication/Add.tsx:281
 msgid "The publication service \"{0}\" has been created"
 msgstr "송출 서비스 \"{0}\"이(가) 생성되었습니다."
 
-#: src/views/Publication/Edit.tsx:392
+#. placeholder {0}: $settings.name
+#: src/views/Publication/Edit.tsx:393
 msgid "The publication service \"{0}\" has been deleted"
 msgstr "송출 서비스 \"{0}\"을(를) 삭제함"
 
-#: src/views/Publication/Add.tsx:277
+#: src/views/Publication/Add.tsx:278
 msgid "The publication service has been created"
 msgstr "송출 서비스가 생성됨"
 
@@ -3019,32 +3044,35 @@ msgstr "송출 서비스가 생성됨"
 msgid "The RTMP output requires the RTMP Server."
 msgstr "RTMP 송출을 위해 RTMP 서버가 필요합니다."
 
-#: src/components/coders/settings/Audio.tsx:184
-#: src/components/filters/audio/Resample.tsx:136
+#: src/components/coders/settings/Audio.tsx:185
+#: src/components/filters/audio/Resample.tsx:137
 msgid "The sample rate of the audio stream."
 msgstr "소리 스트림의 샘플률입니다."
 
 #: src/views/Edit/Sources/AudioLoop.tsx:126
 #: src/views/Edit/Sources/SDP.tsx:112
 #: src/views/Edit/Sources/VideoLoop.tsx:134
-#: src/views/Playersite.tsx:186
-#: src/views/Publication/Player.tsx:214
+#: src/views/Playersite.tsx:187
+#: src/views/Publication/Player.tsx:215
 msgid "The selected file is too big (<0/>). Only <1/> are allowed."
 msgstr "선택한 파일이 너무 큽니다(<0/>). <1/>만 허용됩니다."
 
+#. placeholder {0}: err.actual
+#. placeholder {1}: err.allowed.join(', ')
 #: src/views/Edit/Sources/AudioLoop.tsx:118
 #: src/views/Edit/Sources/SDP.tsx:104
 #: src/views/Edit/Sources/VideoLoop.tsx:126
-#: src/views/Playersite.tsx:178
-#: src/views/Publication/Player.tsx:206
+#: src/views/Playersite.tsx:179
+#: src/views/Publication/Player.tsx:207
 msgid "The selected file type ({0}) is not allowed. Allowed file types are {1}"
 msgstr "선택한 파일 형식({0})은 허용되지 않습니다. 허용되는 파일 형식은 {1}입니다."
 
-#: src/views/Publication/Edit.tsx:336
+#. placeholder {0}: $settings.name
+#: src/views/Publication/Edit.tsx:337
 msgid "The settings for \"{0}\" have been saved"
 msgstr "\"{0}\"에 대한 설정 저장함"
 
-#: src/views/Edit/Wizard/Audio.tsx:63
+#: src/views/Edit/Wizard/Audio.tsx:64
 msgid "The source doesn't provide any audio streams."
 msgstr "이 원본은 소리 스트림을 제공하지 않습니다."
 
@@ -3052,7 +3080,7 @@ msgstr "이 원본은 소리 스트림을 제공하지 않습니다."
 msgid "The source doesn't provide any audio streams. Please check the <0>probe details</0>."
 msgstr "이 원본에는 소리가 포함되지 않았습니다. <0>확인 결과</0>를 검토해주세요."
 
-#: src/views/Edit/Wizard/Audio.tsx:71
+#: src/views/Edit/Wizard/Audio.tsx:72
 msgid "The source doesn't provide any compatible audio streams."
 msgstr "이 원본은 호환되는 소리 스트림을 제공하지 않습니다."
 
@@ -3072,7 +3100,7 @@ msgstr "이 원본에는 영상이 포함되지 않았습니다. 장치를 점�
 msgid "The SRT output requires the SRT Server."
 msgstr "SRT 송출을 위해 SRT 서버가 필요합니다."
 
-#: src/views/Edit/Wizard/Audio.tsx:84
+#: src/views/Edit/Wizard/Audio.tsx:85
 msgid "The video source doesn't provide any compatible audio stream. <0>Silence audio</0> is recommended. Services e.g. YouTube, Facebook & Co. require an audio channel."
 msgstr "이 비디오 원본은 호환되는 소리 스트림을 제공하지 않습니다. <0>무음 소리</0>를 추천합니다. YouTube, Facebook 등은 소리 채널을 필요로 합니다."
 
@@ -3080,11 +3108,11 @@ msgstr "이 비디오 원본은 호환되는 소리 스트림을 제공하지 �
 msgid "The video source is compatible. Select the desired resolution:"
 msgstr "호환되는 영상 스트림입니다. 원하는 해상도를 선택해주세요:"
 
-#: src/views/Settings.tsx:1431
+#: src/views/Settings.tsx:1432
 msgid "There are updates available. Here you get more information."
 msgstr "업데이트가 있습니다. 자세한 사항은 다음을 참고하세요."
 
-#: src/views/Settings.tsx:1065
+#: src/views/Settings.tsx:1066
 msgid "There was a problem storing the settings. Settings not saved."
 msgstr "설정을 저장하는데 문제가 발생했습니다. 설정을 저장하지 못했습니다."
 
@@ -3092,11 +3120,12 @@ msgstr "설정을 저장하는데 문제가 발생했습니다. 설정을 저장
 msgid "There was an error connecting to Restreamer Core at {address}."
 msgstr ""
 
+#. placeholder {0}: err.message
 #: src/views/Edit/Sources/AudioLoop.tsx:135
 #: src/views/Edit/Sources/SDP.tsx:121
 #: src/views/Edit/Sources/VideoLoop.tsx:143
-#: src/views/Playersite.tsx:195
-#: src/views/Publication/Player.tsx:223
+#: src/views/Playersite.tsx:196
+#: src/views/Publication/Player.tsx:224
 msgid "There was an error during upload: {0}"
 msgstr "업로드 하는데 오류가 발생했습니다: {0}"
 
@@ -3104,7 +3133,7 @@ msgstr "업로드 하는데 오류가 발생했습니다: {0}"
 msgid "There was an error setting up the stream."
 msgstr "스트림을 설정하는데 오류가 발생했습니다."
 
-#: src/views/Settings.tsx:1057
+#: src/views/Settings.tsx:1058
 msgid "There were some errors in the settings. Settings not saved."
 msgstr "설정에 오류가 있습니다. 설정을 저장하지 않습니다."
 
@@ -3124,35 +3153,35 @@ msgstr "오류가 발생한 것은 아닙니다. 다만 Restreamer Core가 다�
 msgid "This is to mention the copyright regulations for the target of this service."
 msgstr "이 서비스에 대한 저작권 정책을 언급하기 위함입니다."
 
-#: src/components/controls/License/index.tsx:97
+#: src/components/controls/License/index.tsx:98
 msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, and only so long as attribution is given to the creator. The license allows for commercial use."
 msgstr "이 라이선스는 이용자가 저작자 및 출처만 표시한다면 복제, 배포, 전시, 공연 및 공중송신(포맷 변경도 포함)이 가능합니다. 영리목적으로도 이용이 가능합니다."
 
-#: src/components/controls/License/index.tsx:104
+#: src/components/controls/License/index.tsx:105
 msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, for noncommercial purposes only, and only so long as attribution is given to the creator."
 msgstr "이 라이선스는 이용자가 저작자 및 출처만 표시한다면 비상업적인 용도로 복제, 배포, 전시, 공연 및 공중송신(포맷 변경도 포함)이 가능합니다."
 
-#: src/components/controls/License/index.tsx:83
+#: src/components/controls/License/index.tsx:84
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator."
 msgstr "이 라이선스는 이용자가 저작자 및 출처만 표시한다면 비상업적인 용도로 복제, 배포, 전시, 공연 및 공중송신(포맷 변경도 포함), 리믹스, 변형, 2차적 저작물의 작성이 가능합니다."
 
-#: src/components/controls/License/index.tsx:90
+#: src/components/controls/License/index.tsx:91
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
 msgstr "이 라이선스는 이용자가 저작자 및 출처만 표시한다면 비상업적인 용도로 복제, 배포, 전시, 공연 및 공중송신(포맷 변경도 포함), 리믹스, 변형, 2차적 저작물의 작성이 가능합니다. 생성된 리믹스, 변형, 2차적 저작물에는 원저작물과 동일한 라이선스를 적용해야 합니다."
 
-#: src/components/controls/License/index.tsx:69
+#: src/components/controls/License/index.tsx:70
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use."
 msgstr "이 라이선스는 이용자가 저작자 및 출처만 표시한다면 복제, 배포, 전시, 공연 및 공중송신(포맷 변경도 포함), 리믹스, 변형, 2차적 저작물의 작성이 가능합니다. 영리목적으로도 이용이 가능합니다."
 
-#: src/components/controls/License/index.tsx:76
+#: src/components/controls/License/index.tsx:77
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
 msgstr "이 라이선스는 이용자가 저작자 및 출처만 표시한다면 복제, 배포, 전시, 공연 및 공중송신(포맷 변경도 포함), 리믹스, 변형, 2차적 저작물의 작성이 가능합니다. 영리목적으로도 이용이 가능합니다. 생성된 리믹스, 변형, 2차적 저작물에는 원저작물과 동일한 라이선스를 적용해야 합니다."
 
-#: src/views/Edit/Sources/Network.tsx:993
+#: src/views/Edit/Sources/Network.tsx:994
 msgid "This protocol is unknown or not supported by the available FFmpeg binary."
 msgstr "이 프로토콜은 확인할 수 없거나 현재 FFmpeg 바이너리에서 지원하지 않습니다."
 
-#: src/views/Edit/index.tsx:804
+#: src/views/Edit/index.tsx:805
 msgid "This source cannot be edited while it is in use. To continue, you have to disconnect the source."
 msgstr "이 원본은 사용 중일 때엔 편집할 수 없습니다. 계속하려면 원본의 연결을 해제하세요."
 
@@ -3184,7 +3213,7 @@ msgstr "타일 행"
 msgid "Tiles"
 msgstr "타일"
 
-#: src/views/Settings.tsx:1935
+#: src/views/Settings.tsx:1936
 msgid "Time until an inactive viewer connection is treated as closed."
 msgstr "활동 중이 아닌 시청자 연결을 끊기까지의 시간입니다."
 
@@ -3192,8 +3221,8 @@ msgstr "활동 중이 아닌 시청자 연결을 끊기까지의 시간입니다
 msgid "To stabilize the system, increase the HLS segment length for the keyframe interval by 2-3 * (Processing and Control)."
 msgstr "시스템을 안정화하기 위해, 키프레임 간격을 위한 HLS 조각의 길이를 2-3 늘립니다. * (프로세싱과 조절)"
 
-#: src/views/Settings.tsx:1549
-#: src/views/Settings.tsx:2456
+#: src/views/Settings.tsx:1550
+#: src/views/Settings.tsx:2457
 msgid "Token"
 msgstr "토큰"
 
@@ -3205,7 +3234,7 @@ msgstr "상단 필드"
 msgid "Transmit a Livestream to a Telegram Channel."
 msgstr "텔레그램 채널로 송출합니다."
 
-#: src/views/Publication/Services/Image2.tsx:24
+#: src/views/Publication/Services/Image2.tsx:23
 msgid "Transmit snapshots of the main source to an HTTP/S Server. More details about the settings can be found <0>here</0>."
 msgstr "기본 원본의 스냅샷을 HTTP/S 서버로 전송합니다. 더 자세한 설정법은 <0>이곳</0>을 참고해주세요."
 
@@ -3213,11 +3242,11 @@ msgstr "기본 원본의 스냅샷을 HTTP/S 서버로 전송합니다. 더 자�
 msgid "Transmit the audio channel of the main source to an Icecast Server. More details about the settings can be found <0>here</0>."
 msgstr "기본 원본의 소리 채널을 Icecast Server로 전송합니다. 자세한 내용은 <0>이곳</0>을 참고해주세요."
 
-#: src/views/Publication/Services/HLS.tsx:27
+#: src/views/Publication/Services/HLS.tsx:26
 msgid "Transmit the main source as HTTP-Live-Streaming (HLS) to an HTTP/S Server. More details about the settings can be found <0>here</0>."
 msgstr "기본 원본을 HTTP-Live-Streaming(HLS) 형식으로 HTTP/S Server로 송출합니다. 자세한 내용은 <0>이곳</0>을 참고해주세요."
 
-#: src/views/Publication/Services/DASH.tsx:26
+#: src/views/Publication/Services/DASH.tsx:25
 msgid "Transmit the main source as MPEG-DASH to an HTTP/S Server. More details about the settings can be found <0>here</0>."
 msgstr "기본 원본을 MPEG-DASH 형식으로 HTTP/S Server로 송출합니다. 자세한 내용은 <0>이곳</0>을 참고해주세요."
 
@@ -3241,7 +3270,7 @@ msgstr "영상을 datarhei Core Ressource로 송출합니다. 자세한 설정�
 msgid "Transmit the main source to an livespotting.com Ressource. More details about the settings can be found <0>here</0>."
 msgstr "영상을 livespotting.com Ressource로 송출합니다. 자세한 설정법은 <0>이곳</0>을 참고해주세요."
 
-#: src/views/Publication/Services/MPEGTS.tsx:25
+#: src/views/Publication/Services/MPEGTS.tsx:24
 msgid "Transmit the main source to an MPEG-TS Service. More details about the settings can be found here <0>here</0>."
 msgstr "주 원본을 MPEG-TS 서비스로 전송합니다. 자세한 설정법은 <0>여기</0>를 참고해주세요."
 
@@ -3249,19 +3278,19 @@ msgstr "주 원본을 MPEG-TS 서비스로 전송합니다. 자세한 설정법�
 msgid "Transmit the main source to an Red5/Pro Server. More details about the settings can be found <0>here</0>."
 msgstr "Red5/Pro Server로 송출합니다. 자세한 내용은 <0>이곳</0>을 참고해주세요."
 
-#: src/views/Publication/Services/RTMP.tsx:23
+#: src/views/Publication/Services/RTMP.tsx:22
 msgid "Transmit the main source to an RTMP(e|s|t|te|ts) Server. More details about the settings can be found <0>here</0>."
 msgstr "주 원본을 RTMP(e|s|t|te|ts) 서버로 전송합니다. 자세한 설정법은 <0>여기</0>를 참고해주세요."
 
-#: src/views/Publication/Services/RTSP.tsx:26
+#: src/views/Publication/Services/RTSP.tsx:25
 msgid "Transmit the main source to an RTSP Server. More details about the settings can be found <0>here</0>."
 msgstr "영상을 RTSP서버로 송출합니다. 자세한 설정법은 <0>이곳</0>을 참고해주세요."
 
-#: src/views/Publication/Services/SRT.tsx:24
+#: src/views/Publication/Services/SRT.tsx:23
 msgid "Transmit the main source to an SRT Server. More details about the settings can be found <0>here</0>."
 msgstr "영상을 SRT서버로 송출합니다. 자세한 설정법은 <0>이곳</0>을 참고해주세요."
 
-#: src/views/Publication/Services/UDP.tsx:22
+#: src/views/Publication/Services/UDP.tsx:21
 msgid "Transmit the main source to an UDP Server. More details about the settings can be found <0>here</0>."
 msgstr "영상을 UDP서버로 송출합니다. 자세한 설정법은 <0>이곳</0>을 참고해주세요."
 
@@ -3317,7 +3346,7 @@ msgstr "Owncast 서버로 송출합니다. 자세한 설정법은 <0>이곳</0>�
 msgid "Transmit your Livestream to an Rumble RTMP service. <0>Here </0>you can find more details about the settings."
 msgstr "내 생방송을 럼블 RTMP 서비스로 전송합니다. <0>여기 </0>에서 설정에 대한 자세한 내용을 확인할 수 있습니다."
 
-#: src/views/Publication/Services/TikTok.tsx:16
+#: src/views/Publication/Services/TikTok.tsx:15
 msgid "Transmit your Livestream to an TikTok RTMP service. <0>Here </0>you can find more details about the settings."
 msgstr ""
 
@@ -3325,15 +3354,15 @@ msgstr ""
 msgid "Transmit your Livestream to wetter.com. Contact the publisher <0>here </0>."
 msgstr ""
 
-#: src/views/Publication/Services/Youtube.tsx:20
+#: src/views/Publication/Services/Youtube.tsx:19
 msgid "Transmits your video as an RTMP stream with the required key generated in YouTube Studio. You can find more information on setting up a live stream at YouTube's <0>Creator Academy</0>."
 msgstr "영상을 YouTube 스튜디오에서 생성한 스트림키로 송출합니다(RTMP). 자세한 설정법은 <0>이곳</0>을 참고해주세요."
 
-#: src/views/Publication/Services/Twitter.tsx:19
+#: src/views/Publication/Services/Twitter.tsx:18
 msgid "Transmits your video stream with the required key, which was generated in Twitter Producer. You can find more information on seting up a live stream at Twitter's <0>Producer</0>."
 msgstr "영상을 Twitter Producer에서 생성한 키로 송출합니다. 자세한 설정법은 <0>이곳</0>을 참고해주세요."
 
-#: src/views/Edit/Sources/Network.tsx:630
+#: src/views/Edit/Sources/Network.tsx:631
 msgid "Transport"
 msgstr ""
 
@@ -3349,11 +3378,11 @@ msgstr "튠"
 msgid "UDP transport"
 msgstr "UDP 전송"
 
-#: src/views/Settings.tsx:1280
+#: src/views/Settings.tsx:1281
 msgid "Unable to load the config."
 msgstr "설정을 불러오지 못했습니다."
 
-#: src/views/Settings.tsx:1528
+#: src/views/Settings.tsx:1529
 msgid "Unique ident on the service."
 msgstr "서비스의 고유 ID입니다."
 
@@ -3364,12 +3393,12 @@ msgstr "알 수 없음"
 #: src/views/Edit/Sources/AudioLoop.tsx:139
 #: src/views/Edit/Sources/SDP.tsx:125
 #: src/views/Edit/Sources/VideoLoop.tsx:147
-#: src/views/Playersite.tsx:199
-#: src/views/Publication/Player.tsx:227
+#: src/views/Playersite.tsx:200
+#: src/views/Publication/Player.tsx:228
 msgid "Unknown upload error"
 msgstr "알 수 없는 업로드 오류"
 
-#: src/views/Playersite.tsx:661
+#: src/views/Playersite.tsx:662
 msgid "Unselected"
 msgstr "미선택"
 
@@ -3380,22 +3409,25 @@ msgstr "업데이트 내역 (변경점)"
 #: src/views/Edit/Sources/AudioLoop.tsx:198
 #: src/views/Edit/Sources/SDP.tsx:179
 #: src/views/Edit/Sources/VideoLoop.tsx:206
-#: src/views/Playersite.tsx:533
-#: src/views/Playersite.tsx:556
-#: src/views/Playersite.tsx:698
-#: src/views/Publication/Player.tsx:480
-#: src/views/Publication/Player.tsx:529
+#: src/views/Playersite.tsx:534
+#: src/views/Playersite.tsx:557
+#: src/views/Playersite.tsx:699
+#: src/views/Publication/Player.tsx:481
+#: src/views/Publication/Player.tsx:530
 msgid "Upload"
 msgstr "업로드"
 
+#. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
 #: src/views/Edit/Sources/AudioLoop.tsx:180
 msgid "Upload an audio file ({0}) in order to loop it."
 msgstr "오디오 파일({0})을 업로드하여 반복합니다."
 
+#. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
 #: src/views/Edit/Sources/VideoLoop.tsx:188
 msgid "Upload an image or video file ({0}) in order to loop it."
 msgstr "반복하려면 이미지 또는 비디오 파일({0})을 업로드하세요."
 
+#. placeholder {0}: fileTypes.map((t) => t.mimetype).join(', ')
 #: src/views/Edit/Sources/SDP.tsx:163
 msgid "Upload SDP file ({0})."
 msgstr ""
@@ -3403,20 +3435,20 @@ msgstr ""
 #: src/views/Edit/Sources/AudioLoop.tsx:202
 #: src/views/Edit/Sources/SDP.tsx:183
 #: src/views/Edit/Sources/VideoLoop.tsx:210
-#: src/views/Playersite.tsx:560
-#: src/views/Playersite.tsx:702
+#: src/views/Playersite.tsx:561
+#: src/views/Playersite.tsx:703
 msgid "Uploading the file failed"
 msgstr "파일 업로드 실패"
 
-#: src/views/Publication/Player.tsx:484
+#: src/views/Publication/Player.tsx:485
 msgid "Uploading the logo failed"
 msgstr "로고 업로드 실패"
 
-#: src/views/Publication/Player.tsx:533
+#: src/views/Publication/Player.tsx:534
 msgid "Uploading the poster failed"
 msgstr "포스터 업로드에 실패했습니다."
 
-#: src/Footer.tsx:193
+#: src/components/Footer.tsx:193
 #: src/components/Progress.tsx:116
 #: src/views/Main/Progress.tsx:57
 msgid "Uptime"
@@ -3430,7 +3462,7 @@ msgstr ""
 msgid "Use Auth0 for your running Restreamer Core. More <0>details</0>."
 msgstr "Restreamer Core에 Auto0을 적용합니다. <0>자세한 내용</0>"
 
-#: src/views/Edit/index.tsx:528
+#: src/views/Edit/index.tsx:529
 msgid "Use the wizard (<0/>) for a quick and easy setup, or edit (<1/>) the sources directly in custom mode."
 msgstr "설정 마법사(<0/>)를 통해 쉽고 빠르게 구성하거나, 사용자 모드에서 직접 구성(<1/>)할 수 있습니다."
 
@@ -3438,11 +3470,11 @@ msgstr "설정 마법사(<0/>)를 통해 쉽고 빠르게 구성하거나, 사�
 msgid "Use your copyright and choose the correct image license. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
 msgstr "저작권을 명기해 올바른 이미지 라이선스를 선택하세요. 자유롭게 제공하거나 철저히 제한할 수 있습니다. 다른 사람이 당신의 이미지로 무엇을 할 수 있는지 간략히 설명하세요."
 
-#: src/views/Edit/index.tsx:729
+#: src/views/Edit/index.tsx:730
 msgid "Use your copyright and choose the right image licence. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
 msgstr "저작권을 명기해 올바른 이미지 라이선스를 선택하세요. 자유롭게 제공하거나 철저히 제한할 수 있습니다. 다른 사람이 당신의 이미지로 무엇을 할 수 있는지 간략히 설명하세요."
 
-#: src/views/Edit/Sources/Network.tsx:876
+#: src/views/Edit/Sources/Network.tsx:877
 msgid "use_wallclock_as_timestamps"
 msgstr "use_wallclock_as_timestamps"
 
@@ -3450,26 +3482,26 @@ msgstr "use_wallclock_as_timestamps"
 msgid "User registration"
 msgstr "사용자 등록"
 
-#: src/views/Edit/Sources/Network.tsx:1008
+#: src/views/Edit/Sources/Network.tsx:1009
 #: src/views/Edit/Wizard/Sources/Network.tsx:101
 #: src/views/Login.tsx:285
 #: src/views/Publication/Services/DaCast.tsx:165
-#: src/views/Publication/Services/DASH.tsx:229
-#: src/views/Publication/Services/HLS.tsx:220
+#: src/views/Publication/Services/DASH.tsx:222
+#: src/views/Publication/Services/HLS.tsx:217
 #: src/views/Publication/Services/Red5.tsx:172
-#: src/views/Publication/Services/RTSP.tsx:178
+#: src/views/Publication/Services/RTSP.tsx:175
 #: src/views/Publication/Services/WOWZA.tsx:197
-#: src/views/Settings.tsx:1790
-#: src/views/Settings.tsx:1997
+#: src/views/Settings.tsx:1791
+#: src/views/Settings.tsx:1998
 msgid "Username"
 msgstr "사용자 이름"
 
-#: src/views/Settings.tsx:1799
-#: src/views/Settings.tsx:2011
+#: src/views/Settings.tsx:1800
+#: src/views/Settings.tsx:2012
 msgid "Username for authorization."
 msgstr "사용자 인증을 위한 이름입니다."
 
-#: src/views/Edit/Sources/Network.tsx:1013
+#: src/views/Edit/Sources/Network.tsx:1014
 #: src/views/Edit/Wizard/Sources/Network.tsx:107
 msgid "Username for the device."
 msgstr "장치의 사용자 이름입니다."
@@ -3478,11 +3510,11 @@ msgstr "장치의 사용자 이름입니다."
 msgid "V4L2_M2M is experimental."
 msgstr "V4L2_M2M은 시범기능입니다."
 
-#: src/components/coders/settings/Video.tsx:368
+#: src/components/coders/settings/Video.tsx:369
 msgid "Variable frame rate (VFR)"
 msgstr "가변 프레임율 (VFR)"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:143
+#: src/views/Edit/Sources/VirtualAudio.tsx:144
 msgid "velvet"
 msgstr "자주색"
 
@@ -3490,7 +3522,7 @@ msgstr "자주색"
 msgid "Vertical Flip"
 msgstr "위/아래 뒤집기"
 
-#: src/views/Publication/Add.tsx:579
+#: src/views/Publication/Add.tsx:580
 msgid "Video"
 msgstr "영상"
 
@@ -3498,20 +3530,20 @@ msgstr "영상"
 msgid "Video Codec"
 msgstr ""
 
-#: src/views/Edit/Sources/AVFoundation.tsx:136
-#: src/views/Edit/Sources/Channel.tsx:103
+#: src/views/Edit/Sources/AVFoundation.tsx:137
+#: src/views/Edit/Sources/Channel.tsx:104
 #: src/views/Edit/Sources/Raspicam.tsx:110
 #: src/views/Edit/Sources/V4L.tsx:127
-#: src/views/Edit/Sources/X11grab.tsx:179
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:98
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:97
+#: src/views/Edit/Sources/X11grab.tsx:180
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:99
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:96
 #: src/views/Edit/Wizard/Sources/V4L.tsx:121
 msgid "Video device"
 msgstr "영상 장치"
 
 #: src/views/Edit/Profile.tsx:533
 #: src/views/Edit/ProfileSummary.tsx:69
-#: src/views/Publication/Edit.tsx:657
+#: src/views/Publication/Edit.tsx:658
 msgid "Video settings"
 msgstr "영상 설정"
 
@@ -3525,19 +3557,19 @@ msgstr "영상 구성"
 msgid "Video source"
 msgstr "영상 원본"
 
-#: src/Footer.tsx:260
-#: src/Footer.tsx:266
-#: src/Footer.tsx:279
+#: src/components/Footer.tsx:260
+#: src/components/Footer.tsx:266
+#: src/components/Footer.tsx:279
 #: src/views/Main/Publication.tsx:187
 msgid "Viewer"
 msgstr "뷰어"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:142
+#: src/views/Edit/Sources/VirtualAudio.tsx:143
 msgid "violet"
 msgstr "보라색"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:217
-#: src/views/Edit/Sources/VirtualVideo.tsx:266
+#: src/views/Edit/Sources/VirtualAudio.tsx:218
+#: src/views/Edit/Sources/VirtualVideo.tsx:267
 msgid "Virtual source"
 msgstr "가상 입력"
 
@@ -3565,19 +3597,19 @@ msgstr "사용할 속도 사전 설정."
 msgid "Where to store the HLS playlist and segments. In-Memory is recommended."
 msgstr "HLS 재생목록과 조각을 저장하는 곳입니다. 메모리에 저장할 것을 권장합니다."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:138
+#: src/views/Edit/Sources/VirtualAudio.tsx:139
 msgid "white"
 msgstr "하얀색"
 
-#: src/components/coders/settings/Video.tsx:243
+#: src/components/coders/settings/Video.tsx:244
 msgid "Width"
 msgstr "폭"
 
-#: src/views/Settings.tsx:1978
+#: src/views/Settings.tsx:1979
 msgid "Write protection"
 msgstr "쓰기 보호"
 
-#: src/views/Edit/Sources/X11grab.tsx:290
+#: src/views/Edit/Sources/X11grab.tsx:291
 msgid "X11 Screen Capture"
 msgstr ""
 
@@ -3589,7 +3621,7 @@ msgstr "네"
 msgid "You can't abort the wizard because at least one input must be defined."
 msgstr "설정 마법사를 취소할 수 없습니다. 적어도 하나의 입력을 설정해야 합니다."
 
-#: src/views/Settings.tsx:2747
+#: src/views/Settings.tsx:2748
 msgid "You have changed the configuration. In order for the changes to take effect, you have to restart the application. Do you want to restart now?"
 msgstr "변경된 구성이 반영되려면 애플리케이션을 다시 시작해야 합니다. 지금 하시겠습니까?"
 
@@ -3598,7 +3630,7 @@ msgstr "변경된 구성이 반영되려면 애플리케이션을 다시 시작�
 msgid "You have to reconnect manually"
 msgstr "수동으로 재연결해야 합니다"
 
-#: src/views/Publication/Edit.tsx:576
+#: src/views/Publication/Edit.tsx:577
 msgid "You have unsaved changes. Please save them before you can control the service again."
 msgstr "변경사항이 저장되지 않았습니다. 진행하기 전에 저장해주세요."
 
@@ -3610,6 +3642,6 @@ msgstr "스트림을 인코딩해야 하나, 적절한 인코더가 없습니다
 msgid "Your stream needs to be encoded. Choose the desired encoder:"
 msgstr "이 스트림은 인코딩해야 합니다. 원하는 인코더를 선택해주세요:"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:133
+#: src/views/Edit/Sources/VirtualVideo.tsx:134
 msgid "YUV test pattern"
 msgstr "YUV 테스트 패턴"

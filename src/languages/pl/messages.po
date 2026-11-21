@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/EncodingSelect.tsx:279
+#: src/components/EncodingSelect.tsx:280
 msgid "<0>Compatibility list</0>"
 msgstr "<0>Lista kompatybilności</0>"
 
@@ -43,18 +43,18 @@ msgid "7 (+ fragmented MP4 format)"
 msgstr "7 (+ fragmentaryczny format MP4)"
 
 #: src/components/ChannelList.tsx:517
-#: src/views/Edit/index.tsx:790
-#: src/views/Edit/index.tsx:820
+#: src/views/Edit/index.tsx:791
+#: src/views/Edit/index.tsx:821
 #: src/views/Edit/Profile.tsx:662
 #: src/views/Edit/Wizard/Abort.tsx:21
-#: src/views/Publication/Edit.tsx:762
-#: src/views/Settings.tsx:2737
-#: src/views/Settings.tsx:2764
+#: src/views/Publication/Edit.tsx:763
+#: src/views/Settings.tsx:2738
+#: src/views/Settings.tsx:2765
 msgid "Abort"
 msgstr "Anuluj"
 
-#: src/Header.tsx:332
-#: src/Header.tsx:386
+#: src/components/Header.tsx:332
+#: src/components/Header.tsx:386
 msgid "About"
 msgstr "O nas"
 
@@ -66,7 +66,7 @@ msgstr "Dodaj"
 msgid "Add Audio"
 msgstr ""
 
-#: src/views/Playersite.tsx:761
+#: src/views/Playersite.tsx:762
 msgid "Add external widgets and styles to the publication site. You can find some examples on the help page."
 msgstr "Dodaj widżety i style zewnętrzne do witryny publikowania. Kilka przykładów znajdziesz na stronie pomocy."
 
@@ -74,63 +74,64 @@ msgstr "Dodaj widżety i style zewnętrzne do witryny publikowania. Kilka przyk�
 msgid "Add new channel"
 msgstr "Dodaj nowy kanał"
 
-#: src/views/Publication/Add.tsx:407
+#: src/views/Publication/Add.tsx:408
 msgid "Add Publication"
 msgstr "Dodaj Publikację"
 
-#: src/views/Publication/Add.tsx:410
+#. placeholder {0}: service.name
+#: src/views/Publication/Add.tsx:411
 msgid "Add: {0}"
 msgstr "Dodaj : {0}"
 
-#: src/views/Playersite.tsx:408
+#: src/views/Playersite.tsx:409
 msgid "Additional channels"
 msgstr ""
 
-#: src/views/Playersite.tsx:440
+#: src/views/Playersite.tsx:441
 msgid "Additional channels to display on the playersite."
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:975
+#: src/views/Edit/Sources/Network.tsx:976
 #: src/views/Edit/Wizard/Sources/Network.tsx:77
 #: src/views/Publication/Services/Azure.tsx:112
 #: src/views/Publication/Services/Brightcove.tsx:112
 #: src/views/Publication/Services/Core.tsx:263
-#: src/views/Publication/Services/DASH.tsx:220
-#: src/views/Publication/Services/HLS.tsx:211
+#: src/views/Publication/Services/DASH.tsx:213
+#: src/views/Publication/Services/HLS.tsx:208
 #: src/views/Publication/Services/Icecast.tsx:197
-#: src/views/Publication/Services/Image2.tsx:150
+#: src/views/Publication/Services/Image2.tsx:147
 #: src/views/Publication/Services/Linkedin.tsx:112
-#: src/views/Publication/Services/MPEGTS.tsx:206
+#: src/views/Publication/Services/MPEGTS.tsx:203
 #: src/views/Publication/Services/Red5.tsx:141
-#: src/views/Publication/Services/RTMP.tsx:184
-#: src/views/Publication/Services/RTSP.tsx:169
-#: src/views/Publication/Services/SRT.tsx:187
-#: src/views/Publication/Services/UDP.tsx:154
+#: src/views/Publication/Services/RTMP.tsx:181
+#: src/views/Publication/Services/RTSP.tsx:166
+#: src/views/Publication/Services/SRT.tsx:184
+#: src/views/Publication/Services/UDP.tsx:151
 #: src/views/Publication/Services/WOWZA.tsx:157
-#: src/views/Settings.tsx:1593
+#: src/views/Settings.tsx:1594
 msgid "Address"
 msgstr "Adres URL"
 
-#: src/views/Playersite.tsx:693
+#: src/views/Playersite.tsx:694
 msgid "Address for the background image."
 msgstr "Adres obrazu tła."
 
-#: src/views/Settings.tsx:1630
+#: src/views/Settings.tsx:1631
 msgid "Address to listen on for HTTP requests."
 msgstr "Adres do nasłuchiwania żądań HTTP."
 
-#: src/views/Settings.tsx:1647
+#: src/views/Settings.tsx:1648
 msgid "Address to listen on for HTTPS requests."
 msgstr "Adres do nasłuchiwania żądań HTTPS."
 
-#: src/views/Edit/Sources/Network.tsx:1288
-#: src/views/Edit/Sources/Network.tsx:1415
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:146
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:146
+#: src/views/Edit/Sources/Network.tsx:1289
+#: src/views/Edit/Sources/Network.tsx:1416
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:147
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:147
 msgid "Address:"
 msgstr "Adres:"
 
-#: src/views/Playersite.tsx:576
+#: src/views/Playersite.tsx:577
 msgid "Adjust publication site colors and background as you like."
 msgstr "Dostosuj kolory i tło witryny publikowania zgodnie z potrzebami."
 
@@ -138,16 +139,16 @@ msgstr "Dostosuj kolory i tło witryny publikowania zgodnie z potrzebami."
 msgid "Advanced monitoring"
 msgstr "Zaawansowane monitorowanie"
 
-#: src/views/Edit/Sources/Network.tsx:615
-#: src/views/Publication/Services/DASH.tsx:251
-#: src/views/Publication/Services/HLS.tsx:242
+#: src/views/Edit/Sources/Network.tsx:616
+#: src/views/Publication/Services/DASH.tsx:244
+#: src/views/Publication/Services/HLS.tsx:239
 #: src/views/Publication/Services/Icecast.tsx:211
-#: src/views/Publication/Services/Image2.tsx:163
-#: src/views/Publication/Services/MPEGTS.tsx:219
-#: src/views/Publication/Services/RTMP.tsx:206
-#: src/views/Publication/Services/RTSP.tsx:200
-#: src/views/Publication/Services/SRT.tsx:208
-#: src/views/Publication/Services/UDP.tsx:166
+#: src/views/Publication/Services/Image2.tsx:160
+#: src/views/Publication/Services/MPEGTS.tsx:216
+#: src/views/Publication/Services/RTMP.tsx:203
+#: src/views/Publication/Services/RTSP.tsx:197
+#: src/views/Publication/Services/SRT.tsx:205
+#: src/views/Publication/Services/UDP.tsx:163
 msgid "Advanced settings"
 msgstr "Zaawansowane ustawienia"
 
@@ -155,8 +156,8 @@ msgstr "Zaawansowane ustawienia"
 msgid "Advanced setup"
 msgstr "Ustawienia zaawansowane"
 
-#: src/views/Playersite.tsx:463
-#: src/views/Publication/Player.tsx:590
+#: src/views/Playersite.tsx:464
+#: src/views/Publication/Player.tsx:591
 msgid "AirPlay"
 msgstr "AirPlay"
 
@@ -164,7 +165,7 @@ msgstr "AirPlay"
 msgid "Alerting by email"
 msgstr "Powiadomienie e-mail"
 
-#: src/views/Publication/Add.tsx:430
+#: src/views/Publication/Add.tsx:431
 msgid "All"
 msgstr "Wszystko"
 
@@ -172,23 +173,23 @@ msgstr "Wszystko"
 msgid "All frames"
 msgstr "Wszystkie ramy"
 
-#: src/views/Settings.tsx:1401
+#: src/views/Settings.tsx:1402
 msgid "All important system settings."
 msgstr "Wszystkie ważne parametry systemu."
 
-#: src/views/Settings.tsx:1836
+#: src/views/Settings.tsx:1837
 msgid "Allow all referrer"
 msgstr "Zezwól wszystkim odsyłającym"
 
-#: src/views/Settings.tsx:1889
+#: src/views/Settings.tsx:1890
 msgid "Allow counting how many viewers the stream has."
 msgstr "Pozwala policzyć liczbę widzów strumienia."
 
-#: src/views/Edit/Sources/ALSA.tsx:184
+#: src/views/Edit/Sources/ALSA.tsx:185
 msgid "ALSA"
 msgstr "ALSA"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:153
+#: src/views/Edit/Sources/VirtualAudio.tsx:154
 msgid "Amplitude"
 msgstr "Rozległość dźwięku"
 
@@ -196,15 +197,15 @@ msgstr "Rozległość dźwięku"
 msgid "An environment variable sets this value."
 msgstr "Zmienna środowiskowa ustawia tę wartość."
 
-#: src/views/Settings.tsx:1050
+#: src/views/Settings.tsx:1051
 msgid "API endpoint not found. Settings not saved."
 msgstr "Nie znaleziono punktu końcowego interfejsu API. Ustawienia nie zostały zapisane."
 
-#: src/views/Settings.tsx:2378
+#: src/views/Settings.tsx:2379
 msgid "App"
 msgstr "App"
 
-#: src/Footer.tsx:251
+#: src/components/Footer.tsx:251
 #: src/views/Publication/Services/Red5.tsx:152
 #: src/views/Publication/Services/WOWZA.tsx:177
 msgid "Application"
@@ -214,31 +215,31 @@ msgstr "Aplikacja"
 msgid "Are you sure you want to abort the wizard?"
 msgstr "Czy na pewno chcesz przerwać kreatorowi?"
 
-#: src/views/Publication/Add.tsx:604
+#: src/views/Publication/Add.tsx:605
 msgid "Audio"
 msgstr "Dźwięk"
 
-#: src/views/Edit/Sources/ALSA.tsx:129
-#: src/views/Edit/Sources/AVFoundation.tsx:171
+#: src/views/Edit/Sources/ALSA.tsx:130
+#: src/views/Edit/Sources/AVFoundation.tsx:172
 msgid "Audio device"
 msgstr "Urządzenie audio"
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:133
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:134
 msgid "Audio Device"
 msgstr "Urządzenie Dźwiękowe"
 
-#: src/views/Edit/Wizard/Audio.tsx:99
-#: src/views/Edit/Wizard/Audio.tsx:119
+#: src/views/Edit/Wizard/Audio.tsx:100
+#: src/views/Edit/Wizard/Audio.tsx:120
 msgid "Audio from device"
 msgstr "Dźwięk z urządzenia"
 
 #: src/views/Edit/Profile.tsx:682
 #: src/views/Edit/ProfileSummary.tsx:93
-#: src/views/Publication/Edit.tsx:682
+#: src/views/Publication/Edit.tsx:683
 msgid "Audio settings"
 msgstr "Parametry dźwięku"
 
-#: src/views/Edit/Wizard/Audio.tsx:40
+#: src/views/Edit/Wizard/Audio.tsx:41
 msgid "Audio setup"
 msgstr "Ustawienia dźwięku"
 
@@ -258,8 +259,8 @@ msgstr "Auth0 Najemca"
 msgid "Author"
 msgstr "Autor"
 
-#: src/views/Settings.tsx:1342
-#: src/views/Settings.tsx:1755
+#: src/views/Settings.tsx:1343
+#: src/views/Settings.tsx:1756
 msgid "Authorization"
 msgstr "Uprawnienie"
 
@@ -271,38 +272,38 @@ msgstr "Automatycznie"
 msgid "Automatic cleanup of all media data"
 msgstr "Automatyczne czyszczenie wszystkich danych multimedialnych"
 
-#: src/views/Publication/Player.tsx:575
+#: src/views/Publication/Player.tsx:576
 msgid "Autoplay"
 msgstr "Automatyczne odtwarzanie (Autoplay)"
 
-#: src/views/Playersite.tsx:491
+#: src/views/Playersite.tsx:492
 msgid "Available"
 msgstr "Dostępne na"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:256
+#: src/views/Edit/Sources/AVFoundation.tsx:257
 msgid "AVFoundation"
 msgstr "AVFoundation"
 
-#: src/views/Edit/Sources/Network.tsx:884
+#: src/views/Edit/Sources/Network.tsx:885
 msgid "avoid_negative_ts"
 msgstr "avoid_negative_ts"
 
 #: src/views/Edit/Profile.tsx:846
 #: src/views/Edit/Wizard/Abort.tsx:42
-#: src/views/Edit/Wizard/Audio.tsx:157
+#: src/views/Edit/Wizard/Audio.tsx:158
 #: src/views/Edit/Wizard/License.tsx:50
 #: src/views/Edit/Wizard/Metadata.tsx:49
 #: src/views/Edit/Wizard/Video.tsx:92
 #: src/views/Edit/Wizard/VideoProfile.tsx:107
-#: src/views/Publication/Add.tsx:646
+#: src/views/Publication/Add.tsx:647
 msgid "Back"
 msgstr "Wstecz"
 
-#: src/views/Playersite.tsx:627
+#: src/views/Playersite.tsx:628
 msgid "Background colors"
 msgstr "Kolory tła"
 
-#: src/views/Playersite.tsx:680
+#: src/views/Playersite.tsx:681
 msgid "Background image"
 msgstr "Obraz tła"
 
@@ -310,11 +311,11 @@ msgstr "Obraz tła"
 msgid "Backup server"
 msgstr "Serwer kopii zapasowej"
 
-#: src/views/Publication/Services/Youtube.tsx:240
+#: src/views/Publication/Services/Youtube.tsx:237
 msgid "Backup stream"
 msgstr "Zapasowy stream"
 
-#: src/views/Publication/Services/Facebook.tsx:140
+#: src/views/Publication/Services/Facebook.tsx:133
 msgid "Backup stream key"
 msgstr "Klucz streamu kopii zapasowej"
 
@@ -322,12 +323,12 @@ msgstr "Klucz streamu kopii zapasowej"
 msgid "Backup URL"
 msgstr "Link do kopii zapasowej"
 
-#: src/Footer.tsx:290
-#: src/Footer.tsx:304
+#: src/components/Footer.tsx:290
+#: src/components/Footer.tsx:304
 msgid "Bandwidth"
 msgstr "Pasmo"
 
-#: src/views/Settings.tsx:1702
+#: src/views/Settings.tsx:1703
 msgid "Bandwidth control"
 msgstr "Kontrola przepustowości"
 
@@ -336,24 +337,24 @@ msgid "Banner"
 msgstr "Baner"
 
 #: src/views/Login.tsx:254
-#: src/views/Settings.tsx:1760
+#: src/views/Settings.tsx:1761
 msgid "Basic"
 msgstr "Zasadniczy"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:190
+#: src/views/Edit/Sources/VirtualAudio.tsx:191
 msgid "Beep factor"
 msgstr "Współczynnik sygnału dźwiękowego"
 
-#: src/components/coders/settings/Audio.tsx:13
-#: src/components/coders/settings/Video.tsx:15
+#: src/components/coders/settings/Audio.tsx:14
+#: src/components/coders/settings/Video.tsx:16
 msgid "Bitrate"
 msgstr "Bitrate"
 
-#: src/views/Settings.tsx:2264
+#: src/views/Settings.tsx:2265
 msgid "Block cache types"
 msgstr "Typy pamięci podręcznej bloków"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:141
+#: src/views/Edit/Sources/VirtualAudio.tsx:142
 msgid "blue"
 msgstr "niebieski"
 
@@ -361,16 +362,16 @@ msgstr "niebieski"
 msgid "Bottom field"
 msgstr "Dolne pole"
 
-#: src/views/Edit/index.tsx:703
+#: src/views/Edit/index.tsx:704
 #: src/views/Edit/Wizard/Metadata.tsx:35
 msgid "Briefly describe what the audience will see during the live stream."
 msgstr "Krótko opisz, co widzowie zobaczą podczas transmisji na żywo."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:140
+#: src/views/Edit/Sources/VirtualAudio.tsx:141
 msgid "brown"
 msgstr "brązowy"
 
-#: src/views/Publication/Player.tsx:459
+#: src/views/Publication/Player.tsx:460
 msgid "Button color"
 msgstr "Kolor przycisku"
 
@@ -382,15 +383,15 @@ msgstr "Według wysokości."
 msgid "By width"
 msgstr "Przez szerokość"
 
-#: src/views/Settings.tsx:2124
+#: src/views/Settings.tsx:2125
 msgid "Cache for files on /data."
 msgstr "Buforowane pliki w /data."
 
-#: src/views/Settings.tsx:2182
+#: src/views/Settings.tsx:2183
 msgid "Cache time (Seconds)"
 msgstr "Czas buforowania (w sekundach)"
 
-#: src/views/Settings.tsx:2240
+#: src/views/Settings.tsx:2241
 msgid "Cache types"
 msgstr "Rodzaje buforu"
 
@@ -398,66 +399,67 @@ msgstr "Rodzaje buforu"
 msgid "Capture buffer"
 msgstr "Bufor przechwytujący"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:237
+#: src/views/Edit/Sources/AVFoundation.tsx:238
 msgid "Capture clicks"
 msgstr "Przechwyt kliknięć"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:230
+#: src/views/Edit/Sources/AVFoundation.tsx:231
 msgid "Capture cursor"
 msgstr "Przechwyt kursoru"
 
-#: src/views/Edit/Sources/Channel.tsx:134
+#: src/views/Edit/Sources/Channel.tsx:135
 msgid "Channel"
 msgstr ""
 
-#: src/views/Edit/index.tsx:404
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx:405
 msgid "Channel \"{0}\" saved"
 msgstr "Kanał \"{0}” został zapisany"
 
-#: src/views/Edit/Sources/ALSA.tsx:156
+#: src/views/Edit/Sources/ALSA.tsx:157
 msgid "Channels"
 msgstr "Kanały"
 
-#: src/views/Settings.tsx:1411
+#: src/views/Settings.tsx:1412
 msgid "Check for updates"
 msgstr "Sprawdź aktualizacje"
 
-#: src/views/Publication/Add.tsx:360
+#: src/views/Publication/Add.tsx:361
 msgid "Check the requirements"
 msgstr "Sprawdź wymagania"
 
-#: src/views/Edit/StreamSelect.tsx:60
+#: src/views/Edit/StreamSelect.tsx:61
 msgid "Choose a video stream"
 msgstr "Wybierz strumień wideo"
 
-#: src/views/Edit/StreamSelect.tsx:75
+#: src/views/Edit/StreamSelect.tsx:76
 msgid "Choose an audio stream"
 msgstr "Wybierz strumień dźwiękowy"
 
-#: src/views/Edit/Sources/Channel.tsx:84
+#: src/views/Edit/Sources/Channel.tsx:85
 msgid "Choose an input channel ..."
 msgstr ""
 
-#: src/views/Edit/Sources/ALSA.tsx:106
+#: src/views/Edit/Sources/ALSA.tsx:107
 #: src/views/Edit/Sources/Framebuffer.tsx:93
 #: src/views/Edit/Sources/Raspicam.tsx:103
 #: src/views/Edit/Sources/V4L.tsx:103
-#: src/views/Edit/Sources/X11grab.tsx:155
+#: src/views/Edit/Sources/X11grab.tsx:156
 msgid "Choose an input device ..."
 msgstr "Wybierz urządzenie wejściowe ..."
 
-#: src/views/Edit/Sources/Network.tsx:1249
-#: src/views/Edit/Sources/Network.tsx:1376
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:110
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:110
+#: src/views/Edit/Sources/Network.tsx:1250
+#: src/views/Edit/Sources/Network.tsx:1377
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:111
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:111
 msgid "Choose an input stream ..."
 msgstr "Wybierz strumień wejściowy ..."
 
-#: src/components/coders/settings/Video.tsx:371
+#: src/components/coders/settings/Video.tsx:372
 msgid "Choose between CFR and VFR (Auto)"
 msgstr "Wybór pomiędzy CFR i VFR (Auto)"
 
-#: src/components/EncodingSelect.tsx:253
+#: src/components/EncodingSelect.tsx:254
 msgid "Choose codec ..."
 msgstr "Wybierz kodek ..."
 
@@ -465,40 +467,40 @@ msgstr "Wybierz kodek ..."
 msgid "Choose tenant ..."
 msgstr "Wybór najemcy..."
 
-#: src/views/Playersite.tsx:455
-#: src/views/Publication/Player.tsx:585
+#: src/views/Playersite.tsx:456
+#: src/views/Publication/Player.tsx:586
 msgid "Chromecast"
 msgstr "Chromecast"
 
-#: src/views/Publication/Services/DASH.tsx:381
-#: src/views/Publication/Services/HLS.tsx:315
+#: src/views/Publication/Services/DASH.tsx:374
+#: src/views/Publication/Services/HLS.tsx:312
 msgid "Chunk"
 msgstr "Kawałek"
 
 #: src/components/Changelog.tsx:182
 #: src/components/ModalContent.tsx:101
 #: src/components/modals/Hint.tsx:212
-#: src/views/Edit/index.tsx:752
-#: src/views/Playersite.tsx:859
-#: src/views/Publication/Add.tsx:452
-#: src/views/Publication/Add.tsx:639
-#: src/views/Publication/Edit.tsx:712
-#: src/views/Publication/Player.tsx:602
-#: src/views/Settings.tsx:2658
+#: src/views/Edit/index.tsx:753
+#: src/views/Playersite.tsx:860
+#: src/views/Publication/Add.tsx:453
+#: src/views/Publication/Add.tsx:640
+#: src/views/Publication/Edit.tsx:713
+#: src/views/Publication/Player.tsx:603
+#: src/views/Settings.tsx:2659
 msgid "Close"
 msgstr "Zamknij"
 
-#: src/views/Playersite.tsx:333
+#: src/views/Playersite.tsx:334
 msgid "Code injection"
 msgstr "Wstrzyknięcie kodu"
 
-#: src/components/EncodingSelect.tsx:248
+#: src/components/EncodingSelect.tsx:249
 #: src/components/modals/Hint.tsx:68
 #: src/components/modals/Hint.tsx:95
 msgid "Codec"
 msgstr "Kodek"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:134
+#: src/views/Edit/Sources/VirtualAudio.tsx:135
 msgid "Color"
 msgstr "Kolor"
 
@@ -506,7 +508,7 @@ msgstr "Kolor"
 msgid "Command"
 msgstr "Polecenie"
 
-#: src/views/Settings.tsx:1570
+#: src/views/Settings.tsx:1571
 msgid "Config"
 msgstr "Config"
 
@@ -518,7 +520,7 @@ msgstr "Potwierdź hasło"
 msgid "Connect"
 msgstr "Zaloguj się"
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:180
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:181
 msgid "Connected device"
 msgstr "Urządzenie podłączone "
 
@@ -540,7 +542,7 @@ msgstr "Łączenie z Restreamer Core ..."
 msgid "Connecting to Restreamer Core failed probably because of mixed content."
 msgstr "Połączenie z Restreamer Core nie powiodło się, prawdopodobnie z powodu mieszanej zawartości."
 
-#: src/components/coders/settings/Video.tsx:365
+#: src/components/coders/settings/Video.tsx:366
 msgid "Constant frame rate (CFR)"
 msgstr "Stała częstotliwość odświeżania (CFR)"
 
@@ -549,8 +551,8 @@ msgid "Constant Quantizer Mode (-1 to 255)."
 msgstr "Tryb stałego kwantyzatora (od -1 do 255)."
 
 #: src/components/controls/Metadata.tsx:72
-#: src/views/Playersite.tsx:728
-#: src/views/Playersite.tsx:745
+#: src/views/Playersite.tsx:729
+#: src/views/Playersite.tsx:746
 msgid "Content"
 msgstr "Zawartość"
 
@@ -558,11 +560,11 @@ msgstr "Zawartość"
 msgid "Content URL"
 msgstr "URL treści"
 
-#: src/views/Edit/Sources/Network.tsx:866
+#: src/views/Edit/Sources/Network.tsx:867
 msgid "copyts"
 msgstr "copyts"
 
-#: src/Footer.tsx:225
+#: src/components/Footer.tsx:225
 msgid "Cores"
 msgstr "Rdzenie"
 
@@ -578,53 +580,53 @@ msgstr "Limit CPU (w procentach)"
 msgid "CPU usage limit in percent (0-100%), 0 for unlimited."
 msgstr "Limit użycia procesora w procentach (0-100%), 0 dla nieograniczonego."
 
-#: src/components/controls/License/index.tsx:115
+#: src/components/controls/License/index.tsx:116
 msgid "Creative Commons"
 msgstr "Creative Commons"
 
-#: src/components/coders/Encoders/audio/opus.tsx:80
-#: src/components/coders/settings/Audio.tsx:32
-#: src/components/coders/settings/Audio.tsx:119
-#: src/components/coders/settings/Audio.tsx:169
-#: src/components/coders/settings/Video.tsx:39
-#: src/components/coders/settings/Video.tsx:77
-#: src/components/coders/settings/Video.tsx:121
-#: src/components/coders/settings/Video.tsx:181
-#: src/components/coders/settings/Video.tsx:222
-#: src/components/coders/settings/Video.tsx:264
-#: src/components/coders/settings/Video.tsx:302
-#: src/components/coders/settings/Video.tsx:338
-#: src/components/filters/audio/Resample.tsx:71
-#: src/components/filters/audio/Resample.tsx:121
+#: src/components/coders/Encoders/audio/opus.tsx:81
+#: src/components/coders/settings/Audio.tsx:33
+#: src/components/coders/settings/Audio.tsx:120
+#: src/components/coders/settings/Audio.tsx:170
+#: src/components/coders/settings/Video.tsx:40
+#: src/components/coders/settings/Video.tsx:78
+#: src/components/coders/settings/Video.tsx:122
+#: src/components/coders/settings/Video.tsx:182
+#: src/components/coders/settings/Video.tsx:223
+#: src/components/coders/settings/Video.tsx:265
+#: src/components/coders/settings/Video.tsx:303
+#: src/components/coders/settings/Video.tsx:339
+#: src/components/filters/audio/Resample.tsx:72
+#: src/components/filters/audio/Resample.tsx:122
 #: src/components/filters/audio/Volume.tsx:57
-#: src/components/filters/video/Framerate.tsx:54
-#: src/views/Edit/Sources/ALSA.tsx:111
-#: src/views/Edit/Sources/AVFoundation.tsx:130
-#: src/views/Edit/Sources/AVFoundation.tsx:165
+#: src/components/filters/video/Framerate.tsx:55
+#: src/views/Edit/Sources/ALSA.tsx:112
+#: src/views/Edit/Sources/AVFoundation.tsx:131
+#: src/views/Edit/Sources/AVFoundation.tsx:166
 #: src/views/Edit/Sources/V4L.tsx:109
-#: src/views/Edit/Sources/X11grab.tsx:81
-#: src/views/Edit/Sources/X11grab.tsx:161
+#: src/views/Edit/Sources/X11grab.tsx:82
+#: src/views/Edit/Sources/X11grab.tsx:162
 msgid "Custom ..."
 msgstr "Dostosuj ..."
 
-#: src/views/Edit/Sources/ALSA.tsx:130
+#: src/views/Edit/Sources/ALSA.tsx:131
 msgid "Custom audio device"
 msgstr "Własne urządzenie audio"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:172
+#: src/views/Edit/Sources/AVFoundation.tsx:173
 msgid "Custom audio index"
 msgstr "Własny indeks audio"
 
-#: src/components/coders/settings/Audio.tsx:14
-#: src/components/coders/settings/Video.tsx:16
+#: src/components/coders/settings/Audio.tsx:15
+#: src/components/coders/settings/Video.tsx:17
 msgid "Custom bitrate (kbit/s)"
 msgstr "Własna szybkość transmisji (kb/s)"
 
-#: src/views/Playersite.tsx:756
+#: src/views/Playersite.tsx:757
 msgid "Custom code injection"
 msgstr "Wstrzyknięcie własnego kodu"
 
-#: src/components/coders/Encoders/audio/opus.tsx:65
+#: src/components/coders/Encoders/audio/opus.tsx:66
 msgid "Custom delay"
 msgstr "Własny limit czasu"
 
@@ -632,35 +634,35 @@ msgstr "Własny limit czasu"
 msgid "Custom device"
 msgstr "Własne urządzenie"
 
-#: src/components/coders/settings/Video.tsx:286
-#: src/components/coders/settings/Video.tsx:324
+#: src/components/coders/settings/Video.tsx:287
+#: src/components/coders/settings/Video.tsx:325
 msgid "Custom format"
 msgstr "Własny format"
 
-#: src/components/coders/settings/Video.tsx:99
-#: src/components/filters/video/Framerate.tsx:36
+#: src/components/coders/settings/Video.tsx:100
+#: src/components/filters/video/Framerate.tsx:37
 msgid "Custom framerate"
 msgstr "Własna częstotliwość odświeżania"
 
-#: src/views/Settings.tsx:1579
+#: src/views/Settings.tsx:1580
 msgid "Custom JSON config for datarhei Core."
 msgstr "Własna konfiguracja JSON dla Datarhei Core."
 
-#: src/components/coders/settings/Video.tsx:61
+#: src/components/coders/settings/Video.tsx:62
 msgid "Custom keyframe interval"
 msgstr "Własny interwał klatki kluczowej"
 
-#: src/components/coders/settings/Audio.tsx:61
-#: src/components/filters/audio/Resample.tsx:53
+#: src/components/coders/settings/Audio.tsx:62
+#: src/components/filters/audio/Resample.tsx:54
 msgid "Custom layout"
 msgstr "Własny układ"
 
-#: src/components/coders/settings/Audio.tsx:147
-#: src/components/filters/audio/Resample.tsx:99
+#: src/components/coders/settings/Audio.tsx:148
+#: src/components/filters/audio/Resample.tsx:100
 msgid "Custom sampling (Hz)"
 msgstr "Własne próbkowanie (Hz)"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:188
+#: src/views/Edit/Sources/VirtualVideo.tsx:189
 msgid "Custom scale"
 msgstr "Własna skala"
 
@@ -673,18 +675,18 @@ msgstr "Własna skala"
 #: src/components/coders/Decoders/video/vc1_cuvid.tsx:81
 #: src/components/coders/Decoders/video/vp8_cuvid.tsx:81
 #: src/components/coders/Decoders/video/vp9_cuvid.tsx:81
-#: src/components/coders/settings/Video.tsx:155
-#: src/components/coders/settings/Video.tsx:203
-#: src/components/coders/settings/Video.tsx:244
+#: src/components/coders/settings/Video.tsx:156
+#: src/components/coders/settings/Video.tsx:204
+#: src/components/coders/settings/Video.tsx:245
 msgid "Custom size"
 msgstr "Własny rozmiar"
 
 #: src/views/Edit/Sources/V4L.tsx:128
-#: src/views/Edit/Sources/X11grab.tsx:180
+#: src/views/Edit/Sources/X11grab.tsx:181
 msgid "Custom video device"
 msgstr "Własne urządzenie wideo"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:137
+#: src/views/Edit/Sources/AVFoundation.tsx:138
 msgid "Custom video index"
 msgstr "Własny indeks wideo"
 
@@ -694,7 +696,7 @@ msgstr "Własny indeks wideo"
 msgid "Data copied to clipboard"
 msgstr "Dane skopiowane do schowka"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:224
+#: src/views/Edit/Sources/VirtualVideo.tsx:225
 msgid "Death color"
 msgstr "Kolor śmierci"
 
@@ -702,26 +704,29 @@ msgstr "Kolor śmierci"
 msgid "Decibels (dB)"
 msgstr "Decybele (dB)"
 
-#: src/components/EncodingSelect.tsx:262
+#: src/components/EncodingSelect.tsx:263
 #: src/views/Edit/Wizard/VideoProfile.tsx:81
 msgid "Decoder"
 msgstr "Dekoder"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:125
-#: src/views/Edit/Sources/AVFoundation.tsx:161
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:91
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:126
-#: src/views/Playersite.tsx:501
-#: src/views/Playersite.tsx:590
-#: src/views/Playersite.tsx:634
+#: src/views/Edit/Sources/AVFoundation.tsx:126
+#: src/views/Edit/Sources/AVFoundation.tsx:162
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:92
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:127
+#: src/views/Playersite.tsx:502
+#: src/views/Playersite.tsx:591
+#: src/views/Playersite.tsx:635
 msgid "Default"
 msgstr "Domyślny"
 
-#: src/views/Edit/Sources/Network.tsx:800
+#. placeholder {0}: 2500
+#: src/views/Edit/Sources/Network.tsx:801
 msgid "Default {0}"
 msgstr "Domyślnie {0}"
 
-#: src/views/Edit/Sources/Network.tsx:840
+#. placeholder {0}: 5000000
+#. placeholder {1}: 5
+#: src/views/Edit/Sources/Network.tsx:841
 msgid "Default {0} ({1} seconds)"
 msgstr "Domyślnie {0} ({1} sekund)"
 
@@ -741,28 +746,28 @@ msgstr "Tryb Deinterlace"
 msgid "Deinterlace parity"
 msgstr "Deinterlace parity"
 
-#: src/components/coders/Encoders/audio/opus.tsx:64
+#: src/components/coders/Encoders/audio/opus.tsx:65
 msgid "Delay"
 msgstr "Limit czasu"
 
-#: src/views/Edit/Sources/ALSA.tsx:165
+#: src/views/Edit/Sources/ALSA.tsx:166
 msgid "Delay (ms)"
 msgstr "Opóźnienie (w ms)"
 
-#: src/views/Edit/index.tsx:774
-#: src/views/Edit/index.tsx:829
-#: src/views/Playersite.tsx:525
-#: src/views/Publication/Edit.tsx:731
-#: src/views/Publication/Edit.tsx:771
+#: src/views/Edit/index.tsx:775
+#: src/views/Edit/index.tsx:830
+#: src/views/Playersite.tsx:526
+#: src/views/Publication/Edit.tsx:732
+#: src/views/Publication/Edit.tsx:772
 msgid "Delete"
 msgstr "Usuń"
 
-#: src/views/Publication/Edit.tsx:776
+#: src/views/Publication/Edit.tsx:777
 msgid "Deleting a publication service cannot be reversed. The publication stops immediately."
 msgstr "Usunięcia usługi publikowania nie można cofnąć. Publikowanie zatrzymuje się natychmiast."
 
-#: src/views/Publication/Services/Twitter.tsx:168
-#: src/views/Publication/Services/Youtube.tsx:211
+#: src/views/Publication/Services/Twitter.tsx:161
+#: src/views/Publication/Services/Youtube.tsx:208
 msgid "Delivering mode"
 msgstr "Sposób dostawy"
 
@@ -771,14 +776,14 @@ msgstr "Sposób dostawy"
 msgid "Description"
 msgstr "Opis"
 
-#: src/views/Playersite.tsx:321
-#: src/views/Playersite.tsx:571
+#: src/views/Playersite.tsx:322
+#: src/views/Playersite.tsx:572
 msgid "Design"
 msgstr "Model"
 
 #: src/views/Edit/Sources/Framebuffer.tsx:100
-#: src/views/Edit/Wizard/Audio.tsx:124
-#: src/views/Publication/Services/Framebuffer.tsx:108
+#: src/views/Edit/Wizard/Audio.tsx:125
+#: src/views/Publication/Services/Framebuffer.tsx:101
 msgid "Device"
 msgstr "Urządzenie"
 
@@ -788,7 +793,7 @@ msgstr "Urządzenie"
 msgid "Disconnect"
 msgstr "Wyloguj"
 
-#: src/views/Edit/index.tsx:799
+#: src/views/Edit/index.tsx:800
 msgid "Disconnect & Continue"
 msgstr "Odłącz i kontynuuj"
 
@@ -798,54 +803,56 @@ msgid "Disconnecting ..."
 msgstr "Wylogowywanie ..."
 
 #: src/components/controls/HLS.tsx:76
-#: src/views/Settings.tsx:2078
+#: src/views/Settings.tsx:2079
 msgid "Disk"
 msgstr "Dysk"
 
-#: src/views/Settings.tsx:2121
-#: src/views/Settings.tsx:2129
+#: src/views/Settings.tsx:2122
+#: src/views/Settings.tsx:2130
 msgid "Disk cache"
 msgstr "Dysk z pamięci podręcznej"
 
-#: src/Footer.tsx:352
-#: src/Footer.tsx:366
+#: src/components/Footer.tsx:352
+#: src/components/Footer.tsx:366
 msgid "Disk storage"
 msgstr "Miejsce na dysku"
 
-#: src/views/Settings.tsx:2774
+#: src/views/Settings.tsx:2775
 msgid "Do you really want to restart the application now?"
 msgstr "Czy na pewno chcesz teraz ponownie uruchomić aplikację?"
 
-#: src/views/Edit/index.tsx:813
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx:814
 msgid "Do you want to delete \"{0}\"?"
 msgstr "Czy chcesz usunąć \"{0}”?"
 
-#: src/views/Publication/Edit.tsx:755
+#: src/views/Publication/Edit.tsx:756
 msgid "Do you want to delete {title}?"
 msgstr "Czy chcesz usunąć {title}?"
 
-#: src/views/Edit/index.tsx:783
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx:784
 msgid "Do you want to disconnect \"{0}\"?"
 msgstr "Czy chcesz odłączyć \"{0}”?"
 
-#: src/Header.tsx:342
-#: src/Header.tsx:396
+#: src/components/Header.tsx:342
+#: src/components/Header.tsx:396
 msgid "Docs"
 msgstr "Dokumentacja"
 
-#: src/views/Publication/Services/DASH.tsx:597
-#: src/views/Publication/Services/HLS.tsx:576
+#: src/views/Publication/Services/DASH.tsx:590
+#: src/views/Publication/Services/HLS.tsx:573
 #: src/views/Publication/Services/Icecast.tsx:279
-#: src/views/Publication/Services/Image2.tsx:219
-#: src/views/Publication/Services/MPEGTS.tsx:430
-#: src/views/Publication/Services/RTMP.tsx:318
-#: src/views/Publication/Services/RTSP.tsx:288
-#: src/views/Publication/Services/SRT.tsx:490
-#: src/views/Publication/Services/UDP.tsx:282
+#: src/views/Publication/Services/Image2.tsx:216
+#: src/views/Publication/Services/MPEGTS.tsx:427
+#: src/views/Publication/Services/RTMP.tsx:315
+#: src/views/Publication/Services/RTSP.tsx:285
+#: src/views/Publication/Services/SRT.tsx:487
+#: src/views/Publication/Services/UDP.tsx:279
 msgid "Documentation"
 msgstr "Dokumentacja"
 
-#: src/views/Edit/Sources/X11grab.tsx:260
+#: src/views/Edit/Sources/X11grab.tsx:261
 msgid "Draw mouse"
 msgstr ""
 
@@ -861,31 +868,31 @@ msgstr "Każde pole"
 msgid "Each frames"
 msgstr "Każda ramka"
 
-#: src/views/Edit/index.tsx:471
+#: src/views/Edit/index.tsx:472
 msgid "Edit"
 msgstr "Edytuj"
 
-#: src/views/Edit/index.tsx:518
+#: src/views/Edit/index.tsx:519
 msgid "Edit the audio and video sources for the live stream. Add a description, and set your desired content license."
 msgstr "Zmień źródła audio i wideo dla transmisji na żywo. Dodaj opis i ustaw licencję na żądaną zawartość."
 
-#: src/views/Publication/Edit.tsx:487
+#: src/views/Publication/Edit.tsx:488
 msgid "Edit: {title}"
 msgstr "Edytuj: {title}"
 
-#: src/views/Publication/Player.tsx:365
+#: src/views/Publication/Player.tsx:366
 msgid "EDIT: Player"
 msgstr "EDYTUJ: Odtwarzacz"
 
-#: src/views/Playersite.tsx:295
+#: src/views/Playersite.tsx:296
 msgid "EDIT: Publication Website"
 msgstr "EDIT: Witryna publikacji"
 
-#: src/views/Settings.tsx:1679
+#: src/views/Settings.tsx:1680
 msgid "Email"
 msgstr "Email"
 
-#: src/views/Publication/Player.tsx:413
+#: src/views/Publication/Player.tsx:414
 msgid "Embed"
 msgstr "Integruj"
 
@@ -894,12 +901,12 @@ msgstr "Integruj"
 msgid "Enable"
 msgstr "Włącz"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:195
+#: src/views/Edit/Sources/VirtualAudio.tsx:196
 msgid "Enable a periodic beep every second with this value times the carrier frequency"
 msgstr "Aktywuje okresowy sygnał dźwiękowy co sekundę z tą wartością pomnożoną przez częstotliwość nośną"
 
 #: src/views/Publication/Services/Dummy.tsx:313
-#: src/views/Publication/Services/Facebook.tsx:160
+#: src/views/Publication/Services/Facebook.tsx:153
 msgid "Enable backup stream"
 msgstr "Aktywuj kopie streamu"
 
@@ -907,7 +914,7 @@ msgstr "Aktywuj kopie streamu"
 msgid "Enable browser-compatible H.264 stream"
 msgstr ""
 
-#: src/views/Publication/Player.tsx:564
+#: src/views/Publication/Player.tsx:565
 msgid "Enable nerd statistics"
 msgstr "Włącz statystyki nerdów"
 
@@ -917,12 +924,12 @@ msgid "Enable now"
 msgstr "Włącz teraz"
 
 #: src/views/Publication/Services/Dummy.tsx:308
-#: src/views/Publication/Services/Facebook.tsx:155
+#: src/views/Publication/Services/Facebook.tsx:148
 msgid "Enable primary stream"
 msgstr "Aktywuj podstawowy stream"
 
-#: src/views/Edit/Sources/Network.tsx:1228
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:91
+#: src/views/Edit/Sources/Network.tsx:1229
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:92
 msgid "Enable RTMP server ..."
 msgstr "Aktywuj serwer RTMP ..."
 
@@ -934,16 +941,16 @@ msgstr "Włącz transfer RTMPS"
 msgid "Enable snapshots"
 msgstr "Włącz migawki"
 
-#: src/views/Edit/Sources/Network.tsx:1355
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:91
+#: src/views/Edit/Sources/Network.tsx:1356
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:92
 msgid "Enable SRT server ..."
 msgstr "Włączenie serwera SRT ..."
 
-#: src/views/Settings.tsx:1778
+#: src/views/Settings.tsx:1779
 msgid "Enabling authorization is strongly advised. Otherwise, anybody can access this instance."
 msgstr "Zdecydowanie zaleca się aktywację autoryzacji. W przeciwnym razie każdy może uzyskać dostęp do tej instancji."
 
-#: src/views/Settings.tsx:1989
+#: src/views/Settings.tsx:1990
 msgid "Enabling basic auth is strongly advised. Otherwise, anybody could write data to /memfs."
 msgstr "Zdecydowanie zaleca się włączenie uwierzytelniania podstawowego. W przeciwnym razie każdy mógłby zapisać dane do /memfs."
 
@@ -951,15 +958,15 @@ msgstr "Zdecydowanie zaleca się włączenie uwierzytelniania podstawowego. W pr
 msgid "Encoder"
 msgstr "Koder"
 
-#: src/views/Edit/Summary.tsx:94
-#: src/views/Publication/Add.tsx:566
-#: src/views/Publication/Edit.tsx:644
+#: src/views/Edit/Summary.tsx:95
+#: src/views/Publication/Add.tsx:567
+#: src/views/Publication/Edit.tsx:645
 msgid "Encoding"
 msgstr "Kodowanie"
 
-#: src/views/Publication/Services/HLS.tsx:521
-#: src/views/Publication/Services/RTMP.tsx:290
-#: src/views/Publication/Services/SRT.tsx:430
+#: src/views/Publication/Services/HLS.tsx:518
+#: src/views/Publication/Services/RTMP.tsx:287
+#: src/views/Publication/Services/SRT.tsx:427
 msgid "Encryption"
 msgstr "Szyfrowanie"
 
@@ -971,7 +978,7 @@ msgstr "Wpisz nazwę nowego kanału."
 msgid "Enter password"
 msgstr "Wpisz hasło"
 
-#: src/views/Edit/Sources/Network.tsx:968
+#: src/views/Edit/Sources/Network.tsx:969
 #: src/views/Edit/Wizard/Sources/Network.tsx:70
 msgid "Enter the address of your network source:"
 msgstr "Wprowadź adres źródła sieci:"
@@ -988,7 +995,7 @@ msgstr "Koder entropii"
 #: src/views/Incompatible.tsx:29
 #: src/views/Invalid.tsx:31
 #: src/views/Publication/Process.tsx:64
-#: src/views/Settings.tsx:1278
+#: src/views/Settings.tsx:1279
 msgid "Error"
 msgstr "Błąd"
 
@@ -998,20 +1005,22 @@ msgstr "Błąd"
 msgid "Error while copying data to clipboard"
 msgstr "Błąd podczas kopiowania danych do schowka"
 
+#. placeholder {0}: anonymize($state.progress.error) || 'unknown'
+#. placeholder {0}: progress.error
 #: src/views/Main/index.tsx:403
 #: src/views/Publication/Process.tsx:65
 msgid "Error: {0}"
 msgstr "Błąd: {0}"
 
-#: src/views/Playersite.tsx:804
+#: src/views/Playersite.tsx:805
 msgid "Expands the area above the channel list (live chat)."
 msgstr "Rozwija obszar nad listą kanałów (czat na żywo)."
 
-#: src/views/Playersite.tsx:826
+#: src/views/Playersite.tsx:827
 msgid "Expands the area under the channel description (comment boxes)."
 msgstr "Rozwija obszar pod opisem kanału (pola komentarzy)."
 
-#: src/views/Settings.tsx:1459
+#: src/views/Settings.tsx:1460
 msgid "Expert mode"
 msgstr "Tryb ekspercki"
 
@@ -1019,31 +1028,32 @@ msgstr "Tryb ekspercki"
 msgid "EXT-X-VERSION"
 msgstr "EXT-X-VERSION"
 
-#: src/views/Playersite.tsx:789
+#: src/views/Playersite.tsx:790
 msgid "Extend channel list"
 msgstr "Rozwiń listę kanałów"
 
-#: src/views/Playersite.tsx:811
+#: src/views/Playersite.tsx:812
 msgid "Extend content"
 msgstr "Rozwiń zawartość"
 
-#: src/views/Playersite.tsx:834
+#: src/views/Playersite.tsx:835
 msgid "Extend footer"
 msgstr "Rozszerz stopkę"
 
-#: src/views/Playersite.tsx:769
+#: src/views/Playersite.tsx:770
 msgid "Extend header"
 msgstr "Rozszerz nagłówek"
 
-#: src/views/Edit/Sources/Network.tsx:912
+#: src/views/Edit/Sources/Network.tsx:913
 msgid "Extention settings"
 msgstr ""
 
-#: src/views/Publication/Add.tsx:270
+#. placeholder {0}: err.message
+#: src/views/Publication/Add.tsx:271
 msgid "Failed to create publication service ({0})"
 msgstr "Nie udało się utworzyć usługi publikowania ({0})"
 
-#: src/views/Playersite.tsx:247
+#: src/views/Playersite.tsx:248
 msgid "Failed to create publication website files."
 msgstr "Nie udało się utworzyć publikowanych plików witryny."
 
@@ -1052,52 +1062,57 @@ msgstr "Nie udało się utworzyć publikowanych plików witryny."
 msgid "Failed to probe the source. Please check the <0>probe details</0>."
 msgstr "Nie można zbadać źródła. Sprawdź <0>szczegóły sondy</0>."
 
+#. placeholder {0}: err.message
 #: src/utils/restreamer.ts:517
 msgid "Failed to refresh token: {0}"
 msgstr "Nie udało się odświeżyć tokena: {0}"
 
-#: src/views/Edit/index.tsx:343
+#: src/views/Edit/index.tsx:344
 msgid "Failed to save ingest metadata"
 msgstr "Nie udało się zapisać metadanych pozyskiwania"
 
-#: src/views/Edit/index.tsx:188
+#: src/views/Edit/index.tsx:189
 msgid "Failed to stop process"
 msgstr "Zakończenie procesu nie powiodło się"
 
-#: src/views/Playersite.tsx:236
+#: src/views/Playersite.tsx:237
 msgid "Failed to store player size setting."
 msgstr "Nie udało się zapisać ustawienia rozmiaru dysku."
 
-#: src/views/Publication/Edit.tsx:324
+#. placeholder {0}: err.message
+#: src/views/Publication/Edit.tsx:325
 msgid "Failed to store publication service ({0})"
 msgstr "Nie udało się zapisać usługi publikowania ({0})"
 
-#: src/views/Edit/index.tsx:363
+#. placeholder {0}: err.message
+#: src/views/Edit/index.tsx:364
 msgid "Failed to update ingest preview process ({0})"
 msgstr ""
 
-#: src/views/Edit/index.tsx:332
+#. placeholder {0}: err.message
+#: src/views/Edit/index.tsx:333
 msgid "Failed to update ingest process ({0})"
 msgstr "Nie udało się zaktualizować procesu przetwarzania ({0})"
 
-#: src/views/Edit/index.tsx:353
+#. placeholder {0}: err.message
+#: src/views/Edit/index.tsx:354
 msgid "Failed to update ingest snapshot process ({0})"
 msgstr "Nie udało się zaktualizować procesu ingest snapshot ({0})"
 
-#: src/views/Edit/index.tsx:373
+#: src/views/Edit/index.tsx:374
 msgid "Failed to update the player"
 msgstr "Aktualizacja odtwarzacza nie powiodła się"
 
-#: src/views/Edit/index.tsx:383
+#: src/views/Edit/index.tsx:384
 msgid "Failed to update the playersite"
 msgstr "Nie udało się zaktualizować strony dla graczy"
 
-#: src/views/Edit/Wizard/Audio.tsx:53
+#: src/views/Edit/Wizard/Audio.tsx:54
 #: src/views/Edit/Wizard/Video.tsx:49
 msgid "Failed to verify the source. Please check the address."
 msgstr "Nie można zweryfikować źródła. Zweryfikuj adres."
 
-#: src/views/Settings.tsx:2614
+#: src/views/Settings.tsx:2615
 msgid "FFmpeg"
 msgstr "FFmpeg"
 
@@ -1107,7 +1122,7 @@ msgstr "FFmpeg"
 msgid "File path"
 msgstr "Ścieżka pliku"
 
-#: src/views/Edit/Summary.tsx:100
+#: src/views/Edit/Summary.tsx:101
 msgid "Filter"
 msgstr "Filtr"
 
@@ -1119,24 +1134,24 @@ msgstr "Wykończenie"
 msgid "Fix size"
 msgstr "Ustalenie rozmiaru"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:242
+#: src/views/Edit/Sources/VirtualVideo.tsx:243
 msgid "Flags"
 msgstr "Flagi"
 
-#: src/views/Edit/Sources/X11grab.tsx:87
 #: src/views/Edit/Sources/X11grab.tsx:88
+#: src/views/Edit/Sources/X11grab.tsx:89
 msgid "Follow mouse"
 msgstr ""
 
-#: src/views/Playersite.tsx:849
+#: src/views/Playersite.tsx:850
 msgid "For Javascripts."
 msgstr "Dla JavaScriptów."
 
-#: src/views/Playersite.tsx:784
+#: src/views/Playersite.tsx:785
 msgid "For Stylesheets."
 msgstr "Do arkuszy stylów."
 
-#: src/views/Edit/Sources/Network.tsx:690
+#: src/views/Edit/Sources/Network.tsx:691
 msgid "Force input framerate"
 msgstr "Wymuś częstotliwość odświeżania wejściowego"
 
@@ -1144,7 +1159,7 @@ msgstr "Wymuś częstotliwość odświeżania wejściowego"
 msgid "Force key frames"
 msgstr "Wymuś ramki kluczowe"
 
-#: src/components/coders/settings/Video.tsx:285
+#: src/components/coders/settings/Video.tsx:286
 msgid "Format"
 msgstr "Format"
 
@@ -1157,80 +1172,80 @@ msgstr "FPS"
 msgid "Frame drops"
 msgstr "Spadki ramek"
 
-#: src/components/coders/settings/Video.tsx:362
+#: src/components/coders/settings/Video.tsx:363
 msgid "Frame is passed through (Passthrough)"
 msgstr "Ramka jest przepuszczana (Passthrough)"
 
-#: src/views/Edit/Sources/Framebuffer.tsx:146
+#: src/views/Edit/Sources/Framebuffer.tsx:144
 msgid "Framebuffer"
 msgstr "Framebuffer"
 
-#: src/components/coders/settings/Video.tsx:98
-#: src/components/filters/video/Framerate.tsx:35
-#: src/views/Edit/Sources/Network.tsx:703
+#: src/components/coders/settings/Video.tsx:99
+#: src/components/filters/video/Framerate.tsx:36
+#: src/views/Edit/Sources/Network.tsx:704
 msgid "Framerate"
 msgstr "Częstotliwość wyświetlania klatek"
 
-#: src/components/filters/video/Framerate.tsx:108
+#: src/components/filters/video/Framerate.tsx:109
 msgid "Framerate conversion (frame interpolation)"
 msgstr "Konwersja liczby klatek na sekundę (interpolacja klatek)"
 
-#: src/components/coders/settings/Video.tsx:357
+#: src/components/coders/settings/Video.tsx:358
 msgid "Framerate mode"
 msgstr "Tryb framerate"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:178
+#: src/views/Edit/Sources/VirtualAudio.tsx:179
 msgid "Frequency (Hz)"
 msgstr "Częstotliwość (Hz)"
 
-#: src/views/Edit/index.tsx:487
-#: src/views/Edit/index.tsx:513
-#: src/views/Edit/Sources/Network.tsx:756
-#: src/views/Playersite.tsx:310
-#: src/views/Playersite.tsx:348
-#: src/views/Publication/Add.tsx:470
-#: src/views/Publication/Edit.tsx:504
-#: src/views/Publication/Services/DASH.tsx:258
-#: src/views/Publication/Services/HLS.tsx:249
+#: src/views/Edit/index.tsx:488
+#: src/views/Edit/index.tsx:514
+#: src/views/Edit/Sources/Network.tsx:757
+#: src/views/Playersite.tsx:311
+#: src/views/Playersite.tsx:349
+#: src/views/Publication/Add.tsx:471
+#: src/views/Publication/Edit.tsx:505
+#: src/views/Publication/Services/DASH.tsx:251
+#: src/views/Publication/Services/HLS.tsx:246
 #: src/views/Publication/Services/Icecast.tsx:218
-#: src/views/Publication/Services/Image2.tsx:170
-#: src/views/Publication/Services/RTMP.tsx:213
-#: src/views/Publication/Services/RTSP.tsx:207
-#: src/views/Publication/Services/SRT.tsx:215
-#: src/views/Settings.tsx:1322
-#: src/views/Settings.tsx:1396
+#: src/views/Publication/Services/Image2.tsx:167
+#: src/views/Publication/Services/RTMP.tsx:210
+#: src/views/Publication/Services/RTSP.tsx:204
+#: src/views/Publication/Services/SRT.tsx:212
+#: src/views/Settings.tsx:1323
+#: src/views/Settings.tsx:1397
 msgid "General"
 msgstr "Główny"
 
 #: src/views/Publication/Services/DLive.tsx:89
 #: src/views/Publication/Services/EarthCam.tsx:108
-#: src/views/Publication/Services/Facebook.tsx:131
-#: src/views/Publication/Services/Facebook.tsx:149
-#: src/views/Publication/Services/Instagram.tsx:102
+#: src/views/Publication/Services/Facebook.tsx:124
+#: src/views/Publication/Services/Facebook.tsx:142
+#: src/views/Publication/Services/Instagram.tsx:95
 #: src/views/Publication/Services/Kick.tsx:124
 #: src/views/Publication/Services/MediaNetwork.tsx:91
 #: src/views/Publication/Services/NimoTv.tsx:123
 #: src/views/Publication/Services/PeerTube.tsx:113
 #: src/views/Publication/Services/Restream.tsx:147
 #: src/views/Publication/Services/Rumble.tsx:124
-#: src/views/Publication/Services/TikTok.tsx:127
+#: src/views/Publication/Services/TikTok.tsx:124
 #: src/views/Publication/Services/Trovo.tsx:89
-#: src/views/Publication/Services/Twitch.tsx:230
-#: src/views/Publication/Services/Twitter.tsx:223
+#: src/views/Publication/Services/Twitch.tsx:227
+#: src/views/Publication/Services/Twitter.tsx:216
 #: src/views/Publication/Services/Wettercom.tsx:129
-#: src/views/Publication/Services/Youtube.tsx:230
+#: src/views/Publication/Services/Youtube.tsx:227
 msgid "GET"
 msgstr "GET"
 
-#: src/views/Publication/Player.tsx:547
+#: src/views/Publication/Player.tsx:548
 msgid "Google Analytics ID"
 msgstr "Google Analytics ID"
 
-#: src/views/Publication/Player.tsx:557
+#: src/views/Publication/Player.tsx:558
 msgid "Google Analytics Tracker Name"
 msgstr "Google Analytics Tracker Name"
 
-#: src/components/coders/settings/Video.tsx:380
+#: src/components/coders/settings/Video.tsx:381
 msgid "GPU"
 msgstr ""
 
@@ -1239,15 +1254,15 @@ msgstr ""
 msgid "Hardware device"
 msgstr "Urządzenie sprzętowe"
 
-#: src/views/Playersite.tsx:643
+#: src/views/Playersite.tsx:644
 msgid "Header"
 msgstr "Nagłówek"
 
-#: src/views/Playersite.tsx:599
+#: src/views/Playersite.tsx:600
 msgid "Headline"
 msgstr "Wyróżniony"
 
-#: src/components/coders/settings/Video.tsx:202
+#: src/components/coders/settings/Video.tsx:203
 msgid "Height"
 msgstr "Wysokośc"
 
@@ -1259,7 +1274,7 @@ msgstr "HLS"
 msgid "HLS @ H.264"
 msgstr ""
 
-#: src/views/Edit/index.tsx:577
+#: src/views/Edit/index.tsx:578
 msgid "HLS output"
 msgstr "Wyjście HLS"
 
@@ -1267,7 +1282,7 @@ msgstr "Wyjście HLS"
 msgid "HLS server"
 msgstr "Serwer HLS"
 
-#: src/views/Settings.tsx:1877
+#: src/views/Settings.tsx:1878
 msgid "HLS statistic for the In-memory storage"
 msgstr "Statystyki HLS dotyczące przechowywania w pamięci"
 
@@ -1279,52 +1294,52 @@ msgstr "Przerzucanie poziome"
 msgid "Hosted Restreamer interface"
 msgstr "Interfejs hostowany przez Restreamer"
 
-#: src/views/Edit/Sources/Network.tsx:680
+#: src/views/Edit/Sources/Network.tsx:681
 msgid "HTTP and HTTPS"
 msgstr "HTTP i HTTPS"
 
-#: src/views/Settings.tsx:1619
+#: src/views/Settings.tsx:1620
 msgid "HTTP port"
 msgstr "Port HTTP"
 
-#: src/views/Settings.tsx:1655
+#: src/views/Settings.tsx:1656
 msgid "HTTPS (SSL/TLS)"
 msgstr "HTTPS (SSL/TLS)"
 
-#: src/views/Settings.tsx:1636
+#: src/views/Settings.tsx:1637
 msgid "HTTPS port"
 msgstr "Port HTTPS"
 
-#: src/views/Settings.tsx:1544
+#: src/views/Settings.tsx:1545
 msgid "Human readable name on the service."
 msgstr "Nazwa czytelna dla człowieka w usłudze."
 
-#: src/views/Settings.tsx:2704
+#: src/views/Settings.tsx:2705
 msgid "If you changed the ports, it might be that Restreamer Core restarted already, but it is now available on a different port."
 msgstr "Jeśli zmieniłeś porty, Restreamer Core mógł już się zrestartować, ale jest teraz dostępny na innym porcie."
 
-#: src/views/Settings.tsx:2696
+#: src/views/Settings.tsx:2697
 msgid "If you enabled Let's Encrypt TLS it might take some time to acquire the certificates. Make sure that Restreamer Core is reachable via port 80 from the internet. Please check the console log of Restreamer Core."
 msgstr "Jeśli masz włączoną usługę Let's Encrypt TLS, uzyskanie certyfikatów może zająć trochę czasu. Upewnij się, że Restreamer Core jest dostępny przez port 80 z Internetu. Sprawdź dziennik konsoli Restreamer Core."
 
-#: src/views/Publication/Player.tsx:436
+#: src/views/Publication/Player.tsx:437
 msgid "iframe code"
 msgstr "Kod iframe"
 
-#: src/views/Settings.tsx:1898
+#: src/views/Settings.tsx:1899
 msgid "Ignore IP ranges"
 msgstr "Ignoruj ​​zakresy adresów IP"
 
-#: src/views/Playersite.tsx:688
-#: src/views/Publication/Player.tsx:473
+#: src/views/Playersite.tsx:689
+#: src/views/Publication/Player.tsx:474
 msgid "Image URL"
 msgstr "Link do obrazu"
 
-#: src/views/Playersite.tsx:718
+#: src/views/Playersite.tsx:719
 msgid "Imprint"
 msgstr "Wydrukowanie"
 
-#: src/views/Playersite.tsx:353
+#: src/views/Playersite.tsx:354
 msgid "In addition to the player, the Restreamer offers a complete landingpage, which you can use to present your live stream easily and quickly."
 msgstr "Oprócz odtwarzacza, Restreamer oferuje obszerną stronę główną, na której możesz łatwo i szybko zaprezentować swoją transmisję na żywo."
 
@@ -1334,48 +1349,48 @@ msgid "In order to proceed anyways, you can provide <0>hints</0> about the avail
 msgstr ""
 
 #: src/components/controls/HLS.tsx:73
-#: src/views/Settings.tsx:1970
+#: src/views/Settings.tsx:1971
 msgid "In-memory"
 msgstr "W pamięci"
 
-#: src/Footer.tsx:321
-#: src/Footer.tsx:335
+#: src/components/Footer.tsx:321
+#: src/components/Footer.tsx:335
 msgid "In-memory storage"
 msgstr "Przechowywanie w pamięci"
 
-#: src/views/Publication/Add.tsx:357
+#: src/views/Publication/Add.tsx:358
 msgid "Incompatible"
 msgstr "Niezgodny"
 
-#: src/components/coders/settings/Audio.tsx:115
-#: src/components/coders/settings/Audio.tsx:165
+#: src/components/coders/settings/Audio.tsx:116
+#: src/components/coders/settings/Audio.tsx:166
 #: src/components/filters/audio/Pan.tsx:46
-#: src/components/filters/audio/Resample.tsx:67
-#: src/components/filters/audio/Resample.tsx:117
+#: src/components/filters/audio/Resample.tsx:68
+#: src/components/filters/audio/Resample.tsx:118
 #: src/components/filters/audio/Volume.tsx:45
 msgid "Inherit"
 msgstr "Odziedziczony od"
 
-#: src/views/Playersite.tsx:779
+#: src/views/Playersite.tsx:780
 msgid "Inject 1"
 msgstr "Wstrzyknij 1"
 
-#: src/views/Playersite.tsx:799
+#: src/views/Playersite.tsx:800
 msgid "Inject 2"
 msgstr "Wstrzyknij 2"
 
-#: src/views/Playersite.tsx:821
+#: src/views/Playersite.tsx:822
 msgid "Inject 3"
 msgstr "Wstrzyknij 3"
 
-#: src/views/Playersite.tsx:844
+#: src/views/Playersite.tsx:845
 msgid "Inject 4"
 msgstr "Wstrzyknij 4"
 
-#: src/views/Edit/Sources/Network.tsx:1269
-#: src/views/Edit/Sources/Network.tsx:1396
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:127
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:127
+#: src/views/Edit/Sources/Network.tsx:1270
+#: src/views/Edit/Sources/Network.tsx:1397
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:128
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:128
 msgid "Input stream"
 msgstr "Strumień wejściowy"
 
@@ -1383,7 +1398,7 @@ msgstr "Strumień wejściowy"
 msgid "Instance domain"
 msgstr "Domena instancji"
 
-#: src/views/Edit/Sources/Network.tsx:671
+#: src/views/Edit/Sources/Network.tsx:672
 msgid "Internal SRT latency in milliseconds."
 msgstr ""
 
@@ -1391,8 +1406,8 @@ msgstr ""
 msgid "Interval (seconds)"
 msgstr "Interwał (sekundy)"
 
-#: src/Header.tsx:352
-#: src/Header.tsx:406
+#: src/components/Header.tsx:352
+#: src/components/Header.tsx:406
 msgid "Issue alert"
 msgstr "Zgłoszenie problemów"
 
@@ -1402,24 +1417,24 @@ msgstr "Zgłoszenie problemów"
 msgid "kbit/s"
 msgstr "kbit/s"
 
-#: src/components/coders/settings/Video.tsx:60
+#: src/components/coders/settings/Video.tsx:61
 msgid "Keyframe interval (seconds)"
 msgstr "Odstęp między klatkami kluczowymi (sekundy)"
 
-#: src/views/Edit/Sources/Network.tsx:666
+#: src/views/Edit/Sources/Network.tsx:667
 msgid "Latency (milliseconds)"
 msgstr ""
 
-#: src/components/coders/settings/Audio.tsx:60
-#: src/components/filters/audio/Resample.tsx:52
+#: src/components/coders/settings/Audio.tsx:61
+#: src/components/filters/audio/Resample.tsx:53
 msgid "Layout"
 msgstr "Układ"
 
-#: src/views/Settings.tsx:1660
+#: src/views/Settings.tsx:1661
 msgid "Let's Encrypt certification"
 msgstr "Certyfikat Let's Encrypt"
 
-#: src/views/Settings.tsx:1671
+#: src/views/Settings.tsx:1672
 msgid "Let's Encrypt requires one or more public domain names and an accessible port 80/TCP."
 msgstr "Let's Encrypt wymaga co najmniej jednej nazwy domeny publicznej i dostępnego portu 80/TCP."
 
@@ -1429,27 +1444,27 @@ msgstr "Let's Encrypt wymaga co najmniej jednej nazwy domeny publicznej i dostę
 msgid "Level"
 msgstr "Poziom"
 
-#: src/views/Settings.tsx:2592
+#: src/views/Settings.tsx:2593
 msgid "Level of system protocol."
 msgstr "Poziom protokołu systemowego."
 
-#: src/views/Edit/index.tsx:502
-#: src/views/Edit/index.tsx:724
+#: src/views/Edit/index.tsx:503
+#: src/views/Edit/index.tsx:725
 #: src/views/Edit/Wizard/License.tsx:25
 msgid "License"
 msgstr "Patent"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:233
+#: src/views/Edit/Sources/VirtualVideo.tsx:234
 msgid "Life color"
 msgstr "Kolor życia"
 
-#: src/views/Edit/index.tsx:683
-#: src/views/Publication/Add.tsx:527
-#: src/views/Publication/Edit.tsx:561
+#: src/views/Edit/index.tsx:684
+#: src/views/Publication/Add.tsx:528
+#: src/views/Publication/Edit.tsx:562
 msgid "Limits"
 msgstr "Ograniczenia"
 
-#: src/views/Playersite.tsx:670
+#: src/views/Playersite.tsx:671
 msgid "Linecolor"
 msgstr "Kolor linii"
 
@@ -1457,28 +1472,28 @@ msgstr "Kolor linii"
 msgid "Lines"
 msgstr "Linie"
 
-#: src/views/Playersite.tsx:608
-#: src/views/Publication/Player.tsx:508
+#: src/views/Playersite.tsx:609
+#: src/views/Publication/Player.tsx:509
 msgid "Link"
 msgstr "Link"
 
-#: src/views/Playersite.tsx:617
+#: src/views/Playersite.tsx:618
 msgid "Link, mouseover"
 msgstr "Link, mouseover"
 
-#: src/views/Edit/Sources/Network.tsx:737
+#: src/views/Edit/Sources/Network.tsx:738
 msgid "List of additional HTTP headers, one per line."
 msgstr ""
 
-#: src/views/Settings.tsx:2278
+#: src/views/Settings.tsx:2279
 msgid "List of file extensions not to cache (e.g. \".m3u8\"), one per line. Leave empty for none."
 msgstr "Lista rozszerzeń plików, których nie należy buforować (np. \".m3u8\"), po jednym na linię. Pozostaw puste dla braku."
 
-#: src/views/Settings.tsx:2254
+#: src/views/Settings.tsx:2255
 msgid "List of file extensions to cache (e.g. \".html\"), one per line. Leave empty to cache all file types."
 msgstr "Lista rozszerzeń plików do pamięci podręcznej (na przykład „.html”), po jednym w wierszu. Pozostaw puste, aby buforować wszystkie typy plików."
 
-#: src/views/Settings.tsx:1911
+#: src/views/Settings.tsx:1912
 msgid "List of IP ranges in CIDR notation, e.g., 127.0.0.1/32, that the statistics will not record—one IP range per line. Leave empty to record all sessions."
 msgstr "Lista zakresów IP w notacji CIDR, na przykład 127.0.0.1/32, których statystyki nie będą rejestrowane - jeden zakres IP na linię. Pozostaw puste, aby zapisać wszystkie sesje."
 
@@ -1486,7 +1501,7 @@ msgstr "Lista zakresów IP w notacji CIDR, na przykład 127.0.0.1/32, których s
 msgid "List size (segments)"
 msgstr "Rozmiar listy (segmenty)"
 
-#: src/views/Edit/Sources/Network.tsx:920
+#: src/views/Edit/Sources/Network.tsx:921
 msgid "Live stabilization"
 msgstr ""
 
@@ -1494,11 +1509,11 @@ msgstr ""
 msgid "Live-Streaming to dlive Live RTMP Service."
 msgstr "Transmisja strumieniowa na żywo w celu obsługi usługi Live RTMP."
 
-#: src/views/Publication/Services/Facebook.tsx:16
+#: src/views/Publication/Services/Facebook.tsx:15
 msgid "Live-Streaming to Facebook Live RTMP service"
 msgstr "Przesyłanie strumieniowe na żywo do usługi Facebook Live RTMP"
 
-#: src/views/Publication/Services/Instagram.tsx:16
+#: src/views/Publication/Services/Instagram.tsx:15
 msgid "Live-Streaming to Instagram Live RTMP Service."
 msgstr ""
 
@@ -1514,11 +1529,11 @@ msgstr "Transmisja na żywo do usługi PeerTube v3+ RTMP/S."
 msgid "Live-Streaming to Trovo Live RTMP Service."
 msgstr "Przesyłanie strumieniowe na żywo do usługi Trovo Live RTMP."
 
-#: src/views/Publication/Services/Twitch.tsx:16
+#: src/views/Publication/Services/Twitch.tsx:15
 msgid "Live-Streaming to Twitch Live RTMP Service."
 msgstr "Transmisja na żywo w usłudze RTMP Twitch Live."
 
-#: src/views/Publication/Services/Vimeo.tsx:11
+#: src/views/Publication/Services/Vimeo.tsx:10
 msgid "Live-Streaming to Vimeo Live RTMP Service"
 msgstr "Transmisja na żywo w usłudze Vimeos RTMP Live"
 
@@ -1526,13 +1541,13 @@ msgstr "Transmisja na żywo w usłudze Vimeos RTMP Live"
 msgid "Livesource ID"
 msgstr "Livesource ID"
 
-#: src/views/Settings.tsx:2541
+#: src/views/Settings.tsx:2542
 msgid "Log level"
 msgstr "Poziom dziennika"
 
 #: src/components/modals/Process.tsx:173
-#: src/views/Settings.tsx:1377
-#: src/views/Settings.tsx:2512
+#: src/views/Settings.tsx:1378
+#: src/views/Settings.tsx:2513
 msgid "Logging"
 msgstr "Zapis"
 
@@ -1543,6 +1558,7 @@ msgstr "Zapis"
 msgid "Login"
 msgstr "Zaloguj"
 
+#. placeholder {0}: err.message
 #: src/utils/restreamer.ts:297
 #: src/utils/restreamer.ts:343
 msgid "Login failed: {0}"
@@ -1555,15 +1571,15 @@ msgstr "Połączenie nie powiodło się: {0}"
 msgid "Login failed: Couldn't load API details"
 msgstr "Połączenie nie powiodło się: nie udało się wczytać szczegółów interfejsu API"
 
-#: src/views/Settings.tsx:1765
+#: src/views/Settings.tsx:1766
 msgid "Login/JWT authorization"
 msgstr "Zezwolenie na logowanie/JWT"
 
-#: src/views/Publication/Player.tsx:414
+#: src/views/Publication/Player.tsx:415
 msgid "Logo"
 msgstr "Logo"
 
-#: src/Header.tsx:364
+#: src/components/Header.tsx:364
 msgid "Logout"
 msgstr "Wyloguj"
 
@@ -1581,11 +1597,11 @@ msgid "Low latency (Buffer)"
 msgstr "Niskie opóźnienie (bufor)"
 
 #: src/views/Main/index.tsx:316
-#: src/views/Playersite.tsx:379
+#: src/views/Playersite.tsx:380
 msgid "Main channel"
 msgstr "Kanał główny"
 
-#: src/views/Publication/Player.tsx:113
+#: src/views/Publication/Player.tsx:114
 msgid "Main channel not found"
 msgstr "Nie znaleziono głównego kanału"
 
@@ -1593,11 +1609,11 @@ msgstr "Nie znaleziono głównego kanału"
 msgid "Main channel saved"
 msgstr "Kanał główny zapisany"
 
-#: src/views/Playersite.tsx:402
+#: src/views/Playersite.tsx:403
 msgid "Main page channel (index.html)."
 msgstr "Kanał strony głównej (index.html)."
 
-#: src/views/Edit/index.tsx:460
+#: src/views/Edit/index.tsx:461
 msgid "Main Source"
 msgstr "Główne Źródło"
 
@@ -1621,62 +1637,62 @@ msgstr "Zaznaczone ramki"
 msgid "Master playlist (increases browser/client compatibility)"
 msgstr "Główna lista odtwarzania (zwiększa kompatybilność z przeglądarką/klientem)"
 
-#: src/views/Settings.tsx:2176
+#: src/views/Settings.tsx:2177
 msgid "Maximum allowed cache size, 0 for unlimited."
 msgstr "Maksymalny dozwolony rozmiar pamięci podręcznej, 0 nieograniczony."
 
-#: src/views/Settings.tsx:2047
+#: src/views/Settings.tsx:2048
 msgid "Maximum allowed megabytes of RAM for /memfs, 0 for unlimited."
 msgstr "Maksymalna dozwolona liczba megabajtów pamięci RAM dla /memfs, 0 oznacza nieograniczoną liczbę."
 
-#: src/views/Settings.tsx:2110
+#: src/views/Settings.tsx:2111
 msgid "Maximum allowed megabytes to consume from hard disk. 0 for unlimited."
 msgstr "Maksymalna dopuszczalna liczba megabajtów na dysku twardym. 0 dla nieograniczonego."
 
-#: src/views/Settings.tsx:1729
+#: src/views/Settings.tsx:1730
 msgid "Maximum bandwidth Mbit/s"
 msgstr "Maksymalna przepustowość Mbit/s"
 
-#: src/components/coders/Encoders/audio/opus.tsx:95
+#: src/components/coders/Encoders/audio/opus.tsx:96
 msgid "Maximum delay in milliseconds."
 msgstr "Maksymalne opóźnienie w milisekundach."
 
-#: src/views/Settings.tsx:2202
+#: src/views/Settings.tsx:2203
 msgid "Maximum file size (Megabytes)"
 msgstr "Maksymalny rozmiar pliku (megabajty)"
 
-#: src/views/Settings.tsx:2233
+#: src/views/Settings.tsx:2234
 msgid "Maximum file size to put in cache."
 msgstr "Taille maximale du fichier à mettre dans le cache."
 
-#: src/views/Settings.tsx:2637
+#: src/views/Settings.tsx:2638
 msgid "Maximum log histroy"
 msgstr "Maksymalny dziennik historii"
 
-#: src/views/Settings.tsx:2598
-#: src/views/Settings.tsx:2620
+#: src/views/Settings.tsx:2599
+#: src/views/Settings.tsx:2621
 msgid "Maximum log lines"
 msgstr "Maksymalna liczba wierszy dziennika"
 
-#: src/views/Settings.tsx:2036
-#: src/views/Settings.tsx:2099
-#: src/views/Settings.tsx:2143
+#: src/views/Settings.tsx:2037
+#: src/views/Settings.tsx:2100
+#: src/views/Settings.tsx:2144
 msgid "Maximum size (Megabytes)"
 msgstr "Maksymalny rozmiar (MegaBajty)"
 
-#: src/views/Settings.tsx:1921
+#: src/views/Settings.tsx:1922
 msgid "Maximum viewer idle time (Seconds)"
 msgstr "Maksymalny czas bezczynności przeglądarki (sekundy)"
 
-#: src/views/Settings.tsx:1708
+#: src/views/Settings.tsx:1709
 msgid "Maximum viewers"
 msgstr "Maksymalna liczba widzów"
 
-#: src/Footer.tsx:241
+#: src/components/Footer.tsx:241
 msgid "MB"
 msgstr "MB"
 
-#: src/Footer.tsx:234
+#: src/components/Footer.tsx:234
 #: src/components/Progress.tsx:147
 msgid "Memory"
 msgstr "Pamięć"
@@ -1689,51 +1705,53 @@ msgstr "Limit pamięci (megabajty)"
 msgid "Memory usage limit in megabytes, 0 for unlimited."
 msgstr "Limit użycia pamięci w megabajtach, 0 dla nieograniczonego."
 
-#: src/views/Edit/index.tsx:497
+#: src/views/Edit/index.tsx:498
 msgid "Meta information"
 msgstr "Informacje Meta"
 
-#: src/views/Edit/index.tsx:698
+#: src/views/Edit/index.tsx:699
 #: src/views/Edit/Wizard/Metadata.tsx:25
 msgid "Metadata"
 msgstr "Metadane"
 
-#: src/views/Edit/Sources/Network.tsx:783
-#: src/views/Edit/Sources/X11grab.tsx:219
+#. placeholder {0}: 32
+#. placeholder {1}: 5000000
+#: src/views/Edit/Sources/Network.tsx:784
+#: src/views/Edit/Sources/X11grab.tsx:220
 msgid "Mininum {0}, default {1}"
 msgstr "Mininum {0}, domyślnie {1}"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:206
+#: src/views/Edit/Sources/VirtualVideo.tsx:207
 msgid "Mold"
 msgstr "Pleśń"
 
-#: src/views/Publication/Services/Facebook.tsx:17
-#: src/views/Publication/Services/Twitch.tsx:17
-#: src/views/Publication/Services/Vimeo.tsx:13
+#: src/views/Publication/Services/Facebook.tsx:16
+#: src/views/Publication/Services/Twitch.tsx:16
+#: src/views/Publication/Services/Vimeo.tsx:12
 msgid "More about licenses here"
 msgstr "Więcej informacji o licencjach tutaj"
 
-#: src/views/Settings.tsx:1501
+#: src/views/Settings.tsx:1502
 msgid "More about the service"
 msgstr "Dowiedz się więcej o usłudze"
 
-#: src/views/Publication/Services/Twitter.tsx:34
+#: src/views/Publication/Services/Twitter.tsx:33
 msgid "More about Twitter's copyright <0>here</0>."
 msgstr "Więcej informacji na temat praw autorskich Twittera <0>tutaj</0>."
 
-#: src/views/Publication/Services/Youtube.tsx:35
+#: src/views/Publication/Services/Youtube.tsx:34
 msgid "More about YouTube's copyright <0>here</0>."
 msgstr "Więcej informacji o prawach autorskich w YouTube <0>tutaj</0>."
 
-#: src/views/Settings.tsx:2163
+#: src/views/Settings.tsx:2164
 msgid "Must be larger than maximum file size in cache."
 msgstr "Musi być większy niż maksymalny rozmiar pliku w cache."
 
-#: src/views/Settings.tsx:2222
+#: src/views/Settings.tsx:2223
 msgid "Must be smaller than maximum cache size."
 msgstr "Musi być mniejszy niż maksymalny rozmiar cache."
 
-#: src/views/Publication/Player.tsx:580
+#: src/views/Publication/Player.tsx:581
 msgid "Mute"
 msgstr "Wycisz"
 
@@ -1752,26 +1770,26 @@ msgstr "Wyciszenie w prawo"
 #: src/components/ChannelList.tsx:544
 #: src/components/controls/Metadata.tsx:81
 #: src/components/controls/Metadata.tsx:106
-#: src/views/Playersite.tsx:540
-#: src/views/Settings.tsx:1533
+#: src/views/Playersite.tsx:541
+#: src/views/Settings.tsx:1534
 msgid "Name"
 msgstr "Nazwa"
 
-#: src/views/Playersite.tsx:545
+#: src/views/Playersite.tsx:546
 msgid "Name for the template. If the name already exists, it will be overwritten."
 msgstr "Nazwa modelu. Jeśli nazwa już istnieje, zostanie nadpisana."
 
-#: src/views/Settings.tsx:1336
-#: src/views/Settings.tsx:1588
+#: src/views/Settings.tsx:1337
+#: src/views/Settings.tsx:1589
 msgid "Network"
 msgstr "Sieć"
 
-#: src/views/Edit/Sources/Network.tsx:1563
+#: src/views/Edit/Sources/Network.tsx:1564
 #: src/views/Edit/Wizard/Sources/Network.tsx:133
 msgid "Network source"
 msgstr "Źródło sieciowe"
 
-#: src/views/Edit/Wizard/Audio.tsx:162
+#: src/views/Edit/Wizard/Audio.tsx:163
 #: src/views/Edit/Wizard/Metadata.tsx:54
 #: src/views/Edit/Wizard/Video.tsx:103
 #: src/views/Edit/Wizard/VideoProfile.tsx:118
@@ -1791,11 +1809,11 @@ msgid "No"
 msgstr "Nie"
 
 #: src/views/Edit/Sources/NoAudio.tsx:42
-#: src/views/Edit/Wizard/Audio.tsx:145
+#: src/views/Edit/Wizard/Audio.tsx:146
 msgid "No audio"
 msgstr "Bez dźwięku"
 
-#: src/views/Edit/StreamSelect.tsx:69
+#: src/views/Edit/StreamSelect.tsx:70
 msgid "No audio stream available"
 msgstr "Brak dostępnych strumieni audio"
 
@@ -1803,7 +1821,7 @@ msgstr "Brak dostępnych strumieni audio"
 msgid "No H.264 Stream availabe."
 msgstr ""
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:85
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:86
 #: src/views/Edit/Wizard/Sources/V4L.tsx:114
 msgid "No input device available"
 msgstr "Brak dostępnego urządzenia wejściowego"
@@ -1812,7 +1830,7 @@ msgstr "Brak dostępnego urządzenia wejściowego"
 msgid "No live stream was detected. Please check the software that sends the stream."
 msgstr "Nie wykryto transmisji na żywo. Sprawdź oprogramowanie wysyłające strumień."
 
-#: src/views/Edit/Summary.tsx:26
+#: src/views/Edit/Summary.tsx:27
 msgid "No source selected"
 msgstr "Nie wybrano źródła"
 
@@ -1820,7 +1838,7 @@ msgstr "Nie wybrano źródła"
 msgid "No sources available"
 msgstr "Brak dostępnego źródła"
 
-#: src/components/EncodingSelect.tsx:198
+#: src/components/EncodingSelect.tsx:199
 msgid "No suitable encoder found."
 msgstr "Nie znaleziono odpowiedniego enkodera."
 
@@ -1829,41 +1847,41 @@ msgid "No suitable filter found."
 msgstr "Nie znaleziono odpowiedniego filtra."
 
 #: src/views/Main/index.tsx:365
-#: src/views/Publication/Player.tsx:384
+#: src/views/Publication/Player.tsx:385
 msgid "No video"
 msgstr "Brak wideo"
 
-#: src/views/Edit/StreamSelect.tsx:54
+#: src/views/Edit/StreamSelect.tsx:55
 msgid "No video stream available"
 msgstr "Brak dostępnych strumieni wideo"
 
-#: src/views/Settings.tsx:1521
+#: src/views/Settings.tsx:1522
 msgid "Node ID"
 msgstr "Identyfikator węzła"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:102
+#: src/views/Edit/Sources/VirtualAudio.tsx:103
 msgid "Noise"
 msgstr "Dźwięk"
 
 #: src/components/filters/video/Scale.tsx:44
-#: src/views/Edit/Sources/AVFoundation.tsx:157
-#: src/views/Edit/Summary.tsx:28
-#: src/views/Edit/Summary.tsx:108
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:119
+#: src/views/Edit/Sources/AVFoundation.tsx:158
+#: src/views/Edit/Summary.tsx:29
+#: src/views/Edit/Summary.tsx:109
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:120
 msgid "None"
 msgstr "Żaden"
 
-#: src/views/Playersite.tsx:327
-#: src/views/Playersite.tsx:713
+#: src/views/Playersite.tsx:328
+#: src/views/Playersite.tsx:714
 msgid "Notes"
 msgstr "Notatki"
 
-#: src/views/Settings.tsx:2609
-#: src/views/Settings.tsx:2631
+#: src/views/Settings.tsx:2610
+#: src/views/Settings.tsx:2632
 msgid "Number of log lines to keep."
 msgstr "Liczba wierszy dziennika do zachowania."
 
-#: src/views/Settings.tsx:2648
+#: src/views/Settings.tsx:2649
 msgid "Number of logs to keep for each process."
 msgstr "Liczba dzienników do przechowywania dla każdego procesu."
 
@@ -1886,16 +1904,16 @@ msgstr "Liczba wierszy kafelków do zakodowania."
 #: src/views/Edit/Sources/AudioLoop.tsx:225
 #: src/views/Edit/Sources/SDP.tsx:206
 #: src/views/Edit/Sources/VideoLoop.tsx:233
-#: src/views/Playersite.tsx:890
-#: src/views/Publication/Player.tsx:641
+#: src/views/Playersite.tsx:891
+#: src/views/Publication/Player.tsx:642
 msgid "OK"
 msgstr "OK"
 
-#: src/views/Settings.tsx:1861
+#: src/views/Settings.tsx:1862
 msgid "One referrer per line, e.g. http://www.example.com"
 msgstr "Jedna strona odsyłająca w wierszu, na przykład http://www.domena.com."
 
-#: src/views/Playersite.tsx:875
+#: src/views/Playersite.tsx:876
 msgid "Open"
 msgstr "Otwórz"
 
@@ -1908,60 +1926,60 @@ msgid "Pan"
 msgstr "Pan"
 
 #: src/views/Publication/Services/Core.tsx:277
-#: src/views/Settings.tsx:2476
+#: src/views/Settings.tsx:2477
 msgid "Passphrase"
 msgstr "Passphrase"
 
-#: src/views/Settings.tsx:2503
+#: src/views/Settings.tsx:2504
 msgid "Passphrase for SRT encryption."
 msgstr "Passphrase dla szyfrowania SRT."
 
-#: src/views/Settings.tsx:2490
+#: src/views/Settings.tsx:2491
 msgid "Passphrase must be between 10 and 79 characters long"
 msgstr "Passphrase musi mieć długość od 10 do 79 znaków"
 
-#: src/views/Publication/Edit.tsx:649
+#: src/views/Publication/Edit.tsx:650
 msgid "Passthrough (copy) should only be disabled if necessary. Each encoding requires additional CPU/GPU resources."
 msgstr "Przekazywanie (kopiowanie) powinno być wyłączone tylko w razie potrzeby. Każde kodowanie wymaga dodatkowych zasobów procesora/GPU."
 
-#: src/views/Edit/Sources/Network.tsx:1020
+#: src/views/Edit/Sources/Network.tsx:1021
 #: src/views/Edit/Wizard/Sources/Network.tsx:114
 #: src/views/Login.tsx:295
 #: src/views/Publication/Services/Akamai.tsx:147
 #: src/views/Publication/Services/DaCast.tsx:176
-#: src/views/Publication/Services/DASH.tsx:238
-#: src/views/Publication/Services/HLS.tsx:229
+#: src/views/Publication/Services/DASH.tsx:231
+#: src/views/Publication/Services/HLS.tsx:226
 #: src/views/Publication/Services/Red5.tsx:183
-#: src/views/Publication/Services/RTSP.tsx:187
+#: src/views/Publication/Services/RTSP.tsx:184
 #: src/views/Publication/Services/WOWZA.tsx:207
-#: src/views/Settings.tsx:1808
-#: src/views/Settings.tsx:2016
+#: src/views/Settings.tsx:1809
+#: src/views/Settings.tsx:2017
 msgid "Password"
 msgstr "Hasło"
 
-#: src/views/Settings.tsx:1817
-#: src/views/Settings.tsx:2030
+#: src/views/Settings.tsx:1818
+#: src/views/Settings.tsx:2031
 msgid "Password for authorization."
 msgstr "Hasło do autoryzacji."
 
-#: src/views/Edit/Sources/Network.tsx:1025
+#: src/views/Edit/Sources/Network.tsx:1026
 #: src/views/Edit/Wizard/Sources/Network.tsx:120
 msgid "Password for the device."
 msgstr "Hasło do urządzenia."
 
-#: src/views/Settings.tsx:1943
+#: src/views/Settings.tsx:1944
 msgid "Persist viewer statistics"
 msgstr "Trwałość statystyk oglądających"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:139
+#: src/views/Edit/Sources/VirtualAudio.tsx:140
 msgid "pink"
 msgstr "różowy"
 
-#: src/views/Publication/Services/Framebuffer.tsx:122
+#: src/views/Publication/Services/Framebuffer.tsx:115
 msgid "Pixel format"
 msgstr "Proporcje pikseli"
 
-#: src/components/coders/settings/Video.tsx:323
+#: src/components/coders/settings/Video.tsx:324
 msgid "Pixel Format"
 msgstr ""
 
@@ -1969,13 +1987,13 @@ msgstr ""
 msgid "Plan: <0>Starter</0>"
 msgstr "Schemat: <0>Starter</0>"
 
-#: src/views/Publication/Add.tsx:433
+#: src/views/Publication/Add.tsx:434
 msgid "Platforms"
 msgstr "Platformy"
 
-#: src/views/Publication/Player.tsx:422
-#: src/views/Settings.tsx:1349
-#: src/views/Settings.tsx:1826
+#: src/views/Publication/Player.tsx:423
+#: src/views/Settings.tsx:1350
+#: src/views/Settings.tsx:1827
 msgid "Playback"
 msgstr "Odczyt"
 
@@ -1983,25 +2001,25 @@ msgstr "Odczyt"
 msgid "Player"
 msgstr "Player"
 
-#: src/views/Edit/index.tsx:654
+#: src/views/Edit/index.tsx:655
 msgid "Player Playback"
 msgstr ""
 
-#: src/views/Publication/Player.tsx:311
+#: src/views/Publication/Player.tsx:312
 msgid "Player settings saved"
 msgstr "Zapis ustawień odtwarzacza"
 
-#: src/views/Publication/Player.tsx:430
+#: src/views/Publication/Player.tsx:431
 msgid "Player URL"
 msgstr "Adres URL Playera"
 
-#: src/Header.tsx:313
-#: src/views/Playersite.tsx:362
+#: src/components/Header.tsx:313
+#: src/views/Playersite.tsx:363
 msgid "Playersite"
 msgstr "Playersite"
 
-#: src/views/Publication/Services/DASH.tsx:420
-#: src/views/Publication/Services/HLS.tsx:354
+#: src/views/Publication/Services/DASH.tsx:413
+#: src/views/Publication/Services/HLS.tsx:351
 msgid "Playlist"
 msgstr "Lista odtwarzania"
 
@@ -2027,27 +2045,27 @@ msgstr "Sprawdź <0>Dziennik procesów</0>."
 #: src/views/Publication/Services/CDN77.tsx:27
 #: src/views/Publication/Services/Core.tsx:34
 #: src/views/Publication/Services/DaCast.tsx:30
-#: src/views/Publication/Services/DASH.tsx:40
-#: src/views/Publication/Services/HLS.tsx:41
+#: src/views/Publication/Services/DASH.tsx:39
+#: src/views/Publication/Services/HLS.tsx:40
 #: src/views/Publication/Services/Icecast.tsx:34
-#: src/views/Publication/Services/Image2.tsx:38
+#: src/views/Publication/Services/Image2.tsx:37
 #: src/views/Publication/Services/Linkedin.tsx:29
 #: src/views/Publication/Services/Livepush.tsx:26
 #: src/views/Publication/Services/Livespotting.tsx:28
-#: src/views/Publication/Services/MPEGTS.tsx:39
+#: src/views/Publication/Services/MPEGTS.tsx:38
 #: src/views/Publication/Services/NimoTv.tsx:27
 #: src/views/Publication/Services/PicartoTv.tsx:30
 #: src/views/Publication/Services/Red5.tsx:30
 #: src/views/Publication/Services/Restream.tsx:28
-#: src/views/Publication/Services/RTMP.tsx:37
-#: src/views/Publication/Services/RTSP.tsx:40
-#: src/views/Publication/Services/SRT.tsx:38
-#: src/views/Publication/Services/UDP.tsx:36
+#: src/views/Publication/Services/RTMP.tsx:36
+#: src/views/Publication/Services/RTSP.tsx:39
+#: src/views/Publication/Services/SRT.tsx:37
+#: src/views/Publication/Services/UDP.tsx:35
 #: src/views/Publication/Services/WOWZA.tsx:33
 msgid "Please contact the operator of the service and check what happens."
 msgstr "Skontaktuj się z operatorem serwisu i sprawdź co się dzieje."
 
-#: src/views/Settings.tsx:1690
+#: src/views/Settings.tsx:1691
 msgid "Please enter your email address to signify agreement with the Let's Encrypt CA's terms of service and to be notified in case of issues."
 msgstr "Wprowadź swój adres e-mail, aby wyrazić zgodę na warunki korzystania z usługi Let's Encrypt CA i otrzymywać powiadomienia w przypadku problemów."
 
@@ -2057,7 +2075,7 @@ msgstr "Wprowadź swój adres e-mail, aby wyrazić zgodę na warunki korzystania
 #: src/views/Publication/Services/Owncast.tsx:27
 #: src/views/Publication/Services/Rumble.tsx:28
 #: src/views/Publication/Services/Telegram.tsx:14
-#: src/views/Publication/Services/TikTok.tsx:29
+#: src/views/Publication/Services/TikTok.tsx:28
 #: src/views/Publication/Services/Wettercom.tsx:28
 msgid "Please get in touch with the operator of the service and check what happens."
 msgstr "Proszę skontaktować się z operatorem serwisu i sprawdzić co się dzieje."
@@ -2065,12 +2083,12 @@ msgstr "Proszę skontaktować się z operatorem serwisu i sprawdzić co się dzi
 #: src/views/Edit/Sources/AudioLoop.tsx:114
 #: src/views/Edit/Sources/SDP.tsx:100
 #: src/views/Edit/Sources/VideoLoop.tsx:122
-#: src/views/Playersite.tsx:174
-#: src/views/Publication/Player.tsx:202
+#: src/views/Playersite.tsx:175
+#: src/views/Publication/Player.tsx:203
 msgid "Please select a file to upload."
 msgstr "Wybierz plik do przesłania."
 
-#: src/views/Publication/Add.tsx:571
+#: src/views/Publication/Add.tsx:572
 msgid "Please use \"Passthrough (copy)\" if possible. Encoding requires additional CPU/GPU resources."
 msgstr "Jeśli to możliwe, użyj opcji \"Przekazywanie (kopiowanie)”. Kodowanie wymaga dodatkowych zasobów procesora/GPU."
 
@@ -2082,19 +2100,19 @@ msgstr "Proszę czekać. Dane przepływu sondy..."
 msgid "Please wait. Setting up the stream ..."
 msgstr "Proszę czekać. Konfiguracja strumienia..."
 
-#: src/views/Settings.tsx:2439
+#: src/views/Settings.tsx:2440
 msgid "Port"
 msgstr "Port"
 
-#: src/views/Publication/Player.tsx:493
+#: src/views/Publication/Player.tsx:494
 msgid "Position"
 msgstr "Pozycja"
 
-#: src/views/Publication/Player.tsx:417
+#: src/views/Publication/Player.tsx:418
 msgid "Poster"
 msgstr "Plakat"
 
-#: src/views/Publication/Player.tsx:522
+#: src/views/Publication/Player.tsx:523
 msgid "Poster image URL"
 msgstr "Adres URL obrazu plakatu"
 
@@ -2106,60 +2124,60 @@ msgstr "Adres URL obrazu plakatu"
 msgid "Preset"
 msgstr "Zaprogramowane"
 
-#: src/views/Publication/Services/Youtube.tsx:235
+#: src/views/Publication/Services/Youtube.tsx:232
 msgid "Primary stream"
 msgstr "Główny stream"
 
-#: src/views/Publication/Services/Facebook.tsx:122
+#: src/views/Publication/Services/Facebook.tsx:115
 msgid "Primary stream key"
 msgstr "Klucz strumienia podstawowego"
 
-#: src/views/Edit/Sources/ALSA.tsx:172
+#: src/views/Edit/Sources/ALSA.tsx:173
 #: src/views/Edit/Sources/AudioLoop.tsx:212
-#: src/views/Edit/Sources/AVFoundation.tsx:244
-#: src/views/Edit/Sources/Channel.tsx:122
+#: src/views/Edit/Sources/AVFoundation.tsx:245
+#: src/views/Edit/Sources/Channel.tsx:123
 #: src/views/Edit/Sources/Framebuffer.tsx:132
-#: src/views/Edit/Sources/Network.tsx:1045
-#: src/views/Edit/Sources/Network.tsx:1185
-#: src/views/Edit/Sources/Network.tsx:1309
-#: src/views/Edit/Sources/Network.tsx:1436
+#: src/views/Edit/Sources/Network.tsx:1046
+#: src/views/Edit/Sources/Network.tsx:1186
+#: src/views/Edit/Sources/Network.tsx:1310
+#: src/views/Edit/Sources/Network.tsx:1437
 #: src/views/Edit/Sources/Raspicam.tsx:163
 #: src/views/Edit/Sources/SDP.tsx:193
 #: src/views/Edit/Sources/V4L.tsx:166
 #: src/views/Edit/Sources/VideoLoop.tsx:220
-#: src/views/Edit/Sources/VirtualAudio.tsx:205
-#: src/views/Edit/Sources/VirtualVideo.tsx:254
-#: src/views/Edit/Sources/X11grab.tsx:278
+#: src/views/Edit/Sources/VirtualAudio.tsx:206
+#: src/views/Edit/Sources/VirtualVideo.tsx:255
+#: src/views/Edit/Sources/X11grab.tsx:279
 msgid "Probe"
 msgstr "Sonda"
 
-#: src/views/Edit/index.tsx:669
-#: src/views/Publication/Add.tsx:513
-#: src/views/Publication/Edit.tsx:547
+#: src/views/Edit/index.tsx:670
+#: src/views/Publication/Add.tsx:514
+#: src/views/Publication/Edit.tsx:548
 msgid "Process"
 msgstr "Przebieg"
 
-#: src/views/Publication/Add.tsx:480
-#: src/views/Publication/Edit.tsx:514
+#: src/views/Publication/Add.tsx:481
+#: src/views/Publication/Edit.tsx:515
 msgid "Process control"
 msgstr "Kontrola procesu"
 
 #: src/views/Main/index.tsx:639
 #: src/views/Main/index.tsx:661
-#: src/views/Publication/Edit.tsx:599
-#: src/views/Publication/Edit.tsx:740
+#: src/views/Publication/Edit.tsx:600
+#: src/views/Publication/Edit.tsx:741
 msgid "Process details"
 msgstr "Szczegóły procesu"
 
 #: src/views/Main/index.tsx:648
 #: src/views/Main/index.tsx:669
-#: src/views/Publication/Edit.tsx:607
-#: src/views/Publication/Edit.tsx:748
+#: src/views/Publication/Edit.tsx:608
+#: src/views/Publication/Edit.tsx:749
 msgid "Process report"
 msgstr "Raport z procesu"
 
-#: src/views/Edit/index.tsx:492
-#: src/views/Edit/index.tsx:569
+#: src/views/Edit/index.tsx:493
+#: src/views/Edit/index.tsx:570
 msgid "Processing & Control"
 msgstr "Przetwarzanie i kontrola"
 
@@ -2169,24 +2187,24 @@ msgstr "Przetwarzanie i kontrola"
 #: src/components/coders/Encoders/video/hevc_vaapi.tsx:91
 #: src/components/coders/Encoders/video/hevc_videotoolbox.tsx:65
 #: src/components/coders/Encoders/video/vp9_vaapi.tsx:91
-#: src/components/coders/settings/Video.tsx:139
+#: src/components/coders/settings/Video.tsx:140
 #: src/views/Edit/Wizard/VideoProfile.tsx:50
 msgid "Profile"
 msgstr "Profil"
 
-#: src/views/Edit/Sources/Network.tsx:925
+#: src/views/Edit/Sources/Network.tsx:926
 msgid "Protect: None"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:931
+#: src/views/Edit/Sources/Network.tsx:932
 msgid "Protect: Video and audio channel"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:928
+#: src/views/Edit/Sources/Network.tsx:929
 msgid "Protect: Video channel"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:1101
+#: src/views/Edit/Sources/Network.tsx:1102
 #: src/views/Publication/Services/Akamai.tsx:157
 #: src/views/Publication/Services/Akamai.tsx:199
 #: src/views/Publication/Services/Azure.tsx:100
@@ -2195,37 +2213,37 @@ msgstr ""
 #: src/views/Publication/Services/Core.tsx:258
 #: src/views/Publication/Services/DaCast.tsx:141
 #: src/views/Publication/Services/DaCast.tsx:206
-#: src/views/Publication/Services/DASH.tsx:208
-#: src/views/Publication/Services/HLS.tsx:199
+#: src/views/Publication/Services/DASH.tsx:201
+#: src/views/Publication/Services/HLS.tsx:196
 #: src/views/Publication/Services/Icecast.tsx:187
-#: src/views/Publication/Services/Image2.tsx:138
+#: src/views/Publication/Services/Image2.tsx:135
 #: src/views/Publication/Services/Linkedin.tsx:100
-#: src/views/Publication/Services/MPEGTS.tsx:196
+#: src/views/Publication/Services/MPEGTS.tsx:193
 #: src/views/Publication/Services/Owncast.tsx:102
 #: src/views/Publication/Services/Red5.tsx:128
-#: src/views/Publication/Services/RTMP.tsx:167
-#: src/views/Publication/Services/RTSP.tsx:159
-#: src/views/Publication/Services/SRT.tsx:177
+#: src/views/Publication/Services/RTMP.tsx:164
+#: src/views/Publication/Services/RTSP.tsx:156
+#: src/views/Publication/Services/SRT.tsx:174
 #: src/views/Publication/Services/Telegram.tsx:88
-#: src/views/Publication/Services/UDP.tsx:143
+#: src/views/Publication/Services/UDP.tsx:140
 #: src/views/Publication/Services/WOWZA.tsx:144
 msgid "Protocol"
 msgstr "Protokół"
 
-#: src/views/Publication/Add.tsx:439
+#: src/views/Publication/Add.tsx:440
 msgid "Protocols"
 msgstr "Protokoły"
 
-#: src/views/Settings.tsx:1598
+#: src/views/Settings.tsx:1599
 msgid "Public domain/s"
 msgstr "Domena(y) publiczna(e)"
 
-#: src/views/Publication/Edit.tsx:128
-#: src/views/Publication/Edit.tsx:142
+#: src/views/Publication/Edit.tsx:129
+#: src/views/Publication/Edit.tsx:143
 msgid "Publication service not found"
 msgstr "Nie znaleziono usługi wydawniczej"
 
-#: src/views/Playersite.tsx:260
+#: src/views/Playersite.tsx:261
 msgid "Publication website settings saved"
 msgstr "Tworzenie kopii zapasowej ustawień witryny publikacji"
 
@@ -2233,11 +2251,11 @@ msgstr "Tworzenie kopii zapasowej ustawień witryny publikacji"
 msgid "Publications"
 msgstr "Publikacje"
 
-#: src/views/Edit/Sources/Network.tsx:1530
+#: src/views/Edit/Sources/Network.tsx:1531
 msgid "Pull Mode"
 msgstr "Tryb ciągnięcia"
 
-#: src/views/Edit/Sources/Network.tsx:1526
+#: src/views/Edit/Sources/Network.tsx:1527
 msgid "Pull or recieve the data:"
 msgstr "Pobierz lub odbierz dane:"
 
@@ -2256,8 +2274,8 @@ msgstr "Jakość"
 msgid "Quality and compression efficiency vs speed trade-off."
 msgstr ""
 
-#: src/views/Edit/Sources/Raspicam.tsx:181
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:131
+#: src/views/Edit/Sources/Raspicam.tsx:175
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:124
 msgid "Raspberry Pi camera"
 msgstr "Kamera Raspberry Pi"
 
@@ -2270,7 +2288,7 @@ msgstr "Kamera Raspberry Pi"
 msgid "Rate control"
 msgstr "Kontrola szybkości"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:215
+#: src/views/Edit/Sources/VirtualVideo.tsx:216
 msgid "Ratio"
 msgstr "Ratio"
 
@@ -2278,11 +2296,11 @@ msgstr "Ratio"
 msgid "rav1e Parameters"
 msgstr "rav1e Parametry"
 
-#: src/views/Edit/Sources/Network.tsx:685
+#: src/views/Edit/Sources/Network.tsx:686
 msgid "Read input at native speed"
 msgstr "Odtwarzaj dane wejściowe z natywną prędkością"
 
-#: src/views/Edit/Sources/Network.tsx:1531
+#: src/views/Edit/Sources/Network.tsx:1532
 msgid "Receive Mode"
 msgstr "Tryb odbioru"
 
@@ -2296,13 +2314,15 @@ msgstr "Połączyć ponownie"
 msgid "Reconnect delay (seconds)"
 msgstr "Limit czasu ponownego połączenia (sekundy)"
 
+#. placeholder {0}: $state.progress.reconnect
+#. placeholder {0}: progress.reconnect
 #: src/views/Main/index.tsx:422
 #: src/views/Publication/Process.tsx:72
 #: src/views/Publication/Process.tsx:91
 msgid "Reconnecting in {0}s"
 msgstr "Połącz ponownie za {0}s"
 
-#: src/views/Settings.tsx:2690
+#: src/views/Settings.tsx:2691
 msgid "Reconnecting to Restreamer Core failed for the last {RETRIES} seconds."
 msgstr "Ponowne połączenie z Restreamer Core nie powiodło się w ciągu ostatnich {RETRIES} sekund."
 
@@ -2310,17 +2330,17 @@ msgstr "Ponowne połączenie z Restreamer Core nie powiodło się w ciągu ostat
 msgid "Reconnecting to Restreamer Core failed."
 msgstr "Nie udało się ponownie połączyć z Restreamer Core."
 
-#: src/views/Edit/Sources/ALSA.tsx:142
-#: src/views/Edit/Sources/AVFoundation.tsx:203
-#: src/views/Edit/Sources/Channel.tsx:114
-#: src/views/Edit/Sources/Network.tsx:1281
-#: src/views/Edit/Sources/Network.tsx:1408
+#: src/views/Edit/Sources/ALSA.tsx:143
+#: src/views/Edit/Sources/AVFoundation.tsx:204
+#: src/views/Edit/Sources/Channel.tsx:115
+#: src/views/Edit/Sources/Network.tsx:1282
+#: src/views/Edit/Sources/Network.tsx:1409
 #: src/views/Edit/Sources/Raspicam.tsx:137
 #: src/views/Edit/Sources/V4L.tsx:140
-#: src/views/Edit/Sources/X11grab.tsx:192
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:165
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:139
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:139
+#: src/views/Edit/Sources/X11grab.tsx:193
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:166
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:140
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:140
 #: src/views/Edit/Wizard/Sources/V4L.tsx:144
 msgid "Refresh"
 msgstr "Odśwież"
@@ -2328,9 +2348,9 @@ msgstr "Odśwież"
 #: src/views/Publication/Services/Livepush.tsx:100
 #: src/views/Publication/Services/PicartoTv.tsx:104
 #: src/views/Publication/Services/Restream.tsx:102
-#: src/views/Publication/Services/Twitch.tsx:107
-#: src/views/Publication/Services/Twitter.tsx:181
-#: src/views/Publication/Services/Twitter.tsx:201
+#: src/views/Publication/Services/Twitch.tsx:104
+#: src/views/Publication/Services/Twitter.tsx:174
+#: src/views/Publication/Services/Twitter.tsx:194
 msgid "Region"
 msgstr "Region"
 
@@ -2339,7 +2359,7 @@ msgid "Register user"
 msgstr "Rejestracja uzytkownika"
 
 #: src/views/Password.tsx:217
-#: src/views/Settings.tsx:2721
+#: src/views/Settings.tsx:2722
 msgid "Reload"
 msgstr "Odnów"
 
@@ -2347,19 +2367,19 @@ msgstr "Odnów"
 msgid "Remove Audio"
 msgstr ""
 
-#: src/views/Settings.tsx:2056
+#: src/views/Settings.tsx:2057
 msgid "Remove the oldest entries if the /memfs is full"
 msgstr "Usuń najstarsze wpisy, jeśli folder /memfs jest pełny"
 
-#: src/views/Settings.tsx:2318
+#: src/views/Settings.tsx:2319
 msgid "Requires activation"
 msgstr "Wymaga aktywacji"
 
-#: src/views/Publication/Player.tsx:616
+#: src/views/Publication/Player.tsx:617
 msgid "Reset logo"
 msgstr "Resetuj logo"
 
-#: src/views/Publication/Player.tsx:625
+#: src/views/Publication/Player.tsx:626
 msgid "Reset poster"
 msgstr "Reset plakatu"
 
@@ -2375,28 +2395,28 @@ msgstr "Reset plakatu"
 msgid "Resize"
 msgstr ""
 
-#: src/views/Settings.tsx:1473
-#: src/views/Settings.tsx:2742
-#: src/views/Settings.tsx:2756
-#: src/views/Settings.tsx:2769
+#: src/views/Settings.tsx:1474
+#: src/views/Settings.tsx:2743
+#: src/views/Settings.tsx:2757
+#: src/views/Settings.tsx:2770
 msgid "Restart"
 msgstr "Uruchom ponownie"
 
-#: src/views/Settings.tsx:2729
+#: src/views/Settings.tsx:2730
 msgid "Restart required"
 msgstr "Wymagane jest ponowne uruchomienie"
 
 #: src/views/Password.tsx:186
-#: src/views/Settings.tsx:2678
+#: src/views/Settings.tsx:2679
 msgid "Restarting"
 msgstr "Uruchom ponownie"
 
 #: src/views/Password.tsx:191
-#: src/views/Settings.tsx:2683
+#: src/views/Settings.tsx:2684
 msgid "Restarting Restreamer Core ..."
 msgstr "Uruchom ponownie Restreamer Core ..."
 
-#: src/views/Settings.tsx:1180
+#: src/views/Settings.tsx:1181
 msgid "Restarting the application failed."
 msgstr "Ponowne uruchomienie aplikacji nie powiodło się."
 
@@ -2404,7 +2424,7 @@ msgstr "Ponowne uruchomienie aplikacji nie powiodło się."
 msgid "Restreamer instructions"
 msgstr "Instrukcje Restreamera"
 
-#: src/views/Settings.tsx:1508
+#: src/views/Settings.tsx:1509
 msgid "Restreamer Service"
 msgstr "Usługa Restreamer"
 
@@ -2414,11 +2434,11 @@ msgstr "Pobieranie danych strumienia ..."
 
 #: src/views/Edit/Wizard/Error.tsx:35
 #: src/views/Invalid.tsx:56
-#: src/views/Settings.tsx:1289
+#: src/views/Settings.tsx:1290
 msgid "Retry"
 msgstr "Spróbuj ponownie"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:132
+#: src/views/Edit/Sources/VirtualVideo.tsx:133
 msgid "RGB test pattern"
 msgstr "Wzór testowy RGB"
 
@@ -2427,79 +2447,79 @@ msgid "Rotate"
 msgstr "Obrót"
 
 #: src/views/Main/index.tsx:581
-#: src/views/Settings.tsx:1364
-#: src/views/Settings.tsx:2290
+#: src/views/Settings.tsx:1365
+#: src/views/Settings.tsx:2291
 msgid "RTMP"
 msgstr "RTMP"
 
-#: src/views/Settings.tsx:2389
+#: src/views/Settings.tsx:2390
 msgid "RTMP app for publishing."
 msgstr "Aplikacja RTMP do publikacji."
 
-#: src/views/Edit/index.tsx:595
+#: src/views/Edit/index.tsx:596
 msgid "RTMP output"
 msgstr "Wyjście RTMP"
 
-#: src/views/Settings.tsx:2338
+#: src/views/Settings.tsx:2339
 msgid "RTMP Port"
 msgstr "Port RTMP"
 
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:169
-#: src/views/Settings.tsx:2295
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:170
+#: src/views/Settings.tsx:2296
 msgid "RTMP server"
 msgstr "Serwer RTMP"
 
-#: src/views/Edit/Sources/Network.tsx:1217
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:80
+#: src/views/Edit/Sources/Network.tsx:1218
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:81
 msgid "RTMP server is not enabled"
 msgstr "Serwer RTMP nie jest włączony"
 
-#: src/views/Settings.tsx:2352
+#: src/views/Settings.tsx:2353
 msgid "RTMP server listen address."
 msgstr "Adres nasłuchiwania serwera RTMP."
 
-#: src/views/Settings.tsx:2405
+#: src/views/Settings.tsx:2406
 msgid "RTMP streamkey for publishing and playing. The streamkey needs to be appended to the URL."
 msgstr ""
 
-#: src/views/Settings.tsx:2358
+#: src/views/Settings.tsx:2359
 msgid "RTMPS Port"
 msgstr "RTMPS Port"
 
-#: src/views/Settings.tsx:2306
+#: src/views/Settings.tsx:2307
 msgid "RTMPS server"
 msgstr "Serwer RTMPS"
 
-#: src/views/Settings.tsx:2373
+#: src/views/Settings.tsx:2374
 msgid "RTMPS server listen address."
 msgstr "Adres nasłuchu serwera RTMPS."
 
-#: src/views/Edit/Sources/Network.tsx:624
+#: src/views/Edit/Sources/Network.tsx:625
 msgid "RTSP"
 msgstr "RTSP"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:197
+#: src/views/Edit/Sources/VirtualVideo.tsx:198
 msgid "Rule"
 msgstr "Reguła"
 
-#: src/components/coders/settings/Audio.tsx:146
-#: src/components/filters/audio/Resample.tsx:98
+#: src/components/coders/settings/Audio.tsx:147
+#: src/components/filters/audio/Resample.tsx:99
 msgid "Sampling"
 msgstr "Próbowanie"
 
 #: src/components/modals/Hint.tsx:217
-#: src/views/Edit/index.tsx:767
+#: src/views/Edit/index.tsx:768
 #: src/views/Edit/Wizard/License.tsx:55
-#: src/views/Playersite.tsx:865
-#: src/views/Publication/Add.tsx:657
-#: src/views/Publication/Edit.tsx:723
-#: src/views/Publication/Player.tsx:608
-#: src/views/Settings.tsx:2668
+#: src/views/Playersite.tsx:866
+#: src/views/Publication/Add.tsx:658
+#: src/views/Publication/Edit.tsx:724
+#: src/views/Publication/Player.tsx:609
+#: src/views/Settings.tsx:2669
 msgid "Save"
 msgstr "Zapisz"
 
 #: src/components/filters/video/Scale.tsx:42
-#: src/views/Edit/Sources/VirtualVideo.tsx:187
+#: src/views/Edit/Sources/VirtualVideo.tsx:188
 msgid "Scale"
 msgstr "Skala"
 
@@ -2513,7 +2533,7 @@ msgstr "Wielkość skali"
 msgid "SDP"
 msgstr ""
 
-#: src/views/Settings.tsx:2196
+#: src/views/Settings.tsx:2197
 msgid "Seconds to keep files in cache."
 msgstr "Sekundy na przechowywanie plików w pamięci podręcznej."
 
@@ -2529,7 +2549,7 @@ msgstr "Sekundy do zakończenia zablokowanego procesu."
 msgid "Seconds until the snapshot/thumbnail of the video source is updated."
 msgstr "Sekundy do zaktualizowania migawki/miniaturki źródła wideo."
 
-#: src/views/Settings.tsx:1831
+#: src/views/Settings.tsx:1832
 msgid "Security"
 msgstr "Bezpieczeństwo"
 
@@ -2537,7 +2557,7 @@ msgstr "Bezpieczeństwo"
 msgid "Security token"
 msgstr "Token bezpieczeństwa"
 
-#: src/views/Publication/Player.tsx:449
+#: src/views/Publication/Player.tsx:450
 msgid "Seekbar color"
 msgstr "Kolor paska wyszukiwania (Seekbar)"
 
@@ -2549,41 +2569,41 @@ msgstr "Długość segmentu (sekundy)"
 msgid "Segment will be cut on the following keyframe after this time has passed. 2 is recommended."
 msgstr "Po upływie tego opóźnienia segment zostanie wycięty w następnej klatce kluczowej. Zalecana jest wartość 2."
 
-#: src/views/Publication/Services/DASH.tsx:525
-#: src/views/Publication/Services/HLS.tsx:434
+#: src/views/Publication/Services/DASH.tsx:518
+#: src/views/Publication/Services/HLS.tsx:431
 msgid "Segmentation"
 msgstr "Segmentacja"
 
-#: src/views/Edit/Sources/Channel.tsx:97
+#: src/views/Edit/Sources/Channel.tsx:98
 msgid "Select a channel:"
 msgstr ""
 
-#: src/views/Edit/Sources/ALSA.tsx:123
-#: src/views/Edit/Sources/AVFoundation.tsx:189
+#: src/views/Edit/Sources/ALSA.tsx:124
+#: src/views/Edit/Sources/AVFoundation.tsx:190
 #: src/views/Edit/Sources/Framebuffer.tsx:117
 #: src/views/Edit/Sources/Raspicam.tsx:126
 #: src/views/Edit/Sources/V4L.tsx:121
-#: src/views/Edit/Sources/X11grab.tsx:173
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:145
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:109
+#: src/views/Edit/Sources/X11grab.tsx:174
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:146
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:108
 #: src/views/Edit/Wizard/Sources/V4L.tsx:133
 msgid "Select a device:"
 msgstr "Wybierz urządzenie:"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:92
+#: src/views/Edit/Sources/VirtualAudio.tsx:93
 msgid "Select audio source:"
 msgstr "Wybierz źródło dźwięku:"
 
-#: src/views/Publication/Add.tsx:552
-#: src/views/Publication/Edit.tsx:630
+#: src/views/Publication/Add.tsx:553
+#: src/views/Publication/Edit.tsx:631
 msgid "Select RTMP or SRT (if enabled) for less latency."
 msgstr "Wybierz RTMP lub SRT (jeśli jest włączony), aby zmniejszyć opóźnienia."
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:126
+#: src/views/Edit/Sources/VirtualVideo.tsx:127
 msgid "Select source ..."
 msgstr "Wybierz źródło ..."
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:116
+#: src/views/Edit/Sources/VirtualVideo.tsx:117
 msgid "Select video source:"
 msgstr "Wybierz źródło wideo:"
 
@@ -2591,7 +2611,7 @@ msgstr "Wybierz źródło wideo:"
 msgid "Select whether you pull the stream from a <0>network source</0> (such as a network camera) or the <1>internal RTMP server</1> (e.g., OBS streams to the Restreamer)."
 msgstr "Wybierz, czy pobierasz strumień z <0>źródła sieciowego</0> (np. kamery sieciowej), czy z <1>wewnętrznego serwera RTMP</1> (np. strumienie OBS do Restreamer)."
 
-#: src/components/EncodingSelect.tsx:243
+#: src/components/EncodingSelect.tsx:244
 msgid "Select your encoding setting:"
 msgstr "Wybierz ustawienia kodowania:"
 
@@ -2599,35 +2619,35 @@ msgstr "Wybierz ustawienia kodowania:"
 msgid "Select your filter settings (optional):"
 msgstr "Wybierz ustawienia filtra (opcjonalnie):"
 
-#: src/views/Playersite.tsx:652
+#: src/views/Playersite.tsx:653
 msgid "Selected"
 msgstr "Wybrany"
 
-#: src/views/Playersite.tsx:385
+#: src/views/Playersite.tsx:386
 msgid "Selected channel"
 msgstr "Wybrany kanał"
 
-#: src/views/Playersite.tsx:496
+#: src/views/Playersite.tsx:497
 msgid "Selection"
 msgstr "Wybór"
 
-#: src/views/Settings.tsx:1443
+#: src/views/Settings.tsx:1444
 msgid "Send anonymous metrics (helps us for future development)"
 msgstr "Wysyłaj anonimowe dane (pomaga nam w przyszłym rozwoju)"
 
-#: src/views/Edit/Sources/Network.tsx:1255
-#: src/views/Edit/Sources/Network.tsx:1382
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:116
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:116
+#: src/views/Edit/Sources/Network.tsx:1256
+#: src/views/Edit/Sources/Network.tsx:1383
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:117
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:117
 msgid "Send stream to address ..."
 msgstr "Wyślij strumień na adres ..."
 
-#: src/views/Edit/Sources/Network.tsx:1169
+#: src/views/Edit/Sources/Network.tsx:1170
 #: src/views/Edit/Wizard/Sources/InternalHLS.tsx:54
 msgid "Send stream to this address:"
 msgstr "Wyślij stream na ten adres:"
 
-#: src/views/Publication/Services/Framebuffer.tsx:15
+#: src/views/Publication/Services/Framebuffer.tsx:14
 msgid "Send video to Framebuffer"
 msgstr "Wyślij wideo do Framebuffer"
 
@@ -2639,27 +2659,27 @@ msgstr "Serwer"
 #: src/views/Publication/Services/Owncast.tsx:114
 #: src/views/Publication/Services/Rumble.tsx:101
 #: src/views/Publication/Services/Telegram.tsx:100
-#: src/views/Publication/Services/TikTok.tsx:104
+#: src/views/Publication/Services/TikTok.tsx:101
 msgid "Server URL"
 msgstr "URL serwera"
 
-#: src/Header.tsx:303
+#: src/components/Header.tsx:303
 #: src/views/Login.tsx:259
-#: src/views/Settings.tsx:1329
-#: src/views/Settings.tsx:1490
+#: src/views/Settings.tsx:1330
+#: src/views/Settings.tsx:1491
 msgid "Service"
 msgstr "Usługa"
 
-#: src/views/Publication/Add.tsx:493
-#: src/views/Publication/Edit.tsx:527
+#: src/views/Publication/Add.tsx:494
+#: src/views/Publication/Edit.tsx:528
 msgid "Service name"
 msgstr "Nazwa serwisu"
 
-#: src/views/Settings.tsx:1560
+#: src/views/Settings.tsx:1561
 msgid "Service token for monitoring."
 msgstr "Token serwisowy do monitorowania."
 
-#: src/Footer.tsx:274
+#: src/components/Footer.tsx:274
 msgid "Sessions"
 msgstr "Sesje"
 
@@ -2667,43 +2687,43 @@ msgstr "Sesje"
 msgid "Set the rav1e configuration using a :-separated list of key=value parameters."
 msgstr "Ustawia konfigurację rav1e przy użyciu listy parametrów klucz=wartość rozdzielonej :-ami."
 
-#: src/views/Settings.tsx:1740
+#: src/views/Settings.tsx:1741
 msgid "Sets a bandwidth limit in Mbit per second for outgoing HLS data transfer. All services, such as RTMP and outgoing processes, are included in the calculation. If the bandwidth is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
 msgstr "Ustawia limit przepustowości w Mbit na sekundę dla wychodzącego transferu danych HLS. Wszystkie usługi, takie jak RTMP i procesy wychodzące, są uwzględniane w kalkulacji. W przypadku przekroczenia przepustowości przeglądarki HLS otrzymują kod stanu HTTP 509 (Przekroczono limit przepustowości). 0 jest nieograniczone."
 
-#: src/views/Settings.tsx:1719
+#: src/views/Settings.tsx:1720
 msgid "Sets a viewer limit for HLS sessions. If the limit is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
 msgstr "Ustawia limit oglądania dla sesji HLS. W przypadku przekroczenia limitu przeglądarki HLS otrzymują kod stanu HTTP 509 (przekroczono limit przepustowości). Wartość 0 jest nieograniczona."
 
-#: src/views/Settings.tsx:1495
+#: src/views/Settings.tsx:1496
 msgid "Setting for connection to the service."
 msgstr "Parametr połączenia serwisowego."
 
-#: src/views/Settings.tsx:1299
+#: src/views/Settings.tsx:1300
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: src/views/Settings.tsx:1301
+#: src/views/Settings.tsx:1302
 msgid "Settings (expert mode)"
 msgstr "Parametry (tryb eksperta)"
 
-#: src/views/Settings.tsx:2081
-msgid "Settings for /data path. The access is protected by"
-msgstr "Parametry ścieżki /data. Dostęp jest chroniony przez"
+#: src/views/Settings.tsx:2082
+msgid "Settings for /data path. The access is protected by "
+msgstr ""
 
-#: src/views/Settings.tsx:1973
+#: src/views/Settings.tsx:1974
 msgid "Settings for /memfs path."
 msgstr "Parametry ścieżki /memfs."
 
-#: src/views/Settings.tsx:1118
+#: src/views/Settings.tsx:1119
 msgid "Settings saved. All changes will be applied after restarting the application."
 msgstr "Ustawienia zostały zapisane. Wszystkie zmiany zostaną zastosowane po ponownym uruchomieniu aplikacji."
 
-#: src/views/Playersite.tsx:447
+#: src/views/Playersite.tsx:448
 msgid "Share button"
 msgstr "Przycisk udostępniania"
 
-#: src/views/Playersite.tsx:477
+#: src/views/Playersite.tsx:478
 msgid "Shows a reference to the project."
 msgstr "Wyświetla odniesienie do projektu."
 
@@ -2711,27 +2731,27 @@ msgstr "Wyświetla odniesienie do projektu."
 msgid "Sign up (free)"
 msgstr "Zarejestruj się (bezpłatnie)"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:101
+#: src/views/Edit/Sources/VirtualAudio.tsx:102
 msgid "Silence"
 msgstr "Cisza"
 
-#: src/views/Edit/Wizard/Audio.tsx:138
+#: src/views/Edit/Wizard/Audio.tsx:139
 msgid "Silence Audio"
 msgstr "Wycisz Dźwięk"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:103
+#: src/views/Edit/Sources/VirtualAudio.tsx:104
 msgid "Sine"
 msgstr "Sine"
 
-#: src/views/Playersite.tsx:371
+#: src/views/Playersite.tsx:372
 msgid "Sitename"
 msgstr "Nazwa Strony"
 
-#: src/components/coders/settings/Video.tsx:154
+#: src/components/coders/settings/Video.tsx:155
 msgid "Size"
 msgstr "Rozmiar"
 
-#: src/views/Edit/index.tsx:640
+#: src/views/Edit/index.tsx:641
 #: src/views/Main/index.tsx:603
 msgid "Snapshot"
 msgstr "Snapshot"
@@ -2740,26 +2760,26 @@ msgstr "Snapshot"
 msgid "Social-login (OAuth2, 2FA)"
 msgstr "Social-login (OAuth2, 2FA)"
 
-#: src/views/Edit/Sources/Network.tsx:648
+#: src/views/Edit/Sources/Network.tsx:649
 msgid "Socket timeout (microseconds)"
 msgstr "Limit czasu dla gniazd (mikrosekundy)"
 
-#: src/views/Publication/Add.tsx:436
+#: src/views/Publication/Add.tsx:437
 msgid "Software"
 msgstr "Oprogramowanie"
 
 #: src/components/controls/Source.tsx:86
-#: src/views/Edit/Sources/VirtualAudio.tsx:97
-#: src/views/Edit/Sources/VirtualVideo.tsx:121
-#: src/views/Publication/Add.tsx:547
-#: src/views/Publication/Edit.tsx:625
+#: src/views/Edit/Sources/VirtualAudio.tsx:98
+#: src/views/Edit/Sources/VirtualVideo.tsx:122
+#: src/views/Publication/Add.tsx:548
+#: src/views/Publication/Edit.tsx:626
 msgid "Source"
 msgstr "Źródło"
 
-#: src/views/Publication/Add.tsx:475
-#: src/views/Publication/Add.tsx:542
-#: src/views/Publication/Edit.tsx:509
-#: src/views/Publication/Edit.tsx:620
+#: src/views/Publication/Add.tsx:476
+#: src/views/Publication/Add.tsx:543
+#: src/views/Publication/Edit.tsx:510
+#: src/views/Publication/Edit.tsx:621
 msgid "Source & Encoding"
 msgstr "Źródło i kodowanie"
 
@@ -2771,32 +2791,32 @@ msgstr "Prędkość"
 msgid "Speed Preset"
 msgstr "Wstępne ustawienie prędkości"
 
-#: src/views/Edit/Sources/Network.tsx:659
+#: src/views/Edit/Sources/Network.tsx:660
 #: src/views/Main/index.tsx:591
-#: src/views/Settings.tsx:1370
-#: src/views/Settings.tsx:2417
+#: src/views/Settings.tsx:1371
+#: src/views/Settings.tsx:2418
 msgid "SRT"
 msgstr "SRT"
 
-#: src/views/Edit/index.tsx:621
+#: src/views/Edit/index.tsx:622
 msgid "SRT output"
 msgstr "Wyjście SRT"
 
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:169
-#: src/views/Settings.tsx:2422
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:170
+#: src/views/Settings.tsx:2423
 msgid "SRT server"
 msgstr "Serwer SRT"
 
-#: src/views/Edit/Sources/Network.tsx:1344
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:80
+#: src/views/Edit/Sources/Network.tsx:1345
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:81
 msgid "SRT server is not enabled"
 msgstr "Serwer SRT nie jest włączony"
 
-#: src/views/Settings.tsx:2450
+#: src/views/Settings.tsx:2451
 msgid "SRT server listen address."
 msgstr "Adres nasłuchu serwera SRT."
 
-#: src/views/Settings.tsx:2467
+#: src/views/Settings.tsx:2468
 msgid "SRT token for publishing and playing. The token is the value of the streamid parameter 'token.'"
 msgstr "SRT token do publikowania i odtwarzania. Token jest wartością parametru streamid 'token'."
 
@@ -2804,28 +2824,28 @@ msgstr "SRT token do publikowania i odtwarzania. Token jest wartością parametr
 msgid "Stale timeout (seconds)"
 msgstr "Limit czasu (sekundy)"
 
-#: src/views/Edit/Sources/Network.tsx:871
+#: src/views/Edit/Sources/Network.tsx:872
 msgid "start_at_zero"
 msgstr "start_at_zero"
 
-#: src/views/Settings.tsx:1871
+#: src/views/Settings.tsx:1872
 msgid "Statistics"
 msgstr "Statystyki"
 
 #: src/components/controls/HLS.tsx:68
-#: src/views/Settings.tsx:1357
-#: src/views/Settings.tsx:1965
+#: src/views/Settings.tsx:1358
+#: src/views/Settings.tsx:1966
 msgid "Storage"
 msgstr "Magazynowanie"
 
-#: src/views/Settings.tsx:1956
+#: src/views/Settings.tsx:1957
 msgid "Stores the viewer statistics to the disk."
 msgstr "Przechowuje statystyki oglądających na dysku."
 
-#: src/views/Edit/StreamSelect.tsx:35
-#: src/views/Edit/StreamSelect.tsx:42
-#: src/views/Edit/StreamSelect.tsx:89
-#: src/views/Edit/Wizard/Audio.tsx:104
+#: src/views/Edit/StreamSelect.tsx:36
+#: src/views/Edit/StreamSelect.tsx:43
+#: src/views/Edit/StreamSelect.tsx:90
+#: src/views/Edit/Wizard/Audio.tsx:105
 msgid "Stream"
 msgstr "Stream"
 
@@ -2839,7 +2859,7 @@ msgstr ""
 #: src/views/Publication/Services/DLive.tsx:82
 #: src/views/Publication/Services/Dummy.tsx:301
 #: src/views/Publication/Services/EarthCam.tsx:101
-#: src/views/Publication/Services/Instagram.tsx:94
+#: src/views/Publication/Services/Instagram.tsx:87
 #: src/views/Publication/Services/Kick.tsx:117
 #: src/views/Publication/Services/Livepush.tsx:125
 #: src/views/Publication/Services/MediaNetwork.tsx:84
@@ -2850,17 +2870,17 @@ msgstr ""
 #: src/views/Publication/Services/Restream.tsx:140
 #: src/views/Publication/Services/Rumble.tsx:117
 #: src/views/Publication/Services/Telegram.tsx:110
-#: src/views/Publication/Services/TikTok.tsx:120
+#: src/views/Publication/Services/TikTok.tsx:117
 #: src/views/Publication/Services/Trovo.tsx:82
-#: src/views/Publication/Services/Twitch.tsx:223
-#: src/views/Publication/Services/Twitter.tsx:216
-#: src/views/Publication/Services/Vimeo.tsx:83
+#: src/views/Publication/Services/Twitch.tsx:220
+#: src/views/Publication/Services/Twitter.tsx:209
+#: src/views/Publication/Services/Vimeo.tsx:80
 #: src/views/Publication/Services/Wettercom.tsx:122
-#: src/views/Publication/Services/Youtube.tsx:223
+#: src/views/Publication/Services/Youtube.tsx:220
 msgid "Stream key"
 msgstr "Klucz strumienia"
 
-#: src/views/Publication/Services/RTMP.tsx:193
+#: src/views/Publication/Services/RTMP.tsx:190
 msgid "Stream Key"
 msgstr "Stream Key"
 
@@ -2884,22 +2904,22 @@ msgstr "Źródło strumienia dla usługi publikacji (eksperymentalne)."
 msgid "Stream URL"
 msgstr "Adres URL streamu"
 
-#: src/views/Settings.tsx:2394
+#: src/views/Settings.tsx:2395
 msgid "Streamkey"
 msgstr ""
 
-#: src/views/Playersite.tsx:471
+#: src/views/Playersite.tsx:472
 msgid "Support datarhei Restreamer"
 msgstr "Wsparcie datarhei Restreamer"
 
-#: src/views/Edit/Sources/Network.tsx:981
+#: src/views/Edit/Sources/Network.tsx:982
 #: src/views/Edit/Wizard/Sources/Network.tsx:83
 msgid "Supports HTTP (HLS, DASH), RTP, RTSP, RTMP, SRT and more."
 msgstr "Obsługuje HTTP (HLS, DASH), RTP, RTSP, RTMP, SRT i inne."
 
-#: src/Footer.tsx:212
-#: src/Header.tsx:324
-#: src/views/Settings.tsx:2517
+#: src/components/Footer.tsx:212
+#: src/components/Header.tsx:324
+#: src/views/Settings.tsx:2518
 msgid "System"
 msgstr "System"
 
@@ -2907,60 +2927,62 @@ msgstr "System"
 msgid "Target address"
 msgstr "Adres celu"
 
-#: src/views/Playersite.tsx:315
-#: src/views/Playersite.tsx:486
+#: src/views/Playersite.tsx:316
+#: src/views/Playersite.tsx:487
 msgid "Template"
 msgstr "Wygłąd"
 
-#: src/views/Playersite.tsx:512
+#: src/views/Playersite.tsx:513
 msgid "Template to be used for creating the publication website. The delete button removes the selection from the system."
 msgstr "Szablon do wykorzystania przy tworzeniu strony internetowej publikacji. Przycisk Usuń usuwa zaznaczenie z systemu."
 
-#: src/views/Playersite.tsx:735
+#: src/views/Playersite.tsx:736
 msgid "Terms"
 msgstr "Warunki"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:128
+#: src/views/Edit/Sources/VirtualVideo.tsx:129
 msgid "Test pattern"
 msgstr "Wzór testu"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:130
+#: src/views/Edit/Sources/VirtualVideo.tsx:131
 msgid "Test pattern (extended)"
 msgstr "Wzór testu (rozszerzony)"
 
-#: src/views/Playersite.tsx:583
+#: src/views/Playersite.tsx:584
 msgid "Text colors"
 msgstr "Kolory tekstu"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:158
+#: src/views/Edit/Sources/VirtualAudio.tsx:159
 msgid "The amplitude (0.0 - 1.0) of the generated audio stream"
 msgstr "Rozległość (0,0–1,0) generowanego strumienia audio"
 
-#: src/views/Settings.tsx:1477
+#: src/views/Settings.tsx:1478
 msgid "The application is using an older version of the settings."
 msgstr "Aplikacja korzysta ze starej wersji ustawień."
 
-#: src/views/Edit/Sources/Network.tsx:1079
+#: src/views/Edit/Sources/Network.tsx:1080
 msgid "The available FFmpeg binary doesn't support any of the required protocols."
 msgstr "Dostępne binarki FFmpeg nie obsługują żadnego z wymaganych protokołów."
 
-#: src/components/coders/settings/Audio.tsx:47
+#: src/components/coders/settings/Audio.tsx:48
 msgid "The bitrate of the audio stream."
 msgstr "Szybkość transmisji strumienia audio."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:183
+#: src/views/Edit/Sources/VirtualAudio.tsx:184
 msgid "The carrier frequency"
 msgstr "Częstotliwość nośna"
 
-#: src/views/Edit/index.tsx:433
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx:434
 msgid "The channel \"{0}\" could not be deleted"
 msgstr "Nie można usunąć kanału \"{0}”"
 
-#: src/views/Edit/index.tsx:446
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx:447
 msgid "The channel \"{0}\" has been deleted"
 msgstr "Kanał \"{0}” został usunięty"
 
-#: src/views/Edit/index.tsx:834
+#: src/views/Edit/index.tsx:835
 msgid "The deletion of this channel can not be recovered. All publications of this channel will be removed."
 msgstr "Usunięcia tego kanału nie można odzyskać. Wszystkie posty w tym kanale zostaną usunięte."
 
@@ -2968,18 +2990,18 @@ msgstr "Usunięcia tego kanału nie można odzyskać. Wszystkie posty w tym kana
 msgid "The H.264 encoder used."
 msgstr ""
 
-#: src/views/Edit/index.tsx:314
+#: src/views/Edit/index.tsx:315
 #: src/views/Edit/Wizard/index.tsx:192
-#: src/views/Publication/Edit.tsx:305
+#: src/views/Publication/Edit.tsx:306
 msgid "The input profile is not complete. Please define a video and audio source."
 msgstr "Profil wpisu nie jest kompletny. Ustaw źródło wideo i audio."
 
-#: src/views/Publication/Add.tsx:251
+#: src/views/Publication/Add.tsx:252
 msgid "The input profile is not complete. Please define a video and/or audio source."
 msgstr "Profil wejściowy nie jest kompletny. Zdefiniuj źródło wideo i/lub audio."
 
-#: src/components/coders/settings/Audio.tsx:134
-#: src/components/filters/audio/Resample.tsx:86
+#: src/components/coders/settings/Audio.tsx:135
+#: src/components/filters/audio/Resample.tsx:87
 msgid "The layout of the audio stream."
 msgstr "Układ strumienia audio."
 
@@ -2987,31 +3009,34 @@ msgstr "Układ strumienia audio."
 msgid "The maximum number of playlist segments. 0 will contain all the segments. 6 is recommended."
 msgstr "Maksymalna liczba segmentów na liście odtwarzania. 0 będzie zawierało wszystkie segmenty. 6 jest zalecane."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:146
+#: src/views/Edit/Sources/VirtualAudio.tsx:147
 msgid "The noise color"
 msgstr "Kolor szumu"
 
-#: src/components/controls/License/index.tsx:62
+#: src/components/controls/License/index.tsx:63
 msgid "The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission."
 msgstr "Osoba, która powiązała utwór z tym aktem, przekazała utwór do domeny publicznej, zrzekając się wszystkich praw do utworu na całym świecie zgodnie z prawem autorskim, w tym wszystkich praw pokrewnych i praw sąsiadów, w zakresie dozwolonym przez prawo. Możesz kopiować, modyfikować, rozpowszechniać i wykonywać pracę, nawet w celach komercyjnych, bez pytania o pozwolenie."
 
-#: src/views/Settings.tsx:1609
+#: src/views/Settings.tsx:1610
 msgid "The public reachable domain name of the host this Restreamer is running on. Separate multiple domain names by a comma."
 msgstr "Publiczna nazwa domeny hosta, na którym działa ten Restreamer. Poszczególne nazwy domen oddziel przecinkami."
 
-#: src/views/Publication/Edit.tsx:381
+#. placeholder {0}: $settings.name
+#: src/views/Publication/Edit.tsx:382
 msgid "The publication service \"{0}\" could not be deleted"
 msgstr "Nie można usunąć usługi publikowania \"{0}”."
 
-#: src/views/Publication/Add.tsx:280
+#. placeholder {0}: $settings.name
+#: src/views/Publication/Add.tsx:281
 msgid "The publication service \"{0}\" has been created"
 msgstr "Usługa publikowania \"{0}” została utworzona."
 
-#: src/views/Publication/Edit.tsx:392
+#. placeholder {0}: $settings.name
+#: src/views/Publication/Edit.tsx:393
 msgid "The publication service \"{0}\" has been deleted"
 msgstr "Usługa publikowania \"{0}” została usunięta."
 
-#: src/views/Publication/Add.tsx:277
+#: src/views/Publication/Add.tsx:278
 msgid "The publication service has been created"
 msgstr "Powstał serwis wydawniczy"
 
@@ -3019,32 +3044,35 @@ msgstr "Powstał serwis wydawniczy"
 msgid "The RTMP output requires the RTMP Server."
 msgstr "Wyjście RTMP wymaga serwera RTMP."
 
-#: src/components/coders/settings/Audio.tsx:184
-#: src/components/filters/audio/Resample.tsx:136
+#: src/components/coders/settings/Audio.tsx:185
+#: src/components/filters/audio/Resample.tsx:137
 msgid "The sample rate of the audio stream."
 msgstr "Częstotliwość próbkowania strumienia audio."
 
 #: src/views/Edit/Sources/AudioLoop.tsx:126
 #: src/views/Edit/Sources/SDP.tsx:112
 #: src/views/Edit/Sources/VideoLoop.tsx:134
-#: src/views/Playersite.tsx:186
-#: src/views/Publication/Player.tsx:214
+#: src/views/Playersite.tsx:187
+#: src/views/Publication/Player.tsx:215
 msgid "The selected file is too big (<0/>). Only <1/> are allowed."
 msgstr "Wybrany plik jest zbyt duży (<0/>). Dozwolone są tylko <1/>."
 
+#. placeholder {0}: err.actual
+#. placeholder {1}: err.allowed.join(', ')
 #: src/views/Edit/Sources/AudioLoop.tsx:118
 #: src/views/Edit/Sources/SDP.tsx:104
 #: src/views/Edit/Sources/VideoLoop.tsx:126
-#: src/views/Playersite.tsx:178
-#: src/views/Publication/Player.tsx:206
+#: src/views/Playersite.tsx:179
+#: src/views/Publication/Player.tsx:207
 msgid "The selected file type ({0}) is not allowed. Allowed file types are {1}"
 msgstr "Wybrany typ pliku ({0}) jest niedozwolony. Dozwolone typy plików to {1}"
 
-#: src/views/Publication/Edit.tsx:336
+#. placeholder {0}: $settings.name
+#: src/views/Publication/Edit.tsx:337
 msgid "The settings for \"{0}\" have been saved"
 msgstr "Ustawienia dla \"{0}” zostały zapisane."
 
-#: src/views/Edit/Wizard/Audio.tsx:63
+#: src/views/Edit/Wizard/Audio.tsx:64
 msgid "The source doesn't provide any audio streams."
 msgstr "Źródło nie zapewnia strumienia audio."
 
@@ -3052,7 +3080,7 @@ msgstr "Źródło nie zapewnia strumienia audio."
 msgid "The source doesn't provide any audio streams. Please check the <0>probe details</0>."
 msgstr "Źródło nie zapewnia strumienia audio. Sprawdź <0>szczegóły sondy</0>."
 
-#: src/views/Edit/Wizard/Audio.tsx:71
+#: src/views/Edit/Wizard/Audio.tsx:72
 msgid "The source doesn't provide any compatible audio streams."
 msgstr "Źródło nie zapewnia kompatybilnego strumienia audio."
 
@@ -3072,7 +3100,7 @@ msgstr "Źródło nie zapewnia strumienia wideo. Sprawdź urządzenie."
 msgid "The SRT output requires the SRT Server."
 msgstr "Wyjście SRT wymaga serwera SRT."
 
-#: src/views/Edit/Wizard/Audio.tsx:84
+#: src/views/Edit/Wizard/Audio.tsx:85
 msgid "The video source doesn't provide any compatible audio stream. <0>Silence audio</0> is recommended. Services e.g. YouTube, Facebook & Co. require an audio channel."
 msgstr "Źródło wideo nie zapewnia kompatybilnego strumienia audio. Zalecana jest <0>wyciszenie dźwięku</0>. Usługi takie jak YouTube, Facebook i Spółka wymagają kanału audio."
 
@@ -3080,11 +3108,11 @@ msgstr "Źródło wideo nie zapewnia kompatybilnego strumienia audio. Zalecana j
 msgid "The video source is compatible. Select the desired resolution:"
 msgstr "Źródło wideo jest kompatybilne. Wybierz żądaną rozdzielczość:"
 
-#: src/views/Settings.tsx:1431
+#: src/views/Settings.tsx:1432
 msgid "There are updates available. Here you get more information."
 msgstr "Dostępne są aktualizacje. Tutaj uzyskasz więcej informacji."
 
-#: src/views/Settings.tsx:1065
+#: src/views/Settings.tsx:1066
 msgid "There was a problem storing the settings. Settings not saved."
 msgstr "Podczas zapisywania ustawień wystąpił problem. Ustawienia nie zostały zapisane."
 
@@ -3092,11 +3120,12 @@ msgstr "Podczas zapisywania ustawień wystąpił problem. Ustawienia nie został
 msgid "There was an error connecting to Restreamer Core at {address}."
 msgstr ""
 
+#. placeholder {0}: err.message
 #: src/views/Edit/Sources/AudioLoop.tsx:135
 #: src/views/Edit/Sources/SDP.tsx:121
 #: src/views/Edit/Sources/VideoLoop.tsx:143
-#: src/views/Playersite.tsx:195
-#: src/views/Publication/Player.tsx:223
+#: src/views/Playersite.tsx:196
+#: src/views/Publication/Player.tsx:224
 msgid "There was an error during upload: {0}"
 msgstr "Wystąpił błąd podczas pobierania: {0}"
 
@@ -3104,7 +3133,7 @@ msgstr "Wystąpił błąd podczas pobierania: {0}"
 msgid "There was an error setting up the stream."
 msgstr "Wystąpił błąd podczas konfigurowania strumienia."
 
-#: src/views/Settings.tsx:1057
+#: src/views/Settings.tsx:1058
 msgid "There were some errors in the settings. Settings not saved."
 msgstr "Wystąpiły błędy w ustawieniach. Ustawienia nie zostały zapisane."
 
@@ -3124,35 +3153,35 @@ msgstr "Niekoniecznie jest to błąd. Jednak ponowne uruchomienie Restreamer Cor
 msgid "This is to mention the copyright regulations for the target of this service."
 msgstr "Ma to na celu wspomnieć o zasadach dotyczących praw autorskich dla celu tej usługi."
 
-#: src/components/controls/License/index.tsx:97
+#: src/components/controls/License/index.tsx:98
 msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, and only so long as attribution is given to the creator. The license allows for commercial use."
 msgstr "Ta licencja umożliwia ponownemu użytkownikowi kopiowanie i rozpowszechnianie materiału w dowolnym medium lub formacie, wyłącznie w nieodpowiedniej formie, pod warunkiem, że twórca zostanie potwierdzony. Licencja pozwala na wykorzystanie komercyjne."
 
-#: src/components/controls/License/index.tsx:104
+#: src/components/controls/License/index.tsx:105
 msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, for noncommercial purposes only, and only so long as attribution is given to the creator."
 msgstr "Niniejsza licencja umożliwia ponownemu kopiowaniu i rozpowszechnianiu materiału w dowolnym medium lub formacie, wyłącznie w nieodpowiedniej formie, do celów niekomercyjnych i pod warunkiem, że twórca zostanie potwierdzony."
 
-#: src/components/controls/License/index.tsx:83
+#: src/components/controls/License/index.tsx:84
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator."
 msgstr "Ta licencja umożliwia ponownemu użytkownikowi rozpowszechnianie, remiksowanie, adaptowanie i używanie materiału w dowolnym medium lub formacie wyłącznie do celów niekomercyjnych, pod warunkiem uznania autora za twórcę."
 
-#: src/components/controls/License/index.tsx:90
+#: src/components/controls/License/index.tsx:91
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
 msgstr "Ta licencja umożliwia ponownemu użytkownikowi rozpowszechnianie, remiksowanie, adaptowanie i używanie materiału w dowolnym medium lub formacie wyłącznie do celów niekomercyjnych, pod warunkiem uznania autora za twórcę. Jeśli remiksujesz, adaptujesz lub rozszerzasz materiał, musisz licencjonować zmodyfikowany materiał na identycznych warunkach."
 
-#: src/components/controls/License/index.tsx:69
+#: src/components/controls/License/index.tsx:70
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use."
 msgstr "Ta licencja umożliwia ponownemu użytkownikowi rozpowszechnianie, remiksowanie, adaptowanie i używanie materiału w dowolnym medium lub formacie, pod warunkiem, że twórca zostanie potwierdzony. Licencja pozwala na wykorzystanie komercyjne."
 
-#: src/components/controls/License/index.tsx:76
+#: src/components/controls/License/index.tsx:77
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
 msgstr "Ta licencja umożliwia ponownemu użytkownikowi rozpowszechnianie, remiksowanie, adaptowanie i używanie materiału w dowolnym medium lub formacie, pod warunkiem, że twórca zostanie potwierdzony. Licencja pozwala na wykorzystanie komercyjne. Jeśli remiksujesz, adaptujesz lub rozszerzasz materiał, musisz licencjonować zmodyfikowany materiał na identycznych warunkach."
 
-#: src/views/Edit/Sources/Network.tsx:993
+#: src/views/Edit/Sources/Network.tsx:994
 msgid "This protocol is unknown or not supported by the available FFmpeg binary."
 msgstr "Ten protokół jest nieznany lub nie jest obsługiwany przez dostępne binarki FFmpeg."
 
-#: src/views/Edit/index.tsx:804
+#: src/views/Edit/index.tsx:805
 msgid "This source cannot be edited while it is in use. To continue, you have to disconnect the source."
 msgstr "Tego źródła nie można edytować podczas używania. Aby kontynuować, musisz odłączyć źródło."
 
@@ -3184,7 +3213,7 @@ msgstr "Rzędy płytek"
 msgid "Tiles"
 msgstr "Płytki"
 
-#: src/views/Settings.tsx:1935
+#: src/views/Settings.tsx:1936
 msgid "Time until an inactive viewer connection is treated as closed."
 msgstr "Czas, po którym nieaktywne połączenie widza jest traktowane jako zamknięte."
 
@@ -3192,8 +3221,8 @@ msgstr "Czas, po którym nieaktywne połączenie widza jest traktowane jako zamk
 msgid "To stabilize the system, increase the HLS segment length for the keyframe interval by 2-3 * (Processing and Control)."
 msgstr "Aby ustabilizować system, zwiększ długość segmentu HLS dla interwału klatek kluczowych o 2-3 * (Processing and Control)."
 
-#: src/views/Settings.tsx:1549
-#: src/views/Settings.tsx:2456
+#: src/views/Settings.tsx:1550
+#: src/views/Settings.tsx:2457
 msgid "Token"
 msgstr "Token"
 
@@ -3205,7 +3234,7 @@ msgstr "Górne pole"
 msgid "Transmit a Livestream to a Telegram Channel."
 msgstr "Przekazuj Livestream na kanał Telegram."
 
-#: src/views/Publication/Services/Image2.tsx:24
+#: src/views/Publication/Services/Image2.tsx:23
 msgid "Transmit snapshots of the main source to an HTTP/S Server. More details about the settings can be found <0>here</0>."
 msgstr "Przesyłaj migawki z podstawowego źródła do serwera HTTP/S. Więcej szczegółów na temat parametrów znajdziesz <0>tutaj</0>."
 
@@ -3213,11 +3242,11 @@ msgstr "Przesyłaj migawki z podstawowego źródła do serwera HTTP/S. Więcej s
 msgid "Transmit the audio channel of the main source to an Icecast Server. More details about the settings can be found <0>here</0>."
 msgstr "Przesyła kanał audio z głównego źródła do serwera Icecast. Więcej szczegółów na temat parametrów znajdziesz <0>tutaj</0>."
 
-#: src/views/Publication/Services/HLS.tsx:27
+#: src/views/Publication/Services/HLS.tsx:26
 msgid "Transmit the main source as HTTP-Live-Streaming (HLS) to an HTTP/S Server. More details about the settings can be found <0>here</0>."
 msgstr "Prześlij główne źródło jako HTTP-Live-Streaming (HLS) do serwera HTTP/S. Więcej szczegółów na temat parametrów znajdziesz <0>tutaj</0>."
 
-#: src/views/Publication/Services/DASH.tsx:26
+#: src/views/Publication/Services/DASH.tsx:25
 msgid "Transmit the main source as MPEG-DASH to an HTTP/S Server. More details about the settings can be found <0>here</0>."
 msgstr "Prześlij główne źródło w MPEG-DASH do serwera HTTP/S. Więcej szczegółów na temat parametrów znajdziesz <0>tutaj</0>."
 
@@ -3241,7 +3270,7 @@ msgstr "Przekaż źródło podstawowe do datarhei Core Ressource. Więcej szczeg
 msgid "Transmit the main source to an livespotting.com Ressource. More details about the settings can be found <0>here</0>."
 msgstr "Przekaż główne źródło do Ressource livespotting.com. Więcej szczegółów na temat parametrów znajdziesz <0>tutaj</0>."
 
-#: src/views/Publication/Services/MPEGTS.tsx:25
+#: src/views/Publication/Services/MPEGTS.tsx:24
 msgid "Transmit the main source to an MPEG-TS Service. More details about the settings can be found here <0>here</0>."
 msgstr "Prześlij główne źródło do usługi MPEG-TS. Więcej informacji na temat ustawień znajdziesz tutaj <0>tutaj</0>."
 
@@ -3249,19 +3278,19 @@ msgstr "Prześlij główne źródło do usługi MPEG-TS. Więcej informacji na t
 msgid "Transmit the main source to an Red5/Pro Server. More details about the settings can be found <0>here</0>."
 msgstr "Prześlij główne źródło do serwera Red5/Pro. Więcej szczegółów na temat ustawień znajdziesz <0>tutaj</0>."
 
-#: src/views/Publication/Services/RTMP.tsx:23
+#: src/views/Publication/Services/RTMP.tsx:22
 msgid "Transmit the main source to an RTMP(e|s|t|te|ts) Server. More details about the settings can be found <0>here</0>."
 msgstr "Prześlij główne źródło do serwera RTMP(e|s|t|te|ts). Więcej szczegółów na temat parametrów znajdziesz <0>tutaj</0>."
 
-#: src/views/Publication/Services/RTSP.tsx:26
+#: src/views/Publication/Services/RTSP.tsx:25
 msgid "Transmit the main source to an RTSP Server. More details about the settings can be found <0>here</0>."
 msgstr "Prześlij główne źródło do serwera RTSP. Więcej szczegółów na temat parametrów znajdziesz <0>tutaj</0>."
 
-#: src/views/Publication/Services/SRT.tsx:24
+#: src/views/Publication/Services/SRT.tsx:23
 msgid "Transmit the main source to an SRT Server. More details about the settings can be found <0>here</0>."
 msgstr "Prześlij główne źródło do serwera SRT. Więcej szczegółów na temat parametrów znajdziesz <0>tutaj</0>."
 
-#: src/views/Publication/Services/UDP.tsx:22
+#: src/views/Publication/Services/UDP.tsx:21
 msgid "Transmit the main source to an UDP Server. More details about the settings can be found <0>here</0>."
 msgstr "Prześlij źródło podstawowe do serwera UDP. Więcej szczegółów na temat parametrów znajdziesz <0>tutaj</0>."
 
@@ -3317,7 +3346,7 @@ msgstr "Prześlij swój Livestream na serwer Owncast. <0>Tutaj </0>znajdziesz wi
 msgid "Transmit your Livestream to an Rumble RTMP service. <0>Here </0>you can find more details about the settings."
 msgstr "Prześlij swój Livestream do usługi Rumble RTMP. <0>Tutaj </0>znajdziesz więcej szczegółów na temat ustawień."
 
-#: src/views/Publication/Services/TikTok.tsx:16
+#: src/views/Publication/Services/TikTok.tsx:15
 msgid "Transmit your Livestream to an TikTok RTMP service. <0>Here </0>you can find more details about the settings."
 msgstr ""
 
@@ -3325,15 +3354,15 @@ msgstr ""
 msgid "Transmit your Livestream to wetter.com. Contact the publisher <0>here </0>."
 msgstr ""
 
-#: src/views/Publication/Services/Youtube.tsx:20
+#: src/views/Publication/Services/Youtube.tsx:19
 msgid "Transmits your video as an RTMP stream with the required key generated in YouTube Studio. You can find more information on setting up a live stream at YouTube's <0>Creator Academy</0>."
 msgstr "Przesyła Twój film jako strumień RTMP z wymaganym kluczem wygenerowanym w YouTube Studio. Więcej informacji na temat konfigurowania transmisji na żywo znajdziesz w witrynie <0>Creator Academy</0> YouTube."
 
-#: src/views/Publication/Services/Twitter.tsx:19
+#: src/views/Publication/Services/Twitter.tsx:18
 msgid "Transmits your video stream with the required key, which was generated in Twitter Producer. You can find more information on seting up a live stream at Twitter's <0>Producer</0>."
 msgstr "Przesyła strumień wideo z wymaganym kluczem, który został wygenerowany w programie Twitter Producer. Więcej informacji na temat konfigurowania transmisji na żywo można znaleźć na stronie <0>Producent</0> Twittera."
 
-#: src/views/Edit/Sources/Network.tsx:630
+#: src/views/Edit/Sources/Network.tsx:631
 msgid "Transport"
 msgstr ""
 
@@ -3349,11 +3378,11 @@ msgstr "Tune"
 msgid "UDP transport"
 msgstr "Transport UDP"
 
-#: src/views/Settings.tsx:1280
+#: src/views/Settings.tsx:1281
 msgid "Unable to load the config."
 msgstr "Nie udało się wczytać konfiguracji."
 
-#: src/views/Settings.tsx:1528
+#: src/views/Settings.tsx:1529
 msgid "Unique ident on the service."
 msgstr "Unikalny identyfikator w usłudze."
 
@@ -3364,12 +3393,12 @@ msgstr "Nieznany"
 #: src/views/Edit/Sources/AudioLoop.tsx:139
 #: src/views/Edit/Sources/SDP.tsx:125
 #: src/views/Edit/Sources/VideoLoop.tsx:147
-#: src/views/Playersite.tsx:199
-#: src/views/Publication/Player.tsx:227
+#: src/views/Playersite.tsx:200
+#: src/views/Publication/Player.tsx:228
 msgid "Unknown upload error"
 msgstr "Nieznany błąd przesyłania"
 
-#: src/views/Playersite.tsx:661
+#: src/views/Playersite.tsx:662
 msgid "Unselected"
 msgstr "Nie zaznaczone"
 
@@ -3380,22 +3409,25 @@ msgstr "Szczegóły aktualizacji (Changelog)"
 #: src/views/Edit/Sources/AudioLoop.tsx:198
 #: src/views/Edit/Sources/SDP.tsx:179
 #: src/views/Edit/Sources/VideoLoop.tsx:206
-#: src/views/Playersite.tsx:533
-#: src/views/Playersite.tsx:556
-#: src/views/Playersite.tsx:698
-#: src/views/Publication/Player.tsx:480
-#: src/views/Publication/Player.tsx:529
+#: src/views/Playersite.tsx:534
+#: src/views/Playersite.tsx:557
+#: src/views/Playersite.tsx:699
+#: src/views/Publication/Player.tsx:481
+#: src/views/Publication/Player.tsx:530
 msgid "Upload"
 msgstr "Upload"
 
+#. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
 #: src/views/Edit/Sources/AudioLoop.tsx:180
 msgid "Upload an audio file ({0}) in order to loop it."
 msgstr "Prześlij plik audio ({0}), aby go zapętlić."
 
+#. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
 #: src/views/Edit/Sources/VideoLoop.tsx:188
 msgid "Upload an image or video file ({0}) in order to loop it."
 msgstr "Prześlij obraz lub plik wideo ({0}), aby go zapętlić."
 
+#. placeholder {0}: fileTypes.map((t) => t.mimetype).join(', ')
 #: src/views/Edit/Sources/SDP.tsx:163
 msgid "Upload SDP file ({0})."
 msgstr ""
@@ -3403,20 +3435,20 @@ msgstr ""
 #: src/views/Edit/Sources/AudioLoop.tsx:202
 #: src/views/Edit/Sources/SDP.tsx:183
 #: src/views/Edit/Sources/VideoLoop.tsx:210
-#: src/views/Playersite.tsx:560
-#: src/views/Playersite.tsx:702
+#: src/views/Playersite.tsx:561
+#: src/views/Playersite.tsx:703
 msgid "Uploading the file failed"
 msgstr "Przesyłanie pliku nie powiodło się"
 
-#: src/views/Publication/Player.tsx:484
+#: src/views/Publication/Player.tsx:485
 msgid "Uploading the logo failed"
 msgstr "Nie udało się pobrać logo"
 
-#: src/views/Publication/Player.tsx:533
+#: src/views/Publication/Player.tsx:534
 msgid "Uploading the poster failed"
 msgstr "Przesyłanie plakatu nie powiodło się"
 
-#: src/Footer.tsx:193
+#: src/components/Footer.tsx:193
 #: src/components/Progress.tsx:116
 #: src/views/Main/Progress.tsx:57
 msgid "Uptime"
@@ -3430,7 +3462,7 @@ msgstr ""
 msgid "Use Auth0 for your running Restreamer Core. More <0>details</0>."
 msgstr "Użyj Auth0 dla działającego Restreamera Core. Więcej <0>szczegółów</0>."
 
-#: src/views/Edit/index.tsx:528
+#: src/views/Edit/index.tsx:529
 msgid "Use the wizard (<0/>) for a quick and easy setup, or edit (<1/>) the sources directly in custom mode."
 msgstr "Użyj kreatora (<0/>) do szybkiej i łatwej konfiguracji lub edytuj (<1/>) źródła bezpośrednio w trybie niestandardowym."
 
@@ -3438,11 +3470,11 @@ msgstr "Użyj kreatora (<0/>) do szybkiej i łatwej konfiguracji lub edytuj (<1/
 msgid "Use your copyright and choose the correct image license. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
 msgstr "Wykorzystaj swoje prawa autorskie i wybierz odpowiednią licencję na obraz. Bez względu na to, czy jest darmowy dla wszystkich, czy mocno ograniczony. Krótko omów, co inni mogą zrobić z Twoim wizerunkiem."
 
-#: src/views/Edit/index.tsx:729
+#: src/views/Edit/index.tsx:730
 msgid "Use your copyright and choose the right image licence. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
 msgstr "Wykorzystaj swoje prawa autorskie i wybierz odpowiednią licencję na obraz. Niezależnie od tego, czy jest to licencja bezpłatna, czy bardzo ograniczona. Krótko omów, co inni mogą zrobić z Twoim wizerunkiem."
 
-#: src/views/Edit/Sources/Network.tsx:876
+#: src/views/Edit/Sources/Network.tsx:877
 msgid "use_wallclock_as_timestamps"
 msgstr "use_wallclock_as_timestamps"
 
@@ -3450,26 +3482,26 @@ msgstr "use_wallclock_as_timestamps"
 msgid "User registration"
 msgstr "Rejestracja Użytkownika"
 
-#: src/views/Edit/Sources/Network.tsx:1008
+#: src/views/Edit/Sources/Network.tsx:1009
 #: src/views/Edit/Wizard/Sources/Network.tsx:101
 #: src/views/Login.tsx:285
 #: src/views/Publication/Services/DaCast.tsx:165
-#: src/views/Publication/Services/DASH.tsx:229
-#: src/views/Publication/Services/HLS.tsx:220
+#: src/views/Publication/Services/DASH.tsx:222
+#: src/views/Publication/Services/HLS.tsx:217
 #: src/views/Publication/Services/Red5.tsx:172
-#: src/views/Publication/Services/RTSP.tsx:178
+#: src/views/Publication/Services/RTSP.tsx:175
 #: src/views/Publication/Services/WOWZA.tsx:197
-#: src/views/Settings.tsx:1790
-#: src/views/Settings.tsx:1997
+#: src/views/Settings.tsx:1791
+#: src/views/Settings.tsx:1998
 msgid "Username"
 msgstr "Login"
 
-#: src/views/Settings.tsx:1799
-#: src/views/Settings.tsx:2011
+#: src/views/Settings.tsx:1800
+#: src/views/Settings.tsx:2012
 msgid "Username for authorization."
 msgstr "Nazwa użytkownika do autoryzacji."
 
-#: src/views/Edit/Sources/Network.tsx:1013
+#: src/views/Edit/Sources/Network.tsx:1014
 #: src/views/Edit/Wizard/Sources/Network.tsx:107
 msgid "Username for the device."
 msgstr "Nazwa użytkownika urządzenia."
@@ -3478,11 +3510,11 @@ msgstr "Nazwa użytkownika urządzenia."
 msgid "V4L2_M2M is experimental."
 msgstr "V4L2_M2M jest eksperymentalny."
 
-#: src/components/coders/settings/Video.tsx:368
+#: src/components/coders/settings/Video.tsx:369
 msgid "Variable frame rate (VFR)"
 msgstr "Zmienna częstotliwość odświeżania (VFR)"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:143
+#: src/views/Edit/Sources/VirtualAudio.tsx:144
 msgid "velvet"
 msgstr "aksamitny"
 
@@ -3490,7 +3522,7 @@ msgstr "aksamitny"
 msgid "Vertical Flip"
 msgstr "Przerzucanie pionowe"
 
-#: src/views/Publication/Add.tsx:579
+#: src/views/Publication/Add.tsx:580
 msgid "Video"
 msgstr "Wideo"
 
@@ -3498,20 +3530,20 @@ msgstr "Wideo"
 msgid "Video Codec"
 msgstr ""
 
-#: src/views/Edit/Sources/AVFoundation.tsx:136
-#: src/views/Edit/Sources/Channel.tsx:103
+#: src/views/Edit/Sources/AVFoundation.tsx:137
+#: src/views/Edit/Sources/Channel.tsx:104
 #: src/views/Edit/Sources/Raspicam.tsx:110
 #: src/views/Edit/Sources/V4L.tsx:127
-#: src/views/Edit/Sources/X11grab.tsx:179
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:98
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:97
+#: src/views/Edit/Sources/X11grab.tsx:180
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:99
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:96
 #: src/views/Edit/Wizard/Sources/V4L.tsx:121
 msgid "Video device"
 msgstr "Urządzenie wideo"
 
 #: src/views/Edit/Profile.tsx:533
 #: src/views/Edit/ProfileSummary.tsx:69
-#: src/views/Publication/Edit.tsx:657
+#: src/views/Publication/Edit.tsx:658
 msgid "Video settings"
 msgstr "Ustawienia wideo"
 
@@ -3525,19 +3557,19 @@ msgstr "Konfiguracja wideo"
 msgid "Video source"
 msgstr "Źródło wideo"
 
-#: src/Footer.tsx:260
-#: src/Footer.tsx:266
-#: src/Footer.tsx:279
+#: src/components/Footer.tsx:260
+#: src/components/Footer.tsx:266
+#: src/components/Footer.tsx:279
 #: src/views/Main/Publication.tsx:187
 msgid "Viewer"
 msgstr "Widzów"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:142
+#: src/views/Edit/Sources/VirtualAudio.tsx:143
 msgid "violet"
 msgstr "fioletowy"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:217
-#: src/views/Edit/Sources/VirtualVideo.tsx:266
+#: src/views/Edit/Sources/VirtualAudio.tsx:218
+#: src/views/Edit/Sources/VirtualVideo.tsx:267
 msgid "Virtual source"
 msgstr "Wirtualne źródło"
 
@@ -3565,19 +3597,19 @@ msgstr "Jakiego ustawienia prędkości użyć."
 msgid "Where to store the HLS playlist and segments. In-Memory is recommended."
 msgstr "Gdzie ma być przechowywana playlista HLS i segmenty. Zalecane jest In-Memory."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:138
+#: src/views/Edit/Sources/VirtualAudio.tsx:139
 msgid "white"
 msgstr "biały"
 
-#: src/components/coders/settings/Video.tsx:243
+#: src/components/coders/settings/Video.tsx:244
 msgid "Width"
 msgstr "Szerokośc"
 
-#: src/views/Settings.tsx:1978
+#: src/views/Settings.tsx:1979
 msgid "Write protection"
 msgstr "Ochrona przed zapisem"
 
-#: src/views/Edit/Sources/X11grab.tsx:290
+#: src/views/Edit/Sources/X11grab.tsx:291
 msgid "X11 Screen Capture"
 msgstr ""
 
@@ -3589,7 +3621,7 @@ msgstr "Tak"
 msgid "You can't abort the wizard because at least one input must be defined."
 msgstr "Nie można przerwać kreatora, ponieważ należy zdefiniować co najmniej jeden wpis."
 
-#: src/views/Settings.tsx:2747
+#: src/views/Settings.tsx:2748
 msgid "You have changed the configuration. In order for the changes to take effect, you have to restart the application. Do you want to restart now?"
 msgstr "Zmieniłeś konfigurację. Aby zmiany odniosły skutek, musisz ponownie uruchomić aplikację. Czy chcesz teraz ponownie uruchomić?"
 
@@ -3598,7 +3630,7 @@ msgstr "Zmieniłeś konfigurację. Aby zmiany odniosły skutek, musisz ponownie 
 msgid "You have to reconnect manually"
 msgstr "Musisz ponownie połączyć się ręcznie"
 
-#: src/views/Publication/Edit.tsx:576
+#: src/views/Publication/Edit.tsx:577
 msgid "You have unsaved changes. Please save them before you can control the service again."
 msgstr "Masz niezapisane zmiany. Utwórz ich kopię zapasową, zanim będziesz mógł ponownie kontrolować usługę."
 
@@ -3610,6 +3642,6 @@ msgstr "Twój strumień musi być zakodowany, ale nie jest dostępny odpowiedni 
 msgid "Your stream needs to be encoded. Choose the desired encoder:"
 msgstr "Twój strumień musi być zakodowany. Wybierz żądany koder:"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:133
+#: src/views/Edit/Sources/VirtualVideo.tsx:134
 msgid "YUV test pattern"
 msgstr "Tabela testowa YUV"

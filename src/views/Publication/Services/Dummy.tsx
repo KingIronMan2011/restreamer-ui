@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import ExtensionIcon from '@mui/icons-material/Extension';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';

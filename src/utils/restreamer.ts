@@ -1,5 +1,5 @@
 import { i18n } from '@lingui/core';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import Handlebars from 'handlebars';
 import { jwtDecode } from 'jwt-decode';
 import {

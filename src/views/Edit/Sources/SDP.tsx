@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import Icon from '@mui/icons-material/VideoFile';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';

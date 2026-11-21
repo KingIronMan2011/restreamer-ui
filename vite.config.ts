@@ -5,7 +5,7 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   base: process.env.PUBLIC_URL ?? '/',
-  plugins: [babel({ plugins: ['macros'] }), react(), vitePages()],
+  plugins: [babel({ plugins: ['@lingui/babel-plugin-lingui-macro'] }), react(), vitePages()],
   define: {
     'process.env': {},
   },

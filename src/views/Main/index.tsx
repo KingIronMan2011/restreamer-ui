@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import WarningIcon from '@mui/icons-material/Warning';
 import Chip from '@mui/material/Chip';
 import CircularProgress from '@mui/material/CircularProgress';

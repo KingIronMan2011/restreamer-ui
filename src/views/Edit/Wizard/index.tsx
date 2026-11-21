@@ -1,4 +1,4 @@
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';

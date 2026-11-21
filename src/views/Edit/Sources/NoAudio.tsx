@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import Icon from '@mui/icons-material/Block';
 import React from 'react';
 
