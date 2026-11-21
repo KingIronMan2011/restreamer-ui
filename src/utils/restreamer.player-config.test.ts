@@ -1,12 +1,13 @@
 import Restreamer from './restreamer';
+import { vi } from 'vitest';
 
 test('UpdatePlayerConfig publishes JavaScript and JSON variants', async () => {
   const restreamer = Object.create(Restreamer.prototype);
 
-  restreamer.InitPlayerSettings = jest.fn((player) => player);
-  restreamer.GetChannelManifestPath = jest.fn(() => '/memfs/test.m3u8');
-  restreamer.GetChannelPosterPath = jest.fn(() => '/memfs/test.jpg');
-  restreamer._uploadAssetData = jest.fn().mockResolvedValue(true);
+  restreamer.InitPlayerSettings = vi.fn((player) => player);
+  restreamer.GetChannelManifestPath = vi.fn(() => '/memfs/test.m3u8');
+  restreamer.GetChannelPosterPath = vi.fn(() => '/memfs/test.jpg');
+  restreamer._uploadAssetData = vi.fn().mockResolvedValue(true);
 
   const metadata = {
     player: {

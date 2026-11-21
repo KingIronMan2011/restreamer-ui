@@ -4,7 +4,6 @@ ARG CADDY_IMAGE=caddy:2.8.4-alpine
 FROM $NODE_IMAGE AS builder
 
 ENV PUBLIC_URL="./"
-ENV DISABLE_ESLINT_PLUGIN=true
 
 COPY . /ui
 
@@ -13,7 +12,7 @@ WORKDIR /ui
 RUN corepack enable && \
 	pnpm install --frozen-lockfile && \
 	pnpm lint && \
-	pnpm ts:syntax && \
+	pnpm run types && \
 	pnpm build
 
 FROM $CADDY_IMAGE

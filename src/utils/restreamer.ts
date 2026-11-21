@@ -3651,7 +3651,7 @@ class Restreamer {
       let response = null;
 
       try {
-        response = await fetch(process.env.PUBLIC_URL + localPath, {
+        response = await fetch(import.meta.env.BASE_URL + localPath, {
           method: 'GET',
         });
       } catch (err) {

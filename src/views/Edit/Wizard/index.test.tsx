@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { render, fireEvent, act, screen } from '../../../utils/testing';
-import '@testing-library/jest-dom';
 
 import Wizard from './index';
 
