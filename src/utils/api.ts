@@ -1,7 +1,13 @@
 import { fetch } from './fetch';
 
 class API {
-  constructor(address) {
+  [key: string]: any;
+
+  address!: string;
+  token: string | (() => Promise<string>) = '';
+  cache!: Map<string, any>;
+
+  constructor(address: string) {
     this.base = '/api';
     this.address = address;
     this.token = '';

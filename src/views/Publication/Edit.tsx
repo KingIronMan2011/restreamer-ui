@@ -62,10 +62,10 @@ export default function Edit({ restreamer = null }) {
   const notify = React.useContext(NotifyContext);
   const [$ready, setReady] = React.useState(false);
   const [$settings, setSettings] = React.useState(M.getDefaultEgressMetadata());
-  const [$sources, setSources] = React.useState([]);
-  const [$localSources, setLocalSources] = React.useState([]);
+  const [$sources, setSources] = React.useState<Record<string, any>[]>([]);
+  const [$localSources, setLocalSources] = React.useState<Record<string, any>[]>([]);
   const [$tab, setTab] = React.useState('general');
-  const [$progress, setProgress] = React.useState({});
+  const [$progress, setProgress] = React.useState<Record<string, any>>({});
   const [$processDetails, setProcessDetails] = React.useState({
     open: false,
     data: {

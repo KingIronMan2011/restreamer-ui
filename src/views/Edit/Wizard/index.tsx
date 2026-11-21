@@ -38,8 +38,8 @@ export default function Wizard({ restreamer = null }) {
     audio: M.initSource('audio', null),
   });
   const [$profile, setProfile] = React.useState(M.initProfile());
-  const [$skills, setSkills] = React.useState({});
-  const [$config, setConfig] = React.useState({});
+  const [$skills, setSkills] = React.useState<Record<string, any>>({});
+  const [$config, setConfig] = React.useState<Record<string, any>>({});
   const [$step, setStep] = React.useState('TYPE');
   const [$sourceid, setSourceid] = React.useState('');
   const [$probe, setProbe] = React.useState({

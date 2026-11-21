@@ -261,7 +261,7 @@ export default function ChannelList({
   const [$nChannels, setNChannels] = React.useState(
     breakpointSmall ? (breakpointMedium ? (breakpointLarge ? 4 : 3) : 2) : 1,
   );
-  const [$channels, setChannels] = React.useState([]);
+  const [$channels, setChannels] = React.useState<Record<string, any>[]>([]);
   const [$addChannel, setAddChannel] = React.useState({
     open: false,
     name: '',

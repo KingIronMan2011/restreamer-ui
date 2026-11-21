@@ -69,9 +69,9 @@ export default function Edit({ restreamer = null }) {
     saving: false,
   });
   const [$data, setData] = React.useState(M.getDefaultIngestMetadata());
-  const [$skills, setSkills] = React.useState({});
-  const [$config, setConfig] = React.useState({});
-  const [$process, setProcess] = React.useState({});
+  const [$skills, setSkills] = React.useState<Record<string, any>>({});
+  const [$config, setConfig] = React.useState<Record<string, any>>({});
+  const [$process, setProcess] = React.useState<Record<string, any>>({});
   const [$ready, setReady] = React.useState(false);
   const [$deleteDialog, setDeleteDialog] = React.useState(false);
   const [$editDialog, setEditDialog] = React.useState({

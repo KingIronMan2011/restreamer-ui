@@ -16,7 +16,24 @@ import * as M from './metadata';
 import * as Storage from './storage';
 
 class Restreamer {
-  constructor(address) {
+  [key: string]: any;
+
+  address!: string;
+  api!: API;
+  listeners!: Array<(severity: string, type: string, message: string) => void>;
+  valid!: boolean;
+  requiresLogin!: boolean;
+  connected!: boolean;
+  ignoreAPIErrors!: boolean;
+  about!: Record<string, any>;
+  skills!: Record<string, any> | null;
+  config!: Record<string, any> | null;
+  cache!: { assets: Map<string, any> };
+  channels!: Map<string, any>;
+  hasUpdates!: boolean;
+  hasService!: boolean;
+
+  constructor(address: string) {
     try {
       new URL(address);
     } catch (e) {
@@ -64,7 +81,7 @@ class Restreamer {
     this._checkForUpdates();
   }
 
-  _initAbout(initialAbout) {
+  _initAbout(initialAbout: Record<string, any> = {}) {
     if (!initialAbout) {
       initialAbout = {};
     }
@@ -122,7 +139,7 @@ class Restreamer {
     return this.address;
   }
 
-  SetAddress(address) {
+  SetAddress(address: string) {
     if (address === this.address) {
       return true;
     }

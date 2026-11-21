@@ -62,7 +62,7 @@ export default function RestreamerUI({ address = '' }) {
     channelid: '',
     channels: [],
   });
-  const [$metadata, setMetadata] = React.useState({});
+  const [$metadata, setMetadata] = React.useState<Record<string, any>>({});
   const [$changelog, setChangelog] = React.useState({
     open: false,
     current: '',

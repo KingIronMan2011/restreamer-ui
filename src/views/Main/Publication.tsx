@@ -48,7 +48,7 @@ export default function Publication({ channelid = '', restreamer = null }) {
 
   const navigate = useNavigate();
   const services = Services.IDs();
-  const [$egresses, setEgresses] = React.useState([]);
+  const [$egresses, setEgresses] = React.useState<Record<string, any>[]>([]);
   const [$session, setSession] = React.useState({
     viewer: 0,
     bandwidth: 0,
