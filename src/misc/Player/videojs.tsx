@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid';
 import React from 'react';
 import videojs from 'video.js';
 
-import './videojs-overlay.es.js';
+import './videojs-overlay.es';
 
 import 'video.js/dist/video-js.min.css';
 import './video-js-skin-internal.min.css';

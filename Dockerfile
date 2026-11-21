@@ -13,6 +13,7 @@ WORKDIR /ui
 RUN corepack enable && \
 	pnpm install --frozen-lockfile && \
 	pnpm lint && \
+	pnpm ts:syntax && \
 	pnpm build
 
 FROM $CADDY_IMAGE

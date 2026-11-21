@@ -31,12 +31,15 @@ jobs:
         uses: pnpm/action-setup@v6
 
       - name: Lint with Oxlint
-        run: pnpm lint
+        run: pnpm run lint
+
+      - name: Check TypeScript syntax
+        run: pnpm run types
 
       - name: Build React App
         run: |
           pnpm install --frozen-lockfile
-          pnpm build
+          pnpm run build
         env:
           PUBLIC_URL: './'
           DISABLE_ESLINT_PLUGIN: 'true'
