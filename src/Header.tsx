@@ -23,7 +23,6 @@ import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 
-import welcomeImage from './assets/images/welcome.png';
 import LanguageSelect from './misc/LanguageSelect';
 import Logo from './misc/Logo/rsLogo';
 import ModalContent from './misc/ModalContent';
@@ -172,7 +171,7 @@ function AboutModal({ open = false, onClose = () => {} }: any) {
         <Grid container spacing={1}>
           <Grid item xs={12} className={classes.aboutImage}>
             <PaperThumb
-              image={welcomeImage}
+              image="/images/welcome.png"
               title="Welcome to Restreamer v2"
               height="200px"
             />

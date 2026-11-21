@@ -201,7 +201,7 @@ const getToken = async () => {
   }
 
   try {
-    token = await client.getTokenSilently();
+    token = (await client.getTokenSilently()) ?? '';
   } catch (error) {
     console.error(error);
   }

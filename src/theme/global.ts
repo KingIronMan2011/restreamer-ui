@@ -1,4 +1,3 @@
-import universe from '../assets/images/universe-4609408.jpg';
 /* eslint-disable import/no-anonymous-default-export */
 import base from './base';
 
@@ -9,7 +8,7 @@ export default {
     fontSize: '16px/1.5',
   },
   body: {
-    background: `${base.palette.background.button_disabled} url(${universe}) no-repeat fixed left top`,
+    background: `${base.palette.background.button_disabled} url(/images/universe-4609408.jpg) no-repeat fixed left top`,
     backgroundSize: 'cover',
     overflowX: 'hidden',
     overflowY: 'scroll',

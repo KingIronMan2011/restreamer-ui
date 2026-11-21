@@ -17,7 +17,6 @@ import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import settingsImage from '../assets/images/settings.png';
 import NotifyContext from '../contexts/Notify';
 import useInterval from '../hooks/useInterval';
 import BoxText from '../misc/BoxText';
@@ -1386,7 +1385,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                 <Grid item xs={12}>
                   <Grid item xs={12}>
                     <PaperThumb
-                      image={settingsImage}
+                      image="/images/settings.png"
                       title="Welcome to Restreamer v2"
                       height="200px"
                     />

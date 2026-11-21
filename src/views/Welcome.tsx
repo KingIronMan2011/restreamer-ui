@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import welcomeImage from '../assets/images/welcome.png';
 import Paper from '../misc/Paper';
 import PaperThumb from '../misc/PaperThumb';
 
@@ -19,7 +18,7 @@ export default function Welcome() {
       <Grid container justifyContent="center" spacing={2}>
         <Grid item xs={12}>
           <PaperThumb
-            image={welcomeImage}
+            image="/images/welcome.png"
             title="Welcome to Restreamer v2"
             height="200px"
           />

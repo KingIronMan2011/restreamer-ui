@@ -14,7 +14,6 @@ import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import sourceThumb from '../../assets/images/livesource.png';
 import NotifyContext from '../../contexts/Notify';
 import HLSControl from '../../misc/controls/HLS';
 import LicenseControl from '../../misc/controls/License';
@@ -507,7 +506,7 @@ export default function Edit({ restreamer }: any) {
             <TabPanel value={$tab} index="general" className="panel">
               <Grid container spacing={2}>
                 <Grid item xs={12}>
-                  <PaperThumb image={sourceThumb} title="General" />
+                  <PaperThumb image="/images/livesource.png" title="General" />
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h2">

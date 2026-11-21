@@ -14,7 +14,6 @@ import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import playerSiteThumb from '../assets/images/playersite.png';
 import NotifyContext from '../contexts/Notify';
 import Checkbox from '../misc/Checkbox';
 import ColorPicker from '../misc/ColorPicker';
@@ -339,7 +338,10 @@ export default function Playersite({ restreamer }: any) {
             <TabPanel value={$tab} index="general">
               <Grid container spacing={2}>
                 <Grid item xs={12}>
-                  <PaperThumb image={playerSiteThumb} title="Playersite" />
+                  <PaperThumb
+                    image="/images/playersite.png"
+                    title="Playersite"
+                  />
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h1">

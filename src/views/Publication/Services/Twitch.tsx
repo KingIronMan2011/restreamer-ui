@@ -72,7 +72,22 @@ function Service({
 
   const createOutput = (settings: any) => {
     let region_postfix = '.twitch.tv';
-    if (settings.region.includes('live-video.net')) {
+    let isLiveVideoNetRegion = false;
+    try {
+      const regionUrl = new URL(`rtmp://${settings.region}`);
+      isLiveVideoNetRegion =
+        regionUrl.username === '' &&
+        regionUrl.password === '' &&
+        regionUrl.pathname === '/' &&
+        regionUrl.search === '' &&
+        regionUrl.hash === '' &&
+        (regionUrl.hostname === 'live-video.net' ||
+          regionUrl.hostname.endsWith('.contribute.live-video.net'));
+    } catch {
+      // Invalid region values use the standard Twitch hostname format.
+    }
+
+    if (isLiveVideoNetRegion) {
       region_postfix = '';
     }
 
