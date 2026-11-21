@@ -1,7 +1,7 @@
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { MemoryRouter, Route, Routes } from 'react-router';
 
 import I18n from '../i18n';
 import theme from '../lib/theme';

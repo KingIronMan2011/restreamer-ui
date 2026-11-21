@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router';
 
 import * as Decoders from '../../../components/coders/Decoders';
 import * as Encoders from '../../../components/coders/Encoders';

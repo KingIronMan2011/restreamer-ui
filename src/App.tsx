@@ -5,12 +5,8 @@ import Grid from '@mui/material/Grid';
 import Snackbar from '@mui/material/Snackbar';
 import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
-import {
-  Navigate,
-  Route,
-  Routes,
-  HashRouter as DOMRouter,
-} from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router';
+import { HashRouter as DOMRouter } from 'react-router';
 import SemverGt from 'semver/functions/gt';
 import SemverValid from 'semver/functions/valid';
 
