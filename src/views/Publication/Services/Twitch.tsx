@@ -1,9 +1,8 @@
-import { faTwitch } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
+import { MonitorPlay } from 'lucide-react';
 import React from 'react';
 
 import FormInlineButton from '../../../misc/FormInlineButton';
@@ -36,9 +35,7 @@ const requires = {
 };
 
 function ServiceIcon(props: any) {
-  return (
-    <FontAwesomeIcon icon={faTwitch} style={{ color: '#9147FF' }} {...props} />
-  );
+  return <MonitorPlay style={{ color: '#9147FF' }} {...props} />;
 }
 
 function init(settings: any) {

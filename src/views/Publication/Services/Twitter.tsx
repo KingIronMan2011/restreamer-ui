@@ -1,10 +1,9 @@
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
+import { Bird } from 'lucide-react';
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -66,13 +65,7 @@ const requires = {
 };
 
 function ServiceIcon(props: any) {
-  return (
-    <FontAwesomeIcon
-      icon={faTwitter}
-      style={{ color: 'rgb(29, 161, 242)' }}
-      {...props}
-    />
-  );
+  return <Bird style={{ color: 'rgb(29, 161, 242)' }} {...props} />;
 }
 
 function init(settings: any) {

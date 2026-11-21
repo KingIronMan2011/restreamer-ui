@@ -1,8 +1,7 @@
-import { faVimeoV } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
+import { Video } from 'lucide-react';
 import React from 'react';
 
 const id = 'vimeo';
@@ -32,9 +31,7 @@ const requires = {
 };
 
 function ServiceIcon(props: any) {
-  return (
-    <FontAwesomeIcon icon={faVimeoV} style={{ color: '#00ADEF' }} {...props} />
-  );
+  return <Video style={{ color: '#00ADEF' }} {...props} />;
 }
 
 function init(settings: any) {

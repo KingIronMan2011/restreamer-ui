@@ -1,5 +1,3 @@
-import { faTools } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Accordion from '@mui/material/Accordion';
@@ -10,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import { Wrench } from 'lucide-react';
 import React from 'react';
 
 import Checkbox from '../../../misc/Checkbox';
@@ -58,9 +57,7 @@ const requires = {
 };
 
 function ServiceIcon(props: any) {
-  return (
-    <FontAwesomeIcon icon={faTools} style={{ color: '#39B54A' }} {...props} />
-  );
+  return <Wrench style={{ color: '#39B54A' }} {...props} />;
 }
 
 // init merges the given settings with the default settings

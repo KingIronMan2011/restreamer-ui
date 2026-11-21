@@ -1,10 +1,9 @@
-import { faImages } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans, t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
+import { Images } from 'lucide-react';
 import React from 'react';
 
 import Video from '../../../misc/coders/settings/Video';
@@ -137,9 +136,7 @@ function Source({
 }
 
 function SourceIcon(props: any) {
-  return (
-    <FontAwesomeIcon icon={faImages} style={{ color: '#FFF' }} {...props} />
-  );
+  return <Images style={{ color: '#FFF' }} {...props} />;
 }
 
 const id = 'fbdev';

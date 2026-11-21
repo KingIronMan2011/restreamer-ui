@@ -1,8 +1,7 @@
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
+import { UsersRound } from 'lucide-react';
 import React from 'react';
 
 import Checkbox from '../../../misc/Checkbox';
@@ -36,13 +35,7 @@ const requires = {
 };
 
 function ServiceIcon(props: any) {
-  return (
-    <FontAwesomeIcon
-      icon={faFacebook}
-      style={{ color: '#2D88FF' }}
-      {...props}
-    />
-  );
+  return <UsersRound style={{ color: '#2D88FF' }} {...props} />;
 }
 
 function init(settings: any) {

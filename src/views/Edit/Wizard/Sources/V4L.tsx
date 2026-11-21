@@ -1,5 +1,3 @@
-import { faUsb } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans, t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import RefreshIcon from '@mui/icons-material/Refresh';
@@ -7,6 +5,7 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
+import { Usb } from 'lucide-react';
 import React from 'react';
 
 import Select from '../../../../misc/Select';
@@ -149,7 +148,7 @@ function Source({
 }
 
 function SourceIcon(props: any) {
-  return <FontAwesomeIcon icon={faUsb} style={{ color: '#FFF' }} {...props} />;
+  return <Usb style={{ color: '#FFF' }} {...props} />;
 }
 
 const id = 'video4linux2';

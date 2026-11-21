@@ -1,9 +1,8 @@
-import { faRaspberryPi } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
+import { Cpu } from 'lucide-react';
 import React from 'react';
 
 import Select from '../../../../misc/Select';
@@ -117,13 +116,7 @@ function Source({
 }
 
 function SourceIcon(props: any) {
-  return (
-    <FontAwesomeIcon
-      icon={faRaspberryPi}
-      style={{ color: '#FFF' }}
-      {...props}
-    />
-  );
+  return <Cpu style={{ color: '#FFF' }} {...props} />;
 }
 
 const id = 'raspicam';

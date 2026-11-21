@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   egressBar: {
     marginTop: '-.4em',
     marginBottom: '-.2em',
-    '& .svg-inline--fa': {
+    '& .lucide': {
       width: '1.4em',
       height: '1.4em',
     },

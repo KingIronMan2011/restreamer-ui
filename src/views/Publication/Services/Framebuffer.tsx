@@ -1,8 +1,7 @@
-import { faImages as icon } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
+import { Images } from 'lucide-react';
 import React from 'react';
 
 import Select from '../../../misc/Select';
@@ -37,13 +36,7 @@ const requires = {
 };
 
 function ServiceIcon(props: any) {
-  return (
-    <FontAwesomeIcon
-      icon={icon}
-      style={{ color: 'rgba(57, 181, 74, 1)' }}
-      {...props}
-    />
-  );
+  return <Images style={{ color: 'rgba(57, 181, 74, 1)' }} {...props} />;
 }
 
 function init(settings: any) {

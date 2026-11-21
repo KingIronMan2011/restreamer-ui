@@ -1,9 +1,8 @@
-import { faTiktok } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
+import { Music2 } from 'lucide-react';
 import React from 'react';
 
 import FormInlineButton from '../../../misc/FormInlineButton';
@@ -51,9 +50,7 @@ const requires = {
 };
 
 function ServiceIcon(props: any) {
-  return (
-    <FontAwesomeIcon icon={faTiktok} style={{ color: '#FFF' }} {...props} />
-  );
+  return <Music2 style={{ color: '#FFF' }} {...props} />;
 }
 
 function init(settings: any) {

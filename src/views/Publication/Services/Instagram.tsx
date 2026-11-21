@@ -1,8 +1,7 @@
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
+import { Camera } from 'lucide-react';
 import React from 'react';
 
 import FormInlineButton from '../../../misc/FormInlineButton';
@@ -37,13 +36,7 @@ const requires = {
 };
 
 function ServiceIcon(props: any) {
-  return (
-    <FontAwesomeIcon
-      icon={faInstagram}
-      style={{ color: '#E1306C' }}
-      {...props}
-    />
-  );
+  return <Camera style={{ color: '#E1306C' }} {...props} />;
 }
 
 function init(settings: any) {
