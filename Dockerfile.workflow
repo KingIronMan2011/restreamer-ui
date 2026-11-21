@@ -1,4 +1,4 @@
-ARG CADDY_IMAGE=caddy:2.7.5-alpine
+ARG CADDY_IMAGE=caddy:2.8.4-alpine
 FROM $CADDY_IMAGE
 
 COPY build /ui/build
