@@ -1,8 +1,6 @@
 import React from 'react';
 
 import { render, act } from '../../utils/testing';
-import '@testing-library/jest-dom';
-
 import * as Decoders from './Decoders';
 import * as Encoders from './Encoders';
 

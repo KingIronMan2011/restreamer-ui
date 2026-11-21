@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { render, fireEvent, act, screen } from '../../../utils/testing';
-
 import Wizard from './index';
 
 let lastUpsertIngest = null;
@@ -104,7 +103,9 @@ const restreamer = {
         channels: 2,
       });
     } else if (
-      inputs[0].address === '{srt,name=external.stream,mode=request}'
+      inputs[0].address.startsWith(
+        '{srt,name=external.stream,mode=request,latency=',
+      )
     ) {
       streams.push({
         url: inputs[0].address,

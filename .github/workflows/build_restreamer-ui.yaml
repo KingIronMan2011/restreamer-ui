@@ -35,15 +35,14 @@ jobs:
       - name: Check TypeScript syntax
         run: pnpm run types
 
-      - name: Build React App
+      - name: Build Vite app
         run: |
           pnpm install --frozen-lockfile
           pnpm run build
         env:
           PUBLIC_URL: './'
-          DISABLE_ESLINT_PLUGIN: 'true'
 
-      - name: Upload React build as artifact
+      - name: Upload Vite build as artifact
         uses: actions/upload-artifact@v7.0.2
         with:
           name: restreamerui-main-build

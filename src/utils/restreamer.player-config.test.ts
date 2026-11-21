@@ -1,5 +1,6 @@
-import Restreamer from './restreamer';
 import { vi } from 'vitest';
+
+import Restreamer from './restreamer';
 
 test('UpdatePlayerConfig publishes JavaScript and JSON variants', async () => {
   const restreamer = Object.create(Restreamer.prototype);

@@ -1,6 +1,10 @@
 import type { Theme } from '@mui/material/styles';
 import type { CSSProperties } from 'react';
 
+declare module '*.css';
+
+declare module '@fontsource/*';
+
 declare module '@mui/styles/defaultTheme' {
   interface DefaultTheme extends Theme {}
 }

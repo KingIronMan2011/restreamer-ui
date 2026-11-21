@@ -5,7 +5,3 @@ allowBuilds:
   esbuild: true
 update:
   githubActions: true
-packageExtensions:
-  react-scripts@*:
-    peerDependencies:
-      eslint-config-react-app: '*'

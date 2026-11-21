@@ -1,6 +1,5 @@
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import React from 'react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
@@ -29,8 +28,8 @@ or of a specific element in the component:
 
 More about "render" and "screen" on https://testing-library.com/docs
 
-For testing certain conditions, check out https://jestjs.io/docs/expect and for
-running tests, check out https://jestjs.io/docs/api.
+For testing assertions, see https://vitest.dev/api/expect and for running tests,
+see https://vitest.dev/guide/cli.
 
 As an alternative to fireEvent there is the userEvent which may simulate better
 a user clicking around. Example:

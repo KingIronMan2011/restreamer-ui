@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { render, fireEvent } from '../../../utils/testing';
-
 import * as Network from './Network';
 
 const $skills_ffmpeg6 = {
@@ -699,7 +698,7 @@ pushmatrix.tests = [
     skills: $skills_ffmpeg4,
     config: $config,
     input: {
-      address: '{srt,name=external.stream,mode=request}',
+      address: '{srt,name=external.stream,mode=request,latency=20000}',
       options: [
         '-fflags',
         '+genpts',
@@ -743,7 +742,7 @@ pushmatrix.tests = [
     skills: $skills_ffmpeg5,
     config: $config,
     input: {
-      address: '{srt,name=external.stream,mode=request}',
+      address: '{srt,name=external.stream,mode=request,latency=20000}',
       options: [
         '-fflags',
         '+genpts',
@@ -789,7 +788,7 @@ pushmatrix.tests = [
     skills: $skills_ffmpeg6,
     config: $config,
     input: {
-      address: '{srt,name=external.stream,mode=request}',
+      address: '{srt,name=external.stream,mode=request,latency=20000}',
       options: [
         '-fflags',
         '+genpts',

@@ -12,13 +12,13 @@ const useStyles = makeStyles((theme) => ({
 // onClick disabled
 // target="blank" href={stream_key_link} component="a"
 export default function Component({
-  component = 'label',
+  component = 'button',
   variant = 'outlined',
   size = 'large',
   color = 'primary',
   disabled = false,
   target = 'blank',
-  href = '#',
+  href = undefined,
   className = null,
   onClick = () => {},
   children = null as import('react').ReactNode,
