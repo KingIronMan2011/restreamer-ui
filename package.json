@@ -31,6 +31,8 @@
     "@mui/icons-material": "^6.5.0",
     "@mui/material": "^6.5.0",
     "@mui/styles": "^6.5.0",
+    "@videojs/hlsjs-video": "^10.6.0",
+    "@videojs/react": "^10.6.0",
     "global": "^4.4.0",
     "handlebars": "^4.7.10",
     "jwt-decode": "^4.0.0",
@@ -44,7 +46,7 @@
     "semver": "^7.8.6",
     "url-parse": "^1.5.10",
     "uuid": "^14.0.3",
-    "video.js": "^8.24.2"
+    "video.js": "^10.6.0"
   },
   "devDependencies": {
     "@kingironman2011/vite-pages": "^1.1.0",
