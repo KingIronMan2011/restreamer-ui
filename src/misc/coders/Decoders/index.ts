@@ -18,12 +18,14 @@ import * as VP8CUVID from './video/vp8_cuvid';
 import * as VP9CUVID from './video/vp9_cuvid';
 
 class Registry {
-  constructor(type) {
+  type: string = '';
+  services: Map<string, any> = new Map();
+  constructor(type: any) {
     this.type = type;
     this.services = new Map();
   }
 
-  Register(service) {
+  Register(service: any) {
     if (service.type !== this.type) {
       return;
     }
@@ -31,7 +33,7 @@ class Registry {
     this.services.set(service.coder, service);
   }
 
-  Get(coder) {
+  Get(coder: any) {
     const service = this.services.get(coder);
     if (service) {
       return service;
@@ -42,7 +44,7 @@ class Registry {
 
   // Get the first coder for a codec that is in a
   // list of available coders.
-  GetCoderForCodec(codec, availableCoders) {
+  GetCoderForCodec(codec: any, availableCoders: any) {
     for (let coder of this.services.values()) {
       if (!coder.codecs.includes(codec)) {
         continue;
@@ -61,8 +63,8 @@ class Registry {
   // Get a list of coders for a codec that is in a list of
   // availabled coders. The option for hwAcceleration can be
   // 'any', 'no', or 'yes'.
-  GetCodersForCodec(codec, availableCoders, hwAcceleration) {
-    const coders = [];
+  GetCodersForCodec(codec: any, availableCoders: any, hwAcceleration: any) {
+    const coders: any[] = [];
 
     for (let coder of this.services.values()) {
       // An empty codecs list is a catch-all

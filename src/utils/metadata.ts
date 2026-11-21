@@ -231,7 +231,7 @@ data = {
 	},
 	output: {
 		address: "rtmp://...",
-		options: [],
+		options: [] as string[],
 	},
 	settings: {
 		...
@@ -348,13 +348,13 @@ const getDefaultEgressMetadata = () => {
   return JSON.parse(JSON.stringify(defaultEgressMetadata));
 };
 
-const initMetadata = (initialMetadata) => {
+const initMetadata = (initialMetadata: any) => {
   return mergeMetadata(initialMetadata);
 };
 
-const transformers = {};
+const transformers: Record<string, any> = {};
 
-const mergeMetadata = (metadata, base) => {
+const mergeMetadata = (metadata: any, base: any = null) => {
   if (!metadata) {
     metadata = {};
   }
@@ -385,12 +385,12 @@ const mergeMetadata = (metadata, base) => {
   return metadata;
 };
 
-const initIngestMetadata = (initialMetadata) => {
+const initIngestMetadata = (initialMetadata: any) => {
   return mergeIngestMetadata(initialMetadata);
 };
 
 const ingestTransformers = {
-  '1.2.0': (metadata) => {
+  '1.2.0': (metadata: any) => {
     for (let p = 0; p < metadata.profiles.length; p++) {
       const profile = metadata.profiles[p];
 
@@ -432,7 +432,7 @@ const ingestTransformers = {
   },
 };
 
-const mergeIngestMetadata = (metadata, base) => {
+const mergeIngestMetadata = (metadata: any, base: any = null) => {
   if (!metadata) {
     metadata = {};
   }
@@ -524,13 +524,13 @@ const mergeIngestMetadata = (metadata, base) => {
   return metadata;
 };
 
-const initEgressMetadata = (initialMetadata) => {
+const initEgressMetadata = (initialMetadata: any) => {
   return mergeEgressMetadata(initialMetadata);
 };
 
-const egressTransformers = {};
+const egressTransformers: Record<string, any> = {};
 
-const mergeEgressMetadata = (metadata, base) => {
+const mergeEgressMetadata = (metadata: any, base: any = null) => {
   if (!metadata) {
     metadata = {};
   }
@@ -594,7 +594,7 @@ const mergeEgressMetadata = (metadata, base) => {
   return metadata;
 };
 
-const validateProfile = (sources, profile, requireVideo = true) => {
+const validateProfile = (sources: any, profile: any, requireVideo = true) => {
   let validVideo = false;
 
   profile = initProfile(profile);
@@ -660,12 +660,16 @@ const validateProfile = (sources, profile, requireVideo = true) => {
   return complete;
 };
 
-const createInputsOutputs = (sources, profiles, requireVideo = true) => {
+const createInputsOutputs = (
+  sources: any,
+  profiles: any,
+  requireVideo = true,
+) => {
   const source2inputMap = new Map();
 
-  let global = [];
-  const inputs = [];
-  const outputs = [];
+  let global: any[] = [];
+  const inputs: any[] = [];
+  const outputs: any[] = [];
 
   // For each profile get the source and do the proper mapping
   for (let profile of profiles) {
@@ -776,19 +780,23 @@ const createInputsOutputs = (sources, profiles, requireVideo = true) => {
   }
 
   // https://stackoverflow.com/questions/9229645/remove-duplicate-values-from-js-array
-  const uniqBy = (a, key) => {
-    return [...new Map(a.map((x) => [key(x), x])).values()];
+  const uniqBy = (a: any, key: any) => {
+    return [...new Map(a.map((x: any) => [key(x), x])).values()];
   };
 
   // global is an array of arrays. Here we remove duplicates and flatten it.
-  global = uniqBy(global, (x) => JSON.stringify(x.sort()));
+  global = uniqBy(global, (x: any) => JSON.stringify(x.sort()));
   global = global.reduce((acc, val) => acc.concat(val), []);
 
   return [global, inputs, outputs];
 };
 
-const createOutputStreams = (sources, profiles, requireVideo = true) => {
-  const streams = [];
+const createOutputStreams = (
+  sources: any,
+  profiles: any,
+  requireVideo = true,
+) => {
+  const streams: any[] = [];
 
   // Generate a list of output streams from the profiles
   for (let profile of profiles) {
@@ -858,7 +866,7 @@ const createOutputStreams = (sources, profiles, requireVideo = true) => {
   return streams;
 };
 
-const initSource = (type, initialSource) => {
+const initSource = (type: any, initialSource: any) => {
   if (!initialSource) {
     initialSource = {};
   }
@@ -878,7 +886,7 @@ const initSource = (type, initialSource) => {
   return source;
 };
 
-const initProfile = (initialProfile) => {
+const initProfile = (initialProfile: any) => {
   if (!initialProfile) {
     initialProfile = {};
   }
@@ -1017,7 +1025,7 @@ const initProfile = (initialProfile) => {
   return profile;
 };
 
-const initStream = (initialStream) => {
+const initStream = (initialStream: any) => {
   if (!initialStream) {
     initialStream = {};
   }
@@ -1040,21 +1048,21 @@ const initStream = (initialStream) => {
   return stream;
 };
 
-const initOutput = (initialOutput) => {
+const initOutput = (initialOutput: any) => {
   if (!initialOutput) {
     initialOutput = {};
   }
 
   const output = {
     address: '',
-    options: [],
+    options: [] as string[],
     ...initialOutput,
   };
 
   return output;
 };
 
-const analyzeStreams = (type, streams) => {
+const analyzeStreams = (type: any, streams: any) => {
   let video = null;
   let audio = null;
 
@@ -1100,13 +1108,13 @@ const analyzeStreams = (type, streams) => {
  * @returns A profile
  */
 const preselectProfile = (
-  type,
-  streams,
-  profile,
-  encoders,
+  type: any,
+  streams: any,
+  profile: any,
+  encoders: any,
   preselectAudio = true,
 ) => {
-  const preselectAudioProfile = (streams, audio) => {
+  const preselectAudioProfile = (streams: any, audio: any) => {
     audio.stream = -1;
     audio.encoder.coder = 'none';
 
@@ -1139,7 +1147,7 @@ const preselectProfile = (
     return audio;
   };
 
-  const isVideoPlausible = (streams, video) => {
+  const isVideoPlausible = (streams: any, video: any) => {
     if (video.stream < 0) {
       return false;
     }
@@ -1174,7 +1182,7 @@ const preselectProfile = (
     return true;
   };
 
-  const isAudioPlausible = (streams, audio) => {
+  const isAudioPlausible = (streams: any, audio: any) => {
     if (audio.stream < 0) {
       return false;
     }
@@ -1271,11 +1279,11 @@ const preselectProfile = (
   return profile;
 };
 
-const cleanupSources = (sources) => {
+const cleanupSources = (sources: any) => {
   return [sources.video, sources.audio];
 };
 
-const cleanupProfile = (profile) => {
+const cleanupProfile = (profile: any) => {
   profile.video.source = 0;
   profile.audio.source = 0;
 
@@ -1298,7 +1306,11 @@ const cleanupProfile = (profile) => {
   };
 };
 
-const transformMetadata = (metadata, targetVersion, transformers) => {
+const transformMetadata = (
+  metadata: any,
+  targetVersion: any,
+  transformers: any,
+) => {
   if (metadata.version === 1) {
     metadata.version = '1.0.0';
   }
@@ -1313,7 +1325,7 @@ const transformMetadata = (metadata, targetVersion, transformers) => {
 
   // Create a list of all transformers that are greater than the current version
   // and sort them in ascending order.
-  const tlist = [];
+  const tlist: any[] = [];
 
   for (let v in transformers) {
     if (SemverGt(v, metadata.version)) {

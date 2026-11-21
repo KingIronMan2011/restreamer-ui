@@ -6,9 +6,9 @@ const Component = function ({
   open = false,
   data = '',
   title = '',
-  onClose = null,
-  onHelp = null,
-}) {
+  onClose = null as (() => void) | null,
+  onHelp = null as (() => void) | null,
+}: any) {
   return (
     <TextareaModal
       open={open}

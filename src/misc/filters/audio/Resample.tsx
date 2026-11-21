@@ -9,7 +9,7 @@ import SelectCustom from '../../../misc/SelectCustom';
 // Resample Filter
 // https://ffmpeg.org/ffmpeg-filters.html#toc-aresample-1
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     channels: '2',
     layout: 'stereo',
@@ -20,10 +20,10 @@ function init(initialState) {
   return state;
 }
 
-function createGraph(settings) {
+function createGraph(settings: any) {
   settings = init(settings);
 
-  const mapping = [];
+  const mapping: any[] = [];
 
   const sampling = settings.sampling;
   const layout = settings.layout;
@@ -52,7 +52,7 @@ function Layout({
   label = <Trans>Layout</Trans>,
   customLabel = <Trans>Custom layout</Trans>,
   onChange = function () {},
-}) {
+}: any) {
   const { i18n } = useLingui();
   const options = [
     { value: 'mono', label: 'mono' },
@@ -98,7 +98,7 @@ function Sampling({
   label = <Trans>Sampling</Trans>,
   customLabel = <Trans>Custom sampling (Hz)</Trans>,
   onChange = function () {},
-}) {
+}: any) {
   const { i18n } = useLingui();
   const options = [
     { value: '96000', label: '96000 Hz' },
@@ -141,11 +141,11 @@ function Sampling({
 
 function Filter({
   settings = {},
-  onChange = function (settings, graph, automatic) {},
-}) {
+  onChange = function (settings: any, graph: any, automatic: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -155,7 +155,7 @@ function Filter({
     onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const value = event.target.value;
 
     const newSettings = {
@@ -214,7 +214,7 @@ const name = 'Resample';
 const type = 'audio';
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name} (${settings.layout}, ${settings.sampling}Hz)`;
 }
 

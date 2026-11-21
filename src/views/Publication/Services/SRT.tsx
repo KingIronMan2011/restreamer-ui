@@ -59,7 +59,7 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return (
     <FontAwesomeIcon icon={faTools} style={{ color: '#39B54A' }} {...props} />
   );
@@ -95,7 +95,7 @@ const defaults = {
   pbkeylen: '16',
 };
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     protocol: 'srt://',
     address: '',
@@ -117,11 +117,11 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
-  onChange = function (output, settings) {},
-}) {
+  onChange = function (output: any, settings: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (what in settings.params) {
@@ -139,15 +139,15 @@ function Service({
     onChange([output], settings);
   };
 
-  const createOutput = (settings) => {
-    const params = [];
+  const createOutput = (settings: any) => {
+    const params: any[] = [];
 
     for (let key in settings.params) {
       if (settings.params[key].length === 0) {
         continue;
       }
 
-      if (settings.params[key] === defaults[key]) {
+      if (settings.params[key] === (defaults as Record<string, any>)[key]) {
         continue;
       }
 

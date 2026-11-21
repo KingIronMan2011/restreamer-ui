@@ -27,27 +27,27 @@ import Sources from './Sources';
 import Video from './Video';
 import VideoProfile from './VideoProfile';
 
-export default function Wizard({ restreamer = null }) {
+export default function Wizard({ restreamer }: any) {
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const { channelid: _channelid } = useParams();
   const notify = React.useContext(NotifyContext);
   const [$data, setData] = React.useState(M.getDefaultIngestMetadata());
-  const [$sources, setSources] = React.useState({
+  const [$sources, setSources] = React.useState<Record<string, any>>({
     video: M.initSource('video', null),
     audio: M.initSource('audio', null),
   });
-  const [$profile, setProfile] = React.useState(M.initProfile());
+  const [$profile, setProfile] = React.useState(M.initProfile({}));
   const [$skills, setSkills] = React.useState<Record<string, any>>({});
   const [$config, setConfig] = React.useState<Record<string, any>>({});
   const [$step, setStep] = React.useState('TYPE');
   const [$sourceid, setSourceid] = React.useState('');
-  const [$probe, setProbe] = React.useState({
+  const [$probe, setProbe] = React.useState<Record<string, any>>({
     probing: false,
     status: 'none',
   });
   const [$skillsRefresh, setSkillsRefresh] = React.useState(false);
-  const [$abort, setAbort] = React.useState({
+  const [$abort, setAbort] = React.useState<Record<string, any>>({
     step: 'TYPE',
   });
   const [$ready, setReady] = React.useState(false);
@@ -96,7 +96,7 @@ export default function Wizard({ restreamer = null }) {
     setSkills(skills);
   };
 
-  const probe = async (type, source) => {
+  const probe = async (type: any, source: any) => {
     setProbe({
       ...$probe,
       probing: true,
@@ -241,7 +241,7 @@ export default function Wizard({ restreamer = null }) {
     navigate(`/${_channelid}/edit`);
   };
 
-  const handleHelp = (what) => () => {
+  const handleHelp = (what: any) => () => {
     H('wizard-' + what);
   };
 
@@ -253,14 +253,14 @@ export default function Wizard({ restreamer = null }) {
   let handleBack = null;
 
   if ($step === 'TYPE') {
-    handleNext = (sourceid) => () => {
+    handleNext = (sourceid: any) => () => {
       setSourceid(sourceid);
       setStep('VIDEO SETTINGS');
     };
 
     handleBack = () => {};
 
-    let knownSources = [];
+    let knownSources: any[] = [];
     for (let s in $skills.sources) {
       if (s === 'network') {
         knownSources.push('network');
@@ -282,7 +282,7 @@ export default function Wizard({ restreamer = null }) {
       }
     }
 
-    let availableSources = [];
+    let availableSources: any[] = [];
 
     for (let s of Sources.List()) {
       if (knownSources.indexOf(s.id) === -1) {
@@ -342,7 +342,12 @@ export default function Wizard({ restreamer = null }) {
       setStep('TYPE');
     };
 
-    const handleChange = (type, settings, inputs, ready) => {
+    const handleChange = (
+      type: any,
+      settings: any,
+      inputs: any,
+      ready: any,
+    ) => {
       const source = $sources.video;
 
       source.type = type;
@@ -464,7 +469,7 @@ export default function Wizard({ restreamer = null }) {
       setStep('VIDEO SETTINGS');
     };
 
-    const handleStreamChange = (event) => {
+    const handleStreamChange = (event: any) => {
       const value = event.target.value;
 
       const profile = $profile.video;
@@ -476,7 +481,7 @@ export default function Wizard({ restreamer = null }) {
       });
     };
 
-    const handleEncoderChange = (event) => {
+    const handleEncoderChange = (event: any) => {
       const value = event.target.value;
 
       const profile = $profile.video;
@@ -488,7 +493,7 @@ export default function Wizard({ restreamer = null }) {
       });
     };
 
-    const handleDecoderChange = (event) => {
+    const handleDecoderChange = (event: any) => {
       const value = event.target.value;
 
       const profile = $profile.video;
@@ -500,7 +505,7 @@ export default function Wizard({ restreamer = null }) {
       });
     };
 
-    const isCompatible = (stream) => {
+    const isCompatible = (stream: any) => {
       if (stream.codec === 'h264') {
         return true;
       }
@@ -518,7 +523,7 @@ export default function Wizard({ restreamer = null }) {
       'any',
     );
 
-    let decodersList = [];
+    let decodersList: any[] = [];
 
     for (let c of decoders) {
       decodersList.push(
@@ -534,7 +539,7 @@ export default function Wizard({ restreamer = null }) {
       'any',
     );
 
-    let encodersList = [];
+    let encodersList: any[] = [];
 
     for (let c of encoders) {
       encodersList.push(
@@ -544,7 +549,7 @@ export default function Wizard({ restreamer = null }) {
       );
     }
 
-    let streamList = [];
+    let streamList: any[] = [];
 
     for (let s of streams) {
       if (s.type !== 'video') {
@@ -607,7 +612,7 @@ export default function Wizard({ restreamer = null }) {
       setStep('VIDEO RESULT');
     };
 
-    const handleAudioStreamChange = (event) => {
+    const handleAudioStreamChange = (event: any) => {
       const value = event.target.value;
 
       const profile = $profile.audio;
@@ -619,7 +624,7 @@ export default function Wizard({ restreamer = null }) {
       });
     };
 
-    const handleAudioDeviceChange = (event) => {
+    const handleAudioDeviceChange = (event: any) => {
       const value = event.target.value;
 
       const source = $sources.audio;
@@ -632,7 +637,7 @@ export default function Wizard({ restreamer = null }) {
       });
     };
 
-    const handleStream = (event) => {
+    const handleStream = (event: any) => {
       const value = event.target.value;
 
       const profile = $profile.audio;
@@ -707,7 +712,7 @@ export default function Wizard({ restreamer = null }) {
     const profile = $profile.audio;
     const source = $sources.audio;
 
-    let streamList = [];
+    let streamList: any[] = [];
     const streams = $sources.video.streams;
 
     for (let s of streams) {
@@ -722,7 +727,7 @@ export default function Wizard({ restreamer = null }) {
       );
     }
 
-    let deviceList = [];
+    let deviceList: any[] = [];
 
     if (
       'alsa' in $skills.sources &&
@@ -823,7 +828,7 @@ export default function Wizard({ restreamer = null }) {
       setStep('META');
     };
 
-    const isCompatible = (stream) => {
+    const isCompatible = (stream: any) => {
       if (stream.codec === 'aac' || stream.codec === 'mp3') {
         return true;
       }
@@ -843,7 +848,7 @@ export default function Wizard({ restreamer = null }) {
       setStep('AUDIO SETTINGS');
     };
 
-    const handleMetadataChange = (settings) => {
+    const handleMetadataChange = (settings: any) => {
       setData({
         ...$data,
         meta: settings,
@@ -877,7 +882,7 @@ export default function Wizard({ restreamer = null }) {
       setStep('META');
     };
 
-    const handleLicenseChange = (license) => {
+    const handleLicenseChange = (license: any) => {
       setData({
         ...$data,
         license: license,

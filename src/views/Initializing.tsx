@@ -7,7 +7,7 @@ import React from 'react';
 import Paper from '../misc/Paper';
 import PaperContent from '../misc/PaperContent';
 
-export default function Invalid(props) {
+export default function Invalid(props: any) {
   return (
     <Paper xs={8} sm={5} className="PaperM">
       <PaperContent>

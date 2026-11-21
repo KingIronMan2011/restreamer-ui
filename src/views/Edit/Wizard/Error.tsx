@@ -13,7 +13,7 @@ export default function Error({
   onAbort = () => {},
   onHelp = () => {},
   onNext = () => {},
-}) {
+}: any) {
   return (
     <Paper xs={12} sm={8} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader

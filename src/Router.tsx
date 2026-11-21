@@ -8,7 +8,7 @@ import {
 
 import Views from './views';
 
-export default function Router({ restreamer = null }) {
+export default function Router({ restreamer }: any) {
   if (restreamer === null) {
     return null;
   }
@@ -64,7 +64,7 @@ export default function Router({ restreamer = null }) {
             <Views.EditService key={channelid} restreamer={restreamer} />
           }
         />
-        <Route path="*" render={() => <Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </DOMRouter>
   );

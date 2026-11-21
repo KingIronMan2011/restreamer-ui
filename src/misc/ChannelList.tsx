@@ -129,7 +129,7 @@ function ChannelButton({
   disabled = false,
   onClick = () => {},
   largeChannelList = [],
-}) {
+}: any) {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -182,7 +182,7 @@ function ChannelButton({
           <Image
             style={{
               width: width,
-              height: parseInt((width / 16) * 9),
+              height: Math.round((width / 16) * 9),
             }}
           >
             <ImageAlt>
@@ -219,9 +219,9 @@ function ChannelButton({
 }
 
 const calculateColumnsPerRow = (
-  breakpointSmall,
-  breakpointMedium,
-  breakpointLarge,
+  breakpointSmall: any,
+  breakpointMedium: any,
+  breakpointLarge: any,
 ) => {
   if (breakpointLarge) {
     return 4;
@@ -233,7 +233,11 @@ const calculateColumnsPerRow = (
   return 1;
 };
 
-const calculateRowsToFit = (windowHeight, thumbnailHeight, otherUIHeight) => {
+const calculateRowsToFit = (
+  windowHeight: any,
+  thumbnailHeight: any,
+  otherUIHeight: any,
+) => {
   return Math.floor((windowHeight - otherUIHeight) / thumbnailHeight);
 };
 
@@ -242,16 +246,16 @@ export default function ChannelList({
   channelid = '',
   allChannels = [],
   onClose = () => {},
-  onClick = (channelid) => {},
-  onAdd = (name) => {},
-  onState = (channelids) => {
-    const states = {};
+  onClick = (channelid: any) => {},
+  onAdd = (name: any) => {},
+  onState = (channelids: any) => {
+    const states: Record<string, any> = {};
     for (let channelid of channelids) {
       states[channelid] = '';
     }
     return states;
   },
-}) {
+}: any) {
   const classes = useStyles();
   const theme = useTheme();
   const breakpointSmall = useMediaQuery(theme.breakpoints.up('sm'));
@@ -261,8 +265,8 @@ export default function ChannelList({
   const [$nChannels, setNChannels] = React.useState(
     breakpointSmall ? (breakpointMedium ? (breakpointLarge ? 4 : 3) : 2) : 1,
   );
-  const [$channels, setChannels] = React.useState<Record<string, any>[]>([]);
-  const [$addChannel, setAddChannel] = React.useState({
+  const [$channels, setChannels] = React.useState<React.ReactNode[]>([]);
+  const [$addChannel, setAddChannel] = React.useState<Record<string, any>>({
     open: false,
     name: '',
   });
@@ -291,16 +295,16 @@ export default function ChannelList({
       }
 
       let channels = allChannels
-        .sort((a, b) => {
+        .sort((a: any, b: any) => {
           const aname = a.name.toUpperCase();
           const bname = b.name.toUpperCase();
           return aname < bname ? -1 : aname > bname ? 1 : 0;
         })
         .slice($pos, $pos + $nChannels);
 
-      const states = await onState(channels.map((channel) => channel.id));
+      const states = await onState(channels.map((channel: any) => channel.id));
 
-      channels = channels.map((channel) => {
+      channels = channels.map((channel: any) => {
         return (
           <ChannelButton
             key={channel.channelid}
@@ -366,7 +370,7 @@ export default function ChannelList({
     });
   };
 
-  const handleAddChannelChange = (event) => {
+  const handleAddChannelChange = (event: any) => {
     setAddChannel({
       ...$addChannel,
       name: event.target.value,

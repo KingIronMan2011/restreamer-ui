@@ -21,15 +21,15 @@ export default function Password({
   helperText = false,
   inputProps = {},
   error = false,
-  onChange = function (value) {},
-}) {
+  onChange = function (value: any) {},
+}: any) {
   const [$visible, setVisible] = React.useState(show);
 
   const handleClickShowPassword = () => {
     setVisible(!$visible);
   };
 
-  const handleMouseDownPassword = (event) => {
+  const handleMouseDownPassword = (event: any) => {
     event.preventDefault();
   };
 

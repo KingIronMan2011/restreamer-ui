@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function Duration({ seconds = 0 }) {
-  const fullSeconds = parseInt(Math.floor(seconds));
+export default function Duration({ seconds = 0 }: any) {
+  const fullSeconds = Math.floor(seconds);
   const s = fullSeconds % 60;
-  const m = parseInt(fullSeconds / 60) % 60;
-  const h = parseInt(fullSeconds / (60 * 60)) % 24;
-  const d = parseInt(fullSeconds / (60 * 60 * 24));
+  const m = Math.floor(fullSeconds / 60) % 60;
+  const h = Math.floor(fullSeconds / (60 * 60)) % 24;
+  const d = Math.floor(fullSeconds / (60 * 60 * 24));
 
   let duration = '.' + ((seconds - fullSeconds) * 100).toFixed(0);
 

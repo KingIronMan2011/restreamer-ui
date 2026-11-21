@@ -7,7 +7,7 @@ import Checkbox from '../../Checkbox';
 // HFlip Filter
 // http://ffmpeg.org/ffmpeg-all.html#hflip
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     enabled: false,
     ...initialState,
@@ -16,10 +16,10 @@ function init(initialState) {
   return state;
 }
 
-function createGraph(settings) {
+function createGraph(settings: any) {
   settings = init(settings);
 
-  const mapping = [];
+  const mapping: any[] = [];
 
   if (settings.enabled) {
     mapping.push('hflip');
@@ -28,10 +28,13 @@ function createGraph(settings) {
   return mapping.join(',');
 }
 
-function Filter({ settings = {}, onChange = function (settings, mapping) {} }) {
+function Filter({
+  settings = {},
+  onChange = function (settings: any, mapping: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -41,7 +44,7 @@ function Filter({ settings = {}, onChange = function (settings, mapping) {} }) {
     onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
     };
@@ -75,7 +78,7 @@ const name = 'Horizonal Flip';
 const type = 'video';
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name}`;
 }
 

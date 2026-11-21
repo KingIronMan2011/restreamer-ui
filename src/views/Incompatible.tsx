@@ -5,7 +5,7 @@ import Paper from '../misc/Paper';
 import PaperContent from '../misc/PaperContent';
 import PaperHeader from '../misc/PaperHeader';
 
-export default function Incompatible({ type = '', have = '', want = '' }) {
+export default function Incompatible({ type = '', have = '', want = '' }: any) {
   let text = <Trans>This version of the UI is compatible.</Trans>;
 
   if (type === 'core') {

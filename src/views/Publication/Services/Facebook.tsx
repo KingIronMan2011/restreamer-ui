@@ -35,7 +35,7 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return (
     <FontAwesomeIcon
       icon={faFacebook}
@@ -45,7 +45,7 @@ function ServiceIcon(props) {
   );
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     stream_key_primary: '',
     stream_key_backup: '',
@@ -62,11 +62,11 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
-  onChange = function (output, settings) {},
-}) {
+  onChange = function (output: any, settings: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (['rtmp_primary', 'rtmp_backup'].includes(what)) {
@@ -80,8 +80,8 @@ function Service({
     onChange(output, settings);
   };
 
-  const createOutput = (settings) => {
-    const outputs = [];
+  const createOutput = (settings: any) => {
+    const outputs: any[] = [];
 
     const output_primary = {
       address:

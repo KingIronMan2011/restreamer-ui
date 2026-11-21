@@ -62,8 +62,8 @@ const restreamer = {
       },
     };
   },
-  Probe: (id, inputs) => {
-    let streams = [];
+  Probe: (id: any, inputs: any) => {
+    let streams: any[] = [];
 
     if (inputs[0].address === '{rtmp,name=external.stream}') {
       streams.push({
@@ -312,13 +312,19 @@ const restreamer = {
 
     return [{ streams: streams }, null];
   },
-  UpsertIngest: (_channelid, global, inputs, outputs, control) => {
+  UpsertIngest: (
+    _channelid: any,
+    global: any,
+    inputs: any,
+    outputs: any,
+    control: any,
+  ) => {
     lastUpsertIngest = { global, inputs, outputs, control };
     return [{}, null];
   },
-  SetIngestMetadata: (_channelid, data) => {},
-  UpsertIngestSnapshot: (_channelid, control) => {},
-  UpdatePlayer: (_channelid) => {},
+  SetIngestMetadata: (_channelid: any, data: any) => {},
+  UpsertIngestSnapshot: (_channelid: any, control: any) => {},
+  UpdatePlayer: (_channelid: any) => {},
   UpdatePlayersite: () => {},
 };
 
@@ -833,7 +839,7 @@ test('wizard: network source silence audio', async () => {
   expect(screen.queryByLabelText('Silence Audio')).not.toBeChecked();
   expect(screen.queryByLabelText('No audio')).not.toBeChecked();
 
-  input = screen.queryByLabelText('Silence Audio');
+  input = screen.getByLabelText('Silence Audio');
 
   await act(async () => {
     fireEvent.click(input);
@@ -869,7 +875,7 @@ test('wizard: network source silence audio', async () => {
   });
 
   expect(lastUpsertIngest).not.toBeNull();
-  expect(lastUpsertIngest.inputs).toEqual(
+  expect(lastUpsertIngest!.inputs).toEqual(
     expect.arrayContaining([
       expect.objectContaining({
         address: 'anullsrc=r=44100:cl=stereo',
@@ -878,7 +884,7 @@ test('wizard: network source silence audio', async () => {
     ]),
   );
 
-  const outputOptions = lastUpsertIngest.outputs[0].options;
+  const outputOptions = lastUpsertIngest!.outputs[0].options;
   expect(outputOptions).toEqual(
     expect.arrayContaining(['-map', '0:0', '-map', '1:0']),
   );
@@ -930,7 +936,7 @@ test('wizard: network source no audio', async () => {
   expect(screen.queryByLabelText('Silence Audio')).not.toBeChecked();
   expect(screen.queryByLabelText('No audio')).not.toBeChecked();
 
-  input = screen.queryByLabelText('No audio');
+  input = screen.getByLabelText('No audio');
 
   await act(async () => {
     fireEvent.click(input);

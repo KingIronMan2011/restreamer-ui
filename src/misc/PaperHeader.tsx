@@ -24,10 +24,10 @@ const Component = function ({
   title = '',
   variant = 'pagetitle',
   onAbort = null,
-  onHelp = null,
+  onHelp = null as (() => void) | null,
   onEdit = null,
   onAdd = null,
-}) {
+}: any) {
   const classes = useStyles();
 
   return (

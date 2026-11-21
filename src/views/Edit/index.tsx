@@ -11,7 +11,6 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -55,14 +54,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Edit({ restreamer = null }) {
+export default function Edit({ restreamer }: any) {
   const classes = useStyles();
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const { channelid: _channelid, tab: _tab } = useParams();
   const notify = React.useContext(NotifyContext);
   const [$tab, setTab] = React.useState(_tab ? _tab : 'general');
-  const [$state, setState] = React.useState({
+  const [$state, setState] = React.useState<Record<string, any>>({
     editing: false,
     edit: '',
     complete: false,
@@ -74,7 +73,7 @@ export default function Edit({ restreamer = null }) {
   const [$process, setProcess] = React.useState<Record<string, any>>({});
   const [$ready, setReady] = React.useState(false);
   const [$deleteDialog, setDeleteDialog] = React.useState(false);
-  const [$editDialog, setEditDialog] = React.useState({
+  const [$editDialog, setEditDialog] = React.useState<Record<string, any>>({
     open: false,
     target: '',
     what: '',
@@ -112,7 +111,7 @@ export default function Edit({ restreamer = null }) {
 
     const skills = await restreamer.Skills();
     skills.sources['channel'] = skills.sources['channel'].filter(
-      (channel) => channel.id !== _channelid,
+      (channel: any) => channel.id !== _channelid,
     );
     setSkills(skills);
 
@@ -121,7 +120,7 @@ export default function Edit({ restreamer = null }) {
 
     const complete = M.validateProfile(metadata.sources, metadata.profiles[0]);
 
-    const state = {
+    const state: Record<string, any> = {
       complete: complete,
     };
 
@@ -138,11 +137,11 @@ export default function Edit({ restreamer = null }) {
     setReady(true);
   };
 
-  const handleChangeTab = (event, value) => {
+  const handleChangeTab = (event: any, value: any) => {
     setTab(value);
   };
 
-  const handleSourceEditDialog = (target) => (what) => {
+  const handleSourceEditDialog = (target: any) => (what: any) => {
     if ($process.order === 'start') {
       setEditDialog({
         ...$editDialog,
@@ -198,7 +197,7 @@ export default function Edit({ restreamer = null }) {
     }
   };
 
-  const handleSourceEdit = (what) => {
+  const handleSourceEdit = (what: any) => {
     setState({
       ...$state,
       editing: true,
@@ -211,16 +210,16 @@ export default function Edit({ restreamer = null }) {
 
     const skills = await restreamer.Skills();
     skills.sources['channel'] = skills.sources['channel'].filter(
-      (channel) => channel.id !== _channelid,
+      (channel: any) => channel.id !== _channelid,
     );
     setSkills(skills);
   };
 
-  const handleSourceStore = async (name, data, onprogress) => {
+  const handleSourceStore = async (name: any, data: any, onprogress: any) => {
     return await restreamer.UploadData('', name, data, onprogress);
   };
 
-  const handleSourceProbe = async (inputs) => {
+  const handleSourceProbe = async (inputs: any) => {
     let [res, err] = await restreamer.Probe(_channelid, inputs);
     if (err !== null) {
       res = {
@@ -232,10 +231,10 @@ export default function Edit({ restreamer = null }) {
     return res;
   };
 
-  const handleSourceDone = (sources, profile) => {
+  const handleSourceDone = (sources: any, profile: any) => {
     const complete = M.validateProfile(sources, profile);
 
-    let streams = [];
+    let streams: any[] = [];
     if (complete === true) {
       streams = M.createOutputStreams(sources, [profile]);
     }
@@ -265,7 +264,7 @@ export default function Edit({ restreamer = null }) {
     navigate(`/${_channelid}/edit/wizard`);
   };
 
-  const handleControlChange = (what) => (settings) => {
+  const handleControlChange = (what: any) => (settings: any) => {
     const control = {
       ...$data.control,
       [what]: settings,
@@ -277,14 +276,14 @@ export default function Edit({ restreamer = null }) {
     });
   };
 
-  const handleMetadataChange = (settings) => {
+  const handleMetadataChange = (settings: any) => {
     setData({
       ...$data,
       meta: settings,
     });
   };
 
-  const handleLicenseChange = (license) => {
+  const handleLicenseChange = (license: any) => {
     setData({
       ...$data,
       license: license,
@@ -845,7 +844,3 @@ export default function Edit({ restreamer = null }) {
     </React.Fragment>
   );
 }
-
-Edit.propTypes = {
-  restreamer: PropTypes.object.isRequired,
-};

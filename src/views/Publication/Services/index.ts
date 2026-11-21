@@ -42,11 +42,12 @@ import * as WOWZA from './WOWZA';
 import * as Youtube from './Youtube';
 
 class Registry {
+  services: Map<string, any> = new Map();
   constructor() {
     this.services = new Map();
   }
 
-  Register(service) {
+  Register(service: any) {
     if (service.id.match(/[^0-9a-z]/)) {
       console.warn(
         `the service.id "${service.id}" is invalid. only [0-9a-z] is allowed.`,
@@ -57,7 +58,7 @@ class Registry {
     this.services.set(service.id, service);
   }
 
-  Get(id) {
+  Get(id: any) {
     const service = this.services.get(id);
     if (service) {
       return service;

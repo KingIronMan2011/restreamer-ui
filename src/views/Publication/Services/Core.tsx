@@ -55,11 +55,11 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return <img src={Logo} alt="datarhei.com Logo" {...props} />;
 }
 
-function init(settings) {
+function init(settings: any) {
   // v1.0 > v2.0
   if (settings.base_url && !settings.v2_protocol) {
     if (settings.base_url.length !== 0) {
@@ -114,11 +114,11 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
-  onChange = function (output, settings) {},
-}) {
+  onChange = function (output: any, settings: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -187,10 +187,10 @@ function Service({
     onChange([output], settings);
   };
 
-  const createOutput = (settings) => {
-    const output = {
+  const createOutput = (settings: any) => {
+    const output: { address: string | null; options: string[] } = {
       address: null,
-      options: null,
+      options: [],
     };
 
     output.address = settings.v2_address;
@@ -200,7 +200,7 @@ function Service({
       output.options = ['-f', 'flv'];
 
       if (skills.ffmpeg.version_major >= 6) {
-        const codecs = [];
+        const codecs: any[] = [];
         if (skills.codecs.video.includes('hevc')) {
           codecs.push('hvc1');
         }

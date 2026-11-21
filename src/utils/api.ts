@@ -1,11 +1,28 @@
 import { fetch } from './fetch';
 
+type RequestOptions = {
+  expect?: 'any' | 'json' | 'text';
+  headers?: Record<string, string>;
+  token?: string;
+  body?: BodyInit;
+  onprogress?:
+    | ((loaded: boolean, progress: number, total: number) => void)
+    | null;
+  [key: string]: any;
+};
+
+type APIResult = {
+  err: { code: number; message: any } | null;
+  val: any;
+};
+
 class API {
   [key: string]: any;
 
   address!: string;
   token: string | (() => Promise<string>) = '';
   cache!: Map<string, any>;
+  base!: string;
 
   constructor(address: string) {
     this.base = '/api';
@@ -15,15 +32,15 @@ class API {
     this.cache = new Map();
   }
 
-  _debug(message) {
+  _debug(message: string) {
     //console.log(`[CoreAPI] ${message}`);
   }
 
-  _error(message) {
+  _error(message: string) {
     console.error(`[CoreAPI] Error: ${message}`);
   }
 
-  async _GET(path, options) {
+  async _GET(path: string, options: RequestOptions = {}): Promise<APIResult> {
     const key = path + JSON.stringify(options);
 
     const data = this.cache.get(key);
@@ -47,28 +64,40 @@ class API {
     return res;
   }
 
-  async _HEAD(path, options) {
+  async _HEAD(path: string, options: RequestOptions = {}): Promise<APIResult> {
     return await this._call('HEAD', path, options);
   }
 
-  async _POST(path, options) {
+  async _POST(path: string, options: RequestOptions = {}): Promise<APIResult> {
     return await this._call('POST', path, options);
   }
 
-  async _PUT(path, options) {
+  async _PUT(path: string, options: RequestOptions = {}): Promise<APIResult> {
     return await this._call('PUT', path, options);
   }
 
-  async _DELETE(path, options) {
+  async _DELETE(
+    path: string,
+    options: RequestOptions = {},
+  ): Promise<APIResult> {
     return await this._call('DELETE', path, options);
   }
 
-  async _PATCH(path, options) {
+  async _PATCH(path: string, options: RequestOptions = {}): Promise<APIResult> {
     return await this._call('PATCH', path, options);
   }
 
-  async _call(method, path, options = {}) {
-    options = {
+  async _call(
+    method: string,
+    path: string,
+    options: RequestOptions = {},
+  ): Promise<APIResult> {
+    const requestOptions: RequestOptions & {
+      method: string;
+      expect: 'any' | 'json' | 'text';
+      headers: Record<string, string>;
+      token: string;
+    } = {
       method: method.toUpperCase(),
       expect: 'any',
       headers: {},
@@ -86,8 +115,8 @@ class API {
 
     let token = '';
 
-    if (options.token.length !== 0) {
-      token = options.token;
+    if (requestOptions.token.length !== 0) {
+      token = requestOptions.token;
     } else {
       if (typeof this.token === 'function') {
         token = await this.token();
@@ -97,12 +126,12 @@ class API {
     }
 
     if (token.length !== 0) {
-      options.headers.Authorization = 'Bearer ' + token;
+      requestOptions.headers.Authorization = 'Bearer ' + token;
     }
 
-    this._debug(`calling ${options.method} ${this.address + path}`);
+    this._debug(`calling ${requestOptions.method} ${this.address + path}`);
 
-    const res = {
+    const res: APIResult = {
       err: null,
       val: null,
     };
@@ -110,11 +139,15 @@ class API {
     let response = null;
 
     try {
-      response = await fetch(this.address + path, options);
+      response = (await fetch(
+        this.address + path,
+        requestOptions as import('./fetch').FetchOptions,
+      )) as Response;
     } catch (err) {
+      const error = err as Error;
       res.err = {
         code: -1,
-        message: err.message,
+        message: error.message,
       };
 
       this._error(res.err.message);
@@ -161,7 +194,7 @@ class API {
       res.val = await response.text();
     }
 
-    if (options.expect === 'json') {
+    if (requestOptions.expect === 'json') {
       if (isJSON === false) {
         res.val = null;
         res.err = {
@@ -176,16 +209,16 @@ class API {
     return res;
   }
 
-  SetAddress(address) {
+  SetAddress(address: string) {
     this.address = address;
   }
 
-  SetToken(token) {
+  SetToken(token: string | (() => Promise<string>)) {
     this.token = token;
     this.cache = new Map();
   }
 
-  async Login(username, password) {
+  async Login(username: string, password: string) {
     return await this._POST('/login', {
       headers: {
         'Content-Type': 'application/json',
@@ -198,7 +231,7 @@ class API {
     });
   }
 
-  async LoginWithToken(token) {
+  async LoginWithToken(token: string) {
     return await this._POST('/login', {
       headers: {
         'Content-Type': 'application/json',
@@ -208,7 +241,7 @@ class API {
     });
   }
 
-  async RefreshToken(refresh_token) {
+  async RefreshToken(refresh_token: string) {
     return await this._GET('/login/refresh', {
       expect: 'json',
       token: refresh_token,
@@ -233,13 +266,13 @@ class API {
     });
   }
 
-  async Config(type) {
+  async Config(_type: string) {
     return await this._GET('/v3/config', {
       expect: 'json',
     });
   }
 
-  async ConfigSet(config) {
+  async ConfigSet(config: Record<string, any>) {
     return await this._PUT('/v3/config', {
       headers: {
         'Content-Type': 'application/json',
@@ -249,7 +282,7 @@ class API {
     });
   }
 
-  async ConfigReload(type) {
+  async ConfigReload(_type: string) {
     return await this._GET('/v3/config/reload');
   }
 
@@ -259,7 +292,7 @@ class API {
     });
   }
 
-  async ActiveSessions(collectors) {
+  async ActiveSessions(collectors: string[]) {
     return await this._GET(
       '/v3/session/active?collectors=' +
         encodeURIComponent(collectors.join(',')),
@@ -269,7 +302,7 @@ class API {
     );
   }
 
-  async SetMetadata(key, data) {
+  async SetMetadata(key: string, data: any) {
     return await this._PUT('/v3/metadata/' + encodeURIComponent(key), {
       headers: {
         'Content-Type': 'application/json',
@@ -279,31 +312,35 @@ class API {
     });
   }
 
-  async GetMetadata(key) {
+  async GetMetadata(key: string) {
     return await this._GET('/v3/metadata/' + encodeURIComponent(key), {
       expect: 'json',
     });
   }
 
-  async DataHasFile(path) {
+  async DataHasFile(path: string) {
     return await this._HEAD('/v3/fs/disk' + path);
   }
 
-  async DataPutFile(path, data, onprogress = null) {
+  async DataPutFile(
+    path: string,
+    data: BodyInit,
+    onprogress?: (event: ProgressEvent) => void,
+  ) {
     return await this._PUT('/v3/fs/disk' + path, {
       headers: {
         'Content-Type': 'application/data',
       },
       body: data,
-      onprogress: onprogress,
+      onprogress: onprogress as unknown as RequestOptions['onprogress'],
     });
   }
 
-  async DataGetFile(path) {
+  async DataGetFile(path: string) {
     return await this._GET('/v3/fs/disk' + path);
   }
 
-  async DataListFiles(pathPattern) {
+  async DataListFiles(pathPattern: string) {
     return await this._GET(
       '/v3/fs/disk?glob=' + encodeURIComponent(pathPattern),
       {
@@ -312,11 +349,11 @@ class API {
     );
   }
 
-  async DataDeleteFile(path) {
+  async DataDeleteFile(path: string) {
     return await this._DELETE('/v3/fs/disk' + path);
   }
 
-  async MemFSListFiles(pathPattern) {
+  async MemFSListFiles(pathPattern: string) {
     return await this._GET(
       '/v3/fs/mem?glob=' + encodeURIComponent(pathPattern),
       {
@@ -325,15 +362,15 @@ class API {
     );
   }
 
-  async MemFSHasFile(path) {
+  async MemFSHasFile(path: string) {
     return await this._HEAD('/v3/fs/mem' + path);
   }
 
-  async MemFSDeleteFile(path) {
+  async MemFSDeleteFile(path: string) {
     return await this._DELETE('/v3/fs/mem' + path);
   }
 
-  async MemFSLinkFile(path, linkto) {
+  async MemFSLinkFile(path: string, linkto: string) {
     return await this._PATCH('/v3/fs/mem/' + path, {
       headers: {
         'Content-Type': 'application/data',
@@ -342,9 +379,9 @@ class API {
     });
   }
 
-  async Processes(reference = '', ids = [], filter = []) {
+  async Processes(reference = '', ids: string[] = [], filter: string[] = []) {
     let url = '/v3/process';
-    let params = [];
+    let params: any[] = [];
 
     if (reference.length !== 0) {
       params.push('reference=' + encodeURIComponent(reference));
@@ -367,7 +404,7 @@ class API {
     });
   }
 
-  async Process(name, filter = []) {
+  async Process(name: string, filter: string[] = []) {
     let url = '/v3/process/' + name;
     if (filter.length !== 0) {
       url = url + '?filter=' + encodeURIComponent(filter.join(','));
@@ -378,7 +415,7 @@ class API {
     });
   }
 
-  async ProcessConfig(name) {
+  async ProcessConfig(name: string) {
     return await this._GET(
       '/v3/process/' + encodeURIComponent(name) + '/config',
       {
@@ -387,7 +424,7 @@ class API {
     );
   }
 
-  async ProcessState(name) {
+  async ProcessState(name: string) {
     return await this._GET(
       '/v3/process/' + encodeURIComponent(name) + '/state',
       {
@@ -396,7 +433,7 @@ class API {
     );
   }
 
-  async ProcessReport(name) {
+  async ProcessReport(name: string) {
     return await this._GET(
       '/v3/process/' + encodeURIComponent(name) + '/report',
       {
@@ -405,7 +442,7 @@ class API {
     );
   }
 
-  async ProcessCommand(name, command) {
+  async ProcessCommand(name: string, command: string) {
     return await this._PUT(
       '/v3/process/' + encodeURIComponent(name) + '/command',
       {
@@ -420,11 +457,11 @@ class API {
     );
   }
 
-  async ProcessDelete(name) {
+  async ProcessDelete(name: string) {
     return await this._DELETE('/v3/process/' + encodeURIComponent(name));
   }
 
-  async ProcessUpdate(name, config) {
+  async ProcessUpdate(name: string, config: Record<string, any>) {
     return await this._PUT('/v3/process/' + encodeURIComponent(name), {
       headers: {
         'Content-Type': 'application/json',
@@ -433,7 +470,7 @@ class API {
     });
   }
 
-  async ProcessSetMetadata(name, key, data) {
+  async ProcessSetMetadata(name: string, key: string, data: any) {
     return await this._PUT(
       '/v3/process/' +
         encodeURIComponent(name) +
@@ -449,7 +486,7 @@ class API {
     );
   }
 
-  async ProcessGetMetadata(name, key) {
+  async ProcessGetMetadata(name: string, key: string) {
     return await this._GET(
       '/v3/process/' +
         encodeURIComponent(name) +
@@ -461,7 +498,7 @@ class API {
     );
   }
 
-  async ProcessAdd(config) {
+  async ProcessAdd(config: Record<string, any>) {
     return await this._POST('/v3/process', {
       headers: {
         'Content-Type': 'application/json',
@@ -471,7 +508,7 @@ class API {
     });
   }
 
-  async ProcessProbe(name) {
+  async ProcessProbe(name: string) {
     return await this._GET(
       '/v3/process/' + encodeURIComponent(name) + '/probe',
       {
@@ -480,7 +517,7 @@ class API {
     );
   }
 
-  async Metrics(query) {
+  async Metrics(query: Record<string, any>) {
     return await this._POST('/v3/metrics', {
       headers: {
         'Content-Type': 'application/json',
@@ -499,7 +536,7 @@ class API {
       return res;
     }
 
-    res.val = res.val.map((f) => f.name);
+    res.val = res.val.map((f: { name: string }) => f.name);
 
     return res;
   }

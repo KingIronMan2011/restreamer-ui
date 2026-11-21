@@ -1,6 +1,5 @@
 import Box from '@mui/material/Box';
 import makeStyles from '@mui/styles/makeStyles';
-import PropTypes from 'prop-types';
 import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
@@ -12,7 +11,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TabPanel({ children = null, value = '', index = '' }) {
+export default function TabPanel({
+  children = null as import('react').ReactNode,
+  value = '',
+  index = '',
+}: any) {
   const classes = useStyles();
 
   return (
@@ -23,16 +26,10 @@ export default function TabPanel({ children = null, value = '', index = '' }) {
       id={`vertical-tabpanel-${index}`}
     >
       {value === index && (
-        <Box classes={{ root: classes }} p={0}>
+        <Box className={classes.root} p={0}>
           {children}
         </Box>
       )}
     </div>
   );
 }
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};

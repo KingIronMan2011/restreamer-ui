@@ -29,13 +29,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function License({
   license = 'none',
-  onChange = function (license) {},
-}) {
+  onChange = function (license: any) {},
+}: any) {
   const classes = useStyles();
 
   const { i18n } = useLingui();
 
-  const handleLicenseChange = (event) => {
+  const handleLicenseChange = (event: any) => {
     onChange(event.target.value);
   };
 

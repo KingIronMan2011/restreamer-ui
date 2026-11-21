@@ -11,7 +11,7 @@ import Audio from '../../../misc/coders/settings/Audio';
 import FormInlineButton from '../../../misc/FormInlineButton';
 import Select from '../../../misc/Select';
 
-const initSettings = (initialSettings) => {
+const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -30,8 +30,8 @@ const initSettings = (initialSettings) => {
   return settings;
 };
 
-const createInputs = (settings) => {
-  const inputs = [];
+const createInputs = (settings: any) => {
+  const inputs: any[] = [];
 
   let address = '';
 
@@ -61,13 +61,13 @@ const createInputs = (settings) => {
 
 function Source({
   settings = {},
-  onChange = function (settings) {},
-  onProbe = function (settings, inputs) {},
-}) {
+  onChange = function (settings: any) {},
+  onProbe = function (settings: any, inputs: any) {},
+}: any) {
   const { i18n } = useLingui();
   settings = initSettings(settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     onChange({
@@ -209,7 +209,7 @@ function Source({
   );
 }
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: '#FFF' }} {...props} />;
 }
 

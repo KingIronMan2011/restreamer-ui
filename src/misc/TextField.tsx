@@ -20,8 +20,8 @@ export default function Component({
   min = null,
   max = null,
   helperText = null,
-  onChange = function (value) {},
-}) {
+  onChange = function (value: any) {},
+}: any) {
   id = id === null ? uuidv4() : id;
   let adornment = null;
 
@@ -33,7 +33,7 @@ export default function Component({
     );
   }
 
-  let inputProps = {};
+  let inputProps: Record<string, any> = {};
 
   if (min !== null) {
     inputProps.min = min;

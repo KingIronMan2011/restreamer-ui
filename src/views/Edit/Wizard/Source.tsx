@@ -13,7 +13,7 @@ export default function Source({
   onHelp = () => {},
   onAdvanced = () => {},
   sources = [],
-}) {
+}: any) {
   return (
     <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader

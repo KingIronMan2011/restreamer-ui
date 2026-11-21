@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const initSettings = (initialSettings) => {
+const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -41,14 +41,14 @@ const initSettings = (initialSettings) => {
   return settings;
 };
 
-const createInputs = (settings) => {
+const createInputs = (settings: any) => {
   const address =
     settings.device === 'custom' || settings.device === 'none'
       ? settings.deviceCustom
       : settings.device;
   const input = {
     address: address,
-    options: [],
+    options: [] as string[],
   };
 
   input.options.push('-thread_queue_size', settings.thread_queue_size);
@@ -72,9 +72,9 @@ const createInputs = (settings) => {
 function FollowMouse({
   value = '',
   allowCustom = false,
-  onChange = function (event) {},
+  onChange = function (event: any) {},
   disabled = false,
-}) {
+}: any) {
   const { i18n } = useLingui();
   const values = [{ value: 'centered', label: 'Centered' }];
 
@@ -97,16 +97,16 @@ function FollowMouse({
 function Source({
   knownDevices = [],
   settings = {},
-  onChange = function (settings) {},
-  onProbe = function (settings, inputs) {},
+  onChange = function (settings: any) {},
+  onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
-}) {
+}: any) {
   const classes = useStyles();
   const { i18n } = useLingui();
   settings = initSettings(settings);
 
-  const handleChange = (what) => (event) => {
-    let data = {};
+  const handleChange = (what: any) => (event: any) => {
+    let data: Record<string, any> = {};
 
     if (
       [
@@ -141,9 +141,9 @@ function Source({
   };
 
   const filteredDevices = knownDevices.filter(
-    (device) => device.media === 'video',
+    (device: any) => device.media === 'video',
   );
-  const options = filteredDevices.map((device) => {
+  const options = filteredDevices.map((device: any) => {
     return {
       value: device.id,
       label: device.name + ' (' + device.id + ')',
@@ -282,7 +282,7 @@ function Source({
   );
 }
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <ScreenshotMonitorIcon style={{ color: '#FFF' }} {...props} />;
 }
 

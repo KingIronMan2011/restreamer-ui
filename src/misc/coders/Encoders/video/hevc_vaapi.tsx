@@ -8,7 +8,7 @@ import Select from '../../../Select';
 import Helper from '../../helper';
 import Video from '../../settings/Video';
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     bitrate: '4096',
     fps: '25',
@@ -22,13 +22,13 @@ function init(initialState) {
   return state;
 }
 
-function createMapping(settings, stream, skills) {
+function createMapping(settings: any, stream: any, skills: any) {
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
-  const global = [];
-  const local = [];
-  const filter = [];
+  const global: any[] = [];
+  const local: any[] = [];
+  const filter: any[] = [];
 
   // https://trac.ffmpeg.org/wiki/Hardware/VAAPI
   global.push(['-vaapi_device', '/dev/dri/renderD128']);
@@ -68,7 +68,7 @@ function createMapping(settings, stream, skills) {
   };
 }
 
-function RateControl({ value = '', onChange = function (event) {} }) {
+function RateControl({ value = '', onChange = function (event: any) {} }: any) {
   return (
     <Select
       label={<Trans>Rate control</Trans>}
@@ -86,7 +86,7 @@ function RateControl({ value = '', onChange = function (event) {} }) {
   );
 }
 
-function Profile({ value = '', onChange = function (event) {} }) {
+function Profile({ value = '', onChange = function (event: any) {} }: any) {
   return (
     <Select label={<Trans>Profile</Trans>} value={value} onChange={onChange}>
       <MenuItem value="578">baseline (constrained)</MenuItem>
@@ -100,13 +100,13 @@ function Coder({
   stream = {},
   settings = {},
   skills = {},
-  onChange = function (settings, mapping) {},
-}) {
+  onChange = function (settings: any, mapping: any) {},
+}: any) {
   settings = init(settings);
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -120,7 +120,7 @@ function Coder({
     );
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
       [what]: event.target.value,
@@ -184,11 +184,11 @@ const codec = 'hevc';
 const type = 'video';
 const hwaccel = true;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name}, ${settings.bitrate} kbit/s, ${settings.fps} FPS, Profile: ${settings.profile}`;
 }
 
-function defaults(stream, skills) {
+function defaults(stream: any, skills: any) {
   const settings = init({});
 
   return {

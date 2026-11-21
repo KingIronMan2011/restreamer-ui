@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const initSettings = (initialSettings) => {
+const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -38,14 +38,14 @@ const initSettings = (initialSettings) => {
   return settings;
 };
 
-const createInputs = (settings) => {
+const createInputs = (settings: any) => {
   const vindex = settings.vindex;
   const aindex = settings.aindex;
 
   const address = `${vindex}:${aindex}`;
   const input = {
     address: address,
-    options: [],
+    options: [] as string[],
   };
 
   input.options.push('-f', 'avfoundation');
@@ -76,19 +76,19 @@ const createInputs = (settings) => {
 function Source({
   knownDevices = [],
   settings = {},
-  onChange = function (settings) {},
-  onProbe = function (settings, inputs) {},
+  onChange = function (settings: any) {},
+  onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
-  onStore = function (name, data) {
+  onStore = function (name: any, data: any) {
     return '';
   },
-}) {
+}: any) {
   const classes = useStyles();
   const { i18n } = useLingui();
   settings = initSettings(settings);
 
-  const handleChange = (what) => (event) => {
-    let data = {};
+  const handleChange = (what: any) => (event: any) => {
+    let data: Record<string, any> = {};
 
     if (['cursor', 'clicks'].includes(what)) {
       data[what] = !settings[what];
@@ -111,9 +111,9 @@ function Source({
   };
 
   let filteredDevices = knownDevices.filter(
-    (device) => device.media === 'video',
+    (device: any) => device.media === 'video',
   );
-  let options = filteredDevices.map((device) => {
+  let options = filteredDevices.map((device: any) => {
     return {
       value: device.id,
       label: device.name,
@@ -142,8 +142,10 @@ function Source({
     />
   );
 
-  filteredDevices = knownDevices.filter((device) => device.media === 'audio');
-  options = filteredDevices.map((device) => {
+  filteredDevices = knownDevices.filter(
+    (device: any) => device.media === 'audio',
+  );
+  options = filteredDevices.map((device: any) => {
     return {
       value: device.id,
       label: device.name,
@@ -246,7 +248,7 @@ function Source({
   );
 }
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: '#FFF' }} {...props} />;
 }
 

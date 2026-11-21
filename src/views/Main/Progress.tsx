@@ -2,12 +2,13 @@ import { Trans } from '@lingui/macro';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
+import type { CSSProperties } from 'react';
 
 import Duration from '../../misc/Duration';
 import Number from '../../misc/Number';
 import Palette from '../../theme/base/palette';
 
-export default function Progress({ progress = {} }) {
+export default function Progress({ progress = {} }: any) {
   const uptime = progress.time;
   const bitrate = progress.bitrate;
   const fps = progress.fps;
@@ -18,7 +19,7 @@ export default function Progress({ progress = {} }) {
     marginBottom: -5,
   };
 
-  const divStyle = {
+  const divStyle: CSSProperties = {
     backgroundColor: Palette.background.box_default,
     textAlign: 'center',
     borderRadius: 4,

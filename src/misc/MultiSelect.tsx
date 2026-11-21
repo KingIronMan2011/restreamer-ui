@@ -26,10 +26,10 @@ export default function Component({
   label = '',
   value = [],
   disabled = false,
-  renderValue = (selected) => selected.join(', '),
-  onChange = function (event) {},
+  renderValue = (selected: any) => selected.join(', '),
+  onChange = function (event: any) {},
   items = [],
-}) {
+}: any) {
   const classes = useStyles();
 
   return (
@@ -43,7 +43,7 @@ export default function Component({
         renderValue={renderValue}
         MenuProps={MenuProps}
       >
-        {items.map((item) => {
+        {items.map((item: any) => {
           if (!('key' in item)) {
             item.key = item.value;
           }

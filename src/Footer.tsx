@@ -67,15 +67,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Resources({
-  getResources = () => {
-    return null;
-  },
+  getResources,
+}: {
+  getResources: () => Promise<Record<string, any> | null>;
 }) {
   const classes = useStyles();
-  const [$popover, setPopover] = React.useState(null);
-  const [$resources, setResources] = React.useState(null);
+  const [$popover, setPopover] = React.useState<HTMLElement | null>(null);
+  const [$resources, setResources] = React.useState<Record<string, any> | null>(
+    null,
+  );
 
-  const handlePopoverOpen = (event) => {
+  const handlePopoverOpen = (event: any) => {
     setPopover(event.currentTarget);
   };
 
@@ -383,7 +385,7 @@ function Resources({
   );
 }
 
-const initVersion = (initialVersion) => {
+const initVersion = (initialVersion: any) => {
   if (!initialVersion) {
     initialVersion = {};
   }
@@ -401,10 +403,14 @@ export default function Footer({
   expand = false,
   app = '',
   name = '',
-  version = initVersion(),
-  getResources = () => {
-    return null;
-  },
+  version = initVersion({}),
+  getResources = async () => null,
+}: {
+  expand?: boolean;
+  app?: string;
+  name?: string;
+  version?: any;
+  getResources?: () => Promise<Record<string, any> | null>;
 }) {
   const classes = useStyles();
 
@@ -430,7 +436,7 @@ export default function Footer({
               alignItems="center"
               spacing={0}
             >
-              <Logo className={classes.logo} />
+              <Logo className="logo" />
               <Typography className="footerVersion">
                 {app} v{version.number} ({version.arch}){' '}
                 {name ? '- ' + name : ''}
@@ -463,7 +469,7 @@ export default function Footer({
               alignItems="center"
               spacing={0}
             >
-              <Logo className={classes.logo} />
+              <Logo className="logo" />
             </Stack>
           </Stack>
         </Grid>

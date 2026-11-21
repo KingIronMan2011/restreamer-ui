@@ -2,7 +2,7 @@ import window from 'global/window';
 /*! @name videojs-overlay @version 4.0.0 @license Apache-2.0 */
 import videojs from 'video.js';
 
-const initOverlayComponent = (videojs) => {
+const initOverlayComponent = (videojs: any) => {
   const Component = videojs.getComponent('Component');
   const dom = videojs.dom || videojs;
 
@@ -16,7 +16,7 @@ const initOverlayComponent = (videojs) => {
    */
 
   /* eslint-disable no-self-compare */
-  const isNumber = (n) => typeof n === 'number' && n === n;
+  const isNumber = (n: any) => typeof n === 'number' && n === n;
   /* eslint-enable no-self-compare */
 
   /**
@@ -25,7 +25,7 @@ const initOverlayComponent = (videojs) => {
    * @param  {string} s
    * @return {boolean}
    */
-  const hasNoWhitespace = (s) => typeof s === 'string' && /^\S+$/.test(s);
+  const hasNoWhitespace = (s: any) => typeof s === 'string' && /^\S+$/.test(s);
 
   /**
    * Overlay component.
@@ -34,7 +34,7 @@ const initOverlayComponent = (videojs) => {
    * @extends {videojs.Component}
    */
   class Overlay extends Component {
-    constructor(player, options) {
+    constructor(player: any, options: any) {
       super(player, options);
       ['start', 'end'].forEach((key) => {
         const value = this.options_[key];
@@ -57,7 +57,7 @@ const initOverlayComponent = (videojs) => {
       // caused by crappy libraries clobbering Function.prototype.bind.
       // - https://github.com/videojs/video.js/issues/3097
       ['endListener_', 'rewindListener_', 'startListener_'].forEach((name) => {
-        this[name] = (e) => Overlay.prototype[name].call(this, e);
+        this[name] = (e: any) => Overlay.prototype[name].call(this, e);
       });
 
       // If the start event is a timeupdate, we need to watch for rewinds (i.e.,
@@ -101,7 +101,7 @@ const initOverlayComponent = (videojs) => {
      * @param  {...[type]} args [description]
      * @return {[type]}         [description]
      */
-    debug(...args) {
+    debug(...args: any[]) {
       if (!this.options_.debug) {
         return;
       }
@@ -143,7 +143,7 @@ const initOverlayComponent = (videojs) => {
      *         An event type.
      * @return {boolean}
      */
-    shouldHide_(time, type) {
+    shouldHide_(time: any, type: any) {
       const end = this.options_.end;
       return isNumber(end) ? time >= end : end === type;
     }
@@ -176,7 +176,7 @@ const initOverlayComponent = (videojs) => {
      *         An event type.
      * @return {boolean}
      */
-    shouldShow_(time, type) {
+    shouldShow_(time: any, type: any) {
       const start = this.options_.start;
       const end = this.options_.end;
       if (isNumber(start)) {
@@ -204,7 +204,7 @@ const initOverlayComponent = (videojs) => {
      *
      * @param  {Event} e
      */
-    startListener_(e) {
+    startListener_(e: any) {
       const time = this.player().currentTime();
       if (this.shouldShow_(time, e.type)) {
         this.show();
@@ -216,7 +216,7 @@ const initOverlayComponent = (videojs) => {
      *
      * @param  {Event} e
      */
-    endListener_(e) {
+    endListener_(e: any) {
       const time = this.player().currentTime();
       if (this.shouldHide_(time, e.type)) {
         this.hide();
@@ -229,7 +229,7 @@ const initOverlayComponent = (videojs) => {
      *
      * @param  {Event} e
      */
-    rewindListener_(e) {
+    rewindListener_(e: any) {
       const time = this.player().currentTime();
       const previous = this.previousTime_;
       const start = this.options_.start;
@@ -242,7 +242,7 @@ const initOverlayComponent = (videojs) => {
         // The overlay remains visible if two conditions are met: the end value
         // MUST be an integer and the the current time indicates that the
         // overlay should NOT be visible.
-        if (isNumber(end) && !this.shouldShow_(time)) {
+        if (isNumber(end) && !this.shouldShow_(time, 'time')) {
           this.debug(
             `hiding; ${end} is an integer and overlay should not show at this time`,
           );
@@ -268,7 +268,7 @@ const initOverlayComponent = (videojs) => {
   return Overlay;
 };
 
-const Plugin = videojs.getPlugin('plugin');
+const Plugin = videojs.getPlugin('plugin') as new (...args: any[]) => any;
 const defaults = {
   align: 'top-left',
   class: '',
@@ -288,6 +288,9 @@ const defaults = {
  * A plugin for handling overlays in the Brightcove Player.
  */
 class OverlayPlugin extends Plugin {
+  static VERSION: string;
+  player: any;
+  options: any;
   /**
    * Create an Overlay Plugin instance.
    *
@@ -297,7 +300,7 @@ class OverlayPlugin extends Plugin {
    * @param  {Object} [options]
    *         An options object.
    */
-  constructor(player, options) {
+  constructor(player: any, options: any) {
     super(player);
     this.reset(options);
   }
@@ -311,7 +314,7 @@ class OverlayPlugin extends Plugin {
    * @return {Array[Overlay]}
    *         The array of overlay objects that were added
    */
-  add(item) {
+  add(item: any) {
     if (!Array.isArray(item)) {
       item = [item];
     }
@@ -329,7 +332,7 @@ class OverlayPlugin extends Plugin {
    *        Item to remove must be present in the array of overlays
    *
    */
-  remove(item) {
+  remove(item: any) {
     const index = this.player.overlays_.indexOf(item);
     if (index !== -1) {
       item.el().parentNode.removeChild(item.el());
@@ -354,7 +357,7 @@ class OverlayPlugin extends Plugin {
    * @param  {Object} [options]
    *         An options object.
    */
-  reset(options) {
+  reset(options: any) {
     this.clearOverlays_();
 
     // Use merge function based on video.js version.
@@ -379,7 +382,7 @@ class OverlayPlugin extends Plugin {
   clearOverlays_() {
     // Remove child components
     if (Array.isArray(this.player.overlays_)) {
-      this.player.overlays_.forEach((overlay) => {
+      this.player.overlays_.forEach((overlay: any) => {
         this.player.removeChild(overlay);
         if (this.player.controlBar) {
           this.player.controlBar.removeChild(overlay);
@@ -387,8 +390,8 @@ class OverlayPlugin extends Plugin {
       });
     }
   }
-  mapOverlays_(items) {
-    return items.map((o) => {
+  mapOverlays_(items: any) {
+    return items.map((o: any) => {
       const mergeOptions = videojs.mergeOptions(this.options, o);
       const attachToControlBar =
         typeof mergeOptions.attachToControlBar === 'string' ||

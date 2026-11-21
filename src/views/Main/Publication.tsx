@@ -43,13 +43,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Publication({ channelid = '', restreamer = null }) {
+export default function Publication({ channelid = '', restreamer }: any) {
   const classes = useStyles();
 
   const navigate = useNavigate();
   const services = Services.IDs();
   const [$egresses, setEgresses] = React.useState<Record<string, any>[]>([]);
-  const [$session, setSession] = React.useState({
+  const [$session, setSession] = React.useState<Record<string, any>>({
     viewer: 0,
     bandwidth: 0,
   });
@@ -70,7 +70,7 @@ export default function Publication({ channelid = '', restreamer = null }) {
   }, []);
 
   const update = async () => {
-    const egresses = [];
+    const egresses: any[] = [];
 
     const processes = await restreamer.ListIngestEgresses(channelid, services);
 
@@ -101,13 +101,13 @@ export default function Publication({ channelid = '', restreamer = null }) {
     });
   };
 
-  const handleServiceAdd = (event) => {
+  const handleServiceAdd = (event: any) => {
     event.preventDefault();
 
     navigate(`/${channelid}/publication/`);
   };
 
-  const handleServiceEdit = (service, index) => () => {
+  const handleServiceEdit = (service: any, index: any) => () => {
     let target = `/${channelid}/publication/${service}`;
 
     if (service !== 'player') {
@@ -117,7 +117,7 @@ export default function Publication({ channelid = '', restreamer = null }) {
     navigate(target);
   };
 
-  const handleOrderChange = (id) => async (order) => {
+  const handleOrderChange = (id: any) => async (order: any) => {
     let res = false;
 
     if (order === 'start') {
@@ -138,7 +138,7 @@ export default function Publication({ channelid = '', restreamer = null }) {
     H('publication');
   };
 
-  let egresses = [];
+  let egresses: any[] = [];
 
   for (let e of $egresses.values()) {
     egresses.push(

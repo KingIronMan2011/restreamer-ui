@@ -8,7 +8,7 @@ import Select from '../../../Select';
 import Helper from '../../helper';
 import Video from '../../settings/Video';
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     bitrate: '4096',
     fps: '25',
@@ -21,7 +21,7 @@ function init(initialState) {
   return state;
 }
 
-function createMapping(settings, stream, skills) {
+function createMapping(settings: any, stream: any, skills: any) {
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
@@ -64,7 +64,7 @@ function createMapping(settings, stream, skills) {
   return mapping;
 }
 
-function Usage({ value = '', onChange = function (event) {} }) {
+function Usage({ value = '', onChange = function (event: any) {} }: any) {
   return (
     <React.Fragment>
       <Select label={<Trans>Usage</Trans>} value={value} onChange={onChange}>
@@ -83,13 +83,13 @@ function Coder({
   stream = {},
   settings = {},
   skills = {},
-  onChange = function (settings, mapping) {},
-}) {
+  onChange = function (settings: any, mapping: any) {},
+}: any) {
   settings = init(settings);
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -103,7 +103,7 @@ function Coder({
     );
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
       [what]: event.target.value,
@@ -162,11 +162,11 @@ const codec = 'av1';
 const type = 'video';
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name}, ${settings.bitrate} kbit/s, ${settings.fps} FPS, Usage: ${settings.usage}`;
 }
 
-function defaults(stream, skills) {
+function defaults(stream: any, skills: any) {
   const settings = init({});
 
   return {

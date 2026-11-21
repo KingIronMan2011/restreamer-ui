@@ -14,7 +14,7 @@ import Select from '../../../../misc/Select';
 import Textarea from '../../../../misc/Textarea';
 import * as S from '../../Sources/Network';
 
-const initSettings = (initialSettings, config) => {
+const initSettings = (initialSettings: any, config: any) => {
   const settings = {
     ...S.func.initSettings(initialSettings, config),
     mode: 'push',
@@ -30,16 +30,16 @@ function Source({
   knownDevices = [],
   config = null,
   skills = null,
-  onChange = function (type, settings, inputs, ready) {},
+  onChange = function (type: any, settings: any, inputs: any, ready: any) {},
   onRefresh = function () {},
-}) {
+}: any) {
   const { i18n } = useLingui();
   const navigate = useNavigate();
   config = S.func.initConfig(config);
   settings = initSettings(settings, config);
   skills = S.func.initSkills(skills);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     newSettings = newSettings || settings;
 
     const inputs = S.func.createInputs(newSettings, config, skills);
@@ -52,7 +52,7 @@ function Source({
     onRefresh();
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const value = event.target.value;
     const newSettings = {
       ...settings,
@@ -66,7 +66,7 @@ function Source({
   };
 
   React.useEffect(() => {
-    handleChange();
+    handleChange(settings);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -95,9 +95,9 @@ function Source({
     );
   } else {
     const filteredDevices = knownDevices.filter(
-      (device) => device.media === 'rtmp',
+      (device: any) => device.media === 'rtmp',
     );
-    const options = filteredDevices.map((device) => {
+    const options = filteredDevices.map((device: any) => {
       return (
         <MenuItem key={device.id} value={device.id}>
           {device.name}
@@ -117,7 +117,7 @@ function Source({
       </MenuItem>,
     );
 
-    const RTMP = S.func.getRTMP(config, settings.push.name);
+    const RTMP = S.func.getRTMP(config);
 
     form = (
       <React.Fragment>
@@ -160,7 +160,7 @@ function Source({
   return form;
 }
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: '#FFF' }} {...props} />;
 }
 

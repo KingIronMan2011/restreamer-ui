@@ -4,8 +4,8 @@ import React from 'react';
 const Component = function ({
   spacing = 3,
   textAlign = 'left',
-  children = null,
-}) {
+  children = null as import('react').ReactNode,
+}: any) {
   return (
     <Grid container justifyContent="center" spacing={spacing} align={textAlign}>
       <Grid item xs={12}>

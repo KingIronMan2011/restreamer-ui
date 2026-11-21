@@ -14,9 +14,9 @@ export default function Metadata({
   onHelp = () => {},
   onBack = () => {},
   onNext = () => {},
-  onChange = (metadata) => {},
+  onChange = (metadata: any) => {},
   metadata = {},
-}) {
+}: any) {
   return (
     <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader

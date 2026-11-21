@@ -7,7 +7,7 @@ import Select from '../../../Select';
 import Helper from '../../helper';
 import Video from '../../settings/Video';
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     preset: 'ultrafast',
     bitrate: '4096',
@@ -22,7 +22,7 @@ function init(initialState) {
   return state;
 }
 
-function createMapping(settings, stream, skills) {
+function createMapping(settings: any, stream: any, skills: any) {
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
@@ -77,7 +77,7 @@ function createMapping(settings, stream, skills) {
   return mapping;
 }
 
-function Preset({ value = '', onChange = function (event) {} }) {
+function Preset({ value = '', onChange = function (event: any) {} }: any) {
   return (
     <Select label={<Trans>Preset</Trans>} value={value} onChange={onChange}>
       <MenuItem value="ultrafast">ultrafast</MenuItem>
@@ -93,7 +93,7 @@ function Preset({ value = '', onChange = function (event) {} }) {
   );
 }
 
-function Tune({ value = '', onChange = function (event) {} }) {
+function Tune({ value = '', onChange = function (event: any) {} }: any) {
   return (
     <Select label={<Trans>Tune</Trans>} value={value} onChange={onChange}>
       <MenuItem value="none">none</MenuItem>
@@ -111,13 +111,13 @@ function Coder({
   stream = {},
   settings = {},
   skills = {},
-  onChange = function (settings, mapping) {},
-}) {
+  onChange = function (settings: any, mapping: any) {},
+}: any) {
   settings = init(settings);
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -131,7 +131,7 @@ function Coder({
     );
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
       [what]: event.target.value,
@@ -196,11 +196,11 @@ const codec = 'hevc';
 const type = 'video';
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name}, ${settings.bitrate} kbit/s, ${settings.fps} FPS, Preset: ${settings.preset}, Profile: ${settings.profile}`;
 }
 
-function defaults(stream, skills) {
+function defaults(stream: any, skills: any) {
   const settings = init({});
 
   return {

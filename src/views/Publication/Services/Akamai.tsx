@@ -50,11 +50,11 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return <img src={Logo} alt="Akamai Logo" {...props} />;
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     protocol: 'rtmp://',
     stream_url: '',
@@ -81,11 +81,11 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
-  onChange = function (output, settings) {},
-}) {
+  onChange = function (output: any, settings: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (what in settings.address_extensions) {
@@ -103,8 +103,8 @@ function Service({
     onChange([output], settings);
   };
 
-  const createOutput = (settings) => {
-    const address_extensions = [];
+  const createOutput = (settings: any) => {
+    const address_extensions: any[] = [];
 
     for (let key in settings.address_extensions) {
       if (settings.address_extensions[key].length === 0) {

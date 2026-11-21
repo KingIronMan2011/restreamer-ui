@@ -25,42 +25,42 @@ export default function Profile({
   profile = {},
   config = {},
   startWith = '',
-  onDone = function (sources, profile) {},
+  onDone = function (sources: any, profile: any) {},
   onAbort = function () {},
-  onProbe = function (inputs) {
+  onProbe = function (inputs: any) {
     return {
       streams: [],
       log: ['onProbe function not provided for this component'],
     };
   },
   onRefresh = function () {},
-  onStore = function (name, data) {
+  onStore = function (name: any, data: any) {
     return '';
   },
-}) {
-  const [$sources, setSources] = React.useState({
+}: any) {
+  const [$sources, setSources] = React.useState<Record<string, any>>({
     video: M.initSource('video', sources[0]),
     audio: M.initSource('audio', sources[1]),
   });
   const [$profile, setProfile] = React.useState(M.initProfile(profile));
-  const [$videoProbe, setVideoProbe] = React.useState({
+  const [$videoProbe, setVideoProbe] = React.useState<Record<string, any>>({
     probing: false,
     log: [],
     modal: false,
     status: 'none',
   });
-  const [$audioProbe, setAudioProbe] = React.useState({
+  const [$audioProbe, setAudioProbe] = React.useState<Record<string, any>>({
     probing: false,
     log: [],
     modal: false,
     status: 'none',
   });
   const [$skillsRefresh, setSkillsRefresh] = React.useState(false);
-  const [$probeModal, setProbeModal] = React.useState({
+  const [$probeModal, setProbeModal] = React.useState<Record<string, any>>({
     open: false,
     data: '',
   });
-  const [$hintModal, setHintModal] = React.useState({
+  const [$hintModal, setHintModal] = React.useState<Record<string, any>>({
     open: false,
     type: '',
     streams: [],
@@ -110,7 +110,12 @@ export default function Profile({
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleProbe = async (type, device, settings, inputs) => {
+  const handleProbe = async (
+    type: any,
+    device: any,
+    settings: any,
+    inputs: any,
+  ) => {
     if (type === 'video') {
       setVideoProbe({
         ...$videoProbe,
@@ -127,12 +132,17 @@ export default function Profile({
 
     const res = await onProbe(inputs);
 
-    const status = handleProbeStreams(type, device, settings, inputs, res);
-
-    return status === 'success';
+    handleProbeStreams(type, device, settings, inputs, res);
+    return true;
   };
 
-  const handleProbeStreams = (type, device, settings, inputs, res) => {
+  const handleProbeStreams = (
+    type: any,
+    device: any,
+    settings: any,
+    inputs: any,
+    res: any,
+  ) => {
     let status = M.analyzeStreams(type, res.streams);
 
     if (type === 'video') {
@@ -241,11 +251,11 @@ export default function Profile({
     setSkillsRefresh(false);
   };
 
-  const handleStore = async (name, data, onprogress) => {
+  const handleStore = async (name: any, data: any, onprogress: any) => {
     return await onStore(name, data, onprogress);
   };
 
-  const handleEncoding = (type) => (encoder, decoder) => {
+  const handleEncoding = (type: any) => (encoder: any, decoder: any) => {
     const profile = $profile[type];
 
     profile.encoder = encoder;
@@ -257,7 +267,7 @@ export default function Profile({
     });
   };
 
-  const handleFilter = (type) => (filter) => {
+  const handleFilter = (type: any) => (filter: any) => {
     const profile = $profile[type];
 
     profile.filter = filter;
@@ -279,7 +289,7 @@ export default function Profile({
     onAbort();
   };
 
-  const handleProbeLogModal = (type) => (event) => {
+  const handleProbeLogModal = (type: any) => (event: any) => {
     event.preventDefault();
 
     if (type === 'video') {
@@ -303,7 +313,7 @@ export default function Profile({
     }
   };
 
-  const handleSourceChange = (type, source) => {
+  const handleSourceChange = (type: any, source: any) => {
     const profile = $profile[type];
     const custom = $profile.custom;
 
@@ -356,7 +366,11 @@ export default function Profile({
     });
   };
 
-  const handleSourceSettingsChange = (type, source, settings) => {
+  const handleSourceSettingsChange = (
+    type: any,
+    source: any,
+    settings: any,
+  ) => {
     if (type === 'video') {
       setVideoProbe({
         ...$videoProbe,
@@ -370,22 +384,24 @@ export default function Profile({
     }
   };
 
-  const handleStreamSelect = (type, what) => (stream) => {
-    const profile = $profile;
+  const handleStreamSelect =
+    (type: any, what: any = '') =>
+    (stream: any) => {
+      const profile = $profile;
 
-    profile[type].stream = stream;
+      profile[type].stream = stream;
 
-    if (what === 'custom') {
-      profile.custom.stream = stream;
-    }
+      if (what === 'custom') {
+        profile.custom.stream = stream;
+      }
 
-    setProfile({
-      ...$profile,
-      ...profile,
-    });
-  };
+      setProfile({
+        ...$profile,
+        ...profile,
+      });
+    };
 
-  const handleHintModal = (type, streams) => (event) => {
+  const handleHintModal = (type: any, streams: any) => (event: any) => {
     if (event) {
       event.preventDefault();
     }
@@ -455,7 +471,7 @@ export default function Profile({
     }
   };
 
-  const handleHintChange = (streams) => {
+  const handleHintChange = (streams: any) => {
     setHintModal({
       ...$hintModal,
       streams: streams,
@@ -467,7 +483,7 @@ export default function Profile({
       streams: [],
     });
 
-    handleHintModal('none')(null);
+    handleHintModal('none', [])(null);
   };
 
   const handleHintDone = () => {
@@ -478,7 +494,7 @@ export default function Profile({
     const inputs = $sources[type].inputs;
     const probe = {
       streams: $hintModal.streams,
-      log: [],
+      log: [] as string[],
     };
 
     const url = inputs[0].address;
@@ -500,7 +516,7 @@ export default function Profile({
 
     handleProbeStreams(type, device, settings, inputs, probe);
 
-    handleHintModal('none')(null);
+    handleHintModal('none', [])(null);
   };
 
   if ($ready === false) {

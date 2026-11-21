@@ -1,6 +1,16 @@
 import React from 'react';
 
-const NotifyContext = React.createContext({
+type NotificationSeverity = 'error' | 'warning' | 'info' | 'success';
+
+type NotifyContextValue = {
+  Dispatch: (
+    severity: NotificationSeverity,
+    type: string,
+    message: string,
+  ) => void;
+};
+
+const NotifyContext = React.createContext<NotifyContextValue>({
   Dispatch: () => {},
 });
 

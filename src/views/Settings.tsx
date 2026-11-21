@@ -14,7 +14,6 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -38,6 +37,7 @@ import TabsVerticalGrid from '../misc/TabsVerticalGrid';
 import Textarea from '../misc/Textarea';
 import TextField from '../misc/TextField';
 import H from '../utils/help';
+import Restreamer from '../utils/restreamer';
 
 const useStyles = makeStyles((theme) => ({
   inlineEnv: {
@@ -45,7 +45,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const configValues = {
+type ConfigValues = Record<
+  string,
+  {
+    tab: string;
+    set: (config: Record<string, any>, value: any) => void;
+    unset: (config: Record<string, any>) => void;
+    validate: (config: Record<string, any>) => string | null;
+  }
+>;
+
+const configValues: ConfigValues = {
   update_check: {
     tab: 'general',
     set: (config, value) => {
@@ -634,7 +644,9 @@ const configValues = {
 
 const RETRIES = 60;
 
-function ErrorTab(props) {
+function ErrorTab(
+  props: React.ComponentProps<typeof Tab> & { errors?: boolean },
+) {
   let { label, errors, ...other } = props;
 
   if (errors === true) {
@@ -649,7 +661,13 @@ function ErrorTab(props) {
   return <Tab label={label} {...other} />;
 }
 
-function ErrorBox({ configvalue = '', messages = [] }) {
+function ErrorBox({
+  configvalue = '',
+  messages = [],
+}: {
+  configvalue?: string;
+  messages?: Array<{ configvalue?: string; error: React.ReactNode }>;
+}) {
   messages = messages.filter(
     (m) => configvalue === '' || m.configvalue === configvalue,
   );
@@ -672,14 +690,14 @@ function ErrorBox({ configvalue = '', messages = [] }) {
   );
 }
 
-const toArray = (val, separator) => {
+const toArray = (val: string, separator: string) => {
   return val
     .split(separator)
     .map((l) => l.trim())
     .filter((l) => l.length !== 0);
 };
 
-const toInt = (val) => {
+const toInt = (val: string | number) => {
   if (typeof val === 'string') {
     return val.length === 0 ? 0 : parseInt(val);
   }
@@ -687,13 +705,13 @@ const toInt = (val) => {
   return val;
 };
 
-export default function Settings({ restreamer = null }) {
+export default function Settings({ restreamer }: { restreamer: Restreamer }) {
   const classes = useStyles();
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const { tab: _tab } = useParams();
   const notify = React.useContext(NotifyContext);
-  const [$config, setConfig] = React.useState({
+  const [$config, setConfig] = React.useState<Record<string, any>>({
     ready: false,
     modified: false,
     data: null,
@@ -706,12 +724,12 @@ export default function Settings({ restreamer = null }) {
     service: false,
   });
   const [$expert, setExpert] = React.useState(restreamer.IsExpert());
-  const [$updates, setUpdates] = React.useState({
+  const [$updates, setUpdates] = React.useState<Record<string, any>>({
     has: restreamer.HasUpdates(),
     want: restreamer.CheckForUpdates(),
   });
   const [$tab, setTab] = React.useState(_tab ? _tab : 'general');
-  const [$tabs, setTabs] = React.useState({
+  const [$tabs, setTabs] = React.useState<Record<string, any>>({
     general: { errors: false, messages: [] }, // messages is an array of objects: {configvalue: '', error: ''}
     network: { errors: false, messages: [] },
     auth: { errors: false, messages: [] },
@@ -723,14 +741,16 @@ export default function Settings({ restreamer = null }) {
     service: { errors: false, messages: [] },
   });
   const [$logdata, setLogdata] = React.useState('');
-  const logTimer = React.useRef();
+  const logTimer = React.useRef<ReturnType<typeof setInterval> | undefined>(
+    undefined,
+  );
   const [$reloadKey, setReloadKey] = React.useState('');
-  const [$dialogs, setDialogs] = React.useState({
+  const [$dialogs, setDialogs] = React.useState<Record<string, any>>({
     restart: false,
     saved: false,
   });
   const [$saving, setSaving] = React.useState(false);
-  const [$restart, setRestart] = React.useState({
+  const [$restart, setRestart] = React.useState<Record<string, any>>({
     restarting: false,
     timeout: false,
     changes: {
@@ -763,7 +783,7 @@ export default function Settings({ restreamer = null }) {
     const data = await restreamer.Config();
 
     let config = null;
-    let overrides = [];
+    let overrides: any[] = [];
     let outdated = false;
 
     if (data !== null) {
@@ -832,7 +852,7 @@ export default function Settings({ restreamer = null }) {
     });
   };
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
     const config = $config.data;
 
@@ -856,7 +876,7 @@ export default function Settings({ restreamer = null }) {
 
     // Remove all error for a config value
     tabs[tab].messages = tabs[tab].messages.filter(
-      (m) => m.configvalue !== what,
+      (m: any) => m.configvalue !== what,
     );
     if (tabs[tab].messages.length === 0) {
       tabs[tab].errors = false;
@@ -885,7 +905,7 @@ export default function Settings({ restreamer = null }) {
     });
   };
 
-  const handleCoreConfig = (event) => {
+  const handleCoreConfig = (event: any) => {
     const value = event.target.value;
 
     setConfig({
@@ -895,7 +915,7 @@ export default function Settings({ restreamer = null }) {
     });
   };
 
-  const handleChangeTab = async (event, value) => {
+  const handleChangeTab = async (event: any, value: any) => {
     if (value === 'logging') {
       await updateLogdata();
 
@@ -998,13 +1018,13 @@ export default function Settings({ restreamer = null }) {
       try {
         config = JSON.parse($config.core);
       } catch (e) {
-        const tabs = {};
+        const tabs: Record<string, any> = {};
         tabs['service'] = {
           errors: true,
           messages: [
             {
               configvalue: 'coreconfig',
-              error: e.message,
+              error: e instanceof Error ? e.message : String(e),
             },
           ],
         };
@@ -1048,8 +1068,8 @@ export default function Settings({ restreamer = null }) {
         );
       }
 
-      const tabs = {};
-      const ucfirst = (string) => {
+      const tabs: Record<string, any> = {};
+      const ucfirst = (string: any) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
       };
 
@@ -1100,7 +1120,7 @@ export default function Settings({ restreamer = null }) {
         ),
       );
 
-      const tabs = {};
+      const tabs: Record<string, any> = {};
 
       for (let t in $tabs) {
         tabs[t] = { errors: false, messages: [] };
@@ -1169,7 +1189,7 @@ export default function Settings({ restreamer = null }) {
       return;
     }
 
-    const waitFor = (ms) => {
+    const waitFor = (ms: any) => {
       return new Promise((resolve) => {
         setTimeout(resolve, ms);
       });
@@ -1237,11 +1257,11 @@ export default function Settings({ restreamer = null }) {
     navigate(-1);
   };
 
-  const handleHelp = (topic) => () => {
+  const handleHelp = (topic: any) => () => {
     H('settings-' + topic);
   };
 
-  const env = (what) => {
+  const env = (what: any) => {
     if ($config.overrides.indexOf(what) !== -1) {
       return true;
     }
@@ -1543,7 +1563,6 @@ export default function Settings({ restreamer = null }) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className={classes.root}
                     variant="outlined"
                     fullWidth
                     multiline
@@ -2759,7 +2778,3 @@ export default function Settings({ restreamer = null }) {
     </React.Fragment>
   );
 }
-
-Settings.propTypes = {
-  restreamer: PropTypes.object.isRequired,
-};

@@ -58,13 +58,13 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return (
     <FontAwesomeIcon icon={faTools} style={{ color: '#39B54A' }} {...props} />
   );
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     protocol: 'rtmp://',
     address: '',
@@ -93,11 +93,11 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
-  onChange = function (output, settings) {},
-}) {
+  onChange = function (output: any, settings: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     let value = event.target.value;
 
     if (what in settings.options) {
@@ -121,11 +121,11 @@ function Service({
     onChange([output], settings);
   };
 
-  const createOutput = (settings) => {
+  const createOutput = (settings: any) => {
     const options = ['-f', 'flv'];
 
     if (skills.ffmpeg.version_major >= 6) {
-      const codecs = [];
+      const codecs: any[] = [];
       if (skills.codecs.video.includes('hevc')) {
         codecs.push('hvc1');
       }

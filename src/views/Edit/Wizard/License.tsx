@@ -14,9 +14,9 @@ export default function License({
   onHelp = () => {},
   onBack = () => {},
   onNext = () => {},
-  onChange = (license) => {},
+  onChange = (license: any) => {},
   license = '',
-}) {
+}: any) {
   return (
     <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader

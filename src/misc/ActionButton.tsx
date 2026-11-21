@@ -10,7 +10,7 @@ export default function ActionButton({
   onDisconnect = function () {},
   onConnect = function () {},
   onReconnect = function () {},
-}) {
+}: any) {
   let button = null;
 
   if (state === 'connecting') {

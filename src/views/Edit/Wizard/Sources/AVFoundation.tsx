@@ -11,7 +11,7 @@ import React from 'react';
 import Select from '../../../../misc/Select';
 import * as S from '../../Sources/AVFoundation';
 
-function initSettings(initialSettings) {
+function initSettings(initialSettings: any) {
   const settings = {
     ...S.func.initSettings(initialSettings),
     format: 'nv12',
@@ -27,17 +27,17 @@ function Source({
   knownDevices = [],
   config = null,
   skills = null,
-  onChange = function (type, settings, inputs, ready) {},
+  onChange = function (type: any, settings: any, inputs: any, ready: any) {},
   onRefresh = function () {},
-}) {
+}: any) {
   const { i18n } = useLingui();
   settings = initSettings(settings);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     newSettings = newSettings || settings;
 
     const filteredDevices = knownDevices.filter(
-      (device) => device.media === 'video',
+      (device: any) => device.media === 'video',
     );
 
     onChange(
@@ -52,7 +52,7 @@ function Source({
     onRefresh();
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const value = event.target.value;
     const newSettings = settings;
 
@@ -64,14 +64,14 @@ function Source({
   };
 
   React.useEffect(() => {
-    handleChange();
+    handleChange(settings);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let filteredDevices = knownDevices.filter(
-    (device) => device.media === 'video',
+    (device: any) => device.media === 'video',
   );
-  let options = filteredDevices.map((device) => {
+  let options = filteredDevices.map((device: any) => {
     return (
       <MenuItem key={device.id} value={device.id}>
         {device.name}
@@ -103,8 +103,10 @@ function Source({
     </Select>
   );
 
-  filteredDevices = knownDevices.filter((device) => device.media === 'audio');
-  options = filteredDevices.map((device) => {
+  filteredDevices = knownDevices.filter(
+    (device: any) => device.media === 'audio',
+  );
+  options = filteredDevices.map((device: any) => {
     return (
       <MenuItem key={device.id} value={device.id}>
         {device.name}
@@ -169,7 +171,7 @@ function Source({
   );
 }
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: '#FFF' }} {...props} />;
 }
 

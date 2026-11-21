@@ -70,10 +70,10 @@ const $config = {
 };
 
 test('source:network pull', async () => {
-  let $settings = {
+  let $settings: Record<string, any> = {
     mode: 'pull',
   };
-  const handleChange = (settings) => {
+  const handleChange = (settings: any) => {
     $settings = settings;
   };
 
@@ -184,7 +184,7 @@ const pullmatrix = {
       avoid_negative_ts: 'auto',
     },
   },
-  tests: [],
+  tests: [] as any[],
 };
 
 pullmatrix.tests = [
@@ -480,8 +480,8 @@ pullmatrix.tests = [
 test.each(pullmatrix.tests)(
   'source:network pull $name input with ffmpeg $skills.ffmpeg.version',
   async (data) => {
-    let $inputs = [];
-    const handleProbe = (_, inputs) => {
+    let $inputs: any[] = [];
+    const handleProbe = (_: any, inputs: any) => {
       $inputs = inputs;
     };
 
@@ -514,7 +514,7 @@ test('source:network push', async () => {
       name: 'external',
     },
   };
-  const handleChange = (settings) => {
+  const handleChange = (settings: any) => {
     $settings = settings;
   };
 
@@ -585,7 +585,7 @@ test('source:network push RTMP', async () => {
       name: 'external',
     },
   };
-  const handleChange = (settings) => {
+  const handleChange = (settings: any) => {
     $settings = settings;
   };
 
@@ -625,7 +625,7 @@ test('source:network push SRT', async () => {
       name: 'external',
     },
   };
-  const handleChange = (settings) => {
+  const handleChange = (settings: any) => {
     $settings = settings;
   };
 
@@ -657,7 +657,7 @@ test('source:network push SRT', async () => {
   expect(getByText('Probe')).toBeInTheDocument();
 });
 
-const pushmatrix = {
+const pushmatrix: Record<string, any> = {
   settings: {
     mode: 'push',
     push: {
@@ -665,7 +665,7 @@ const pushmatrix = {
       name: 'external',
     },
   },
-  tests: [],
+  tests: [] as any[],
 };
 
 pushmatrix.tests = [
@@ -805,11 +805,11 @@ pushmatrix.tests = [
   },
 ];
 
-test.each(pushmatrix.tests)(
+test.each(pushmatrix.tests as any[])(
   'source:network push $name input with ffmpeg $skills.ffmpeg.version',
   async (data) => {
-    let $inputs = [];
-    const handleProbe = (_, inputs) => {
+    let $inputs: any[] = [];
+    const handleProbe = (_: any, inputs: any) => {
       $inputs = inputs;
     };
 

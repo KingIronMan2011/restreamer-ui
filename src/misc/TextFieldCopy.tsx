@@ -30,8 +30,8 @@ export default function Component({
   readOnly = true,
   allowCopy = true,
   size = 'small',
-  onChange = function (value) {},
-}) {
+  onChange = function (value: any) {},
+}: any) {
   const classes = useStyles();
   const { i18n } = useLingui();
 
@@ -64,7 +64,7 @@ export default function Component({
         value={value}
         label={label}
         type={type}
-        inputprops={{
+        inputProps={{
           readOnly: true,
         }}
         size={size}

@@ -2,15 +2,15 @@ import { Auth0Client } from '@auth0/auth0-spa-js';
 
 import * as Storage from './storage';
 
-let client = null;
+let client: Auth0Client | null = null;
 
 let isAvailable = false;
 
 try {
   new Auth0Client({
     domain: 'example.eu.auth0.com',
-    client_id: 'some_client_id',
-    audience: 'https://example.com/',
+    clientId: 'some_client_id',
+    authorizationParams: { audience: 'https://example.com/' },
     cacheLocation: 'memory',
   });
 
@@ -23,7 +23,7 @@ const canUseAuth0 = () => {
   return isAvailable;
 };
 
-const setConfig = (config) => {
+const setConfig = (config: any) => {
   Storage.Set(
     'auth0',
     JSON.stringify({
@@ -79,10 +79,9 @@ const init = () => {
   try {
     client = new Auth0Client({
       domain: config.domain,
-      client_id: config.client_id,
-      audience: config.audience,
+      clientId: config.client_id,
       cacheLocation: 'localstorage',
-      advancedOptions: { defaultScope: 'openid' },
+      authorizationParams: { audience: config.audience, scope: 'openid' },
     });
   } catch (e) {
     return false;
@@ -113,10 +112,11 @@ const handleRedirectCallback = async () => {
     try {
       await client.handleRedirectCallback();
     } catch (e) {
+      const error = e instanceof Error ? e : new Error(String(e));
       return {
         initialized: true,
         error: true,
-        description: e.message,
+        description: error.message,
       };
     }
 
@@ -144,17 +144,14 @@ const handleRedirectCallback = async () => {
   };
 };
 
-const login = async (queryParams) => {
+const login = async (queryParams: any) => {
   if (client === null) {
     return false;
   }
 
-  const config = {
-    redirect_uri: window.location.origin,
-    ...getConfig(),
-  };
+  const config = getConfig();
 
-  let queryString = [];
+  let queryString: any[] = [];
   for (let n in queryParams) {
     queryString.push(n + '=' + encodeURIComponent(queryParams[n]));
   }
@@ -173,7 +170,7 @@ const login = async (queryParams) => {
   }
 
   const options = {
-    redirect_uri: config.redirect_uri,
+    authorizationParams: { redirect_uri: config.redirect_uri },
   };
 
   try {
@@ -191,8 +188,8 @@ const logout = async () => {
   }
 
   await client.logout({
-    returnTo: window.location.href,
-    localOnly: true,
+    logoutParams: { returnTo: window.location.href },
+    openUrl: false,
   });
 };
 

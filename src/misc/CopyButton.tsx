@@ -12,8 +12,8 @@ export default function CopyButton({
   color = 'default',
   size = 'small',
   value = '',
-  children = null,
-}) {
+  children = null as import('react').ReactNode,
+}: any) {
   const notify = useContext(NotifyContext);
   const { i18n } = useLingui();
 

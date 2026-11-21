@@ -12,45 +12,46 @@ export default function FilterSelect({
   type = '',
   profile = {},
   availableFilters = [],
-  onChange = function (filter, automatic) {},
-}) {
+  onChange = function (filter: any, automatic: any) {},
+}: any) {
   // handleFilterChange
   // what: Filter name
   // settings (component settings):  {Key: Value}
   // mapping (FFmpeg -af/-vf args): ['String', ...]
-  const handleFilterSettingsChange = (what) => (settings, graph, automatic) => {
-    const filter = profile.filter;
+  const handleFilterSettingsChange =
+    (what: any) => (settings: any, graph: any, automatic: any) => {
+      const filter = profile.filter;
 
-    // Store mapping/settings per component
-    filter.settings[what] = {
-      settings: settings,
-      graph: graph,
+      // Store mapping/settings per component
+      filter.settings[what] = {
+        settings: settings,
+        graph: graph,
+      };
+
+      // Get the order of the filters
+      let filterOrder: any[] = [];
+      if (type === 'video') {
+        filterOrder = Filters.Video.Filters();
+      } else {
+        filterOrder = Filters.Audio.Filters();
+      }
+
+      // Create the filter graph in the order as the filters are registered
+      const graphs: any[] = [];
+      for (let f of filterOrder) {
+        if (!(f in filter.settings)) {
+          continue;
+        }
+
+        if (filter.settings[f].graph.length !== 0) {
+          graphs.push(filter.settings[f].graph);
+        }
+      }
+
+      filter.graph = graphs.join(',');
+
+      onChange(filter, automatic);
     };
-
-    // Get the order of the filters
-    let filterOrder = [];
-    if (type === 'video') {
-      filterOrder = Filters.Video.Filters();
-    } else {
-      filterOrder = Filters.Audio.Filters();
-    }
-
-    // Create the filter graph in the order as the filters are registered
-    const graphs = [];
-    for (let f of filterOrder) {
-      if (!(f in filter.settings)) {
-        continue;
-      }
-
-      if (filter.settings[f].graph.length !== 0) {
-        graphs.push(filter.settings[f].graph);
-      }
-    }
-
-    filter.graph = graphs.join(',');
-
-    onChange(filter, automatic);
-  };
 
   // Set filterRegistry by type
   let filterRegistry = null;
@@ -75,7 +76,7 @@ export default function FilterSelect({
   }
 
   // Creates filter components
-  let filterSettings = [];
+  let filterSettings: any[] = [];
   if (!hwaccel) {
     for (let c of filterRegistry.List()) {
       // Checks FFmpeg skills (filter is available)

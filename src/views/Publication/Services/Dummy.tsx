@@ -2,7 +2,6 @@ import { Trans } from '@lingui/macro';
 import ExtensionIcon from '@mui/icons-material/Extension';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import PropTypes from 'prop-types';
 import React from 'react';
 
 import Checkbox from '../../../misc/Checkbox';
@@ -137,12 +136,12 @@ const requires = {
 };
 
 // ServiceIcon is a React component and returns the icon for this service
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return <ExtensionIcon style={{ color: '#FFFFFF' }} {...props} />;
 }
 
 // Initialize the settings, i.e. set defaults for fields that are not defined
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     stream_key: '',
     rtmp_primary: true,
@@ -160,9 +159,14 @@ function init(settings) {
 // This function should be exported, such that it can be called from the
 // outside in case e.g. the streams changed (due to changes in the encoding
 // settings) and the output options depend on that information.
-function createOutputs(settings, skills, metadata, streams) {
+function createOutputs(
+  settings: any,
+  skills: any,
+  metadata: any,
+  streams: any,
+) {
   settings = init(settings);
-  const outputs = [];
+  const outputs: any[] = [];
 
   if (settings.stream_key.length === 0) {
     return outputs;
@@ -266,11 +270,11 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
-  onChange = function (output, settings) {},
-}) {
+  onChange = function (output: any, settings: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (['rtmp_primary', 'rtmp_backup'].includes(what)) {
@@ -314,14 +318,6 @@ function Service({
     </Grid>
   );
 }
-
-Service.propTypes = {
-  metadata: PropTypes.object.isRequired,
-  onChange: PropTypes.func.isRequired,
-  settings: PropTypes.object.isRequired,
-  skills: PropTypes.object,
-  streams: PropTypes.array.isRequired,
-};
 
 export {
   id,

@@ -60,13 +60,13 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return (
     <FontAwesomeIcon icon={faTools} style={{ color: '#39B54A' }} {...props} />
   );
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     protocol: 'udp://',
     address: '',
@@ -105,11 +105,11 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
-  onChange = function (output, settings) {},
-}) {
+  onChange = function (output: any, settings: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (what in settings.options) {
@@ -131,7 +131,7 @@ function Service({
     onChange([output], settings);
   };
 
-  const createOutput = (settings) => {
+  const createOutput = (settings: any) => {
     const options = ['-f', 'mpegts'];
 
     for (let key in settings.options) {
@@ -168,7 +168,7 @@ function Service({
       } else if (key === 'mpegts_flags') {
         let flags = '';
 
-        settings.options[key].forEach((flag) => {
+        settings.options[key].forEach((flag: any) => {
           flags += '+' + flag;
         });
 

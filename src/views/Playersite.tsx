@@ -51,7 +51,7 @@ const templateTypes = [
   { mimetype: 'text/html', extension: 'html', maxSize: 500 * 1024 },
 ];
 
-export default function Playersite({ restreamer = null }) {
+export default function Playersite({ restreamer }: any) {
   const classes = useStyles();
   const navigate = useNavigate();
   const { i18n } = useLingui();
@@ -64,10 +64,10 @@ export default function Playersite({ restreamer = null }) {
   const [$data, setData] = React.useState(M.getDefaultMetadata());
   const [$settings, setSettings] = React.useState<Record<string, any>>({});
   const [$channels, setChannels] = React.useState<Record<string, any>[]>([]);
-  const [$templates, setTemplates] = React.useState<Record<string, any>[]>([]);
+  const [$templates, setTemplates] = React.useState<string[]>([]);
   const [$tab, setTab] = React.useState('general');
   const [$saving, setSaving] = React.useState(false);
-  const [$error, setError] = React.useState({
+  const [$error, setError] = React.useState<Record<string, any>>({
     open: false,
     title: '',
     message: '',
@@ -94,7 +94,7 @@ export default function Playersite({ restreamer = null }) {
     setReady(true);
   };
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
     const settings = $settings;
 
@@ -119,7 +119,7 @@ export default function Playersite({ restreamer = null }) {
     });
   };
 
-  const handleBackgroundImageUpload = async (data, extension) => {
+  const handleBackgroundImageUpload = async (data: any, extension: any) => {
     const path = await restreamer.UploadPlayersiteBackgroundImage(
       data,
       extension,
@@ -134,7 +134,7 @@ export default function Playersite({ restreamer = null }) {
     setSaving(false);
   };
 
-  const handleTemplateUpload = async (data, extension) => {
+  const handleTemplateUpload = async (data: any, extension: any) => {
     const name = await restreamer.UploadPlayersiteTemplate(
       data,
       $settings.templatename,
@@ -167,7 +167,7 @@ export default function Playersite({ restreamer = null }) {
     setSaving(true);
   };
 
-  const handleUploadError = (title) => (err) => {
+  const handleUploadError = (title: any) => (err: any) => {
     let message = null;
 
     switch (err.type) {
@@ -205,7 +205,7 @@ export default function Playersite({ restreamer = null }) {
     showUploadError(title, message);
   };
 
-  const showUploadError = (title, message) => {
+  const showUploadError = (title: any, message: any) => {
     setError({
       ...$error,
       open: true,
@@ -262,7 +262,7 @@ export default function Playersite({ restreamer = null }) {
     );
   };
 
-  const handleChangeTab = (event, value) => {
+  const handleChangeTab = (event: any, value: any) => {
     setTab(value);
   };
 
@@ -405,18 +405,18 @@ export default function Playersite({ restreamer = null }) {
                     disabled={!$settings.playersite}
                     label={<Trans>Additional channels</Trans>}
                     value={$settings.channel_list.filter(
-                      (c) => c !== main_channelid,
+                      (c: any) => c !== main_channelid,
                     )}
-                    renderValue={(selected) => {
+                    renderValue={(selected: any) => {
                       return selected
-                        .map((id) => {
+                        .map((id: any) => {
                           let channel = restreamer.GetChannel(id);
                           if (channel === null) {
                             return '';
                           }
                           return channel.name;
                         })
-                        .filter((name) => name.length !== 0)
+                        .filter((name: any) => name.length !== 0)
                         .join(', ');
                     }}
                     onChange={handleChange('channel_list')}
@@ -718,7 +718,7 @@ export default function Playersite({ restreamer = null }) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className={classes.root}
+                    className={classes.buttonOpen}
                     variant="outlined"
                     fullWidth
                     multiline
@@ -735,7 +735,7 @@ export default function Playersite({ restreamer = null }) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className={classes.root}
+                    className={classes.buttonOpen}
                     variant="outlined"
                     fullWidth
                     multiline
@@ -769,7 +769,7 @@ export default function Playersite({ restreamer = null }) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className={classes.root}
+                    className={classes.buttonOpen}
                     variant="outlined"
                     fullWidth
                     multiline
@@ -789,7 +789,7 @@ export default function Playersite({ restreamer = null }) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className={classes.root}
+                    className={classes.buttonOpen}
                     variant="outlined"
                     fullWidth
                     multiline
@@ -811,7 +811,7 @@ export default function Playersite({ restreamer = null }) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className={classes.root}
+                    className={classes.buttonOpen}
                     variant="outlined"
                     fullWidth
                     multiline
@@ -834,7 +834,7 @@ export default function Playersite({ restreamer = null }) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className={classes.root}
+                    className={classes.buttonOpen}
                     variant="outlined"
                     fullWidth
                     multiline

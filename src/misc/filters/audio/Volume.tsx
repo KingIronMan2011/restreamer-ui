@@ -9,7 +9,7 @@ import Select from '../../Select';
 // Volume Filter
 // http://ffmpeg.org/ffmpeg-all.html#volume
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     level: 'inherit',
     db: 0,
@@ -19,10 +19,10 @@ function init(initialState) {
   return state;
 }
 
-function createGraph(settings) {
+function createGraph(settings: any) {
   settings = init(settings);
 
-  const mapping = [];
+  const mapping: any[] = [];
 
   switch (settings.level) {
     case 'inherit':
@@ -38,7 +38,7 @@ function createGraph(settings) {
   return mapping.join(',');
 }
 
-function VolumeLevel({ value = '', onChange = function (event) {} }) {
+function VolumeLevel({ value = '', onChange = function (event: any) {} }: any) {
   return (
     <Select label={<Trans>Volume</Trans>} value={value} onChange={onChange}>
       <MenuItem value="inherit">
@@ -63,8 +63,8 @@ function VolumeLevel({ value = '', onChange = function (event) {} }) {
 function VolumeDB({
   value = '',
   disabled = false,
-  onChange = function (event) {},
-}) {
+  onChange = function (event: any) {},
+}: any) {
   return (
     <TextField
       variant="outlined"
@@ -80,11 +80,11 @@ function VolumeDB({
 
 function Filter({
   settings = {},
-  onChange = function (settings, graph, automatic) {},
-}) {
+  onChange = function (settings: any, graph: any, automatic: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -94,7 +94,7 @@ function Filter({
     onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
       [what]: event.target.value,
@@ -129,7 +129,7 @@ const name = 'Volume';
 const type = 'audio';
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   let summary = `${name} (`;
 
   if (settings.level === 'custom') {

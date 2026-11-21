@@ -6,7 +6,7 @@ import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import React from 'react';
 
-function isCustomOption(value, options) {
+function isCustomOption(value: any, options: any) {
   for (let o of options) {
     if (o.value === value) {
       return false;
@@ -25,15 +25,15 @@ export default function Component({
   customLabel = '',
   allowCustom = false,
   options = [],
-  onChange = function (event) {},
-}) {
-  const [$value, setValue] = React.useState({
+  onChange = function (event: any) {},
+}: any) {
+  const [$value, setValue] = React.useState<Record<string, any>>({
     value: value,
     isCustom: isCustomOption(value, options),
     custom: isCustomOption(value, options) === true ? value : '',
   });
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     const v = event.target.value;
 
     const value = $value;
@@ -57,7 +57,7 @@ export default function Component({
     });
   };
 
-  const handleCustomChange = (event) => {
+  const handleCustomChange = (event: any) => {
     setValue({
       ...$value,
       custom: event.target.value,
@@ -66,7 +66,7 @@ export default function Component({
     onChange(event);
   };
 
-  const selectOptions = [];
+  const selectOptions: any[] = [];
 
   for (let o of options) {
     selectOptions.push(

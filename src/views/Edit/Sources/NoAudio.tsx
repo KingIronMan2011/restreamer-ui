@@ -4,7 +4,7 @@ import React from 'react';
 
 // This is a pseudo audio source for selecting no audio
 
-const initSettings = (initialSettings) => {
+const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -16,10 +16,10 @@ const initSettings = (initialSettings) => {
   return settings;
 };
 
-const createInputs = (settings) => {
+const createInputs = (settings: any) => {
   const input = {
     address: '',
-    options: [],
+    options: [] as string[],
   };
 
   return [input];
@@ -28,13 +28,13 @@ const createInputs = (settings) => {
 function Source({
   knownDevices = [],
   settings = {},
-  onChange = function (settings) {},
-  onProbe = function (settings, inputs) {},
-}) {
+  onChange = function (settings: any) {},
+  onProbe = function (settings: any, inputs: any) {},
+}: any) {
   return null;
 }
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon {...props} />;
 }
 

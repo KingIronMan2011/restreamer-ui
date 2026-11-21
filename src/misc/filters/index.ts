@@ -13,12 +13,14 @@ import * as VFlip from './video/VFlip';
 
 // Register filters type: audio/video
 class Registry {
-  constructor(type) {
+  type: string = '';
+  services: Map<string, any> = new Map();
+  constructor(type: any) {
     this.type = type;
     this.services = new Map();
   }
 
-  Register(service) {
+  Register(service: any) {
     if (service.type !== this.type) {
       return;
     }
@@ -26,7 +28,7 @@ class Registry {
     this.services.set(service.filter, service);
   }
 
-  Get(filter) {
+  Get(filter: any) {
     const service = this.services.get(filter);
     if (service) {
       return service;

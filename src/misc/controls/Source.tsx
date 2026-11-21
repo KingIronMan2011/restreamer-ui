@@ -6,7 +6,7 @@ import React from 'react';
 
 import Select from '../Select';
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     source: 'hls+memfs',
     ...settings,
@@ -27,8 +27,8 @@ function init(settings) {
 export default function Control({
   settings = {},
   sources = [],
-  onChange = function (settings, automatic) {},
-}) {
+  onChange = function (settings: any, automatic: any) {},
+}: any) {
   settings = init(settings);
 
   // Set the defaults
@@ -37,7 +37,7 @@ export default function Control({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -45,7 +45,7 @@ export default function Control({
     onChange(settings, false);
   };
 
-  const items = [];
+  const items: any[] = [];
 
   items.push(
     <MenuItem

@@ -4,7 +4,7 @@ import React from 'react';
 import Helper from '../../helper';
 import Audio from '../../settings/Audio';
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     bitrate: '64',
     ...initialState,
@@ -13,7 +13,7 @@ function init(initialState) {
   return state;
 }
 
-function createMapping(settings, stream, skills) {
+function createMapping(settings: any, stream: any, skills: any) {
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
@@ -40,13 +40,13 @@ function Coder({
   stream = {},
   settings = {},
   skills = {},
-  onChange = function (settings, mapping) {},
-}) {
+  onChange = function (settings: any, mapping: any) {},
+}: any) {
   settings = init(settings);
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -60,7 +60,7 @@ function Coder({
     );
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const value = event.target.value;
 
     const newSettings = {
@@ -95,11 +95,11 @@ const codec = 'vorbis';
 const type = 'audio';
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name}, ${settings.bitrate} kbit/s`;
 }
 
-function defaults(stream, skills) {
+function defaults(stream: any, skills: any) {
   const settings = init({});
 
   return {

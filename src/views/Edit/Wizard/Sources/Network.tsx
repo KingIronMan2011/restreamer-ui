@@ -9,7 +9,7 @@ import Checkbox from '../../../../misc/Checkbox';
 import Password from '../../../../misc/Password';
 import * as S from '../../Sources/Network';
 
-const initSettings = (initialSettings, config) => {
+const initSettings = (initialSettings: any, config: any) => {
   const settings = {
     ...S.func.initSettings(initialSettings, config),
     mode: 'pull',
@@ -23,14 +23,14 @@ function Source({
   knownDevices = [],
   config = null,
   skills = null,
-  onChange = function (type, settings, inputs, ready) {},
+  onChange = function (type: any, settings: any, inputs: any, ready: any) {},
   onRefresh = function () {},
-}) {
+}: any) {
   config = S.func.initConfig(config);
   settings = initSettings(settings, config);
   skills = S.func.initSkills(skills);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     newSettings = newSettings || settings;
 
     onChange(
@@ -41,7 +41,7 @@ function Source({
     );
   };
 
-  const update = (protocol, what) => (event) => {
+  const update = (protocol: any, what: any) => (event: any) => {
     const value = event.target.value;
     const newSettings = settings;
 
@@ -57,7 +57,7 @@ function Source({
   };
 
   React.useEffect(() => {
-    handleChange();
+    handleChange(settings);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -124,7 +124,7 @@ function Source({
   );
 }
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: '#FFF' }} {...props} />;
 }
 

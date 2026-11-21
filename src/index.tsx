@@ -15,10 +15,10 @@ if (window.location.pathname.endsWith('/ui/')) {
 
 const urlParams = new URLSearchParams(window.location.search.substring(1));
 if (urlParams.has('address') === true) {
-  address = urlParams.get('address');
+  address = urlParams.get('address') ?? address;
 }
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')!).render(
   <StyledEngineProvider injectFirst>
     <ThemeProvider theme={theme}>
       <CssBaseline />

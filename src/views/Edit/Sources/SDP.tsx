@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const initSettings = (initialSettings) => {
+const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -42,11 +42,11 @@ const initSettings = (initialSettings) => {
   return settings;
 };
 
-const createInputs = (settings) => {
+const createInputs = (settings: any) => {
   const address = '{diskfs}' + settings.address;
   const input = {
     address: address,
-    options: [],
+    options: [] as string[],
   };
 
   input.options.push('-protocol_whitelist', 'file,udp,rtp');
@@ -59,24 +59,24 @@ const createInputs = (settings) => {
 function Source({
   knownDevices = [],
   settings = {},
-  onChange = function (settings) {},
-  onProbe = function (settings, inputs) {},
+  onChange = function (settings: any) {},
+  onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
-  onStore = function (name, data) {
+  onStore = function (name: any, data: any) {
     return '';
   },
-}) {
+}: any) {
   const classes = useStyles();
   settings = initSettings(settings);
 
   const [$saving, setSaving] = React.useState(false);
-  const [$error, setError] = React.useState({
+  const [$error, setError] = React.useState<Record<string, any>>({
     open: false,
     title: '',
     message: '',
   });
 
-  const handleFileUpload = async (data, extension, mimetype) => {
+  const handleFileUpload = async (data: any, extension: any, mimetype: any) => {
     const path = await onStore('input.sdp', data);
 
     onChange({
@@ -92,7 +92,7 @@ function Source({
     setSaving(true);
   };
 
-  const handleUploadError = (title) => (err) => {
+  const handleUploadError = (title: any) => (err: any) => {
     let message = null;
 
     switch (err.type) {
@@ -130,7 +130,7 @@ function Source({
     showUploadError(title, message);
   };
 
-  const showUploadError = (title, message) => {
+  const showUploadError = (title: any, message: any) => {
     setError({
       ...$error,
       open: true,
@@ -213,7 +213,7 @@ function Source({
   );
 }
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: '#FFF' }} {...props} />;
 }
 

@@ -8,7 +8,7 @@ import BoxTextarea from '../../../../misc/BoxTextarea';
 import Textarea from '../../../../misc/Textarea';
 import * as S from '../../Sources/Network';
 
-const initSettings = (initialSettings, config) => {
+const initSettings = (initialSettings: any, config: any) => {
   const settings = {
     ...S.func.initSettings(initialSettings, config),
     mode: 'push',
@@ -24,14 +24,14 @@ function Source({
   knownDevices = [],
   config = null,
   skills = null,
-  onChange = function (type, settings, inputs, ready) {},
+  onChange = function (type: any, settings: any, inputs: any, ready: any) {},
   onRefresh = function () {},
-}) {
+}: any) {
   config = S.func.initConfig(config);
   settings = initSettings(settings, config);
   skills = S.func.initSkills(skills);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     newSettings = newSettings || settings;
 
     const inputs = S.func.createInputs(newSettings, config, skills);
@@ -41,7 +41,7 @@ function Source({
   };
 
   React.useEffect(() => {
-    handleChange();
+    handleChange(settings);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -63,7 +63,7 @@ function Source({
   );
 }
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: '#FFF' }} {...props} />;
 }
 

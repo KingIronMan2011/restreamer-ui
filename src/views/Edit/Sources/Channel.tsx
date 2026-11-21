@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const initSettings = (initialSettings) => {
+const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -30,11 +30,11 @@ const initSettings = (initialSettings) => {
   return settings;
 };
 
-const createInputs = (settings) => {
+const createInputs = (settings: any) => {
   const address = `{fs:mem}/${settings.channelid}.m3u8`;
   const input = {
     address: address,
-    options: [],
+    options: [] as string[],
   };
 
   return [input];
@@ -43,16 +43,16 @@ const createInputs = (settings) => {
 function Source({
   knownDevices = [],
   settings = {},
-  onChange = function (settings) {},
-  onProbe = function (settings, inputs) {},
+  onChange = function (settings: any) {},
+  onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
-}) {
+}: any) {
   const classes = useStyles();
   const { i18n } = useLingui();
   settings = initSettings(settings);
 
-  const handleChange = (what) => (event) => {
-    let data = {};
+  const handleChange = (what: any) => (event: any) => {
+    let data: Record<string, any> = {};
 
     if (['channelid'].includes(what)) {
       data[what] = event.target.value;
@@ -72,7 +72,7 @@ function Source({
     onProbe(settings, createInputs(settings));
   };
 
-  const options = knownDevices.map((device) => {
+  const options = knownDevices.map((device: any) => {
     return {
       value: device.id,
       label: device.name + ' (' + device.id + ')',
@@ -126,7 +126,7 @@ function Source({
   );
 }
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <VideocamIcon style={{ color: '#FFF' }} {...props} />;
 }
 

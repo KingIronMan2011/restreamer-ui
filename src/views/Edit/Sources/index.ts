@@ -14,15 +14,16 @@ import * as VirtualVideo from './VirtualVideo';
 import * as X11grab from './X11grab';
 
 class Registry {
+  services: Map<string, any> = new Map();
   constructor() {
     this.services = new Map();
   }
 
-  Register(service) {
+  Register(service: any) {
     this.services.set(service.id, service);
   }
 
-  Get(id) {
+  Get(id: any) {
     const service = this.services.get(id);
     if (service) {
       return service;

@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const initSettings = (initialSettings) => {
+const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -36,12 +36,12 @@ const initSettings = (initialSettings) => {
   return settings;
 };
 
-const createInputs = (settings) => {
+const createInputs = (settings: any) => {
   let address = `hw:${settings.device}`;
 
   const input = {
     address: address,
-    options: [],
+    options: [] as string[],
   };
 
   input.options.push('-f', 'alsa');
@@ -59,19 +59,19 @@ const createInputs = (settings) => {
 function Source({
   knownDevices = [],
   settings = {},
-  onChange = function (settings) {},
-  onProbe = function (settings, inputs) {},
+  onChange = function (settings: any) {},
+  onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
-  onStore = function (name, data) {
+  onStore = function (name: any, data: any) {
     return '';
   },
-}) {
+}: any) {
   const classes = useStyles();
   const { i18n } = useLingui();
   settings = initSettings(settings);
 
-  const handleChange = (what) => (event) => {
-    let data = {};
+  const handleChange = (what: any) => (event: any) => {
+    let data: Record<string, any> = {};
 
     if (['address', 'device', 'sampling', 'channels', 'delay'].includes(what)) {
       data[what] = event.target.value;
@@ -92,9 +92,9 @@ function Source({
   };
 
   const filteredDevices = knownDevices.filter(
-    (device) => device.media === 'audio',
+    (device: any) => device.media === 'audio',
   );
-  const options = filteredDevices.map((device) => {
+  const options = filteredDevices.map((device: any) => {
     return {
       value: device.id.replace(/^hw:/, ''),
       label: device.name,
@@ -176,7 +176,7 @@ function Source({
   );
 }
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon {...props} />;
 }
 

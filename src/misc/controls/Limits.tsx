@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     cpu_usage: 0,
     memory_mbytes: 0,
@@ -17,8 +17,8 @@ function init(settings) {
 
 export default function Control({
   settings = {},
-  onChange = function (settings, automatic) {},
-}) {
+  onChange = function (settings: any, automatic: any) {},
+}: any) {
   settings = init(settings);
 
   // Set the defaults
@@ -27,7 +27,7 @@ export default function Control({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     settings[what] = value;

@@ -15,7 +15,6 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import makeStyles from '@mui/styles/makeStyles';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -49,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Add({ restreamer = null }) {
+export default function Add({ restreamer }: any) {
   const theme = useTheme();
   const breakpointUpSm = useMediaQuery(theme.breakpoints.up('sm'));
   const classes = useStyles();
@@ -61,11 +60,13 @@ export default function Add({ restreamer = null }) {
   const [$service, setService] = React.useState('');
   const [$settings, setSettings] = React.useState(M.initEgressMetadata({}));
   const [$sources, setSources] = React.useState<Record<string, any>[]>([]);
-  const [$localSources, setLocalSources] = React.useState<Record<string, any>[]>([]);
+  const [$localSources, setLocalSources] = React.useState<
+    Record<string, any>[]
+  >([]);
   const [$filter, setFilter] = React.useState('all');
   const [$tab, setTab] = React.useState('general');
-  const [$skills, setSkills] = React.useState(null);
-  const [$metadata, setMetadata] = React.useState({
+  const [$skills, setSkills] = React.useState<Record<string, any> | null>(null);
+  const [$metadata, setMetadata] = React.useState<Record<string, any>>({
     name: '',
     description: '',
     license: '',
@@ -104,7 +105,7 @@ export default function Add({ restreamer = null }) {
       license: ingest.license,
     });
 
-    const localSources = [];
+    const localSources: any[] = [];
 
     localSources.push('hls+' + ingest.control.hls.storage);
 
@@ -123,7 +124,7 @@ export default function Add({ restreamer = null }) {
     setReady(true);
   };
 
-  const handleFilterChange = (event, value) => {
+  const handleFilterChange = (event: any, value: any) => {
     if (!value) {
       return;
     }
@@ -131,7 +132,7 @@ export default function Add({ restreamer = null }) {
     setFilter(value);
   };
 
-  const handleServiceSelect = (service) => () => {
+  const handleServiceSelect = (service: any) => () => {
     if (service.length !== 0) {
       const s = Services.Get(service);
       if (s === null) {
@@ -145,14 +146,14 @@ export default function Add({ restreamer = null }) {
         profiles[0].video,
         'video',
         $sources[0].streams,
-        serviceSkills.codecs.video,
+        serviceSkills!.codecs.video,
         $skills,
       );
       profiles[0].audio = helper.preselectProfile(
         profiles[0].audio,
         'audio',
         $sources[0].streams,
-        serviceSkills.codecs.audio,
+        serviceSkills!.codecs.audio,
         $skills,
       );
 
@@ -175,7 +176,7 @@ export default function Add({ restreamer = null }) {
     setService(service);
   };
 
-  const handleServiceChange = (outputs, settings) => {
+  const handleServiceChange = (outputs: any, settings: any) => {
     if (!Array.isArray(outputs)) {
       outputs = [outputs];
     }
@@ -187,7 +188,7 @@ export default function Add({ restreamer = null }) {
     });
   };
 
-  const handleProcessing = (type) => (encoder, decoder) => {
+  const handleProcessing = (type: any) => (encoder: any, decoder: any) => {
     const profiles = $settings.profiles;
 
     profiles[0][type].encoder = encoder;
@@ -221,7 +222,7 @@ export default function Add({ restreamer = null }) {
     });
   };
 
-  const handleProcessingFilter = (type) => (filter) => {
+  const handleProcessingFilter = (type: any) => (filter: any) => {
     const profiles = $settings.profiles;
 
     profiles[0][type].filter = filter;
@@ -287,7 +288,7 @@ export default function Add({ restreamer = null }) {
     navigate(`/${_channelid}/`);
   };
 
-  const handleServiceName = (event) => {
+  const handleServiceName = (event: any) => {
     const name = event.target.value;
 
     setSettings({
@@ -296,7 +297,7 @@ export default function Add({ restreamer = null }) {
     });
   };
 
-  const handleControlChange = (what) => (control) => {
+  const handleControlChange = (what: any) => (control: any) => {
     setSettings({
       ...$settings,
       control: {
@@ -310,7 +311,7 @@ export default function Add({ restreamer = null }) {
     navigate(`/${_channelid}`);
   };
 
-  const handleChangeTab = (event, value) => {
+  const handleChangeTab = (event: any, value: any) => {
     setTab(value);
   };
 
@@ -328,12 +329,12 @@ export default function Add({ restreamer = null }) {
     return null;
   }
 
-  let serviceList = [];
+  let serviceList: any[] = [];
 
   let ServiceControl = null;
   let serviceSkills = null;
 
-  let service = {};
+  let service: Record<string, any> = {};
 
   if ($service === '') {
     for (let s of Services.List()) {
@@ -583,7 +584,7 @@ export default function Add({ restreamer = null }) {
                         type="video"
                         streams={$sources[0].streams}
                         profile={$settings.profiles[0].video}
-                        codecs={serviceSkills.codecs.video}
+                        codecs={serviceSkills!.codecs.video}
                         skills={$skills}
                         onChange={handleProcessing('video')}
                       />
@@ -593,7 +594,7 @@ export default function Add({ restreamer = null }) {
                         <FilterSelect
                           type="video"
                           profile={$settings.profiles[0].video}
-                          availableFilters={$skills.filter}
+                          availableFilters={$skills!.filter}
                           onChange={handleProcessingFilter('video')}
                         />
                       </Grid>
@@ -608,7 +609,7 @@ export default function Add({ restreamer = null }) {
                         type="audio"
                         streams={$sources[0].streams}
                         profile={$settings.profiles[0].audio}
-                        codecs={serviceSkills.codecs.audio}
+                        codecs={serviceSkills!.codecs.audio}
                         skills={$skills}
                         onChange={handleProcessing('audio')}
                       />
@@ -618,7 +619,7 @@ export default function Add({ restreamer = null }) {
                         <FilterSelect
                           type="audio"
                           profile={$settings.profiles[0].audio}
-                          availableFilters={$skills.filter}
+                          availableFilters={$skills!.filter}
                           onChange={handleProcessingFilter('audio')}
                         />
                       </Grid>
@@ -666,7 +667,3 @@ export default function Add({ restreamer = null }) {
     </React.Fragment>
   );
 }
-
-Add.propTypes = {
-  restreamer: PropTypes.object.isRequired,
-};

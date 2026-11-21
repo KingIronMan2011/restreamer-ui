@@ -6,15 +6,16 @@ import * as Raspicam from './Raspicam';
 import * as V4L from './V4L';
 
 class Registry {
+  services: Map<string, any> = new Map();
   constructor() {
     this.services = new Map();
   }
 
-  Register(service) {
+  Register(service: any) {
     this.services.set(service.id, service);
   }
 
-  Get(id) {
+  Get(id: any) {
     const service = this.services.get(id);
     if (service) {
       return service;

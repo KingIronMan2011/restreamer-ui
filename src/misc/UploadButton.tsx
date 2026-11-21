@@ -7,15 +7,15 @@ export default function UploadButton({
   acceptTypes = [],
   onStart = function () {},
   onError = function () {},
-  onUpload = function (data, extension) {},
+  onUpload = function (data: any, extension: any) {},
   variant = 'outlined',
   color = 'primary',
   disabled = false,
-}) {
-  const accept = acceptTypes.map((t) => t.mimetype);
+}: any) {
+  const accept = acceptTypes.map((t: any) => t.mimetype);
 
-  const handleUpload = (event) => {
-    const handler = (event) => {
+  const handleUpload = (event: any) => {
+    const handler = (event: any) => {
       const files = event.target.files;
 
       if (files.length === 0) {

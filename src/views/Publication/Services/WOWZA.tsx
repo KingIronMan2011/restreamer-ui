@@ -54,11 +54,11 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return <img src={Logo} alt="wowza.com Logo" {...props} />;
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     protocol: 'rtmp://',
     rtsp_over_udp: false,
@@ -78,11 +78,11 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
-  onChange = function (output, settings) {},
-}) {
+  onChange = function (output: any, settings: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (['rtsp_over_udp'].includes(what)) {
@@ -95,8 +95,8 @@ function Service({
     onChange([output], settings);
   };
 
-  const createOutput = (settings) => {
-    const options = [];
+  const createOutput = (settings: any) => {
+    const options: any[] = [];
 
     if (settings.protocol === 'rtsp') {
       if (settings.rtsp_over_udp) {

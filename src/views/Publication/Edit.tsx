@@ -11,7 +11,6 @@ import Tabs from '@mui/material/Tabs';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -38,18 +37,18 @@ import Process from './Process';
 import Services from './Services';
 import TabContent from './TabContent';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   gridContainer: {
     marginTop: '0.5em',
     marginBottom: '1em',
   },
   link: {
     marginLeft: 10,
-    wordWrap: 'anywhere',
+    overflowWrap: 'anywhere',
   },
 }));
 
-export default function Edit({ restreamer = null }) {
+export default function Edit({ restreamer }: any) {
   const classes = useStyles();
   const { i18n } = useLingui();
   const {
@@ -63,32 +62,38 @@ export default function Edit({ restreamer = null }) {
   const [$ready, setReady] = React.useState(false);
   const [$settings, setSettings] = React.useState(M.getDefaultEgressMetadata());
   const [$sources, setSources] = React.useState<Record<string, any>[]>([]);
-  const [$localSources, setLocalSources] = React.useState<Record<string, any>[]>([]);
+  const [$localSources, setLocalSources] = React.useState<
+    Record<string, any>[]
+  >([]);
   const [$tab, setTab] = React.useState('general');
   const [$progress, setProgress] = React.useState<Record<string, any>>({});
-  const [$processDetails, setProcessDetails] = React.useState({
+  const [$processDetails, setProcessDetails] = React.useState<
+    Record<string, any>
+  >({
     open: false,
     data: {
       prelude: [],
       log: [],
     },
   });
-  const processLogTimer = React.useRef();
-  const [$processDebug, setProcessDebug] = React.useState({
+  const processLogTimer = React.useRef<
+    ReturnType<typeof setInterval> | undefined
+  >(undefined);
+  const [$processDebug, setProcessDebug] = React.useState<Record<string, any>>({
     open: false,
     data: '',
   });
   const [$unsavedChanges, setUnsavedChanges] = React.useState(false);
-  const [$skills, setSkills] = React.useState(null);
-  const [$metadata, setMetadata] = React.useState({
+  const [$skills, setSkills] = React.useState<Record<string, any> | null>(null);
+  const [$metadata, setMetadata] = React.useState<Record<string, any>>({
     name: '',
     description: '',
     license: '',
   });
   const [$deleteDialog, setDeleteDialog] = React.useState(false);
   const [$saving, setSaving] = React.useState(false);
-  const [$service, setService] = React.useState(null);
-  const [$serviceSkills, setServiceSkills] = React.useState(null);
+  const [$service, setService] = React.useState<any>(null);
+  const [$serviceSkills, setServiceSkills] = React.useState<any>(null);
   const [$invalid, setInvalid] = React.useState('');
 
   useInterval(async () => {
@@ -108,7 +113,7 @@ export default function Edit({ restreamer = null }) {
     }
   }, [navigate, $invalid]);
 
-  const update = async (isFirst) => {
+  const update = async (isFirst: any) => {
     const channelid = restreamer.SelectChannel(_channelid);
     if (channelid === '' || channelid !== _channelid) {
       setInvalid('/');
@@ -156,7 +161,7 @@ export default function Edit({ restreamer = null }) {
         license: ingest.license,
       });
 
-      const localSources = [];
+      const localSources: any[] = [];
 
       localSources.push('hls+' + ingest.control.hls.storage);
 
@@ -180,14 +185,14 @@ export default function Edit({ restreamer = null }) {
         profiles[0].video,
         'video',
         ingest.streams,
-        serviceSkills.codecs.video,
+        serviceSkills!.codecs.video,
         skills,
       );
       profiles[0].audio = helper.preselectProfile(
         profiles[0].audio,
         'audio',
         ingest.streams,
-        serviceSkills.codecs.audio,
+        serviceSkills!.codecs.audio,
         skills,
       );
 
@@ -200,7 +205,7 @@ export default function Edit({ restreamer = null }) {
     }
   };
 
-  const handleServiceAction = async (action) => {
+  const handleServiceAction = async (action: any) => {
     let state = 'disconnected';
 
     if (action === 'connect') {
@@ -221,7 +226,7 @@ export default function Edit({ restreamer = null }) {
     });
   };
 
-  const handleServiceChange = (outputs, settings) => {
+  const handleServiceChange = (outputs: any, settings: any) => {
     if (!Array.isArray(outputs)) {
       outputs = [outputs];
     }
@@ -235,38 +240,39 @@ export default function Edit({ restreamer = null }) {
     setUnsavedChanges(true);
   };
 
-  const handleEncoding = (type) => (encoder, decoder, automatic) => {
-    const profiles = $settings.profiles;
+  const handleEncoding =
+    (type: any) => (encoder: any, decoder: any, automatic: any) => {
+      const profiles = $settings.profiles;
 
-    profiles[0][type].encoder = encoder;
-    profiles[0][type].decoder = decoder;
+      profiles[0][type].encoder = encoder;
+      profiles[0][type].decoder = decoder;
 
-    const streams = M.createOutputStreams($sources, profiles, false);
+      const streams = M.createOutputStreams($sources, profiles, false);
 
-    let outputs = $settings.outputs;
+      let outputs = $settings.outputs;
 
-    if ('createOutputs' in $service) {
-      outputs = $service.createOutputs(
-        $settings.settings,
-        $serviceSkills,
-        $metadata,
-        streams,
-      );
-    }
+      if ('createOutputs' in $service) {
+        outputs = $service.createOutputs(
+          $settings.settings,
+          $serviceSkills,
+          $metadata,
+          streams,
+        );
+      }
 
-    setSettings({
-      ...$settings,
-      profiles: profiles,
-      streams: streams,
-      outputs: outputs,
-    });
+      setSettings({
+        ...$settings,
+        profiles: profiles,
+        streams: streams,
+        outputs: outputs,
+      });
 
-    if (!automatic) {
-      setUnsavedChanges(true);
-    }
-  };
+      if (!automatic) {
+        setUnsavedChanges(true);
+      }
+    };
 
-  const handleFilter = (type) => (filter, automatic) => {
+  const handleFilter = (type: any) => (filter: any, automatic: any) => {
     const profiles = $settings.profiles;
 
     profiles[0][type].filter = filter;
@@ -333,7 +339,7 @@ export default function Edit({ restreamer = null }) {
     setUnsavedChanges(false);
   };
 
-  const handleServiceName = (event) => {
+  const handleServiceName = (event: any) => {
     const name = event.target.value;
 
     setSettings({
@@ -344,7 +350,7 @@ export default function Edit({ restreamer = null }) {
     setUnsavedChanges(true);
   };
 
-  const handleControlChange = (what) => (control, automatic) => {
+  const handleControlChange = (what: any) => (control: any, automatic: any) => {
     setSettings({
       ...$settings,
       control: {
@@ -393,11 +399,11 @@ export default function Edit({ restreamer = null }) {
     navigate(`/${_channelid}/`);
   };
 
-  const handleChangeTab = (event, value) => {
+  const handleChangeTab = (event: any, value: any) => {
     setTab(value);
   };
 
-  const handleHelp = (topic) => () => {
+  const handleHelp = (topic?: any) => () => {
     if (!topic) {
       H('publication-' + $tab);
       return;
@@ -406,7 +412,7 @@ export default function Edit({ restreamer = null }) {
     H(topic);
   };
 
-  const handleProcessDetails = async (event) => {
+  const handleProcessDetails = async (event: any) => {
     event.preventDefault();
 
     const open = !$processDetails.open;
@@ -446,7 +452,7 @@ export default function Edit({ restreamer = null }) {
     }
   };
 
-  const handleProcessDebug = async (event) => {
+  const handleProcessDebug = async (event: any) => {
     event.preventDefault();
 
     const show = !$processDebug.open;
@@ -656,7 +662,7 @@ export default function Edit({ restreamer = null }) {
                     type="video"
                     streams={$sources[0].streams}
                     profile={$settings.profiles[0].video}
-                    codecs={$serviceSkills.codecs.video}
+                    codecs={$serviceSkills!.codecs.video}
                     skills={$skills}
                     onChange={handleEncoding('video')}
                   />
@@ -666,7 +672,7 @@ export default function Edit({ restreamer = null }) {
                     <FilterSelect
                       type="video"
                       profile={$settings.profiles[0].video}
-                      availableFilters={$skills.filter}
+                      availableFilters={$skills!.filter}
                       onChange={handleFilter('video')}
                     />
                   </Grid>
@@ -681,7 +687,7 @@ export default function Edit({ restreamer = null }) {
                     type="audio"
                     streams={$sources[0].streams}
                     profile={$settings.profiles[0].audio}
-                    codecs={$serviceSkills.codecs.audio}
+                    codecs={$serviceSkills!.codecs.audio}
                     skills={$skills}
                     onChange={handleEncoding('audio')}
                   />
@@ -691,7 +697,7 @@ export default function Edit({ restreamer = null }) {
                     <FilterSelect
                       type="audio"
                       profile={$settings.profiles[0].audio}
-                      availableFilters={$skills.filter}
+                      availableFilters={$skills!.filter}
                       onChange={handleFilter('audio')}
                     />
                   </Grid>
@@ -779,7 +785,3 @@ export default function Edit({ restreamer = null }) {
     </React.Fragment>
   );
 }
-
-Edit.propTypes = {
-  restreamer: PropTypes.object.isRequired,
-};

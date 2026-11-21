@@ -13,9 +13,9 @@ export default function VideoJS({
   type = 'videojs-internal',
   options = {},
   onReady = null,
-}) {
-  const videoRef = React.useRef(null);
-  const playerRef = React.useRef(null);
+}: any) {
+  const videoRef = React.useRef<HTMLVideoElement>(null!);
+  const playerRef = React.useRef<any>(null!);
 
   const retryVideo = () => {
     const player = playerRef.current;

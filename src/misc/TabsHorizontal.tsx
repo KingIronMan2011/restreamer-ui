@@ -27,9 +27,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Component({
   value = '',
-  children = null,
-  onChange = function (event) {},
-}) {
+  children = null as import('react').ReactNode,
+  onChange = function (event: any) {},
+}: any) {
   const classes = useStyles();
 
   return (

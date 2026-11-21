@@ -43,15 +43,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Component = React.forwardRef(
+const Component = React.forwardRef<any, any>(
   (
     {
       title = '',
-      onClose = null,
-      onHelp = null,
+      onClose = null as (() => void) | null,
+      onHelp = null as (() => void) | null,
       className = null,
       style = null,
-      children = null,
+      children = null as import('react').ReactNode,
     },
     ref,
   ) => {

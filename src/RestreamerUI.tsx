@@ -38,10 +38,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RestreamerUI({ address = '' }) {
+export default function RestreamerUI({ address = '' }: any) {
   const classes = useStyles();
 
-  const [$state, setState] = React.useState({
+  const [$state, setState] = React.useState<Record<string, any>>({
     initialized: false,
     valid: false,
     connected: false,
@@ -52,24 +52,24 @@ export default function RestreamerUI({ address = '' }) {
     service: false,
   });
   const [$ready, setReady] = React.useState(false);
-  const [$snack, setSnack] = React.useState({
+  const [$snack, setSnack] = React.useState<Record<string, any>>({
     open: false,
     message: '',
     severity: 'info',
   });
-  const [$channelList, setChannelList] = React.useState({
+  const [$channelList, setChannelList] = React.useState<Record<string, any>>({
     open: false,
     channelid: '',
     channels: [],
   });
   const [$metadata, setMetadata] = React.useState<Record<string, any>>({});
-  const [$changelog, setChangelog] = React.useState({
+  const [$changelog, setChangelog] = React.useState<Record<string, any>>({
     open: false,
     current: '',
     previous: '',
   });
 
-  const restreamer = React.useRef(null);
+  const restreamer = React.useRef<Restreamer>(null!);
 
   React.useEffect(() => {
     (async () => {
@@ -84,11 +84,11 @@ export default function RestreamerUI({ address = '' }) {
   useInterval(() => {
     setState({
       ...$state,
-      updates: restreamer.current.HasUpdates(),
+      updates: restreamer.current!.HasUpdates(),
     });
   }, 1000 * 60);
 
-  const notify = (severity, type, message) => {
+  const notify = (severity: any, type: any, message: any) => {
     setSnack({
       ...$snack,
       open: true,
@@ -120,7 +120,7 @@ export default function RestreamerUI({ address = '' }) {
 
   const handleMount = async () => {
     restreamer.current = new Restreamer(address);
-    restreamer.current.AddListener((event) => {
+    restreamer.current!.AddListener((event: any) => {
       notify(event.severity, event.type, event.message);
     });
 
@@ -128,7 +128,7 @@ export default function RestreamerUI({ address = '' }) {
     if (auth0.init() === true) {
       if (await auth0.isAuthenticated()) {
         const token = await auth0.getToken();
-        await restreamer.current.LoginWithToken(token);
+        await restreamer.current!.LoginWithToken(token);
       } else {
         const result = await auth0.handleRedirectCallback();
         if (result.initialized === true) {
@@ -139,7 +139,7 @@ export default function RestreamerUI({ address = '' }) {
       }
     }
 
-    const valid = await restreamer.current.Validate();
+    const valid = await restreamer.current!.Validate();
 
     await checkChangelog();
 
@@ -147,14 +147,14 @@ export default function RestreamerUI({ address = '' }) {
       ...$state,
       initialized: true,
       valid: valid,
-      connected: restreamer.current.IsConnected(),
-      compatibility: restreamer.current.Compatibility(),
-      ingest: restreamer.current.HasIngest(),
+      connected: restreamer.current!.IsConnected(),
+      compatibility: restreamer.current!.Compatibility(),
+      ingest: restreamer.current!.HasIngest(),
       password:
-        restreamer.current.Auths().length === 0 &&
-        !restreamer.current.ConfigOverrides('api.auth.enable'),
-      updates: restreamer.current.HasUpdates(),
-      service: restreamer.current.HasService(),
+        restreamer.current!.Auths().length === 0 &&
+        !restreamer.current!.ConfigOverrides('api.auth.enable'),
+      updates: restreamer.current!.HasUpdates(),
+      service: restreamer.current!.HasService(),
     });
 
     setReady(true);
@@ -163,9 +163,9 @@ export default function RestreamerUI({ address = '' }) {
   const checkChangelog = async () => {
     let showChangelog = true;
 
-    if (restreamer.current.IsConnected() === true) {
-      let metadata = await restreamer.current.GetMetadata(false);
-      const channels = await restreamer.current.ListChannels();
+    if (restreamer.current!.IsConnected() === true) {
+      let metadata = await restreamer.current!.GetMetadata(false);
+      const channels = await restreamer.current!.ListChannels();
       let current = Version.replace('restreamer-', '');
       let previous = '';
 
@@ -175,13 +175,13 @@ export default function RestreamerUI({ address = '' }) {
 
       if (metadata === null) {
         if (channels.length === 1) {
-          const progress = await restreamer.current.GetIngestProgress(
+          const progress = await restreamer.current!.GetIngestProgress(
             channels[0].channelid,
           );
           if (progress.valid === false) {
             // assume fresh installation
             metadata = M.initMetadata(metadata);
-            await restreamer.current.SetMetadata({
+            await restreamer.current!.SetMetadata({
               ...metadata,
               bundle: {
                 ...metadata.bundle,
@@ -230,7 +230,7 @@ export default function RestreamerUI({ address = '' }) {
   };
 
   const handleCloseChangelog = async () => {
-    await restreamer.current.SetMetadata({
+    await restreamer.current!.SetMetadata({
       ...$metadata,
       bundle: {
         ...$metadata.bundle,
@@ -244,16 +244,16 @@ export default function RestreamerUI({ address = '' }) {
     });
   };
 
-  const handleLogin = async (username, password) => {
-    const connected = await restreamer.current.Login(username, password);
+  const handleLogin = async (username: any, password: any) => {
+    const connected = await restreamer.current!.Login(username, password);
 
     await checkChangelog();
 
     setState({
       ...$state,
       connected: connected,
-      compatibility: restreamer.current.Compatibility(),
-      ingest: restreamer.current.HasIngest(),
+      compatibility: restreamer.current!.Compatibility(),
+      ingest: restreamer.current!.HasIngest(),
     });
 
     return connected;
@@ -261,12 +261,12 @@ export default function RestreamerUI({ address = '' }) {
 
   const handleAuth0 = async () => {
     const token = await auth0.getToken();
-    const connected = await restreamer.current.LoginWithToken(token);
+    const connected = await restreamer.current!.LoginWithToken(token);
 
     setState({
       ...$state,
       connected: connected,
-      compatibility: restreamer.current.Compatibility(),
+      compatibility: restreamer.current!.Compatibility(),
     });
   };
 
@@ -277,33 +277,33 @@ export default function RestreamerUI({ address = '' }) {
       connected: false,
     });
 
-    restreamer.current.Logout();
+    restreamer.current!.Logout();
 
     if (await auth0.isAuthenticated()) {
       await auth0.logout();
     }
 
-    restreamer.current.Reset();
+    restreamer.current!.Reset();
 
-    const valid = await restreamer.current.Validate();
+    const valid = await restreamer.current!.Validate();
 
     setState({
       ...$state,
       initialized: true,
       valid: valid,
-      connected: restreamer.current.IsConnected(),
-      compatibility: restreamer.current.Compatibility(),
-      ingest: restreamer.current.HasIngest(),
+      connected: restreamer.current!.IsConnected(),
+      compatibility: restreamer.current!.Compatibility(),
+      ingest: restreamer.current!.HasIngest(),
     });
   };
 
   const handlePasswordReset = async (
-    username,
-    loginUsername,
-    password,
-    loginPassword,
+    username: any,
+    loginUsername: any,
+    password: any,
+    loginPassword: any,
   ) => {
-    const data = {
+    const data: Record<string, any> = {
       api: {
         auth: {
           enable: true,
@@ -320,7 +320,7 @@ export default function RestreamerUI({ address = '' }) {
       data.api.auth.password = password;
     }
 
-    const [, err] = await restreamer.current.ConfigSet(data);
+    const [, err] = await restreamer.current!.ConfigSet(data);
     if (err !== null) {
       notify(
         'error',
@@ -330,27 +330,27 @@ export default function RestreamerUI({ address = '' }) {
       return 'ERROR';
     }
 
-    const res = await restreamer.current.ConfigReload();
+    const res = await restreamer.current!.ConfigReload();
     if (res === false) {
       notify('error', 'restart', `Restarting the application failed.`);
       return 'ERROR';
     }
 
-    restreamer.current.IgnoreAPIErrors(true);
+    restreamer.current!.IgnoreAPIErrors(true);
 
-    const waitFor = (ms) => {
+    const waitFor = (ms: any) => {
       return new Promise((resolve) => {
         setTimeout(resolve, ms);
       });
     };
 
     let restarted = false;
-    const key = restreamer.current.CreatedAt().toISOString();
+    const key = restreamer.current!.CreatedAt().toISOString();
 
     for (let retries = 0; retries <= 60; retries++) {
       await waitFor(1000);
 
-      const about = await restreamer.current.About();
+      const about = await restreamer.current!.About();
       if (about === null) {
         // Restarted API not yet available
         continue;
@@ -367,8 +367,8 @@ export default function RestreamerUI({ address = '' }) {
 
     if (restarted === true) {
       // After the restart the API requires a login and this means the restart happened
-      await restreamer.current.Validate();
-      await restreamer.current.Login(loginUsername, loginPassword);
+      await restreamer.current!.Validate();
+      await restreamer.current!.Login(loginUsername, loginPassword);
 
       window.location.reload();
     } else {
@@ -387,8 +387,8 @@ export default function RestreamerUI({ address = '' }) {
   };
 
   const handleChannelList = () => {
-    const channelid = restreamer.current.GetCurrentChannelID();
-    const channels = restreamer.current.ListChannels();
+    const channelid = restreamer.current!.GetCurrentChannelID();
+    const channels = restreamer.current!.ListChannels();
 
     setChannelList({
       ...$channelList,
@@ -398,8 +398,8 @@ export default function RestreamerUI({ address = '' }) {
     });
   };
 
-  const handleSelectChannel = (channelid) => {
-    restreamer.current.SelectChannel(channelid);
+  const handleSelectChannel = (channelid: any) => {
+    restreamer.current!.SelectChannel(channelid);
     handleChannelList();
 
     document.location.hash = `#/${channelid}`;
@@ -412,9 +412,9 @@ export default function RestreamerUI({ address = '' }) {
     });
   };
 
-  const handleAddChannel = (name) => {
-    const channelid = restreamer.current.CreateChannel(name);
-    restreamer.current.SelectChannel(channelid);
+  const handleAddChannel = (name: any) => {
+    const channelid = restreamer.current!.CreateChannel(name);
+    restreamer.current!.SelectChannel(channelid);
 
     setChannelList({
       ...$channelList,
@@ -424,12 +424,12 @@ export default function RestreamerUI({ address = '' }) {
     document.location.hash = `#/${channelid}/edit/wizard`;
   };
 
-  const handleStateChannel = async (channelids) => {
-    const processes = await restreamer.current.ListProcesses(
+  const handleStateChannel = async (channelids: any) => {
+    const processes = await restreamer.current!.ListProcesses(
       ['state'],
       channelids,
     );
-    const states = {};
+    const states: Record<string, any> = {};
 
     for (let p of processes) {
       states[p.id] = p.progress.state;
@@ -446,7 +446,7 @@ export default function RestreamerUI({ address = '' }) {
   };
 
   const handleResources = async () => {
-    return await restreamer.current.Resources();
+    return await restreamer.current!.Resources();
   };
 
   if ($ready === false) {
@@ -457,32 +457,31 @@ export default function RestreamerUI({ address = '' }) {
     );
   }
 
-  let version = {};
+  let version: Record<string, any> = {};
   let app = '';
   let name = '';
   if ($state.initialized === true) {
-    version = restreamer.current.Version();
-    app = restreamer.current.App();
-    name = restreamer.current.Name();
+    version = restreamer.current!.Version();
+    app = restreamer.current!.App();
+    name = restreamer.current!.Name();
   }
 
-  let getResources = () => {
-    return null;
-  };
+  let getResources: () => Promise<Record<string, any> | null> = async () =>
+    null;
 
   let view = null;
   if ($state.initialized === false) {
     view = <Views.Initializing />;
   } else {
     if ($state.valid === false) {
-      view = <Views.Invalid address={restreamer.current.Address()} />;
+      view = <Views.Invalid address={restreamer.current!.Address()} />;
     } else if ($state.connected === false) {
       view = (
         <Views.Login
           onLogin={handleLogin}
-          auths={restreamer.current.Auths()}
+          auths={restreamer.current!.Auths()}
           hasService={$state.service}
-          address={restreamer.current.Address()}
+          address={restreamer.current!.Address()}
           onAuth0={handleAuth0}
         />
       );
@@ -508,12 +507,12 @@ export default function RestreamerUI({ address = '' }) {
       view = (
         <Views.Password
           onReset={handlePasswordReset}
-          username={restreamer.current.ConfigValue('api.auth.username')}
-          usernameOverride={restreamer.current.ConfigOverrides(
+          username={restreamer.current!.ConfigValue('api.auth.username')}
+          usernameOverride={restreamer.current!.ConfigOverrides(
             'api.auth.username',
           )}
-          password={restreamer.current.ConfigValue('api.auth.password')}
-          passwordOverride={restreamer.current.ConfigOverrides(
+          password={restreamer.current!.ConfigValue('api.auth.password')}
+          passwordOverride={restreamer.current!.ConfigOverrides(
             'api.auth.password',
           )}
         />

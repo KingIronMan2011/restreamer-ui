@@ -2,7 +2,7 @@ import React from 'react';
 
 import Helper from '../../helper';
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     ...initialState,
   };
@@ -10,7 +10,7 @@ function init(initialState) {
   return state;
 }
 
-function createMapping(settings, stream, skills) {
+function createMapping(settings: any, stream: any, skills: any) {
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
@@ -27,13 +27,13 @@ function Coder({
   stream = {},
   settings = {},
   skills = {},
-  onChange = function (settings, mapping) {},
-}) {
+  onChange = function (settings: any, mapping: any) {},
+}: any) {
   settings = init(settings);
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -61,7 +61,7 @@ const codecs = ['mpeg2'];
 const type = 'video';
 const hwaccel = true;
 
-function defaults(stream, skills) {
+function defaults(stream: any, skills: any) {
   const settings = init({});
 
   return {

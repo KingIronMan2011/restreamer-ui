@@ -8,9 +8,9 @@ export default function Component({
   label = '',
   value = '',
   disabled = false,
-  onChange = function (event) {},
-  children = null,
-}) {
+  onChange = function (event: any) {},
+  children = null as import('react').ReactNode,
+}: any) {
   return (
     <FormControl variant={variant} fullWidth>
       <InputLabel>{label}</InputLabel>

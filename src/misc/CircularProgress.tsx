@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 
-export default function Component({ color = 'inherit', value = -1 }) {
+export default function Component({ color = 'inherit', value = -1 }: any) {
   if (value < 0) {
     return <CircularProgress color={color} />;
   }

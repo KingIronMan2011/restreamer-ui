@@ -59,11 +59,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Main({ restreamer = null }) {
+export default function Main({ restreamer }: any) {
   const classes = useStyles();
   const navigate = useNavigate();
   const { channelid: _channelid } = useParams();
-  const [$state, setState] = React.useState({
+  const [$state, setState] = React.useState<Record<string, any>>({
     ready: false,
     valid: false,
     progress: {},
@@ -72,19 +72,23 @@ export default function Main({ restreamer = null }) {
     preview: null,
   });
   const [$metadata, setMetadata] = React.useState(M.getDefaultIngestMetadata());
-  const [$processDetails, setProcessDetails] = React.useState({
+  const [$processDetails, setProcessDetails] = React.useState<
+    Record<string, any>
+  >({
     open: false,
     data: {
       prelude: [],
       log: [],
     },
   });
-  const processLogTimer = React.useRef();
-  const [$processDebug, setProcessDebug] = React.useState({
+  const processLogTimer = React.useRef<
+    ReturnType<typeof setInterval> | undefined
+  >(undefined);
+  const [$processDebug, setProcessDebug] = React.useState<Record<string, any>>({
     open: false,
     data: '',
   });
-  const [$config, setConfig] = React.useState(null);
+  const [$config, setConfig] = React.useState<Record<string, any> | null>(null);
   const [$invalid, setInvalid] = React.useState(false);
 
   useInterval(async () => {
@@ -127,7 +131,7 @@ export default function Main({ restreamer = null }) {
 
     const progress = await restreamer.GetIngestProgress(_channelid);
 
-    const state = {
+    const state: Record<string, any> = {
       ...$state,
       ready: true,
       valid: progress.valid,
@@ -165,12 +169,12 @@ export default function Main({ restreamer = null }) {
     }
 
     if ($metadata.control.rtmp.enable) {
-      if (!$config.source.network.rtmp.enabled) {
+      if (!$config!.source.network.rtmp.enabled) {
         state.state = 'error';
         state.progress.error = 'RTMP server is not enabled, but required.';
       }
     } else if ($metadata.control.srt.enable) {
-      if (!$config.source.network.srt.enabled) {
+      if (!$config!.source.network.srt.enabled) {
         state.state = 'error';
         state.progress.error = 'SRT server is not enabled, but required.';
       }
@@ -217,7 +221,7 @@ export default function Main({ restreamer = null }) {
     await restreamer.StopAllEgresses(_channelid);
   };
 
-  const handleProcessDetails = async (event) => {
+  const handleProcessDetails = async (event: any) => {
     event.preventDefault();
 
     const open = !$processDetails.open;
@@ -257,7 +261,7 @@ export default function Main({ restreamer = null }) {
     }
   };
 
-  const handleProcessDebug = async (event) => {
+  const handleProcessDebug = async (event: any) => {
     event.preventDefault();
 
     let data = '';
@@ -274,7 +278,7 @@ export default function Main({ restreamer = null }) {
     });
   };
 
-  const handleHelp = (topic) => () => {
+  const handleHelp = (topic: any) => () => {
     H(topic);
   };
 
@@ -309,7 +313,7 @@ export default function Main({ restreamer = null }) {
     _channelid,
   );
 
-  let title = <Trans>Main channel</Trans>;
+  let title: React.ReactNode = <Trans>Main channel</Trans>;
   if (channel && channel.name && channel.name.length !== 0) {
     if ($state.progress.video_codec) {
       title = (

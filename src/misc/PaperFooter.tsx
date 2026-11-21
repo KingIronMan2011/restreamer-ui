@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Component = function ({ buttonsLeft = null, buttonsRight = null }) {
+const Component = function ({ buttonsLeft = null, buttonsRight = null }: any) {
   const classes = useStyles();
 
   return (

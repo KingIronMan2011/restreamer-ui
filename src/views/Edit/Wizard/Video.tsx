@@ -19,8 +19,8 @@ export default function Video({
   sourceid = '',
   status = '',
   ready = false,
-  children = null,
-}) {
+  children = null as import('react').ReactNode,
+}: any) {
   return (
     <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader

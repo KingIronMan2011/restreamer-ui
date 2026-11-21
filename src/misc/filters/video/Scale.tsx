@@ -9,7 +9,7 @@ import Select from '../../Select';
 // Scale Filter
 // https://ffmpeg.org/ffmpeg-all.html#scale-1
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     mode: 'none',
     fix: '1280x720',
@@ -21,10 +21,10 @@ function init(initialState) {
   return state;
 }
 
-function createGraph(settings) {
+function createGraph(settings: any) {
   settings = init(settings);
 
-  const mapping = [];
+  const mapping: any[] = [];
 
   if (settings.mode === 'height') {
     mapping.push(`scale=-1:${settings.height}`);
@@ -37,7 +37,7 @@ function createGraph(settings) {
   return mapping.join(',');
 }
 
-function Mode({ value = '', onChange = function (event) {} }) {
+function Mode({ value = '', onChange = function (event: any) {} }: any) {
   return (
     <Select label={<Trans>Scale</Trans>} value={value} onChange={onChange}>
       <MenuItem value="none">
@@ -56,10 +56,13 @@ function Mode({ value = '', onChange = function (event) {} }) {
   );
 }
 
-function Filter({ settings = {}, onChange = function (settings, mapping) {} }) {
+function Filter({
+  settings = {},
+  onChange = function (settings: any, mapping: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -69,7 +72,7 @@ function Filter({ settings = {}, onChange = function (settings, mapping) {} }) {
     onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
       [what]: event.target.value,
@@ -127,7 +130,7 @@ const name = 'Scale';
 const type = 'video';
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   if (settings.mode === 'height') {
     return `${name} (-1:${settings.height})`;
   } else if (settings.mode === 'width') {

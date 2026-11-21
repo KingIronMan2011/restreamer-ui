@@ -46,8 +46,8 @@ export default function Component({
   alignItems = 'center',
   justifyContent = 'center',
   style = null,
-  children = null,
-}) {
+  children = null as import('react').ReactNode,
+}: any) {
   const classes = useStyles();
 
   return (

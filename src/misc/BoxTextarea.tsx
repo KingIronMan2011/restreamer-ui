@@ -11,7 +11,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Component({ style = null, children = null }) {
+export default function Component({
+  style = null,
+  children = null as import('react').ReactNode,
+}: any) {
   const classes = useStyles();
 
   return (

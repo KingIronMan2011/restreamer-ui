@@ -55,13 +55,13 @@ a user clicking around. Example:
     });
 */
 
-const NoRoute = (props) => {
+const NoRoute = (props: any) => {
   return null;
 };
 
 const AllTheProviders =
-  (initialEntries, path) =>
-  ({ children }) => {
+  (initialEntries: any, path: any) =>
+  ({ children }: { children: React.ReactNode }) => {
     if (typeof initialEntries === 'undefined') {
       initialEntries = '/';
     }
@@ -84,8 +84,12 @@ const AllTheProviders =
     );
   };
 
-const customRender = (ui, options, initialEntries, path) =>
-  render(ui, { wrapper: AllTheProviders(initialEntries, path), ...options });
+const customRender = (
+  ui: any,
+  options: any = {},
+  initialEntries = '/',
+  path = '/',
+) => render(ui, { wrapper: AllTheProviders(initialEntries, path), ...options });
 
 // re-export everything
 export * from '@testing-library/react';

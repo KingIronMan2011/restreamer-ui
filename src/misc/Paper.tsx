@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Component = React.forwardRef(
+const Component = React.forwardRef<any, any>(
   (
     {
       xs = 12,
@@ -29,7 +29,7 @@ const Component = React.forwardRef(
       style = null,
       marginBottom = '6em',
       tabIndex = 0,
-      children = null,
+      children = null as import('react').ReactNode,
     },
     ref,
   ) => {
@@ -44,7 +44,7 @@ const Component = React.forwardRef(
       >
         <Grid item xs={xs} sm={sm} md={md} lg={lg}>
           <Paper
-            className={classes[className]}
+            className={classes[className as keyof typeof classes]}
             elevation={elevation}
             ref={ref}
             tabIndex={tabIndex}

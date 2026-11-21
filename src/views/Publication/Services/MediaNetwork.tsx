@@ -34,11 +34,11 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return <img src={Logo} alt="Media Network Logo" {...props} />;
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     key: '',
     ...settings,
@@ -52,11 +52,11 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
-  onChange = function (output, settings) {},
-}) {
+  onChange = function (output: any, settings: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -66,7 +66,7 @@ function Service({
     onChange([output], settings);
   };
 
-  const createOutput = (settings) => {
+  const createOutput = (settings: any) => {
     const output = {
       address: 'rtmp://ingest.mediaserver.express/live/' + settings.key,
       options: ['-f', 'flv'],

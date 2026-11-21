@@ -119,7 +119,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const StyledMenu = styled((props) => (
+const StyledMenu = styled((props: React.ComponentProps<typeof Menu>) => (
   <Menu
     elevation={0}
     anchorOrigin={{
@@ -159,7 +159,7 @@ const StyledMenu = styled((props) => (
   },
 }));
 
-function AboutModal({ open = false, onClose = () => {} }) {
+function AboutModal({ open = false, onClose = () => {} }: any) {
   const classes = useStyles();
 
   return (
@@ -253,13 +253,13 @@ function HeaderMenu({
   showSettings = false,
   hasUpdates = false,
   hasService = false,
-}) {
+}: any) {
   const classes = useStyles();
 
-  const [$anchorEl, setAnchorEl] = React.useState(null);
+  const [$anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
   const [$about, setAbout] = React.useState(false);
 
-  const handleMenuOpen = (event) => {
+  const handleMenuOpen = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -267,7 +267,7 @@ function HeaderMenu({
     setAnchorEl(null);
   };
 
-  const handleLanguageChange = (language) => {
+  const handleLanguageChange = (language: any) => {
     Storage.Set('language', language);
   };
 
@@ -308,8 +308,8 @@ function HeaderMenu({
           )}
           {showPlayersite === true && (
             <MenuItem onClick={onPlayersite}>
-              <ListItemIcon size="large">
-                <WebIcon fontSize="small" size="large" />
+              <ListItemIcon>
+                <WebIcon fontSize="small" />
               </ListItemIcon>
               <Trans>Playersite</Trans>
             </MenuItem>
@@ -429,7 +429,7 @@ export default function Header({
   showSettings = false,
   hasUpdates = false,
   hasService = false,
-}) {
+}: any) {
   const classes = useStyles();
 
   return (

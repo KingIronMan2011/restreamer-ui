@@ -62,13 +62,13 @@ const posterImageTypes = [
   { mimetype: 'image/jpeg', extension: 'jpg', maxSize: 1 * 1024 * 1024 },
 ];
 
-export default function Edit({ restreamer = null }) {
+export default function Edit({ restreamer }: any) {
   const classes = useStyles();
   const navigate = useNavigate();
   const { channelid: _channelid } = useParams();
   const { i18n } = useLingui();
   const address = restreamer.Address();
-  const timeout = React.useRef();
+  const timeout = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const notify = React.useContext(NotifyContext);
   const [$player] = React.useState('videojs-public');
   const [$ready, setReady] = React.useState(false);
@@ -78,7 +78,7 @@ export default function Edit({ restreamer = null }) {
   const [$tab, setTab] = React.useState('embed');
   const [$revision, setRevision] = React.useState(0);
   const [$saving, setSaving] = React.useState(false);
-  const [$error, setError] = React.useState({
+  const [$error, setError] = React.useState<Record<string, any>>({
     open: false,
     title: '',
     message: '',
@@ -124,8 +124,8 @@ export default function Edit({ restreamer = null }) {
   };
 
   const handleChange =
-    (what, section = '') =>
-    (event) => {
+    (what: any, section = '') =>
+    (event: any) => {
       const value = event.target.value;
       const settings = $settings;
 
@@ -163,7 +163,7 @@ export default function Edit({ restreamer = null }) {
       });
     };
 
-  const handleLogoUpload = async (data, extension) => {
+  const handleLogoUpload = async (data: any, extension: any) => {
     const path = await restreamer.UploadLogo(_channelid, data, extension);
 
     handleChange(
@@ -178,7 +178,7 @@ export default function Edit({ restreamer = null }) {
     setSaving(false);
   };
 
-  const handlePosterUpload = async (data, extension) => {
+  const handlePosterUpload = async (data: any, extension: any) => {
     const path = await restreamer.UploadPoster(_channelid, data, extension);
 
     handleChange('poster')({
@@ -194,7 +194,7 @@ export default function Edit({ restreamer = null }) {
     setSaving(true);
   };
 
-  const handleUploadError = (title) => (err) => {
+  const handleUploadError = (title: any) => (err: any) => {
     let message = null;
 
     switch (err.type) {
@@ -232,7 +232,7 @@ export default function Edit({ restreamer = null }) {
     showUploadError(title, message);
   };
 
-  const showUploadError = (title, message) => {
+  const showUploadError = (title: any, message: any) => {
     setError({
       ...$error,
       open: true,
@@ -248,7 +248,7 @@ export default function Edit({ restreamer = null }) {
     });
   };
 
-  const handleLogoReset = (event) => {
+  const handleLogoReset = (event: any) => {
     // For the cleanup of the core, we need to check the following:
     // 1. is the image on the core or external?
     // 2. is the image used somewhere else?
@@ -282,7 +282,7 @@ export default function Edit({ restreamer = null }) {
     });
   };
 
-  const handlePosterReset = (event) => {
+  const handlePosterReset = (event: any) => {
     // For the cleanup of the core, we need to check the following:
     // 1. is the image on the core or external?
     // 2. is the image used somewhere else?
@@ -311,7 +311,7 @@ export default function Edit({ restreamer = null }) {
     notify.Dispatch('success', 'save:player', i18n._(t`Player settings saved`));
   };
 
-  const handleChangeTab = (event, value) => {
+  const handleChangeTab = (event: any, value: any) => {
     setTab(value);
   };
 
@@ -323,7 +323,7 @@ export default function Edit({ restreamer = null }) {
     H('player-' + $tab);
   };
 
-  const prepareUrl = (url) => {
+  const prepareUrl = (url: any) => {
     if (url.length === 0) {
       return '';
     }
@@ -334,7 +334,7 @@ export default function Edit({ restreamer = null }) {
 
     try {
       let u = new URL(url);
-      u.searchParams.set('_rscache', Math.random());
+      u.searchParams.set('_rscache', String(Math.random()));
       return u.href;
     } catch (e) {
       return url + '?' + Math.random();

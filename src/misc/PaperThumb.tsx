@@ -9,7 +9,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Component({ image = '', title = '', height = '0px' }) {
+export default function Component({
+  image = '',
+  title = '',
+  height = '0px',
+}: any) {
   const classes = useStyles();
 
   return (

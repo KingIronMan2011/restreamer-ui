@@ -9,7 +9,7 @@ import * as Coders from '../../misc/coders/Encoders';
 import * as Filters from '../../misc/filters';
 import Sources from './Sources';
 
-export default function Summary({ type = '', sources = [], profile = null }) {
+export default function Summary({ type = '', sources = [], profile }: any) {
   const { i18n } = useLingui();
 
   let source = null;
@@ -26,7 +26,7 @@ export default function Summary({ type = '', sources = [], profile = null }) {
   let name = i18n._(t`No source selected`);
   let address = '';
   let encodingSummary = i18n._(t`None`);
-  let filterSummary = [];
+  let filterSummary: any[] = [];
 
   let showEncoding = false;
 
@@ -53,7 +53,7 @@ export default function Summary({ type = '', sources = [], profile = null }) {
 
     if (profile.encoder.coder !== 'none' && profile.encoder.coder !== 'copy') {
       if (profile.filter.graph.length !== 0) {
-        let filters = null;
+        let filters: any = null;
 
         if (type === 'video') {
           filters = Filters.Video;

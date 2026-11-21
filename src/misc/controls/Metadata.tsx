@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     name: 'Livestream',
     description: 'Live from earth. Powered by datarhei Restreamer.',
@@ -35,8 +35,8 @@ function init(settings) {
 
 export default function Control({
   settings = {},
-  onChange = function (metadata) {},
-}) {
+  onChange = function (metadata: any) {},
+}: any) {
   const classes = useStyles();
   const [$tab, setTab] = React.useState('content');
   settings = init(settings);
@@ -47,7 +47,7 @@ export default function Control({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (what === 'author.name') {
@@ -61,7 +61,7 @@ export default function Control({
     onChange(settings, false);
   };
 
-  const handleChangeTab = (event, value) => {
+  const handleChangeTab = (event: any, value: any) => {
     setTab(value);
   };
 

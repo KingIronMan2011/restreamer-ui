@@ -24,7 +24,7 @@ export default function VideoProfile({
   onEncoderChange = () => {},
   encodersList = [],
   encoder = '',
-}) {
+}: any) {
   return (
     <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader

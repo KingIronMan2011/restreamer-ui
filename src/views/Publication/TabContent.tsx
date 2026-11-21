@@ -5,7 +5,6 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
-import PropTypes from 'prop-types';
 import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
@@ -19,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TabContent({ service = null, children = '' }) {
+export default function TabContent({ service = null, children = '' }: any) {
   const classes = useStyles();
 
   return (
@@ -67,7 +66,3 @@ export default function TabContent({ service = null, children = '' }) {
     </Grid>
   );
 }
-
-TabContent.propTypes = {
-  service: PropTypes.object.isRequired,
-};

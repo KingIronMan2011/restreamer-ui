@@ -22,16 +22,16 @@ export default function Component({
   downloadName = '',
   disabled = false,
   scrollTo = 'top',
-  onChange = function (value) {},
-  onHelp = null,
+  onChange = function (value: any) {},
+  onHelp = null as (() => void) | null,
   content = null,
-}) {
+}: any) {
   const { i18n } = useLingui();
 
   const [$modal, setModal] = React.useState(false);
 
   const notify = useContext(NotifyContext);
-  const textAreaRef = React.createRef();
+  const textAreaRef = React.useRef<HTMLTextAreaElement>(null!);
 
   React.useEffect(() => {
     scrollToAction();
@@ -74,10 +74,10 @@ export default function Component({
     setModal(!$modal);
   };
 
-  const writeText = (promise) => {
+  const writeText = (promise: any) => {
     return promise
       .then(() => true)
-      .catch((err) => {
+      .catch((err: any) => {
         console.warn(err);
         return false;
       });
@@ -119,20 +119,17 @@ export default function Component({
     allowDownload = false;
   }
 
-  let textAreaDivStyle = {
+  let textAreaDivStyle: React.CSSProperties = {
     width: '100%',
   };
-  let textAreaStyle = {
+  let textAreaStyle: React.CSSProperties = {
     lineHeight: 1.3,
     fontSize: 14,
   };
-  let actionButton = {
+  let actionButton: React.CSSProperties = {
     float: 'right',
     padding: '0.5em',
     backgroundColor: Palette.background.footer1,
-    '&:hover': {
-      backgroundColor: Palette.background.footer2,
-    },
   };
   if (rows === 1) {
     textAreaStyle = {

@@ -23,7 +23,7 @@ export default function Player({
     buttons: '#fff',
   },
   statistics = false,
-}) {
+}: any) {
   type = type ? type : 'videojs-internal';
 
   if (type === 'videojs-internal' || type === 'videojs-public') {
@@ -52,14 +52,14 @@ export default function Player({
       <VideoJS
         type={type}
         options={config}
-        onReady={(player) => {
+        onReady={(player: any) => {
           if (logo.image.length !== 0) {
             var overlay = null;
 
             var imgTag = new Image();
-            imgTag.onLoad = function () {
-              imgTag.setAttribute('width', this.width);
-              imgTag.setAttribute('height'.this.height);
+            imgTag.onload = function () {
+              imgTag.setAttribute('width', String(imgTag.width));
+              imgTag.setAttribute('height', String(imgTag.height));
             };
             imgTag.src = logo.image + '?' + Math.random();
 

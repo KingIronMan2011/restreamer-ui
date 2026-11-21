@@ -5,7 +5,7 @@ import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    color: theme.palette.text.pirmary,
+    color: theme.palette.text.primary,
     '&.Mui-checked': {
       color: theme.palette.text.primary,
     },
@@ -21,8 +21,8 @@ export default function Component({
   label = '',
   checked = false,
   disabled = false,
-  onChange = function (event) {},
-}) {
+  onChange = function (event: any) {},
+}: any) {
   const classes = useStyles();
 
   return (

@@ -14,7 +14,7 @@ import PaperHeader from '../misc/PaperHeader';
 import Password from '../misc/Password';
 import TextField from '../misc/TextField';
 
-const generatePassword = (length) => {
+const generatePassword = (length: any) => {
   const characters =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
@@ -29,13 +29,13 @@ const generatePassword = (length) => {
 };
 
 export default function ResetPassword({
-  onReset = function (username, password) {},
+  onReset = function (username: any, password: any) {},
   username = '',
   usernameOverride = false,
   password = '',
   passwordOverride = false,
-}) {
-  const [$login, setLogin] = React.useState({
+}: any) {
+  const [$login, setLogin] = React.useState<Record<string, any>>({
     username: username.length === 0 ? 'admin' : username,
     password:
       password.length === 0
@@ -48,12 +48,12 @@ export default function ResetPassword({
     passwordConfirm: password.length !== 0 ? password : '',
     showPassword: password.length === 0 ? true : false,
   });
-  const [$restart, setRestart] = React.useState({
+  const [$restart, setRestart] = React.useState<Record<string, any>>({
     restarting: false,
     timeout: false,
   });
 
-  const handleReset = async (event) => {
+  const handleReset = async (event: any) => {
     event.preventDefault();
 
     setRestart({
@@ -100,7 +100,7 @@ export default function ResetPassword({
     }
   };
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     let value = event.target.value;
 
     setLogin({

@@ -21,8 +21,8 @@ export default function Component({
   href = '#',
   className = null,
   onClick = () => {},
-  children = null,
-}) {
+  children = null as import('react').ReactNode,
+}: any) {
   const classes = useStyles();
 
   return (

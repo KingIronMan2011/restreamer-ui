@@ -8,7 +8,7 @@ import Checkbox from '../Checkbox';
 import * as Encoders from '../coders/Encoders';
 import Select from '../Select';
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     enable: true,
     video_encoder: 'libx264',
@@ -22,8 +22,8 @@ function init(settings) {
 export default function Control({
   settings = {},
   availableEncoders = [],
-  onChange = function (settings, automatic) {},
-}) {
+  onChange = function (settings: any, automatic: any) {},
+}: any) {
   settings = init(settings);
 
   // Set the defaults
@@ -32,7 +32,7 @@ export default function Control({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (['enable'].includes(what)) {

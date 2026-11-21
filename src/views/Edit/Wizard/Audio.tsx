@@ -29,7 +29,7 @@ export default function Audio({
   status = '',
   stream = 0,
   address = {},
-}) {
+}: any) {
   const { i18n } = useLingui();
 
   return (

@@ -87,6 +87,6 @@ const theme = createTheme({
     MuiTooltip: { ...tooltip },
     MuiTypography: { ...ctypography },
   },
-});
+} as any);
 
 export default theme;

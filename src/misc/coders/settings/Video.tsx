@@ -14,8 +14,8 @@ function Bitrate({
   variant = 'outlined',
   label = <Trans>Bitrate</Trans>,
   customLabel = <Trans>Custom bitrate (kbit/s)</Trans>,
-  onChange = function (event) {},
-}) {
+  onChange = function (event: any) {},
+}: any) {
   const { i18n } = useLingui();
   const bitrates = [
     { value: '32768', label: '32768 kbit/s' },
@@ -59,8 +59,8 @@ function GOP({
   variant = 'outlined',
   label = <Trans>Keyframe interval (seconds)</Trans>,
   customLabel = <Trans>Custom keyframe interval</Trans>,
-  onChange = function (event) {},
-}) {
+  onChange = function (event: any) {},
+}: any) {
   const { i18n } = useLingui();
   const bitrates = [
     { value: '1', label: '1' },
@@ -97,8 +97,8 @@ function Framerate({
   variant = 'outlined',
   label = <Trans>Framerate</Trans>,
   customLabel = <Trans>Custom framerate</Trans>,
-  onChange = function (event) {},
-}) {
+  onChange = function (event: any) {},
+}: any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: '60', label: '60' },
@@ -134,7 +134,7 @@ function Framerate({
   );
 }
 
-function Profile({ value = '', onChange = function (event) {} }) {
+function Profile({ value = '', onChange = function (event: any) {} }: any) {
   return (
     <Select label={<Trans>Profile</Trans>} value={value} onChange={onChange}>
       <MenuItem value="auto">auto</MenuItem>
@@ -153,8 +153,8 @@ function Size({
   variant = 'outlined',
   label = <Trans>Size</Trans>,
   customLabel = <Trans>Custom size</Trans>,
-  onChange = function (event) {},
-}) {
+  onChange = function (event: any) {},
+}: any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: '7680x4320', label: '7680x4320 (8K UHD)' },
@@ -201,8 +201,8 @@ function Height({
   variant = 'outlined',
   label = <Trans>Height</Trans>,
   customLabel = <Trans>Custom size</Trans>,
-  onChange = function (event) {},
-}) {
+  onChange = function (event: any) {},
+}: any) {
   const { i18n } = useLingui();
   const height = [
     { value: '4320', label: '4320' },
@@ -242,8 +242,8 @@ function Width({
   variant = 'outlined',
   label = <Trans>Width</Trans>,
   customLabel = <Trans>Custom size</Trans>,
-  onChange = function (event) {},
-}) {
+  onChange = function (event: any) {},
+}: any) {
   const { i18n } = useLingui();
   const width = [
     { value: '7680', label: '7680' },
@@ -284,8 +284,8 @@ function Format({
   variant = 'outlined',
   label = <Trans>Format</Trans>,
   customLabel = <Trans>Custom format</Trans>,
-  onChange = function (event) {},
-}) {
+  onChange = function (event: any) {},
+}: any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: 'yuv420p', label: 'yuv420p' },
@@ -322,8 +322,8 @@ function PixFormat({
   variant = 'outlined',
   label = <Trans>Pixel Format</Trans>,
   customLabel = <Trans>Custom format</Trans>,
-  onChange = function (event) {},
-}) {
+  onChange = function (event: any) {},
+}: any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: 'yuv420p', label: 'yuv420p' },
@@ -351,7 +351,7 @@ function PixFormat({
   );
 }
 
-function FpsMode({ value = '', onChange = function (event) {} }) {
+function FpsMode({ value = '', onChange = function (event: any) {} }: any) {
   return (
     <Select
       label={<Trans>Framerate mode</Trans>}
@@ -374,7 +374,7 @@ function FpsMode({ value = '', onChange = function (event) {} }) {
   );
 }
 
-function GPU({ value = '', onChange = function (event) {} }) {
+function GPU({ value = '', onChange = function (event: any) {} }: any) {
   return (
     <TextField
       label={<Trans>GPU</Trans>}

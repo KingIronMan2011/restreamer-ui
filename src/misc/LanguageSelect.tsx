@@ -27,11 +27,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LanguageSelect({ onChange = function (lang) {} }) {
+export default function LanguageSelect({
+  onChange = function (lang: any) {},
+}: any) {
   const classes = useStyles();
   const { i18n } = useLingui();
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     const language = event.target.value;
 
     i18n.activate(language);

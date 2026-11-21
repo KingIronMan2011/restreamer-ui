@@ -11,13 +11,13 @@ const videodecoders = Decoders.Video.List();
 const audioencoders = Encoders.Audio.List();
 const videoencoders = Encoders.Video.List();
 
-const testfunc = async (coder) => {
+const testfunc = async (coder: any) => {
   const defaults = coder.defaults();
 
-  let $settings = {};
-  let $mapping = {};
+  let $settings: Record<string, any> = {};
+  let $mapping: Record<string, any> = {};
 
-  const handleChange = (settings, mapping) => {
+  const handleChange = (settings: any, mapping: any) => {
     $settings = settings;
     $mapping = mapping;
   };
@@ -30,7 +30,7 @@ const testfunc = async (coder) => {
   expect($mapping).toStrictEqual(defaults.mapping);
 };
 
-test.each(audiodecoders)('coder:decoder:$type $coder', testfunc);
-test.each(videodecoders)('coder:decoder:$type $coder', testfunc);
-test.each(audioencoders)('coder:encoder:$type $coder', testfunc);
+test.each(audiodecoders as any[])('coder:decoder:$type $coder', testfunc);
+test.each(videodecoders as any[])('coder:decoder:$type $coder', testfunc);
+test.each(audioencoders as any[])('coder:encoder:$type $coder', testfunc);
 test.each(videoencoders)('coder:encoder:$type $coder', testfunc);

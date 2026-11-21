@@ -12,17 +12,17 @@ export default function StreamSelect({
   selected = -1,
   allowCustom = false,
   allowNone = false,
-  onChange = function (stream) {},
-}) {
+  onChange = function (stream: any) {},
+}: any) {
   const { i18n } = useLingui();
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     const stream = parseInt(event.target.value);
 
     onChange(stream);
   };
 
-  let streamList = [];
+  let streamList: any[] = [];
 
   for (let s of streams) {
     if (s.type !== type) {

@@ -66,8 +66,8 @@ export default function Egress({
   order = 'stop',
   reconnect = true,
   onEdit = function () {},
-  onOrder = function (order) {},
-}) {
+  onOrder = function (order: any) {},
+}: any) {
   const classes = useStyles();
   const [$order, setOrder] = React.useState('stop');
 
@@ -82,7 +82,7 @@ export default function Egress({
     setOrder(order);
   };
 
-  const handleSwitch = async (event) => {
+  const handleSwitch = async (event: any) => {
     const checked = event.target.checked;
 
     const egrees_order = checked === true ? 'start' : 'stop';
@@ -128,7 +128,7 @@ export default function Egress({
     }
   }
 
-  let color = 'secondary';
+  let color: 'secondary' | 'warning' | 'error' = 'secondary';
   switch (state) {
     case 'disconnecting':
     case 'connecting':

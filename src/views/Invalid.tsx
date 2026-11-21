@@ -8,7 +8,7 @@ import PaperContent from '../misc/PaperContent';
 import PaperFooter from '../misc/PaperFooter';
 import PaperHeader from '../misc/PaperHeader';
 
-const isProbablyMixedContent = (address) => {
+const isProbablyMixedContent = (address: any) => {
   try {
     const location = new URL(address);
     if (
@@ -22,7 +22,7 @@ const isProbablyMixedContent = (address) => {
   return false;
 };
 
-export default function Invalid({ address = '' }) {
+export default function Invalid({ address = '' }: any) {
   const [$mixed] = React.useState(isProbablyMixedContent(address));
 
   return (

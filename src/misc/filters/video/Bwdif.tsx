@@ -9,7 +9,7 @@ import Select from '../../Select';
 // Deinterlace the input video ("bwdif" stands for "Bob Weaver Deinterlacing Filter").
 // http://ffmpeg.org/ffmpeg-all.html#bwdif
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     enabled: false,
     mode: '1',
@@ -21,10 +21,10 @@ function init(initialState) {
   return state;
 }
 
-function createGraph(settings) {
+function createGraph(settings: any) {
   settings = init(settings);
 
-  const mapping = [];
+  const mapping: any[] = [];
 
   if (settings.enabled) {
     mapping.push(
@@ -35,7 +35,7 @@ function createGraph(settings) {
   return mapping.join(',');
 }
 
-function Mode({ value = '', onChange = function (event) {} }) {
+function Mode({ value = '', onChange = function (event: any) {} }: any) {
   return (
     <Select
       label={<Trans>Deinterlace mode</Trans>}
@@ -52,7 +52,7 @@ function Mode({ value = '', onChange = function (event) {} }) {
   );
 }
 
-function Parity({ value = '', onChange = function (event) {} }) {
+function Parity({ value = '', onChange = function (event: any) {} }: any) {
   return (
     <Select
       label={<Trans>Deinterlace parity</Trans>}
@@ -72,7 +72,7 @@ function Parity({ value = '', onChange = function (event) {} }) {
   );
 }
 
-function Deint({ value = '', onChange = function (event) {} }) {
+function Deint({ value = '', onChange = function (event: any) {} }: any) {
   return (
     <Select
       label={<Trans>Deinterlace deint</Trans>}
@@ -89,10 +89,13 @@ function Deint({ value = '', onChange = function (event) {} }) {
   );
 }
 
-function Filter({ settings = {}, onChange = function (settings, mapping) {} }) {
+function Filter({
+  settings = {},
+  onChange = function (settings: any, mapping: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -102,7 +105,7 @@ function Filter({ settings = {}, onChange = function (settings, mapping) {} }) {
     onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
     };
@@ -154,7 +157,7 @@ const name = 'Deinterlacing Filter';
 const type = 'video';
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name}`;
 }
 

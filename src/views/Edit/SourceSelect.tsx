@@ -7,8 +7,8 @@ import SemverSatisfies from 'semver/functions/satisfies';
 
 import Sources from './Sources';
 
-function initConfig(initialConfig) {
-  let config = {};
+function initConfig(initialConfig: any) {
+  let config: Record<string, any> = {};
 
   for (let s of Sources.List()) {
     config[s.id] = {};
@@ -22,8 +22,8 @@ function initConfig(initialConfig) {
   return config;
 }
 
-function init(source) {
-  const settings = {};
+function init(source: any) {
+  const settings: Record<string, any> = {};
 
   for (let id of Sources.IDs()) {
     settings[id] = {};
@@ -34,7 +34,7 @@ function init(source) {
   return settings;
 }
 
-function reducer(settings, data) {
+function reducer(settings: any, data: any) {
   const newSettings = {
     ...settings,
     ...data,
@@ -48,12 +48,12 @@ export default function SourceSelect({
   skills = {},
   source = {},
   config = {},
-  onProbe = function (type, device, settings, inputs) {},
-  onSelect = function (type, device) {},
-  onChange = function (type, device, settings) {},
+  onProbe = function (type: any, device: any, settings: any, inputs: any) {},
+  onSelect = function (type: any, device: any) {},
+  onChange = function (type: any, device: any, settings: any) {},
   onRefresh = function () {},
-  onStore = function (name, data) {},
-}) {
+  onStore = function (name: any, data: any) {},
+}: any) {
   // $source holds the currently selected device. It is initialized with the
   // last stored source.
   const [$source, setSource] = React.useState(source.type);
@@ -65,7 +65,7 @@ export default function SourceSelect({
 
   config = initConfig(config);
 
-  const handleSource = (source) => {
+  const handleSource = (source: any) => {
     onChange(type);
     setSource(source);
 
@@ -76,15 +76,15 @@ export default function SourceSelect({
     await onRefresh();
   };
 
-  const handleStore = async (name, data, onprogress) => {
+  const handleStore = async (name: any, data: any, onprogress: any) => {
     return await onStore(name, data, onprogress);
   };
 
-  const handleProbe = async (settings, inputs) => {
+  const handleProbe = async (settings: any, inputs: any) => {
     await onProbe(type, $source, settings, inputs);
   };
 
-  const handleChange = (source) => (settings) => {
+  const handleChange = (source: any) => (settings: any) => {
     setSettings({
       ...$settings,
       [source]: settings,
@@ -138,13 +138,13 @@ function Select({
   selected = '',
   ffversion = '0.0.0',
   availableSources = {},
-  onSelect = function (source) {},
-}) {
-  const handleSource = (source) => () => {
+  onSelect = function (source: any) {},
+}: any) {
+  const handleSource = (source: any) => () => {
     onSelect(source);
   };
 
-  let selectAvailableSources = [];
+  let selectAvailableSources: any[] = [];
 
   for (let s of Sources.List()) {
     if (!(s.id in availableSources)) {

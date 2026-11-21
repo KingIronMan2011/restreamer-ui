@@ -51,11 +51,11 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return <img src={Logo} alt="DaCast Logo" {...props} />;
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     protocol: 'rtmp://',
     server: '',
@@ -75,11 +75,11 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
-  onChange = function (output, settings) {},
-}) {
+  onChange = function (output: any, settings: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (what === 'enable_backup_server') {
@@ -93,8 +93,8 @@ function Service({
     onChange(output, settings);
   };
 
-  const createOutput = (settings) => {
-    const outputs = [];
+  const createOutput = (settings: any) => {
+    const outputs: any[] = [];
 
     const options = ['-f', 'flv'];
 

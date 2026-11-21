@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const initSettings = (initialSettings, config) => {
+const initSettings = (initialSettings: any, config: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -106,7 +106,7 @@ const initSettings = (initialSettings, config) => {
   return settings;
 };
 
-const initConfig = (initialConfig) => {
+const initConfig = (initialConfig: any) => {
   if (!initialConfig) {
     initialConfig = {};
   }
@@ -149,7 +149,7 @@ const initConfig = (initialConfig) => {
   return config;
 };
 
-const initSkills = (initialSkills) => {
+const initSkills = (initialSkills: any) => {
   if (!initialSkills) {
     initialSkills = {};
   }
@@ -174,7 +174,7 @@ const initSkills = (initialSkills) => {
   };
 
   skills.protocols = {
-    input: [],
+    input: [] as any[],
     ...skills.protocols,
   };
 
@@ -193,14 +193,14 @@ const initSkills = (initialSkills) => {
   return skills;
 };
 
-const createInputs = (settings, config, skills) => {
+const createInputs = (settings: any, config: any, skills: any) => {
   config = initConfig(config);
   settings = initSettings(settings, config);
   skills = initSkills(skills);
 
   const input = {
     address: '',
-    options: [],
+    options: [] as string[],
   };
 
   if (settings.mode === 'push') {
@@ -209,7 +209,7 @@ const createInputs = (settings, config, skills) => {
       if (name === 'none') {
         name = config.channelid;
       }
-      input.address = getLocalHLS(name);
+      input.address = getLocalHLS(config, name);
     } else if (settings.push.type === 'rtmp') {
       if (name === config.channelid) {
         name += '.stream';
@@ -279,7 +279,7 @@ const createInputs = (settings, config, skills) => {
       );
 
       if (skills.ffmpeg.version_major >= 6) {
-        const codecs = [];
+        const codecs: any[] = [];
         if (skills.codecs.video.hevc?.length > 0) {
           codecs.push('hvc1');
         }
@@ -329,8 +329,8 @@ const createInputs = (settings, config, skills) => {
       if (settings.http.headers.length !== 0) {
         let headers = settings.http.headers
           .split('\n')
-          .map((l) => l.trim())
-          .filter((l) => l.length > 0)
+          .map((l: any) => l.trim())
+          .filter((l: any) => l.length > 0)
           .join('\r\n');
         input.options.push('-headers', headers + '\r\n');
       }
@@ -345,7 +345,7 @@ const createInputs = (settings, config, skills) => {
       );
 
       if (skills.ffmpeg.version_major >= 6) {
-        const codecs = [];
+        const codecs: any[] = [];
         if (skills.codecs.video.hevc?.length > 0) {
           codecs.push('hvc1');
         }
@@ -388,7 +388,7 @@ const createInputs = (settings, config, skills) => {
   return [input];
 };
 
-const addUsernamePassword = (address, username, password) => {
+const addUsernamePassword = (address: any, username: any, password: any) => {
   if (username.length === 0 && password.length === 0) {
     return address;
   }
@@ -408,7 +408,7 @@ const addUsernamePassword = (address, username, password) => {
   return url.toString();
 };
 
-const getProtocol = (url) => {
+const getProtocol = (url: any) => {
   const re = new RegExp('^([a-z][a-z0-9.+-:]*)://', 'i');
   const matches = url.match(re);
 
@@ -419,7 +419,7 @@ const getProtocol = (url) => {
   return matches[1];
 };
 
-const getProtocolClass = (url) => {
+const getProtocolClass = (url: any) => {
   if (typeof url !== 'string') {
     url = '';
   }
@@ -442,7 +442,7 @@ const getProtocolClass = (url) => {
   return protocol;
 };
 
-const isAuthProtocol = (url) => {
+const isAuthProtocol = (url: any) => {
   const protocolClass = getProtocolClass(url);
 
   // eslint-disable-next-line default-case
@@ -461,7 +461,7 @@ const isAuthProtocol = (url) => {
   return false;
 };
 
-const isSupportedProtocol = (url, supportedProtocols) => {
+const isSupportedProtocol = (url: any, supportedProtocols: any) => {
   const protocol = getProtocol(url);
   if (protocol.length === 0) {
     return false;
@@ -474,7 +474,7 @@ const isSupportedProtocol = (url, supportedProtocols) => {
   return true;
 };
 
-const getHLSAddress = (host, credentials, name, secure) => {
+const getHLSAddress = (host: any, credentials: any, name: any, secure: any) => {
   // Test for IPv6 addresses and put brackets around
   let url =
     'http' +
@@ -489,7 +489,13 @@ const getHLSAddress = (host, credentials, name, secure) => {
   return url;
 };
 
-const getRTMPAddress = (host, app, name, token, secure) => {
+const getRTMPAddress = (
+  host: any,
+  app: any,
+  name: any,
+  token: any,
+  secure: any,
+) => {
   let url =
     'rtmp' + (secure ? 's' : '') + '://' + host + app + '/' + name + '.stream';
 
@@ -500,7 +506,13 @@ const getRTMPAddress = (host, app, name, token, secure) => {
   return url;
 };
 
-const getSRTAddress = (host, name, token, passphrase, publish) => {
+const getSRTAddress = (
+  host: any,
+  name: any,
+  token: any,
+  passphrase: any,
+  publish: any,
+) => {
   let url =
     'srt' +
     '://' +
@@ -520,7 +532,7 @@ const getSRTAddress = (host, name, token, passphrase, publish) => {
   return url;
 };
 
-const getHLS = (config, name) => {
+const getHLS = (config: any, name: any = '') => {
   const url = getHLSAddress(
     config.hls.host,
     config.hls.credentials,
@@ -531,7 +543,7 @@ const getHLS = (config, name) => {
   return url;
 };
 
-const getRTMP = (config) => {
+const getRTMP = (config: any) => {
   const url = getRTMPAddress(
     config.rtmp.host,
     config.rtmp.app,
@@ -543,7 +555,7 @@ const getRTMP = (config) => {
   return url;
 };
 
-const getSRT = (config) => {
+const getSRT = (config: any) => {
   const url = getSRTAddress(
     config.srt.host,
     config.channelid,
@@ -555,21 +567,21 @@ const getSRT = (config) => {
   return url;
 };
 
-const getLocalHLS = (config, name) => {
+const getLocalHLS = (config: any, name: any) => {
   let url = getHLSAddress(config.hls.local, '', config.channelid, false);
 
   return url;
 };
 
-const getLocalRTMP = (name) => {
+const getLocalRTMP = (name: any) => {
   return '{rtmp,name=' + name + '}';
 };
 
-const getLocalSRT = (name, latency) => {
+const getLocalSRT = (name: any, latency: any) => {
   return '{srt,name=' + name + ',mode=request,latency=' + latency * 1000 + '}';
 };
 
-const isValidURL = (address) => {
+const isValidURL = (address: any) => {
   const protocol = getProtocolClass(address);
   if (protocol.length === 0) {
     return false;
@@ -580,8 +592,8 @@ const isValidURL = (address) => {
 
 function AdvancedSettings({
   settings = {},
-  onChange = function (settings) {},
-}) {
+  onChange = function (settings: any) {},
+}: any) {
   let protocolClass = getProtocolClass(settings.address);
   if (settings.mode === 'push') {
     switch (settings.push.type) {
@@ -889,8 +901,8 @@ function AdvancedSettings({
 function ExtentionSettings({
   settings = {},
   skills = {},
-  onChange = function (settings) {},
-}) {
+  onChange = function (settings: any) {},
+}: any) {
   if (!skills.protocols.input.includes('playout')) return null;
   return (
     <Grid item xs={12}>
@@ -932,10 +944,10 @@ function Pull({
   settings = {},
   config = {},
   skills = null,
-  onChange = function (settings) {},
-  onProbe = function (settings, inputs) {},
+  onChange = function (settings: any) {},
+  onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
-}) {
+}: any) {
   const classes = useStyles();
   const authProtocol = isAuthProtocol(settings.address);
   const validURL = isValidURL(settings.address);
@@ -1042,10 +1054,10 @@ function Push({
   settings = {},
   config = {},
   skills = null,
-  onChange = function (settings) {},
-  onProbe = function (settings, inputs) {},
+  onChange = function (settings: any) {},
+  onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
-}) {
+}: any) {
   const classes = useStyles();
 
   //const supportsHLS = isSupportedProtocol('http://', skills.protocols.input);
@@ -1138,9 +1150,9 @@ function PushHLS({
   settings = {},
   config = {},
   skills = {},
-  onChange = function (settings) {},
-  onProbe = function (settings, inputs) {},
-}) {
+  onChange = function (settings: any) {},
+  onProbe = function (settings: any, inputs: any) {},
+}: any) {
   const classes = useStyles();
 
   const HLS = getHLS(config);
@@ -1182,10 +1194,10 @@ function PushRTMP({
   settings = {},
   config = {},
   skills = {},
-  onChange = function (settings) {},
-  onProbe = function (settings, inputs) {},
+  onChange = function (settings: any) {},
+  onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
-}) {
+}: any) {
   const { i18n } = useLingui();
   const classes = useStyles();
   const navigate = useNavigate();
@@ -1222,9 +1234,9 @@ function PushRTMP({
     const RTMP = getRTMP(config);
 
     const filteredDevices = knownDevices.filter(
-      (device) => device.media === 'rtmp',
+      (device: any) => device.media === 'rtmp',
     );
-    const options = filteredDevices.map((device) => {
+    const options = filteredDevices.map((device: any) => {
       return (
         <MenuItem key={device.id} value={device.id}>
           {device.name}
@@ -1309,10 +1321,10 @@ function PushSRT({
   settings = {},
   config = {},
   skills = {},
-  onChange = function (settings) {},
-  onProbe = function (settings, inputs) {},
+  onChange = function (settings: any) {},
+  onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
-}) {
+}: any) {
   const { i18n } = useLingui();
   const classes = useStyles();
   const navigate = useNavigate();
@@ -1349,9 +1361,9 @@ function PushSRT({
     const SRT = getSRT(config);
 
     const filteredDevices = knownDevices.filter(
-      (device) => device.media === 'srt',
+      (device: any) => device.media === 'srt',
     );
-    const options = filteredDevices.map((device) => {
+    const options = filteredDevices.map((device: any) => {
       return (
         <MenuItem key={device.id} value={device.id}>
           {device.name}
@@ -1436,20 +1448,20 @@ function Source({
   settings = {},
   config = {},
   skills = null,
-  onChange = function (settings) {},
-  onProbe = function (settings, inputs) {},
+  onChange = function (settings: any) {},
+  onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
-  onStore = function (name, data) {
+  onStore = function (name: any, data: any) {
     return '';
   },
-}) {
+}: any) {
   const classes = useStyles();
   const { i18n } = useLingui();
   config = initConfig(config);
   settings = initSettings(settings, config);
   skills = initSkills(skills);
 
-  const handleChange = (section, what) => (event) => {
+  const handleChange = (section: any, what: any) => (event: any) => {
     const value = event.target.value;
 
     if (section === 'http') {
@@ -1482,11 +1494,7 @@ function Source({
         settings.push.name = config.channelid;
       }
     } else if (section === 'extentions') {
-      if ([].includes(what)) {
-        settings.extentions[what] = !settings.extentions[what];
-      } else {
-        settings.extentions[what] = value;
-      }
+      settings.extentions[what] = value;
     } else {
       settings[what] = value;
     }
@@ -1547,7 +1555,7 @@ function Source({
   );
 }
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: '#FFF' }} {...props} />;
 }
 

@@ -11,8 +11,8 @@ import Video from '../coders/settings/Video';
 import Select from '../Select';
 import Dialog from './Dialog';
 
-const Stream = function ({ stream = {}, onChange = () => {} }) {
-  const handleChange = (what) => (event) => {
+const Stream = function ({ stream = {}, onChange = () => {} }: any) {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     stream = {
@@ -123,8 +123,12 @@ const Stream = function ({ stream = {}, onChange = () => {} }) {
   );
 };
 
-const Streams = function ({ streams = [], type = '', onChange = () => {} }) {
-  const handleChange = (index) => (stream) => {
+const Streams = function ({
+  streams = [],
+  type = '',
+  onChange = () => {},
+}: any) {
+  const handleChange = (index: any) => (stream: any) => {
     streams = streams.slice();
 
     streams[index] = stream;
@@ -150,7 +154,7 @@ const Streams = function ({ streams = [], type = '', onChange = () => {} }) {
     onChange(streams);
   };
 
-  const handleRemoveStream = (index) => () => {
+  const handleRemoveStream = (index: any) => () => {
     streams = streams.toSpliced(index, 1);
 
     onChange(streams);
@@ -158,7 +162,7 @@ const Streams = function ({ streams = [], type = '', onChange = () => {} }) {
 
   return (
     <Grid container spacing={1}>
-      {streams.map((stream, index) => (
+      {streams.map((stream: any, index: number) => (
         <Grid key={stream.index + ':' + stream.stream} item xs={12}>
           <Stack>
             <Typography sx={{ textTransform: 'UPPERCASE', marginBottom: 2 }}>
@@ -193,11 +197,11 @@ const Component = function ({
   title = '',
   streams = [],
   type = '',
-  onClose = null,
+  onClose = null as (() => void) | null,
   onDone = () => {},
   onChange = () => {},
-  onHelp = null,
-}) {
+  onHelp = null as (() => void) | null,
+}: any) {
   return (
     <Dialog
       open={open}

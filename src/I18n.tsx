@@ -37,12 +37,12 @@ i18n.load({
   'zh-hans': ZH,
 });
 
-const aliases = {
+const aliases: Record<string, string> = {
   pt: 'pt-br',
   'zh-cn': 'zh-hans',
 };
 
-const getAlias = (lang) => {
+const getAlias = (lang: any) => {
   if (lang in aliases) {
     return aliases[lang];
   }
@@ -50,7 +50,7 @@ const getAlias = (lang) => {
   return lang;
 };
 
-const getLanguage = (defaultLanguage, supportedLanguages) => {
+const getLanguage = (defaultLanguage: any, supportedLanguages: any) => {
   let lang = getAlias(Storage.Get('language'));
   if (supportedLanguages.indexOf(lang) === -1) {
     lang = getAlias(getBrowserLanguage(defaultLanguage));
@@ -65,7 +65,7 @@ const getLanguage = (defaultLanguage, supportedLanguages) => {
   return lang;
 };
 
-const getBrowserLanguage = (defaultLanguage) => {
+const getBrowserLanguage = (defaultLanguage: any) => {
   let lang = window.navigator.language;
 
   const match = lang.match(/^[a-z]+(-[a-z]+)?/i);
@@ -96,6 +96,6 @@ i18n.activate(
   ]),
 );
 
-export default function Provider(props) {
+export default function Provider(props: any) {
   return <I18nProvider i18n={i18n}>{props.children}</I18nProvider>;
 }

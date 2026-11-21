@@ -1,20 +1,27 @@
-const fetch = async (url, options = {}) => {
+export type FetchOptions = {
+  method?: string;
+  headers?: Record<string, string>;
+  body?: BodyInit;
+  onprogress?: (loaded: boolean, progress: number, total: number) => void;
+};
+
+const fetch = async (url: string, options: FetchOptions = {}) => {
   options = {
     method: 'GET',
     ...options,
   };
 
-  options.method = options.method.toUpperCase();
+  options.method = (options.method ?? 'GET').toUpperCase();
 
   const xhr = new XMLHttpRequest();
 
-  return new Promise((resolve, reject) => {
+  return new Promise<any>((resolve, reject) => {
     xhr.responseType = 'text';
     xhr.onload = () => {
       const response = {
         ok: false,
         headers: {
-          get: function (key) {
+          get: function (key: any) {
             return this.data.get(key.toLowerCase());
           },
           data: xhr
@@ -49,13 +56,13 @@ const fetch = async (url, options = {}) => {
       });
     };
     if ('onprogress' in options && typeof options.onprogress == 'function') {
-      const tracker = (event) => {
+      const tracker = (event: any) => {
         if (!event.lengthComputable) {
-          options.onprogress(false, 0, event.loaded);
+          options.onprogress?.(false, 0, event.loaded);
           return;
         }
 
-        options.onprogress(true, event.loaded / event.total, event.total);
+        options.onprogress?.(true, event.loaded / event.total, event.total);
       };
 
       if (options.method === 'GET') {
@@ -64,14 +71,14 @@ const fetch = async (url, options = {}) => {
         xhr.upload.onprogress = tracker;
       }
     }
-    xhr.open(options.method, url, true);
+    xhr.open(options.method!, url, true);
     if ('headers' in options) {
       for (const header in options.headers) {
         xhr.setRequestHeader(header, options.headers[header]);
       }
     }
     if ('body' in options) {
-      xhr.send(options.body);
+      xhr.send(options.body as XMLHttpRequestBodyInit);
     } else {
       xhr.send();
     }

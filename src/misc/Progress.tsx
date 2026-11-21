@@ -80,7 +80,7 @@ export default function Progress({
   memory = 0,
   video_codec = '',
   audio_codec = '',
-}) {
+}: any) {
   const classes = useStyles();
 
   const progress = init({

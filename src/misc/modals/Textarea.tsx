@@ -23,9 +23,9 @@ const Component = function ({
   scrollTo = 'bottom',
   readOnly = true,
   allowCopy = true,
-  onClose = null,
-  onHelp = null,
-}) {
+  onClose = null as (() => void) | null,
+  onHelp = null as (() => void) | null,
+}: any) {
   const classes = useStyles();
 
   return (

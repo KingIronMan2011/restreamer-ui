@@ -53,8 +53,8 @@ export default function Changelog({
   current = '',
   previous = '',
   onClose = () => {},
-  children = null,
-}) {
+  children = null as import('react').ReactNode,
+}: any) {
   const [$data, setData] = React.useState('');
   const classes = useStyles();
 
@@ -90,9 +90,9 @@ export default function Changelog({
     return await response.text();
   };
 
-  const filter = (data, current, previous) => {
+  const filter = (data: any, current: any, previous: any) => {
     let lines = data.split('\n');
-    let filteredLines = [];
+    let filteredLines: any[] = [];
 
     let copy = true;
 
@@ -144,27 +144,27 @@ export default function Changelog({
   }
 
   const renderers = {
-    h1: (props) => (
+    h1: (props: any) => (
       <h1 className={classes.h1} {...props}>
         {children}
       </h1>
     ),
-    h2: (props) => (
+    h2: (props: any) => (
       <h2 className={classes.h2} {...props}>
         {children}
       </h2>
     ),
-    h3: (props) => (
+    h3: (props: any) => (
       <h3 className={classes.h3} {...props}>
         {children}
       </h3>
     ),
-    h4: (props) => (
+    h4: (props: any) => (
       <h4 className={classes.h4} {...props}>
         {children}
       </h4>
     ),
-    a: (props) => (
+    a: (props: any) => (
       <a className={classes.a} target="_blank" {...props}>
         {children}
       </a>

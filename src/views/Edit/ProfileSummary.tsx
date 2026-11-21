@@ -10,11 +10,11 @@ import React from 'react';
 import * as M from '../../utils/metadata';
 import Summary from './Summary';
 
-function IconWizard(props) {
+function IconWizard(props: any) {
   return <AutoFixHighIcon {...props} />;
 }
 
-function IconEdit(props) {
+function IconEdit(props: any) {
   return <EditIcon {...props} />;
 }
 
@@ -31,14 +31,14 @@ const useStyles = makeStyles((theme) => ({
 export default function ProfileSummary({
   sources = [],
   profile = null,
-  onEdit = function (type) {},
+  onEdit = function (type: any) {},
   onWizard = function () {},
-}) {
+}: any) {
   const classes = useStyles();
 
   profile = M.initProfile(profile);
 
-  const handleEdit = (what) => () => {
+  const handleEdit = (what: any) => () => {
     onEdit(what);
   };
 

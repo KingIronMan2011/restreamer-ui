@@ -41,23 +41,23 @@ const useStyles = makeStyles((theme) => ({
 
 // todo: use MuiDialog
 
-const Component = React.forwardRef(
+const Component = React.forwardRef<any, any>(
   (
     {
       open = false,
       title = '',
-      onClose = null,
-      onHelp = null,
+      onClose = null as (() => void) | null,
+      onHelp = null as (() => void) | null,
       buttonsRight = null,
       buttonsLeft = null,
       maxWidth = -1,
-      children = null,
+      children = null as import('react').ReactNode,
     },
     ref,
   ) => {
     const classes = useStyles();
 
-    const paperStyle = {};
+    const paperStyle: Record<string, any> = {};
 
     if (maxWidth > 0) {
       paperStyle.maxWidth = maxWidth + 'px';

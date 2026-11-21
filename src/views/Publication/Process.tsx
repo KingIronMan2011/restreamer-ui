@@ -7,7 +7,7 @@ import ActionButton from '../../misc/ActionButton';
 import BoxText from '../../misc/BoxText';
 import Duration from '../../misc/Duration';
 
-function init(progress) {
+function init(progress: any) {
   const initProgress = {
     state: 'disconnected',
     reconnect: -1,
@@ -24,11 +24,11 @@ function init(progress) {
 
 export default function Process({
   progress = {},
-  onAction = function (action) {},
-}) {
+  onAction = function (action: any) {},
+}: any) {
   progress = init(progress);
 
-  const handleAction = (action) => () => {
+  const handleAction = (action: any) => () => {
     onAction(action);
   };
 

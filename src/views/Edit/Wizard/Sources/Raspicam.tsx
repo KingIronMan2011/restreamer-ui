@@ -9,7 +9,7 @@ import React from 'react';
 import Select from '../../../../misc/Select';
 import * as S from '../../Sources/Raspicam';
 
-function initSettings(initialSettings, knownDevices) {
+function initSettings(initialSettings: any, knownDevices: any) {
   const settings = {
     ...S.func.initSettings(initialSettings),
   };
@@ -41,9 +41,9 @@ function initSettings(initialSettings, knownDevices) {
   return settings;
 }
 
-function initDevices(initialDevices) {
+function initDevices(initialDevices: any) {
   const devices = initialDevices.filter(
-    (device) =>
+    (device: any) =>
       device.media === 'video' &&
       device.extra.match(/bcm2835[-_]v4l2/) !== null,
   );
@@ -56,19 +56,19 @@ function Source({
   knownDevices = [],
   config = null,
   skills = null,
-  onChange = function (type, settings, inputs, ready) {},
+  onChange = function (type: any, settings: any, inputs: any, ready: any) {},
   onRefresh = function () {},
-}) {
+}: any) {
   const devices = initDevices(knownDevices);
   settings = initSettings(settings, knownDevices);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     newSettings = newSettings || settings;
 
     onChange(S.id, newSettings, S.func.createInputs(newSettings), true);
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const value = event.target.value;
     const newSettings = settings;
 
@@ -80,11 +80,11 @@ function Source({
   };
 
   React.useEffect(() => {
-    handleChange();
+    handleChange(settings);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const options = devices.map((device) => {
+  const options = devices.map((device: any) => {
     return (
       <MenuItem key={device.id} value={device.id}>
         {device.name} ({device.id})
@@ -116,7 +116,7 @@ function Source({
   );
 }
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return (
     <FontAwesomeIcon
       icon={faRaspberryPi}

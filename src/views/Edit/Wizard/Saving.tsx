@@ -7,7 +7,7 @@ import React from 'react';
 import Paper from '../../../misc/Paper';
 import PaperHeader from '../../../misc/PaperHeader';
 
-export default function Saving({ onAbort = () => {} }) {
+export default function Saving({ onAbort = () => {} }: any) {
   return (
     <Paper xs={12} md={5} marginBottom="6em" className="PaperM">
       <PaperHeader spacing={2} variant="h1" onAbort={onAbort} />

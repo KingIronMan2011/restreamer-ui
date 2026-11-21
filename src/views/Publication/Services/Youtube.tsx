@@ -66,13 +66,13 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return (
     <FontAwesomeIcon icon={faYoutube} style={{ color: '#FF0000' }} {...props} />
   );
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     mode: 'rtmps',
     stream_key: '',
@@ -89,11 +89,11 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
-  onChange = function (output, settings) {},
-}) {
+  onChange = function (output: any, settings: any) {},
+}: any) {
   settings = init(settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (['primary', 'backup'].includes(what)) {
@@ -107,8 +107,8 @@ function Service({
     onChange(outputs, settings);
   };
 
-  const createOutput = (settings) => {
-    const outputs = [];
+  const createOutput = (settings: any) => {
+    const outputs: any[] = [];
 
     if (settings.stream_key.length === 0) {
       return outputs;
@@ -118,7 +118,7 @@ function Service({
       let options = ['-f', 'flv'];
 
       if (skills.ffmpeg.version_major >= 6) {
-        const codecs = [];
+        const codecs: any[] = [];
         if (skills.codecs.video.includes('hevc')) {
           codecs.push('hvc1');
         }
