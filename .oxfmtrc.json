@@ -6,5 +6,5 @@
   "printWidth": 80,
   "sortPackageJson": true,
   "sortImports": true,
-  "ignorePatterns": ["src/locales"]
+  "ignorePatterns": ["pnpm-lock.yaml"]
 }

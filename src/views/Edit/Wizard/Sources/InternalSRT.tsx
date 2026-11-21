@@ -1,6 +1,6 @@
 import { t } from '@lingui/core/macro';
-import { Trans } from '@lingui/react/macro';
 import { useLingui } from '@lingui/react';
+import { Trans } from '@lingui/react/macro';
 import Icon from '@mui/icons-material/KeyboardTab';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import Button from '@mui/material/Button';

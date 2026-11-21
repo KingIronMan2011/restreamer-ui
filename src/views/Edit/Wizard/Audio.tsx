@@ -1,6 +1,6 @@
 import { t } from '@lingui/core/macro';
-import { Trans } from '@lingui/react/macro';
 import { useLingui } from '@lingui/react';
+import { Trans } from '@lingui/react/macro';
 import WarningIcon from '@mui/icons-material/Warning';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';

@@ -5,7 +5,6 @@
     "browser": true,
     "jest": true
   },
-  "ignorePatterns": ["public/**", "src/locales/*/messages.js"],
   "rules": {
     "import/no-anonymous-default-export": "off",
     "no-unused-vars": ["warn", { "args": "none", "caughtErrors": "none" }],

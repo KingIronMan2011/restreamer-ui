@@ -1,11 +1,11 @@
 import { vitePages } from '@kingironman2011/vite-pages';
-import babel from '@rolldown/plugin-babel';
+import { lingui } from '@lingui/vite-plugin';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   base: process.env.PUBLIC_URL ?? '/',
-  plugins: [babel({ plugins: ['@lingui/babel-plugin-lingui-macro'] }), react(), vitePages()],
+  plugins: [react(), lingui({ macroTransform: true }), vitePages()],
   define: {
     'process.env': {},
   },
@@ -28,7 +28,7 @@ export default defineConfig({
   build: {
     target: 'esnext',
     cssCodeSplit: true,
-    minify: 'esbuild',
+    minify: 'oxc',
     sourcemap: true,
     chunkSizeWarningLimit: 3000,
     rolldownOptions: {
