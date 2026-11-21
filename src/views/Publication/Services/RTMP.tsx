@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import { Wrench } from 'lucide-react';
 import React from 'react';
 
-import Select from '../../../misc/Select';
+import Select from '../../../components/Select';
 
 const id = 'rtmp';
 const name = 'RTMP';

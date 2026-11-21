@@ -243,9 +243,9 @@ data = {
 import SemverCompare from 'semver/functions/compare';
 import SemverGt from 'semver/functions/gt';
 
-import * as Coders from '../misc/coders/Encoders';
-import * as Filters from '../misc/filters';
-import * as version from '../version';
+import * as Coders from '../components/coders/Encoders';
+import * as Filters from '../components/filters';
+import * as version from '../lib/version';
 
 const defaultMetadata = {
   version: version.Version,

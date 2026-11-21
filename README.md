@@ -24,7 +24,7 @@ http://localhost:3000?address=http://core-ip:core-port
 
 ### To add/fix translations:
 
-Locales are located in `src/locales`
+Locales are located in `src/languages`
 
 ```
 $ npm run i18n-extract:clean

@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
 
-import Select from '../../misc/Select';
+import Select from '../../components/Select';
 
 export default function StreamSelect({
   type = '',

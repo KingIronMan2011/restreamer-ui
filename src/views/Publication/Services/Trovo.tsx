@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import React from 'react';
 
-import FormInlineButton from '../../../misc/FormInlineButton';
+import FormInlineButton from '../../../components/FormInlineButton';
 import Logo from './logos/trovo.svg';
 
 const id = 'trovo';

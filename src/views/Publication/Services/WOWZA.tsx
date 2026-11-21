@@ -6,9 +6,9 @@ import TextField from '@mui/material/TextField';
 import React from 'react';
 import urlparser from 'url-parse';
 
-import Checkbox from '../../../misc/Checkbox';
-import Password from '../../../misc/Password';
-import Select from '../../../misc/Select';
+import Checkbox from '../../../components/Checkbox';
+import Password from '../../../components/Password';
+import Select from '../../../components/Select';
 import Logo from './logos/wowza.svg';
 
 const id = 'wowza';

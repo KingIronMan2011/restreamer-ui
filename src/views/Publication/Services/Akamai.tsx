@@ -4,7 +4,7 @@ import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import React from 'react';
 
-import Checkbox from '../../../misc/Checkbox';
+import Checkbox from '../../../components/Checkbox';
 import Logo from './logos/akamai.svg';
 
 const id = 'akamai';

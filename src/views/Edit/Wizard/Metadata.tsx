@@ -5,9 +5,9 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import MetadataControl from '../../../misc/controls/Metadata';
-import Paper from '../../../misc/Paper';
-import PaperHeader from '../../../misc/PaperHeader';
+import MetadataControl from '../../../components/controls/Metadata';
+import Paper from '../../../components/Paper';
+import PaperHeader from '../../../components/PaperHeader';
 
 export default function Metadata({
   onAbort = () => {},

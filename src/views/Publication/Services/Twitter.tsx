@@ -7,8 +7,8 @@ import { Bird } from 'lucide-react';
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import FormInlineButton from '../../../misc/FormInlineButton';
-import Select from '../../../misc/Select';
+import FormInlineButton from '../../../components/FormInlineButton';
+import Select from '../../../components/Select';
 
 const id = 'twitter';
 const name = 'Twitter';

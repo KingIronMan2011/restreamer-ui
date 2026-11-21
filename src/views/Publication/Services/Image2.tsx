@@ -12,8 +12,8 @@ import Typography from '@mui/material/Typography';
 import { Images } from 'lucide-react';
 import React from 'react';
 
-import Checkbox from '../../../misc/Checkbox';
-import Select from '../../../misc/Select';
+import Checkbox from '../../../components/Checkbox';
+import Select from '../../../components/Select';
 
 const id = 'image2';
 const name = 'Image2';

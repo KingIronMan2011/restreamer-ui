@@ -17,14 +17,14 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import urlparser from 'url-parse';
 
-import BoxText from '../../../misc/BoxText';
-import BoxTextarea from '../../../misc/BoxTextarea';
-import Checkbox from '../../../misc/Checkbox';
-import FormInlineButton from '../../../misc/FormInlineButton';
-import MultiSelect from '../../../misc/MultiSelect';
-import Password from '../../../misc/Password';
-import Select from '../../../misc/Select';
-import Textarea from '../../../misc/Textarea';
+import BoxText from '../../../components/BoxText';
+import BoxTextarea from '../../../components/BoxTextarea';
+import Checkbox from '../../../components/Checkbox';
+import FormInlineButton from '../../../components/FormInlineButton';
+import MultiSelect from '../../../components/MultiSelect';
+import Password from '../../../components/Password';
+import Select from '../../../components/Select';
+import Textarea from '../../../components/Textarea';
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {

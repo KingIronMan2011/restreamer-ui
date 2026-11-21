@@ -7,9 +7,9 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import Video from '../../../misc/coders/settings/Video';
-import FormInlineButton from '../../../misc/FormInlineButton';
-import Select from '../../../misc/Select';
+import Video from '../../../components/coders/settings/Video';
+import FormInlineButton from '../../../components/FormInlineButton';
+import Select from '../../../components/Select';
 
 const initSettings = (initialSettings: any) => {
   if (!initialSettings) {

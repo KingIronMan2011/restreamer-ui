@@ -5,9 +5,9 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import BoxText from '../../../misc/BoxText';
-import Paper from '../../../misc/Paper';
-import PaperHeader from '../../../misc/PaperHeader';
+import BoxText from '../../../components/BoxText';
+import Paper from '../../../components/Paper';
+import PaperHeader from '../../../components/PaperHeader';
 
 export default function Error({
   onAbort = () => {},

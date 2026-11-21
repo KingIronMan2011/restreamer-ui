@@ -4,9 +4,9 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import BoxText from '../../misc/BoxText';
-import * as Coders from '../../misc/coders/Encoders';
-import * as Filters from '../../misc/filters';
+import BoxText from '../../components/BoxText';
+import * as Coders from '../../components/coders/Encoders';
+import * as Filters from '../../components/filters';
 import Sources from './Sources';
 
 export default function Summary({ type = '', sources = [], profile }: any) {

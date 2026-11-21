@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import { Wrench } from 'lucide-react';
 import React from 'react';
 
-import Checkbox from '../../../misc/Checkbox';
+import Checkbox from '../../../components/Checkbox';
 
 const id = 'udp';
 const name = 'UDP';

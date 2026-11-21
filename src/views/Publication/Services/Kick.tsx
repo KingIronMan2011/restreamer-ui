@@ -4,7 +4,7 @@ import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import React from 'react';
 
-import FormInlineButton from '../../../misc/FormInlineButton';
+import FormInlineButton from '../../../components/FormInlineButton';
 import Logo from './logos/kick.svg';
 
 const id = 'kick';

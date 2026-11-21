@@ -4,9 +4,9 @@ import Typography from '@mui/material/Typography';
 import React from 'react';
 import type { CSSProperties } from 'react';
 
-import Duration from '../../misc/Duration';
-import Number from '../../misc/Number';
-import Palette from '../../theme/base/palette';
+import Duration from '../../components/Duration';
+import Number from '../../components/Number';
+import Palette from '../../lib/theme/base/palette';
 
 export default function Progress({ progress = {} }: any) {
   const uptime = progress.time;

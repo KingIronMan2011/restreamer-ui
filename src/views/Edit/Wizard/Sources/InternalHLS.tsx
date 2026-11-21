@@ -4,8 +4,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import BoxTextarea from '../../../../misc/BoxTextarea';
-import Textarea from '../../../../misc/Textarea';
+import BoxTextarea from '../../../../components/BoxTextarea';
+import Textarea from '../../../../components/Textarea';
 import * as S from '../../Sources/Network';
 
 const initSettings = (initialSettings: any, config: any) => {

@@ -9,9 +9,9 @@ import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import BoxTextarea from '../../../../misc/BoxTextarea';
-import Select from '../../../../misc/Select';
-import Textarea from '../../../../misc/Textarea';
+import BoxTextarea from '../../../../components/BoxTextarea';
+import Select from '../../../../components/Select';
+import Textarea from '../../../../components/Textarea';
 import * as S from '../../Sources/Network';
 
 const initSettings = (initialSettings: any, config: any) => {

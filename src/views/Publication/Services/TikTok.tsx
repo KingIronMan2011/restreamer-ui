@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 import { Music2 } from 'lucide-react';
 import React from 'react';
 
-import FormInlineButton from '../../../misc/FormInlineButton';
+import FormInlineButton from '../../../components/FormInlineButton';
 
 const id = 'tiktok';
 const name = 'TikTok';

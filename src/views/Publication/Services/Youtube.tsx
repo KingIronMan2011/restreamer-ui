@@ -7,9 +7,9 @@ import { CirclePlay } from 'lucide-react';
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import Checkbox from '../../../misc/Checkbox';
-import FormInlineButton from '../../../misc/FormInlineButton';
-import Select from '../../../misc/Select';
+import Checkbox from '../../../components/Checkbox';
+import FormInlineButton from '../../../components/FormInlineButton';
+import Select from '../../../components/Select';
 
 const id = 'youtube';
 const name = 'YouTube Live';

@@ -13,9 +13,9 @@ import { Wrench } from 'lucide-react';
 import React from 'react';
 import urlparser from 'url-parse';
 
-import Checkbox from '../../../misc/Checkbox';
-import Password from '../../../misc/Password';
-import Select from '../../../misc/Select';
+import Checkbox from '../../../components/Checkbox';
+import Password from '../../../components/Password';
+import Select from '../../../components/Select';
 
 const id = 'dash';
 const name = 'DASH';

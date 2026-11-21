@@ -6,9 +6,9 @@ import makeStyles from '@mui/styles/makeStyles';
 import { Images } from 'lucide-react';
 import React from 'react';
 
-import Video from '../../../misc/coders/settings/Video';
-import FormInlineButton from '../../../misc/FormInlineButton';
-import SelectCustom from '../../../misc/SelectCustom';
+import Video from '../../../components/coders/settings/Video';
+import FormInlineButton from '../../../components/FormInlineButton';
+import SelectCustom from '../../../components/SelectCustom';
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {

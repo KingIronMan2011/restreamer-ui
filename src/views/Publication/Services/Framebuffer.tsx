@@ -4,8 +4,8 @@ import MenuItem from '@mui/material/MenuItem';
 import { Images } from 'lucide-react';
 import React from 'react';
 
-import Select from '../../../misc/Select';
-import SelectCustom from '../../../misc/SelectCustom';
+import Select from '../../../components/Select';
+import SelectCustom from '../../../components/SelectCustom';
 
 const id = 'framebuffer';
 const name = 'Framebuffer';

@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import React from 'react';
 
-import Checkbox from '../../../misc/Checkbox';
+import Checkbox from '../../../components/Checkbox';
 
 // id is a unique identifier for this service.
 const id = 'dummy';

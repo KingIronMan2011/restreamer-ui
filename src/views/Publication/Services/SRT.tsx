@@ -12,8 +12,8 @@ import Typography from '@mui/material/Typography';
 import { Wrench } from 'lucide-react';
 import React from 'react';
 
-import Checkbox from '../../../misc/Checkbox';
-import Select from '../../../misc/Select';
+import Checkbox from '../../../components/Checkbox';
+import Select from '../../../components/Select';
 
 const id = 'srt';
 const name = 'SRT';

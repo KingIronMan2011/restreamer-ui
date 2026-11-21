@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import { Camera } from 'lucide-react';
 import React from 'react';
 
-import FormInlineButton from '../../../misc/FormInlineButton';
+import FormInlineButton from '../../../components/FormInlineButton';
 
 const id = 'instagram';
 const name = 'Instagram';

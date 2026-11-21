@@ -1,9 +1,9 @@
 import { Trans } from '@lingui/macro';
 import React from 'react';
 
-import Paper from '../misc/Paper';
-import PaperContent from '../misc/PaperContent';
-import PaperHeader from '../misc/PaperHeader';
+import Paper from '../components/Paper';
+import PaperContent from '../components/PaperContent';
+import PaperHeader from '../components/PaperHeader';
 
 export default function Incompatible({ type = '', have = '', want = '' }: any) {
   let text = <Trans>This version of the UI is compatible.</Trans>;

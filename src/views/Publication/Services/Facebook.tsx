@@ -4,8 +4,8 @@ import TextField from '@mui/material/TextField';
 import { UsersRound } from 'lucide-react';
 import React from 'react';
 
-import Checkbox from '../../../misc/Checkbox';
-import FormInlineButton from '../../../misc/FormInlineButton';
+import Checkbox from '../../../components/Checkbox';
+import FormInlineButton from '../../../components/FormInlineButton';
 
 const id = 'facebook';
 const name = 'Facebook Live';

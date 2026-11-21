@@ -1,0 +1,8 @@
+{
+	"Process Details": {
+		"origin": [["src/components/modals/Process.js", 31]]
+	},
+	"Close": {
+		"origin": [["src/components/modals/Process.js", 53]]
+	}
+}

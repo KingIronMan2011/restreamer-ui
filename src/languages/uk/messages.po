@@ -1,0 +1,3615 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Restreamer\n"
+"Language: uk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/components/EncodingSelect.tsx:279
+msgid "<0>Compatibility list</0>"
+msgstr "<0>Список сумісності</0>"
+
+#: src/views/Edit/Profile.tsx:615
+#: src/views/Edit/Profile.tsx:801
+msgid "<0>Show probe details</0>"
+msgstr "<0>Показати деталі зонда</0>"
+
+#: src/views/Publication/Services/Core.tsx:242
+msgid "1. Switch to the interface of the target Restreamer."
+msgstr "1. Перейдіть до інтерфейсу цільового рестрімера."
+
+#: src/views/Publication/Services/Core.tsx:246
+msgid "2. Create a new channel and select RTMP or SRT server."
+msgstr "2. Створіть новий канал і виберіть RTMP або SRT сервер."
+
+#: src/views/Publication/Services/Core.tsx:250
+msgid "3. Copy the URL and paste it in the \"Target address\" field."
+msgstr "3. Скопіюйте URL-адресу і вставте її в поле \"Адреса цілі\"."
+
+#: src/components/controls/HLS.tsx:94
+msgid "6 (+ guaranteed to start with a Key frame)"
+msgstr "6 (+ гарантовано починається з ключового кадру)"
+
+#: src/components/controls/HLS.tsx:97
+msgid "7 (+ fragmented MP4 format)"
+msgstr "7 (+ фрагментований формат MP4)"
+
+#: src/components/ChannelList.tsx:517
+#: src/views/Edit/index.tsx:790
+#: src/views/Edit/index.tsx:820
+#: src/views/Edit/Profile.tsx:662
+#: src/views/Edit/Wizard/Abort.tsx:21
+#: src/views/Publication/Edit.tsx:762
+#: src/views/Settings.tsx:2737
+#: src/views/Settings.tsx:2764
+msgid "Abort"
+msgstr "Відміна"
+
+#: src/Header.tsx:332
+#: src/Header.tsx:386
+msgid "About"
+msgstr "Про нас"
+
+#: src/components/ChannelList.tsx:530
+msgid "Add"
+msgstr "Додати"
+
+#: src/components/modals/Hint.tsx:178
+msgid "Add Audio"
+msgstr ""
+
+#: src/views/Playersite.tsx:761
+msgid "Add external widgets and styles to the publication site. You can find some examples on the help page."
+msgstr "Додайте зовнішні віджети та стилі на сайт публікації. Ви можете знайти кілька прикладів на сторінці допомоги."
+
+#: src/components/ChannelList.tsx:510
+msgid "Add new channel"
+msgstr "Додати новий канал"
+
+#: src/views/Publication/Add.tsx:407
+msgid "Add Publication"
+msgstr "Додати публікацію"
+
+#: src/views/Publication/Add.tsx:410
+msgid "Add: {0}"
+msgstr "Додати: {0}"
+
+#: src/views/Playersite.tsx:408
+msgid "Additional channels"
+msgstr ""
+
+#: src/views/Playersite.tsx:440
+msgid "Additional channels to display on the playersite."
+msgstr ""
+
+#: src/views/Edit/Sources/Network.tsx:975
+#: src/views/Edit/Wizard/Sources/Network.tsx:77
+#: src/views/Publication/Services/Azure.tsx:112
+#: src/views/Publication/Services/Brightcove.tsx:112
+#: src/views/Publication/Services/Core.tsx:263
+#: src/views/Publication/Services/DASH.tsx:220
+#: src/views/Publication/Services/HLS.tsx:211
+#: src/views/Publication/Services/Icecast.tsx:197
+#: src/views/Publication/Services/Image2.tsx:150
+#: src/views/Publication/Services/Linkedin.tsx:112
+#: src/views/Publication/Services/MPEGTS.tsx:206
+#: src/views/Publication/Services/Red5.tsx:141
+#: src/views/Publication/Services/RTMP.tsx:184
+#: src/views/Publication/Services/RTSP.tsx:169
+#: src/views/Publication/Services/SRT.tsx:187
+#: src/views/Publication/Services/UDP.tsx:154
+#: src/views/Publication/Services/WOWZA.tsx:157
+#: src/views/Settings.tsx:1593
+msgid "Address"
+msgstr "Адреса"
+
+#: src/views/Playersite.tsx:693
+msgid "Address for the background image."
+msgstr "Посилання на зображення фону."
+
+#: src/views/Settings.tsx:1630
+msgid "Address to listen on for HTTP requests."
+msgstr "Порт для HTTP запитів."
+
+#: src/views/Settings.tsx:1647
+msgid "Address to listen on for HTTPS requests."
+msgstr "Порт для HTTPS запитів."
+
+#: src/views/Edit/Sources/Network.tsx:1288
+#: src/views/Edit/Sources/Network.tsx:1415
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:146
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:146
+msgid "Address:"
+msgstr "Адреса:"
+
+#: src/views/Playersite.tsx:576
+msgid "Adjust publication site colors and background as you like."
+msgstr "Налаштуйте кольори та фон сайту публікації за власним бажанням."
+
+#: src/views/Login.tsx:337
+msgid "Advanced monitoring"
+msgstr "Розширений моніторинг"
+
+#: src/views/Edit/Sources/Network.tsx:615
+#: src/views/Publication/Services/DASH.tsx:251
+#: src/views/Publication/Services/HLS.tsx:242
+#: src/views/Publication/Services/Icecast.tsx:211
+#: src/views/Publication/Services/Image2.tsx:163
+#: src/views/Publication/Services/MPEGTS.tsx:219
+#: src/views/Publication/Services/RTMP.tsx:206
+#: src/views/Publication/Services/RTSP.tsx:200
+#: src/views/Publication/Services/SRT.tsx:208
+#: src/views/Publication/Services/UDP.tsx:166
+msgid "Advanced settings"
+msgstr "Розширені налаштування"
+
+#: src/views/Edit/Wizard/Source.tsx:55
+msgid "Advanced setup"
+msgstr "Розширені налаштування"
+
+#: src/views/Playersite.tsx:463
+#: src/views/Publication/Player.tsx:590
+msgid "AirPlay"
+msgstr "AirPlay"
+
+#: src/views/Login.tsx:340
+msgid "Alerting by email"
+msgstr "Сповіщення електронною поштою"
+
+#: src/views/Publication/Add.tsx:430
+msgid "All"
+msgstr "Всі"
+
+#: src/components/filters/video/Bwdif.tsx:83
+msgid "All frames"
+msgstr "Всі кадри"
+
+#: src/views/Settings.tsx:1401
+msgid "All important system settings."
+msgstr "Всі важливі системні налаштування."
+
+#: src/views/Settings.tsx:1836
+msgid "Allow all referrer"
+msgstr "Дозволити всім рефералам"
+
+#: src/views/Settings.tsx:1889
+msgid "Allow counting how many viewers the stream has."
+msgstr "Дозволяє підраховувати, скільки глядачів має потік."
+
+#: src/views/Edit/Sources/ALSA.tsx:184
+msgid "ALSA"
+msgstr "ALSA"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:153
+msgid "Amplitude"
+msgstr "Амплітуда"
+
+#: src/components/Env.tsx:40
+msgid "An environment variable sets this value."
+msgstr "Це значення задається змінною оточення."
+
+#: src/views/Settings.tsx:1050
+msgid "API endpoint not found. Settings not saved."
+msgstr "Кінцеву точку API не знайдено. Налаштування не збережено."
+
+#: src/views/Settings.tsx:2378
+msgid "App"
+msgstr "Додаток"
+
+#: src/Footer.tsx:251
+#: src/views/Publication/Services/Red5.tsx:152
+#: src/views/Publication/Services/WOWZA.tsx:177
+msgid "Application"
+msgstr "Застосунок"
+
+#: src/views/Edit/Wizard/Abort.tsx:50
+msgid "Are you sure you want to abort the wizard?"
+msgstr "Ви впевнені, що хочете перервати роботу майстра?"
+
+#: src/views/Publication/Add.tsx:604
+msgid "Audio"
+msgstr "Аудіо"
+
+#: src/views/Edit/Sources/ALSA.tsx:129
+#: src/views/Edit/Sources/AVFoundation.tsx:171
+msgid "Audio device"
+msgstr "Аудіопристрій"
+
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:133
+msgid "Audio Device"
+msgstr "Аудіо пристрій"
+
+#: src/views/Edit/Wizard/Audio.tsx:99
+#: src/views/Edit/Wizard/Audio.tsx:119
+msgid "Audio from device"
+msgstr "Аудіо з пристрою"
+
+#: src/views/Edit/Profile.tsx:682
+#: src/views/Edit/ProfileSummary.tsx:93
+#: src/views/Publication/Edit.tsx:682
+msgid "Audio settings"
+msgstr "Налаштування аудіо"
+
+#: src/views/Edit/Wizard/Audio.tsx:40
+msgid "Audio setup"
+msgstr "Налаштування звуку"
+
+#: src/views/Login.tsx:249
+msgid "Auth0"
+msgstr "Auth0"
+
+#: src/views/Login.tsx:382
+msgid "Auth0 is currently not available because this interface is loaded from an insecure origin."
+msgstr "Auth0 наразі недоступний, оскільки цей інтерфейс завантажено з ненадійного джерела."
+
+#: src/views/Login.tsx:395
+msgid "Auth0 Tenant"
+msgstr "Користувач Auth0"
+
+#: src/components/controls/Metadata.tsx:73
+msgid "Author"
+msgstr "Автор"
+
+#: src/views/Settings.tsx:1342
+#: src/views/Settings.tsx:1755
+msgid "Authorization"
+msgstr "Авторизація"
+
+#: src/components/filters/video/Bwdif.tsx:69
+msgid "Auto"
+msgstr "Авто"
+
+#: src/components/controls/HLS.tsx:150
+msgid "Automatic cleanup of all media data"
+msgstr "Автоматичне очищення всіх мультимедійних даних"
+
+#: src/views/Publication/Player.tsx:575
+msgid "Autoplay"
+msgstr "Автовідтворення"
+
+#: src/views/Playersite.tsx:491
+msgid "Available"
+msgstr "Доступно"
+
+#: src/views/Edit/Sources/AVFoundation.tsx:256
+msgid "AVFoundation"
+msgstr "AVFoundation"
+
+#: src/views/Edit/Sources/Network.tsx:884
+msgid "avoid_negative_ts"
+msgstr "avoid_negative_ts"
+
+#: src/views/Edit/Profile.tsx:846
+#: src/views/Edit/Wizard/Abort.tsx:42
+#: src/views/Edit/Wizard/Audio.tsx:157
+#: src/views/Edit/Wizard/License.tsx:50
+#: src/views/Edit/Wizard/Metadata.tsx:49
+#: src/views/Edit/Wizard/Video.tsx:92
+#: src/views/Edit/Wizard/VideoProfile.tsx:107
+#: src/views/Publication/Add.tsx:646
+msgid "Back"
+msgstr "Назад"
+
+#: src/views/Playersite.tsx:627
+msgid "Background colors"
+msgstr "Кольори фону"
+
+#: src/views/Playersite.tsx:680
+msgid "Background image"
+msgstr "Фонове зображення"
+
+#: src/views/Publication/Services/DaCast.tsx:220
+msgid "Backup server"
+msgstr "Сервер резервного копіювання"
+
+#: src/views/Publication/Services/Youtube.tsx:240
+msgid "Backup stream"
+msgstr "Резервний потік"
+
+#: src/views/Publication/Services/Facebook.tsx:140
+msgid "Backup stream key"
+msgstr "Ключ потоку резервного копіювання"
+
+#: src/views/Publication/Services/Akamai.tsx:213
+msgid "Backup URL"
+msgstr "Резервний URL"
+
+#: src/Footer.tsx:290
+#: src/Footer.tsx:304
+msgid "Bandwidth"
+msgstr "Пропускна здатність"
+
+#: src/views/Settings.tsx:1702
+msgid "Bandwidth control"
+msgstr "Контроль трафіку"
+
+#: src/components/modals/Process.tsx:157
+msgid "Banner"
+msgstr "Банер"
+
+#: src/views/Login.tsx:254
+#: src/views/Settings.tsx:1760
+msgid "Basic"
+msgstr "Базова"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:190
+msgid "Beep factor"
+msgstr "Коефіцієнт звукового сигналу"
+
+#: src/components/coders/settings/Audio.tsx:13
+#: src/components/coders/settings/Video.tsx:15
+msgid "Bitrate"
+msgstr "Бітрейт"
+
+#: src/views/Settings.tsx:2264
+msgid "Block cache types"
+msgstr "Типи кешу блокування"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:141
+msgid "blue"
+msgstr "блакитний"
+
+#: src/components/filters/video/Bwdif.tsx:66
+msgid "Bottom field"
+msgstr "Нижнє поле"
+
+#: src/views/Edit/index.tsx:703
+#: src/views/Edit/Wizard/Metadata.tsx:35
+msgid "Briefly describe what the audience will see during the live stream."
+msgstr "Коротко опишіть, що побачать глядачі під час прямого ефіру."
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:140
+msgid "brown"
+msgstr "коричневий"
+
+#: src/views/Publication/Player.tsx:459
+msgid "Button color"
+msgstr "Колір кнопки"
+
+#: src/components/filters/video/Scale.tsx:50
+msgid "By height"
+msgstr "За висотою"
+
+#: src/components/filters/video/Scale.tsx:53
+msgid "By width"
+msgstr "За шириною"
+
+#: src/views/Settings.tsx:2124
+msgid "Cache for files on /data."
+msgstr "Кеш для файлів в /data."
+
+#: src/views/Settings.tsx:2182
+msgid "Cache time (Seconds)"
+msgstr "Час кешування (сек)"
+
+#: src/views/Settings.tsx:2240
+msgid "Cache types"
+msgstr "Типи кешування"
+
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:231
+msgid "Capture buffer"
+msgstr "Буфер захоплення"
+
+#: src/views/Edit/Sources/AVFoundation.tsx:237
+msgid "Capture clicks"
+msgstr "Захоплювати кліки"
+
+#: src/views/Edit/Sources/AVFoundation.tsx:230
+msgid "Capture cursor"
+msgstr "Захоплювати курсор"
+
+#: src/views/Edit/Sources/Channel.tsx:134
+msgid "Channel"
+msgstr ""
+
+#: src/views/Edit/index.tsx:404
+msgid "Channel \"{0}\" saved"
+msgstr "Канал \"{0}\" збережено"
+
+#: src/views/Edit/Sources/ALSA.tsx:156
+msgid "Channels"
+msgstr "Канали"
+
+#: src/views/Settings.tsx:1411
+msgid "Check for updates"
+msgstr "Перевіряти оновлення"
+
+#: src/views/Publication/Add.tsx:360
+msgid "Check the requirements"
+msgstr "Перевірити вимоги"
+
+#: src/views/Edit/StreamSelect.tsx:60
+msgid "Choose a video stream"
+msgstr "Виберіть відео потік"
+
+#: src/views/Edit/StreamSelect.tsx:75
+msgid "Choose an audio stream"
+msgstr "Виберіть аудіо потік"
+
+#: src/views/Edit/Sources/Channel.tsx:84
+msgid "Choose an input channel ..."
+msgstr ""
+
+#: src/views/Edit/Sources/ALSA.tsx:106
+#: src/views/Edit/Sources/Framebuffer.tsx:93
+#: src/views/Edit/Sources/Raspicam.tsx:103
+#: src/views/Edit/Sources/V4L.tsx:103
+#: src/views/Edit/Sources/X11grab.tsx:155
+msgid "Choose an input device ..."
+msgstr "Виберіть пристрій введення ..."
+
+#: src/views/Edit/Sources/Network.tsx:1249
+#: src/views/Edit/Sources/Network.tsx:1376
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:110
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:110
+msgid "Choose an input stream ..."
+msgstr "Виберіть вхідний потік ..."
+
+#: src/components/coders/settings/Video.tsx:371
+msgid "Choose between CFR and VFR (Auto)"
+msgstr "Виберіть між CFR та VFR (Авто)"
+
+#: src/components/EncodingSelect.tsx:253
+msgid "Choose codec ..."
+msgstr "Виберіть кодек ..."
+
+#: src/views/Login.tsx:400
+msgid "Choose tenant ..."
+msgstr "Виберіть орендаря ..."
+
+#: src/views/Playersite.tsx:455
+#: src/views/Publication/Player.tsx:585
+msgid "Chromecast"
+msgstr "Chromecast"
+
+#: src/views/Publication/Services/DASH.tsx:381
+#: src/views/Publication/Services/HLS.tsx:315
+msgid "Chunk"
+msgstr "Чанк"
+
+#: src/components/Changelog.tsx:182
+#: src/components/ModalContent.tsx:101
+#: src/components/modals/Hint.tsx:212
+#: src/views/Edit/index.tsx:752
+#: src/views/Playersite.tsx:859
+#: src/views/Publication/Add.tsx:452
+#: src/views/Publication/Add.tsx:639
+#: src/views/Publication/Edit.tsx:712
+#: src/views/Publication/Player.tsx:602
+#: src/views/Settings.tsx:2658
+msgid "Close"
+msgstr "Закрити"
+
+#: src/views/Playersite.tsx:333
+msgid "Code injection"
+msgstr "Введення коду"
+
+#: src/components/EncodingSelect.tsx:248
+#: src/components/modals/Hint.tsx:68
+#: src/components/modals/Hint.tsx:95
+msgid "Codec"
+msgstr "Кодек"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:134
+msgid "Color"
+msgstr "Колір"
+
+#: src/components/modals/Process.tsx:143
+msgid "Command"
+msgstr "Командир."
+
+#: src/views/Settings.tsx:1570
+msgid "Config"
+msgstr "Конфігурація"
+
+#: src/views/Password.tsx:157
+msgid "Confirm password"
+msgstr "Підтвердити пароль"
+
+#: src/components/ActionButton.tsx:63
+msgid "Connect"
+msgstr "З'єднати"
+
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:180
+msgid "Connected device"
+msgstr "Підключений пристрій"
+
+#: src/views/Publication/Process.tsx:55
+msgid "Connected since <0/>"
+msgstr "З'єднано з <0/>"
+
+#: src/components/ActionButton.tsx:19
+#: src/views/Main/index.tsx:384
+#: src/views/Publication/Process.tsx:41
+msgid "Connecting ..."
+msgstr "З'єднання ..."
+
+#: src/views/Initializing.tsx:20
+msgid "Connecting to Restreamer Core ..."
+msgstr "Підключення до ядра Restreamer Core ..."
+
+#: src/views/Invalid.tsx:42
+msgid "Connecting to Restreamer Core failed probably because of mixed content."
+msgstr "Не вдалося підключитися до ядра Restreamer Core, ймовірно, через змішаний вміст."
+
+#: src/components/coders/settings/Video.tsx:365
+msgid "Constant frame rate (CFR)"
+msgstr "Постійна частота кадрів (CFR)"
+
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:197
+msgid "Constant Quantizer Mode (-1 to 255)."
+msgstr "Режим постійного квантування (від -1 до 255)."
+
+#: src/components/controls/Metadata.tsx:72
+#: src/views/Playersite.tsx:728
+#: src/views/Playersite.tsx:745
+msgid "Content"
+msgstr "Вміст"
+
+#: src/views/Main/index.tsx:555
+msgid "Content URL"
+msgstr "URL-адреса вмісту"
+
+#: src/views/Edit/Sources/Network.tsx:866
+msgid "copyts"
+msgstr "копірки"
+
+#: src/Footer.tsx:225
+msgid "Cores"
+msgstr "Ядра"
+
+#: src/components/Progress.tsx:129
+msgid "CPU"
+msgstr "ПРОЦЕСОР"
+
+#: src/components/controls/Limits.tsx:46
+msgid "CPU Limit (percent)"
+msgstr "Обмеження процесора (у відсотках)"
+
+#: src/components/controls/Limits.tsx:51
+msgid "CPU usage limit in percent (0-100%), 0 for unlimited."
+msgstr "Обмеження використання процесора у відсотках (0-100%), 0 - необмежене."
+
+#: src/components/controls/License/index.tsx:115
+msgid "Creative Commons"
+msgstr "Творчі спільноти"
+
+#: src/components/coders/Encoders/audio/opus.tsx:80
+#: src/components/coders/settings/Audio.tsx:32
+#: src/components/coders/settings/Audio.tsx:119
+#: src/components/coders/settings/Audio.tsx:169
+#: src/components/coders/settings/Video.tsx:39
+#: src/components/coders/settings/Video.tsx:77
+#: src/components/coders/settings/Video.tsx:121
+#: src/components/coders/settings/Video.tsx:181
+#: src/components/coders/settings/Video.tsx:222
+#: src/components/coders/settings/Video.tsx:264
+#: src/components/coders/settings/Video.tsx:302
+#: src/components/coders/settings/Video.tsx:338
+#: src/components/filters/audio/Resample.tsx:71
+#: src/components/filters/audio/Resample.tsx:121
+#: src/components/filters/audio/Volume.tsx:57
+#: src/components/filters/video/Framerate.tsx:54
+#: src/views/Edit/Sources/ALSA.tsx:111
+#: src/views/Edit/Sources/AVFoundation.tsx:130
+#: src/views/Edit/Sources/AVFoundation.tsx:165
+#: src/views/Edit/Sources/V4L.tsx:109
+#: src/views/Edit/Sources/X11grab.tsx:81
+#: src/views/Edit/Sources/X11grab.tsx:161
+msgid "Custom ..."
+msgstr "Своє ..."
+
+#: src/views/Edit/Sources/ALSA.tsx:130
+msgid "Custom audio device"
+msgstr "Кастомний аудіопристрій"
+
+#: src/views/Edit/Sources/AVFoundation.tsx:172
+msgid "Custom audio index"
+msgstr "Користувацький аудіоіндекс"
+
+#: src/components/coders/settings/Audio.tsx:14
+#: src/components/coders/settings/Video.tsx:16
+msgid "Custom bitrate (kbit/s)"
+msgstr "Кастомний бітрейт (кбіт/с)"
+
+#: src/views/Playersite.tsx:756
+msgid "Custom code injection"
+msgstr "Кастомне введення коду"
+
+#: src/components/coders/Encoders/audio/opus.tsx:65
+msgid "Custom delay"
+msgstr "Кастомна затримка"
+
+#: src/views/Edit/Sources/Framebuffer.tsx:101
+msgid "Custom device"
+msgstr "Користувацький пристрій"
+
+#: src/components/coders/settings/Video.tsx:286
+#: src/components/coders/settings/Video.tsx:324
+msgid "Custom format"
+msgstr "Користувацький формат"
+
+#: src/components/coders/settings/Video.tsx:99
+#: src/components/filters/video/Framerate.tsx:36
+msgid "Custom framerate"
+msgstr "Кастомна частота кадрів"
+
+#: src/views/Settings.tsx:1579
+msgid "Custom JSON config for datarhei Core."
+msgstr "Кастомний JSON-конфіг для ядра datarhei."
+
+#: src/components/coders/settings/Video.tsx:61
+msgid "Custom keyframe interval"
+msgstr "Користувацький інтервал між ключовими кадрами"
+
+#: src/components/coders/settings/Audio.tsx:61
+#: src/components/filters/audio/Resample.tsx:53
+msgid "Custom layout"
+msgstr "Користувацький макет"
+
+#: src/components/coders/settings/Audio.tsx:147
+#: src/components/filters/audio/Resample.tsx:99
+msgid "Custom sampling (Hz)"
+msgstr "Кастомна дискретизація (Гц)"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx:188
+msgid "Custom scale"
+msgstr "Користувацький масштаб"
+
+#: src/components/coders/Decoders/video/h264_cuvid.tsx:81
+#: src/components/coders/Decoders/video/hevc_cuvid.tsx:81
+#: src/components/coders/Decoders/video/mjpeg_cuvid.tsx:81
+#: src/components/coders/Decoders/video/mpeg1_cuvid.tsx:81
+#: src/components/coders/Decoders/video/mpeg2_cuvid.tsx:81
+#: src/components/coders/Decoders/video/mpeg4_cuvid.tsx:81
+#: src/components/coders/Decoders/video/vc1_cuvid.tsx:81
+#: src/components/coders/Decoders/video/vp8_cuvid.tsx:81
+#: src/components/coders/Decoders/video/vp9_cuvid.tsx:81
+#: src/components/coders/settings/Video.tsx:155
+#: src/components/coders/settings/Video.tsx:203
+#: src/components/coders/settings/Video.tsx:244
+msgid "Custom size"
+msgstr "Користувацький розмір"
+
+#: src/views/Edit/Sources/V4L.tsx:128
+#: src/views/Edit/Sources/X11grab.tsx:180
+msgid "Custom video device"
+msgstr "Користувацький відеопристрій"
+
+#: src/views/Edit/Sources/AVFoundation.tsx:137
+msgid "Custom video index"
+msgstr "Спеціальний відеоіндекс"
+
+#: src/components/CopyButton.tsx:27
+#: src/components/Textarea.tsx:62
+#: src/components/TextFieldCopy.tsx:47
+msgid "Data copied to clipboard"
+msgstr "Дані скопійовано в буфер обміну"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx:224
+msgid "Death color"
+msgstr "Колір смерті"
+
+#: src/components/filters/audio/Volume.tsx:72
+msgid "Decibels (dB)"
+msgstr "Децибели (дБ)"
+
+#: src/components/EncodingSelect.tsx:262
+#: src/views/Edit/Wizard/VideoProfile.tsx:81
+msgid "Decoder"
+msgstr "Декодер"
+
+#: src/views/Edit/Sources/AVFoundation.tsx:125
+#: src/views/Edit/Sources/AVFoundation.tsx:161
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:91
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:126
+#: src/views/Playersite.tsx:501
+#: src/views/Playersite.tsx:590
+#: src/views/Playersite.tsx:634
+msgid "Default"
+msgstr "За замов."
+
+#: src/views/Edit/Sources/Network.tsx:800
+msgid "Default {0}"
+msgstr "За замовчуванням {0}"
+
+#: src/views/Edit/Sources/Network.tsx:840
+msgid "Default {0} ({1} seconds)"
+msgstr "За замовчуванням {0} ({1} секунд)"
+
+#: src/components/filters/video/Bwdif.tsx:130
+msgid "Deinterlace (bwdif)"
+msgstr "Деінтерлейс (bwdif)"
+
+#: src/components/filters/video/Bwdif.tsx:78
+msgid "Deinterlace deint"
+msgstr "Деінтерлейс deint"
+
+#: src/components/filters/video/Bwdif.tsx:41
+msgid "Deinterlace mode"
+msgstr "Режим деінтерлейсу"
+
+#: src/components/filters/video/Bwdif.tsx:58
+msgid "Deinterlace parity"
+msgstr "Парність деінтерлейсу"
+
+#: src/components/coders/Encoders/audio/opus.tsx:64
+msgid "Delay"
+msgstr "Затримка"
+
+#: src/views/Edit/Sources/ALSA.tsx:165
+msgid "Delay (ms)"
+msgstr "Затримка (ms)"
+
+#: src/views/Edit/index.tsx:774
+#: src/views/Edit/index.tsx:829
+#: src/views/Playersite.tsx:525
+#: src/views/Publication/Edit.tsx:731
+#: src/views/Publication/Edit.tsx:771
+msgid "Delete"
+msgstr "Видалити"
+
+#: src/views/Publication/Edit.tsx:776
+msgid "Deleting a publication service cannot be reversed. The publication stops immediately."
+msgstr "Видалення послуги публікації не можна скасувати. Публікація зупиняється негайно."
+
+#: src/views/Publication/Services/Twitter.tsx:168
+#: src/views/Publication/Services/Youtube.tsx:211
+msgid "Delivering mode"
+msgstr "Режим доставки"
+
+#: src/components/controls/Metadata.tsx:93
+#: src/components/controls/Metadata.tsx:118
+msgid "Description"
+msgstr "Опис"
+
+#: src/views/Playersite.tsx:321
+#: src/views/Playersite.tsx:571
+msgid "Design"
+msgstr "Дизайн"
+
+#: src/views/Edit/Sources/Framebuffer.tsx:100
+#: src/views/Edit/Wizard/Audio.tsx:124
+#: src/views/Publication/Services/Framebuffer.tsx:108
+msgid "Device"
+msgstr "Пристрій"
+
+#: src/components/ActionButton.tsx:37
+#: src/components/ActionButton.tsx:76
+#: src/components/ActionButton.tsx:102
+msgid "Disconnect"
+msgstr "Відключити"
+
+#: src/views/Edit/index.tsx:799
+msgid "Disconnect & Continue"
+msgstr "Відключити і продовжити"
+
+#: src/components/ActionButton.tsx:25
+#: src/views/Publication/Process.tsx:48
+msgid "Disconnecting ..."
+msgstr "Відключення ..."
+
+#: src/components/controls/HLS.tsx:76
+#: src/views/Settings.tsx:2078
+msgid "Disk"
+msgstr "Диск"
+
+#: src/views/Settings.tsx:2121
+#: src/views/Settings.tsx:2129
+msgid "Disk cache"
+msgstr "Дисковий кеш"
+
+#: src/Footer.tsx:352
+#: src/Footer.tsx:366
+msgid "Disk storage"
+msgstr "Дисковий накопичувач"
+
+#: src/views/Settings.tsx:2774
+msgid "Do you really want to restart the application now?"
+msgstr "Ви дійсно бажаєте перезапустити програму?"
+
+#: src/views/Edit/index.tsx:813
+msgid "Do you want to delete \"{0}\"?"
+msgstr "Ви хочете видалити \"{0}\"?"
+
+#: src/views/Publication/Edit.tsx:755
+msgid "Do you want to delete {title}?"
+msgstr "Бажаєте видалити {title}?"
+
+#: src/views/Edit/index.tsx:783
+msgid "Do you want to disconnect \"{0}\"?"
+msgstr "Ви хочете відключити \"{0}\"?"
+
+#: src/Header.tsx:342
+#: src/Header.tsx:396
+msgid "Docs"
+msgstr "Документи"
+
+#: src/views/Publication/Services/DASH.tsx:597
+#: src/views/Publication/Services/HLS.tsx:576
+#: src/views/Publication/Services/Icecast.tsx:279
+#: src/views/Publication/Services/Image2.tsx:219
+#: src/views/Publication/Services/MPEGTS.tsx:430
+#: src/views/Publication/Services/RTMP.tsx:318
+#: src/views/Publication/Services/RTSP.tsx:288
+#: src/views/Publication/Services/SRT.tsx:490
+#: src/views/Publication/Services/UDP.tsx:282
+msgid "Documentation"
+msgstr "Документація"
+
+#: src/views/Edit/Sources/X11grab.tsx:260
+msgid "Draw mouse"
+msgstr ""
+
+#: src/components/Progress.tsx:230
+msgid "Dup. frames"
+msgstr "Дуб. кадри"
+
+#: src/components/filters/video/Bwdif.tsx:49
+msgid "Each field"
+msgstr "Кожне поле"
+
+#: src/components/filters/video/Bwdif.tsx:46
+msgid "Each frames"
+msgstr "Кожен кадр"
+
+#: src/views/Edit/index.tsx:471
+msgid "Edit"
+msgstr "Змінити"
+
+#: src/views/Edit/index.tsx:518
+msgid "Edit the audio and video sources for the live stream. Add a description, and set your desired content license."
+msgstr "Відредагуйте аудіо- та відеоджерела для прямого ефіру. Додайте опис і встановіть бажану ліцензію на контент."
+
+#: src/views/Publication/Edit.tsx:487
+msgid "Edit: {title}"
+msgstr "Змінити: {title}"
+
+#: src/views/Publication/Player.tsx:365
+msgid "EDIT: Player"
+msgstr "Редагування: Плеєр"
+
+#: src/views/Playersite.tsx:295
+msgid "EDIT: Publication Website"
+msgstr "Редагування: Веб-сайт публікації"
+
+#: src/views/Settings.tsx:1679
+msgid "Email"
+msgstr "Електронна пошта"
+
+#: src/views/Publication/Player.tsx:413
+msgid "Embed"
+msgstr "Вставка"
+
+#: src/components/controls/RTMP.tsx:51
+#: src/components/controls/SRT.tsx:51
+msgid "Enable"
+msgstr "Увімкнути"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:195
+msgid "Enable a periodic beep every second with this value times the carrier frequency"
+msgstr "Увімкніть періодичний звуковий сигнал щосекунди, помноживши це значення на несучу частоту"
+
+#: src/views/Publication/Services/Dummy.tsx:313
+#: src/views/Publication/Services/Facebook.tsx:160
+msgid "Enable backup stream"
+msgstr "Увімкнути резервний потік"
+
+#: src/components/controls/Preview.tsx:57
+msgid "Enable browser-compatible H.264 stream"
+msgstr ""
+
+#: src/views/Publication/Player.tsx:564
+msgid "Enable nerd statistics"
+msgstr "Увімкнути статистику переглядів"
+
+#: src/components/controls/RTMP.tsx:75
+#: src/components/controls/SRT.tsx:75
+msgid "Enable now"
+msgstr "Увімкнути зараз"
+
+#: src/views/Publication/Services/Dummy.tsx:308
+#: src/views/Publication/Services/Facebook.tsx:155
+msgid "Enable primary stream"
+msgstr "Увімкнути основний потік"
+
+#: src/views/Edit/Sources/Network.tsx:1228
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:91
+msgid "Enable RTMP server ..."
+msgstr "Увімкнути RTMP сервер ..."
+
+#: src/views/Publication/Services/PeerTube.tsx:118
+msgid "Enable RTMPS transfer"
+msgstr "Увімкнути передачу RTMPS"
+
+#: src/components/controls/Snapshot.tsx:47
+msgid "Enable snapshots"
+msgstr "Увімкнути знімки"
+
+#: src/views/Edit/Sources/Network.tsx:1355
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:91
+msgid "Enable SRT server ..."
+msgstr "Увімкнути сервер SRT ..."
+
+#: src/views/Settings.tsx:1778
+msgid "Enabling authorization is strongly advised. Otherwise, anybody can access this instance."
+msgstr "Наполегливо рекомендуємо увімкнути авторизацію. Інакше будь-хто зможе отримати доступ до цього екземпляра."
+
+#: src/views/Settings.tsx:1989
+msgid "Enabling basic auth is strongly advised. Otherwise, anybody could write data to /memfs."
+msgstr "Настійно рекомендується увімкнути базові повноваження. Інакше будь-хто зможе записати дані до /memfs."
+
+#: src/views/Edit/Wizard/VideoProfile.tsx:91
+msgid "Encoder"
+msgstr "Енкодер"
+
+#: src/views/Edit/Summary.tsx:94
+#: src/views/Publication/Add.tsx:566
+#: src/views/Publication/Edit.tsx:644
+msgid "Encoding"
+msgstr "Енкодування"
+
+#: src/views/Publication/Services/HLS.tsx:521
+#: src/views/Publication/Services/RTMP.tsx:290
+#: src/views/Publication/Services/SRT.tsx:430
+msgid "Encryption"
+msgstr "Шифрування"
+
+#: src/components/ChannelList.tsx:537
+msgid "Enter a name for the new channel."
+msgstr "Введіть назву нового каналу."
+
+#: src/views/Password.tsx:145
+msgid "Enter password"
+msgstr "Введіть пароль"
+
+#: src/views/Edit/Sources/Network.tsx:968
+#: src/views/Edit/Wizard/Sources/Network.tsx:70
+msgid "Enter the address of your network source:"
+msgstr "Введіть мережеву адресу джерела:"
+
+#: src/views/Password.tsx:133
+msgid "Enter username"
+msgstr "Введіть ім'я користувача"
+
+#: src/components/coders/Encoders/video/h264_videotoolbox.tsx:71
+msgid "Entropy coder"
+msgstr "Кодер ентропії"
+
+#: src/views/Edit/Wizard/Error.tsx:22
+#: src/views/Incompatible.tsx:29
+#: src/views/Invalid.tsx:31
+#: src/views/Publication/Process.tsx:64
+#: src/views/Settings.tsx:1278
+msgid "Error"
+msgstr "Помилка"
+
+#: src/components/CopyButton.tsx:33
+#: src/components/Textarea.tsx:68
+#: src/components/TextFieldCopy.tsx:53
+msgid "Error while copying data to clipboard"
+msgstr "Помилка під час копіювання даних у буфер обміну"
+
+#: src/views/Main/index.tsx:403
+#: src/views/Publication/Process.tsx:65
+msgid "Error: {0}"
+msgstr "Помилка: {0}"
+
+#: src/views/Playersite.tsx:804
+msgid "Expands the area above the channel list (live chat)."
+msgstr "Розширює область над списком каналів (чат)."
+
+#: src/views/Playersite.tsx:826
+msgid "Expands the area under the channel description (comment boxes)."
+msgstr "Розширює область під описом каналу (поля для коментарів)."
+
+#: src/views/Settings.tsx:1459
+msgid "Expert mode"
+msgstr "Експертний режим"
+
+#: src/components/controls/HLS.tsx:88
+msgid "EXT-X-VERSION"
+msgstr "EXT-X-ВЕРСІЯ"
+
+#: src/views/Playersite.tsx:789
+msgid "Extend channel list"
+msgstr "Розгорнути список каналів"
+
+#: src/views/Playersite.tsx:811
+msgid "Extend content"
+msgstr "Розгорнути вміст"
+
+#: src/views/Playersite.tsx:834
+msgid "Extend footer"
+msgstr "Розгорнути нижній колонтитул"
+
+#: src/views/Playersite.tsx:769
+msgid "Extend header"
+msgstr "Розгорнути верхній колонтитул"
+
+#: src/views/Edit/Sources/Network.tsx:912
+msgid "Extention settings"
+msgstr ""
+
+#: src/views/Publication/Add.tsx:270
+msgid "Failed to create publication service ({0})"
+msgstr "Не вдалося створити службу публікації ({0})"
+
+#: src/views/Playersite.tsx:247
+msgid "Failed to create publication website files."
+msgstr "Не вдалося створити файли веб-сайту публікації."
+
+#: src/views/Edit/Profile.tsx:555
+#: src/views/Edit/Profile.tsx:742
+msgid "Failed to probe the source. Please check the <0>probe details</0>."
+msgstr "Не вдалось отримати джерело. Перевірте <0>probe details</0>."
+
+#: src/utils/restreamer.ts:517
+msgid "Failed to refresh token: {0}"
+msgstr "Не вдалося оновити токен: {0}"
+
+#: src/views/Edit/index.tsx:343
+msgid "Failed to save ingest metadata"
+msgstr "Не вдалося зберегти метадані прийому"
+
+#: src/views/Edit/index.tsx:188
+msgid "Failed to stop process"
+msgstr "Не вдалося зупинити процес"
+
+#: src/views/Playersite.tsx:236
+msgid "Failed to store player size setting."
+msgstr "Не вдалося зберегти налаштування розміру плеєра."
+
+#: src/views/Publication/Edit.tsx:324
+msgid "Failed to store publication service ({0})"
+msgstr "Не вдалося зберегти службу публікації ({0})"
+
+#: src/views/Edit/index.tsx:363
+msgid "Failed to update ingest preview process ({0})"
+msgstr ""
+
+#: src/views/Edit/index.tsx:332
+msgid "Failed to update ingest process ({0})"
+msgstr "Не вдалося оновити процес завантаження ({0})"
+
+#: src/views/Edit/index.tsx:353
+msgid "Failed to update ingest snapshot process ({0})"
+msgstr "Не вдалося оновити процес створення знімка ({0})"
+
+#: src/views/Edit/index.tsx:373
+msgid "Failed to update the player"
+msgstr "Не вдалося оновити програвач"
+
+#: src/views/Edit/index.tsx:383
+msgid "Failed to update the playersite"
+msgstr "Не вдалося оновити сайт гравця"
+
+#: src/views/Edit/Wizard/Audio.tsx:53
+#: src/views/Edit/Wizard/Video.tsx:49
+msgid "Failed to verify the source. Please check the address."
+msgstr "Не вдалось перевірити джерело. Перевірте адресу."
+
+#: src/views/Settings.tsx:2614
+msgid "FFmpeg"
+msgstr "FFmpeg"
+
+#: src/views/Edit/Sources/AudioLoop.tsx:191
+#: src/views/Edit/Sources/SDP.tsx:172
+#: src/views/Edit/Sources/VideoLoop.tsx:199
+msgid "File path"
+msgstr "Шлях до файлу"
+
+#: src/views/Edit/Summary.tsx:100
+msgid "Filter"
+msgstr "Фільтр"
+
+#: src/views/Edit/Profile.tsx:857
+msgid "Finish"
+msgstr "Завершити"
+
+#: src/components/filters/video/Scale.tsx:47
+msgid "Fix size"
+msgstr "Фіксований розмір"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx:242
+msgid "Flags"
+msgstr "Прапори"
+
+#: src/views/Edit/Sources/X11grab.tsx:87
+#: src/views/Edit/Sources/X11grab.tsx:88
+msgid "Follow mouse"
+msgstr ""
+
+#: src/views/Playersite.tsx:849
+msgid "For Javascripts."
+msgstr "Для Javascript."
+
+#: src/views/Playersite.tsx:784
+msgid "For Stylesheets."
+msgstr "Для таблиць стилів."
+
+#: src/views/Edit/Sources/Network.tsx:690
+msgid "Force input framerate"
+msgstr "Форс. вх. частотикадрів"
+
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:223
+msgid "Force key frames"
+msgstr "Примусові ключові кадри"
+
+#: src/components/coders/settings/Video.tsx:285
+msgid "Format"
+msgstr "Формат"
+
+#: src/components/Progress.tsx:160
+#: src/views/Main/Progress.tsx:77
+msgid "FPS"
+msgstr "FPS"
+
+#: src/components/Progress.tsx:217
+msgid "Frame drops"
+msgstr "Втрата кадрів"
+
+#: src/components/coders/settings/Video.tsx:362
+msgid "Frame is passed through (Passthrough)"
+msgstr "Кадр пропускається наскрізь (Passthrough)"
+
+#: src/views/Edit/Sources/Framebuffer.tsx:146
+msgid "Framebuffer"
+msgstr "Фреймбуфер"
+
+#: src/components/coders/settings/Video.tsx:98
+#: src/components/filters/video/Framerate.tsx:35
+#: src/views/Edit/Sources/Network.tsx:703
+msgid "Framerate"
+msgstr "Частота кадрів"
+
+#: src/components/filters/video/Framerate.tsx:108
+msgid "Framerate conversion (frame interpolation)"
+msgstr "Перетворення частоти кадрів (інтерполяція кадрів)"
+
+#: src/components/coders/settings/Video.tsx:357
+msgid "Framerate mode"
+msgstr "Режим частоти кадрів"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:178
+msgid "Frequency (Hz)"
+msgstr "Частота (Hz)"
+
+#: src/views/Edit/index.tsx:487
+#: src/views/Edit/index.tsx:513
+#: src/views/Edit/Sources/Network.tsx:756
+#: src/views/Playersite.tsx:310
+#: src/views/Playersite.tsx:348
+#: src/views/Publication/Add.tsx:470
+#: src/views/Publication/Edit.tsx:504
+#: src/views/Publication/Services/DASH.tsx:258
+#: src/views/Publication/Services/HLS.tsx:249
+#: src/views/Publication/Services/Icecast.tsx:218
+#: src/views/Publication/Services/Image2.tsx:170
+#: src/views/Publication/Services/RTMP.tsx:213
+#: src/views/Publication/Services/RTSP.tsx:207
+#: src/views/Publication/Services/SRT.tsx:215
+#: src/views/Settings.tsx:1322
+#: src/views/Settings.tsx:1396
+msgid "General"
+msgstr "Загальні"
+
+#: src/views/Publication/Services/DLive.tsx:89
+#: src/views/Publication/Services/EarthCam.tsx:108
+#: src/views/Publication/Services/Facebook.tsx:131
+#: src/views/Publication/Services/Facebook.tsx:149
+#: src/views/Publication/Services/Instagram.tsx:102
+#: src/views/Publication/Services/Kick.tsx:124
+#: src/views/Publication/Services/MediaNetwork.tsx:91
+#: src/views/Publication/Services/NimoTv.tsx:123
+#: src/views/Publication/Services/PeerTube.tsx:113
+#: src/views/Publication/Services/Restream.tsx:147
+#: src/views/Publication/Services/Rumble.tsx:124
+#: src/views/Publication/Services/TikTok.tsx:127
+#: src/views/Publication/Services/Trovo.tsx:89
+#: src/views/Publication/Services/Twitch.tsx:230
+#: src/views/Publication/Services/Twitter.tsx:223
+#: src/views/Publication/Services/Wettercom.tsx:129
+#: src/views/Publication/Services/Youtube.tsx:230
+msgid "GET"
+msgstr "GET"
+
+#: src/views/Publication/Player.tsx:547
+msgid "Google Analytics ID"
+msgstr "Google Analytics ID"
+
+#: src/views/Publication/Player.tsx:557
+msgid "Google Analytics Tracker Name"
+msgstr "Google Analytics Tracker Name"
+
+#: src/components/coders/settings/Video.tsx:380
+msgid "GPU"
+msgstr ""
+
+#: src/views/Edit/Sources/V4L.tsx:178
+#: src/views/Edit/Wizard/Sources/V4L.tsx:157
+msgid "Hardware device"
+msgstr "Апаратний пристрій"
+
+#: src/views/Playersite.tsx:643
+msgid "Header"
+msgstr "Заголовок"
+
+#: src/views/Playersite.tsx:599
+msgid "Headline"
+msgstr "Заголовок"
+
+#: src/components/coders/settings/Video.tsx:202
+msgid "Height"
+msgstr "Висота"
+
+#: src/views/Main/index.tsx:572
+msgid "HLS"
+msgstr "HLS"
+
+#: src/views/Main/index.tsx:615
+msgid "HLS @ H.264"
+msgstr ""
+
+#: src/views/Edit/index.tsx:577
+msgid "HLS output"
+msgstr "HLS вивід"
+
+#: src/views/Edit/Wizard/Sources/InternalHLS.tsx:72
+msgid "HLS server"
+msgstr "Сервер HLS"
+
+#: src/views/Settings.tsx:1877
+msgid "HLS statistic for the In-memory storage"
+msgstr "Статистика HLS для сховища In-memory"
+
+#: src/components/filters/video/HFlip.tsx:68
+msgid "Horizontal Flip"
+msgstr "Горизонтальний фліп"
+
+#: src/views/Login.tsx:334
+msgid "Hosted Restreamer interface"
+msgstr "Інтерфейс хостингового рестрімера"
+
+#: src/views/Edit/Sources/Network.tsx:680
+msgid "HTTP and HTTPS"
+msgstr "HTTP та HTTPS"
+
+#: src/views/Settings.tsx:1619
+msgid "HTTP port"
+msgstr "HTTP-порт"
+
+#: src/views/Settings.tsx:1655
+msgid "HTTPS (SSL/TLS)"
+msgstr "HTTPS (SSL/TLS)"
+
+#: src/views/Settings.tsx:1636
+msgid "HTTPS port"
+msgstr "Порт HTTPS"
+
+#: src/views/Settings.tsx:1544
+msgid "Human readable name on the service."
+msgstr "Ім'я сервісу, зрозуміле людині."
+
+#: src/views/Settings.tsx:2704
+msgid "If you changed the ports, it might be that Restreamer Core restarted already, but it is now available on a different port."
+msgstr "Якщо ви змінили порт, можливо, ядро рестрімера вже перезапустилося, але тепер воно доступне на іншому порту."
+
+#: src/views/Settings.tsx:2696
+msgid "If you enabled Let's Encrypt TLS it might take some time to acquire the certificates. Make sure that Restreamer Core is reachable via port 80 from the internet. Please check the console log of Restreamer Core."
+msgstr "Якщо ви увімкнули Let's Encrypt TLS, може знадобитися деякий час для отримання сертифікатів. Переконайтеся, що ядро Restreamer Core доступне через порт 80 з інтернету. Будь ласка, перевірте журнал консолі Restreamer Core."
+
+#: src/views/Publication/Player.tsx:436
+msgid "iframe code"
+msgstr "код iframe"
+
+#: src/views/Settings.tsx:1898
+msgid "Ignore IP ranges"
+msgstr "Ігнор. діапазон IP"
+
+#: src/views/Playersite.tsx:688
+#: src/views/Publication/Player.tsx:473
+msgid "Image URL"
+msgstr "URL зображення"
+
+#: src/views/Playersite.tsx:718
+msgid "Imprint"
+msgstr "Відбиток"
+
+#: src/views/Playersite.tsx:353
+msgid "In addition to the player, the Restreamer offers a complete landingpage, which you can use to present your live stream easily and quickly."
+msgstr "Окрім плеєра, Restreamer пропонує повноцінний лендінг, за допомогою якого ви можете легко і швидко презентувати свій прямий ефір."
+
+#: src/views/Edit/Profile.tsx:568
+#: src/views/Edit/Profile.tsx:754
+msgid "In order to proceed anyways, you can provide <0>hints</0> about the available streams."
+msgstr ""
+
+#: src/components/controls/HLS.tsx:73
+#: src/views/Settings.tsx:1970
+msgid "In-memory"
+msgstr "У пам'яті"
+
+#: src/Footer.tsx:321
+#: src/Footer.tsx:335
+msgid "In-memory storage"
+msgstr "Зберігання в пам'яті"
+
+#: src/views/Publication/Add.tsx:357
+msgid "Incompatible"
+msgstr "Несумісний"
+
+#: src/components/coders/settings/Audio.tsx:115
+#: src/components/coders/settings/Audio.tsx:165
+#: src/components/filters/audio/Pan.tsx:46
+#: src/components/filters/audio/Resample.tsx:67
+#: src/components/filters/audio/Resample.tsx:117
+#: src/components/filters/audio/Volume.tsx:45
+msgid "Inherit"
+msgstr "Успадкувати"
+
+#: src/views/Playersite.tsx:779
+msgid "Inject 1"
+msgstr "Ввести 1"
+
+#: src/views/Playersite.tsx:799
+msgid "Inject 2"
+msgstr "Ввести 2"
+
+#: src/views/Playersite.tsx:821
+msgid "Inject 3"
+msgstr "Ввести 3"
+
+#: src/views/Playersite.tsx:844
+msgid "Inject 4"
+msgstr "Ввести 4"
+
+#: src/views/Edit/Sources/Network.tsx:1269
+#: src/views/Edit/Sources/Network.tsx:1396
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:127
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:127
+msgid "Input stream"
+msgstr "Вхідний потік"
+
+#: src/views/Publication/Services/PeerTube.tsx:91
+msgid "Instance domain"
+msgstr "Домен екземпляра"
+
+#: src/views/Edit/Sources/Network.tsx:671
+msgid "Internal SRT latency in milliseconds."
+msgstr ""
+
+#: src/components/controls/Snapshot.tsx:56
+msgid "Interval (seconds)"
+msgstr "Інтервал (секунди)"
+
+#: src/Header.tsx:352
+#: src/Header.tsx:406
+msgid "Issue alert"
+msgstr "Сповіщення про проблему"
+
+#: src/components/Progress.tsx:173
+#: src/views/Main/Progress.tsx:67
+#: src/views/Main/Publication.tsx:204
+msgid "kbit/s"
+msgstr "кбіт/с"
+
+#: src/components/coders/settings/Video.tsx:60
+msgid "Keyframe interval (seconds)"
+msgstr "Інтервал між ключовими кадрами (секунди)"
+
+#: src/views/Edit/Sources/Network.tsx:666
+msgid "Latency (milliseconds)"
+msgstr ""
+
+#: src/components/coders/settings/Audio.tsx:60
+#: src/components/filters/audio/Resample.tsx:52
+msgid "Layout"
+msgstr "Макет"
+
+#: src/views/Settings.tsx:1660
+msgid "Let's Encrypt certification"
+msgstr "Let's Encrypt сертифікація"
+
+#: src/views/Settings.tsx:1671
+msgid "Let's Encrypt requires one or more public domain names and an accessible port 80/TCP."
+msgstr "Для роботи Let's Encrypt потрібне одне або декілька публічних доменних імен та доступний порт 80/TCP."
+
+#: src/components/coders/Encoders/video/av1_nvenc.tsx:104
+#: src/components/coders/Encoders/video/h264_nvenc.tsx:119
+#: src/components/coders/Encoders/video/hevc_nvenc.tsx:118
+msgid "Level"
+msgstr "Рівень"
+
+#: src/views/Settings.tsx:2592
+msgid "Level of system protocol."
+msgstr "Рівень системного протоколу."
+
+#: src/views/Edit/index.tsx:502
+#: src/views/Edit/index.tsx:724
+#: src/views/Edit/Wizard/License.tsx:25
+msgid "License"
+msgstr "Ліцензія"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx:233
+msgid "Life color"
+msgstr "Колір життя"
+
+#: src/views/Edit/index.tsx:683
+#: src/views/Publication/Add.tsx:527
+#: src/views/Publication/Edit.tsx:561
+msgid "Limits"
+msgstr "Обмеження"
+
+#: src/views/Playersite.tsx:670
+msgid "Linecolor"
+msgstr "Колір лінії"
+
+#: src/views/Publication/Services/NimoTv.tsx:104
+msgid "Lines"
+msgstr "Лінії"
+
+#: src/views/Playersite.tsx:608
+#: src/views/Publication/Player.tsx:508
+msgid "Link"
+msgstr "Посил."
+
+#: src/views/Playersite.tsx:617
+msgid "Link, mouseover"
+msgstr "Посилання, наведення миші"
+
+#: src/views/Edit/Sources/Network.tsx:737
+msgid "List of additional HTTP headers, one per line."
+msgstr ""
+
+#: src/views/Settings.tsx:2278
+msgid "List of file extensions not to cache (e.g. \".m3u8\"), one per line. Leave empty for none."
+msgstr "Список розширень файлів, які не потрібно кешувати (наприклад, \".m3u8\"), по одному в рядку. Не заповнювати нічим."
+
+#: src/views/Settings.tsx:2254
+msgid "List of file extensions to cache (e.g. \".html\"), one per line. Leave empty to cache all file types."
+msgstr "Список розширень файлів для кешу (наприклад, \". html\"), по одному на рядок. Залиште порожнім, щоб кешувати всі типи файлів."
+
+#: src/views/Settings.tsx:1911
+msgid "List of IP ranges in CIDR notation, e.g., 127.0.0.1/32, that the statistics will not record—one IP range per line. Leave empty to record all sessions."
+msgstr "Список діапазонів IP-адрес у нотації CIDR, наприклад, 127.0.0.1/32, які статистика не буде записувати - по одному діапазону в рядку. Залиште порожнім, щоб записати всі сеанси."
+
+#: src/components/controls/HLS.tsx:126
+msgid "List size (segments)"
+msgstr "Розмір списку (сегменти)"
+
+#: src/views/Edit/Sources/Network.tsx:920
+msgid "Live stabilization"
+msgstr ""
+
+#: src/views/Publication/Services/DLive.tsx:13
+msgid "Live-Streaming to dlive Live RTMP Service."
+msgstr "Послуга прямих трансляцій на dlive Live RTMP."
+
+#: src/views/Publication/Services/Facebook.tsx:16
+msgid "Live-Streaming to Facebook Live RTMP service"
+msgstr "Пряма трансляція на Facebook Live RTMP"
+
+#: src/views/Publication/Services/Instagram.tsx:16
+msgid "Live-Streaming to Instagram Live RTMP Service."
+msgstr ""
+
+#: src/views/Publication/Services/MediaNetwork.tsx:14
+msgid "Live-Streaming to Media Network RTMP Service."
+msgstr "Прямі трансляції в медіа-мережу RTMP-сервіс."
+
+#: src/views/Publication/Services/PeerTube.tsx:15
+msgid "Live-Streaming to PeerTube v3+ RTMP/S Service."
+msgstr "Пряма трансляція на PeerTube v3+ RTMP/S сервіс."
+
+#: src/views/Publication/Services/Trovo.tsx:13
+msgid "Live-Streaming to Trovo Live RTMP Service."
+msgstr "Прямі трансляції на сервіс Trovo Live RTMP."
+
+#: src/views/Publication/Services/Twitch.tsx:16
+msgid "Live-Streaming to Twitch Live RTMP Service."
+msgstr "Пряма трансляція до служби Twitch Live RTMP."
+
+#: src/views/Publication/Services/Vimeo.tsx:11
+msgid "Live-Streaming to Vimeo Live RTMP Service"
+msgstr "Пряма трансляція до служби Vimeo Live RTMP"
+
+#: src/views/Publication/Services/Livespotting.tsx:120
+msgid "Livesource ID"
+msgstr "Livesource ID"
+
+#: src/views/Settings.tsx:2541
+msgid "Log level"
+msgstr "Рівень журналу"
+
+#: src/components/modals/Process.tsx:173
+#: src/views/Settings.tsx:1377
+#: src/views/Settings.tsx:2512
+msgid "Logging"
+msgstr "Логування"
+
+#: src/views/Login.tsx:310
+#: src/views/Login.tsx:424
+#: src/views/Login.tsx:439
+#: src/views/Publication/Services/Akamai.tsx:137
+msgid "Login"
+msgstr "Логін"
+
+#: src/utils/restreamer.ts:297
+#: src/utils/restreamer.ts:343
+msgid "Login failed: {0}"
+msgstr "Помилка входу: {0}"
+
+#: src/utils/restreamer.ts:310
+#: src/utils/restreamer.ts:319
+#: src/utils/restreamer.ts:356
+#: src/utils/restreamer.ts:365
+msgid "Login failed: Couldn't load API details"
+msgstr "Помилка входу: не вдалося завантажити деталі API"
+
+#: src/views/Settings.tsx:1765
+msgid "Login/JWT authorization"
+msgstr "Логін/авторизація JWT"
+
+#: src/views/Publication/Player.tsx:414
+msgid "Logo"
+msgstr "Лого"
+
+#: src/Header.tsx:364
+msgid "Logout"
+msgstr "Вихід з системи"
+
+#: src/views/Edit/Sources/AudioLoop.tsx:240
+#: src/views/Edit/Sources/VideoLoop.tsx:248
+msgid "Loop"
+msgstr "Петля"
+
+#: src/components/filters/audio/Loudnorm.tsx:69
+msgid "Loudness Normalization"
+msgstr "Нормалізація гучності"
+
+#: src/components/controls/Process.tsx:55
+msgid "Low latency (Buffer)"
+msgstr "Низька затримка (буфер)"
+
+#: src/views/Main/index.tsx:316
+#: src/views/Playersite.tsx:379
+msgid "Main channel"
+msgstr "Основний канал"
+
+#: src/views/Publication/Player.tsx:113
+msgid "Main channel not found"
+msgstr "Основний канал не знайдено"
+
+#: src/views/Edit/Wizard/index.tsx:224
+msgid "Main channel saved"
+msgstr "Головний канал збережено"
+
+#: src/views/Playersite.tsx:402
+msgid "Main page channel (index.html)."
+msgstr "Канал головної сторінки (index.html)."
+
+#: src/views/Edit/index.tsx:460
+msgid "Main Source"
+msgstr "Основне джерело"
+
+#: src/views/Publication/TabContent.tsx:56
+msgid "Maintainer:"
+msgstr "Супроводжувач:"
+
+#: src/components/controls/RTMP.tsx:57
+msgid "Make the channel available as an RTMP stream (experimental)."
+msgstr "Зробити канал доступним у вигляді RTMP-потоку (експериментально)."
+
+#: src/components/controls/SRT.tsx:57
+msgid "Make the channel available as an SRT stream (experimental)."
+msgstr "Зробити канал доступним у вигляді потоку SRT (експериментально)."
+
+#: src/components/filters/video/Bwdif.tsx:86
+msgid "Marked frames"
+msgstr "Позначені кадри"
+
+#: src/components/controls/HLS.tsx:140
+msgid "Master playlist (increases browser/client compatibility)"
+msgstr "Головний плейлист (покращує сумісність браузера/клієнта)"
+
+#: src/views/Settings.tsx:2176
+msgid "Maximum allowed cache size, 0 for unlimited."
+msgstr "Максимально дозволений розмір кешу, 0 для необмеженого."
+
+#: src/views/Settings.tsx:2047
+msgid "Maximum allowed megabytes of RAM for /memfs, 0 for unlimited."
+msgstr "Максимально дозволені мегабайти оперативної пам'яті для /memfs, 0 для необмеженої."
+
+#: src/views/Settings.tsx:2110
+msgid "Maximum allowed megabytes to consume from hard disk. 0 for unlimited."
+msgstr "Максимально дозволені мегабайти для споживання з жорсткого диска. 0 для необмеженого."
+
+#: src/views/Settings.tsx:1729
+msgid "Maximum bandwidth Mbit/s"
+msgstr "Максимальна пропускна здатність Мбіт/с"
+
+#: src/components/coders/Encoders/audio/opus.tsx:95
+msgid "Maximum delay in milliseconds."
+msgstr "Максимальна затримка в мілісекундах."
+
+#: src/views/Settings.tsx:2202
+msgid "Maximum file size (Megabytes)"
+msgstr "Максимальний розмір файлу (мегабайт)"
+
+#: src/views/Settings.tsx:2233
+msgid "Maximum file size to put in cache."
+msgstr "Максимальний розмір файлу для розміщення в кеші."
+
+#: src/views/Settings.tsx:2637
+msgid "Maximum log histroy"
+msgstr "Максимальна історія журналу"
+
+#: src/views/Settings.tsx:2598
+#: src/views/Settings.tsx:2620
+msgid "Maximum log lines"
+msgstr "Максимальна кількість рядків журналу"
+
+#: src/views/Settings.tsx:2036
+#: src/views/Settings.tsx:2099
+#: src/views/Settings.tsx:2143
+msgid "Maximum size (Megabytes)"
+msgstr "Максимальний розмір (Мегабайт)"
+
+#: src/views/Settings.tsx:1921
+msgid "Maximum viewer idle time (Seconds)"
+msgstr "Максимальний час простою глядача (Секунди)"
+
+#: src/views/Settings.tsx:1708
+msgid "Maximum viewers"
+msgstr "Максимальна кількість глядачів"
+
+#: src/Footer.tsx:241
+msgid "MB"
+msgstr "МБ"
+
+#: src/Footer.tsx:234
+#: src/components/Progress.tsx:147
+msgid "Memory"
+msgstr "Пам'ять"
+
+#: src/components/controls/Limits.tsx:60
+msgid "Memory Limit (megabytes)"
+msgstr "Обмеження пам'яті (мегабайти)"
+
+#: src/components/controls/Limits.tsx:65
+msgid "Memory usage limit in megabytes, 0 for unlimited."
+msgstr "Обмеження на використання пам'яті в мегабайтах, 0 для необмеженого."
+
+#: src/views/Edit/index.tsx:497
+msgid "Meta information"
+msgstr "Мета інформація"
+
+#: src/views/Edit/index.tsx:698
+#: src/views/Edit/Wizard/Metadata.tsx:25
+msgid "Metadata"
+msgstr "Метадані"
+
+#: src/views/Edit/Sources/Network.tsx:783
+#: src/views/Edit/Sources/X11grab.tsx:219
+msgid "Mininum {0}, default {1}"
+msgstr "Мінімум {0}, за замовчуванням {1}"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx:206
+msgid "Mold"
+msgstr "Форма"
+
+#: src/views/Publication/Services/Facebook.tsx:17
+#: src/views/Publication/Services/Twitch.tsx:17
+#: src/views/Publication/Services/Vimeo.tsx:13
+msgid "More about licenses here"
+msgstr "Більше про ліцензії тут"
+
+#: src/views/Settings.tsx:1501
+msgid "More about the service"
+msgstr "Більше про сервіс"
+
+#: src/views/Publication/Services/Twitter.tsx:34
+msgid "More about Twitter's copyright <0>here</0>."
+msgstr "Докладніше про авторські права Twitter <0>тут</0>."
+
+#: src/views/Publication/Services/Youtube.tsx:35
+msgid "More about YouTube's copyright <0>here</0>."
+msgstr "Докладніше про авторські права YouTube <0>тут</0>."
+
+#: src/views/Settings.tsx:2163
+msgid "Must be larger than maximum file size in cache."
+msgstr "Повинен бути більшим за максимальний розмір файлу у кеші."
+
+#: src/views/Settings.tsx:2222
+msgid "Must be smaller than maximum cache size."
+msgstr "Повинен бути меншим за максимальний розмір кешу."
+
+#: src/views/Publication/Player.tsx:580
+msgid "Mute"
+msgstr "Вимк. зв."
+
+#: src/components/filters/audio/Pan.tsx:56
+msgid "Mute a channel."
+msgstr "Вимкнути звук каналу."
+
+#: src/components/filters/audio/Pan.tsx:49
+msgid "Mute left"
+msgstr "Вимкнути звук зліва"
+
+#: src/components/filters/audio/Pan.tsx:52
+msgid "Mute right"
+msgstr "Вимкнути звук зліва"
+
+#: src/components/ChannelList.tsx:544
+#: src/components/controls/Metadata.tsx:81
+#: src/components/controls/Metadata.tsx:106
+#: src/views/Playersite.tsx:540
+#: src/views/Settings.tsx:1533
+msgid "Name"
+msgstr "Імя"
+
+#: src/views/Playersite.tsx:545
+msgid "Name for the template. If the name already exists, it will be overwritten."
+msgstr "Ім'я для шаблону. Якщо ім'я вже існує, воно буде замінено."
+
+#: src/views/Settings.tsx:1336
+#: src/views/Settings.tsx:1588
+msgid "Network"
+msgstr "Мережа"
+
+#: src/views/Edit/Sources/Network.tsx:1563
+#: src/views/Edit/Wizard/Sources/Network.tsx:133
+msgid "Network source"
+msgstr "Мережеве джерело"
+
+#: src/views/Edit/Wizard/Audio.tsx:162
+#: src/views/Edit/Wizard/Metadata.tsx:54
+#: src/views/Edit/Wizard/Video.tsx:103
+#: src/views/Edit/Wizard/VideoProfile.tsx:118
+msgid "Next"
+msgstr "Далі"
+
+#: src/views/Edit/Profile.tsx:670
+msgid "Next: Audio"
+msgstr "Далі: Аудіо"
+
+#: src/views/Welcome.tsx:52
+msgid "Next: Video setup"
+msgstr "Далі: налаштування відео"
+
+#: src/views/Edit/Wizard/Abort.tsx:70
+msgid "No"
+msgstr "Немає"
+
+#: src/views/Edit/Sources/NoAudio.tsx:42
+#: src/views/Edit/Wizard/Audio.tsx:145
+msgid "No audio"
+msgstr "Немає звуку"
+
+#: src/views/Edit/StreamSelect.tsx:69
+msgid "No audio stream available"
+msgstr "Немає аудіопотоку"
+
+#: src/views/Main/index.tsx:480
+msgid "No H.264 Stream availabe."
+msgstr ""
+
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:85
+#: src/views/Edit/Wizard/Sources/V4L.tsx:114
+msgid "No input device available"
+msgstr "Відсутній пристрій введення"
+
+#: src/views/Edit/Wizard/Video.tsx:44
+msgid "No live stream was detected. Please check the software that sends the stream."
+msgstr "Жодної прямої трансляції не виявлено. Перевірте програмне забезпечення, яке надсилає потік."
+
+#: src/views/Edit/Summary.tsx:26
+msgid "No source selected"
+msgstr "Джерело не вибрано"
+
+#: src/views/Edit/SourceSelect.tsx:182
+msgid "No sources available"
+msgstr "Немає доступних джерел"
+
+#: src/components/EncodingSelect.tsx:198
+msgid "No suitable encoder found."
+msgstr "Відповідний енкодер не знайдено."
+
+#: src/components/FilterSelect.tsx:112
+msgid "No suitable filter found."
+msgstr "Відповідний фільтр не знайдено."
+
+#: src/views/Main/index.tsx:365
+#: src/views/Publication/Player.tsx:384
+msgid "No video"
+msgstr "Немає відео"
+
+#: src/views/Edit/StreamSelect.tsx:54
+msgid "No video stream available"
+msgstr "Немає доступного потокового відео"
+
+#: src/views/Settings.tsx:1521
+msgid "Node ID"
+msgstr "Node ID"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:102
+msgid "Noise"
+msgstr "Шум"
+
+#: src/components/filters/video/Scale.tsx:44
+#: src/views/Edit/Sources/AVFoundation.tsx:157
+#: src/views/Edit/Summary.tsx:28
+#: src/views/Edit/Summary.tsx:108
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:119
+msgid "None"
+msgstr "Жодного"
+
+#: src/views/Playersite.tsx:327
+#: src/views/Playersite.tsx:713
+msgid "Notes"
+msgstr "Примітки"
+
+#: src/views/Settings.tsx:2609
+#: src/views/Settings.tsx:2631
+msgid "Number of log lines to keep."
+msgstr "Кількість рядків журналу для зберігання."
+
+#: src/views/Settings.tsx:2648
+msgid "Number of logs to keep for each process."
+msgstr "Кількість логів для кожного процесу."
+
+#: src/components/controls/Limits.tsx:79
+msgid "Number of seconds the limits are allowed to be exceeded."
+msgstr "Кількість секунд, протягом яких дозволено перевищувати ліміти."
+
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:239
+msgid "Number of tiles columns to encode with."
+msgstr "Кількість стовпчиків тайлів для кодування."
+
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:211
+msgid "Number of tiles encode with."
+msgstr "Кількість тайлів, якими кодується."
+
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:225
+msgid "Number of tiles rows to encode with."
+msgstr "Кількість рядів тайлів для кодування."
+
+#: src/views/Edit/Sources/AudioLoop.tsx:225
+#: src/views/Edit/Sources/SDP.tsx:206
+#: src/views/Edit/Sources/VideoLoop.tsx:233
+#: src/views/Playersite.tsx:890
+#: src/views/Publication/Player.tsx:641
+msgid "OK"
+msgstr "ОК"
+
+#: src/views/Settings.tsx:1861
+msgid "One referrer per line, e.g. http://www.example.com"
+msgstr "Один реферал на рядок, наприклад, http://www.example.com"
+
+#: src/views/Playersite.tsx:875
+msgid "Open"
+msgstr "Відкрити"
+
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:239
+msgid "Output buffer"
+msgstr "Вихідний буфер"
+
+#: src/components/filters/audio/Pan.tsx:44
+msgid "Pan"
+msgstr "Панорамування"
+
+#: src/views/Publication/Services/Core.tsx:277
+#: src/views/Settings.tsx:2476
+msgid "Passphrase"
+msgstr "Кодова фраза"
+
+#: src/views/Settings.tsx:2503
+msgid "Passphrase for SRT encryption."
+msgstr "Ключова фраза для шифрування SRT."
+
+#: src/views/Settings.tsx:2490
+msgid "Passphrase must be between 10 and 79 characters long"
+msgstr "Пароль повинен мати довжину від 10 до 79 символів"
+
+#: src/views/Publication/Edit.tsx:649
+msgid "Passthrough (copy) should only be disabled if necessary. Each encoding requires additional CPU/GPU resources."
+msgstr "Наскрізний доступ (копіювання) слід вимикати лише за необхідності. Кожне кодування вимагає додаткових ресурсів CPU/GPU."
+
+#: src/views/Edit/Sources/Network.tsx:1020
+#: src/views/Edit/Wizard/Sources/Network.tsx:114
+#: src/views/Login.tsx:295
+#: src/views/Publication/Services/Akamai.tsx:147
+#: src/views/Publication/Services/DaCast.tsx:176
+#: src/views/Publication/Services/DASH.tsx:238
+#: src/views/Publication/Services/HLS.tsx:229
+#: src/views/Publication/Services/Red5.tsx:183
+#: src/views/Publication/Services/RTSP.tsx:187
+#: src/views/Publication/Services/WOWZA.tsx:207
+#: src/views/Settings.tsx:1808
+#: src/views/Settings.tsx:2016
+msgid "Password"
+msgstr "Пароль"
+
+#: src/views/Settings.tsx:1817
+#: src/views/Settings.tsx:2030
+msgid "Password for authorization."
+msgstr "Пароль для авторизації."
+
+#: src/views/Edit/Sources/Network.tsx:1025
+#: src/views/Edit/Wizard/Sources/Network.tsx:120
+msgid "Password for the device."
+msgstr "Пароль для пристрою."
+
+#: src/views/Settings.tsx:1943
+msgid "Persist viewer statistics"
+msgstr "Зберігати статистику переглядів"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:139
+msgid "pink"
+msgstr "рожевий"
+
+#: src/views/Publication/Services/Framebuffer.tsx:122
+msgid "Pixel format"
+msgstr "Піксельний формат"
+
+#: src/components/coders/settings/Video.tsx:323
+msgid "Pixel Format"
+msgstr ""
+
+#: src/views/Login.tsx:326
+msgid "Plan: <0>Starter</0>"
+msgstr "План <0>Початковий</0>"
+
+#: src/views/Publication/Add.tsx:433
+msgid "Platforms"
+msgstr "Платформи"
+
+#: src/views/Publication/Player.tsx:422
+#: src/views/Settings.tsx:1349
+#: src/views/Settings.tsx:1826
+msgid "Playback"
+msgstr "Відтворення"
+
+#: src/views/Main/Egress.tsx:108
+msgid "Player"
+msgstr "Плеєр"
+
+#: src/views/Edit/index.tsx:654
+msgid "Player Playback"
+msgstr ""
+
+#: src/views/Publication/Player.tsx:311
+msgid "Player settings saved"
+msgstr "Налаштування плеєра збережено"
+
+#: src/views/Publication/Player.tsx:430
+msgid "Player URL"
+msgstr "URL плеєра"
+
+#: src/Header.tsx:313
+#: src/views/Playersite.tsx:362
+msgid "Playersite"
+msgstr "Сайт плеєра"
+
+#: src/views/Publication/Services/DASH.tsx:420
+#: src/views/Publication/Services/HLS.tsx:354
+msgid "Playlist"
+msgstr "Плейлист"
+
+#: src/components/controls/HLS.tsx:101
+msgid "Playlist version (M3U8). Version 3 has the best browser/client compatibility."
+msgstr "Версія плейлиста (M3U8). Версія 3 має найкращу сумісність з браузером/клієнтом."
+
+#: src/views/Main/index.tsx:522
+msgid "Please <0>edit</0> this channel and disable the second H.264 stream in the \"Processing & Control\" area."
+msgstr ""
+
+#: src/views/Main/index.tsx:485
+msgid "Please <0>edit</0> this channel and enable the browser-compatible H.264 stream in the \"Processing & Control\" area."
+msgstr ""
+
+#: src/views/Main/index.tsx:411
+msgid "Please check the <0>process log</0>"
+msgstr "Перевірте <0>журнал процесу</0>"
+
+#: src/views/Publication/Services/Akamai.tsx:29
+#: src/views/Publication/Services/Azure.tsx:29
+#: src/views/Publication/Services/Brightcove.tsx:28
+#: src/views/Publication/Services/CDN77.tsx:27
+#: src/views/Publication/Services/Core.tsx:34
+#: src/views/Publication/Services/DaCast.tsx:30
+#: src/views/Publication/Services/DASH.tsx:40
+#: src/views/Publication/Services/HLS.tsx:41
+#: src/views/Publication/Services/Icecast.tsx:34
+#: src/views/Publication/Services/Image2.tsx:38
+#: src/views/Publication/Services/Linkedin.tsx:29
+#: src/views/Publication/Services/Livepush.tsx:26
+#: src/views/Publication/Services/Livespotting.tsx:28
+#: src/views/Publication/Services/MPEGTS.tsx:39
+#: src/views/Publication/Services/NimoTv.tsx:27
+#: src/views/Publication/Services/PicartoTv.tsx:30
+#: src/views/Publication/Services/Red5.tsx:30
+#: src/views/Publication/Services/Restream.tsx:28
+#: src/views/Publication/Services/RTMP.tsx:37
+#: src/views/Publication/Services/RTSP.tsx:40
+#: src/views/Publication/Services/SRT.tsx:38
+#: src/views/Publication/Services/UDP.tsx:36
+#: src/views/Publication/Services/WOWZA.tsx:33
+msgid "Please contact the operator of the service and check what happens."
+msgstr "Будь ласка, зверніться до оператора послуги та з'ясуйте, що відбувається."
+
+#: src/views/Settings.tsx:1690
+msgid "Please enter your email address to signify agreement with the Let's Encrypt CA's terms of service and to be notified in case of issues."
+msgstr "Будь ласка, введіть свою електронну адресу, щоб підтвердити згоду з умовами надання послуг Let's Encrypt CA та отримувати повідомлення у разі виникнення проблем."
+
+#: src/views/Publication/Services/Dailymotion.tsx:27
+#: src/views/Publication/Services/EarthCam.tsx:28
+#: src/views/Publication/Services/Kick.tsx:28
+#: src/views/Publication/Services/Owncast.tsx:27
+#: src/views/Publication/Services/Rumble.tsx:28
+#: src/views/Publication/Services/Telegram.tsx:14
+#: src/views/Publication/Services/TikTok.tsx:29
+#: src/views/Publication/Services/Wettercom.tsx:28
+msgid "Please get in touch with the operator of the service and check what happens."
+msgstr "Будь ласка, зв'яжіться з оператором сервісу і перевірте, що відбувається."
+
+#: src/views/Edit/Sources/AudioLoop.tsx:114
+#: src/views/Edit/Sources/SDP.tsx:100
+#: src/views/Edit/Sources/VideoLoop.tsx:122
+#: src/views/Playersite.tsx:174
+#: src/views/Publication/Player.tsx:202
+msgid "Please select a file to upload."
+msgstr "Виберіть файл для завантаження."
+
+#: src/views/Publication/Add.tsx:571
+msgid "Please use \"Passthrough (copy)\" if possible. Encoding requires additional CPU/GPU resources."
+msgstr "Будь ласка, використовуйте \"Наскрізний (копіювати)\", якщо це можливо. Кодування вимагає додаткових ресурсів CPU/GPU."
+
+#: src/views/Edit/Wizard/Probe.tsx:20
+msgid "Please wait. Probe stream data ..."
+msgstr "Будь ласка, зачекайте. Зонд транслює дані..."
+
+#: src/views/Edit/Wizard/Saving.tsx:20
+msgid "Please wait. Setting up the stream ..."
+msgstr "Будь ласка, зачекайте. Налаштування потоку..."
+
+#: src/views/Settings.tsx:2439
+msgid "Port"
+msgstr "Порт"
+
+#: src/views/Publication/Player.tsx:493
+msgid "Position"
+msgstr "Позиція"
+
+#: src/views/Publication/Player.tsx:417
+msgid "Poster"
+msgstr "Постер"
+
+#: src/views/Publication/Player.tsx:522
+msgid "Poster image URL"
+msgstr "URL-адреса зображення плакату"
+
+#: src/components/coders/Encoders/video/av1_nvenc.tsx:77
+#: src/components/coders/Encoders/video/h264_libx264.tsx:80
+#: src/components/coders/Encoders/video/h264_nvenc.tsx:82
+#: src/components/coders/Encoders/video/hevc_libx265.tsx:82
+#: src/components/coders/Encoders/video/hevc_nvenc.tsx:82
+msgid "Preset"
+msgstr "Заготовка"
+
+#: src/views/Publication/Services/Youtube.tsx:235
+msgid "Primary stream"
+msgstr "Первинний потік"
+
+#: src/views/Publication/Services/Facebook.tsx:122
+msgid "Primary stream key"
+msgstr "Ключ первинного потоку"
+
+#: src/views/Edit/Sources/ALSA.tsx:172
+#: src/views/Edit/Sources/AudioLoop.tsx:212
+#: src/views/Edit/Sources/AVFoundation.tsx:244
+#: src/views/Edit/Sources/Channel.tsx:122
+#: src/views/Edit/Sources/Framebuffer.tsx:132
+#: src/views/Edit/Sources/Network.tsx:1045
+#: src/views/Edit/Sources/Network.tsx:1185
+#: src/views/Edit/Sources/Network.tsx:1309
+#: src/views/Edit/Sources/Network.tsx:1436
+#: src/views/Edit/Sources/Raspicam.tsx:163
+#: src/views/Edit/Sources/SDP.tsx:193
+#: src/views/Edit/Sources/V4L.tsx:166
+#: src/views/Edit/Sources/VideoLoop.tsx:220
+#: src/views/Edit/Sources/VirtualAudio.tsx:205
+#: src/views/Edit/Sources/VirtualVideo.tsx:254
+#: src/views/Edit/Sources/X11grab.tsx:278
+msgid "Probe"
+msgstr "Зонд"
+
+#: src/views/Edit/index.tsx:669
+#: src/views/Publication/Add.tsx:513
+#: src/views/Publication/Edit.tsx:547
+msgid "Process"
+msgstr "Процес"
+
+#: src/views/Publication/Add.tsx:480
+#: src/views/Publication/Edit.tsx:514
+msgid "Process control"
+msgstr "Керування процесом"
+
+#: src/views/Main/index.tsx:639
+#: src/views/Main/index.tsx:661
+#: src/views/Publication/Edit.tsx:599
+#: src/views/Publication/Edit.tsx:740
+msgid "Process details"
+msgstr "Деталі процесу"
+
+#: src/views/Main/index.tsx:648
+#: src/views/Main/index.tsx:669
+#: src/views/Publication/Edit.tsx:607
+#: src/views/Publication/Edit.tsx:748
+msgid "Process report"
+msgstr "Звіт про процес"
+
+#: src/views/Edit/index.tsx:492
+#: src/views/Edit/index.tsx:569
+msgid "Processing & Control"
+msgstr "Обробка та контроль"
+
+#: src/components/coders/Encoders/video/h264_nvenc.tsx:107
+#: src/components/coders/Encoders/video/h264_vaapi.tsx:89
+#: src/components/coders/Encoders/video/hevc_nvenc.tsx:107
+#: src/components/coders/Encoders/video/hevc_vaapi.tsx:91
+#: src/components/coders/Encoders/video/hevc_videotoolbox.tsx:65
+#: src/components/coders/Encoders/video/vp9_vaapi.tsx:91
+#: src/components/coders/settings/Video.tsx:139
+#: src/views/Edit/Wizard/VideoProfile.tsx:50
+msgid "Profile"
+msgstr "Профіль"
+
+#: src/views/Edit/Sources/Network.tsx:925
+msgid "Protect: None"
+msgstr ""
+
+#: src/views/Edit/Sources/Network.tsx:931
+msgid "Protect: Video and audio channel"
+msgstr ""
+
+#: src/views/Edit/Sources/Network.tsx:928
+msgid "Protect: Video channel"
+msgstr ""
+
+#: src/views/Edit/Sources/Network.tsx:1101
+#: src/views/Publication/Services/Akamai.tsx:157
+#: src/views/Publication/Services/Akamai.tsx:199
+#: src/views/Publication/Services/Azure.tsx:100
+#: src/views/Publication/Services/Brightcove.tsx:101
+#: src/views/Publication/Services/CDN77.tsx:103
+#: src/views/Publication/Services/Core.tsx:258
+#: src/views/Publication/Services/DaCast.tsx:141
+#: src/views/Publication/Services/DaCast.tsx:206
+#: src/views/Publication/Services/DASH.tsx:208
+#: src/views/Publication/Services/HLS.tsx:199
+#: src/views/Publication/Services/Icecast.tsx:187
+#: src/views/Publication/Services/Image2.tsx:138
+#: src/views/Publication/Services/Linkedin.tsx:100
+#: src/views/Publication/Services/MPEGTS.tsx:196
+#: src/views/Publication/Services/Owncast.tsx:102
+#: src/views/Publication/Services/Red5.tsx:128
+#: src/views/Publication/Services/RTMP.tsx:167
+#: src/views/Publication/Services/RTSP.tsx:159
+#: src/views/Publication/Services/SRT.tsx:177
+#: src/views/Publication/Services/Telegram.tsx:88
+#: src/views/Publication/Services/UDP.tsx:143
+#: src/views/Publication/Services/WOWZA.tsx:144
+msgid "Protocol"
+msgstr "Протокол"
+
+#: src/views/Publication/Add.tsx:439
+msgid "Protocols"
+msgstr "Протоколи"
+
+#: src/views/Settings.tsx:1598
+msgid "Public domain/s"
+msgstr "Публікація у відкритому доступі"
+
+#: src/views/Publication/Edit.tsx:128
+#: src/views/Publication/Edit.tsx:142
+msgid "Publication service not found"
+msgstr "Службу публікації не знайдено"
+
+#: src/views/Playersite.tsx:260
+msgid "Publication website settings saved"
+msgstr "Збережено налаштування веб-сайту публікації"
+
+#: src/views/Main/Publication.tsx:168
+msgid "Publications"
+msgstr "Публікації"
+
+#: src/views/Edit/Sources/Network.tsx:1530
+msgid "Pull Mode"
+msgstr "Режим витягування"
+
+#: src/views/Edit/Sources/Network.tsx:1526
+msgid "Pull or recieve the data:"
+msgstr "Витягнути або отримати дані:"
+
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:192
+msgid "QP"
+msgstr "QP"
+
+#: src/components/coders/Encoders/video/h264_vaapi.tsx:166
+#: src/components/coders/Encoders/video/hevc_vaapi.tsx:168
+#: src/components/coders/Encoders/video/vp9_vaapi.tsx:168
+#: src/components/Progress.tsx:186
+msgid "Quality"
+msgstr "Якість"
+
+#: src/components/coders/Encoders/video/av1_libaom.tsx:76
+msgid "Quality and compression efficiency vs speed trade-off."
+msgstr ""
+
+#: src/views/Edit/Sources/Raspicam.tsx:181
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:131
+msgid "Raspberry Pi camera"
+msgstr "Raspberry Pi камера"
+
+#: src/components/coders/Encoders/video/av1_nvenc.tsx:143
+#: src/components/coders/Encoders/video/h264_nvenc.tsx:150
+#: src/components/coders/Encoders/video/h264_vaapi.tsx:72
+#: src/components/coders/Encoders/video/hevc_nvenc.tsx:147
+#: src/components/coders/Encoders/video/hevc_vaapi.tsx:74
+#: src/components/coders/Encoders/video/vp9_vaapi.tsx:74
+msgid "Rate control"
+msgstr "Контроль швидкості"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx:215
+msgid "Ratio"
+msgstr "Співвідношення"
+
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:246
+msgid "rav1e Parameters"
+msgstr "rav1e Параметри"
+
+#: src/views/Edit/Sources/Network.tsx:685
+msgid "Read input at native speed"
+msgstr "Читання введених даних із рідною швидкістю"
+
+#: src/views/Edit/Sources/Network.tsx:1531
+msgid "Receive Mode"
+msgstr "Режим отримання"
+
+#: src/components/ActionButton.tsx:51
+#: src/components/ActionButton.tsx:90
+#: src/components/controls/Process.tsx:50
+msgid "Reconnect"
+msgstr "Повторне підключення"
+
+#: src/components/controls/Process.tsx:65
+msgid "Reconnect delay (seconds)"
+msgstr "Затримка перепідключення (секунди)"
+
+#: src/views/Main/index.tsx:422
+#: src/views/Publication/Process.tsx:72
+#: src/views/Publication/Process.tsx:91
+msgid "Reconnecting in {0}s"
+msgstr "Повторне підключення через {0} с"
+
+#: src/views/Settings.tsx:2690
+msgid "Reconnecting to Restreamer Core failed for the last {RETRIES} seconds."
+msgstr "Не вдалося перепідключитися до ядра Restreamer Core за останні {RETRIES} секунд."
+
+#: src/views/Password.tsx:198
+msgid "Reconnecting to Restreamer Core failed."
+msgstr "Не вдалося перепідключитися до ядра рестримера."
+
+#: src/views/Edit/Sources/ALSA.tsx:142
+#: src/views/Edit/Sources/AVFoundation.tsx:203
+#: src/views/Edit/Sources/Channel.tsx:114
+#: src/views/Edit/Sources/Network.tsx:1281
+#: src/views/Edit/Sources/Network.tsx:1408
+#: src/views/Edit/Sources/Raspicam.tsx:137
+#: src/views/Edit/Sources/V4L.tsx:140
+#: src/views/Edit/Sources/X11grab.tsx:192
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:165
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:139
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:139
+#: src/views/Edit/Wizard/Sources/V4L.tsx:144
+msgid "Refresh"
+msgstr "Оновити"
+
+#: src/views/Publication/Services/Livepush.tsx:100
+#: src/views/Publication/Services/PicartoTv.tsx:104
+#: src/views/Publication/Services/Restream.tsx:102
+#: src/views/Publication/Services/Twitch.tsx:107
+#: src/views/Publication/Services/Twitter.tsx:181
+#: src/views/Publication/Services/Twitter.tsx:201
+msgid "Region"
+msgstr "Регіон"
+
+#: src/views/Password.tsx:177
+msgid "Register user"
+msgstr "Зареєструвати користувача"
+
+#: src/views/Password.tsx:217
+#: src/views/Settings.tsx:2721
+msgid "Reload"
+msgstr "Перезавантажити"
+
+#: src/components/modals/Hint.tsx:187
+msgid "Remove Audio"
+msgstr ""
+
+#: src/views/Settings.tsx:2056
+msgid "Remove the oldest entries if the /memfs is full"
+msgstr "Видаліть найстаріші записи, якщо /memfs заповнено"
+
+#: src/views/Settings.tsx:2318
+msgid "Requires activation"
+msgstr "Потребує активації"
+
+#: src/views/Publication/Player.tsx:616
+msgid "Reset logo"
+msgstr "Скинути логотип"
+
+#: src/views/Publication/Player.tsx:625
+msgid "Reset poster"
+msgstr "Перезавантажити плакат"
+
+#: src/components/coders/Decoders/video/h264_cuvid.tsx:80
+#: src/components/coders/Decoders/video/hevc_cuvid.tsx:80
+#: src/components/coders/Decoders/video/mjpeg_cuvid.tsx:80
+#: src/components/coders/Decoders/video/mpeg1_cuvid.tsx:80
+#: src/components/coders/Decoders/video/mpeg2_cuvid.tsx:80
+#: src/components/coders/Decoders/video/mpeg4_cuvid.tsx:80
+#: src/components/coders/Decoders/video/vc1_cuvid.tsx:80
+#: src/components/coders/Decoders/video/vp8_cuvid.tsx:80
+#: src/components/coders/Decoders/video/vp9_cuvid.tsx:80
+msgid "Resize"
+msgstr ""
+
+#: src/views/Settings.tsx:1473
+#: src/views/Settings.tsx:2742
+#: src/views/Settings.tsx:2756
+#: src/views/Settings.tsx:2769
+msgid "Restart"
+msgstr "Перезапуск"
+
+#: src/views/Settings.tsx:2729
+msgid "Restart required"
+msgstr "Потрібен перезапуск"
+
+#: src/views/Password.tsx:186
+#: src/views/Settings.tsx:2678
+msgid "Restarting"
+msgstr "Перезапуск"
+
+#: src/views/Password.tsx:191
+#: src/views/Settings.tsx:2683
+msgid "Restarting Restreamer Core ..."
+msgstr "Перезапуск ядра рестримера ..."
+
+#: src/views/Settings.tsx:1180
+msgid "Restarting the application failed."
+msgstr "Не вдалося перезапустити програму."
+
+#: src/views/Publication/Services/Core.tsx:239
+msgid "Restreamer instructions"
+msgstr "Інструкції для рестрімера"
+
+#: src/views/Settings.tsx:1508
+msgid "Restreamer Service"
+msgstr "Служба рестрімерів"
+
+#: src/views/Main/index.tsx:293
+msgid "Retrieving stream data ..."
+msgstr "Отримання даних потоку..."
+
+#: src/views/Edit/Wizard/Error.tsx:35
+#: src/views/Invalid.tsx:56
+#: src/views/Settings.tsx:1289
+msgid "Retry"
+msgstr "Повторити"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx:132
+msgid "RGB test pattern"
+msgstr "Тестовий шаблон RGB"
+
+#: src/components/filters/video/Transpose.tsx:48
+msgid "Rotate"
+msgstr "Поворот"
+
+#: src/views/Main/index.tsx:581
+#: src/views/Settings.tsx:1364
+#: src/views/Settings.tsx:2290
+msgid "RTMP"
+msgstr "RTMP"
+
+#: src/views/Settings.tsx:2389
+msgid "RTMP app for publishing."
+msgstr "Програма RTMP для публікації."
+
+#: src/views/Edit/index.tsx:595
+msgid "RTMP output"
+msgstr "Вихід RTMP"
+
+#: src/views/Settings.tsx:2338
+msgid "RTMP Port"
+msgstr "Порт RTMP"
+
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:169
+#: src/views/Settings.tsx:2295
+msgid "RTMP server"
+msgstr "RTMP-сервер"
+
+#: src/views/Edit/Sources/Network.tsx:1217
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:80
+msgid "RTMP server is not enabled"
+msgstr "Сервер RTMP не ввімкнено"
+
+#: src/views/Settings.tsx:2352
+msgid "RTMP server listen address."
+msgstr "Адреса сервера RTMP."
+
+#: src/views/Settings.tsx:2405
+msgid "RTMP streamkey for publishing and playing. The streamkey needs to be appended to the URL."
+msgstr ""
+
+#: src/views/Settings.tsx:2358
+msgid "RTMPS Port"
+msgstr "Порт RTMPS"
+
+#: src/views/Settings.tsx:2306
+msgid "RTMPS server"
+msgstr "Сервер RTMPS"
+
+#: src/views/Settings.tsx:2373
+msgid "RTMPS server listen address."
+msgstr "Адреса прослуховування сервера RTMPS."
+
+#: src/views/Edit/Sources/Network.tsx:624
+msgid "RTSP"
+msgstr "RTSP"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx:197
+msgid "Rule"
+msgstr "Правило"
+
+#: src/components/coders/settings/Audio.tsx:146
+#: src/components/filters/audio/Resample.tsx:98
+msgid "Sampling"
+msgstr "Випробування"
+
+#: src/components/modals/Hint.tsx:217
+#: src/views/Edit/index.tsx:767
+#: src/views/Edit/Wizard/License.tsx:55
+#: src/views/Playersite.tsx:865
+#: src/views/Publication/Add.tsx:657
+#: src/views/Publication/Edit.tsx:723
+#: src/views/Publication/Player.tsx:608
+#: src/views/Settings.tsx:2668
+msgid "Save"
+msgstr "Зберегти"
+
+#: src/components/filters/video/Scale.tsx:42
+#: src/views/Edit/Sources/VirtualVideo.tsx:187
+msgid "Scale"
+msgstr "Масштаб"
+
+#: src/components/filters/video/Scale.tsx:98
+#: src/components/filters/video/Scale.tsx:108
+#: src/components/filters/video/Scale.tsx:118
+msgid "Scale size"
+msgstr "Розмір масштабу"
+
+#: src/views/Edit/Sources/SDP.tsx:221
+msgid "SDP"
+msgstr ""
+
+#: src/views/Settings.tsx:2196
+msgid "Seconds to keep files in cache."
+msgstr "Зберігання файлів у кеші, сек."
+
+#: src/components/controls/Process.tsx:71
+msgid "Seconds until a process is restarted."
+msgstr "Секунд до перезапуску процесу."
+
+#: src/components/controls/Process.tsx:84
+msgid "Seconds until a staled process is terminated."
+msgstr "Секунд до завершення застарілого процесу."
+
+#: src/components/controls/Snapshot.tsx:62
+msgid "Seconds until the snapshot/thumbnail of the video source is updated."
+msgstr "Секунд до оновлення знімка/мініатюри джерела відео."
+
+#: src/views/Settings.tsx:1831
+msgid "Security"
+msgstr "Безпека"
+
+#: src/views/Publication/Services/Livespotting.tsx:129
+msgid "Security token"
+msgstr "Токен безпеки"
+
+#: src/views/Publication/Player.tsx:449
+msgid "Seekbar color"
+msgstr "Колір панелі пошуку"
+
+#: src/components/controls/HLS.tsx:111
+msgid "Segment length (seconds)"
+msgstr "Довжина сегмента (секунд)"
+
+#: src/components/controls/HLS.tsx:116
+msgid "Segment will be cut on the following keyframe after this time has passed. 2 is recommended."
+msgstr "Сегмент буде вирізано на наступному ключовому кадрі після закінчення цього часу. Рекомендується 2."
+
+#: src/views/Publication/Services/DASH.tsx:525
+#: src/views/Publication/Services/HLS.tsx:434
+msgid "Segmentation"
+msgstr "Сегментація"
+
+#: src/views/Edit/Sources/Channel.tsx:97
+msgid "Select a channel:"
+msgstr ""
+
+#: src/views/Edit/Sources/ALSA.tsx:123
+#: src/views/Edit/Sources/AVFoundation.tsx:189
+#: src/views/Edit/Sources/Framebuffer.tsx:117
+#: src/views/Edit/Sources/Raspicam.tsx:126
+#: src/views/Edit/Sources/V4L.tsx:121
+#: src/views/Edit/Sources/X11grab.tsx:173
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:145
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:109
+#: src/views/Edit/Wizard/Sources/V4L.tsx:133
+msgid "Select a device:"
+msgstr "Виберіть пристрій:"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:92
+msgid "Select audio source:"
+msgstr "Виберіть джерело звуку:"
+
+#: src/views/Publication/Add.tsx:552
+#: src/views/Publication/Edit.tsx:630
+msgid "Select RTMP or SRT (if enabled) for less latency."
+msgstr "Виберіть RTMP або SRT (якщо ввімкнено) для меншої затримки."
+
+#: src/views/Edit/Sources/VirtualVideo.tsx:126
+msgid "Select source ..."
+msgstr "Виберіть джерело..."
+
+#: src/views/Edit/Sources/VirtualVideo.tsx:116
+msgid "Select video source:"
+msgstr "Виберіть джерело відео:"
+
+#: src/views/Edit/Wizard/Source.tsx:29
+msgid "Select whether you pull the stream from a <0>network source</0> (such as a network camera) or the <1>internal RTMP server</1> (e.g., OBS streams to the Restreamer)."
+msgstr "Виберіть, чи витягувати потік з <0>мережевого джерела</0> (наприклад, мережевої камери) або з <1>внутрішнього RTMP-сервера</1> (наприклад, потоки OBS до рестрімера)."
+
+#: src/components/EncodingSelect.tsx:243
+msgid "Select your encoding setting:"
+msgstr "Виберіть налаштування кодування:"
+
+#: src/components/FilterSelect.tsx:127
+msgid "Select your filter settings (optional):"
+msgstr "Виберіть налаштування фільтрів (необов'язково):"
+
+#: src/views/Playersite.tsx:652
+msgid "Selected"
+msgstr "Вибрано"
+
+#: src/views/Playersite.tsx:385
+msgid "Selected channel"
+msgstr "Обраний канал"
+
+#: src/views/Playersite.tsx:496
+msgid "Selection"
+msgstr "Вибрано"
+
+#: src/views/Settings.tsx:1443
+msgid "Send anonymous metrics (helps us for future development)"
+msgstr "Надіслати анонімні метрики (допомагає нам для подальшого розвитку)"
+
+#: src/views/Edit/Sources/Network.tsx:1255
+#: src/views/Edit/Sources/Network.tsx:1382
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:116
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:116
+msgid "Send stream to address ..."
+msgstr "Надіслати потік на адресу ..."
+
+#: src/views/Edit/Sources/Network.tsx:1169
+#: src/views/Edit/Wizard/Sources/InternalHLS.tsx:54
+msgid "Send stream to this address:"
+msgstr "Надіслати потік на цю адресу:"
+
+#: src/views/Publication/Services/Framebuffer.tsx:15
+msgid "Send video to Framebuffer"
+msgstr "Надсилати відео до Framebuffer"
+
+#: src/views/Publication/Services/DaCast.tsx:154
+msgid "Server"
+msgstr "Сервер"
+
+#: src/views/Publication/Services/Kick.tsx:101
+#: src/views/Publication/Services/Owncast.tsx:114
+#: src/views/Publication/Services/Rumble.tsx:101
+#: src/views/Publication/Services/Telegram.tsx:100
+#: src/views/Publication/Services/TikTok.tsx:104
+msgid "Server URL"
+msgstr "URL-адреса сервера"
+
+#: src/Header.tsx:303
+#: src/views/Login.tsx:259
+#: src/views/Settings.tsx:1329
+#: src/views/Settings.tsx:1490
+msgid "Service"
+msgstr "Сервіс"
+
+#: src/views/Publication/Add.tsx:493
+#: src/views/Publication/Edit.tsx:527
+msgid "Service name"
+msgstr "Назва сервісу"
+
+#: src/views/Settings.tsx:1560
+msgid "Service token for monitoring."
+msgstr "Токен сервісу для моніторингу."
+
+#: src/Footer.tsx:274
+msgid "Sessions"
+msgstr "Сеанси"
+
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:251
+msgid "Set the rav1e configuration using a :-separated list of key=value parameters."
+msgstr "Встановіть конфігурацію rav1e за допомогою :-розділеного списку параметрів key=value."
+
+#: src/views/Settings.tsx:1740
+msgid "Sets a bandwidth limit in Mbit per second for outgoing HLS data transfer. All services, such as RTMP and outgoing processes, are included in the calculation. If the bandwidth is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
+msgstr "Встановлює обмеження пропускної здатності в Мбіт/с для вихідної передачі даних HLS. Усі служби, такі як RTMP і вихідні процеси, беруть участь у розрахунку. Якщо пропускна здатність перевищена, програми перегляду HLS отримують код стану HTTP 509 (Перевищено ліміт пропускної здатності). 0 - пропускна здатність необмежена."
+
+#: src/views/Settings.tsx:1719
+msgid "Sets a viewer limit for HLS sessions. If the limit is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
+msgstr "Встановлює ліміт перегляду для сеансів HLS. Якщо ліміт перевищено, програми перегляду HLS отримують код статусу HTTP 509 (перевищено ліміт пропускної здатності). 0 необмежений."
+
+#: src/views/Settings.tsx:1495
+msgid "Setting for connection to the service."
+msgstr "Налаштування для підключення до сервісу."
+
+#: src/views/Settings.tsx:1299
+msgid "Settings"
+msgstr "Налаштування"
+
+#: src/views/Settings.tsx:1301
+msgid "Settings (expert mode)"
+msgstr "Налаштування (експертний режим)"
+
+#: src/views/Settings.tsx:2081
+msgid "Settings for /data path. The access is protected by"
+msgstr "Налаштування для шляху до /data. Доступ захищено за допомогою"
+
+#: src/views/Settings.tsx:1973
+msgid "Settings for /memfs path."
+msgstr "Налаштування для шляху /memfs."
+
+#: src/views/Settings.tsx:1118
+msgid "Settings saved. All changes will be applied after restarting the application."
+msgstr "Налаштування збережено. Всі зміни будуть застосовані після перезапуску програми."
+
+#: src/views/Playersite.tsx:447
+msgid "Share button"
+msgstr "Кнопка \"Поділитися"
+
+#: src/views/Playersite.tsx:477
+msgid "Shows a reference to the project."
+msgstr "Показує посилання на проект."
+
+#: src/views/Login.tsx:354
+msgid "Sign up (free)"
+msgstr "Зареєструватися (безкоштовно)"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:101
+msgid "Silence"
+msgstr "Тиша"
+
+#: src/views/Edit/Wizard/Audio.tsx:138
+msgid "Silence Audio"
+msgstr "Вимкнутий звук"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:103
+msgid "Sine"
+msgstr "Синус"
+
+#: src/views/Playersite.tsx:371
+msgid "Sitename"
+msgstr "Назва сайту"
+
+#: src/components/coders/settings/Video.tsx:154
+msgid "Size"
+msgstr "Розмір"
+
+#: src/views/Edit/index.tsx:640
+#: src/views/Main/index.tsx:603
+msgid "Snapshot"
+msgstr "Знімок"
+
+#: src/views/Login.tsx:331
+msgid "Social-login (OAuth2, 2FA)"
+msgstr "Соціальний логін (OAuth2, 2FA)"
+
+#: src/views/Edit/Sources/Network.tsx:648
+msgid "Socket timeout (microseconds)"
+msgstr "Час очікування сокета (мікросекунд)"
+
+#: src/views/Publication/Add.tsx:436
+msgid "Software"
+msgstr "Програмне забезпечення"
+
+#: src/components/controls/Source.tsx:86
+#: src/views/Edit/Sources/VirtualAudio.tsx:97
+#: src/views/Edit/Sources/VirtualVideo.tsx:121
+#: src/views/Publication/Add.tsx:547
+#: src/views/Publication/Edit.tsx:625
+msgid "Source"
+msgstr "Джерело"
+
+#: src/views/Publication/Add.tsx:475
+#: src/views/Publication/Add.tsx:542
+#: src/views/Publication/Edit.tsx:509
+#: src/views/Publication/Edit.tsx:620
+msgid "Source & Encoding"
+msgstr "Джерело та кодування"
+
+#: src/components/Progress.tsx:199
+msgid "Speed"
+msgstr "Швидкість"
+
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:89
+msgid "Speed Preset"
+msgstr "Попереднє налаштування швидкості"
+
+#: src/views/Edit/Sources/Network.tsx:659
+#: src/views/Main/index.tsx:591
+#: src/views/Settings.tsx:1370
+#: src/views/Settings.tsx:2417
+msgid "SRT"
+msgstr "SRT"
+
+#: src/views/Edit/index.tsx:621
+msgid "SRT output"
+msgstr "Вихід SRT"
+
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:169
+#: src/views/Settings.tsx:2422
+msgid "SRT server"
+msgstr "Сервер SRT"
+
+#: src/views/Edit/Sources/Network.tsx:1344
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:80
+msgid "SRT server is not enabled"
+msgstr "Сервер SRT не увімкнено"
+
+#: src/views/Settings.tsx:2450
+msgid "SRT server listen address."
+msgstr "Адреса прослуховування сервера SRT."
+
+#: src/views/Settings.tsx:2467
+msgid "SRT token for publishing and playing. The token is the value of the streamid parameter 'token.'"
+msgstr "Токен SRT для публікації та відтворення. Токен є значенням потокового параметра 'token'."
+
+#: src/components/controls/Process.tsx:79
+msgid "Stale timeout (seconds)"
+msgstr "Застарілий таймаут (секунди)"
+
+#: src/views/Edit/Sources/Network.tsx:871
+msgid "start_at_zero"
+msgstr "start_at_zero"
+
+#: src/views/Settings.tsx:1871
+msgid "Statistics"
+msgstr "Статистика"
+
+#: src/components/controls/HLS.tsx:68
+#: src/views/Settings.tsx:1357
+#: src/views/Settings.tsx:1965
+msgid "Storage"
+msgstr "Сховище"
+
+#: src/views/Settings.tsx:1956
+msgid "Stores the viewer statistics to the disk."
+msgstr "Зберігає статистику переглядів на диску."
+
+#: src/views/Edit/StreamSelect.tsx:35
+#: src/views/Edit/StreamSelect.tsx:42
+#: src/views/Edit/StreamSelect.tsx:89
+#: src/views/Edit/Wizard/Audio.tsx:104
+msgid "Stream"
+msgstr "Потік"
+
+#: src/views/Publication/Services/Wettercom.tsx:112
+msgid "Stream ID"
+msgstr ""
+
+#: src/views/Publication/Services/CDN77.tsx:126
+#: src/views/Publication/Services/DaCast.tsx:187
+#: src/views/Publication/Services/Dailymotion.tsx:121
+#: src/views/Publication/Services/DLive.tsx:82
+#: src/views/Publication/Services/Dummy.tsx:301
+#: src/views/Publication/Services/EarthCam.tsx:101
+#: src/views/Publication/Services/Instagram.tsx:94
+#: src/views/Publication/Services/Kick.tsx:117
+#: src/views/Publication/Services/Livepush.tsx:125
+#: src/views/Publication/Services/MediaNetwork.tsx:84
+#: src/views/Publication/Services/NimoTv.tsx:116
+#: src/views/Publication/Services/Owncast.tsx:124
+#: src/views/Publication/Services/PeerTube.tsx:101
+#: src/views/Publication/Services/PicartoTv.tsx:120
+#: src/views/Publication/Services/Restream.tsx:140
+#: src/views/Publication/Services/Rumble.tsx:117
+#: src/views/Publication/Services/Telegram.tsx:110
+#: src/views/Publication/Services/TikTok.tsx:120
+#: src/views/Publication/Services/Trovo.tsx:82
+#: src/views/Publication/Services/Twitch.tsx:223
+#: src/views/Publication/Services/Twitter.tsx:216
+#: src/views/Publication/Services/Vimeo.tsx:83
+#: src/views/Publication/Services/Wettercom.tsx:122
+#: src/views/Publication/Services/Youtube.tsx:223
+msgid "Stream key"
+msgstr "Ключ для стріму"
+
+#: src/views/Publication/Services/RTMP.tsx:193
+msgid "Stream Key"
+msgstr "Ключ потоку"
+
+#: src/views/Publication/Services/Brightcove.tsx:121
+#: src/views/Publication/Services/Red5.tsx:162
+#: src/views/Publication/Services/WOWZA.tsx:187
+msgid "Stream name"
+msgstr "Назва потоку"
+
+#: src/views/Publication/Services/Akamai.tsx:180
+msgid "Stream names"
+msgstr "Назви потоків"
+
+#: src/components/controls/Source.tsx:93
+msgid "Stream source for publication service (experimental)."
+msgstr "Джерело потоку для сервісу публікацій (експериментальний)."
+
+#: src/views/Publication/Services/Akamai.tsx:169
+#: src/views/Publication/Services/CDN77.tsx:115
+#: src/views/Publication/Services/Dailymotion.tsx:99
+msgid "Stream URL"
+msgstr "URL потоку"
+
+#: src/views/Settings.tsx:2394
+msgid "Streamkey"
+msgstr ""
+
+#: src/views/Playersite.tsx:471
+msgid "Support datarhei Restreamer"
+msgstr "Підтримка даташей Restreamer"
+
+#: src/views/Edit/Sources/Network.tsx:981
+#: src/views/Edit/Wizard/Sources/Network.tsx:83
+msgid "Supports HTTP (HLS, DASH), RTP, RTSP, RTMP, SRT and more."
+msgstr "Підтримує HTTP (HLS, DASH), RTP, RTSP, RTMP, SRT та інші."
+
+#: src/Footer.tsx:212
+#: src/Header.tsx:324
+#: src/views/Settings.tsx:2517
+msgid "System"
+msgstr "Система"
+
+#: src/views/Publication/Services/Core.tsx:229
+msgid "Target address"
+msgstr "Цільова адреса"
+
+#: src/views/Playersite.tsx:315
+#: src/views/Playersite.tsx:486
+msgid "Template"
+msgstr "Шаблон"
+
+#: src/views/Playersite.tsx:512
+msgid "Template to be used for creating the publication website. The delete button removes the selection from the system."
+msgstr "Шаблон, який буде використано для створення веб-сайту публікації. Кнопка видалення видаляє вибір з системи."
+
+#: src/views/Playersite.tsx:735
+msgid "Terms"
+msgstr "Умови"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx:128
+msgid "Test pattern"
+msgstr "Тестовий шаблон"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx:130
+msgid "Test pattern (extended)"
+msgstr "Тестовий шаблон (розширений)"
+
+#: src/views/Playersite.tsx:583
+msgid "Text colors"
+msgstr "Кольори тексту"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:158
+msgid "The amplitude (0.0 - 1.0) of the generated audio stream"
+msgstr "Амплітуда (0.0 - 1.0) генерованого аудіопотоку"
+
+#: src/views/Settings.tsx:1477
+msgid "The application is using an older version of the settings."
+msgstr "Програма використовує стару версію налаштувань."
+
+#: src/views/Edit/Sources/Network.tsx:1079
+msgid "The available FFmpeg binary doesn't support any of the required protocols."
+msgstr "Доступний двійковий файл FFmpeg не підтримує жодного з необхідних протоколів."
+
+#: src/components/coders/settings/Audio.tsx:47
+msgid "The bitrate of the audio stream."
+msgstr "Бітрейт аудіопотоку."
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:183
+msgid "The carrier frequency"
+msgstr "Несуча частота"
+
+#: src/views/Edit/index.tsx:433
+msgid "The channel \"{0}\" could not be deleted"
+msgstr "Канал \"{0}\" не вдалося видалити"
+
+#: src/views/Edit/index.tsx:446
+msgid "The channel \"{0}\" has been deleted"
+msgstr "Канал \"{0}\" було видалено"
+
+#: src/views/Edit/index.tsx:834
+msgid "The deletion of this channel can not be recovered. All publications of this channel will be removed."
+msgstr "Видалення цього каналу не можна відновити. Всі публікації цього каналу будуть видалені."
+
+#: src/components/controls/Preview.tsx:76
+msgid "The H.264 encoder used."
+msgstr ""
+
+#: src/views/Edit/index.tsx:314
+#: src/views/Edit/Wizard/index.tsx:192
+#: src/views/Publication/Edit.tsx:305
+msgid "The input profile is not complete. Please define a video and audio source."
+msgstr "Вхідний профіль не завершено. Будь ласка, визначте джерело відео та аудіо."
+
+#: src/views/Publication/Add.tsx:251
+msgid "The input profile is not complete. Please define a video and/or audio source."
+msgstr "Профіль вхідного сигналу не є повним. Будь ласка, вкажіть джерело відео та/або аудіо."
+
+#: src/components/coders/settings/Audio.tsx:134
+#: src/components/filters/audio/Resample.tsx:86
+msgid "The layout of the audio stream."
+msgstr "Макет аудіопотоку."
+
+#: src/components/controls/HLS.tsx:131
+msgid "The maximum number of playlist segments. 0 will contain all the segments. 6 is recommended."
+msgstr "Максимальна кількість сегментів плейлиста. 0 буде містити всі сегменти. 6 рекомендується."
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:146
+msgid "The noise color"
+msgstr "Колір шуму"
+
+#: src/components/controls/License/index.tsx:62
+msgid "The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission."
+msgstr "Особа, яка пов’язала твір із цією угодою, присвятила твір суспільному надбанню, відмовившись від усіх своїх прав на твір у всьому світі відповідно до закону про авторське право, включаючи всі пов’язані та суміжні права, у межах, дозволених законом. Ви можете копіювати, змінювати, поширювати та виконувати роботу, навіть у комерційних цілях, без запиту дозволу."
+
+#: src/views/Settings.tsx:1609
+msgid "The public reachable domain name of the host this Restreamer is running on. Separate multiple domain names by a comma."
+msgstr "Загальнодоступне доменне ім'я хоста, на якому працює цей рестрімер. Кілька доменних імен слід розділяти комою."
+
+#: src/views/Publication/Edit.tsx:381
+msgid "The publication service \"{0}\" could not be deleted"
+msgstr "Не вдалося видалити службу публікації \"{0}\"."
+
+#: src/views/Publication/Add.tsx:280
+msgid "The publication service \"{0}\" has been created"
+msgstr "Створено службу публікації \"{0}\"."
+
+#: src/views/Publication/Edit.tsx:392
+msgid "The publication service \"{0}\" has been deleted"
+msgstr "Службу публікації \"{0}\" видалено"
+
+#: src/views/Publication/Add.tsx:277
+msgid "The publication service has been created"
+msgstr "Створено службу публікації"
+
+#: src/components/controls/RTMP.tsx:66
+msgid "The RTMP output requires the RTMP Server."
+msgstr "Для виводу RTMP потрібен сервер RTMP."
+
+#: src/components/coders/settings/Audio.tsx:184
+#: src/components/filters/audio/Resample.tsx:136
+msgid "The sample rate of the audio stream."
+msgstr "Частота дискретизації аудіопотоку."
+
+#: src/views/Edit/Sources/AudioLoop.tsx:126
+#: src/views/Edit/Sources/SDP.tsx:112
+#: src/views/Edit/Sources/VideoLoop.tsx:134
+#: src/views/Playersite.tsx:186
+#: src/views/Publication/Player.tsx:214
+msgid "The selected file is too big (<0/>). Only <1/> are allowed."
+msgstr "Вибраний файл занадто великий (<0/>). Дозволено лише <1/>."
+
+#: src/views/Edit/Sources/AudioLoop.tsx:118
+#: src/views/Edit/Sources/SDP.tsx:104
+#: src/views/Edit/Sources/VideoLoop.tsx:126
+#: src/views/Playersite.tsx:178
+#: src/views/Publication/Player.tsx:206
+msgid "The selected file type ({0}) is not allowed. Allowed file types are {1}"
+msgstr "Вибраний тип файлу ({0}) не допускається. Допустимі типи файлів {1}"
+
+#: src/views/Publication/Edit.tsx:336
+msgid "The settings for \"{0}\" have been saved"
+msgstr "Налаштування для \"{0}\" збережено"
+
+#: src/views/Edit/Wizard/Audio.tsx:63
+msgid "The source doesn't provide any audio streams."
+msgstr "Джерело не транслює жодних аудіопотоків."
+
+#: src/views/Edit/Profile.tsx:774
+msgid "The source doesn't provide any audio streams. Please check the <0>probe details</0>."
+msgstr "Джерело не транслює жодних аудіопотоків. Перевірте <0>деталі зонда</0>."
+
+#: src/views/Edit/Wizard/Audio.tsx:71
+msgid "The source doesn't provide any compatible audio streams."
+msgstr "Джерело не надає жодних сумісних аудіопотоків."
+
+#: src/views/Edit/Wizard/Video.tsx:71
+msgid "The source doesn't provide any compatible video streams. Please check the <0>requirements</0>."
+msgstr "Джерело не надає жодних сумісних відеопотоків. Будь ласка, перевірте <0>вимоги</0>."
+
+#: src/views/Edit/Profile.tsx:588
+msgid "The source doesn't provide any video streams. Please check the <0>probe details</0>."
+msgstr "Джерело не надає відеопотоків. Перевірте <0>деталі зонда</0>."
+
+#: src/views/Edit/Wizard/Video.tsx:60
+msgid "The source doesn't provide any video streams. Please check the device."
+msgstr "Джерело не надає відеопотоків. Будь ласка, перевірте пристрій."
+
+#: src/components/controls/SRT.tsx:66
+msgid "The SRT output requires the SRT Server."
+msgstr "Для виводу SRT потрібен сервер SRT."
+
+#: src/views/Edit/Wizard/Audio.tsx:84
+msgid "The video source doesn't provide any compatible audio stream. <0>Silence audio</0> is recommended. Services e.g. YouTube, Facebook & Co. require an audio channel."
+msgstr "Джерело відео не надає сумісного аудіопотоку. <Рекомендується ввімкнути беззвучний звук. Сервіси, такі як YouTube, Facebook & Co. вимагають аудіоканал."
+
+#: src/views/Edit/Wizard/VideoProfile.tsx:43
+msgid "The video source is compatible. Select the desired resolution:"
+msgstr "Джерело відео сумісне. Виберіть бажану роздільну здатність:"
+
+#: src/views/Settings.tsx:1431
+msgid "There are updates available. Here you get more information."
+msgstr "Доступні оновлення. Тут ви можете отримати додаткову інформацію."
+
+#: src/views/Settings.tsx:1065
+msgid "There was a problem storing the settings. Settings not saved."
+msgstr "Виникла проблема зі збереженням налаштувань. Налаштування не збережено."
+
+#: src/views/Invalid.tsx:36
+msgid "There was an error connecting to Restreamer Core at {address}."
+msgstr ""
+
+#: src/views/Edit/Sources/AudioLoop.tsx:135
+#: src/views/Edit/Sources/SDP.tsx:121
+#: src/views/Edit/Sources/VideoLoop.tsx:143
+#: src/views/Playersite.tsx:195
+#: src/views/Publication/Player.tsx:223
+msgid "There was an error during upload: {0}"
+msgstr "Виникла помилка під час завантаження: {0}"
+
+#: src/views/Edit/Wizard/Error.tsx:30
+msgid "There was an error setting up the stream."
+msgstr "Під час налаштування потоку сталася помилка."
+
+#: src/views/Settings.tsx:1057
+msgid "There were some errors in the settings. Settings not saved."
+msgstr "Помилки в налаштуваннях. Налаштування не збережено."
+
+#: src/views/Login.tsx:270
+msgid "There's no login method available."
+msgstr "Відсутній метод входу."
+
+#: src/views/Publication/Services/Dummy.tsx:25
+msgid "This is a dummy service that explains to you the concepts of service."
+msgstr "Це фіктивний сервіс, який пояснює вам концепцію сервісу."
+
+#: src/views/Password.tsx:201
+msgid "This is not necessarily an error. However, it may take a bit longer for Restreamer Core to restart.."
+msgstr "Це не обов'язково помилка. Однак, може знадобитися трохи більше часу для перезапуску ядра Restreamer Core..."
+
+#: src/views/Publication/Services/Dummy.tsx:34
+msgid "This is to mention the copyright regulations for the target of this service."
+msgstr "Тут варто згадати про правила авторського права для цільової аудиторії цього сервісу."
+
+#: src/components/controls/License/index.tsx:97
+msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, and only so long as attribution is given to the creator. The license allows for commercial use."
+msgstr "Ця ліцензія дозволяє повторним користувачам копіювати та поширювати матеріал на будь-якому носії чи у будь-якому форматі лише в неадаптованій формі та лише за умови вказування авторства. Ліцензія дозволяє комерційне використання."
+
+#: src/components/controls/License/index.tsx:104
+msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, for noncommercial purposes only, and only so long as attribution is given to the creator."
+msgstr "Ця ліцензія дозволяє повторним користувачам копіювати та поширювати матеріал на будь-якому носії чи у будь-якому форматі лише в неадаптованій формі, лише з некомерційною метою та лише за умови вказування авторства."
+
+#: src/components/controls/License/index.tsx:83
+msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator."
+msgstr "Ця ліцензія дозволяє повторним користувачам розповсюджувати, реміксувати, адаптувати та створювати матеріал на будь-якому носії чи у будь-якому форматі лише для некомерційних цілей і лише за умови вказування авторства."
+
+#: src/components/controls/License/index.tsx:90
+msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
+msgstr "Ця ліцензія дозволяє повторним користувачам розповсюджувати, реміксувати, адаптувати та створювати матеріал на будь-якому носії чи у будь-якому форматі лише для некомерційних цілей і лише за умови вказування авторства. Якщо ви реміксуєте, адаптуєте або використовуєте матеріал, ви повинні ліцензувати модифікований матеріал на ідентичних умовах."
+
+#: src/components/controls/License/index.tsx:69
+msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use."
+msgstr "Ця ліцензія дозволяє повторним користувачам поширювати, реміксувати, адаптувати та створювати матеріал на будь-якому носії чи у будь-якому форматі, за умови, що автор вказує автора. Ліцензія дозволяє комерційне використання."
+
+#: src/components/controls/License/index.tsx:76
+msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
+msgstr "Ця ліцензія дозволяє повторним користувачам поширювати, реміксувати, адаптувати та створювати матеріал на будь-якому носії чи у будь-якому форматі, за умови, що автор вказує автора. Ліцензія дозволяє комерційне використання. Якщо ви реміксуєте, адаптуєте або використовуєте матеріал, ви повинні ліцензувати модифікований матеріал на ідентичних умовах."
+
+#: src/views/Edit/Sources/Network.tsx:993
+msgid "This protocol is unknown or not supported by the available FFmpeg binary."
+msgstr "Цей протокол невідомий або не підтримується наявним бінарним файлом FFmpeg."
+
+#: src/views/Edit/index.tsx:804
+msgid "This source cannot be edited while it is in use. To continue, you have to disconnect the source."
+msgstr "Це джерело не можна редагувати, поки воно використовується. Щоб продовжити, вам потрібно від'єднати джерело."
+
+#: src/views/Incompatible.tsx:20
+msgid "This version of the UI doesn't support the available FFmpeg binary ({have}). The UI requires {want}. Please use a supported FFmpeg binary."
+msgstr ""
+
+#: src/views/Incompatible.tsx:13
+msgid "This version of the UI doesn't support the connected Core ({have}). The UI requires {want}. Please use a compatible version of the UI."
+msgstr ""
+
+#: src/views/Incompatible.tsx:9
+msgid "This version of the UI is compatible."
+msgstr "Ця версія інтерфейсу користувача сумісна."
+
+#: src/components/controls/Limits.tsx:74
+msgid "Threshold (seconds)"
+msgstr "Поріг (секунди)"
+
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:234
+msgid "Tile Columns"
+msgstr "Плиточні колони"
+
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:220
+msgid "Tile Rows"
+msgstr "Ряди плитки"
+
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:206
+msgid "Tiles"
+msgstr "Плитка"
+
+#: src/views/Settings.tsx:1935
+msgid "Time until an inactive viewer connection is treated as closed."
+msgstr "Час, протягом якого неактивне з'єднання з переглядачем буде вважатися закритим."
+
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:207
+msgid "To stabilize the system, increase the HLS segment length for the keyframe interval by 2-3 * (Processing and Control)."
+msgstr "Для стабілізації роботи системи збільште довжину сегмента HLS для інтервалу ключового кадру на 2-3 * (Обробка та контроль)."
+
+#: src/views/Settings.tsx:1549
+#: src/views/Settings.tsx:2456
+msgid "Token"
+msgstr "Токен"
+
+#: src/components/filters/video/Bwdif.tsx:63
+msgid "Top field"
+msgstr "Верхнє поле"
+
+#: src/views/Publication/Services/Telegram.tsx:12
+msgid "Transmit a Livestream to a Telegram Channel."
+msgstr "Передати пряму трансляцію в Telegram-канал."
+
+#: src/views/Publication/Services/Image2.tsx:24
+msgid "Transmit snapshots of the main source to an HTTP/S Server. More details about the settings can be found <0>here</0>."
+msgstr "Передавати знімки основного джерела на HTTP/S сервер. Детальніше про налаштування можна дізнатися <0>тут</0>."
+
+#: src/views/Publication/Services/Icecast.tsx:20
+msgid "Transmit the audio channel of the main source to an Icecast Server. More details about the settings can be found <0>here</0>."
+msgstr "Передавати аудіоканал основного джерела на сервер Icecast. Докладнішу інформацію про налаштування можна знайти <0>тут</0>."
+
+#: src/views/Publication/Services/HLS.tsx:27
+msgid "Transmit the main source as HTTP-Live-Streaming (HLS) to an HTTP/S Server. More details about the settings can be found <0>here</0>."
+msgstr "Передавати основне джерело як HTTP-Live-Streaming (HLS) на HTTP/S сервер. Докладнішу інформацію про налаштування можна знайти <0>тут</0>."
+
+#: src/views/Publication/Services/DASH.tsx:26
+msgid "Transmit the main source as MPEG-DASH to an HTTP/S Server. More details about the settings can be found <0>here</0>."
+msgstr "Передавати основне джерело у форматі MPEG-DASH на HTTP/S-сервер. Детальнішу інформацію про налаштування можна знайти <0>тут</0>."
+
+#: src/views/Publication/Services/Brightcove.tsx:14
+msgid "Transmit the main source to a Brightcove Live Service. More details about the settings can be found <0>here</0>."
+msgstr "Передавати основне джерело до сервісу Brightcove Live. Детальнішу інформацію про налаштування можна знайти <0>тут</0>."
+
+#: src/views/Publication/Services/CDN77.tsx:14
+msgid "Transmit the main source to an CDN77 RTMP Service. More about the setup <0>here</0>."
+msgstr "Передати основне джерело на службу CDN77 RTMP. Детальніше про налаштування <0>тут</0>."
+
+#: src/views/Publication/Services/DaCast.tsx:17
+msgid "Transmit the main source to an DaCast RTMP Service. More about the setup <0>here</0>."
+msgstr "Передати основне джерело на службу DaCast RTMP. Детальніше про налаштування <0>тут</0>."
+
+#: src/views/Publication/Services/Core.tsx:20
+msgid "Transmit the main source to an datarhei Core Ressource. More details about the settings can be found <0>here</0>."
+msgstr "Передати основне джерело на datarhei Core Resource. Більш детальну інформацію про налаштування можна знайти <0>тут</0>."
+
+#: src/views/Publication/Services/Livespotting.tsx:14
+msgid "Transmit the main source to an livespotting.com Ressource. More details about the settings can be found <0>here</0>."
+msgstr "Передати основне джерело на ресурс livespotting.com. Детальнішу інформацію про налаштування можна знайти <0>тут</0>."
+
+#: src/views/Publication/Services/MPEGTS.tsx:25
+msgid "Transmit the main source to an MPEG-TS Service. More details about the settings can be found here <0>here</0>."
+msgstr "Передати основне джерело на службу MPEG-TS. Детальніше про налаштування можна прочитати <0>тут</0>."
+
+#: src/views/Publication/Services/Red5.tsx:16
+msgid "Transmit the main source to an Red5/Pro Server. More details about the settings can be found <0>here</0>."
+msgstr "Передайте основне джерело на сервер Red5/Pro. Детальніше про налаштування можна дізнатися <0>тут</0>."
+
+#: src/views/Publication/Services/RTMP.tsx:23
+msgid "Transmit the main source to an RTMP(e|s|t|te|ts) Server. More details about the settings can be found <0>here</0>."
+msgstr "Передати основне джерело на сервер RTMP(e|s|t|te|ts). Докладні відомості про налаштування можна знайти <0>тут</0>."
+
+#: src/views/Publication/Services/RTSP.tsx:26
+msgid "Transmit the main source to an RTSP Server. More details about the settings can be found <0>here</0>."
+msgstr "Передати основне джерело на сервер RTSP. Докладнішу інформацію про налаштування можна знайти <0>тут</0>."
+
+#: src/views/Publication/Services/SRT.tsx:24
+msgid "Transmit the main source to an SRT Server. More details about the settings can be found <0>here</0>."
+msgstr "Передати основне джерело на сервер SRT. Докладнішу інформацію про налаштування можна знайти <0>тут</0>."
+
+#: src/views/Publication/Services/UDP.tsx:22
+msgid "Transmit the main source to an UDP Server. More details about the settings can be found <0>here</0>."
+msgstr "Передати основне джерело на UDP-сервер. Докладнішу інформацію про налаштування можна знайти <0>тут</0>."
+
+#: src/views/Publication/Services/WOWZA.tsx:19
+msgid "Transmit the main source to an WOWZA Server. More details about the settings can be found <0>here</0>."
+msgstr "Передати основне джерело на WOWZA-сервер. Детальніше про налаштування можна дізнатися <0>тут</0>."
+
+#: src/views/Publication/Services/Akamai.tsx:15
+msgid "Transmit the main source to the Akamai (MSL) Media Services Live. More details about the MSL Encoder settings can be found on <0>here</0>."
+msgstr "Передати основне джерело до Akamai (MSL) Media Services Live. Докладнішу інформацію про налаштування MSL Encoder можна знайти <0>тут</0>."
+
+#: src/views/Publication/Services/Livepush.tsx:16
+msgid "Transmit the main source to the Livepush RTMP Service. More details about the settings can be found <0>here</0>."
+msgstr "Передайте основне джерело до сервісу Livepush RTMP. Детальніше про налаштування можна дізнатися <0>тут</0>."
+
+#: src/views/Publication/Services/NimoTv.tsx:17
+msgid "Transmit the main source to the Nimo TV RTMP Service. More details about the settings can be found <0>here</0>."
+msgstr "Передавати основне джерело на RTMP-сервіс Nimo TV. Детальніше про налаштування можна дізнатися <0>тут</0>."
+
+#: src/views/Publication/Services/PicartoTv.tsx:16
+msgid "Transmit the main source to the Picarto TV RTMP Service. More details about the settings can be found <0>here</0>."
+msgstr "Передайте основне джерело на сервіс Picarto TV RTMP. Детальніше про налаштування можна дізнатися <0>тут</0>."
+
+#: src/views/Publication/Services/Restream.tsx:18
+msgid "Transmit the main source to the Restream RTMP Service. More details about the settings can be found <0>here</0>."
+msgstr "Передати основне джерело на сервіс Restream RTMP. Детальніше про налаштування можна дізнатися <0>тут</0>."
+
+#: src/views/Publication/Services/Azure.tsx:16
+msgid "Transmit to a Azure Media Services. More details can be found <0>here</0>."
+msgstr "Передача до Azure Media Services. Більш детальну інформацію можна знайти <0>тут</0>."
+
+#: src/views/Publication/Services/Linkedin.tsx:16
+msgid "Transmit to LinkedIn. More details can be found <0>here</0>."
+msgstr "Передати в LinkedIn. Більш детальну інформацію можна знайти <0>тут</0>."
+
+#: src/views/Publication/Services/Dailymotion.tsx:14
+msgid "Transmit your Livestream to an Dailymotion RTMP service. <0>Here </0>you can find more details about the settings."
+msgstr "Передайте свій Livestream до служби Dailymotion RTMP. <0>Здесь ви можете знайти більше інформації про налаштування."
+
+#: src/views/Publication/Services/EarthCam.tsx:15
+msgid "Transmit your Livestream to an EarthCam RTMP service. <0>Here </0>you can find more details about the settings."
+msgstr ""
+
+#: src/views/Publication/Services/Kick.tsx:15
+msgid "Transmit your Livestream to an Kick.com RTMP service. <0>Here </0>you can find more details about the settings."
+msgstr "Передайте ваш Livestream на RTMP-сервіс Kick.com. <0>Здесь ви можете знайти більше інформації про налаштування."
+
+#: src/views/Publication/Services/Owncast.tsx:14
+msgid "Transmit your Livestream to an Owncast server. <0>Here </0>you can find more details about the settings."
+msgstr "Передавайте ваш Livestream на сервер Owncast. <0>Тут ви можете знайти більш детальну інформацію про налаштування."
+
+#: src/views/Publication/Services/Rumble.tsx:15
+msgid "Transmit your Livestream to an Rumble RTMP service. <0>Here </0>you can find more details about the settings."
+msgstr "Передайте свій Livestream на сервіс Rumble RTMP. <0>Здесь ви можете знайти більше інформації про налаштування."
+
+#: src/views/Publication/Services/TikTok.tsx:16
+msgid "Transmit your Livestream to an TikTok RTMP service. <0>Here </0>you can find more details about the settings."
+msgstr ""
+
+#: src/views/Publication/Services/Wettercom.tsx:15
+msgid "Transmit your Livestream to wetter.com. Contact the publisher <0>here </0>."
+msgstr ""
+
+#: src/views/Publication/Services/Youtube.tsx:20
+msgid "Transmits your video as an RTMP stream with the required key generated in YouTube Studio. You can find more information on setting up a live stream at YouTube's <0>Creator Academy</0>."
+msgstr "Передає ваше відео у вигляді RTMP-потоку з необхідним ключем, згенерованим у YouTube Studio. Докладнішу інформацію про налаштування прямого ефіру можна знайти в <0>Академії творців YouTube</0>."
+
+#: src/views/Publication/Services/Twitter.tsx:19
+msgid "Transmits your video stream with the required key, which was generated in Twitter Producer. You can find more information on seting up a live stream at Twitter's <0>Producer</0>."
+msgstr "Передає ваш відеопотік з необхідним ключем, згенерованим у Twitter Producer. Ви можете знайти більше інформації про налаштування прямого ефіру на сторінці <0>Producer</0> Twitter."
+
+#: src/views/Edit/Sources/Network.tsx:630
+msgid "Transport"
+msgstr ""
+
+#: src/components/coders/Encoders/video/av1_nvenc.tsx:93
+#: src/components/coders/Encoders/video/h264_libx264.tsx:96
+#: src/components/coders/Encoders/video/h264_nvenc.tsx:96
+#: src/components/coders/Encoders/video/hevc_libx265.tsx:98
+#: src/components/coders/Encoders/video/hevc_nvenc.tsx:96
+msgid "Tune"
+msgstr "Налаштувати"
+
+#: src/views/Edit/Wizard/Sources/Network.tsx:91
+msgid "UDP transport"
+msgstr "Транспорт UDP"
+
+#: src/views/Settings.tsx:1280
+msgid "Unable to load the config."
+msgstr "Не вдалося завантажити конфіг."
+
+#: src/views/Settings.tsx:1528
+msgid "Unique ident on the service."
+msgstr "Унікальний ідентифікатор на сервісі."
+
+#: src/views/Main/Egress.tsx:104
+msgid "Unknown"
+msgstr "Невідомий"
+
+#: src/views/Edit/Sources/AudioLoop.tsx:139
+#: src/views/Edit/Sources/SDP.tsx:125
+#: src/views/Edit/Sources/VideoLoop.tsx:147
+#: src/views/Playersite.tsx:199
+#: src/views/Publication/Player.tsx:227
+msgid "Unknown upload error"
+msgstr "Невідома помилка завантаження"
+
+#: src/views/Playersite.tsx:661
+msgid "Unselected"
+msgstr "Невибране"
+
+#: src/components/Changelog.tsx:178
+msgid "Update details (Changelog)"
+msgstr "Відомості про оновлення (Changelog)"
+
+#: src/views/Edit/Sources/AudioLoop.tsx:198
+#: src/views/Edit/Sources/SDP.tsx:179
+#: src/views/Edit/Sources/VideoLoop.tsx:206
+#: src/views/Playersite.tsx:533
+#: src/views/Playersite.tsx:556
+#: src/views/Playersite.tsx:698
+#: src/views/Publication/Player.tsx:480
+#: src/views/Publication/Player.tsx:529
+msgid "Upload"
+msgstr "Завантаження"
+
+#: src/views/Edit/Sources/AudioLoop.tsx:180
+msgid "Upload an audio file ({0}) in order to loop it."
+msgstr "Завантажте аудіофайл ({0}), щоб зациклити його."
+
+#: src/views/Edit/Sources/VideoLoop.tsx:188
+msgid "Upload an image or video file ({0}) in order to loop it."
+msgstr "Завантажте зображення або відеофайл ({0}), щоб зациклити його."
+
+#: src/views/Edit/Sources/SDP.tsx:163
+msgid "Upload SDP file ({0})."
+msgstr ""
+
+#: src/views/Edit/Sources/AudioLoop.tsx:202
+#: src/views/Edit/Sources/SDP.tsx:183
+#: src/views/Edit/Sources/VideoLoop.tsx:210
+#: src/views/Playersite.tsx:560
+#: src/views/Playersite.tsx:702
+msgid "Uploading the file failed"
+msgstr "Не вдалося завантажити файл"
+
+#: src/views/Publication/Player.tsx:484
+msgid "Uploading the logo failed"
+msgstr "Не вдалося завантажити логотип"
+
+#: src/views/Publication/Player.tsx:533
+msgid "Uploading the poster failed"
+msgstr "Не вдалося завантажити постер"
+
+#: src/Footer.tsx:193
+#: src/components/Progress.tsx:116
+#: src/views/Main/Progress.tsx:57
+msgid "Uptime"
+msgstr "Час роботи"
+
+#: src/components/coders/Encoders/video/av1_libaom.tsx:70
+msgid "Usage"
+msgstr ""
+
+#: src/views/Login.tsx:365
+msgid "Use Auth0 for your running Restreamer Core. More <0>details</0>."
+msgstr "Використовуйте Auth0 для вашого запущеного ядра рестрімера. Більше <0>подробиць</0>."
+
+#: src/views/Edit/index.tsx:528
+msgid "Use the wizard (<0/>) for a quick and easy setup, or edit (<1/>) the sources directly in custom mode."
+msgstr "Скористайтеся майстром (<0/>) для швидкого і простого налаштування або редагуйте (<1/>) коди безпосередньо у користувацькому режимі."
+
+#: src/views/Edit/Wizard/License.tsx:35
+msgid "Use your copyright and choose the correct image license. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
+msgstr "Використовуйте свої авторські права і виберіть правильну ліцензію зображення. Вільну для всіх або дуже обмежену. Коротко обговоріть, що інші можуть робити з вашим зображенням."
+
+#: src/views/Edit/index.tsx:729
+msgid "Use your copyright and choose the right image licence. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
+msgstr "Вкажіть свої авторські права та виберіть правильну ліцензію на зображення. Незалежно від того, безкоштовний для всіх чи з суворими обмеженнями. Коротко обговоріть, що іншим дозволено робити з вашим зображенням."
+
+#: src/views/Edit/Sources/Network.tsx:876
+msgid "use_wallclock_as_timestamps"
+msgstr "використовувати_настінний_годинник_як_мітки_часу"
+
+#: src/views/Password.tsx:122
+msgid "User registration"
+msgstr "Реєстрація користувача"
+
+#: src/views/Edit/Sources/Network.tsx:1008
+#: src/views/Edit/Wizard/Sources/Network.tsx:101
+#: src/views/Login.tsx:285
+#: src/views/Publication/Services/DaCast.tsx:165
+#: src/views/Publication/Services/DASH.tsx:229
+#: src/views/Publication/Services/HLS.tsx:220
+#: src/views/Publication/Services/Red5.tsx:172
+#: src/views/Publication/Services/RTSP.tsx:178
+#: src/views/Publication/Services/WOWZA.tsx:197
+#: src/views/Settings.tsx:1790
+#: src/views/Settings.tsx:1997
+msgid "Username"
+msgstr "Ім'я користувача"
+
+#: src/views/Settings.tsx:1799
+#: src/views/Settings.tsx:2011
+msgid "Username for authorization."
+msgstr "Ім'я користувача для авторизації."
+
+#: src/views/Edit/Sources/Network.tsx:1013
+#: src/views/Edit/Wizard/Sources/Network.tsx:107
+msgid "Username for the device."
+msgstr "Ім'я користувача для пристрою."
+
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:177
+msgid "V4L2_M2M is experimental."
+msgstr "V4L2_M2M є експериментальним."
+
+#: src/components/coders/settings/Video.tsx:368
+msgid "Variable frame rate (VFR)"
+msgstr "Змінна частота кадрів (VFR)"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:143
+msgid "velvet"
+msgstr "оксамитовий"
+
+#: src/components/filters/video/VFlip.tsx:68
+msgid "Vertical Flip"
+msgstr "Вертикальне перевертання"
+
+#: src/views/Publication/Add.tsx:579
+msgid "Video"
+msgstr "Відео"
+
+#: src/components/controls/Preview.tsx:64
+msgid "Video Codec"
+msgstr ""
+
+#: src/views/Edit/Sources/AVFoundation.tsx:136
+#: src/views/Edit/Sources/Channel.tsx:103
+#: src/views/Edit/Sources/Raspicam.tsx:110
+#: src/views/Edit/Sources/V4L.tsx:127
+#: src/views/Edit/Sources/X11grab.tsx:179
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:98
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:97
+#: src/views/Edit/Wizard/Sources/V4L.tsx:121
+msgid "Video device"
+msgstr "Відеопристрій"
+
+#: src/views/Edit/Profile.tsx:533
+#: src/views/Edit/ProfileSummary.tsx:69
+#: src/views/Publication/Edit.tsx:657
+msgid "Video settings"
+msgstr "Налаштування відео"
+
+#: src/views/Edit/Wizard/Source.tsx:22
+#: src/views/Edit/Wizard/Video.tsx:29
+#: src/views/Edit/Wizard/VideoProfile.tsx:33
+msgid "Video setup"
+msgstr "Налаштування відео"
+
+#: src/views/Edit/Sources/VideoAudio.tsx:42
+msgid "Video source"
+msgstr "Джерело відео"
+
+#: src/Footer.tsx:260
+#: src/Footer.tsx:266
+#: src/Footer.tsx:279
+#: src/views/Main/Publication.tsx:187
+msgid "Viewer"
+msgstr "Переглядач"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:142
+msgid "violet"
+msgstr "фіолетовий"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:217
+#: src/views/Edit/Sources/VirtualVideo.tsx:266
+msgid "Virtual source"
+msgstr "Віртуальне джерело"
+
+#: src/components/filters/audio/Volume.tsx:43
+msgid "Volume"
+msgstr "Гучність"
+
+#: src/views/Publication/Services/Livespotting.tsx:111
+msgid "VPU ID"
+msgstr "VPU ID"
+
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:179
+msgid "We recommend OpenMAX IL for Raspberry PI (3/4) with a 32-bit operating system."
+msgstr "Ми рекомендуємо OpenMAX IL для Raspberry PI (3/4) з 32-розрядною операційною системою."
+
+#: src/views/Welcome.tsx:29
+msgid "Welcome to Restreamer v2, the solution for fast and easy video publishing. Free for private and commercial use. Further help in the <0>docs</0>."
+msgstr "Ласкаво просимо до Restreamer v2, рішення для швидкої та легкої публікації відео. Безкоштовно для приватного та комерційного використання. Подальша допомога в <0>документах</0>."
+
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:107
+msgid "What speed preset to use."
+msgstr "Яку швидкість використовувати."
+
+#: src/components/controls/HLS.tsx:80
+msgid "Where to store the HLS playlist and segments. In-Memory is recommended."
+msgstr "Де зберігати список відтворення та сегменти HLS. Рекомендується In-Memory."
+
+#: src/views/Edit/Sources/VirtualAudio.tsx:138
+msgid "white"
+msgstr "білий"
+
+#: src/components/coders/settings/Video.tsx:243
+msgid "Width"
+msgstr "Ширина"
+
+#: src/views/Settings.tsx:1978
+msgid "Write protection"
+msgstr "Захист від запису"
+
+#: src/views/Edit/Sources/X11grab.tsx:290
+msgid "X11 Screen Capture"
+msgstr ""
+
+#: src/views/Edit/Wizard/Abort.tsx:60
+msgid "Yes"
+msgstr "Так"
+
+#: src/views/Edit/Wizard/Abort.tsx:29
+msgid "You can't abort the wizard because at least one input must be defined."
+msgstr "Ви не можете перервати роботу майстра, оскільки має бути визначено принаймні один вхід."
+
+#: src/views/Settings.tsx:2747
+msgid "You have changed the configuration. In order for the changes to take effect, you have to restart the application. Do you want to restart now?"
+msgstr "Ви змінили конфігурацію. Необхідно перезапустити програму. Ви хочете перезапустити зараз?"
+
+#: src/views/Main/index.tsx:431
+#: src/views/Publication/Process.tsx:80
+msgid "You have to reconnect manually"
+msgstr "Ви повинні підключитися вручну"
+
+#: src/views/Publication/Edit.tsx:576
+msgid "You have unsaved changes. Please save them before you can control the service again."
+msgstr "У вас є незбережені зміни. Будь ласка, збережіть їх, перш ніж знову зможете керувати службою."
+
+#: src/views/Edit/Wizard/VideoProfile.tsx:62
+msgid "Your stream needs to be encoded, but there's no suitable encoder available."
+msgstr "Ваш потік потрібно кодувати, але немає відповідного кодера."
+
+#: src/views/Edit/Wizard/VideoProfile.tsx:72
+msgid "Your stream needs to be encoded. Choose the desired encoder:"
+msgstr "Ваш потік потрібно закодувати. Виберіть потрібний енкодер:"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx:133
+msgid "YUV test pattern"
+msgstr "Тестовий шаблон YUV"

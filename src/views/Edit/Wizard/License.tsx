@@ -5,9 +5,9 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import LicenseControl from '../../../misc/controls/License';
-import Paper from '../../../misc/Paper';
-import PaperHeader from '../../../misc/PaperHeader';
+import LicenseControl from '../../../components/controls/License';
+import Paper from '../../../components/Paper';
+import PaperHeader from '../../../components/PaperHeader';
 
 export default function License({
   onAbort = () => {},

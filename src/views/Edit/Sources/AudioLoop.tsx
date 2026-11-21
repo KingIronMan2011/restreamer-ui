@@ -8,11 +8,11 @@ import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 
-import CircularProgress from '../../../misc/CircularProgress';
-import Filesize from '../../../misc/Filesize';
-import FormInlineButton from '../../../misc/FormInlineButton';
-import Dialog from '../../../misc/modals/Dialog';
-import UploadButton from '../../../misc/UploadButton';
+import CircularProgress from '../../../components/CircularProgress';
+import Filesize from '../../../components/Filesize';
+import FormInlineButton from '../../../components/FormInlineButton';
+import Dialog from '../../../components/modals/Dialog';
+import UploadButton from '../../../components/UploadButton';
 
 const imageTypes = [{ mimetype: 'audio/*', extension: 'audio', maxSize: 0 }];
 

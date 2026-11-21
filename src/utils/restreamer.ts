@@ -11,7 +11,7 @@ import {
 } from 'semver';
 import { v4 as uuidv4 } from 'uuid';
 
-import * as Version from '../version';
+import * as Version from '../lib/version';
 import { anonymize } from './anonymizer';
 import API from './api';
 import * as M from './metadata';

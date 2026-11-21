@@ -4,8 +4,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import Paper from '../misc/Paper';
-import PaperContent from '../misc/PaperContent';
+import Paper from '../components/Paper';
+import PaperContent from '../components/PaperContent';
 
 export default function Invalid(props: any) {
   return (

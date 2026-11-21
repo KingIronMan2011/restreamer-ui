@@ -3,8 +3,8 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
-import I18n from '../I18n';
-import theme from '../theme';
+import I18n from '../languages/Provider';
+import theme from '../lib/theme';
 
 /*
 This is wrapper for the render method in order to provide all required providers and

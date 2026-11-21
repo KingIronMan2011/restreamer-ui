@@ -9,9 +9,9 @@ import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import NotifyContext from '../../../contexts/Notify';
-import * as Decoders from '../../../misc/coders/Decoders';
-import * as Encoders from '../../../misc/coders/Encoders';
+import NotifyContext from '../../../components/contexts/Notify';
+import * as Decoders from '../../../components/coders/Decoders';
+import * as Encoders from '../../../components/coders/Encoders';
 import H from '../../../utils/help';
 import * as M from '../../../utils/metadata';
 import FullSources from '../Sources';

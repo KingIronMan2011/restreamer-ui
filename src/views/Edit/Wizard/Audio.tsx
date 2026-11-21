@@ -10,10 +10,10 @@ import RadioGroup from '@mui/material/RadioGroup';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import BoxText from '../../../misc/BoxText';
-import Paper from '../../../misc/Paper';
-import PaperHeader from '../../../misc/PaperHeader';
-import Select from '../../../misc/Select';
+import BoxText from '../../../components/BoxText';
+import Paper from '../../../components/Paper';
+import PaperHeader from '../../../components/PaperHeader';
+import Select from '../../../components/Select';
 
 export default function Audio({
   onAbort = () => {},

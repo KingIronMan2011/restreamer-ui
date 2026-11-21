@@ -8,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import Select from '../../../../misc/Select';
+import Select from '../../../../components/Select';
 import * as S from '../../Sources/AVFoundation';
 
 function initSettings(initialSettings: any) {

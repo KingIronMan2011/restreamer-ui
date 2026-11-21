@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { Usb } from 'lucide-react';
 import React from 'react';
 
-import Select from '../../../../misc/Select';
+import Select from '../../../../components/Select';
 import * as S from '../../Sources/V4L';
 
 function initSettings(initialSettings: any, knownDevices: any) {

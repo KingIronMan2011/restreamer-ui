@@ -5,8 +5,8 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import Checkbox from '../../../../misc/Checkbox';
-import Password from '../../../../misc/Password';
+import Checkbox from '../../../../components/Checkbox';
+import Password from '../../../../components/Password';
 import * as S from '../../Sources/Network';
 
 const initSettings = (initialSettings: any, config: any) => {

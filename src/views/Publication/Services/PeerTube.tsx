@@ -3,8 +3,8 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import React from 'react';
 
-import Checkbox from '../../../misc/Checkbox';
-import FormInlineButton from '../../../misc/FormInlineButton';
+import Checkbox from '../../../components/Checkbox';
+import FormInlineButton from '../../../components/FormInlineButton';
 import Logo from './logos/peertube.svg';
 
 const id = 'peertube';

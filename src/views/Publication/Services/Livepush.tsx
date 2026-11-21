@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import React from 'react';
 
-import Select from '../../../misc/Select';
+import Select from '../../../components/Select';
 import Logo from './logos/livepush.svg';
 
 const id = 'livepush';

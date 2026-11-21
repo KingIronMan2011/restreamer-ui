@@ -3,9 +3,9 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import ActionButton from '../../misc/ActionButton';
-import BoxText from '../../misc/BoxText';
-import Duration from '../../misc/Duration';
+import ActionButton from '../../components/ActionButton';
+import BoxText from '../../components/BoxText';
+import Duration from '../../components/Duration';
 
 function init(progress: any) {
   const initProgress = {

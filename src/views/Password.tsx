@@ -7,12 +7,12 @@ import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import Paper from '../misc/Paper';
-import PaperContent from '../misc/PaperContent';
-import PaperFooter from '../misc/PaperFooter';
-import PaperHeader from '../misc/PaperHeader';
-import Password from '../misc/Password';
-import TextField from '../misc/TextField';
+import Paper from '../components/Paper';
+import PaperContent from '../components/PaperContent';
+import PaperFooter from '../components/PaperFooter';
+import PaperHeader from '../components/PaperHeader';
+import Password from '../components/Password';
+import TextField from '../components/TextField';
 
 const generatePassword = (length: any) => {
   const characters =

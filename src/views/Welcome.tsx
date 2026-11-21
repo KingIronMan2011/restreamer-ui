@@ -6,8 +6,8 @@ import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import Paper from '../misc/Paper';
-import PaperThumb from '../misc/PaperThumb';
+import Paper from '../components/Paper';
+import PaperThumb from '../components/PaperThumb';
 
 export default function Welcome() {
   const navigate = useNavigate();

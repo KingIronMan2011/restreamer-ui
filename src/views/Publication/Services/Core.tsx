@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import React from 'react';
 import urlparser from 'url-parse';
 
-import BoxText from '../../../misc/BoxText';
+import BoxText from '../../../components/BoxText';
 import Logo from './logos/datarhei.svg';
 
 const id = 'datarheicore';

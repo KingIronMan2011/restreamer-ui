@@ -9,9 +9,9 @@ import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 
-import Audio from '../../../misc/coders/settings/Audio';
-import FormInlineButton from '../../../misc/FormInlineButton';
-import SelectCustom from '../../../misc/SelectCustom';
+import Audio from '../../../components/coders/settings/Audio';
+import FormInlineButton from '../../../components/FormInlineButton';
+import SelectCustom from '../../../components/SelectCustom';
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {

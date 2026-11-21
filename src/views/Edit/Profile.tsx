@@ -9,12 +9,12 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import BoxText from '../../misc/BoxText';
-import EncodingSelect from '../../misc/EncodingSelect';
-import FilterSelect from '../../misc/FilterSelect';
-import HintModal from '../../misc/modals/Hint';
-import ProbeModal from '../../misc/modals/Probe';
-import PaperFooter from '../../misc/PaperFooter';
+import BoxText from '../../components/BoxText';
+import EncodingSelect from '../../components/EncodingSelect';
+import FilterSelect from '../../components/FilterSelect';
+import HintModal from '../../components/modals/Hint';
+import ProbeModal from '../../components/modals/Probe';
+import PaperFooter from '../../components/PaperFooter';
 import * as M from '../../utils/metadata';
 import SourceSelect from './SourceSelect';
 import StreamSelect from './StreamSelect';

@@ -11,9 +11,9 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import Paper from '../misc/Paper';
-import Password from '../misc/Password';
-import Select from '../misc/Select';
+import Paper from '../components/Paper';
+import Password from '../components/Password';
+import Select from '../components/Select';
 import * as auth0 from '../utils/auth0';
 
 function hasAuthType(auths: any, type: any) {

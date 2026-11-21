@@ -7,9 +7,9 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
-import Audio from '../../../misc/coders/settings/Audio';
-import FormInlineButton from '../../../misc/FormInlineButton';
-import Select from '../../../misc/Select';
+import Audio from '../../../components/coders/settings/Audio';
+import FormInlineButton from '../../../components/FormInlineButton';
+import Select from '../../../components/Select';
 
 const initSettings = (initialSettings: any) => {
   if (!initialSettings) {

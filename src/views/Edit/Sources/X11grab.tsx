@@ -9,11 +9,11 @@ import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 
-import Checkbox from '../../../misc/Checkbox';
-import Video from '../../../misc/coders/settings/Video';
-import FormInlineButton from '../../../misc/FormInlineButton';
-import MultiSelect from '../../../misc/MultiSelect';
-import SelectCustom from '../../../misc/SelectCustom';
+import Checkbox from '../../../components/Checkbox';
+import Video from '../../../components/coders/settings/Video';
+import FormInlineButton from '../../../components/FormInlineButton';
+import MultiSelect from '../../../components/MultiSelect';
+import SelectCustom from '../../../components/SelectCustom';
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {

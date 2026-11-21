@@ -5,8 +5,8 @@ import TextField from '@mui/material/TextField';
 import { MonitorPlay } from 'lucide-react';
 import React from 'react';
 
-import FormInlineButton from '../../../misc/FormInlineButton';
-import Select from '../../../misc/Select';
+import FormInlineButton from '../../../components/FormInlineButton';
+import Select from '../../../components/Select';
 
 const id = 'twitch';
 const name = 'Twitch';

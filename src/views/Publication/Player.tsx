@@ -12,19 +12,19 @@ import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import NotifyContext from '../../contexts/Notify';
-import Checkbox from '../../misc/Checkbox';
-import Filesize from '../../misc/Filesize';
-import Dialog from '../../misc/modals/Dialog';
-import Paper from '../../misc/Paper';
-import PaperFooter from '../../misc/PaperFooter';
-import PaperHeader from '../../misc/PaperHeader';
-import Player from '../../misc/Player';
-import Select from '../../misc/Select';
-import TabPanel from '../../misc/TabPanel';
-import TabsHorizontal from '../../misc/TabsHorizontal';
-import TextFieldCopy from '../../misc/TextFieldCopy';
-import UploadButton from '../../misc/UploadButton';
+import NotifyContext from '../../components/contexts/Notify';
+import Checkbox from '../../components/Checkbox';
+import Filesize from '../../components/Filesize';
+import Dialog from '../../components/modals/Dialog';
+import Paper from '../../components/Paper';
+import PaperFooter from '../../components/PaperFooter';
+import PaperHeader from '../../components/PaperHeader';
+import Player from '../../components/Player';
+import Select from '../../components/Select';
+import TabPanel from '../../components/TabPanel';
+import TabsHorizontal from '../../components/TabsHorizontal';
+import TextFieldCopy from '../../components/TextFieldCopy';
+import UploadButton from '../../components/UploadButton';
 import H from '../../utils/help';
 
 const useStyles = makeStyles((theme) => ({
