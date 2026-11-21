@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v7.0.2
         with:
           name: restreamerui-dev-build
-          path: build/
+          path: dist/
 
   build-docker:
     needs: build-frontend
