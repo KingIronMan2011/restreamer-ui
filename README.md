@@ -14,8 +14,8 @@ Please checkout the `dev` branch and base your pull request on this branch.
 ```
 $ git clone --branch dev github.com/datarhei/restreamer-ui
 $ cd restreamer-ui
-$ yarn install
-$ npm run start
+$ pnpm install
+$ pnpm start
 ```
 
 Connect the UI with a [datarhei Core](https://github.com/datarhei/core):

@@ -24,12 +24,15 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: '21'
+                  node-version: '24'
+
+            - name: Set up pnpm
+              uses: pnpm/action-setup@v6
 
             - name: Build React App
               run: |
-                  yarn install
-                  yarn build
+                  pnpm install --frozen-lockfile
+                  pnpm build
               env:
                   PUBLIC_URL: './'
 

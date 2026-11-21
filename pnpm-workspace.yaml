@@ -1,0 +1,8 @@
+allowBuilds:
+  core-js: false
+  core-js-pure: false
+  esbuild: true
+packageExtensions:
+  react-scripts@*:
+    peerDependencies:
+      eslint-config-react-app: "*"

@@ -9,9 +9,9 @@ COPY . /ui
 
 WORKDIR /ui
 
-RUN cd /ui && \
-	yarn install && \
-	yarn build
+RUN corepack enable && \
+	pnpm install --frozen-lockfile && \
+	pnpm build
 
 FROM $CADDY_IMAGE
 

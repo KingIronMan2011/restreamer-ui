@@ -5,7 +5,7 @@ Dockerfile*
 README.md
 CHANGELOG.md
 node_modules/
-.yarn/cache
+.pnpm-store
 .eslintcache
 .github
 .github_build
