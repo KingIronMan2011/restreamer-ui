@@ -2,6 +2,8 @@ allowBuilds:
   core-js: false
   core-js-pure: false
   esbuild: true
+update:
+  githubActions: true
 packageExtensions:
   react-scripts@*:
     peerDependencies:
