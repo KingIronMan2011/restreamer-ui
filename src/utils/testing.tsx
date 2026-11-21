@@ -73,7 +73,7 @@ const AllTheProviders =
           <I18n>
             <MemoryRouter initialEntries={[initialEntries]}>
               <Routes>
-                <Route path={path} element={children} />
+                <Route path={path} element={<>{children}</>} />
                 <Route path="*" element={<NoRoute />} />
               </Routes>
             </MemoryRouter>
