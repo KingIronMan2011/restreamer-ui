@@ -1,7 +1,4 @@
-ARG NODE_IMAGE=node:24-alpine
-ARG CADDY_IMAGE=caddy:2.8.4-alpine
-
-FROM $NODE_IMAGE AS builder
+FROM node:24-alpine AS builder
 
 ENV PUBLIC_URL="./"
 
@@ -15,7 +12,7 @@ RUN corepack enable && \
 	pnpm run types && \
 	pnpm build
 
-FROM $CADDY_IMAGE
+FROM caddy:2.11.9-alpine
 
 COPY --from=builder /ui/dist /ui/dist
 COPY --from=builder /ui/Caddyfile /ui/Caddyfile

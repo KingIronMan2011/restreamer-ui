@@ -1,5 +1,4 @@
-ARG CADDY_IMAGE=caddy:2.8.4-alpine
-FROM $CADDY_IMAGE
+FROM caddy:2.11.9-alpine
 
 COPY dist /ui/dist
 COPY Caddyfile /ui/Caddyfile

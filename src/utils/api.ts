@@ -8,7 +8,6 @@ type RequestOptions = {
   onprogress?:
     | ((loaded: boolean, progress: number, total: number) => void)
     | null;
-  [key: string]: any;
 };
 
 type APIResult = {
@@ -17,8 +16,6 @@ type APIResult = {
 };
 
 class API {
-  [key: string]: any;
-
   address!: string;
   token: string | (() => Promise<string>) = '';
   cache!: Map<string, any>;

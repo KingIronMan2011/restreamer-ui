@@ -80,7 +80,7 @@ export default defineConfig({
             ].map((lang) => ({
               name: `lang-${lang}`,
               test: new RegExp(
-                String.raw`[/\\]src[/\\]locales[/\\]${lang}[/\\]messages\\.js$`,
+                String.raw`[/\\]src[/\\]languages[/\\]${lang}[/\\]messages\\.js$`,
               ),
             })),
           ],

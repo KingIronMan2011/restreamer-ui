@@ -15,12 +15,13 @@ import * as Version from '../lib/version';
 import { anonymize } from './anonymizer';
 import API from './api';
 import * as M from './metadata';
+import * as EgressOperations from './restreamer/egress';
+import * as IngestOperations from './restreamer/ingest';
+import * as PlayersiteOperations from './restreamer/playersite';
 import * as ProcessAPI from './restreamer/process';
 import * as Storage from './storage';
 
 class Restreamer {
-  [key: string]: any;
-
   address!: string;
   api!: API;
   listeners!: Array<
@@ -1726,7 +1727,6 @@ class Restreamer {
     return await this._deleteProcess(channel.id + '_snapshot');
   }
 
-  // Update/Insert the ingest process
   async UpsertIngest(
     channelid: any,
     global: any,
@@ -1734,362 +1734,15 @@ class Restreamer {
     outputs: any,
     control: any,
   ) {
-    const channel = this.GetChannel(channelid);
-    if (!channel) {
-      return [null, { message: 'Unknown channel ID' }];
-    }
-
-    const proc: Record<string, any> = {
-      type: 'ffmpeg',
-      id: channel.id,
-      reference: channel.channelid,
-      input: [] as any[],
-      output: [] as any[],
-      options: [
-        '-loglevel',
-        'level+info',
-        '-err_detect',
-        'ignore_err',
-        ...global,
-      ],
-      autostart: control.process.autostart,
-      reconnect: control.process.reconnect,
-      reconnect_delay_seconds: parseInt(control.process.delay),
-      stale_timeout_seconds: parseInt(control.process.staleTimeout),
-      limits: {
-        cpu_usage: parseInt(control.limits.cpu_usage),
-        memory_mbytes: parseInt(control.limits.memory_mbytes),
-        waitfor_seconds: parseInt(control.limits.waitfor_seconds),
-      },
-    };
-
-    for (let i in inputs) {
-      const input = inputs[i];
-
-      proc.input.push({
-        id: 'input_' + i,
-        address: input.address,
-        options: input.options.map((o: any) => '' + o),
-      });
-    }
-
-    // 1. Add output address and options
-
-    // 1.1 Fetch core config
-    const core_config = this.ConfigActive();
-
-    // 1.2 Fetch rtmp settings
-    const rtmp_config = core_config.source.network.rtmp;
-    let rtmp_enabled = false;
-    if (control.rtmp && control.rtmp.enable && rtmp_config.enabled) {
-      rtmp_enabled = true;
-    }
-    const inputAddress = String(proc.input[0]?.address ?? '');
-    const isLocalProtocolInput = (protocol: 'rtmp' | 'srt') =>
-      (inputAddress.includes(`${protocol}://localhost`) ||
-        inputAddress.includes(`{${protocol},`)) &&
-      inputAddress.includes(channel.channelid) &&
-      !inputAddress.includes('ingest');
-
-    if (isLocalProtocolInput('rtmp')) {
-      rtmp_enabled = false;
-      control.rtmp.enable = true;
-    }
-
-    // 1.3 Fetch srt settings
-    const srt_config = core_config.source.network.srt;
-    let srt_enabled = false;
-    if (control.srt.enable && srt_config.enabled) {
-      srt_enabled = true;
-    }
-    if (isLocalProtocolInput('srt')) {
-      srt_enabled = false;
-      control.srt.enable = true;
-    }
-
-    // 1.4 'tee_muxer' is required for the delivery of one output to multiple endpoints without processing the input for each output
-    // http://ffmpeg.org/ffmpeg-all.html#tee-1
-    let tee_muxer = false;
-    if (rtmp_enabled || srt_enabled) {
-      tee_muxer = true;
-    }
-
-    // 1.5 Set hls filename vars
-    const hlsStorage = control.hls.storage;
-    let segmentPlaylistPath =
-      `${channel.channelid}` +
-      (control.hls.master_playlist ? `_{outputid}` : '');
-    let segmentFilePath =
-      `${channel.channelid}` +
-      (control.hls.master_playlist ? `_{outputid}_%04d` : '_%04d');
-    if (hlsStorage === 'diskfs') {
-      // diskfs (path structure)
-      segmentFilePath =
-        `${channel.channelid}` +
-        (control.hls.master_playlist ? `/{outputid}/%Y%m%d/%s` : '/%Y%m%d/%s');
-    }
-
-    // 1.6 Set hls filenames
-    const hls_master_playlist = `${channel.channelid}.m3u8`;
-    const hls_fmp4_init_filename = `${channel.channelid}.mp4`;
-    const hls_segment_playlist = `{${hlsStorage}}/${segmentPlaylistPath}.m3u8`;
-    const hls_segment_filename =
-      `{${hlsStorage}` +
-      (tee_muxer ? '^:' : '') +
-      `}/${segmentFilePath}.` +
-      (!control.hls.lhls && control.hls.version === 7 ? 'mp4' : 'ts');
-
-    // 2. Add output address
-
-    const output = {
-      id: 'output_0',
-      address: hls_segment_playlist,
-      options: ['-dn', '-sn', ...outputs[0].options.map((o: any) => '' + o)],
-      cleanup: [] as any[],
-    };
-
-    // 3. Extend output options
-
-    // 3.1 Injects a metadata link as title
-    const metadata = `${this.GetPublicHTTPAddress()}/${channel.channelid}/oembed.json`;
-    const metadata_options = [
-      '-metadata',
-      `title=${metadata}`,
-      '-metadata',
-      'service_provider=datarhei-Restreamer',
-    ];
-    output.options.push(...metadata_options);
-
-    // Manifest versions
-    // https://developer.apple.com/documentation/http_live_streaming/about_the_ext-x-version_tag
-    // https://ffmpeg.org/ffmpeg-all.html#Options-53
-
-    // 3.2 Returns the raw l/hls parameters for an EXT-X-VERSION
-
-    // fix Malformed AAC bitstream detected for hls version 7
-    let hls_aac_adtstoasc = false;
-
-    const getHLSParams = (version: any) => {
-      let hls_flags = 'append_list+program_date_time+temp_file';
-      if (parseInt(control.hls.listSize) > 0) {
-        hls_flags += '+delete_segments';
-      }
-
-      switch (version) {
-        case 6:
-          hls_flags += '+independent_segments';
-          return [
-            ['f', 'hls'],
-            ['start_number', '0'],
-            ['hls_time', '' + parseInt(control.hls.segmentDuration)],
-            ['hls_list_size', '' + parseInt(control.hls.listSize)],
-            ['hls_flags', hls_flags],
-            ['hls_delete_threshold', '4'],
-            ['hls_segment_filename', hls_segment_filename],
-          ];
-        case 7:
-          // fix Malformed AAC bitstream detected for hls version 7
-          if (
-            output.options.includes('-codec:a') &&
-            output.options.includes('copy')
-          ) {
-            if (!tee_muxer) {
-              output.options.push('-bsf:a', 'aac_adtstoasc');
-            }
-            hls_aac_adtstoasc = true;
-          }
-          hls_flags += '+independent_segments';
-          return [
-            ['f', 'hls'],
-            ['start_number', '0'],
-            ['hls_time', '' + parseInt(control.hls.segmentDuration)],
-            ['hls_list_size', '' + parseInt(control.hls.listSize)],
-            ['hls_flags', hls_flags],
-            ['hls_delete_threshold', '4'],
-            ['hls_segment_type', 'fmp4'],
-            ['hls_fmp4_init_filename', hls_fmp4_init_filename],
-            ['hls_fmp4_init_resend', '1'],
-            ['hls_segment_filename', hls_segment_filename],
-          ];
-        // case 3
-        default:
-          return [
-            ['f', 'hls'],
-            ['start_number', '0'],
-            ['hls_time', '' + parseInt(control.hls.segmentDuration)],
-            ['hls_list_size', '' + parseInt(control.hls.listSize)],
-            ['hls_flags', hls_flags],
-            ['hls_delete_threshold', '4'],
-            ['hls_segment_filename', hls_segment_filename],
-          ];
-      }
-    };
-    const hls_params_raw = getHLSParams(control.hls.version);
-
-    // 3.3 Use strftime for DiskFS
-    if (control.hls.storage && control.hls.storage === 'diskfs') {
-      hls_params_raw.push(['strftime', '1'], ['strftime_mkdir', '1']);
-    }
-
-    // 3.4 Push master playlist params
-    if (control.hls.master_playlist) {
-      hls_params_raw.push(
-        ['master_pl_name', hls_master_playlist],
-        ['master_pl_publish_rate', `${control.hls.segmentDuration}`],
-      );
-    }
-
-    // 3.5 Use HTTP method
-    if (control.hls.storage && control.hls.storage !== 'diskfs') {
-      hls_params_raw.push(['method', 'PUT']);
-    }
-
-    // 3.6 Overwrite output files
-    proc.options.push('-y');
-
-    // 3.7 Returns the l/hls parameters with or without tee_muxer
-    if (tee_muxer) {
-      // f=hls:start_number=0...
-      const hls_params = hls_params_raw
-        .filter((o) => {
-          // unsupported in tee_muxer
-          return !(
-            o[0] === 'segment_format_options' ||
-            o[0] === 'max_muxing_queue_size'
-          );
-        })
-        .map((o) => o[0] + '=' + o[1])
-        .join(':');
-
-      // set flags
-      if (control.process.low_delay) {
-        output.options.push('-flags', '+low_delay+global_header');
-      } else {
-        output.options.push('-flags', '+global_header');
-      }
-
-      output.options.push('-tag:v', '7', '-tag:a', '10', '-f', 'tee');
-      // ['f=hls:start_number=0...]address.m3u8
-      // use tee_muxer formatting
-      output.address =
-        `[${hls_aac_adtstoasc ? 'bsfs/a=aac_adtstoasc:' : ''}${hls_params}]${hls_segment_playlist}` +
-        (rtmp_enabled
-          ? `|[f=flv]{rtmp,name=${channel.channelid}.stream}`
-          : '') +
-        (srt_enabled
-          ? `|[f=mpegts]{srt,name=${channel.channelid},mode=publish}`
-          : '');
-    } else {
-      // ['-f', 'hls', '-start_number', '0', ...]
-      // adding the '-' in front of the first option, then flatten everything
-      const hls_params = hls_params_raw
-        .map((o) => ['-' + o[0], o[1]])
-        .reduce((acc, val) => acc.concat(val), []);
-
-      // set flags
-      if (control.process.low_delay) {
-        output.options.push('-flags', '+low_delay');
-      }
-
-      output.options.push(...hls_params);
-    }
-
-    // 4. Add output cleanup jobs
-
-    // 4.1 Set hls cleanup filename vars
-    let cleanupSegmentFilePath =
-      `${channel.channelid}` +
-      (control.hls.master_playlist ? `_{outputid}_**` : '_**');
-    if (hlsStorage === 'diskfs') {
-      // diskfs (path structure)
-      cleanupSegmentFilePath =
-        `${channel.channelid}` +
-        (control.hls.master_playlist ? `/{outputid}/**` : '/**');
-    }
-
-    // 4.2 Set hls cleanup filenames
-    const cleanup_global = `${hlsStorage}:/${channel.channelid}**`;
-    const cleanup_hls_master_playlist = `${hlsStorage}:/${channel.channelid}.m3u8`;
-    const cleanup_hls_fmp4_init_filename = `${hlsStorage}:/${channel.channelid}.mp4`;
-    const cleanup_hls_segment_playlist = `${hlsStorage}:/${segmentPlaylistPath}.m3u8`;
-    const cleanup_hls_segment_filename =
-      `${hlsStorage}:/${cleanupSegmentFilePath}.` +
-      (!control.hls.lhls && control.hls.version === 7 ? 'mp4' : 'ts');
-
-    // 4.3 Cleanup id* (process is deleted) + continuously hls_segment_playlist and hls_segment_filename
-    if (control.hls.cleanup === true) {
-      output.cleanup.push(
-        {
-          pattern: cleanup_global,
-          purge_on_delete: true,
-        },
-        {
-          pattern: cleanup_hls_segment_playlist,
-          max_file_age_seconds:
-            parseInt(control.hls.listSize) > 0
-              ? parseInt(control.hls.segmentDuration) *
-                (parseInt(control.hls.listSize) + 6)
-              : 0,
-          purge_on_delete: true,
-        },
-        {
-          pattern: cleanup_hls_segment_filename,
-          max_files:
-            parseInt(control.hls.listSize) > 0
-              ? parseInt(control.hls.listSize) + 6
-              : 0,
-          max_file_age_seconds:
-            parseInt(control.hls.listSize) > 0
-              ? parseInt(control.hls.segmentDuration) *
-                (parseInt(control.hls.listSize) + 6)
-              : 0,
-          purge_on_delete: true,
-        },
-      );
-
-      // 4.4 Cleanup hls_master_playlist
-      if (control.hls.master_playlist) {
-        output.cleanup.push({
-          pattern: cleanup_hls_master_playlist,
-          max_file_age_seconds:
-            parseInt(control.hls.listSize) > 0
-              ? parseInt(control.hls.segmentDuration) *
-                (parseInt(control.hls.listSize) + 6)
-              : 0,
-          purge_on_delete: true,
-        });
-      }
-
-      // 4.5 Cleanup hls_fmp4_init_filename
-      if (!control.hls.lhls && control.hls.version === 7) {
-        output.cleanup.push({
-          pattern: cleanup_hls_fmp4_init_filename,
-          max_file_age_seconds:
-            parseInt(control.hls.listSize) > 0
-              ? parseInt(control.hls.segmentDuration) *
-                (parseInt(control.hls.listSize) + 6)
-              : 0,
-          purge_on_delete: true,
-        });
-      }
-    }
-
-    // 5. Push output
-    proc.output.push(output);
-
-    const [val, err] = await this._upsertProcess(channel.id, proc);
-    if (err !== null) {
-      return [val, err];
-    }
-
-    this.SetChannel(channelid, {
-      ...channel,
-      available: true,
-    });
-
-    return [val, null];
+    return IngestOperations.UpsertIngest.call(
+      this,
+      channelid,
+      global,
+      inputs,
+      outputs,
+      control,
+    );
   }
-
   // Upsert the ingest snapshot process
   async UpsertIngestSnapshot(channelid: any, control: any) {
     const channel = this.GetChannel(channelid);
@@ -2593,148 +2246,9 @@ class Restreamer {
     return await this._hasAsset('/index.html');
   }
 
-  // Update the playersite
   async UpdatePlayersite() {
-    let metadata = await this.GetMetadata();
-
-    const settings = this.InitPlayersiteSettings(metadata.playersite);
-    settings.player = 'videojs';
-
-    if (settings.playersite === false) {
-      await this._removePlayersiteEssentials();
-      return true;
-    }
-
-    // update the player files
-    await this._updatePlayerEssentials(settings.player);
-
-    // update the playersite files
-    await this._updatePlayersiteEssentials();
-
-    // use preferred channel
-    let channel = this.GetChannel(settings.channelid);
-    if (channel === null) {
-      channel = this.GetChannel(this.GetCurrentChannelID());
-    }
-    if (channel === null) {
-      return false;
-    }
-
-    // filter channels based on the main channel and additional channels
-    const channels = this.ListChannels().filter(
-      (c) =>
-        settings.channel_list.indexOf(c.channelid) !== -1 ||
-        c.channelid === channel.channelid,
-    );
-
-    // Handlebars function ifEquals
-    Handlebars.registerHelper(
-      'ifEquals',
-      function (this: any, arg1: any, arg2: any, options: any) {
-        return arg1 === arg2 ? options.fn(this) : options.inverse(this);
-      },
-    );
-
-    Handlebars.registerHelper(
-      'ifnoteq',
-      function (this: any, arg1: any, arg2: any, options: any) {
-        if (arg1 !== arg2) {
-          return options.fn(this);
-        }
-        return options.inverse(this);
-      },
-    );
-
-    for (const item of channels) {
-      const ingestMetadata = await this.GetIngestMetadata(item.channelid);
-      const templateData = {
-        player: settings.player,
-        playersite: settings.playersite,
-        title: settings.title,
-        share: settings.share,
-        support: settings.support,
-        chromecast: settings.chromecast,
-        airplay: settings.airplay,
-        url: this.GetPlayersiteUrl(),
-        textcolor_title: settings.textcolor_title,
-        textcolor_default: settings.textcolor_default,
-        textcolor_link: settings.textcolor_link,
-        textcolor_link_hover: settings.textcolor_link_hover,
-        bgcolor_header: settings.bgcolor_header,
-        bgcolor_selected: settings.bgcolor_selected,
-        bgcolor_unselected: settings.bgcolor_unselected,
-        hrcolor: settings.hrcolor,
-        bgcolor_default: settings.bgcolor_default,
-        bgimage_url: settings.bgimage_url,
-        imprint_html: settings.imprint.replace(/(?:\r\n|\r|\n)/g, '<br />'),
-        terms_html: settings.terms.replace(/(?:\r\n|\r|\n)/g, '<br />'),
-        inject1: settings.inject1,
-        inject2: settings.inject2,
-        inject3: settings.inject3,
-        inject4: settings.inject4,
-        channels: channels,
-        channel_id: item.channelid,
-        channel_name: ingestMetadata.meta.name,
-        channel_description: ingestMetadata.meta.description,
-        channel_description_html: ingestMetadata.meta.description.replace(
-          /(?:\r\n|\r|\n)/g,
-          '<br />',
-        ),
-        channel_creator_name: ingestMetadata.meta.author.name,
-        channel_creator_description: ingestMetadata.meta.author.description,
-        channel_creator_description_html:
-          ingestMetadata.meta.author.description.replace(
-            /(?:\r\n|\r|\n)/g,
-            '<br />',
-          ),
-        channel_license: ingestMetadata.license,
-        channel_poster: this.GetChannelPosterPath(
-          item.channelid,
-          ingestMetadata.control.hls.storage,
-        ),
-        channel_width: 640,
-        channel_height: 360,
-      };
-
-      // upload playersite.html
-      let playersite = '';
-      if (settings.template !== '!default') {
-        playersite = await this.GetPlayersiteTemplate(settings.template);
-        if (playersite.length === 0) {
-          settings.template = '!default';
-        }
-      }
-
-      if (settings.template === '!default') {
-        playersite = await this._getLocalAssetAsString(
-          '/_playersite/index.html',
-        );
-      }
-
-      if (item.channelid === channel.channelid) {
-        playersite = Handlebars.compile(playersite)(templateData);
-        await this._uploadAssetData('/index.html', playersite);
-      }
-
-      playersite = Handlebars.compile(playersite)(templateData);
-      await this._uploadAssetData(
-        '/playersite_' + item.channelid + '.html',
-        playersite,
-      );
-
-      // Upload player config for each channel
-      await this.UpdatePlayerConfig(item.channelid, ingestMetadata);
-    }
-
-    // Upload player implementation
-    await this._uploadAssetData(
-      '/playersite/player.js',
-      await this._getLocalAssetAsString(`/_playersite/${settings.player}.js`),
-    );
-
-    return true;
+    return PlayersiteOperations.UpdatePlayersite.call(this);
   }
-
   // Upload the background image for the playersite
   async UploadPlayersiteBackgroundImage(data: any, extension: any) {
     // sanitize extension
@@ -2938,7 +2452,6 @@ class Restreamer {
     return await this.GetDebug(id);
   }
 
-  // Update an egress process
   async UpdateEgress(
     channelid: any,
     id: any,
@@ -2947,113 +2460,16 @@ class Restreamer {
     outputs: any,
     control: any,
   ) {
-    const channel = this.GetChannel(channelid);
-    if (!channel) {
-      return null;
-    }
-
-    if (!channel.egresses.includes(id)) {
-      return null;
-    }
-
-    const egress = this.GetChannelEgress(channelid, id);
-    if (!egress) {
-      return null;
-    }
-
-    if (!Array.isArray(outputs)) {
-      outputs = [outputs];
-    }
-
-    // from the inputs only the first is used and only its options are considered.
-
-    let address = '';
-    let options: any[] = [];
-    if (control.source.source === 'hls+memfs') {
-      address = `{memfs}/${channel.channelid}.m3u8`;
-      options.push('-re');
-    } else if (control.source.source === 'hls+diskfs') {
-      address = `{diskfs}/${channel.channelid}.m3u8`;
-      options.push('-re');
-    } else if (control.source.source === 'rtmp') {
-      address = `{rtmp,name=${channel.channelid}.stream}`;
-      const skills = this.Skills();
-      if (skills.ffmpeg.version_major >= 6) {
-        const codecs: any[] = [];
-        if (skills.codecs.video.hevc?.length > 0) {
-          codecs.push('hvc1');
-        }
-        if (skills.codecs.video.av1?.length > 0) {
-          codecs.push('av01');
-        }
-        if (skills.codecs.video.vp9?.length > 0) {
-          codecs.push('vp09');
-        }
-
-        if (codecs.length !== 0) {
-          options.push('-rtmp_enhanced_codecs', codecs.join(','));
-        }
-      }
-    } else if (control.source.source === 'srt') {
-      address = `{srt,name=${channel.channelid},mode=request}`;
-    }
-
-    const config = {
-      type: 'ffmpeg',
-      id: egress.id,
-      reference: egress.channelid,
-      input: [
-        {
-          id: 'input_0',
-          address: address,
-          options: [...options, ...inputs[0].options],
-        },
-      ],
-      output: [] as any[],
-      options: [
-        '-loglevel',
-        'level+info',
-        '-err_detect',
-        'ignore_err',
-        ...global,
-      ],
-      autostart: control.process.autostart,
-      reconnect: control.process.reconnect,
-      reconnect_delay_seconds: parseInt(control.process.delay),
-      stale_timeout_seconds: parseInt(control.process.staleTimeout),
-      limits: {
-        cpu_usage: parseInt(control.limits.cpu_usage),
-        memory_mbytes: parseInt(control.limits.memory_mbytes),
-        waitfor_seconds: parseInt(control.limits.waitfor_seconds),
-      },
-    };
-
-    for (let i in outputs) {
-      const output = outputs[i];
-
-      if (!Array.isArray(output.options)) {
-        output.options = [];
-      }
-
-      // set flags
-      let options: any[] = [];
-      if (control.process.low_delay) {
-        options.push('-flags', '+low_delay');
-      }
-
-      options.push(...output.options.map((o: any) => '' + o));
-
-      config.output.push({
-        id: 'output_' + i,
-        address: output.address,
-        options: options,
-      });
-    }
-
-    let [val, err] = await this._upsertProcess(egress.id, config);
-    return [val, err];
+    return EgressOperations.UpdateEgress.call(
+      this,
+      channelid,
+      id,
+      global,
+      inputs,
+      outputs,
+      control,
+    );
   }
-
   // Create an egress process
   async CreateEgress(
     channelid: any,

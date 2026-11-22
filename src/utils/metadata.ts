@@ -246,6 +246,7 @@ import SemverGt from 'semver/functions/gt';
 import * as Coders from '../components/coders/Encoders';
 import * as Filters from '../components/filters';
 import * as version from '../lib/version';
+import type { CoreProfile, CoreSource, CoreStream } from '../types/core';
 
 const defaultMetadata = {
   version: version.Version,
@@ -594,7 +595,11 @@ const mergeEgressMetadata = (metadata: any, base: any = null) => {
   return metadata;
 };
 
-const validateProfile = (sources: any, profile: any, requireVideo = true) => {
+const validateProfile = (
+  sources: CoreSource[],
+  profile: CoreProfile,
+  requireVideo = true,
+) => {
   let validVideo = false;
 
   profile = initProfile(profile);
@@ -668,8 +673,8 @@ const validateProfile = (sources: any, profile: any, requireVideo = true) => {
 };
 
 const createInputsOutputs = (
-  sources: any,
-  profiles: any,
+  sources: CoreSource[],
+  profiles: CoreProfile[],
   requireVideo = true,
 ) => {
   const source2inputMap = new Map();
@@ -891,10 +896,10 @@ const createInputsOutputs = (
 };
 
 const createOutputStreams = (
-  sources: any,
-  profiles: any,
+  sources: CoreSource[],
+  profiles: CoreProfile[],
   requireVideo = true,
-) => {
+): CoreStream[] => {
   const streams: any[] = [];
 
   // Generate a list of output streams from the profiles
