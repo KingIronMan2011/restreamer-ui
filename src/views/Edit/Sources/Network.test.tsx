@@ -165,6 +165,26 @@ test('source:network pull disables probing without an address', () => {
   expect(onProbe).not.toHaveBeenCalled();
 });
 
+test('source:network pull shows a schema error for malformed addresses', async () => {
+  const onProbe = vi.fn();
+  render(
+    <Network.component
+      settings={{ mode: 'pull', address: 'rtsp://bad host' }}
+      skills={$skills_ffmpeg6}
+      onProbe={onProbe}
+      knownDevices={[]}
+    />,
+  );
+
+  const probe = screen.getByRole('button', { name: 'Probe' });
+  expect(probe).toBeEnabled();
+  fireEvent.click(probe);
+  expect(
+    await screen.findByText('Enter a valid URL with a protocol and host.'),
+  ).toBeInTheDocument();
+  expect(onProbe).not.toHaveBeenCalled();
+});
+
 const pullmatrix = {
   settings: {
     mode: 'pull',

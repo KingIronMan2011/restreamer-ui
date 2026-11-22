@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import { CirclePlay } from 'lucide-react';
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -251,6 +252,9 @@ function Service({
           checked={settings.backup}
           onChange={handleChange('backup')}
         />
+        {validationErrors.primary && (
+          <Typography color="error">{validationErrors.primary}</Typography>
+        )}
       </Grid>
     </Grid>
   );

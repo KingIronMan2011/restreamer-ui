@@ -2,6 +2,7 @@ import { Trans } from '@lingui/react/macro';
 import ExtensionIcon from '@mui/icons-material/Extension';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import React from 'react';
 
 import Checkbox from '../../../components/Checkbox';
@@ -270,6 +271,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -301,6 +303,8 @@ function Service({
           label={<Trans>Stream key</Trans>}
           value={settings.stream_key}
           onChange={handleChange('stream_key')}
+          error={Boolean(validationErrors.stream_key)}
+          helperText={validationErrors.stream_key}
         />
       </Grid>
       <Grid size={12}>
@@ -314,6 +318,9 @@ function Service({
           checked={settings.rtmp_backup}
           onChange={handleChange('rtmp_backup')}
         />
+        {validationErrors.rtmp_primary && (
+          <Typography color="error">{validationErrors.rtmp_primary}</Typography>
+        )}
       </Grid>
     </Grid>
   );

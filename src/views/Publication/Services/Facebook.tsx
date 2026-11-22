@@ -1,6 +1,7 @@
 import { Trans } from '@lingui/react/macro';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import { UsersRound } from 'lucide-react';
 import React from 'react';
 
@@ -179,6 +180,9 @@ function Service({
           checked={settings.rtmp_backup}
           onChange={handleChange('rtmp_backup')}
         />
+        {validationErrors.rtmp_primary && (
+          <Typography color="error">{validationErrors.rtmp_primary}</Typography>
+        )}
       </Grid>
     </Grid>
   );

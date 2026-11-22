@@ -14,8 +14,8 @@ import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import React from 'react';
+import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import urlparser from 'url-parse';
 import { z } from 'zod';
@@ -929,7 +929,7 @@ function Pull({
   settings = {},
   config = {},
   skills = null,
-  validationError = '',
+  control,
   onChange,
   onProbe,
 }: any) {
@@ -958,15 +958,27 @@ function Pull({
         </Typography>
       </Grid>
       <Grid size={12}>
-        <TextField
-          variant="outlined"
-          fullWidth
-          label={<Trans>Address</Trans>}
-          placeholder="rtsp://ip:port/path"
-          value={settings.address}
-          error={Boolean(validationError)}
-          helperText={validationError}
-          onChange={onChange('', 'address')}
+        <Controller
+          control={control}
+          name="address"
+          render={({ field, fieldState }) => (
+            <TextField
+              variant="outlined"
+              fullWidth
+              label={<Trans>Address</Trans>}
+              placeholder="rtsp://ip:port/path"
+              name={field.name}
+              inputRef={field.ref}
+              value={settings.address}
+              error={Boolean(fieldState.error)}
+              helperText={fieldState.error?.message}
+              onBlur={field.onBlur}
+              onChange={(event) => {
+                field.onChange(event);
+                onChange('', 'address')(event);
+              }}
+            />
+          )}
         />
         <Typography variant="caption">
           <Trans>
@@ -1493,11 +1505,10 @@ function Source({
 }: any) {
   const classes = useStyles();
   const { i18n } = useLingui();
-  const [addressError, setAddressError] = useState('');
   config = initConfig(config);
   settings = initSettings(settings, config);
   skills = initSkills(skills);
-  const { setValue, trigger } = useForm<NetworkSourceSettings>({
+  const { control, setValue, trigger } = useForm<NetworkSourceSettings>({
     resolver: zodResolver(networkSourceSettingsSchema),
     mode: 'onChange',
     defaultValues: {
@@ -1544,7 +1555,6 @@ function Source({
       setValue('mode', value, { shouldValidate: true });
     } else if (section === '' && what === 'address') {
       setValue('address', value, { shouldValidate: true });
-      setAddressError('');
     }
 
     onChange({
@@ -1555,21 +1565,6 @@ function Source({
   const handleProbe = async () => {
     setValue('mode', settings.mode);
     setValue('address', settings.address);
-
-    const result = networkSourceSettingsSchema.safeParse({
-      mode: settings.mode,
-      address: settings.address,
-    });
-    if (!result.success) {
-      const addressIssue = result.error.issues.find(
-        (issue) => issue.path[0] === 'address',
-      );
-      setAddressError(
-        addressIssue?.message ?? 'Invalid network source address.',
-      );
-      return;
-    }
-    setAddressError('');
 
     if (!(await trigger())) return;
 
@@ -1609,7 +1604,7 @@ function Source({
           settings={settings}
           config={config}
           skills={skills}
-          validationError={addressError}
+          control={control}
           onChange={handleChange}
           onProbe={handleProbe}
         />

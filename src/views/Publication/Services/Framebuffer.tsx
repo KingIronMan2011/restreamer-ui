@@ -1,6 +1,7 @@
 import { Trans } from '@lingui/react/macro';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
+import Typography from '@mui/material/Typography';
 import { Images } from 'lucide-react';
 import React from 'react';
 
@@ -54,6 +55,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -108,6 +110,11 @@ function Service({
   return (
     <Grid container spacing={2}>
       <Grid size={12}>{videoDevices}</Grid>
+      {validationErrors.device && (
+        <Grid size={12}>
+          <Typography color="error">{validationErrors.device}</Typography>
+        </Grid>
+      )}
       <Grid size={12}>
         <Select
           label={<Trans>Pixel format</Trans>}

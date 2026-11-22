@@ -2,6 +2,7 @@ import React from 'react';
 
 import { render, screen } from '../../../utils/testing';
 import * as Dailymotion from './Dailymotion';
+import * as Facebook from './Facebook';
 import * as Owncast from './Owncast';
 import * as RTMP from './RTMP';
 import * as SRT from './SRT';
@@ -64,5 +65,19 @@ describe('publication validation feedback', () => {
     );
 
     expect(screen.getByText('Enter a valid RTMP(S) server URL.')).toBeVisible();
+  });
+
+  it('shows the missing active destination error for Facebook', () => {
+    render(
+      <Facebook.component
+        validationErrors={{
+          rtmp_primary: 'Enable a primary or backup stream.',
+        }}
+      />,
+    );
+
+    expect(
+      screen.getByText('Enable a primary or backup stream.'),
+    ).toBeVisible();
   });
 });

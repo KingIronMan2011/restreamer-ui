@@ -225,4 +225,53 @@ describe('publication settings validation', () => {
       }).success,
     ).toBe(true);
   });
+
+  it('validates the remaining destination and output device settings', () => {
+    expect(
+      validatePublicationSettings('brightcove', {
+        protocol: 'rtmp://',
+        address: 'ingest.example/live/',
+        stream_name: 'camera',
+      }).success,
+    ).toBe(true);
+    expect(
+      validatePublicationSettings('datarheicore', {
+        v2_address: 'srt://target.example:9000',
+      }).success,
+    ).toBe(true);
+    expect(
+      validatePublicationSettings('datarheicore', { v2_address: 'invalid' })
+        .success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('dummy', {
+        stream_key: 'key',
+        rtmp_primary: true,
+        rtmp_backup: false,
+      }).success,
+    ).toBe(true);
+    expect(
+      validatePublicationSettings('earthcam', {
+        server_url: 'rtmp://video1.earthcam.com/myearthcam',
+        stream_key: 'key',
+      }).success,
+    ).toBe(true);
+    expect(
+      validatePublicationSettings('framebuffer', { device: 'none' }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('image2', {
+        protocol: 'https://',
+        address: 'storage.example/live/%d.jpg',
+      }).success,
+    ).toBe(true);
+    expect(
+      validatePublicationSettings('wettercom', {
+        protocol: 'rtmp://',
+        server_url: 'wettercom.example/live',
+        stream_id: 'camera-1',
+        stream_key: 'token',
+      }).success,
+    ).toBe(true);
+  });
 });

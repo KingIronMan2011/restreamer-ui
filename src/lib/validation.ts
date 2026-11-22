@@ -222,6 +222,121 @@ const youtubeSettingsSchema = z
     }
   });
 
+const dummySettingsSchema = z
+  .object({
+    stream_key: z.string(),
+    rtmp_primary: z.boolean(),
+    rtmp_backup: z.boolean(),
+  })
+  .passthrough()
+  .superRefine(({ stream_key, rtmp_primary, rtmp_backup }, context) => {
+    if (!rtmp_primary && !rtmp_backup) {
+      context.addIssue({
+        code: 'custom',
+        path: ['rtmp_primary'],
+        message: 'Enable a primary or backup stream.',
+      });
+    }
+    if ((rtmp_primary || rtmp_backup) && !stream_key.trim()) {
+      context.addIssue({
+        code: 'custom',
+        path: ['stream_key'],
+        message: 'Enter a stream key.',
+      });
+    }
+  });
+
+const earthcamSettingsSchema = z
+  .object({ server_url: z.string(), stream_key: z.string() })
+  .passthrough()
+  .superRefine(({ server_url, stream_key }, context) => {
+    if (!validAddress(server_url.trim(), ['rtmp:', 'rtmps:'])) {
+      context.addIssue({
+        code: 'custom',
+        path: ['server_url'],
+        message: 'Enter a valid RTMP(S) server URL.',
+      });
+    }
+    if (!stream_key.trim()) {
+      context.addIssue({
+        code: 'custom',
+        path: ['stream_key'],
+        message: 'Enter a stream key.',
+      });
+    }
+  });
+
+const coreSettingsSchema = z
+  .object({ v2_address: z.string() })
+  .passthrough()
+  .superRefine(({ v2_address }, context) => {
+    if (!validAddress(v2_address.trim(), ['rtmp:', 'rtmps:', 'srt:'])) {
+      context.addIssue({
+        code: 'custom',
+        path: ['v2_address'],
+        message: 'Enter a valid RTMP(S) or SRT target address.',
+      });
+    }
+  });
+
+const wettercomSettingsSchema = z
+  .object({
+    protocol: z.literal('rtmp://'),
+    server_url: z.string(),
+    stream_id: z.string(),
+    stream_key: z.string(),
+  })
+  .passthrough()
+  .superRefine(({ protocol, server_url, stream_id, stream_key }, context) => {
+    if (!validAddress(`${protocol}${server_url.trim()}`)) {
+      context.addIssue({
+        code: 'custom',
+        path: ['server_url'],
+        message: 'Enter a valid RTMP server URL.',
+      });
+    }
+    for (const [field, value] of [
+      ['stream_id', stream_id],
+      ['stream_key', stream_key],
+    ] as const) {
+      if (!value.trim()) {
+        context.addIssue({
+          code: 'custom',
+          path: [field],
+          message: 'This field is required.',
+        });
+      }
+    }
+  });
+
+const brightcoveSettingsSchema = z
+  .object({
+    protocol: z.literal('rtmp://'),
+    address: z.string(),
+    stream_name: z.string(),
+  })
+  .passthrough()
+  .superRefine(({ protocol, address, stream_name }, context) => {
+    if (!stream_name.trim()) {
+      context.addIssue({
+        code: 'custom',
+        path: ['stream_name'],
+        message: 'Enter a stream name.',
+      });
+    }
+    if (
+      !address.trim() ||
+      !stream_name.trim() ||
+      !validAddress(`${protocol}${address.trim()}${stream_name.trim()}`)
+    ) {
+      context.addIssue({
+        code: 'custom',
+        path: ['address'],
+        message: 'Enter a valid RTMP publication address.',
+      });
+    }
+  });
+
 const rtmpEndpointSettingsSchema = z
   .object({
     protocol: z.enum(rtmpProtocols),
@@ -436,7 +551,7 @@ export const publicationSettingsSchemas = {
     'Enter a valid RTMP or RTSP server address.',
   ),
   akamai: akamaiSettingsSchema,
-  brightcove: requiredSettingsSchema('address', 'stream_name'),
+  brightcove: brightcoveSettingsSchema,
   linkedin: protocolAddressSettingsSchema(
     ['rtmp://', 'rtmps://'],
     'Enter a valid RTMP(S) publication address.',
@@ -456,6 +571,26 @@ export const publicationSettingsSchemas = {
   livepush: requiredSettingsSchema('stream_key'),
   livespotting: requiredSettingsSchema('vpu_id', 'livesource_id', 'rtmp_token'),
   peertube: requiredSettingsSchema('domain', 'key'),
+  datarheicore: coreSettingsSchema,
+  dummy: dummySettingsSchema,
+  earthcam: earthcamSettingsSchema,
+  framebuffer: z
+    .object({ device: z.string() })
+    .passthrough()
+    .superRefine((settings, context) => {
+      if (settings.device === 'none') {
+        context.addIssue({
+          code: 'custom',
+          path: ['device'],
+          message: 'Choose a framebuffer output device.',
+        });
+      }
+    }),
+  image2: protocolAddressSettingsSchema(
+    ['http://', 'https://'],
+    'Enter a valid HTTP(S) image destination.',
+  ),
+  wettercom: wettercomSettingsSchema,
 } as const;
 
 export function validatePublicationSettings(
