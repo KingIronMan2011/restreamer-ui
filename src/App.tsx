@@ -27,12 +27,9 @@ const useStyles = () => {
     MainHeader: {
       height: '132px',
     },
-    // todo: one layer
     MainContent: {
       height: '100%',
-      '& .MainContent-container': {
-        minHeight: 'calc(100vh - 230px)',
-      },
+      minHeight: 'calc(100vh - 230px)',
       '& .MainContent-item': {
         maxWidth: '980px',
       },
@@ -551,35 +548,24 @@ export default function App({ address = '' }: any) {
             onLogout={handleLogout}
           />
         </Grid>
-        <Grid sx={classes.MainContent}>
+        <Grid
+          container
+          className="MainContent-container"
+          sx={{
+            ...classes.MainContent,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+          spacing={0}
+        >
           <Grid
-            container
-            className="MainContent-container"
-            spacing={0}
-            sx={{
-              justifyContent: 'center',
-              alignItems: 'center',
+            className="MainContent-item"
+            size={{
+              xs: 12,
+              sm: 10,
             }}
           >
-            <Grid
-              size={{
-                sm: 1,
-              }}
-            ></Grid>
-            <Grid
-              className="MainContent-item"
-              size={{
-                xs: 12,
-                sm: 10,
-              }}
-            >
-              {view}
-            </Grid>
-            <Grid
-              size={{
-                sm: 1,
-              }}
-            ></Grid>
+            {view}
           </Grid>
         </Grid>
       </Stack>

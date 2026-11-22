@@ -151,26 +151,25 @@ const login = async (queryParams: any) => {
 
   const config = getConfig();
 
-  let queryString: any[] = [];
-  for (let n in queryParams) {
-    queryString.push(n + '=' + encodeURIComponent(queryParams[n]));
-  }
-
-  if (queryString.length !== 0) {
+  if (queryParams && Object.keys(queryParams).length > 0) {
     try {
-      let url = new URL(config.redirect_uri);
-      if (url.search.length > 1) {
-        url.search = url.search + '&' + queryString.join('&');
-      } else {
-        url.search = '?' + queryString.join('&');
+      const url = new URL(config.redirect_uri);
+      for (const [key, value] of Object.entries(queryParams)) {
+        url.searchParams.append(key, String(value));
       }
 
       config.redirect_uri = url.href;
-    } catch (e) {}
+    } catch (error) {
+      console.error('Error constructing redirect URI:', error);
+    }
   }
 
   const options = {
-    authorizationParams: { redirect_uri: config.redirect_uri },
+    authorizationParams: {
+      redirect_uri: config.redirect_uri,
+      scope: 'openid profile email',
+      audience: config.audience,
+    },
   };
 
   try {
@@ -200,8 +199,16 @@ const getToken = async () => {
     return token;
   }
 
+  const config = getConfig();
+
   try {
-    token = (await client.getTokenSilently()) ?? '';
+    token =
+      (await client.getTokenSilently({
+        authorizationParams: {
+          scope: 'openid profile email',
+          audience: config.audience,
+        },
+      })) ?? '';
   } catch (error) {
     console.error(error);
   }

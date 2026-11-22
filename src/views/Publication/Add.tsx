@@ -348,7 +348,6 @@ export default function Add({ restreamer }: any) {
 
       const Icon = s.icon;
 
-      // TODO: Style Tooltip + Fix Tooltip + Disabled
       if (helper.checkServiceRequirements(s.requires, $skills) === false) {
         serviceList.push(
           <Grid
@@ -375,15 +374,28 @@ export default function Add({ restreamer }: any) {
               }
               placement="left"
               arrow
+              enterDelay={350}
+              slotProps={{
+                tooltip: {
+                  sx: {
+                    maxWidth: 240,
+                    p: 1.5,
+                    border: 1,
+                    borderColor: 'divider',
+                    fontSize: '0.875rem',
+                    lineHeight: 1.4,
+                  },
+                },
+              }}
             >
-              <div>
+              <span style={{ display: 'block', width: '100%' }}>
                 <Button variant="big" disabled>
                   <div>
                     <Icon />
                     <Typography>{s.name}</Typography>
                   </div>
                 </Button>
-              </div>
+              </span>
             </Tooltip>
           </Grid>,
         );

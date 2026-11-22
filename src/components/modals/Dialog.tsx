@@ -1,9 +1,8 @@
 import CloseIcon from '@mui/icons-material/Close';
 import HelpIcon from '@mui/icons-material/HelpOutlined';
+import Dialog from '@mui/material/Dialog';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
-import Modal from '@mui/material/Modal';
-import Paper from '@mui/material/Paper';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -42,8 +41,6 @@ const useStyles = () => {
   };
 };
 
-// todo: use MuiDialog
-
 const Component = React.forwardRef<any, any>(
   (
     {
@@ -60,45 +57,46 @@ const Component = React.forwardRef<any, any>(
   ) => {
     const classes = useStyles();
 
-    const paperStyle: Record<string, any> = {};
-
-    if (maxWidth > 0) {
-      paperStyle.maxWidth = maxWidth + 'px';
-    }
-
     return (
-      <Modal open={open} onClose={onClose} className="modal" disableScrollLock>
-        <Paper
-          sx={classes.modalPaper}
-          elevation={0}
-          ref={ref}
-          tabIndex={-1}
-          style={paperStyle}
-        >
-          <Grid container spacing={0}>
-            <Grid sx={classes.modalHeader} size={12}>
-              <Typography variant="button">{title}</Typography>
-              {typeof onClose === 'function' && (
-                <IconButton color="inherit" size="small" onClick={onClose}>
-                  <CloseIcon fontSize="small" />
-                </IconButton>
-              )}
-              {typeof onHelp === 'function' && (
-                <IconButton color="inherit" size="small" onClick={onHelp}>
-                  <HelpIcon fontSize="small" />
-                </IconButton>
-              )}
-            </Grid>
+      <Dialog
+        open={open}
+        onClose={onClose}
+        className="modal"
+        disableScrollLock
+        maxWidth={false}
+        ref={ref}
+        slotProps={{
+          paper: {
+            sx: {
+              ...classes.modalPaper,
+              ...(maxWidth > 0 ? { maxWidth } : {}),
+            },
+          },
+        }}
+      >
+        <Grid container spacing={0}>
+          <Grid sx={classes.modalHeader} size={12}>
+            <Typography variant="button">{title}</Typography>
+            {typeof onClose === 'function' && (
+              <IconButton color="inherit" size="small" onClick={onClose}>
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            )}
+            {typeof onHelp === 'function' && (
+              <IconButton color="inherit" size="small" onClick={onHelp}>
+                <HelpIcon fontSize="small" />
+              </IconButton>
+            )}
           </Grid>
-          <Grid size={12}>{children}</Grid>
-          <Grid container spacing={0}>
-            <Grid sx={classes.modalFooter} size={12}>
-              <div>{buttonsRight}</div>
-              {buttonsLeft}
-            </Grid>
+        </Grid>
+        <Grid size={12}>{children}</Grid>
+        <Grid container spacing={0}>
+          <Grid sx={classes.modalFooter} size={12}>
+            <div>{buttonsRight}</div>
+            {buttonsLeft}
           </Grid>
-        </Paper>
-      </Modal>
+        </Grid>
+      </Dialog>
     );
   },
 );

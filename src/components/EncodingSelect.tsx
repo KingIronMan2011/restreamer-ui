@@ -1,6 +1,7 @@
 import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
+import Alert from '@mui/material/Alert';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
@@ -235,8 +236,6 @@ export default function EncodingSelect({
     }
   }
 
-  // TODO: in case there's no decoder for a codec it should be mentioned.
-
   return (
     <Grid container spacing={2}>
       <Grid size={12}>
@@ -257,18 +256,27 @@ export default function EncodingSelect({
         </Select>
       </Grid>
       {decoderList.length >= 2 && (
-        <React.Fragment>
+        <Grid size={12}>
+          <Select
+            label={<Trans>Decoder</Trans>}
+            value={profile.decoder.coder}
+            onChange={handleDecoderChange}
+          >
+            {decoderList}
+          </Select>
+        </Grid>
+      )}
+      {decoderList.length === 0 &&
+        coder.coder !== 'copy' &&
+        coder.coder !== 'none' && (
           <Grid size={12}>
-            <Select
-              label={<Trans>Decoder</Trans>}
-              value={profile.decoder.coder}
-              onChange={handleDecoderChange}
-            >
-              {decoderList}
-            </Select>
+            <Alert severity="warning">
+              <Trans>No suitable decoder found for this codec.</Trans>
+            </Alert>
           </Grid>
-          <Grid size={12}>{decoderSettings}</Grid>
-        </React.Fragment>
+        )}
+      {decoderList.length > 0 && decoderSettings !== null && (
+        <Grid size={12}>{decoderSettings}</Grid>
       )}
       <Grid size={12}>{encoderSettings}</Grid>
       {encoderSettingsHelp !== null && (

@@ -551,24 +551,6 @@ test('wizard: network source error', async () => {
       /The source doesn't provide any video streams. Please check the device./,
     ),
   ).toBeInTheDocument();
-
-  /*
-    // TODO: This message appears only if there's no h264 encoder. However it should appear if there's no
-    //       suitable decoder for the detected codec. The question is, if this is actually possible, because
-    //       if FFmpeg doesn't know the codec, how can it detect it?
-
-	input = screen.getByLabelText('Address');
-	fireEvent.change(input, { target: { value: 'rtsp://127.0.0.1/live/unknown-none' } });
-
-	button = screen.getByRole('button', { name: 'Next' });
-	expect(button).toBeEnabled();
-
-	await act(async () => {
-		fireEvent.click(button);
-	});
-
-	expect(screen.queryByText(/The source doesn't provide any compatible video streams./)).toBeInTheDocument();
-    */
 });
 
 test('wizard: network source video h264', async () => {
