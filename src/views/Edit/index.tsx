@@ -26,6 +26,7 @@ import ProcessControl from '../../components/controls/Process';
 import RTMPControl from '../../components/controls/RTMP';
 import SnapshotControl from '../../components/controls/Snapshot';
 import SRTControl from '../../components/controls/SRT';
+import VideoOverlays from '../../components/controls/VideoOverlays';
 import Dialog from '../../components/modals/Dialog';
 import Paper from '../../components/Paper';
 import PaperFooter from '../../components/PaperFooter';
@@ -237,16 +238,17 @@ export default function Edit({ restreamer }: any) {
 
   const handleSourceDone = (sources: any, profile: any) => {
     const complete = M.validateProfile(sources, profile);
+    const profiles = [profile, ...$data.profiles.slice(1)];
 
     let streams: any[] = [];
     if (complete === true) {
-      streams = M.createOutputStreams(sources, [profile]);
+      streams = M.createOutputStreams(sources, profiles);
     }
 
     setData({
       ...$data,
       sources: sources,
-      profiles: [profile],
+      profiles,
       streams: streams,
     });
 
@@ -291,6 +293,25 @@ export default function Edit({ restreamer }: any) {
     setData({
       ...$data,
       license: license,
+    });
+  };
+
+  const handleOverlayChange = (profileIndex: number) => (overlays: any[]) => {
+    const profiles = $data.profiles.map((profile: any, index: number) =>
+      index === profileIndex
+        ? {
+            ...profile,
+            video: {
+              ...profile.video,
+              overlays,
+            },
+          }
+        : profile,
+    );
+
+    setData({
+      ...$data,
+      profiles,
     });
   };
 
@@ -566,6 +587,23 @@ export default function Edit({ restreamer }: any) {
                   onStore={handleSourceStore}
                 />
               )}
+              {!$state.editing &&
+                $data.profiles.map((profile: any, index: number) => (
+                  <React.Fragment key={`video-overlays-${index}`}>
+                    <Grid size={12}>
+                      <Divider />
+                    </Grid>
+                    <Grid size={12}>
+                      <VideoOverlays
+                        profileIndex={index}
+                        settings={profile.video.overlays}
+                        encoder={profile.video.encoder.coder}
+                        onChange={handleOverlayChange(index)}
+                        onStore={handleSourceStore}
+                      />
+                    </Grid>
+                  </React.Fragment>
+                ))}
             </TabPanel>
             <TabPanel value={$tab} index="control" className="panel">
               <Grid container spacing={2}>

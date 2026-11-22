@@ -655,6 +655,13 @@ const validateProfile = (sources: any, profile: any, requireVideo = true) => {
     ) {
       complete = false;
     }
+
+    if (
+      (profile.video.overlays ?? []).some((overlay: any) => overlay.path) &&
+      profile.video.encoder.coder === 'copy'
+    ) {
+      complete = false;
+    }
   }
 
   return complete;
@@ -671,8 +678,10 @@ const createInputsOutputs = (
   const inputs: any[] = [];
   const outputs: any[] = [];
 
-  // For each profile get the source and do the proper mapping
-  for (let profile of profiles) {
+  // Build an independent graph for each output profile so overlays never leak
+  // into another output's stream or filters.
+  for (let profileIndex = 0; profileIndex < profiles.length; profileIndex++) {
+    const profile = profiles[profileIndex];
     const complete = validateProfile(sources, profile, requireVideo);
     if (complete === false) {
       continue;
@@ -702,22 +711,28 @@ const createInputsOutputs = (
     global = [...global, ...profile.video.encoder.mapping.global];
 
     const local = profile.video.encoder.mapping.local.slice();
+    const overlays = (profile.video.overlays ?? []).filter((overlay: any) =>
+      Boolean(overlay.path),
+    );
+    const videoMapOptionIndex = 0;
 
     if (
       profile.video.encoder.coder !== 'copy' &&
       (profile.video.filter.graph.length !== 0 ||
         profile.video.encoder.mapping.filter.length !== 0)
     ) {
-      let filter = profile.video.filter.graph;
-      if (profile.video.encoder.mapping.filter.length !== 0) {
-        if (filter.length !== 0) {
-          filter += ',';
+      if (overlays.length === 0) {
+        let filter = profile.video.filter.graph;
+        if (profile.video.encoder.mapping.filter.length !== 0) {
+          if (filter.length !== 0) {
+            filter += ',';
+          }
+
+          filter += profile.video.encoder.mapping.filter.join(',');
         }
 
-        filter += profile.video.encoder.mapping.filter.join(',');
+        local.unshift('-filter:v', filter);
       }
-
-      local.unshift('-filter:v', filter);
     }
 
     const options = ['-map', index + ':' + stream.stream, ...local];
@@ -771,6 +786,90 @@ const createInputsOutputs = (
       options.push('-map', index + ':' + stream.stream, ...local);
     } else {
       options.push('-an');
+    }
+
+    if (overlays.length > 0) {
+      const videoSource = sources[profile.video.source];
+      const videoStream = videoSource.streams[profile.video.stream];
+      const videoInputIndex = source2inputMap.get(
+        `${profile.video.source}:${videoStream.index}`,
+      );
+      const graph: string[] = [];
+      const decoder = String(profile.video.decoder.coder);
+      const encoder = String(profile.video.encoder.coder);
+      const hardwareDecoder = decoder.endsWith('_cuvid') || decoder === 'nvdec';
+      const vaapiEncoder = encoder.endsWith('_vaapi');
+      const profileLabel = `overlay_profile_${profileIndex}`;
+      const sourceLabel = `[${profileLabel}_source]`;
+      const outputLabel = `[${profileLabel}_output]`;
+
+      let videoFilters = profile.video.filter.graph;
+      if (hardwareDecoder) {
+        videoFilters = videoFilters
+          ? `hwdownload,format=nv12,${videoFilters}`
+          : 'hwdownload,format=nv12';
+      }
+
+      const videoInput = `[${videoInputIndex}:${videoStream.stream}]`;
+      graph.push(`${videoInput}${videoFilters || 'null'}${sourceLabel}`);
+
+      let currentLabel = sourceLabel;
+      overlays.forEach((overlay: any, overlayIndex: number) => {
+        const path = String(overlay.path);
+        const address = path.startsWith('{diskfs}') ? path : `{diskfs}${path}`;
+        const overlayInputIndex =
+          inputs.push({
+            address,
+            options: ['-loop', '1', '-framerate', '30'],
+          }) - 1;
+        const overlayLabel = `[${profileLabel}_image_${overlayIndex}]`;
+        const nextLabel = `[${profileLabel}_composite_${overlayIndex}]`;
+        const width = Number(overlay.width);
+        const height = Number(overlay.height);
+        const dimensions = [width, height].map((dimension) =>
+          Number.isInteger(dimension) && dimension > 0 && dimension <= 8192
+            ? String(dimension)
+            : '-1',
+        );
+        const needsScale = dimensions.some((dimension) => dimension !== '-1');
+
+        graph.push(
+          `[${overlayInputIndex}:v:0]${
+            needsScale ? `scale=${dimensions[0]}:${dimensions[1]}` : 'null'
+          }${overlayLabel}`,
+        );
+
+        const x = Number(overlay.x);
+        const y = Number(overlay.y);
+        const xExpression =
+          overlay.x !== '' && Number.isFinite(x)
+            ? String(Math.trunc(x))
+            : '(W-w)/2';
+        const yExpression =
+          overlay.y !== '' && Number.isFinite(y)
+            ? String(Math.trunc(y))
+            : '(H-h)/2';
+        graph.push(
+          `${currentLabel}${overlayLabel}overlay=x=${xExpression}:y=${yExpression}${nextLabel}`,
+        );
+        currentLabel = nextLabel;
+      });
+
+      const outputFilters = profile.video.encoder.mapping.filter
+        .filter((filter: any) => {
+          if (!vaapiEncoder) return true;
+          return filter !== 'format=nv12' && filter !== 'hwupload';
+        })
+        .slice();
+      if (vaapiEncoder) {
+        outputFilters.push('format=nv12', 'hwupload');
+      }
+      graph.push(
+        `${currentLabel}${outputFilters.length > 0 ? outputFilters.join(',') : 'null'}${outputLabel}`,
+      );
+
+      options.splice(videoMapOptionIndex, 2, '-map', outputLabel);
+      options.unshift('-filter_complex', graph.join(';'));
     }
 
     outputs.push({
@@ -956,6 +1055,9 @@ const initProfile = (initialProfile: any) => {
     settings: {},
     ...profile.video.filter,
   };
+  profile.video.overlays = Array.isArray(profile.video.overlays)
+    ? profile.video.overlays
+    : [];
 
   profile.audio = {
     source: -1,

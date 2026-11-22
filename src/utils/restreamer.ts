@@ -1783,11 +1783,14 @@ class Restreamer {
     if (control.rtmp && control.rtmp.enable && rtmp_config.enabled) {
       rtmp_enabled = true;
     }
-    if (
-      proc.input[0].address.includes('rtmp://localhost') &&
-      proc.input[0].address.includes(channel.channelid) &&
-      !proc.input[0].address.includes('ingest')
-    ) {
+    const inputAddress = String(proc.input[0]?.address ?? '');
+    const isLocalProtocolInput = (protocol: 'rtmp' | 'srt') =>
+      (inputAddress.includes(`${protocol}://localhost`) ||
+        inputAddress.includes(`{${protocol},`)) &&
+      inputAddress.includes(channel.channelid) &&
+      !inputAddress.includes('ingest');
+
+    if (isLocalProtocolInput('rtmp')) {
       rtmp_enabled = false;
       control.rtmp.enable = true;
     }
@@ -1798,11 +1801,7 @@ class Restreamer {
     if (control.srt.enable && srt_config.enabled) {
       srt_enabled = true;
     }
-    if (
-      proc.input[0].address.includes('srt://localhost') &&
-      proc.input[0].address.includes(channel.channelid) &&
-      !proc.input[0].address.includes('ingest')
-    ) {
+    if (isLocalProtocolInput('srt')) {
       srt_enabled = false;
       control.srt.enable = true;
     }
