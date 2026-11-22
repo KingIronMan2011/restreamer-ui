@@ -138,6 +138,27 @@ describe('Restreamer client basics', () => {
     });
   });
 
+  it('reports updates only when update checks are enabled', () => {
+    const client = createRestreamer();
+    client.hasUpdates = true;
+    expect(client.CheckForUpdates()).toBe(false);
+    expect(client.HasUpdates()).toBe(false);
+
+    vi.spyOn(Storage, 'Get').mockImplementation((key) =>
+      key === 'updates' ? 'true' : 'false',
+    );
+    expect(client.CheckForUpdates()).toBe(true);
+    expect(client.HasUpdates()).toBe(true);
+    client.hasUpdates = false;
+    expect(client.HasUpdates()).toBe(false);
+
+    const set = vi.spyOn(Storage, 'Set');
+    client._checkForUpdates = vi.fn();
+    client.SetCheckForUpdates(false);
+    expect(set).toHaveBeenCalledWith('updates', false);
+    expect(client._checkForUpdates).toHaveBeenCalledOnce();
+  });
+
   it('dispatches API network and authentication errors and ignores suppressed errors', async () => {
     const client = createRestreamer();
     const listener = vi.fn();

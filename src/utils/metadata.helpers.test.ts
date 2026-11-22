@@ -469,6 +469,52 @@ describe('profile selection and validation', () => {
     });
   });
 
+  it('repairs negative stream indexes and streams with the wrong media type', () => {
+    const invalidIndexes = profile({
+      video: { source: 0, stream: -2, encoder: { coder: 'copy' } },
+      audio: { source: 0, stream: -2, encoder: { coder: 'copy' } },
+    });
+    Metadata.preselectProfile(
+      'video',
+      [
+        { type: 'video', codec: 'h264' },
+        { type: 'audio', codec: 'aac' },
+      ],
+      invalidIndexes,
+      { video: [], audio: [] },
+    );
+    expect(invalidIndexes.video).toMatchObject({
+      stream: 0,
+      encoder: { coder: 'copy' },
+    });
+    expect(invalidIndexes.audio).toMatchObject({
+      stream: 1,
+      encoder: { coder: 'copy' },
+    });
+
+    const wrongTypes = profile({
+      video: { source: 0, stream: 0, encoder: { coder: 'copy' } },
+      audio: { source: 0, stream: 1, encoder: { coder: 'copy' } },
+    });
+    Metadata.preselectProfile(
+      'video',
+      [
+        { type: 'audio', codec: 'aac' },
+        { type: 'video', codec: 'h264' },
+      ],
+      wrongTypes,
+      { video: [], audio: [] },
+    );
+    expect(wrongTypes.video).toMatchObject({
+      stream: 1,
+      encoder: { coder: 'copy' },
+    });
+    expect(wrongTypes.audio).toMatchObject({
+      stream: 0,
+      encoder: { coder: 'copy' },
+    });
+  });
+
   it('keeps missing compatible encoders disabled and honors plausible stream copies', () => {
     const noEncoders = profile({
       video: { source: 0, stream: 0, encoder: { coder: 'copy' } },

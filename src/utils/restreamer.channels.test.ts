@@ -138,6 +138,7 @@ describe('Restreamer channel helpers', () => {
     restreamer.channels.set('one', channel('one'));
     restreamer.channels.set('two', channel('two'));
     restreamer.SelectChannel('one');
+    const deleteEgress = restreamer.DeleteEgress.bind(restreamer);
     restreamer.StopAllEgresses = vi.fn().mockResolvedValue(undefined);
     restreamer.DeleteIngest = vi.fn().mockResolvedValue(undefined);
     restreamer.DeleteIngestSnapshot = vi.fn().mockResolvedValue(undefined);
@@ -147,9 +148,13 @@ describe('Restreamer channel helpers', () => {
     expect(restreamer.channels.size).toBe(1);
     expect(restreamer.GetCurrentChannelID()).toBe('two');
 
+    restreamer.DeleteEgress = deleteEgress;
     restreamer.SetChannelEgress('two', 'output', { id: 'output' });
-    restreamer._deleteProcess = vi.fn().mockResolvedValue(false);
+    expect(restreamer.GetChannel('two')?.egresses).toContain('output');
+    const deleteProcess = vi.fn().mockResolvedValue(false);
+    restreamer._deleteProcess = deleteProcess;
     await expect(restreamer.DeleteEgress('two', 'output')).resolves.toBe(false);
+    expect(deleteProcess).toHaveBeenCalledWith('output');
     expect(restreamer.GetChannelEgress('two', 'output')).not.toBeNull();
     restreamer._deleteProcess = vi.fn().mockResolvedValue(true);
     await expect(restreamer.DeleteEgress('two', 'output')).resolves.toBe(true);

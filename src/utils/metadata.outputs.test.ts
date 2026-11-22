@@ -128,6 +128,20 @@ describe('metadata output generation', () => {
     expect(Metadata.validateProfile([createSource()], profile)).toBe(false);
   });
 
+  it('treats absent overlays as empty when validating and generating options', () => {
+    const profile = createProfile({
+      video: { encoder: { coder: 'copy' }, overlays: null },
+    });
+
+    expect(Metadata.validateProfile([createSource()], profile)).toBe(true);
+    const [, , outputs] = Metadata.createInputsOutputs(
+      [createSource()],
+      [profile],
+    );
+    expect(outputs[0].options).toContain('-map');
+    expect(outputs[0].options).not.toContain('-filter_complex');
+  });
+
   it('builds centered overlays for hardware decode and VAAPI output', () => {
     const profile = createProfile({
       video: {

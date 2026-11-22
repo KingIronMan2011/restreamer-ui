@@ -94,6 +94,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    pool: 'vmThreads',
     setupFiles: ['./src/lib/setupTests.ts'],
     testTimeout: 50_000,
     coverage: {
