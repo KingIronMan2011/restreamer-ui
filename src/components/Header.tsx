@@ -20,8 +20,8 @@ import Modal from '@mui/material/Modal';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import * as Version from '../lib/version';
 import * as Storage from '../utils/storage';
@@ -30,7 +30,7 @@ import Logo from './Logo/rsLogo';
 import ModalContent from './ModalContent';
 import PaperThumb from './PaperThumb';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   header: {
     width: '100%',
     height: 132,
@@ -159,7 +159,7 @@ const StyledMenu = styled((props: React.ComponentProps<typeof Menu>) => (
 }));
 
 function AboutModal({ open = false, onClose = () => {} }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Modal open={open} onClose={onClose} className="modal">
@@ -253,7 +253,7 @@ function HeaderMenu({
   hasUpdates = false,
   hasService = false,
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const [$anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
   const [$about, setAbout] = React.useState(false);
@@ -429,7 +429,7 @@ export default function Header({
   hasUpdates = false,
   hasService = false,
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Grid

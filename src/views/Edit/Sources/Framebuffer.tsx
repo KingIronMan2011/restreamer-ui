@@ -3,15 +3,15 @@ import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import { Images } from 'lucide-react';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import Video from '../../../components/coders/settings/Video';
 import FormInlineButton from '../../../components/FormInlineButton';
 import SelectCustom from '../../../components/SelectCustom';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   gridContainer: {
     marginTop: '0.5em',
   },
@@ -57,7 +57,7 @@ function Source({
     return '';
   },
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { i18n } = useLingui();
   settings = initSettings(settings);
 

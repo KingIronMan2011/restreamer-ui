@@ -4,8 +4,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import * as M from '../../utils/metadata';
 import Summary from './Summary';
@@ -18,7 +18,7 @@ function IconEdit(props: any) {
   return <EditIcon {...props} />;
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   title: {
     float: 'left',
   },
@@ -34,7 +34,7 @@ export default function ProfileSummary({
   onEdit = function (type: any) {},
   onWizard = function () {},
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   profile = M.initProfile(profile);
 

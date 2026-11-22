@@ -1,8 +1,8 @@
 import Stack from '@mui/material/Stack';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   box: {
     backgroundColor: theme.palette.background.modalbox,
     borderRadius: 4,
@@ -15,7 +15,7 @@ export default function Component({
   style = null,
   children = null as import('react').ReactNode,
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Stack

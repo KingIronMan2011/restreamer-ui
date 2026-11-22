@@ -5,8 +5,8 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import Select from '../../Select';
 import cc_by_nc_nd from './images/by-nc-nd.svg';
@@ -17,7 +17,7 @@ import cc_by_sa from './images/by-sa.svg';
 import cc_by from './images/by.svg';
 import cc_zero from './images/cc-zero.svg';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   boxGray: {
     marginBottom: '.5em',
     marginTop: '.5em',
@@ -32,7 +32,7 @@ export default function License({
   license = 'none',
   onChange = function (license: any) {},
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const { i18n } = useLingui();
 

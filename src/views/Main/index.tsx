@@ -6,9 +6,9 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router';
+import { makeStyles } from 'tss-react/mui';
 
 import ActionButton from '../../components/ActionButton';
 import CopyButton from '../../components/CopyButton';
@@ -25,7 +25,7 @@ import Welcome from '../Welcome';
 import Progress from './Progress';
 import Publication from './Publication';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   gridContainerL1: {
     marginBottom: '6em',
   },
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Main({ restreamer }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const navigate = useNavigate();
   const { channelid: _channelid } = useParams();
   const [$state, setState] = React.useState<Record<string, any>>({
@@ -285,7 +285,7 @@ export default function Main({ restreamer }: any) {
   if ($state.ready === false) {
     return (
       <Paper xs={8} sm={6} md={4} className="PaperM">
-        <Grid container justifyContent="center" spacing={2} align="center">
+        <Grid container justifyContent="center" spacing={2} textAlign="center">
           <Grid item xs={12}>
             <CircularProgress color="primary" />
           </Grid>

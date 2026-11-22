@@ -1,8 +1,8 @@
 import CardMedia from '@mui/material/CardMedia';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   media: {
     paddingTop: '39.25%',
     borderRadius: 4,
@@ -14,7 +14,7 @@ export default function Component({
   title = '',
   height = '0px',
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <CardMedia

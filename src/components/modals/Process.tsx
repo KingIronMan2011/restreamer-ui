@@ -3,14 +3,14 @@ import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import ModalContent from '../ModalContent';
 import Progress from '../Progress';
 import Textarea from '../Textarea';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   title: {
     marginBottom: '-.3em',
     marginTop: '0em',
@@ -123,7 +123,7 @@ const Component = function ({
   onClose = null as (() => void) | null,
   onHelp = null as (() => void) | null,
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   logdata = initLogdata({
     ...logdata,
     command: progress?.command,

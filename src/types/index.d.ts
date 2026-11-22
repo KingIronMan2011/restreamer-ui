@@ -1,13 +1,8 @@
-import type { Theme } from '@mui/material/styles';
 import type { CSSProperties } from 'react';
 
 declare module '*.css';
 
 declare module '@fontsource/*';
-
-declare module '@mui/styles/defaultTheme' {
-  interface DefaultTheme extends Theme {}
-}
 
 declare module '@mui/material/styles' {
   interface TypeBackground {
@@ -99,12 +94,6 @@ declare module '@mui/material/Button' {
     big: true;
     bigSelected: true;
     service: true;
-  }
-}
-
-declare module '@mui/material/Grid' {
-  interface GridOwnProps {
-    align?: string;
   }
 }
 

@@ -11,7 +11,7 @@ export default function Saving({ onAbort = () => {} }: any) {
   return (
     <Paper xs={12} md={5} marginBottom="6em" className="PaperM">
       <PaperHeader spacing={2} variant="h1" onAbort={onAbort} />
-      <Grid container justifyContent="center" spacing={2} align="center">
+      <Grid container justifyContent="center" spacing={2} textAlign="center">
         <Grid item xs={12}>
           <CircularProgress color="inherit" />
         </Grid>

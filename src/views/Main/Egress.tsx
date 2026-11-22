@@ -7,12 +7,12 @@ import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import Services from '../Publication/Services';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   egressBar: {
     marginTop: '-.4em',
     marginBottom: '-.2em',
@@ -68,7 +68,7 @@ export default function Egress({
   onEdit = function () {},
   onOrder = function (order: any) {},
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const [$order, setOrder] = React.useState('stop');
 
   React.useEffect(() => {

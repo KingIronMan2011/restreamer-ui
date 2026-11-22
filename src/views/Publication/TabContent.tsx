@@ -4,10 +4,10 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   serviceIcon: {
     fontSize: '4rem!important',
     maxHeight: 64,
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function TabContent({ service = null, children = '' }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Grid container spacing={2}>

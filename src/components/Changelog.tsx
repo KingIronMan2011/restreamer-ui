@@ -1,18 +1,18 @@
 import { Trans } from '@lingui/react/macro';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import SemverEq from 'semver/functions/eq';
 import SemverGt from 'semver/functions/gt';
 import SemverLte from 'semver/functions/lte';
 import SemverValid from 'semver/functions/valid';
+import { makeStyles } from 'tss-react/mui';
 
 import BoxText from './BoxText';
 import Dialog from './modals/Dialog';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   h1: {
     fontFamily: theme.typography.h1.fontFamily,
     fontSize: theme.typography.h1.fontSize,
@@ -56,7 +56,7 @@ export default function Changelog({
   children = null as import('react').ReactNode,
 }: any) {
   const [$data, setData] = React.useState('');
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   React.useEffect(() => {
     (async () => {

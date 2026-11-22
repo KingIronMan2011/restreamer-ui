@@ -6,8 +6,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import Filesize from '../../../components/Filesize';
 import FormInlineButton from '../../../components/FormInlineButton';
@@ -22,7 +22,7 @@ const fileTypes = [
   },
 ];
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   gridContainer: {
     marginTop: '0.5em',
   },
@@ -66,7 +66,7 @@ function Source({
     return '';
   },
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   settings = initSettings(settings);
 
   const [$saving, setSaving] = React.useState(false);

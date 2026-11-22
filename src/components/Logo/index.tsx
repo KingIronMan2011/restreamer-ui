@@ -1,16 +1,16 @@
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import company_logo from './images/logo.svg';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   Logo: {
     height: 27,
   },
 }));
 
 export default function Logo(props: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   let link = 'https://datarhei.com';
 

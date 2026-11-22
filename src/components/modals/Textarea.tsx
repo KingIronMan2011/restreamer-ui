@@ -1,13 +1,13 @@
 import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import Stack from '@mui/material/Stack';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import ModalContent from '../ModalContent';
 import Textarea from '../Textarea';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   box: {
     backgroundColor: theme.palette.background.modalbox,
     borderRadius: 4,
@@ -26,7 +26,7 @@ const Component = function ({
   onClose = null as (() => void) | null,
   onHelp = null as (() => void) | null,
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Modal open={open} onClose={onClose} className="modal">

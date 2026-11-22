@@ -5,8 +5,8 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import CircularProgress from '../../../components/CircularProgress';
 import Filesize from '../../../components/Filesize';
@@ -19,7 +19,7 @@ const imageTypes = [
   { mimetype: 'video/*', extension: 'video', maxSize: 0 },
 ];
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   gridContainer: {
     marginTop: '0.5em',
   },
@@ -67,7 +67,7 @@ function Source({
     return '';
   },
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   settings = initSettings(settings);
 
   const [$progress, setProgress] = React.useState<Record<string, any>>({

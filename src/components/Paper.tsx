@@ -1,9 +1,9 @@
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   PaperM: {
     padding: '3em 3.5em 3em 3.5em!important',
   },
@@ -33,7 +33,7 @@ const Component = React.forwardRef<any, any>(
     },
     ref,
   ) => {
-    const classes = useStyles();
+    const { classes } = useStyles();
 
     return (
       <Grid

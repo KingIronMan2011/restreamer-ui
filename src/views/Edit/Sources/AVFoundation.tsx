@@ -6,15 +6,15 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import Checkbox from '../../../components/Checkbox';
 import Video from '../../../components/coders/settings/Video';
 import FormInlineButton from '../../../components/FormInlineButton';
 import SelectCustom from '../../../components/SelectCustom';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   gridContainer: {
     marginTop: '0.5em',
   },
@@ -84,7 +84,7 @@ function Source({
     return '';
   },
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { i18n } = useLingui();
   settings = initSettings(settings);
 

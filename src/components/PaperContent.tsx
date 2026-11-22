@@ -7,7 +7,12 @@ const Component = function ({
   children = null as import('react').ReactNode,
 }: any) {
   return (
-    <Grid container justifyContent="center" spacing={spacing} align={textAlign}>
+    <Grid
+      container
+      justifyContent="center"
+      spacing={spacing}
+      textAlign={textAlign}
+    >
       <Grid item xs={12}>
         {children}
       </Grid>

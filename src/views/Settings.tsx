@@ -14,9 +14,9 @@ import Stack from '@mui/material/Stack';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router';
+import { makeStyles } from 'tss-react/mui';
 
 import BoxText from '../components/BoxText';
 import BoxTextarea from '../components/BoxTextarea';
@@ -39,7 +39,7 @@ import useInterval from '../hooks/useInterval';
 import H from '../utils/help';
 import Restreamer from '../utils/restreamer';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   inlineEnv: {
     float: 'right',
   },
@@ -706,7 +706,7 @@ const toInt = (val: string | number) => {
 };
 
 export default function Settings({ restreamer }: { restreamer: Restreamer }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const { tab: _tab } = useParams();

@@ -11,9 +11,9 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate } from 'react-router';
+import { makeStyles } from 'tss-react/mui';
 
 import Checkbox from '../components/Checkbox';
 import ColorPicker from '../components/ColorPicker';
@@ -33,7 +33,7 @@ import UploadButton from '../components/UploadButton';
 import H from '../utils/help';
 import * as M from '../utils/metadata';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   buttonOpen: {
     float: 'right',
     marginLeft: '.5em',
@@ -52,7 +52,7 @@ const templateTypes = [
 ];
 
 export default function Playersite({ restreamer }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const navigate = useNavigate();
   const { i18n } = useLingui();
   const address = restreamer.Address() + '/';

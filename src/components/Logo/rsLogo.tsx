@@ -1,16 +1,16 @@
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import company_logo from './images/rs-logo.svg';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   Logo: {
     height: 95,
   },
 }));
 
 export default function Logo(props: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   let link = 'https://github.com/datarhei/restreamer';
 

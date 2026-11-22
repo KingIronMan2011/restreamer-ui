@@ -1,10 +1,10 @@
 import { useLingui } from '@lingui/react';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   root: {
     fontSize: '1rem',
     fontWeight: '400',
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 export default function LanguageSelect({
   onChange = function (lang: any) {},
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { i18n } = useLingui();
 
   const handleChange = (event: any) => {

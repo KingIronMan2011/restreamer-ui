@@ -1,8 +1,8 @@
 import Grid from '@mui/material/Grid';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   root: {
     marginBottom: '.3em',
     marginTop: '1.2em',
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Component = function ({ buttonsLeft = null, buttonsRight = null }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Grid container spacing={3}>

@@ -96,7 +96,7 @@ export default function Audio({
                   <Grid item xs={12}>
                     <FormControlLabel
                       value="video"
-                      control={<Radio />}
+                      control={<Radio color="secondary" />}
                       label={i18n._(t`Audio from device`)}
                     />
                   </Grid>
@@ -116,7 +116,7 @@ export default function Audio({
                   <Grid item xs={12}>
                     <FormControlLabel
                       value="alsa"
-                      control={<Radio />}
+                      control={<Radio color="secondary" />}
                       label={i18n._(t`Audio from device`)}
                     />
                   </Grid>
@@ -135,14 +135,14 @@ export default function Audio({
                 <div>
                   <FormControlLabel
                     value="silence"
-                    control={<Radio />}
+                    control={<Radio color="secondary" />}
                     label={i18n._(t`Silence Audio`)}
                   />
                 </div>
                 <div>
                   <FormControlLabel
                     value="none"
-                    control={<Radio />}
+                    control={<Radio color="secondary" />}
                     label={i18n._(t`No audio`)}
                   />
                 </div>

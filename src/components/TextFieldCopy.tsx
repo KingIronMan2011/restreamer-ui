@@ -5,13 +5,13 @@ import FormControl from '@mui/material/FormControl';
 import IconButton from '@mui/material/IconButton';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
-import makeStyles from '@mui/styles/makeStyles';
 import React, { useContext } from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import CopyToClipboard from '../utils/clipboard';
 import NotifyContext from './contexts/Notify';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   root: {
     '& .MuiOutlinedInput-notchedOutline': {
       borderWidth: 0,
@@ -32,7 +32,7 @@ export default function Component({
   size = 'small',
   onChange = function (value: any) {},
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { i18n } = useLingui();
 
   const notify = useContext(NotifyContext);

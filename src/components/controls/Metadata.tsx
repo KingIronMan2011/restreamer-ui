@@ -2,13 +2,13 @@ import { Trans } from '@lingui/react/macro';
 import Grid from '@mui/material/Grid';
 import Tab from '@mui/material/Tab';
 import TextField from '@mui/material/TextField';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import TabPanel from '../TabPanel';
 import TabsHorizontal from '../TabsHorizontal';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   root: {
     '& .MuiOutlinedInput-input': {
       whiteSpace: 'pre-line',
@@ -37,7 +37,7 @@ export default function Control({
   settings = {},
   onChange = function (metadata: any) {},
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const [$tab, setTab] = React.useState('content');
   settings = init(settings);
 

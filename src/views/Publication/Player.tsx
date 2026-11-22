@@ -9,9 +9,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Tab from '@mui/material/Tab';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router';
+import { makeStyles } from 'tss-react/mui';
 
 import Checkbox from '../../components/Checkbox';
 import NotifyContext from '../../components/contexts/Notify';
@@ -28,7 +28,7 @@ import TextFieldCopy from '../../components/TextFieldCopy';
 import UploadButton from '../../components/UploadButton';
 import H from '../../utils/help';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   gridContainer: {
     paddingTop: '1em',
   },
@@ -64,7 +64,7 @@ const posterImageTypes = [
 ];
 
 export default function Edit({ restreamer }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const navigate = useNavigate();
   const { channelid: _channelid } = useParams();
   const { i18n } = useLingui();

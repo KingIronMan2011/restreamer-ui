@@ -1,11 +1,11 @@
 import { Trans } from '@lingui/react/macro';
 import Chip from '@mui/material/Chip';
 import Tooltip from '@mui/material/Tooltip';
-import makeStyles from '@mui/styles/makeStyles';
-import withStyles from '@mui/styles/withStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
+import { withStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   root: {
     color: theme.palette.text.primary,
     backgroundColor: theme.palette.error.main,
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const HtmlTooltip = withStyles((theme) => ({
+const HtmlTooltip = withStyles(Tooltip, (theme) => ({
   tooltip: {
     backgroundColor: theme.palette.error.main,
     color: theme.palette.text.primary,
@@ -29,10 +29,10 @@ const HtmlTooltip = withStyles((theme) => ({
   arrow: {
     color: theme.palette.error.main,
   },
-}))(Tooltip);
+}));
 
 export default function Component({ style = null }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   return (
     <HtmlTooltip
       title={

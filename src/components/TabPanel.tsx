@@ -1,8 +1,8 @@
 import Box from '@mui/material/Box';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   root: {
     padding: 0,
   },
@@ -16,7 +16,7 @@ export default function TabPanel({
   value = '',
   index = '',
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <div

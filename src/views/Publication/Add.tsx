@@ -15,9 +15,9 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router';
+import { makeStyles } from 'tss-react/mui';
 
 import NotifyContext from '../../components/contexts/Notify';
 import LimitsControl from '../../components/controls/Limits';
@@ -36,7 +36,7 @@ import * as helper from './helper';
 import Services from './Services';
 import TabContent from './TabContent';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   buttonAbort: {
     marginBottom: '0.3em',
   },
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Add({ restreamer }: any) {
   const theme = useTheme();
   const breakpointUpSm = useMediaQuery(theme.breakpoints.up('sm'));
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const [$ready, setReady] = React.useState(false);
@@ -350,7 +350,7 @@ export default function Add({ restreamer }: any) {
       // TODO: Style Tooltip + Fix Tooltip + Disabled
       if (helper.checkServiceRequirements(s.requires, $skills) === false) {
         serviceList.push(
-          <Grid item xs={12} sm={6} md={3} align="center" key={s.id}>
+          <Grid item xs={12} sm={6} md={3} textAlign="center" key={s.id}>
             <Tooltip
               title={
                 <React.Fragment>
@@ -378,7 +378,7 @@ export default function Add({ restreamer }: any) {
         );
       } else {
         serviceList.push(
-          <Grid item xs={12} sm={6} md={3} align="center" key={s.id}>
+          <Grid item xs={12} sm={6} md={3} textAlign="center" key={s.id}>
             <Button variant="big" onClick={handleServiceSelect(s.id)}>
               <div>
                 <Icon />
@@ -419,7 +419,7 @@ export default function Add({ restreamer }: any) {
         {$service === '' ? (
           <React.Fragment>
             <Grid container spacing={2}>
-              <Grid item xs={12} align="center">
+              <Grid item xs={12} textAlign="center">
                 <ToggleButtonGroup
                   className={classes.buttonGroup}
                   size={breakpointUpSm ? 'medium' : 'small'}

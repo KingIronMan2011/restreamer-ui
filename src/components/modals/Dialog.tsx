@@ -5,10 +5,10 @@ import IconButton from '@mui/material/IconButton';
 import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   modalHeader: {
     marginBottom: '.7em',
     '& button': {
@@ -55,7 +55,7 @@ const Component = React.forwardRef<any, any>(
     },
     ref,
   ) => {
-    const classes = useStyles();
+    const { classes } = useStyles();
 
     const paperStyle: Record<string, any> = {};
 

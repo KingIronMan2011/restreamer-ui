@@ -5,15 +5,15 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import { Cpu } from 'lucide-react';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import Video from '../../../components/coders/settings/Video';
 import FormInlineButton from '../../../components/FormInlineButton';
 import SelectCustom from '../../../components/SelectCustom';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   gridContainer: {
     marginTop: '0.5em',
   },
@@ -63,7 +63,7 @@ function Source({
   onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { i18n } = useLingui();
   settings = initSettings(settings);
 

@@ -3,8 +3,8 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Select from '@mui/material/Select';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 const MenuProps = {
   PaperProps: {
@@ -14,7 +14,7 @@ const MenuProps = {
   },
 };
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   root: {
     fontWeight: 'bold',
     backgroundColor: theme.palette.background.dark1,
@@ -30,7 +30,7 @@ export default function Component({
   onChange = function (event: any) {},
   items = [],
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <FormControl variant={variant} disabled={disabled} fullWidth>

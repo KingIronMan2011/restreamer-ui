@@ -13,9 +13,9 @@ import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate } from 'react-router';
+import { makeStyles } from 'tss-react/mui';
 import urlparser from 'url-parse';
 
 import BoxText from '../../../components/BoxText';
@@ -27,7 +27,7 @@ import Password from '../../../components/Password';
 import Select from '../../../components/Select';
 import Textarea from '../../../components/Textarea';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   gridContainer: {
     marginTop: '0.5em',
   },
@@ -949,7 +949,7 @@ function Pull({
   onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const authProtocol = isAuthProtocol(settings.address);
   const validURL = isValidURL(settings.address);
   const supportedProtocol = isSupportedProtocol(
@@ -987,7 +987,7 @@ function Pull({
       {validURL === true && (
         <React.Fragment>
           {!supportedProtocol ? (
-            <Grid item xs={12} align="center">
+            <Grid item xs={12} textAlign="center">
               <BoxText color="dark">
                 <WarningIcon fontSize="large" color="error" />
                 <Typography>
@@ -1059,7 +1059,7 @@ function Push({
   onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   //const supportsHLS = isSupportedProtocol('http://', skills.protocols.input);
   const supportsRTMP = isSupportedProtocol('rtmp://', skills.protocols.input);
@@ -1073,7 +1073,7 @@ function Push({
         spacing={2}
         className={classes.gridContainer}
       >
-        <Grid item xs={12} align="center">
+        <Grid item xs={12} textAlign="center">
           <BoxText color="dark">
             <WarningIcon fontSize="large" color="error" />
             <Typography>
@@ -1154,7 +1154,7 @@ function PushHLS({
   onChange = function (settings: any) {},
   onProbe = function (settings: any, inputs: any) {},
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const HLS = getHLS(config);
 
@@ -1200,7 +1200,7 @@ function PushRTMP({
   onRefresh = function () {},
 }: any) {
   const { i18n } = useLingui();
-  const classes = useStyles();
+  const { classes } = useStyles();
   const navigate = useNavigate();
 
   let form = null;
@@ -1327,7 +1327,7 @@ function PushSRT({
   onRefresh = function () {},
 }: any) {
   const { i18n } = useLingui();
-  const classes = useStyles();
+  const { classes } = useStyles();
   const navigate = useNavigate();
 
   let form = null;
@@ -1456,7 +1456,7 @@ function Source({
     return '';
   },
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { i18n } = useLingui();
   config = initConfig(config);
   settings = initSettings(settings, config);

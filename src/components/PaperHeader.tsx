@@ -5,10 +5,10 @@ import HelpIcon from '@mui/icons-material/HelpOutline';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   root: {
     marginBottom: '.3em',
     '& button': {
@@ -28,7 +28,7 @@ const Component = function ({
   onEdit = null,
   onAdd = null,
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Grid container spacing={spacing} padding={padding}>

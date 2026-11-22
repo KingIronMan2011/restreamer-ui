@@ -12,18 +12,17 @@ import ButtonBase from '@mui/material/ButtonBase';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/styles';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
 import Dialog from './modals/Dialog';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   drawerPaper: {
     marginBottom: '60px',
     boxShadow:
@@ -130,7 +129,7 @@ function ChannelButton({
   onClick = () => {},
   largeChannelList = [],
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const theme = useTheme();
 
   let color = theme.palette.primary.main;
@@ -256,7 +255,7 @@ export default function ChannelList({
     return states;
   },
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const theme = useTheme();
   const breakpointSmall = useMediaQuery(theme.breakpoints.up('sm'));
   const breakpointMedium = useMediaQuery(theme.breakpoints.up('md'));

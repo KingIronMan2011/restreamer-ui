@@ -1,9 +1,9 @@
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   root: {
     color: theme.palette.text.primary,
     '&.Mui-checked': {
@@ -23,7 +23,7 @@ export default function Component({
   disabled = false,
   onChange = function (event: any) {},
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <FormControlLabel

@@ -1,9 +1,9 @@
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   box: {
     borderBottom: `2px solid ${theme.palette.background.light1}`,
     padding: '0em',
@@ -30,7 +30,7 @@ export default function Component({
   children = null as import('react').ReactNode,
   onChange = function (event: any) {},
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Box className={classes.box}>

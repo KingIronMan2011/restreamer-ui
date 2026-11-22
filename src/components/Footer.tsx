@@ -9,16 +9,16 @@ import ListSubheader from '@mui/material/ListSubheader';
 import Popover from '@mui/material/Popover';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { isMobile } from 'react-device-detect';
+import { makeStyles } from 'tss-react/mui';
 
 import useInterval from '../hooks/useInterval';
 import Duration from './Duration';
 import Logo from './Logo';
 import Number from './Number';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   footer: {
     zIndex: '2',
     position: 'fixed',
@@ -71,7 +71,7 @@ function Resources({
 }: {
   getResources: () => Promise<Record<string, any> | null>;
 }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const [$popover, setPopover] = React.useState<HTMLElement | null>(null);
   const [$resources, setResources] = React.useState<Record<string, any> | null>(
     null,
@@ -412,7 +412,7 @@ export default function Footer({
   version?: any;
   getResources?: () => Promise<Record<string, any> | null>;
 }) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   if (expand === true) {
     return (

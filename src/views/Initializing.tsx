@@ -11,7 +11,7 @@ export default function Invalid(props: any) {
   return (
     <Paper xs={8} sm={5} className="PaperM">
       <PaperContent>
-        <Grid container justifyContent="center" spacing={2} align="center">
+        <Grid container justifyContent="center" spacing={2} textAlign="center">
           <Grid item xs={12}>
             <CircularProgress color="inherit" />
           </Grid>

@@ -4,9 +4,9 @@ import PersonIcon from '@mui/icons-material/Person';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate } from 'react-router';
+import { makeStyles } from 'tss-react/mui';
 
 import Number from '../../components/Number';
 import Paper from '../../components/Paper';
@@ -16,7 +16,7 @@ import H from '../../utils/help';
 import Services from '../Publication/Services';
 import Egress from './Egress';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   viewerCount: {
     fontSize: '3.5rem',
     fontWeight: 600,
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Publication({ channelid = '', restreamer }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const navigate = useNavigate();
   const services = Services.IDs();
@@ -170,7 +170,7 @@ export default function Publication({ channelid = '', restreamer }: any) {
           onHelp={handleHelp}
         />
         <Grid container spacing={1}>
-          <Grid item xs={12} align="center">
+          <Grid item xs={12} textAlign="center">
             <Divider />
             <Typography component="div" className={classes.viewerCount}>
               <Number value={$session.viewer} />
@@ -188,7 +188,7 @@ export default function Publication({ channelid = '', restreamer }: any) {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item xs={12} align="center" className={classes.bandwidth}>
+          <Grid item xs={12} textAlign="center" className={classes.bandwidth}>
             <Typography component="div" className={classes.bandwidthCount}>
               <Number value={$session.bandwidth} />
             </Typography>

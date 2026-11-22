@@ -1,8 +1,8 @@
 import Button from '@mui/material/Button';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   button: {
     fontSize: '.9rem!important',
     height: '56px!important',
@@ -23,7 +23,7 @@ export default function Component({
   onClick = () => {},
   children = null as import('react').ReactNode,
 }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Button

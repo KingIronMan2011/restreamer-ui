@@ -3,12 +3,12 @@ import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import Grid from '@mui/material/Grid';
 import Snackbar from '@mui/material/Snackbar';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router';
 import { HashRouter as DOMRouter } from 'react-router';
 import SemverGt from 'semver/functions/gt';
 import SemverValid from 'semver/functions/valid';
+import { makeStyles } from 'tss-react/mui';
 
 import Changelog from './components/Changelog';
 import ChannelList from './components/ChannelList';
@@ -22,7 +22,7 @@ import * as M from './utils/metadata';
 import Restreamer from './utils/restreamer';
 import Views from './views';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   MainHeader: {
     height: '132px',
   },
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function App({ address = '' }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const [$state, setState] = React.useState<Record<string, any>>({
     initialized: false,

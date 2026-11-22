@@ -292,7 +292,7 @@ export default function Wizard({ restreamer }: any) {
       const Icon = s.icon;
 
       availableSources.push(
-        <Grid item xs={6} align="center" key={s.id}>
+        <Grid item xs={6} textAlign="center" key={s.id}>
           <Button variant="big" onClick={handleNext(s.id)}>
             <div>
               <Icon fontSize="large" />

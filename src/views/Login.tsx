@@ -237,7 +237,7 @@ export default function Login({
     <Paper xs={11} sm={10} md={6}>
       <Grid container spacing={3} padding={{ xs: 1, sm: 5 }}>
         {$loginTarget !== 'none' && (
-          <Grid item xs={12} align="center">
+          <Grid item xs={12} textAlign="center">
             {$auths.length > 1 && (
               <ToggleButtonGroup
                 value={$loginTarget}
@@ -265,7 +265,7 @@ export default function Login({
         )}
         {$loginTarget === 'none' && (
           <React.Fragment>
-            <Grid item xs={12} align="center">
+            <Grid item xs={12} textAlign="center">
               <Typography>
                 <Trans>There's no login method available.</Trans>
               </Typography>
@@ -319,7 +319,7 @@ export default function Login({
           $loginTarget === 'service' &&
           !hasAuthType($auths, 'auth0') && (
             <React.Fragment>
-              <Grid item xs={12} align="center">
+              <Grid item xs={12} textAlign="center">
                 <Grid container spacing={0}>
                   <Grid item xs={12}>
                     <Typography variant="h3" style={{ marginBottom: 10 }}>
@@ -360,7 +360,7 @@ export default function Login({
           <React.Fragment>
             <Grid item xs={12}>
               <Grid container spacing={3}>
-                <Grid item xs={12} align="center">
+                <Grid item xs={12} textAlign="center">
                   <Typography>
                     <Trans>
                       Use Auth0 for your running Restreamer Core. More{' '}
@@ -377,7 +377,7 @@ export default function Login({
                 </Grid>
                 {$canUseAuth0 === false ? (
                   <React.Fragment>
-                    <Grid item xs={12} align="center">
+                    <Grid item xs={12} textAlign="center">
                       <Typography>
                         <Trans>
                           Auth0 is currently not available because this

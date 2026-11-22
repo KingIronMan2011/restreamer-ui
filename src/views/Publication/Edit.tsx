@@ -11,9 +11,9 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router';
+import { makeStyles } from 'tss-react/mui';
 
 import BoxText from '../../components/BoxText';
 import NotifyContext from '../../components/contexts/Notify';
@@ -38,7 +38,7 @@ import Process from './Process';
 import Services from './Services';
 import TabContent from './TabContent';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles()(() => ({
   gridContainer: {
     marginTop: '0.5em',
     marginBottom: '1em',
@@ -50,7 +50,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function Edit({ restreamer }: any) {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { i18n } = useLingui();
   const {
     channelid: _channelid,
@@ -590,7 +590,7 @@ export default function Edit({ restreamer }: any) {
                             progress={$progress}
                           />
                         </Grid>
-                        <Grid item xs={12} align="right">
+                        <Grid item xs={12} textAlign="right">
                           <Link
                             color="textSecondary"
                             href="#!"
