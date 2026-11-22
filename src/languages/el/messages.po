@@ -13,24 +13,24 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/EncodingSelect.tsx:280
+#: src/components/EncodingSelect.tsx:284
 msgid "<0>Compatibility list</0>"
 msgstr "<0>Λίστα συμβατότητας</0>"
 
-#: src/views/Edit/Profile.tsx:615
-#: src/views/Edit/Profile.tsx:801
+#: src/views/Edit/Profile.tsx:630
+#: src/views/Edit/Profile.tsx:831
 msgid "<0>Show probe details</0>"
 msgstr "<0>Εμφάνιση λεπτομερειών ανιχνευτή</0>"
 
-#: src/views/Publication/Services/Core.tsx:242
+#: src/views/Publication/Services/Core.tsx:247
 msgid "1. Switch to the interface of the target Restreamer."
 msgstr "1. Μεταβείτε στη διασύνδεση του Restreamer-στόχου."
 
-#: src/views/Publication/Services/Core.tsx:246
+#: src/views/Publication/Services/Core.tsx:251
 msgid "2. Create a new channel and select RTMP or SRT server."
 msgstr "2. Δημιουργήστε ένα νέο κανάλι και επιλέξτε διακομιστή RTMP ή SRT."
 
-#: src/views/Publication/Services/Core.tsx:250
+#: src/views/Publication/Services/Core.tsx:255
 msgid "3. Copy the URL and paste it in the \"Target address\" field."
 msgstr "3. Αντιγράψτε τη διεύθυνση URL και επικολλήστε την στο πεδίο \"Διεύθυνση στόχου\"."
 
@@ -42,23 +42,23 @@ msgstr "6 (+ εγγυημένη έναρξη με ένα πλαίσιο Key)"
 msgid "7 (+ fragmented MP4 format)"
 msgstr "7 (+ κατακερματισμένη μορφή MP4)"
 
-#: src/components/ChannelList.tsx:517
-#: src/views/Edit/index.tsx:791
-#: src/views/Edit/index.tsx:821
-#: src/views/Edit/Profile.tsx:662
+#: src/components/ChannelList.tsx:559
+#: src/views/Edit/index.tsx:844
+#: src/views/Edit/index.tsx:874
+#: src/views/Edit/Profile.tsx:677
 #: src/views/Edit/Wizard/Abort.tsx:21
-#: src/views/Publication/Edit.tsx:763
-#: src/views/Settings.tsx:2738
-#: src/views/Settings.tsx:2765
+#: src/views/Publication/Edit.tsx:768
+#: src/views/Settings.tsx:2818
+#: src/views/Settings.tsx:2845
 msgid "Abort"
 msgstr "Διακοπή"
 
-#: src/components/Header.tsx:332
-#: src/components/Header.tsx:386
+#: src/components/Header.tsx:335
+#: src/components/Header.tsx:389
 msgid "About"
 msgstr "Σχετικά με το"
 
-#: src/components/ChannelList.tsx:530
+#: src/components/ChannelList.tsx:572
 msgid "Add"
 msgstr "Προσθέστε"
 
@@ -66,89 +66,93 @@ msgstr "Προσθέστε"
 msgid "Add Audio"
 msgstr ""
 
-#: src/views/Playersite.tsx:762
+#: src/views/Playersite.tsx:793
 msgid "Add external widgets and styles to the publication site. You can find some examples on the help page."
 msgstr "Προσθέστε εξωτερικά widgets και στυλ στον ιστότοπο δημοσίευσης. Μπορείτε να βρείτε μερικά παραδείγματα στη σελίδα βοήθειας."
 
-#: src/components/ChannelList.tsx:510
+#: src/components/controls/VideoOverlays.tsx:148
+msgid "Add image"
+msgstr ""
+
+#: src/components/ChannelList.tsx:552
 msgid "Add new channel"
 msgstr "Προσθήκη νέου καναλιού"
 
-#: src/views/Publication/Add.tsx:408
+#: src/views/Publication/Add.tsx:442
 msgid "Add Publication"
 msgstr "Προσθήκη δημοσίευσης"
 
 #. placeholder {0}: service.name
-#: src/views/Publication/Add.tsx:411
+#: src/views/Publication/Add.tsx:445
 msgid "Add: {0}"
 msgstr "Προσθήκη: {0}"
 
-#: src/views/Playersite.tsx:409
+#: src/views/Playersite.tsx:410
 msgid "Additional channels"
 msgstr ""
 
-#: src/views/Playersite.tsx:441
+#: src/views/Playersite.tsx:442
 msgid "Additional channels to display on the playersite."
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:976
+#: src/views/Edit/Sources/Network.tsx:981
 #: src/views/Edit/Wizard/Sources/Network.tsx:77
-#: src/views/Publication/Services/Azure.tsx:112
-#: src/views/Publication/Services/Brightcove.tsx:112
-#: src/views/Publication/Services/Core.tsx:263
-#: src/views/Publication/Services/DASH.tsx:213
-#: src/views/Publication/Services/HLS.tsx:208
-#: src/views/Publication/Services/Icecast.tsx:197
-#: src/views/Publication/Services/Image2.tsx:147
-#: src/views/Publication/Services/Linkedin.tsx:112
-#: src/views/Publication/Services/MPEGTS.tsx:203
-#: src/views/Publication/Services/Red5.tsx:141
-#: src/views/Publication/Services/RTMP.tsx:181
-#: src/views/Publication/Services/RTSP.tsx:166
-#: src/views/Publication/Services/SRT.tsx:184
-#: src/views/Publication/Services/UDP.tsx:151
-#: src/views/Publication/Services/WOWZA.tsx:157
-#: src/views/Settings.tsx:1594
+#: src/views/Publication/Services/Azure.tsx:122
+#: src/views/Publication/Services/Brightcove.tsx:122
+#: src/views/Publication/Services/Core.tsx:268
+#: src/views/Publication/Services/DASH.tsx:223
+#: src/views/Publication/Services/HLS.tsx:218
+#: src/views/Publication/Services/Icecast.tsx:207
+#: src/views/Publication/Services/Image2.tsx:157
+#: src/views/Publication/Services/Linkedin.tsx:122
+#: src/views/Publication/Services/MPEGTS.tsx:213
+#: src/views/Publication/Services/Red5.tsx:151
+#: src/views/Publication/Services/RTMP.tsx:191
+#: src/views/Publication/Services/RTSP.tsx:176
+#: src/views/Publication/Services/SRT.tsx:194
+#: src/views/Publication/Services/UDP.tsx:161
+#: src/views/Publication/Services/WOWZA.tsx:167
+#: src/views/Settings.tsx:1609
 msgid "Address"
 msgstr "Διεύθυνση"
 
-#: src/views/Playersite.tsx:694
+#: src/views/Playersite.tsx:720
 msgid "Address for the background image."
 msgstr "Διεύθυνση για την εικόνα φόντου."
 
-#: src/views/Settings.tsx:1631
+#: src/views/Settings.tsx:1651
 msgid "Address to listen on for HTTP requests."
 msgstr "Διεύθυνση για ακρόαση για αιτήσεις HTTP."
 
-#: src/views/Settings.tsx:1648
+#: src/views/Settings.tsx:1673
 msgid "Address to listen on for HTTPS requests."
 msgstr "Διεύθυνση για ακρόαση για αιτήσεις HTTPS."
 
-#: src/views/Edit/Sources/Network.tsx:1289
-#: src/views/Edit/Sources/Network.tsx:1416
+#: src/views/Edit/Sources/Network.tsx:1334
+#: src/views/Edit/Sources/Network.tsx:1469
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:147
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:147
 msgid "Address:"
 msgstr "Διεύθυνση:"
 
-#: src/views/Playersite.tsx:577
+#: src/views/Playersite.tsx:598
 msgid "Adjust publication site colors and background as you like."
 msgstr "Προσαρμόστε τα χρώματα και το φόντο του ιστότοπου δημοσίευσης όπως σας αρέσει."
 
-#: src/views/Login.tsx:337
+#: src/views/Login.tsx:360
 msgid "Advanced monitoring"
 msgstr "Προηγμένη παρακολούθηση"
 
-#: src/views/Edit/Sources/Network.tsx:616
-#: src/views/Publication/Services/DASH.tsx:244
-#: src/views/Publication/Services/HLS.tsx:239
-#: src/views/Publication/Services/Icecast.tsx:211
-#: src/views/Publication/Services/Image2.tsx:160
-#: src/views/Publication/Services/MPEGTS.tsx:216
-#: src/views/Publication/Services/RTMP.tsx:203
-#: src/views/Publication/Services/RTSP.tsx:197
-#: src/views/Publication/Services/SRT.tsx:205
-#: src/views/Publication/Services/UDP.tsx:163
+#: src/views/Edit/Sources/Network.tsx:617
+#: src/views/Publication/Services/DASH.tsx:254
+#: src/views/Publication/Services/HLS.tsx:249
+#: src/views/Publication/Services/Icecast.tsx:221
+#: src/views/Publication/Services/Image2.tsx:170
+#: src/views/Publication/Services/MPEGTS.tsx:226
+#: src/views/Publication/Services/RTMP.tsx:213
+#: src/views/Publication/Services/RTSP.tsx:207
+#: src/views/Publication/Services/SRT.tsx:215
+#: src/views/Publication/Services/UDP.tsx:173
 msgid "Advanced settings"
 msgstr "Προηγμένες ρυθμίσεις"
 
@@ -156,16 +160,16 @@ msgstr "Προηγμένες ρυθμίσεις"
 msgid "Advanced setup"
 msgstr "Προηγμένη ρύθμιση"
 
-#: src/views/Playersite.tsx:464
-#: src/views/Publication/Player.tsx:591
+#: src/views/Playersite.tsx:465
+#: src/views/Publication/Player.tsx:637
 msgid "AirPlay"
 msgstr "AirPlay"
 
-#: src/views/Login.tsx:340
+#: src/views/Login.tsx:363
 msgid "Alerting by email"
 msgstr "Ειδοποίηση μέσω email"
 
-#: src/views/Publication/Add.tsx:431
+#: src/views/Publication/Add.tsx:470
 msgid "All"
 msgstr "Όλα"
 
@@ -173,41 +177,41 @@ msgstr "Όλα"
 msgid "All frames"
 msgstr "Όλα τα πλαίσια"
 
-#: src/views/Settings.tsx:1402
+#: src/views/Settings.tsx:1415
 msgid "All important system settings."
 msgstr "Όλες οι σημαντικές ρυθμίσεις του συστήματος."
 
-#: src/views/Settings.tsx:1837
+#: src/views/Settings.tsx:1872
 msgid "Allow all referrer"
 msgstr "Επιτρέψτε όλους τους παραπέμποντες"
 
-#: src/views/Settings.tsx:1890
+#: src/views/Settings.tsx:1925
 msgid "Allow counting how many viewers the stream has."
 msgstr "Επιτρέπει την καταμέτρηση του αριθμού των θεατών που έχει η ροή."
 
-#: src/views/Edit/Sources/ALSA.tsx:185
+#: src/views/Edit/Sources/ALSA.tsx:190
 msgid "ALSA"
 msgstr "ALSA"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:154
+#: src/views/Edit/Sources/VirtualAudio.tsx:156
 msgid "Amplitude"
 msgstr "Πλάτος"
 
-#: src/components/Env.tsx:40
+#: src/components/Env.tsx:42
 msgid "An environment variable sets this value."
 msgstr "Μια μεταβλητή περιβάλλοντος καθορίζει αυτή την τιμή."
 
-#: src/views/Settings.tsx:1051
+#: src/views/Settings.tsx:1059
 msgid "API endpoint not found. Settings not saved."
 msgstr "Το τελικό σημείο API δεν βρέθηκε. Οι ρυθμίσεις δεν έχουν αποθηκευτεί."
 
-#: src/views/Settings.tsx:2379
+#: src/views/Settings.tsx:2449
 msgid "App"
 msgstr "Εφαρμογή"
 
-#: src/components/Footer.tsx:251
-#: src/views/Publication/Services/Red5.tsx:152
-#: src/views/Publication/Services/WOWZA.tsx:177
+#: src/components/Footer.tsx:258
+#: src/views/Publication/Services/Red5.tsx:167
+#: src/views/Publication/Services/WOWZA.tsx:192
 msgid "Application"
 msgstr "Εφαρμογή"
 
@@ -215,12 +219,12 @@ msgstr "Εφαρμογή"
 msgid "Are you sure you want to abort the wizard?"
 msgstr "Είστε σίγουροι ότι θέλετε να διακόψετε τον οδηγό;"
 
-#: src/views/Publication/Add.tsx:605
+#: src/views/Publication/Add.tsx:644
 msgid "Audio"
 msgstr "Ήχος"
 
-#: src/views/Edit/Sources/ALSA.tsx:130
-#: src/views/Edit/Sources/AVFoundation.tsx:172
+#: src/views/Edit/Sources/ALSA.tsx:135
+#: src/views/Edit/Sources/AVFoundation.tsx:173
 msgid "Audio device"
 msgstr "Συσκευή ήχου"
 
@@ -228,14 +232,14 @@ msgstr "Συσκευή ήχου"
 msgid "Audio Device"
 msgstr "Συσκευή ήχου"
 
-#: src/views/Edit/Wizard/Audio.tsx:100
-#: src/views/Edit/Wizard/Audio.tsx:120
+#: src/views/Edit/Wizard/Audio.tsx:112
+#: src/views/Edit/Wizard/Audio.tsx:132
 msgid "Audio from device"
 msgstr "Ήχος από συσκευή"
 
-#: src/views/Edit/Profile.tsx:682
-#: src/views/Edit/ProfileSummary.tsx:93
-#: src/views/Publication/Edit.tsx:683
+#: src/views/Edit/Profile.tsx:697
+#: src/views/Edit/ProfileSummary.tsx:92
+#: src/views/Publication/Edit.tsx:688
 msgid "Audio settings"
 msgstr "Ρυθμίσεις ήχου"
 
@@ -243,24 +247,24 @@ msgstr "Ρυθμίσεις ήχου"
 msgid "Audio setup"
 msgstr "Ρύθμιση ήχου"
 
-#: src/views/Login.tsx:249
+#: src/views/Login.tsx:261
 msgid "Auth0"
 msgstr "Auth0"
 
-#: src/views/Login.tsx:382
+#: src/views/Login.tsx:415
 msgid "Auth0 is currently not available because this interface is loaded from an insecure origin."
 msgstr "Το Auth0 δεν είναι προς το παρόν διαθέσιμο, επειδή αυτή η διασύνδεση έχει φορτωθεί από μη ασφαλή πηγή."
 
-#: src/views/Login.tsx:395
+#: src/views/Login.tsx:428
 msgid "Auth0 Tenant"
 msgstr "Auth0 Μισθωτής"
 
-#: src/components/controls/Metadata.tsx:73
+#: src/components/controls/Metadata.tsx:74
 msgid "Author"
 msgstr "Συγγραφέας"
 
-#: src/views/Settings.tsx:1343
-#: src/views/Settings.tsx:1756
+#: src/views/Settings.tsx:1356
+#: src/views/Settings.tsx:1791
 msgid "Authorization"
 msgstr "Εξουσιοδότηση"
 
@@ -268,80 +272,80 @@ msgstr "Εξουσιοδότηση"
 msgid "Auto"
 msgstr "Auto"
 
-#: src/components/controls/HLS.tsx:150
+#: src/components/controls/HLS.tsx:160
 msgid "Automatic cleanup of all media data"
 msgstr "Αυτόματος καθαρισμός όλων των δεδομένων πολυμέσων"
 
-#: src/views/Publication/Player.tsx:576
+#: src/views/Publication/Player.tsx:622
 msgid "Autoplay"
 msgstr "Αυτόματο παιχνίδι"
 
-#: src/views/Playersite.tsx:492
+#: src/views/Playersite.tsx:493
 msgid "Available"
 msgstr "Διαθέσιμο"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:257
+#: src/views/Edit/Sources/AVFoundation.tsx:260
 msgid "AVFoundation"
 msgstr "Ίδρυμα AVFoundation"
 
-#: src/views/Edit/Sources/Network.tsx:885
+#: src/views/Edit/Sources/Network.tsx:886
 msgid "avoid_negative_ts"
 msgstr "avoid_negative_ts"
 
-#: src/views/Edit/Profile.tsx:846
+#: src/views/Edit/Profile.tsx:876
 #: src/views/Edit/Wizard/Abort.tsx:42
-#: src/views/Edit/Wizard/Audio.tsx:158
+#: src/views/Edit/Wizard/Audio.tsx:170
 #: src/views/Edit/Wizard/License.tsx:50
 #: src/views/Edit/Wizard/Metadata.tsx:49
-#: src/views/Edit/Wizard/Video.tsx:92
+#: src/views/Edit/Wizard/Video.tsx:104
 #: src/views/Edit/Wizard/VideoProfile.tsx:107
-#: src/views/Publication/Add.tsx:647
+#: src/views/Publication/Add.tsx:686
 msgid "Back"
 msgstr "Πίσω"
 
-#: src/views/Playersite.tsx:628
+#: src/views/Playersite.tsx:649
 msgid "Background colors"
 msgstr "Χρώματα φόντου"
 
-#: src/views/Playersite.tsx:681
+#: src/views/Playersite.tsx:702
 msgid "Background image"
 msgstr "Εικόνα φόντου"
 
-#: src/views/Publication/Services/DaCast.tsx:220
+#: src/views/Publication/Services/DaCast.tsx:255
 msgid "Backup server"
 msgstr "Διακομιστής αντιγράφων ασφαλείας"
 
-#: src/views/Publication/Services/Youtube.tsx:237
+#: src/views/Publication/Services/Youtube.tsx:247
 msgid "Backup stream"
 msgstr "Εφεδρική ροή"
 
-#: src/views/Publication/Services/Facebook.tsx:133
+#: src/views/Publication/Services/Facebook.tsx:148
 msgid "Backup stream key"
 msgstr "Κλειδί εφεδρικής ροής"
 
-#: src/views/Publication/Services/Akamai.tsx:213
+#: src/views/Publication/Services/Akamai.tsx:248
 msgid "Backup URL"
 msgstr "Δημιουργία αντιγράφου ασφαλείας URL"
 
-#: src/components/Footer.tsx:290
-#: src/components/Footer.tsx:304
+#: src/components/Footer.tsx:297
+#: src/components/Footer.tsx:311
 msgid "Bandwidth"
 msgstr "Εύρος ζώνης"
 
-#: src/views/Settings.tsx:1703
+#: src/views/Settings.tsx:1728
 msgid "Bandwidth control"
 msgstr "Έλεγχος εύρους ζώνης"
 
-#: src/components/modals/Process.tsx:157
+#: src/components/modals/Process.tsx:172
 msgid "Banner"
 msgstr "Πανό"
 
-#: src/views/Login.tsx:254
-#: src/views/Settings.tsx:1761
+#: src/views/Login.tsx:266
+#: src/views/Settings.tsx:1796
 msgid "Basic"
 msgstr "Βασικό"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:191
+#: src/views/Edit/Sources/VirtualAudio.tsx:193
 msgid "Beep factor"
 msgstr "Παράγοντας μπιπ"
 
@@ -350,11 +354,11 @@ msgstr "Παράγοντας μπιπ"
 msgid "Bitrate"
 msgstr "Bitrate"
 
-#: src/views/Settings.tsx:2265
+#: src/views/Settings.tsx:2320
 msgid "Block cache types"
 msgstr "Τύποι κρυφής μνήμης μπλοκ"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:142
+#: src/views/Edit/Sources/VirtualAudio.tsx:144
 msgid "blue"
 msgstr "μπλε"
 
@@ -362,16 +366,16 @@ msgstr "μπλε"
 msgid "Bottom field"
 msgstr "Κάτω πεδίο"
 
-#: src/views/Edit/index.tsx:704
+#: src/views/Edit/index.tsx:757
 #: src/views/Edit/Wizard/Metadata.tsx:35
 msgid "Briefly describe what the audience will see during the live stream."
 msgstr "Περιγράψτε εν συντομία τι θα δει το κοινό κατά τη διάρκεια της ζωντανής ροής."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:141
+#: src/views/Edit/Sources/VirtualAudio.tsx:143
 msgid "brown"
 msgstr "καφέ"
 
-#: src/views/Publication/Player.tsx:460
+#: src/views/Publication/Player.tsx:466
 msgid "Button color"
 msgstr "Χρώμα κουμπιού"
 
@@ -383,15 +387,15 @@ msgstr "Με ύψος"
 msgid "By width"
 msgstr "Με πλάτος"
 
-#: src/views/Settings.tsx:2125
+#: src/views/Settings.tsx:2170
 msgid "Cache for files on /data."
 msgstr "Κρυφή μνήμη για αρχεία στο /data."
 
-#: src/views/Settings.tsx:2183
+#: src/views/Settings.tsx:2233
 msgid "Cache time (Seconds)"
 msgstr "Χρόνος προσωρινής αποθήκευσης (δευτερόλεπτα)"
 
-#: src/views/Settings.tsx:2241
+#: src/views/Settings.tsx:2296
 msgid "Cache types"
 msgstr "Τύποι κρυφής μνήμης"
 
@@ -399,32 +403,32 @@ msgstr "Τύποι κρυφής μνήμης"
 msgid "Capture buffer"
 msgstr "Απομονωτής σύλληψης"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:238
+#: src/views/Edit/Sources/AVFoundation.tsx:241
 msgid "Capture clicks"
 msgstr "Λήψη κλικ"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:231
+#: src/views/Edit/Sources/AVFoundation.tsx:234
 msgid "Capture cursor"
 msgstr "Δρομέας σύλληψης"
 
-#: src/views/Edit/Sources/Channel.tsx:135
+#: src/views/Edit/Sources/Channel.tsx:140
 msgid "Channel"
 msgstr ""
 
 #. placeholder {0}: $data.meta.name
-#: src/views/Edit/index.tsx:405
+#: src/views/Edit/index.tsx:430
 msgid "Channel \"{0}\" saved"
 msgstr "Το κανάλι \"{0}\" αποθηκεύτηκε"
 
-#: src/views/Edit/Sources/ALSA.tsx:157
+#: src/views/Edit/Sources/ALSA.tsx:162
 msgid "Channels"
 msgstr "Κανάλια"
 
-#: src/views/Settings.tsx:1412
+#: src/views/Settings.tsx:1425
 msgid "Check for updates"
 msgstr "Έλεγχος για ενημερώσεις"
 
-#: src/views/Publication/Add.tsx:361
+#: src/views/Publication/Add.tsx:372
 msgid "Check the requirements"
 msgstr "Ελέγξτε τις απαιτήσεις"
 
@@ -436,20 +440,20 @@ msgstr "Επιλέξτε μια ροή βίντεο"
 msgid "Choose an audio stream"
 msgstr "Επιλέξτε μια ροή ήχου"
 
-#: src/views/Edit/Sources/Channel.tsx:85
+#: src/views/Edit/Sources/Channel.tsx:86
 msgid "Choose an input channel ..."
 msgstr ""
 
-#: src/views/Edit/Sources/ALSA.tsx:107
-#: src/views/Edit/Sources/Framebuffer.tsx:93
-#: src/views/Edit/Sources/Raspicam.tsx:103
-#: src/views/Edit/Sources/V4L.tsx:103
-#: src/views/Edit/Sources/X11grab.tsx:156
+#: src/views/Edit/Sources/ALSA.tsx:108
+#: src/views/Edit/Sources/Framebuffer.tsx:94
+#: src/views/Edit/Sources/Raspicam.tsx:104
+#: src/views/Edit/Sources/V4L.tsx:104
+#: src/views/Edit/Sources/X11grab.tsx:157
 msgid "Choose an input device ..."
 msgstr "Επιλέξτε μια συσκευή εισόδου ..."
 
-#: src/views/Edit/Sources/Network.tsx:1250
-#: src/views/Edit/Sources/Network.tsx:1377
+#: src/views/Edit/Sources/Network.tsx:1291
+#: src/views/Edit/Sources/Network.tsx:1426
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:111
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:111
 msgid "Choose an input stream ..."
@@ -459,68 +463,72 @@ msgstr "Επιλέξτε μια ροή εισόδου ..."
 msgid "Choose between CFR and VFR (Auto)"
 msgstr "Επιλέξτε μεταξύ CFR και VFR (Auto)"
 
-#: src/components/EncodingSelect.tsx:254
+#: src/components/EncodingSelect.tsx:253
 msgid "Choose codec ..."
 msgstr "Επιλέξτε codec ..."
 
-#: src/views/Login.tsx:400
+#: src/views/Login.tsx:433
 msgid "Choose tenant ..."
 msgstr "Επιλέξτε ενοικιαστή ..."
 
-#: src/views/Playersite.tsx:456
-#: src/views/Publication/Player.tsx:586
+#: src/views/Playersite.tsx:457
+#: src/views/Publication/Player.tsx:632
 msgid "Chromecast"
 msgstr "Chromecast"
 
-#: src/views/Publication/Services/DASH.tsx:374
-#: src/views/Publication/Services/HLS.tsx:312
+#: src/views/Publication/Services/DASH.tsx:409
+#: src/views/Publication/Services/HLS.tsx:322
 msgid "Chunk"
 msgstr "Chunk"
 
-#: src/components/Changelog.tsx:182
-#: src/components/ModalContent.tsx:101
+#: src/components/Changelog.tsx:186
+#: src/components/ModalContent.tsx:109
 #: src/components/modals/Hint.tsx:212
-#: src/views/Edit/index.tsx:753
-#: src/views/Playersite.tsx:860
-#: src/views/Publication/Add.tsx:453
-#: src/views/Publication/Add.tsx:640
-#: src/views/Publication/Edit.tsx:713
-#: src/views/Publication/Player.tsx:603
-#: src/views/Settings.tsx:2659
+#: src/views/Edit/index.tsx:806
+#: src/views/Playersite.tsx:891
+#: src/views/Publication/Add.tsx:492
+#: src/views/Publication/Add.tsx:679
+#: src/views/Publication/Edit.tsx:718
+#: src/views/Publication/Player.tsx:649
+#: src/views/Settings.tsx:2739
 msgid "Close"
 msgstr "Κλείστε το"
 
-#: src/views/Playersite.tsx:334
+#: src/views/Playersite.tsx:335
 msgid "Code injection"
 msgstr "Έγχυση κώδικα"
 
-#: src/components/EncodingSelect.tsx:249
+#: src/components/EncodingSelect.tsx:248
 #: src/components/modals/Hint.tsx:68
 #: src/components/modals/Hint.tsx:95
 msgid "Codec"
 msgstr "Κωδικοποιητής"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:135
+#: src/views/Edit/Sources/VirtualAudio.tsx:137
 msgid "Color"
 msgstr "Χρώμα"
 
-#: src/components/modals/Process.tsx:143
+#: src/components/modals/Process.tsx:153
 msgid "Command"
 msgstr "Εντολή"
 
-#: src/views/Settings.tsx:1571
+#: src/views/Settings.tsx:1586
 msgid "Config"
 msgstr "Διαμόρφωση"
 
-#: src/views/Password.tsx:157
+#: src/views/Password.tsx:174
 msgid "Confirm password"
 msgstr "Επιβεβαίωση κωδικού πρόσβασης"
+
+#: src/views/Password.tsx:182
+msgid "Confirm your password."
+msgstr ""
 
 #: src/components/ActionButton.tsx:63
 msgid "Connect"
 msgstr "Συνδέστε το"
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:181
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:191
 msgid "Connected device"
 msgstr "Συνδεδεμένη συσκευή"
 
@@ -529,12 +537,12 @@ msgid "Connected since <0/>"
 msgstr "Συνδεδεμένος από <0/>"
 
 #: src/components/ActionButton.tsx:19
-#: src/views/Main/index.tsx:384
+#: src/views/Main/index.tsx:408
 #: src/views/Publication/Process.tsx:41
 msgid "Connecting ..."
 msgstr "Σύνδεση ..."
 
-#: src/views/Initializing.tsx:20
+#: src/views/Initializing.tsx:27
 msgid "Connecting to Restreamer Core ..."
 msgstr "Σύνδεση στο Restreamer Core ..."
 
@@ -546,41 +554,41 @@ msgstr "Η σύνδεση στο Restreamer Core απέτυχε πιθανώς �
 msgid "Constant frame rate (CFR)"
 msgstr "Σταθερός ρυθμός καρέ (CFR)"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:197
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:209
 msgid "Constant Quantizer Mode (-1 to 255)."
 msgstr "Λειτουργία σταθερού κβαντιστή (-1 έως 255)."
 
-#: src/components/controls/Metadata.tsx:72
-#: src/views/Playersite.tsx:729
-#: src/views/Playersite.tsx:746
+#: src/components/controls/Metadata.tsx:73
+#: src/views/Playersite.tsx:760
+#: src/views/Playersite.tsx:777
 msgid "Content"
 msgstr "Περιεχόμενο"
 
-#: src/views/Main/index.tsx:555
+#: src/views/Main/index.tsx:593
 msgid "Content URL"
 msgstr "URL περιεχομένου"
 
-#: src/views/Edit/Sources/Network.tsx:867
+#: src/views/Edit/Sources/Network.tsx:868
 msgid "copyts"
 msgstr "copyts"
 
-#: src/components/Footer.tsx:225
+#: src/components/Footer.tsx:232
 msgid "Cores"
 msgstr "Πυρήνες"
 
-#: src/components/Progress.tsx:129
+#: src/components/Progress.tsx:132
 msgid "CPU"
 msgstr "CPU"
 
-#: src/components/controls/Limits.tsx:46
+#: src/components/controls/Limits.tsx:50
 msgid "CPU Limit (percent)"
 msgstr "Όριο CPU (ποσοστό)"
 
-#: src/components/controls/Limits.tsx:51
+#: src/components/controls/Limits.tsx:58
 msgid "CPU usage limit in percent (0-100%), 0 for unlimited."
 msgstr "Όριο χρήσης CPU σε ποσοστό (0-100%), 0 για απεριόριστη χρήση."
 
-#: src/components/controls/License/index.tsx:116
+#: src/components/controls/License/index.tsx:118
 msgid "Creative Commons"
 msgstr "Creative Commons"
 
@@ -600,20 +608,20 @@ msgstr "Creative Commons"
 #: src/components/filters/audio/Resample.tsx:122
 #: src/components/filters/audio/Volume.tsx:57
 #: src/components/filters/video/Framerate.tsx:55
-#: src/views/Edit/Sources/ALSA.tsx:112
-#: src/views/Edit/Sources/AVFoundation.tsx:131
-#: src/views/Edit/Sources/AVFoundation.tsx:166
-#: src/views/Edit/Sources/V4L.tsx:109
-#: src/views/Edit/Sources/X11grab.tsx:82
-#: src/views/Edit/Sources/X11grab.tsx:162
+#: src/views/Edit/Sources/ALSA.tsx:113
+#: src/views/Edit/Sources/AVFoundation.tsx:132
+#: src/views/Edit/Sources/AVFoundation.tsx:167
+#: src/views/Edit/Sources/V4L.tsx:110
+#: src/views/Edit/Sources/X11grab.tsx:83
+#: src/views/Edit/Sources/X11grab.tsx:163
 msgid "Custom ..."
 msgstr "Προσαρμοσμένη ..."
 
-#: src/views/Edit/Sources/ALSA.tsx:131
+#: src/views/Edit/Sources/ALSA.tsx:136
 msgid "Custom audio device"
 msgstr "Προσαρμοσμένη συσκευή ήχου"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:173
+#: src/views/Edit/Sources/AVFoundation.tsx:174
 msgid "Custom audio index"
 msgstr "Προσαρμοσμένο ευρετήριο ήχου"
 
@@ -622,7 +630,7 @@ msgstr "Προσαρμοσμένο ευρετήριο ήχου"
 msgid "Custom bitrate (kbit/s)"
 msgstr "Προσαρμοσμένος ρυθμός bitrate (kbit/s)"
 
-#: src/views/Playersite.tsx:757
+#: src/views/Playersite.tsx:788
 msgid "Custom code injection"
 msgstr "Έγχυση προσαρμοσμένου κώδικα"
 
@@ -630,7 +638,7 @@ msgstr "Έγχυση προσαρμοσμένου κώδικα"
 msgid "Custom delay"
 msgstr "Προσαρμοσμένη καθυστέρηση"
 
-#: src/views/Edit/Sources/Framebuffer.tsx:101
+#: src/views/Edit/Sources/Framebuffer.tsx:102
 msgid "Custom device"
 msgstr "Προσαρμοσμένη συσκευή"
 
@@ -644,7 +652,7 @@ msgstr "Προσαρμοσμένη μορφή"
 msgid "Custom framerate"
 msgstr "Προσαρμοσμένη ταχύτητα καρέ"
 
-#: src/views/Settings.tsx:1580
+#: src/views/Settings.tsx:1595
 msgid "Custom JSON config for datarhei Core."
 msgstr "Προσαρμοσμένες ρυθμίσεις JSON για το datarhei Core."
 
@@ -662,7 +670,7 @@ msgstr "Προσαρμοσμένη διάταξη"
 msgid "Custom sampling (Hz)"
 msgstr "Προσαρμοσμένη δειγματοληψία (Hz)"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:189
+#: src/views/Edit/Sources/VirtualVideo.tsx:191
 msgid "Custom scale"
 msgstr "Προσαρμοσμένη κλίμακα"
 
@@ -681,22 +689,22 @@ msgstr "Προσαρμοσμένη κλίμακα"
 msgid "Custom size"
 msgstr "Προσαρμοσμένο μέγεθος"
 
-#: src/views/Edit/Sources/V4L.tsx:128
-#: src/views/Edit/Sources/X11grab.tsx:181
+#: src/views/Edit/Sources/V4L.tsx:133
+#: src/views/Edit/Sources/X11grab.tsx:186
 msgid "Custom video device"
 msgstr "Προσαρμοσμένη συσκευή βίντεο"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:138
+#: src/views/Edit/Sources/AVFoundation.tsx:139
 msgid "Custom video index"
 msgstr "Προσαρμοσμένο ευρετήριο βίντεο"
 
 #: src/components/CopyButton.tsx:27
 #: src/components/Textarea.tsx:62
-#: src/components/TextFieldCopy.tsx:47
+#: src/components/TextFieldCopy.tsx:48
 msgid "Data copied to clipboard"
 msgstr "Αντιγραφή δεδομένων στο πρόχειρο"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:225
+#: src/views/Edit/Sources/VirtualVideo.tsx:227
 msgid "Death color"
 msgstr "Χρώμα θανάτου"
 
@@ -704,29 +712,29 @@ msgstr "Χρώμα θανάτου"
 msgid "Decibels (dB)"
 msgstr "Ντεσιμπέλ (dB)"
 
-#: src/components/EncodingSelect.tsx:263
+#: src/components/EncodingSelect.tsx:261
 #: src/views/Edit/Wizard/VideoProfile.tsx:81
 msgid "Decoder"
 msgstr "Αποκωδικοποιητής"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:126
-#: src/views/Edit/Sources/AVFoundation.tsx:162
+#: src/views/Edit/Sources/AVFoundation.tsx:127
+#: src/views/Edit/Sources/AVFoundation.tsx:163
 #: src/views/Edit/Wizard/Sources/AVFoundation.tsx:92
 #: src/views/Edit/Wizard/Sources/AVFoundation.tsx:127
-#: src/views/Playersite.tsx:502
-#: src/views/Playersite.tsx:591
-#: src/views/Playersite.tsx:635
+#: src/views/Playersite.tsx:508
+#: src/views/Playersite.tsx:612
+#: src/views/Playersite.tsx:656
 msgid "Default"
 msgstr "Προεπιλογή"
 
 #. placeholder {0}: 2500
-#: src/views/Edit/Sources/Network.tsx:801
+#: src/views/Edit/Sources/Network.tsx:802
 msgid "Default {0}"
 msgstr "Προεπιλογή {0}"
 
 #. placeholder {0}: 5000000
 #. placeholder {1}: 5
-#: src/views/Edit/Sources/Network.tsx:841
+#: src/views/Edit/Sources/Network.tsx:842
 msgid "Default {0} ({1} seconds)"
 msgstr "Προεπιλογή {0} ({1} δευτερόλεπτα)"
 
@@ -750,19 +758,19 @@ msgstr "Deinterlace parity"
 msgid "Delay"
 msgstr "Καθυστέρηση"
 
-#: src/views/Edit/Sources/ALSA.tsx:166
+#: src/views/Edit/Sources/ALSA.tsx:171
 msgid "Delay (ms)"
 msgstr "Καθυστέρηση (ms)"
 
-#: src/views/Edit/index.tsx:775
-#: src/views/Edit/index.tsx:830
-#: src/views/Playersite.tsx:526
-#: src/views/Publication/Edit.tsx:732
-#: src/views/Publication/Edit.tsx:772
+#: src/views/Edit/index.tsx:828
+#: src/views/Edit/index.tsx:883
+#: src/views/Playersite.tsx:537
+#: src/views/Publication/Edit.tsx:737
+#: src/views/Publication/Edit.tsx:777
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: src/views/Publication/Edit.tsx:777
+#: src/views/Publication/Edit.tsx:782
 msgid "Deleting a publication service cannot be reversed. The publication stops immediately."
 msgstr "Η διαγραφή μιας υπηρεσίας δημοσίευσης δεν μπορεί να αντιστραφεί. Η δημοσίευση σταματά αμέσως."
 
@@ -771,18 +779,18 @@ msgstr "Η διαγραφή μιας υπηρεσίας δημοσίευσης �
 msgid "Delivering mode"
 msgstr "Λειτουργία παράδοσης"
 
-#: src/components/controls/Metadata.tsx:93
-#: src/components/controls/Metadata.tsx:118
+#: src/components/controls/Metadata.tsx:94
+#: src/components/controls/Metadata.tsx:119
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: src/views/Playersite.tsx:322
-#: src/views/Playersite.tsx:572
+#: src/views/Playersite.tsx:323
+#: src/views/Playersite.tsx:593
 msgid "Design"
 msgstr "Σχεδιασμός"
 
-#: src/views/Edit/Sources/Framebuffer.tsx:100
-#: src/views/Edit/Wizard/Audio.tsx:125
+#: src/views/Edit/Sources/Framebuffer.tsx:101
+#: src/views/Edit/Wizard/Audio.tsx:137
 #: src/views/Publication/Services/Framebuffer.tsx:101
 msgid "Device"
 msgstr "Συσκευή"
@@ -793,7 +801,7 @@ msgstr "Συσκευή"
 msgid "Disconnect"
 msgstr "Αποσύνδεση"
 
-#: src/views/Edit/index.tsx:800
+#: src/views/Edit/index.tsx:853
 msgid "Disconnect & Continue"
 msgstr "Αποσύνδεση & συνέχιση"
 
@@ -803,60 +811,60 @@ msgid "Disconnecting ..."
 msgstr "Αποσύνδεση ..."
 
 #: src/components/controls/HLS.tsx:76
-#: src/views/Settings.tsx:2079
+#: src/views/Settings.tsx:2124
 msgid "Disk"
 msgstr "Δίσκος"
 
-#: src/views/Settings.tsx:2122
-#: src/views/Settings.tsx:2130
+#: src/views/Settings.tsx:2167
+#: src/views/Settings.tsx:2175
 msgid "Disk cache"
 msgstr "Κρυφή μνήμη δίσκου"
 
-#: src/components/Footer.tsx:352
-#: src/components/Footer.tsx:366
+#: src/components/Footer.tsx:359
+#: src/components/Footer.tsx:373
 msgid "Disk storage"
 msgstr "Αποθήκευση δίσκου"
 
-#: src/views/Settings.tsx:2775
+#: src/views/Settings.tsx:2855
 msgid "Do you really want to restart the application now?"
 msgstr "Θέλετε πραγματικά να επανεκκινήσετε την εφαρμογή τώρα;"
 
 #. placeholder {0}: $data.meta.name
-#: src/views/Edit/index.tsx:814
+#: src/views/Edit/index.tsx:867
 msgid "Do you want to delete \"{0}\"?"
 msgstr "Θέλετε να διαγράψετε το \"{0}\";"
 
-#: src/views/Publication/Edit.tsx:756
+#: src/views/Publication/Edit.tsx:761
 msgid "Do you want to delete {title}?"
 msgstr "Θέλετε να διαγράψετε το {title};"
 
 #. placeholder {0}: $data.meta.name
-#: src/views/Edit/index.tsx:784
+#: src/views/Edit/index.tsx:837
 msgid "Do you want to disconnect \"{0}\"?"
 msgstr "Θέλετε να αποσυνδέσετε το \"{0}\";"
 
-#: src/components/Header.tsx:342
-#: src/components/Header.tsx:396
+#: src/components/Header.tsx:345
+#: src/components/Header.tsx:399
 msgid "Docs"
 msgstr "Έγγραφα"
 
-#: src/views/Publication/Services/DASH.tsx:590
-#: src/views/Publication/Services/HLS.tsx:573
-#: src/views/Publication/Services/Icecast.tsx:279
-#: src/views/Publication/Services/Image2.tsx:216
-#: src/views/Publication/Services/MPEGTS.tsx:427
-#: src/views/Publication/Services/RTMP.tsx:315
-#: src/views/Publication/Services/RTSP.tsx:285
-#: src/views/Publication/Services/SRT.tsx:487
-#: src/views/Publication/Services/UDP.tsx:279
+#: src/views/Publication/Services/DASH.tsx:675
+#: src/views/Publication/Services/HLS.tsx:613
+#: src/views/Publication/Services/Icecast.tsx:299
+#: src/views/Publication/Services/Image2.tsx:226
+#: src/views/Publication/Services/MPEGTS.tsx:507
+#: src/views/Publication/Services/RTMP.tsx:350
+#: src/views/Publication/Services/RTSP.tsx:305
+#: src/views/Publication/Services/SRT.tsx:597
+#: src/views/Publication/Services/UDP.tsx:329
 msgid "Documentation"
 msgstr "Τεκμηρίωση"
 
-#: src/views/Edit/Sources/X11grab.tsx:261
+#: src/views/Edit/Sources/X11grab.tsx:266
 msgid "Draw mouse"
 msgstr ""
 
-#: src/components/Progress.tsx:230
+#: src/components/Progress.tsx:233
 msgid "Dup. frames"
 msgstr "Διπλά πλαίσια"
 
@@ -868,11 +876,11 @@ msgstr "Κάθε πεδίο"
 msgid "Each frames"
 msgstr "Κάθε πλαίσιο"
 
-#: src/views/Edit/index.tsx:472
+#: src/views/Edit/index.tsx:497
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: src/views/Edit/index.tsx:519
+#: src/views/Edit/index.tsx:544
 msgid "Edit the audio and video sources for the live stream. Add a description, and set your desired content license."
 msgstr "Επεξεργαστείτε τις πηγές ήχου και βίντεο για τη ζωντανή ροή. Προσθέστε μια περιγραφή και ορίστε την επιθυμητή άδεια χρήσης περιεχομένου."
 
@@ -880,19 +888,19 @@ msgstr "Επεξεργαστείτε τις πηγές ήχου και βίντ�
 msgid "Edit: {title}"
 msgstr "Επεξεργασία: {title}"
 
-#: src/views/Publication/Player.tsx:366
+#: src/views/Publication/Player.tsx:370
 msgid "EDIT: Player"
 msgstr "EDIT: Παίκτης"
 
-#: src/views/Playersite.tsx:296
+#: src/views/Playersite.tsx:297
 msgid "EDIT: Publication Website"
 msgstr "EDIT: Δικτυακός τόπος δημοσίευσης"
 
-#: src/views/Settings.tsx:1680
+#: src/views/Settings.tsx:1705
 msgid "Email"
 msgstr "Ηλεκτρονικό ταχυδρομείο"
 
-#: src/views/Publication/Player.tsx:414
+#: src/views/Publication/Player.tsx:420
 msgid "Embed"
 msgstr "Ενσωματώστε το"
 
@@ -901,12 +909,12 @@ msgstr "Ενσωματώστε το"
 msgid "Enable"
 msgstr "Ενεργοποίηση"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:196
+#: src/views/Edit/Sources/VirtualAudio.tsx:198
 msgid "Enable a periodic beep every second with this value times the carrier frequency"
 msgstr "Ενεργοποίηση ενός περιοδικού ηχητικού σήματος κάθε δευτερόλεπτο με αυτή την τιμή επί τη συχνότητα του φέροντος."
 
 #: src/views/Publication/Services/Dummy.tsx:313
-#: src/views/Publication/Services/Facebook.tsx:153
+#: src/views/Publication/Services/Facebook.tsx:173
 msgid "Enable backup stream"
 msgstr "Ενεργοποίηση εφεδρικής ροής"
 
@@ -914,7 +922,7 @@ msgstr "Ενεργοποίηση εφεδρικής ροής"
 msgid "Enable browser-compatible H.264 stream"
 msgstr ""
 
-#: src/views/Publication/Player.tsx:565
+#: src/views/Publication/Player.tsx:611
 msgid "Enable nerd statistics"
 msgstr "Ενεργοποίηση στατιστικών σπασίκλας"
 
@@ -924,16 +932,16 @@ msgid "Enable now"
 msgstr "Ενεργοποίηση τώρα"
 
 #: src/views/Publication/Services/Dummy.tsx:308
-#: src/views/Publication/Services/Facebook.tsx:148
+#: src/views/Publication/Services/Facebook.tsx:168
 msgid "Enable primary stream"
 msgstr "Ενεργοποίηση πρωτεύουσας ροής"
 
-#: src/views/Edit/Sources/Network.tsx:1229
+#: src/views/Edit/Sources/Network.tsx:1270
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:92
 msgid "Enable RTMP server ..."
 msgstr "Ενεργοποίηση διακομιστή RTMP ..."
 
-#: src/views/Publication/Services/PeerTube.tsx:118
+#: src/views/Publication/Services/PeerTube.tsx:133
 msgid "Enable RTMPS transfer"
 msgstr "Ενεργοποίηση μεταφοράς RTMPS"
 
@@ -941,16 +949,16 @@ msgstr "Ενεργοποίηση μεταφοράς RTMPS"
 msgid "Enable snapshots"
 msgstr "Ενεργοποίηση στιγμιότυπων"
 
-#: src/views/Edit/Sources/Network.tsx:1356
+#: src/views/Edit/Sources/Network.tsx:1405
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:92
 msgid "Enable SRT server ..."
 msgstr "Ενεργοποίηση διακομιστή SRT ..."
 
-#: src/views/Settings.tsx:1779
+#: src/views/Settings.tsx:1814
 msgid "Enabling authorization is strongly advised. Otherwise, anybody can access this instance."
 msgstr "Η ενεργοποίηση της εξουσιοδότησης συνιστάται ανεπιφύλακτα. Διαφορετικά, οποιοσδήποτε μπορεί να έχει πρόσβαση σε αυτή την περίπτωση."
 
-#: src/views/Settings.tsx:1990
+#: src/views/Settings.tsx:2025
 msgid "Enabling basic auth is strongly advised. Otherwise, anybody could write data to /memfs."
 msgstr "Η ενεργοποίηση του βασικού auth συνιστάται ανεπιφύλακτα. Διαφορετικά, οποιοσδήποτε μπορεί να γράψει δεδομένα στο /memfs."
 
@@ -959,31 +967,39 @@ msgid "Encoder"
 msgstr "Κωδικοποιητής"
 
 #: src/views/Edit/Summary.tsx:95
-#: src/views/Publication/Add.tsx:567
-#: src/views/Publication/Edit.tsx:645
+#: src/views/Publication/Add.tsx:606
+#: src/views/Publication/Edit.tsx:650
 msgid "Encoding"
 msgstr "Κωδικοποίηση"
 
-#: src/views/Publication/Services/HLS.tsx:518
-#: src/views/Publication/Services/RTMP.tsx:287
-#: src/views/Publication/Services/SRT.tsx:427
+#: src/views/Publication/Services/HLS.tsx:558
+#: src/views/Publication/Services/RTMP.tsx:312
+#: src/views/Publication/Services/SRT.tsx:522
 msgid "Encryption"
 msgstr "Κρυπτογράφηση"
 
-#: src/components/ChannelList.tsx:537
+#: src/components/ChannelList.tsx:579
 msgid "Enter a name for the new channel."
 msgstr "Εισάγετε ένα όνομα για το νέο κανάλι."
 
-#: src/views/Password.tsx:145
+#: src/views/Password.tsx:161
+msgid "Enter a password."
+msgstr ""
+
+#: src/views/Password.tsx:144
+msgid "Enter a username."
+msgstr ""
+
+#: src/views/Password.tsx:156
 msgid "Enter password"
 msgstr "Εισάγετε τον κωδικό πρόσβασης"
 
-#: src/views/Edit/Sources/Network.tsx:969
+#: src/views/Edit/Sources/Network.tsx:974
 #: src/views/Edit/Wizard/Sources/Network.tsx:70
 msgid "Enter the address of your network source:"
 msgstr "Εισάγετε τη διεύθυνση της πηγής δικτύου σας:"
 
-#: src/views/Password.tsx:133
+#: src/views/Password.tsx:138
 msgid "Enter username"
 msgstr "Εισάγετε το όνομα χρήστη"
 
@@ -995,32 +1011,32 @@ msgstr "Κωδικοποιητής εντροπίας"
 #: src/views/Incompatible.tsx:29
 #: src/views/Invalid.tsx:31
 #: src/views/Publication/Process.tsx:64
-#: src/views/Settings.tsx:1279
+#: src/views/Settings.tsx:1292
 msgid "Error"
 msgstr "Σφάλμα"
 
 #: src/components/CopyButton.tsx:33
 #: src/components/Textarea.tsx:68
-#: src/components/TextFieldCopy.tsx:53
+#: src/components/TextFieldCopy.tsx:54
 msgid "Error while copying data to clipboard"
 msgstr "Σφάλμα κατά την αντιγραφή δεδομένων στο πρόχειρο"
 
 #. placeholder {0}: anonymize($state.progress.error) || 'unknown'
 #. placeholder {0}: progress.error
-#: src/views/Main/index.tsx:403
+#: src/views/Main/index.tsx:429
 #: src/views/Publication/Process.tsx:65
 msgid "Error: {0}"
 msgstr "Σφάλμα: {0}"
 
-#: src/views/Playersite.tsx:805
+#: src/views/Playersite.tsx:836
 msgid "Expands the area above the channel list (live chat)."
 msgstr "Επεκτείνει την περιοχή πάνω από τη λίστα καναλιών (ζωντανή συνομιλία)."
 
-#: src/views/Playersite.tsx:827
+#: src/views/Playersite.tsx:858
 msgid "Expands the area under the channel description (comment boxes)."
 msgstr "Επεκτείνει την περιοχή κάτω από την περιγραφή του καναλιού (πλαίσια σχολίων)."
 
-#: src/views/Settings.tsx:1460
+#: src/views/Settings.tsx:1475
 msgid "Expert mode"
 msgstr "Λειτουργία εμπειρογνώμονα"
 
@@ -1028,54 +1044,54 @@ msgstr "Λειτουργία εμπειρογνώμονα"
 msgid "EXT-X-VERSION"
 msgstr "EXT-X-VERSION"
 
-#: src/views/Playersite.tsx:790
+#: src/views/Playersite.tsx:821
 msgid "Extend channel list"
 msgstr "Επέκταση λίστας καναλιών"
 
-#: src/views/Playersite.tsx:812
+#: src/views/Playersite.tsx:843
 msgid "Extend content"
 msgstr "Επέκταση περιεχομένου"
 
-#: src/views/Playersite.tsx:835
+#: src/views/Playersite.tsx:866
 msgid "Extend footer"
 msgstr "Επέκταση υποσέλιδου"
 
-#: src/views/Playersite.tsx:770
+#: src/views/Playersite.tsx:801
 msgid "Extend header"
 msgstr "Επέκταση κεφαλίδας"
 
-#: src/views/Edit/Sources/Network.tsx:913
+#: src/views/Edit/Sources/Network.tsx:914
 msgid "Extention settings"
 msgstr ""
 
 #. placeholder {0}: err.message
-#: src/views/Publication/Add.tsx:271
+#: src/views/Publication/Add.tsx:273
 msgid "Failed to create publication service ({0})"
 msgstr "Αποτυχία δημιουργίας υπηρεσίας δημοσίευσης ({0})"
 
-#: src/views/Playersite.tsx:248
+#: src/views/Playersite.tsx:249
 msgid "Failed to create publication website files."
 msgstr "Απέτυχε η δημιουργία αρχείων ιστότοπου δημοσίευσης."
 
-#: src/views/Edit/Profile.tsx:555
-#: src/views/Edit/Profile.tsx:742
+#: src/views/Edit/Profile.tsx:560
+#: src/views/Edit/Profile.tsx:762
 msgid "Failed to probe the source. Please check the <0>probe details</0>."
 msgstr "Απέτυχε η διερεύνηση της πηγής. Ελέγξτε τις λεπτομέρειες του <0>ανιχνευτή</0>."
 
-#. placeholder {0}: err.message
-#: src/utils/restreamer.ts:517
+#. placeholder {0}: String(err.message)
+#: src/utils/restreamer.ts:527
 msgid "Failed to refresh token: {0}"
 msgstr "Απέτυχε η ανανέωση του κουπονιού: {0}"
 
-#: src/views/Edit/index.tsx:344
+#: src/views/Edit/index.tsx:369
 msgid "Failed to save ingest metadata"
 msgstr "Αποτυχία αποθήκευσης μεταδεδομένων εισόδου"
 
-#: src/views/Edit/index.tsx:189
+#: src/views/Edit/index.tsx:194
 msgid "Failed to stop process"
 msgstr "Απέτυχε να σταματήσει η διαδικασία"
 
-#: src/views/Playersite.tsx:237
+#: src/views/Playersite.tsx:238
 msgid "Failed to store player size setting."
 msgstr "Απέτυχε η αποθήκευση της ρύθμισης μεγέθους παίκτη."
 
@@ -1085,40 +1101,40 @@ msgid "Failed to store publication service ({0})"
 msgstr "Απέτυχε η αποθήκευση της υπηρεσίας δημοσίευσης ({0})"
 
 #. placeholder {0}: err.message
-#: src/views/Edit/index.tsx:364
+#: src/views/Edit/index.tsx:389
 msgid "Failed to update ingest preview process ({0})"
 msgstr ""
 
 #. placeholder {0}: err.message
-#: src/views/Edit/index.tsx:333
+#: src/views/Edit/index.tsx:358
 msgid "Failed to update ingest process ({0})"
 msgstr "Απέτυχε η ενημέρωση της διαδικασίας λήψης ({0})"
 
 #. placeholder {0}: err.message
-#: src/views/Edit/index.tsx:354
+#: src/views/Edit/index.tsx:379
 msgid "Failed to update ingest snapshot process ({0})"
 msgstr "Απέτυχε η ενημέρωση της διαδικασίας λήψης στιγμιότυπων ({0})"
 
-#: src/views/Edit/index.tsx:374
+#: src/views/Edit/index.tsx:399
 msgid "Failed to update the player"
 msgstr "Απέτυχε η ενημέρωση του παίκτη"
 
-#: src/views/Edit/index.tsx:384
+#: src/views/Edit/index.tsx:409
 msgid "Failed to update the playersite"
 msgstr "Απέτυχε η ενημέρωση της ιστοσελίδας παικτών"
 
-#: src/views/Edit/Wizard/Audio.tsx:54
-#: src/views/Edit/Wizard/Video.tsx:49
+#: src/views/Edit/Wizard/Audio.tsx:58
+#: src/views/Edit/Wizard/Video.tsx:53
 msgid "Failed to verify the source. Please check the address."
 msgstr "Απέτυχε η επαλήθευση της πηγής. Ελέγξτε τη διεύθυνση."
 
-#: src/views/Settings.tsx:2615
+#: src/views/Settings.tsx:2695
 msgid "FFmpeg"
 msgstr "FFmpeg"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:191
-#: src/views/Edit/Sources/SDP.tsx:172
-#: src/views/Edit/Sources/VideoLoop.tsx:199
+#: src/views/Edit/Sources/AudioLoop.tsx:201
+#: src/views/Edit/Sources/SDP.tsx:182
+#: src/views/Edit/Sources/VideoLoop.tsx:209
 msgid "File path"
 msgstr "Διαδρομή αρχείου"
 
@@ -1126,7 +1142,7 @@ msgstr "Διαδρομή αρχείου"
 msgid "Filter"
 msgstr "Φίλτρο"
 
-#: src/views/Edit/Profile.tsx:857
+#: src/views/Edit/Profile.tsx:887
 msgid "Finish"
 msgstr "Τέλος"
 
@@ -1134,24 +1150,24 @@ msgstr "Τέλος"
 msgid "Fix size"
 msgstr "Μέγεθος στερέωσης"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:243
+#: src/views/Edit/Sources/VirtualVideo.tsx:245
 msgid "Flags"
 msgstr "Σημαίες"
 
-#: src/views/Edit/Sources/X11grab.tsx:88
 #: src/views/Edit/Sources/X11grab.tsx:89
+#: src/views/Edit/Sources/X11grab.tsx:90
 msgid "Follow mouse"
 msgstr ""
 
-#: src/views/Playersite.tsx:850
+#: src/views/Playersite.tsx:881
 msgid "For Javascripts."
 msgstr "Για Javascripts."
 
-#: src/views/Playersite.tsx:785
+#: src/views/Playersite.tsx:816
 msgid "For Stylesheets."
 msgstr "Για Φύλλα στυλ."
 
-#: src/views/Edit/Sources/Network.tsx:691
+#: src/views/Edit/Sources/Network.tsx:692
 msgid "Force input framerate"
 msgstr "Αναγκαστική εισαγωγή καρέ"
 
@@ -1163,12 +1179,12 @@ msgstr "Αναγκαστικά πλαίσια πλήκτρων"
 msgid "Format"
 msgstr "Μορφή"
 
-#: src/components/Progress.tsx:160
+#: src/components/Progress.tsx:163
 #: src/views/Main/Progress.tsx:77
 msgid "FPS"
 msgstr "FPS"
 
-#: src/components/Progress.tsx:217
+#: src/components/Progress.tsx:220
 msgid "Frame drops"
 msgstr "Πτώσεις πλαισίων"
 
@@ -1176,13 +1192,13 @@ msgstr "Πτώσεις πλαισίων"
 msgid "Frame is passed through (Passthrough)"
 msgstr "Το πλαίσιο περνάει (Passthrough)"
 
-#: src/views/Edit/Sources/Framebuffer.tsx:144
+#: src/views/Edit/Sources/Framebuffer.tsx:147
 msgid "Framebuffer"
 msgstr "Framebuffer"
 
 #: src/components/coders/settings/Video.tsx:99
 #: src/components/filters/video/Framerate.tsx:36
-#: src/views/Edit/Sources/Network.tsx:704
+#: src/views/Edit/Sources/Network.tsx:705
 msgid "Framerate"
 msgstr "Ταχύτητα καρέ"
 
@@ -1194,54 +1210,54 @@ msgstr "Μετατροπή καρέ (παρεμβολή καρέ)"
 msgid "Framerate mode"
 msgstr "Λειτουργία καρέ"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:179
+#: src/views/Edit/Sources/VirtualAudio.tsx:181
 msgid "Frequency (Hz)"
 msgstr "Συχνότητα (Hz)"
 
-#: src/views/Edit/index.tsx:488
-#: src/views/Edit/index.tsx:514
-#: src/views/Edit/Sources/Network.tsx:757
-#: src/views/Playersite.tsx:311
-#: src/views/Playersite.tsx:349
-#: src/views/Publication/Add.tsx:471
+#: src/views/Edit/index.tsx:513
+#: src/views/Edit/index.tsx:539
+#: src/views/Edit/Sources/Network.tsx:758
+#: src/views/Playersite.tsx:312
+#: src/views/Playersite.tsx:350
+#: src/views/Publication/Add.tsx:510
 #: src/views/Publication/Edit.tsx:505
-#: src/views/Publication/Services/DASH.tsx:251
-#: src/views/Publication/Services/HLS.tsx:246
-#: src/views/Publication/Services/Icecast.tsx:218
-#: src/views/Publication/Services/Image2.tsx:167
-#: src/views/Publication/Services/RTMP.tsx:210
-#: src/views/Publication/Services/RTSP.tsx:204
-#: src/views/Publication/Services/SRT.tsx:212
-#: src/views/Settings.tsx:1323
-#: src/views/Settings.tsx:1397
+#: src/views/Publication/Services/DASH.tsx:261
+#: src/views/Publication/Services/HLS.tsx:256
+#: src/views/Publication/Services/Icecast.tsx:228
+#: src/views/Publication/Services/Image2.tsx:177
+#: src/views/Publication/Services/RTMP.tsx:220
+#: src/views/Publication/Services/RTSP.tsx:214
+#: src/views/Publication/Services/SRT.tsx:222
+#: src/views/Settings.tsx:1336
+#: src/views/Settings.tsx:1410
 msgid "General"
 msgstr "Γενικά"
 
-#: src/views/Publication/Services/DLive.tsx:89
-#: src/views/Publication/Services/EarthCam.tsx:108
-#: src/views/Publication/Services/Facebook.tsx:124
-#: src/views/Publication/Services/Facebook.tsx:142
-#: src/views/Publication/Services/Instagram.tsx:95
-#: src/views/Publication/Services/Kick.tsx:124
-#: src/views/Publication/Services/MediaNetwork.tsx:91
-#: src/views/Publication/Services/NimoTv.tsx:123
-#: src/views/Publication/Services/PeerTube.tsx:113
-#: src/views/Publication/Services/Restream.tsx:147
-#: src/views/Publication/Services/Rumble.tsx:124
-#: src/views/Publication/Services/TikTok.tsx:124
-#: src/views/Publication/Services/Trovo.tsx:89
-#: src/views/Publication/Services/Twitch.tsx:227
-#: src/views/Publication/Services/Twitter.tsx:216
-#: src/views/Publication/Services/Wettercom.tsx:129
-#: src/views/Publication/Services/Youtube.tsx:227
+#: src/views/Publication/Services/DLive.tsx:99
+#: src/views/Publication/Services/EarthCam.tsx:118
+#: src/views/Publication/Services/Facebook.tsx:134
+#: src/views/Publication/Services/Facebook.tsx:162
+#: src/views/Publication/Services/Instagram.tsx:105
+#: src/views/Publication/Services/Kick.tsx:134
+#: src/views/Publication/Services/MediaNetwork.tsx:101
+#: src/views/Publication/Services/NimoTv.tsx:133
+#: src/views/Publication/Services/PeerTube.tsx:128
+#: src/views/Publication/Services/Restream.tsx:157
+#: src/views/Publication/Services/Rumble.tsx:134
+#: src/views/Publication/Services/TikTok.tsx:134
+#: src/views/Publication/Services/Trovo.tsx:99
+#: src/views/Publication/Services/Twitch.tsx:237
+#: src/views/Publication/Services/Twitter.tsx:226
+#: src/views/Publication/Services/Wettercom.tsx:144
+#: src/views/Publication/Services/Youtube.tsx:237
 msgid "GET"
 msgstr "GET"
 
-#: src/views/Publication/Player.tsx:548
+#: src/views/Publication/Player.tsx:589
 msgid "Google Analytics ID"
 msgstr "Αναγνωριστικό Google Analytics"
 
-#: src/views/Publication/Player.tsx:558
+#: src/views/Publication/Player.tsx:604
 msgid "Google Analytics Tracker Name"
 msgstr "Όνομα ανιχνευτή Google Analytics"
 
@@ -1249,16 +1265,16 @@ msgstr "Όνομα ανιχνευτή Google Analytics"
 msgid "GPU"
 msgstr ""
 
-#: src/views/Edit/Sources/V4L.tsx:178
+#: src/views/Edit/Sources/V4L.tsx:183
 #: src/views/Edit/Wizard/Sources/V4L.tsx:157
 msgid "Hardware device"
 msgstr "Συσκευή υλικού"
 
-#: src/views/Playersite.tsx:644
+#: src/views/Playersite.tsx:665
 msgid "Header"
 msgstr "Κεφαλίδα"
 
-#: src/views/Playersite.tsx:600
+#: src/views/Playersite.tsx:621
 msgid "Headline"
 msgstr "Επικεφαλίδα"
 
@@ -1266,15 +1282,19 @@ msgstr "Επικεφαλίδα"
 msgid "Height"
 msgstr "Ύψος"
 
-#: src/views/Main/index.tsx:572
+#: src/components/controls/VideoOverlays.tsx:251
+msgid "Height (optional)"
+msgstr ""
+
+#: src/views/Main/index.tsx:612
 msgid "HLS"
 msgstr "HLS"
 
-#: src/views/Main/index.tsx:615
+#: src/views/Main/index.tsx:655
 msgid "HLS @ H.264"
 msgstr ""
 
-#: src/views/Edit/index.tsx:578
+#: src/views/Edit/index.tsx:620
 msgid "HLS output"
 msgstr "Έξοδος HLS"
 
@@ -1282,7 +1302,7 @@ msgstr "Έξοδος HLS"
 msgid "HLS server"
 msgstr "Διακομιστής HLS"
 
-#: src/views/Settings.tsx:1878
+#: src/views/Settings.tsx:1913
 msgid "HLS statistic for the In-memory storage"
 msgstr "Στατιστικά στοιχεία HLS για την αποθήκευση στη μνήμη"
 
@@ -1290,75 +1310,80 @@ msgstr "Στατιστικά στοιχεία HLS για την αποθήκευ
 msgid "Horizontal Flip"
 msgstr "Οριζόντια αναστροφή"
 
-#: src/views/Login.tsx:334
+#: src/views/Login.tsx:357
 msgid "Hosted Restreamer interface"
 msgstr "Διασύνδεση Restreamer με φιλοξενία"
 
-#: src/views/Edit/Sources/Network.tsx:681
+#: src/views/Edit/Sources/Network.tsx:682
 msgid "HTTP and HTTPS"
 msgstr "HTTP και HTTPS"
 
-#: src/views/Settings.tsx:1620
+#: src/views/Settings.tsx:1640
 msgid "HTTP port"
 msgstr "Θύρα HTTP"
 
-#: src/views/Settings.tsx:1656
+#: src/views/Settings.tsx:1681
 msgid "HTTPS (SSL/TLS)"
 msgstr "HTTPS (SSL/TLS)"
 
-#: src/views/Settings.tsx:1637
+#: src/views/Settings.tsx:1662
 msgid "HTTPS port"
 msgstr "Θύρα HTTPS"
 
-#: src/views/Settings.tsx:1545
+#: src/views/Settings.tsx:1560
 msgid "Human readable name on the service."
 msgstr "Όνομα της υπηρεσίας που μπορεί να διαβαστεί από τον άνθρωπο."
 
-#: src/views/Settings.tsx:2705
+#: src/views/Settings.tsx:2785
 msgid "If you changed the ports, it might be that Restreamer Core restarted already, but it is now available on a different port."
 msgstr "Αν αλλάξατε τις θύρες, μπορεί το Restreamer Core να έχει ήδη επανεκκινήσει, αλλά τώρα είναι διαθέσιμο σε διαφορετική θύρα."
 
-#: src/views/Settings.tsx:2697
+#: src/views/Settings.tsx:2777
 msgid "If you enabled Let's Encrypt TLS it might take some time to acquire the certificates. Make sure that Restreamer Core is reachable via port 80 from the internet. Please check the console log of Restreamer Core."
 msgstr "Αν έχετε ενεργοποιήσει το Let's Encrypt TLS, μπορεί να χρειαστεί λίγος χρόνος για να αποκτήσετε τα πιστοποιητικά. Βεβαιωθείτε ότι το Restreamer Core είναι προσβάσιμο μέσω της θύρας 80 από το διαδίκτυο. Ελέγξτε το αρχείο καταγραφής της κονσόλας του Restreamer Core."
 
-#: src/views/Publication/Player.tsx:437
+#: src/views/Publication/Player.tsx:443
 msgid "iframe code"
 msgstr "κώδικας iframe"
 
-#: src/views/Settings.tsx:1899
+#: src/views/Settings.tsx:1934
 msgid "Ignore IP ranges"
 msgstr "Αγνοήστε περιοχές IP"
 
-#: src/views/Playersite.tsx:689
-#: src/views/Publication/Player.tsx:474
+#. placeholder {0}: index + 1
+#: src/components/controls/VideoOverlays.tsx:182
+msgid "Image overlay {0}"
+msgstr ""
+
+#: src/views/Playersite.tsx:715
+#: src/views/Publication/Player.tsx:485
 msgid "Image URL"
 msgstr "URL εικόνας"
 
-#: src/views/Playersite.tsx:719
+#: src/views/Playersite.tsx:750
 msgid "Imprint"
 msgstr "Εκτύπωση"
 
-#: src/views/Playersite.tsx:354
+#: src/views/Playersite.tsx:355
 msgid "In addition to the player, the Restreamer offers a complete landingpage, which you can use to present your live stream easily and quickly."
 msgstr "Εκτός από τη συσκευή αναπαραγωγής, το Restreamer προσφέρει μια πλήρη σελίδα προορισμού, την οποία μπορείτε να χρησιμοποιήσετε για να παρουσιάσετε τη ζωντανή ροή σας εύκολα και γρήγορα."
 
-#: src/views/Edit/Profile.tsx:568
-#: src/views/Edit/Profile.tsx:754
+#: src/views/Edit/Profile.tsx:573
+#: src/views/Edit/Profile.tsx:774
 msgid "In order to proceed anyways, you can provide <0>hints</0> about the available streams."
 msgstr ""
 
 #: src/components/controls/HLS.tsx:73
-#: src/views/Settings.tsx:1971
+#: src/views/Settings.tsx:2006
 msgid "In-memory"
 msgstr "Στη μνήμη"
 
-#: src/components/Footer.tsx:321
-#: src/components/Footer.tsx:335
+#: src/components/Footer.tsx:328
+#: src/components/Footer.tsx:342
 msgid "In-memory storage"
 msgstr "Αποθήκευση στη μνήμη"
 
-#: src/views/Publication/Add.tsx:358
+#: src/views/Publication/Add.tsx:369
 msgid "Incompatible"
 msgstr "Μη συμβατό"
 
@@ -1371,49 +1396,49 @@ msgstr "Μη συμβατό"
 msgid "Inherit"
 msgstr "Κληρονόμος"
 
-#: src/views/Playersite.tsx:780
+#: src/views/Playersite.tsx:811
 msgid "Inject 1"
 msgstr "Ένεση 1"
 
-#: src/views/Playersite.tsx:800
+#: src/views/Playersite.tsx:831
 msgid "Inject 2"
 msgstr "Ένεση 2"
 
-#: src/views/Playersite.tsx:822
+#: src/views/Playersite.tsx:853
 msgid "Inject 3"
 msgstr "Έγχυση 3"
 
-#: src/views/Playersite.tsx:845
+#: src/views/Playersite.tsx:876
 msgid "Inject 4"
 msgstr "Ένεση 4"
 
-#: src/views/Edit/Sources/Network.tsx:1270
-#: src/views/Edit/Sources/Network.tsx:1397
+#: src/views/Edit/Sources/Network.tsx:1315
+#: src/views/Edit/Sources/Network.tsx:1450
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:128
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:128
 msgid "Input stream"
 msgstr "Ροή εισόδου"
 
-#: src/views/Publication/Services/PeerTube.tsx:91
+#: src/views/Publication/Services/PeerTube.tsx:96
 msgid "Instance domain"
 msgstr "Πεδίο αναφοράς"
 
-#: src/views/Edit/Sources/Network.tsx:672
+#: src/views/Edit/Sources/Network.tsx:673
 msgid "Internal SRT latency in milliseconds."
 msgstr ""
 
-#: src/components/controls/Snapshot.tsx:56
+#: src/components/controls/Snapshot.tsx:61
 msgid "Interval (seconds)"
 msgstr "Διάστημα (δευτερόλεπτα)"
 
-#: src/components/Header.tsx:352
-#: src/components/Header.tsx:406
+#: src/components/Header.tsx:355
+#: src/components/Header.tsx:409
 msgid "Issue alert"
 msgstr "Ειδοποίηση έκδοσης"
 
-#: src/components/Progress.tsx:173
+#: src/components/Progress.tsx:176
 #: src/views/Main/Progress.tsx:67
-#: src/views/Main/Publication.tsx:204
+#: src/views/Main/Publication.tsx:226
 msgid "kbit/s"
 msgstr "kbit/s"
 
@@ -1421,7 +1446,7 @@ msgstr "kbit/s"
 msgid "Keyframe interval (seconds)"
 msgstr "Διάστημα καρέ πλήκτρων (δευτερόλεπτα)"
 
-#: src/views/Edit/Sources/Network.tsx:667
+#: src/views/Edit/Sources/Network.tsx:668
 msgid "Latency (milliseconds)"
 msgstr ""
 
@@ -1430,11 +1455,11 @@ msgstr ""
 msgid "Layout"
 msgstr "Διάταξη"
 
-#: src/views/Settings.tsx:1661
+#: src/views/Settings.tsx:1686
 msgid "Let's Encrypt certification"
 msgstr "Πιστοποίηση Let's Encrypt"
 
-#: src/views/Settings.tsx:1672
+#: src/views/Settings.tsx:1697
 msgid "Let's Encrypt requires one or more public domain names and an accessible port 80/TCP."
 msgstr "Το Let's Encrypt απαιτεί ένα ή περισσότερα δημόσια ονόματα τομέα και μια προσβάσιμη θύρα 80/TCP."
 
@@ -1444,27 +1469,27 @@ msgstr "Το Let's Encrypt απαιτεί ένα ή περισσότερα δη�
 msgid "Level"
 msgstr "Επίπεδο"
 
-#: src/views/Settings.tsx:2593
+#: src/views/Settings.tsx:2673
 msgid "Level of system protocol."
 msgstr "Επίπεδο πρωτοκόλλου συστήματος."
 
-#: src/views/Edit/index.tsx:503
-#: src/views/Edit/index.tsx:725
+#: src/views/Edit/index.tsx:528
+#: src/views/Edit/index.tsx:778
 #: src/views/Edit/Wizard/License.tsx:25
 msgid "License"
 msgstr "Άδεια"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:234
+#: src/views/Edit/Sources/VirtualVideo.tsx:236
 msgid "Life color"
 msgstr "Χρώμα ζωής"
 
-#: src/views/Edit/index.tsx:684
-#: src/views/Publication/Add.tsx:528
+#: src/views/Edit/index.tsx:737
+#: src/views/Publication/Add.tsx:567
 #: src/views/Publication/Edit.tsx:562
 msgid "Limits"
 msgstr "Όρια"
 
-#: src/views/Playersite.tsx:671
+#: src/views/Playersite.tsx:692
 msgid "Linecolor"
 msgstr "Linecolor"
 
@@ -1472,36 +1497,36 @@ msgstr "Linecolor"
 msgid "Lines"
 msgstr "Γραμμές"
 
-#: src/views/Playersite.tsx:609
-#: src/views/Publication/Player.tsx:509
+#: src/views/Playersite.tsx:630
+#: src/views/Publication/Player.tsx:535
 msgid "Link"
 msgstr "Σύνδεσμος"
 
-#: src/views/Playersite.tsx:618
+#: src/views/Playersite.tsx:639
 msgid "Link, mouseover"
 msgstr "Σύνδεσμος, mouseover"
 
-#: src/views/Edit/Sources/Network.tsx:738
+#: src/views/Edit/Sources/Network.tsx:739
 msgid "List of additional HTTP headers, one per line."
 msgstr ""
 
-#: src/views/Settings.tsx:2279
+#: src/views/Settings.tsx:2334
 msgid "List of file extensions not to cache (e.g. \".m3u8\"), one per line. Leave empty for none."
 msgstr "Λίστα επεκτάσεων αρχείων που δεν πρέπει να αποθηκευτούν στην προσωρινή μνήμη (π.χ. \".m3u8\"), μία ανά γραμμή. Αφήστε κενό για καμία."
 
-#: src/views/Settings.tsx:2255
+#: src/views/Settings.tsx:2310
 msgid "List of file extensions to cache (e.g. \".html\"), one per line. Leave empty to cache all file types."
 msgstr "Λίστα επεκτάσεων αρχείων προς προσωρινή αποθήκευση (π.χ. \".html\"), μία ανά γραμμή. Αφήστε το κενό για να αποθηκεύσετε όλους τους τύπους αρχείων."
 
-#: src/views/Settings.tsx:1912
+#: src/views/Settings.tsx:1947
 msgid "List of IP ranges in CIDR notation, e.g., 127.0.0.1/32, that the statistics will not record—one IP range per line. Leave empty to record all sessions."
 msgstr "Κατάλογος περιοχών IP σε συμβολισμό CIDR, π.χ. 127.0.0.1/32, τις οποίες τα στατιστικά στοιχεία δεν θα καταγράφουν - μία περιοχή IP ανά γραμμή. Αφήστε την κενή για να καταγράψετε όλες τις περιόδους λειτουργίας."
 
-#: src/components/controls/HLS.tsx:126
+#: src/components/controls/HLS.tsx:136
 msgid "List size (segments)"
 msgstr "Μέγεθος λίστας (τμήματα)"
 
-#: src/views/Edit/Sources/Network.tsx:921
+#: src/views/Edit/Sources/Network.tsx:922
 msgid "Live stabilization"
 msgstr ""
 
@@ -1537,54 +1562,54 @@ msgstr "Live-Streaming στην υπηρεσία Twitch Live RTMP."
 msgid "Live-Streaming to Vimeo Live RTMP Service"
 msgstr "Live-Streaming στην υπηρεσία Vimeo Live RTMP"
 
-#: src/views/Publication/Services/Livespotting.tsx:120
+#: src/views/Publication/Services/Livespotting.tsx:130
 msgid "Livesource ID"
 msgstr "Αναγνωριστικό πηγής ζωής"
 
-#: src/views/Settings.tsx:2542
+#: src/views/Settings.tsx:2622
 msgid "Log level"
 msgstr "Επίπεδο καταγραφής"
 
-#: src/components/modals/Process.tsx:173
-#: src/views/Settings.tsx:1378
-#: src/views/Settings.tsx:2513
+#: src/components/modals/Process.tsx:193
+#: src/views/Settings.tsx:1391
+#: src/views/Settings.tsx:2593
 msgid "Logging"
 msgstr "Καταγραφή"
 
-#: src/views/Login.tsx:310
-#: src/views/Login.tsx:424
-#: src/views/Login.tsx:439
-#: src/views/Publication/Services/Akamai.tsx:137
+#: src/views/Login.tsx:328
+#: src/views/Login.tsx:457
+#: src/views/Login.tsx:472
+#: src/views/Publication/Services/Akamai.tsx:142
 msgid "Login"
 msgstr "Σύνδεση"
 
-#. placeholder {0}: err.message
-#: src/utils/restreamer.ts:297
-#: src/utils/restreamer.ts:343
+#. placeholder {0}: String(err.message)
+#: src/utils/restreamer.ts:307
+#: src/utils/restreamer.ts:353
 msgid "Login failed: {0}"
 msgstr "Η σύνδεση απέτυχε: {0}"
 
-#: src/utils/restreamer.ts:310
-#: src/utils/restreamer.ts:319
-#: src/utils/restreamer.ts:356
-#: src/utils/restreamer.ts:365
+#: src/utils/restreamer.ts:320
+#: src/utils/restreamer.ts:329
+#: src/utils/restreamer.ts:366
+#: src/utils/restreamer.ts:375
 msgid "Login failed: Couldn't load API details"
 msgstr "Η σύνδεση απέτυχε: API: Δεν μπόρεσε να φορτώσει λεπτομέρειες API"
 
-#: src/views/Settings.tsx:1766
+#: src/views/Settings.tsx:1801
 msgid "Login/JWT authorization"
 msgstr "Είσοδος/JWT εξουσιοδότηση"
 
-#: src/views/Publication/Player.tsx:415
+#: src/views/Publication/Player.tsx:421
 msgid "Logo"
 msgstr "Λογότυπο"
 
-#: src/components/Header.tsx:364
+#: src/components/Header.tsx:367
 msgid "Logout"
 msgstr "Αποσύνδεση"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:240
-#: src/views/Edit/Sources/VideoLoop.tsx:248
+#: src/views/Edit/Sources/AudioLoop.tsx:255
+#: src/views/Edit/Sources/VideoLoop.tsx:263
 msgid "Loop"
 msgstr "Βρόχος"
 
@@ -1596,12 +1621,12 @@ msgstr "Κανονικοποίηση ηχηρότητας"
 msgid "Low latency (Buffer)"
 msgstr "Χαμηλή καθυστέρηση (Buffer)"
 
-#: src/views/Main/index.tsx:316
-#: src/views/Playersite.tsx:380
+#: src/views/Main/index.tsx:326
+#: src/views/Playersite.tsx:381
 msgid "Main channel"
 msgstr "Κύριο κανάλι"
 
-#: src/views/Publication/Player.tsx:114
+#: src/views/Publication/Player.tsx:118
 msgid "Main channel not found"
 msgstr "Το κύριο κανάλι δεν βρέθηκε"
 
@@ -1609,15 +1634,15 @@ msgstr "Το κύριο κανάλι δεν βρέθηκε"
 msgid "Main channel saved"
 msgstr "Κύριο κανάλι αποθηκευμένο"
 
-#: src/views/Playersite.tsx:403
+#: src/views/Playersite.tsx:404
 msgid "Main page channel (index.html)."
 msgstr "Κανάλι κύριας σελίδας (index.html)."
 
-#: src/views/Edit/index.tsx:461
+#: src/views/Edit/index.tsx:486
 msgid "Main Source"
 msgstr "Κύρια πηγή"
 
-#: src/views/Publication/TabContent.tsx:56
+#: src/views/Publication/TabContent.tsx:61
 msgid "Maintainer:"
 msgstr "Συντηρητής:"
 
@@ -1633,23 +1658,23 @@ msgstr "Κάντε το κανάλι διαθέσιμο ως ροή SRT (πει�
 msgid "Marked frames"
 msgstr "Σημειωμένα πλαίσια"
 
-#: src/components/controls/HLS.tsx:140
+#: src/components/controls/HLS.tsx:150
 msgid "Master playlist (increases browser/client compatibility)"
 msgstr "Κύρια λίστα αναπαραγωγής (αυξάνει τη συμβατότητα προγράμματος περιήγησης/πελάτη)"
 
-#: src/views/Settings.tsx:2177
+#: src/views/Settings.tsx:2222
 msgid "Maximum allowed cache size, 0 for unlimited."
 msgstr "Μέγιστο επιτρεπόμενο μέγεθος cache, 0 για απεριόριστο."
 
-#: src/views/Settings.tsx:2048
+#: src/views/Settings.tsx:2093
 msgid "Maximum allowed megabytes of RAM for /memfs, 0 for unlimited."
 msgstr "Μέγιστα επιτρεπόμενα megabytes μνήμης RAM για το /memfs, 0 για απεριόριστη μνήμη."
 
-#: src/views/Settings.tsx:2111
+#: src/views/Settings.tsx:2156
 msgid "Maximum allowed megabytes to consume from hard disk. 0 for unlimited."
 msgstr "Μέγιστη επιτρεπόμενη κατανάλωση megabytes από το σκληρό δίσκο. 0 για απεριόριστα."
 
-#: src/views/Settings.tsx:1730
+#: src/views/Settings.tsx:1765
 msgid "Maximum bandwidth Mbit/s"
 msgstr "Μέγιστο εύρος ζώνης Mbit/s"
 
@@ -1657,71 +1682,71 @@ msgstr "Μέγιστο εύρος ζώνης Mbit/s"
 msgid "Maximum delay in milliseconds."
 msgstr "Μέγιστη καθυστέρηση σε χιλιοστά του δευτερολέπτου."
 
-#: src/views/Settings.tsx:2203
+#: src/views/Settings.tsx:2258
 msgid "Maximum file size (Megabytes)"
 msgstr "Μέγιστο μέγεθος αρχείου (Megabytes)"
 
-#: src/views/Settings.tsx:2234
+#: src/views/Settings.tsx:2289
 msgid "Maximum file size to put in cache."
 msgstr "Μέγιστο μέγεθος αρχείου που θα τοποθετηθεί στη μνήμη cache."
 
-#: src/views/Settings.tsx:2638
+#: src/views/Settings.tsx:2718
 msgid "Maximum log histroy"
 msgstr "Μέγιστο ιστορικό καταγραφής"
 
-#: src/views/Settings.tsx:2599
-#: src/views/Settings.tsx:2621
+#: src/views/Settings.tsx:2679
+#: src/views/Settings.tsx:2701
 msgid "Maximum log lines"
 msgstr "Μέγιστες γραμμές καταγραφής"
 
-#: src/views/Settings.tsx:2037
-#: src/views/Settings.tsx:2100
-#: src/views/Settings.tsx:2144
+#: src/views/Settings.tsx:2082
+#: src/views/Settings.tsx:2145
+#: src/views/Settings.tsx:2189
 msgid "Maximum size (Megabytes)"
 msgstr "Μέγιστο μέγεθος (Megabytes)"
 
-#: src/views/Settings.tsx:1922
+#: src/views/Settings.tsx:1957
 msgid "Maximum viewer idle time (Seconds)"
 msgstr "Μέγιστος χρόνος αδράνειας του θεατή (δευτερόλεπτα)"
 
-#: src/views/Settings.tsx:1709
+#: src/views/Settings.tsx:1739
 msgid "Maximum viewers"
 msgstr "Μέγιστοι θεατές"
 
-#: src/components/Footer.tsx:241
+#: src/components/Footer.tsx:248
 msgid "MB"
 msgstr "MB"
 
-#: src/components/Footer.tsx:234
-#: src/components/Progress.tsx:147
+#: src/components/Footer.tsx:241
+#: src/components/Progress.tsx:150
 msgid "Memory"
 msgstr "Μνήμη"
 
-#: src/components/controls/Limits.tsx:60
+#: src/components/controls/Limits.tsx:71
 msgid "Memory Limit (megabytes)"
 msgstr "Όριο μνήμης (megabytes)"
 
-#: src/components/controls/Limits.tsx:65
+#: src/components/controls/Limits.tsx:79
 msgid "Memory usage limit in megabytes, 0 for unlimited."
 msgstr "Όριο χρήσης μνήμης σε megabytes, 0 για απεριόριστη χρήση."
 
-#: src/views/Edit/index.tsx:498
+#: src/views/Edit/index.tsx:523
 msgid "Meta information"
 msgstr "Μεταπληροφορίες"
 
-#: src/views/Edit/index.tsx:699
+#: src/views/Edit/index.tsx:752
 #: src/views/Edit/Wizard/Metadata.tsx:25
 msgid "Metadata"
 msgstr "Μεταδεδομένα"
 
 #. placeholder {0}: 32
 #. placeholder {1}: 5000000
-#: src/views/Edit/Sources/Network.tsx:784
-#: src/views/Edit/Sources/X11grab.tsx:220
+#: src/views/Edit/Sources/Network.tsx:785
+#: src/views/Edit/Sources/X11grab.tsx:225
 msgid "Mininum {0}, default {1}"
 msgstr "Ελάχιστο {0}, προεπιλογή {1}"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:207
+#: src/views/Edit/Sources/VirtualVideo.tsx:209
 msgid "Mold"
 msgstr "Μούχλα"
 
@@ -1731,7 +1756,7 @@ msgstr "Μούχλα"
 msgid "More about licenses here"
 msgstr "Περισσότερα για τις άδειες εδώ"
 
-#: src/views/Settings.tsx:1502
+#: src/views/Settings.tsx:1517
 msgid "More about the service"
 msgstr "Περισσότερα για την υπηρεσία"
 
@@ -1743,15 +1768,15 @@ msgstr "Περισσότερα για τα πνευματικά δικαιώμα
 msgid "More about YouTube's copyright <0>here</0>."
 msgstr "Περισσότερα για τα πνευματικά δικαιώματα του YouTube <0>εδώ</0>."
 
-#: src/views/Settings.tsx:2164
+#: src/views/Settings.tsx:2209
 msgid "Must be larger than maximum file size in cache."
 msgstr "Πρέπει να είναι μεγαλύτερο από το μέγιστο μέγεθος αρχείου στην προσωρινή μνήμη."
 
-#: src/views/Settings.tsx:2223
+#: src/views/Settings.tsx:2278
 msgid "Must be smaller than maximum cache size."
 msgstr "Πρέπει να είναι μικρότερη από το μέγιστο μέγεθος της κρυφής μνήμης."
 
-#: src/views/Publication/Player.tsx:581
+#: src/views/Publication/Player.tsx:627
 msgid "Mute"
 msgstr "Σίγαση"
 
@@ -1767,40 +1792,40 @@ msgstr "Σίγαση αριστερά"
 msgid "Mute right"
 msgstr "Σίγαση δεξιά"
 
-#: src/components/ChannelList.tsx:544
-#: src/components/controls/Metadata.tsx:81
-#: src/components/controls/Metadata.tsx:106
-#: src/views/Playersite.tsx:541
-#: src/views/Settings.tsx:1534
+#: src/components/ChannelList.tsx:586
+#: src/components/controls/Metadata.tsx:82
+#: src/components/controls/Metadata.tsx:107
+#: src/views/Playersite.tsx:557
+#: src/views/Settings.tsx:1549
 msgid "Name"
 msgstr "Όνομα"
 
-#: src/views/Playersite.tsx:546
+#: src/views/Playersite.tsx:562
 msgid "Name for the template. If the name already exists, it will be overwritten."
 msgstr "Όνομα για το πρότυπο. Εάν το όνομα υπάρχει ήδη, θα αντικατασταθεί."
 
-#: src/views/Settings.tsx:1337
-#: src/views/Settings.tsx:1589
+#: src/views/Settings.tsx:1350
+#: src/views/Settings.tsx:1604
 msgid "Network"
 msgstr "Δίκτυο"
 
-#: src/views/Edit/Sources/Network.tsx:1564
-#: src/views/Edit/Wizard/Sources/Network.tsx:133
+#: src/views/Edit/Sources/Network.tsx:1621
+#: src/views/Edit/Wizard/Sources/Network.tsx:143
 msgid "Network source"
 msgstr "Πηγή δικτύου"
 
-#: src/views/Edit/Wizard/Audio.tsx:163
+#: src/views/Edit/Wizard/Audio.tsx:175
 #: src/views/Edit/Wizard/Metadata.tsx:54
-#: src/views/Edit/Wizard/Video.tsx:103
+#: src/views/Edit/Wizard/Video.tsx:115
 #: src/views/Edit/Wizard/VideoProfile.tsx:118
 msgid "Next"
 msgstr "Επόμενο"
 
-#: src/views/Edit/Profile.tsx:670
+#: src/views/Edit/Profile.tsx:685
 msgid "Next: Audio"
 msgstr "Επόμενος: Ήχος"
 
-#: src/views/Welcome.tsx:52
+#: src/views/Welcome.tsx:58
 msgid "Next: Video setup"
 msgstr "Επόμενος: Ρύθμιση βίντεο"
 
@@ -1809,7 +1834,7 @@ msgid "No"
 msgstr "Όχι"
 
 #: src/views/Edit/Sources/NoAudio.tsx:42
-#: src/views/Edit/Wizard/Audio.tsx:146
+#: src/views/Edit/Wizard/Audio.tsx:158
 msgid "No audio"
 msgstr "Χωρίς ήχο"
 
@@ -1817,7 +1842,7 @@ msgstr "Χωρίς ήχο"
 msgid "No audio stream available"
 msgstr "Δεν υπάρχει διαθέσιμη ροή ήχου"
 
-#: src/views/Main/index.tsx:480
+#: src/views/Main/index.tsx:506
 msgid "No H.264 Stream availabe."
 msgstr ""
 
@@ -1826,7 +1851,7 @@ msgstr ""
 msgid "No input device available"
 msgstr "Δεν υπάρχει διαθέσιμη συσκευή εισόδου"
 
-#: src/views/Edit/Wizard/Video.tsx:44
+#: src/views/Edit/Wizard/Video.tsx:48
 msgid "No live stream was detected. Please check the software that sends the stream."
 msgstr "Δεν εντοπίστηκε ζωντανή ροή. Ελέγξτε το λογισμικό που στέλνει τη ροή."
 
@@ -1834,11 +1859,15 @@ msgstr "Δεν εντοπίστηκε ζωντανή ροή. Ελέγξτε το
 msgid "No source selected"
 msgstr "Δεν έχει επιλεγεί πηγή"
 
-#: src/views/Edit/SourceSelect.tsx:182
+#: src/views/Edit/SourceSelect.tsx:189
 msgid "No sources available"
 msgstr "Δεν υπάρχουν διαθέσιμες πηγές"
 
-#: src/components/EncodingSelect.tsx:199
+#: src/components/EncodingSelect.tsx:274
+msgid "No suitable decoder found for this codec."
+msgstr ""
+
+#: src/components/EncodingSelect.tsx:200
 msgid "No suitable encoder found."
 msgstr "Δεν βρέθηκε κατάλληλος κωδικοποιητής."
 
@@ -1846,8 +1875,8 @@ msgstr "Δεν βρέθηκε κατάλληλος κωδικοποιητής."
 msgid "No suitable filter found."
 msgstr "Δεν βρέθηκε κατάλληλο φίλτρο."
 
-#: src/views/Main/index.tsx:365
-#: src/views/Publication/Player.tsx:385
+#: src/views/Main/index.tsx:387
+#: src/views/Publication/Player.tsx:391
 msgid "No video"
 msgstr "Δεν υπάρχει βίντεο"
 
@@ -1855,65 +1884,65 @@ msgstr "Δεν υπάρχει βίντεο"
 msgid "No video stream available"
 msgstr "Δεν υπάρχει διαθέσιμη ροή βίντεο"
 
-#: src/views/Settings.tsx:1522
+#: src/views/Settings.tsx:1537
 msgid "Node ID"
 msgstr "Αναγνωριστικό κόμβου"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:103
+#: src/views/Edit/Sources/VirtualAudio.tsx:105
 msgid "Noise"
 msgstr "Θόρυβος"
 
 #: src/components/filters/video/Scale.tsx:44
-#: src/views/Edit/Sources/AVFoundation.tsx:158
+#: src/views/Edit/Sources/AVFoundation.tsx:159
 #: src/views/Edit/Summary.tsx:29
 #: src/views/Edit/Summary.tsx:109
 #: src/views/Edit/Wizard/Sources/AVFoundation.tsx:120
 msgid "None"
 msgstr "Κανένα"
 
-#: src/views/Playersite.tsx:328
-#: src/views/Playersite.tsx:714
+#: src/views/Playersite.tsx:329
+#: src/views/Playersite.tsx:745
 msgid "Notes"
 msgstr "Σημειώσεις"
 
-#: src/views/Settings.tsx:2610
-#: src/views/Settings.tsx:2632
+#: src/views/Settings.tsx:2690
+#: src/views/Settings.tsx:2712
 msgid "Number of log lines to keep."
 msgstr "Αριθμός γραμμών καταγραφής που θα διατηρηθούν."
 
-#: src/views/Settings.tsx:2649
+#: src/views/Settings.tsx:2729
 msgid "Number of logs to keep for each process."
 msgstr "Αριθμός καταγραφών που πρέπει να διατηρούνται για κάθε διεργασία."
 
-#: src/components/controls/Limits.tsx:79
+#: src/components/controls/Limits.tsx:100
 msgid "Number of seconds the limits are allowed to be exceeded."
 msgstr "Αριθμός δευτερολέπτων για τα οποία επιτρέπεται η υπέρβαση των ορίων."
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:239
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:257
 msgid "Number of tiles columns to encode with."
 msgstr "Αριθμός στηλών πλακιδίων για κωδικοποίηση."
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:211
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:225
 msgid "Number of tiles encode with."
 msgstr "Αριθμός πλακιδίων που κωδικοποιούνται με."
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:225
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:241
 msgid "Number of tiles rows to encode with."
 msgstr "Αριθμός σειρών πλακιδίων για κωδικοποίηση."
 
-#: src/views/Edit/Sources/AudioLoop.tsx:225
-#: src/views/Edit/Sources/SDP.tsx:206
-#: src/views/Edit/Sources/VideoLoop.tsx:233
-#: src/views/Playersite.tsx:891
-#: src/views/Publication/Player.tsx:642
+#: src/views/Edit/Sources/AudioLoop.tsx:240
+#: src/views/Edit/Sources/SDP.tsx:221
+#: src/views/Edit/Sources/VideoLoop.tsx:248
+#: src/views/Playersite.tsx:922
+#: src/views/Publication/Player.tsx:688
 msgid "OK"
 msgstr "OK"
 
-#: src/views/Settings.tsx:1862
+#: src/views/Settings.tsx:1897
 msgid "One referrer per line, e.g. http://www.example.com"
 msgstr "Ένας παραπομπός ανά γραμμή, π.χ. http://www.example.com"
 
-#: src/views/Playersite.tsx:876
+#: src/views/Playersite.tsx:907
 msgid "Open"
 msgstr "Ανοίξτε το"
 
@@ -1925,57 +1954,61 @@ msgstr "Απομονωτής εξόδου"
 msgid "Pan"
 msgstr "Pan"
 
-#: src/views/Publication/Services/Core.tsx:277
-#: src/views/Settings.tsx:2477
+#: src/views/Publication/Services/Core.tsx:282
+#: src/views/Settings.tsx:2557
 msgid "Passphrase"
 msgstr "Συνθηματική φράση"
 
-#: src/views/Settings.tsx:2504
+#: src/views/Settings.tsx:2584
 msgid "Passphrase for SRT encryption."
 msgstr "Σύνθημα πρόσβασης για κρυπτογράφηση SRT."
 
-#: src/views/Settings.tsx:2491
+#: src/views/Settings.tsx:2571
 msgid "Passphrase must be between 10 and 79 characters long"
 msgstr "Η φράση πρόσβασης πρέπει να έχει μήκος μεταξύ 10 και 79 χαρακτήρων"
 
-#: src/views/Publication/Edit.tsx:650
+#: src/views/Publication/Edit.tsx:655
 msgid "Passthrough (copy) should only be disabled if necessary. Each encoding requires additional CPU/GPU resources."
 msgstr "Το Passthrough (αντιγραφή) θα πρέπει να απενεργοποιείται μόνο εάν είναι απαραίτητο. Κάθε κωδικοποίηση απαιτεί πρόσθετους πόρους CPU/GPU."
 
-#: src/views/Edit/Sources/Network.tsx:1021
-#: src/views/Edit/Wizard/Sources/Network.tsx:114
-#: src/views/Login.tsx:295
-#: src/views/Publication/Services/Akamai.tsx:147
-#: src/views/Publication/Services/DaCast.tsx:176
-#: src/views/Publication/Services/DASH.tsx:231
-#: src/views/Publication/Services/HLS.tsx:226
-#: src/views/Publication/Services/Red5.tsx:183
-#: src/views/Publication/Services/RTSP.tsx:184
-#: src/views/Publication/Services/WOWZA.tsx:207
-#: src/views/Settings.tsx:1809
-#: src/views/Settings.tsx:2017
+#: src/views/Edit/Sources/Network.tsx:1041
+#: src/views/Edit/Wizard/Sources/Network.tsx:124
+#: src/views/Login.tsx:312
+#: src/views/Publication/Services/Akamai.tsx:157
+#: src/views/Publication/Services/DaCast.tsx:196
+#: src/views/Publication/Services/DASH.tsx:241
+#: src/views/Publication/Services/HLS.tsx:236
+#: src/views/Publication/Services/Red5.tsx:213
+#: src/views/Publication/Services/RTSP.tsx:194
+#: src/views/Publication/Services/WOWZA.tsx:237
+#: src/views/Settings.tsx:1844
+#: src/views/Settings.tsx:2062
 msgid "Password"
 msgstr "Κωδικός πρόσβασης"
 
-#: src/views/Settings.tsx:1818
-#: src/views/Settings.tsx:2031
+#: src/views/Settings.tsx:1853
+#: src/views/Settings.tsx:2076
 msgid "Password for authorization."
 msgstr "Κωδικός πρόσβασης για εξουσιοδότηση."
 
-#: src/views/Edit/Sources/Network.tsx:1026
-#: src/views/Edit/Wizard/Sources/Network.tsx:120
+#: src/views/Edit/Sources/Network.tsx:1046
+#: src/views/Edit/Wizard/Sources/Network.tsx:130
 msgid "Password for the device."
 msgstr "Κωδικός πρόσβασης για τη συσκευή."
 
-#: src/views/Settings.tsx:1944
+#: src/views/Password.tsx:184
+msgid "Passwords do not match."
+msgstr ""
+
+#: src/views/Settings.tsx:1979
 msgid "Persist viewer statistics"
 msgstr "Στατιστικά στοιχεία θεατών που παραμένουν"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:140
+#: src/views/Edit/Sources/VirtualAudio.tsx:142
 msgid "pink"
 msgstr "ροζ"
 
-#: src/views/Publication/Services/Framebuffer.tsx:115
+#: src/views/Publication/Services/Framebuffer.tsx:113
 msgid "Pixel format"
 msgstr "Μορφή pixel"
 
@@ -1983,43 +2016,43 @@ msgstr "Μορφή pixel"
 msgid "Pixel Format"
 msgstr ""
 
-#: src/views/Login.tsx:326
+#: src/views/Login.tsx:349
 msgid "Plan: <0>Starter</0>"
 msgstr "Σχέδιο: <0>Starter</0>"
 
-#: src/views/Publication/Add.tsx:434
+#: src/views/Publication/Add.tsx:473
 msgid "Platforms"
 msgstr "Πλατφόρμες"
 
-#: src/views/Publication/Player.tsx:423
-#: src/views/Settings.tsx:1350
-#: src/views/Settings.tsx:1827
+#: src/views/Publication/Player.tsx:429
+#: src/views/Settings.tsx:1363
+#: src/views/Settings.tsx:1862
 msgid "Playback"
 msgstr "Αναπαραγωγή"
 
-#: src/views/Main/Egress.tsx:108
+#: src/views/Main/Egress.tsx:111
 msgid "Player"
 msgstr "Παίκτης"
 
-#: src/views/Edit/index.tsx:655
+#: src/views/Edit/index.tsx:708
 msgid "Player Playback"
 msgstr ""
 
-#: src/views/Publication/Player.tsx:312
+#: src/views/Publication/Player.tsx:316
 msgid "Player settings saved"
 msgstr "Αποθήκευση ρυθμίσεων παίκτη"
 
-#: src/views/Publication/Player.tsx:431
+#: src/views/Publication/Player.tsx:437
 msgid "Player URL"
 msgstr "URL παίκτη"
 
-#: src/components/Header.tsx:313
-#: src/views/Playersite.tsx:363
+#: src/components/Header.tsx:316
+#: src/views/Playersite.tsx:364
 msgid "Playersite"
 msgstr "Playersite"
 
-#: src/views/Publication/Services/DASH.tsx:413
-#: src/views/Publication/Services/HLS.tsx:351
+#: src/views/Publication/Services/DASH.tsx:463
+#: src/views/Publication/Services/HLS.tsx:371
 msgid "Playlist"
 msgstr "Λίστα αναπαραγωγής"
 
@@ -2027,15 +2060,15 @@ msgstr "Λίστα αναπαραγωγής"
 msgid "Playlist version (M3U8). Version 3 has the best browser/client compatibility."
 msgstr "Έκδοση λίστας αναπαραγωγής (M3U8). Η έκδοση 3 έχει την καλύτερη συμβατότητα προγράμματος περιήγησης/πελάτη."
 
-#: src/views/Main/index.tsx:522
+#: src/views/Main/index.tsx:548
 msgid "Please <0>edit</0> this channel and disable the second H.264 stream in the \"Processing & Control\" area."
 msgstr ""
 
-#: src/views/Main/index.tsx:485
+#: src/views/Main/index.tsx:511
 msgid "Please <0>edit</0> this channel and enable the browser-compatible H.264 stream in the \"Processing & Control\" area."
 msgstr ""
 
-#: src/views/Main/index.tsx:411
+#: src/views/Main/index.tsx:437
 msgid "Please check the <0>process log</0>"
 msgstr "Ελέγξτε το αρχείο καταγραφής <0>διεργασίας</0>"
 
@@ -2065,7 +2098,7 @@ msgstr "Ελέγξτε το αρχείο καταγραφής <0>διεργασ�
 msgid "Please contact the operator of the service and check what happens."
 msgstr "Επικοινωνήστε με τον φορέα εκμετάλλευσης της υπηρεσίας και ελέγξτε τι συμβαίνει."
 
-#: src/views/Settings.tsx:1691
+#: src/views/Settings.tsx:1716
 msgid "Please enter your email address to signify agreement with the Let's Encrypt CA's terms of service and to be notified in case of issues."
 msgstr "Παρακαλούμε εισάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας για να υπογράψετε τη συμφωνία σας με τους όρους χρήσης της Let's Encrypt CA και για να ειδοποιηθείτε σε περίπτωση προβλημάτων."
 
@@ -2080,39 +2113,39 @@ msgstr "Παρακαλούμε εισάγετε τη διεύθυνση ηλεκ
 msgid "Please get in touch with the operator of the service and check what happens."
 msgstr "Παρακαλούμε επικοινωνήστε με τον φορέα εκμετάλλευσης της υπηρεσίας και ελέγξτε τι συμβαίνει."
 
-#: src/views/Edit/Sources/AudioLoop.tsx:114
-#: src/views/Edit/Sources/SDP.tsx:100
-#: src/views/Edit/Sources/VideoLoop.tsx:122
-#: src/views/Playersite.tsx:175
-#: src/views/Publication/Player.tsx:203
+#: src/views/Edit/Sources/AudioLoop.tsx:115
+#: src/views/Edit/Sources/SDP.tsx:101
+#: src/views/Edit/Sources/VideoLoop.tsx:123
+#: src/views/Playersite.tsx:176
+#: src/views/Publication/Player.tsx:207
 msgid "Please select a file to upload."
 msgstr "Παρακαλούμε επιλέξτε ένα αρχείο για να το ανεβάσετε."
 
-#: src/views/Publication/Add.tsx:572
+#: src/views/Publication/Add.tsx:611
 msgid "Please use \"Passthrough (copy)\" if possible. Encoding requires additional CPU/GPU resources."
 msgstr "Παρακαλούμε χρησιμοποιήστε το \"Passthrough (αντίγραφο)\" εάν είναι δυνατόν. Η κωδικοποίηση απαιτεί πρόσθετους πόρους CPU/GPU."
 
-#: src/views/Edit/Wizard/Probe.tsx:20
+#: src/views/Edit/Wizard/Probe.tsx:31
 msgid "Please wait. Probe stream data ..."
 msgstr "Παρακαλώ περιμένετε. Δεδομένα ροής ανιχνευτή ..."
 
-#: src/views/Edit/Wizard/Saving.tsx:20
+#: src/views/Edit/Wizard/Saving.tsx:27
 msgid "Please wait. Setting up the stream ..."
 msgstr "Παρακαλώ περιμένετε. Ρύθμιση της ροής ..."
 
-#: src/views/Settings.tsx:2440
+#: src/views/Settings.tsx:2515
 msgid "Port"
 msgstr "Λιμάνι"
 
-#: src/views/Publication/Player.tsx:494
+#: src/views/Publication/Player.tsx:515
 msgid "Position"
 msgstr "Θέση"
 
-#: src/views/Publication/Player.tsx:418
+#: src/views/Publication/Player.tsx:424
 msgid "Poster"
 msgstr "Αφίσα"
 
-#: src/views/Publication/Player.tsx:523
+#: src/views/Publication/Player.tsx:554
 msgid "Poster image URL"
 msgstr "URL εικόνας αφίσας"
 
@@ -2124,60 +2157,60 @@ msgstr "URL εικόνας αφίσας"
 msgid "Preset"
 msgstr "Προεπιλεγμένο"
 
-#: src/views/Publication/Services/Youtube.tsx:232
+#: src/views/Publication/Services/Youtube.tsx:242
 msgid "Primary stream"
 msgstr "Πρωτογενής ροή"
 
-#: src/views/Publication/Services/Facebook.tsx:115
+#: src/views/Publication/Services/Facebook.tsx:120
 msgid "Primary stream key"
 msgstr "Πρωτεύον κλειδί ροής"
 
-#: src/views/Edit/Sources/ALSA.tsx:173
-#: src/views/Edit/Sources/AudioLoop.tsx:212
-#: src/views/Edit/Sources/AVFoundation.tsx:245
-#: src/views/Edit/Sources/Channel.tsx:123
-#: src/views/Edit/Sources/Framebuffer.tsx:132
-#: src/views/Edit/Sources/Network.tsx:1046
-#: src/views/Edit/Sources/Network.tsx:1186
-#: src/views/Edit/Sources/Network.tsx:1310
-#: src/views/Edit/Sources/Network.tsx:1437
-#: src/views/Edit/Sources/Raspicam.tsx:163
-#: src/views/Edit/Sources/SDP.tsx:193
-#: src/views/Edit/Sources/V4L.tsx:166
-#: src/views/Edit/Sources/VideoLoop.tsx:220
-#: src/views/Edit/Sources/VirtualAudio.tsx:206
-#: src/views/Edit/Sources/VirtualVideo.tsx:255
-#: src/views/Edit/Sources/X11grab.tsx:279
+#: src/views/Edit/Sources/ALSA.tsx:178
+#: src/views/Edit/Sources/AudioLoop.tsx:227
+#: src/views/Edit/Sources/AVFoundation.tsx:248
+#: src/views/Edit/Sources/Channel.tsx:128
+#: src/views/Edit/Sources/Framebuffer.tsx:135
+#: src/views/Edit/Sources/Network.tsx:1066
+#: src/views/Edit/Sources/Network.tsx:1223
+#: src/views/Edit/Sources/Network.tsx:1355
+#: src/views/Edit/Sources/Network.tsx:1490
+#: src/views/Edit/Sources/Raspicam.tsx:168
+#: src/views/Edit/Sources/SDP.tsx:208
+#: src/views/Edit/Sources/V4L.tsx:171
+#: src/views/Edit/Sources/VideoLoop.tsx:235
+#: src/views/Edit/Sources/VirtualAudio.tsx:208
+#: src/views/Edit/Sources/VirtualVideo.tsx:257
+#: src/views/Edit/Sources/X11grab.tsx:284
 msgid "Probe"
 msgstr "Ανιχνευτής"
 
-#: src/views/Edit/index.tsx:670
-#: src/views/Publication/Add.tsx:514
+#: src/views/Edit/index.tsx:723
+#: src/views/Publication/Add.tsx:553
 #: src/views/Publication/Edit.tsx:548
 msgid "Process"
 msgstr "Διαδικασία"
 
-#: src/views/Publication/Add.tsx:481
+#: src/views/Publication/Add.tsx:520
 #: src/views/Publication/Edit.tsx:515
 msgid "Process control"
 msgstr "Έλεγχος διεργασιών"
 
-#: src/views/Main/index.tsx:639
-#: src/views/Main/index.tsx:661
-#: src/views/Publication/Edit.tsx:600
-#: src/views/Publication/Edit.tsx:741
+#: src/views/Main/index.tsx:689
+#: src/views/Main/index.tsx:717
+#: src/views/Publication/Edit.tsx:605
+#: src/views/Publication/Edit.tsx:746
 msgid "Process details"
 msgstr "Λεπτομέρειες διαδικασίας"
 
-#: src/views/Main/index.tsx:648
-#: src/views/Main/index.tsx:669
-#: src/views/Publication/Edit.tsx:608
-#: src/views/Publication/Edit.tsx:749
+#: src/views/Main/index.tsx:698
+#: src/views/Main/index.tsx:725
+#: src/views/Publication/Edit.tsx:613
+#: src/views/Publication/Edit.tsx:754
 msgid "Process report"
 msgstr "Αναφορά διαδικασίας"
 
-#: src/views/Edit/index.tsx:493
-#: src/views/Edit/index.tsx:570
+#: src/views/Edit/index.tsx:518
+#: src/views/Edit/index.tsx:612
 msgid "Processing & Control"
 msgstr "Επεξεργασία & έλεγχος"
 
@@ -2192,49 +2225,49 @@ msgstr "Επεξεργασία & έλεγχος"
 msgid "Profile"
 msgstr "Προφίλ"
 
-#: src/views/Edit/Sources/Network.tsx:926
+#: src/views/Edit/Sources/Network.tsx:927
 msgid "Protect: None"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:932
+#: src/views/Edit/Sources/Network.tsx:933
 msgid "Protect: Video and audio channel"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:929
+#: src/views/Edit/Sources/Network.tsx:930
 msgid "Protect: Video channel"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:1102
-#: src/views/Publication/Services/Akamai.tsx:157
-#: src/views/Publication/Services/Akamai.tsx:199
-#: src/views/Publication/Services/Azure.tsx:100
-#: src/views/Publication/Services/Brightcove.tsx:101
-#: src/views/Publication/Services/CDN77.tsx:103
-#: src/views/Publication/Services/Core.tsx:258
-#: src/views/Publication/Services/DaCast.tsx:141
-#: src/views/Publication/Services/DaCast.tsx:206
-#: src/views/Publication/Services/DASH.tsx:201
-#: src/views/Publication/Services/HLS.tsx:196
-#: src/views/Publication/Services/Icecast.tsx:187
-#: src/views/Publication/Services/Image2.tsx:135
-#: src/views/Publication/Services/Linkedin.tsx:100
-#: src/views/Publication/Services/MPEGTS.tsx:193
-#: src/views/Publication/Services/Owncast.tsx:102
-#: src/views/Publication/Services/Red5.tsx:128
-#: src/views/Publication/Services/RTMP.tsx:164
-#: src/views/Publication/Services/RTSP.tsx:156
-#: src/views/Publication/Services/SRT.tsx:174
-#: src/views/Publication/Services/Telegram.tsx:88
-#: src/views/Publication/Services/UDP.tsx:140
-#: src/views/Publication/Services/WOWZA.tsx:144
+#: src/views/Edit/Sources/Network.tsx:1135
+#: src/views/Publication/Services/Akamai.tsx:172
+#: src/views/Publication/Services/Akamai.tsx:229
+#: src/views/Publication/Services/Azure.tsx:105
+#: src/views/Publication/Services/Brightcove.tsx:106
+#: src/views/Publication/Services/CDN77.tsx:108
+#: src/views/Publication/Services/Core.tsx:263
+#: src/views/Publication/Services/DaCast.tsx:146
+#: src/views/Publication/Services/DaCast.tsx:236
+#: src/views/Publication/Services/DASH.tsx:206
+#: src/views/Publication/Services/HLS.tsx:201
+#: src/views/Publication/Services/Icecast.tsx:192
+#: src/views/Publication/Services/Image2.tsx:140
+#: src/views/Publication/Services/Linkedin.tsx:105
+#: src/views/Publication/Services/MPEGTS.tsx:198
+#: src/views/Publication/Services/Owncast.tsx:107
+#: src/views/Publication/Services/Red5.tsx:133
+#: src/views/Publication/Services/RTMP.tsx:169
+#: src/views/Publication/Services/RTSP.tsx:161
+#: src/views/Publication/Services/SRT.tsx:179
+#: src/views/Publication/Services/Telegram.tsx:93
+#: src/views/Publication/Services/UDP.tsx:145
+#: src/views/Publication/Services/WOWZA.tsx:149
 msgid "Protocol"
 msgstr "Πρωτόκολλο"
 
-#: src/views/Publication/Add.tsx:440
+#: src/views/Publication/Add.tsx:479
 msgid "Protocols"
 msgstr "Πρωτόκολλα"
 
-#: src/views/Settings.tsx:1599
+#: src/views/Settings.tsx:1614
 msgid "Public domain/s"
 msgstr "Δημόσιος τομέας/ες"
 
@@ -2243,30 +2276,30 @@ msgstr "Δημόσιος τομέας/ες"
 msgid "Publication service not found"
 msgstr "Η υπηρεσία δημοσίευσης δεν βρέθηκε"
 
-#: src/views/Playersite.tsx:261
+#: src/views/Playersite.tsx:262
 msgid "Publication website settings saved"
 msgstr "Αποθήκευση ρυθμίσεων ιστότοπου δημοσίευσης"
 
-#: src/views/Main/Publication.tsx:168
+#: src/views/Main/Publication.tsx:169
 msgid "Publications"
 msgstr "Δημοσιεύσεις"
 
-#: src/views/Edit/Sources/Network.tsx:1531
+#: src/views/Edit/Sources/Network.tsx:1588
 msgid "Pull Mode"
 msgstr "Λειτουργία έλξης"
 
-#: src/views/Edit/Sources/Network.tsx:1527
+#: src/views/Edit/Sources/Network.tsx:1584
 msgid "Pull or recieve the data:"
 msgstr "Τραβήξτε ή λάβετε τα δεδομένα:"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:192
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:201
 msgid "QP"
 msgstr "QP"
 
-#: src/components/coders/Encoders/video/h264_vaapi.tsx:166
-#: src/components/coders/Encoders/video/hevc_vaapi.tsx:168
-#: src/components/coders/Encoders/video/vp9_vaapi.tsx:168
-#: src/components/Progress.tsx:186
+#: src/components/coders/Encoders/video/h264_vaapi.tsx:181
+#: src/components/coders/Encoders/video/hevc_vaapi.tsx:183
+#: src/components/coders/Encoders/video/vp9_vaapi.tsx:183
+#: src/components/Progress.tsx:189
 msgid "Quality"
 msgstr "Ποιότητα"
 
@@ -2274,8 +2307,8 @@ msgstr "Ποιότητα"
 msgid "Quality and compression efficiency vs speed trade-off."
 msgstr ""
 
-#: src/views/Edit/Sources/Raspicam.tsx:175
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:124
+#: src/views/Edit/Sources/Raspicam.tsx:180
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:122
 msgid "Raspberry Pi camera"
 msgstr "Κάμερα Raspberry Pi"
 
@@ -2288,19 +2321,19 @@ msgstr "Κάμερα Raspberry Pi"
 msgid "Rate control"
 msgstr "Έλεγχος ποσοστού"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:216
+#: src/views/Edit/Sources/VirtualVideo.tsx:218
 msgid "Ratio"
 msgstr "Αναλογία"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:246
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:264
 msgid "rav1e Parameters"
 msgstr "rav1e Παράμετροι"
 
-#: src/views/Edit/Sources/Network.tsx:686
+#: src/views/Edit/Sources/Network.tsx:687
 msgid "Read input at native speed"
 msgstr "Διαβάστε την είσοδο σε εγγενή ταχύτητα"
 
-#: src/views/Edit/Sources/Network.tsx:1532
+#: src/views/Edit/Sources/Network.tsx:1589
 msgid "Receive Mode"
 msgstr "Λειτουργία λήψης"
 
@@ -2310,35 +2343,35 @@ msgstr "Λειτουργία λήψης"
 msgid "Reconnect"
 msgstr "Επανασύνδεση"
 
-#: src/components/controls/Process.tsx:65
+#: src/components/controls/Process.tsx:70
 msgid "Reconnect delay (seconds)"
 msgstr "Καθυστέρηση επανασύνδεσης (δευτερόλεπτα)"
 
 #. placeholder {0}: $state.progress.reconnect
 #. placeholder {0}: progress.reconnect
-#: src/views/Main/index.tsx:422
+#: src/views/Main/index.tsx:448
 #: src/views/Publication/Process.tsx:72
 #: src/views/Publication/Process.tsx:91
 msgid "Reconnecting in {0}s"
 msgstr "Επανασύνδεση σε {0}s"
 
-#: src/views/Settings.tsx:2691
+#: src/views/Settings.tsx:2771
 msgid "Reconnecting to Restreamer Core failed for the last {RETRIES} seconds."
 msgstr "Η επανασύνδεση με τον πυρήνα Restreamer απέτυχε για τα τελευταία {RETRIES} δευτερόλεπτα."
 
-#: src/views/Password.tsx:198
+#: src/views/Password.tsx:226
 msgid "Reconnecting to Restreamer Core failed."
 msgstr "Η επανασύνδεση με το Restreamer Core απέτυχε."
 
-#: src/views/Edit/Sources/ALSA.tsx:143
-#: src/views/Edit/Sources/AVFoundation.tsx:204
-#: src/views/Edit/Sources/Channel.tsx:115
-#: src/views/Edit/Sources/Network.tsx:1282
-#: src/views/Edit/Sources/Network.tsx:1409
-#: src/views/Edit/Sources/Raspicam.tsx:137
-#: src/views/Edit/Sources/V4L.tsx:140
-#: src/views/Edit/Sources/X11grab.tsx:193
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:166
+#: src/views/Edit/Sources/ALSA.tsx:148
+#: src/views/Edit/Sources/AVFoundation.tsx:207
+#: src/views/Edit/Sources/Channel.tsx:120
+#: src/views/Edit/Sources/Network.tsx:1327
+#: src/views/Edit/Sources/Network.tsx:1462
+#: src/views/Edit/Sources/Raspicam.tsx:142
+#: src/views/Edit/Sources/V4L.tsx:145
+#: src/views/Edit/Sources/X11grab.tsx:198
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:176
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:140
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:140
 #: src/views/Edit/Wizard/Sources/V4L.tsx:144
@@ -2354,12 +2387,12 @@ msgstr "Ανανέωση"
 msgid "Region"
 msgstr "Περιοχή"
 
-#: src/views/Password.tsx:177
+#: src/views/Password.tsx:205
 msgid "Register user"
 msgstr "Εγγραφή χρήστη"
 
-#: src/views/Password.tsx:217
-#: src/views/Settings.tsx:2722
+#: src/views/Password.tsx:245
+#: src/views/Settings.tsx:2802
 msgid "Reload"
 msgstr "Επαναφόρτωση"
 
@@ -2367,19 +2400,19 @@ msgstr "Επαναφόρτωση"
 msgid "Remove Audio"
 msgstr ""
 
-#: src/views/Settings.tsx:2057
+#: src/views/Settings.tsx:2102
 msgid "Remove the oldest entries if the /memfs is full"
 msgstr "Αφαίρεση των παλαιότερων καταχωρήσεων αν το /memfs είναι γεμάτο"
 
-#: src/views/Settings.tsx:2319
+#: src/views/Settings.tsx:2374
 msgid "Requires activation"
 msgstr "Απαιτεί ενεργοποίηση"
 
-#: src/views/Publication/Player.tsx:617
+#: src/views/Publication/Player.tsx:663
 msgid "Reset logo"
 msgstr "Επαναφορά λογότυπου"
 
-#: src/views/Publication/Player.tsx:626
+#: src/views/Publication/Player.tsx:672
 msgid "Reset poster"
 msgstr "Επαναφορά αφίσας"
 
@@ -2395,50 +2428,50 @@ msgstr "Επαναφορά αφίσας"
 msgid "Resize"
 msgstr ""
 
-#: src/views/Settings.tsx:1474
-#: src/views/Settings.tsx:2743
-#: src/views/Settings.tsx:2757
-#: src/views/Settings.tsx:2770
+#: src/views/Settings.tsx:1489
+#: src/views/Settings.tsx:2823
+#: src/views/Settings.tsx:2837
+#: src/views/Settings.tsx:2850
 msgid "Restart"
 msgstr "Επανεκκίνηση"
 
-#: src/views/Settings.tsx:2730
+#: src/views/Settings.tsx:2810
 msgid "Restart required"
 msgstr "Απαιτείται επανεκκίνηση"
 
-#: src/views/Password.tsx:186
-#: src/views/Settings.tsx:2679
+#: src/views/Password.tsx:214
+#: src/views/Settings.tsx:2759
 msgid "Restarting"
 msgstr "Επανεκκίνηση του"
 
-#: src/views/Password.tsx:191
-#: src/views/Settings.tsx:2684
+#: src/views/Password.tsx:219
+#: src/views/Settings.tsx:2764
 msgid "Restarting Restreamer Core ..."
 msgstr "Επανεκκίνηση του Restreamer Core ..."
 
-#: src/views/Settings.tsx:1181
+#: src/views/Settings.tsx:1194
 msgid "Restarting the application failed."
 msgstr "Η επανεκκίνηση της εφαρμογής απέτυχε."
 
-#: src/views/Publication/Services/Core.tsx:239
+#: src/views/Publication/Services/Core.tsx:244
 msgid "Restreamer instructions"
 msgstr "Οδηγίες Restreamer"
 
-#: src/views/Settings.tsx:1509
+#: src/views/Settings.tsx:1524
 msgid "Restreamer Service"
 msgstr "Υπηρεσία Restreamer"
 
-#: src/views/Main/index.tsx:293
+#: src/views/Main/index.tsx:303
 msgid "Retrieving stream data ..."
 msgstr "Ανάκτηση δεδομένων ροής ..."
 
-#: src/views/Edit/Wizard/Error.tsx:35
+#: src/views/Edit/Wizard/Error.tsx:39
 #: src/views/Invalid.tsx:56
-#: src/views/Settings.tsx:1290
+#: src/views/Settings.tsx:1303
 msgid "Retry"
 msgstr "Επανάληψη"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:133
+#: src/views/Edit/Sources/VirtualVideo.tsx:135
 msgid "RGB test pattern"
 msgstr "Μοτίβο δοκιμής RGB"
 
@@ -2446,59 +2479,59 @@ msgstr "Μοτίβο δοκιμής RGB"
 msgid "Rotate"
 msgstr "Περιστροφή"
 
-#: src/views/Main/index.tsx:581
-#: src/views/Settings.tsx:1365
-#: src/views/Settings.tsx:2291
+#: src/views/Main/index.tsx:621
+#: src/views/Settings.tsx:1378
+#: src/views/Settings.tsx:2346
 msgid "RTMP"
 msgstr "RTMP"
 
-#: src/views/Settings.tsx:2390
+#: src/views/Settings.tsx:2460
 msgid "RTMP app for publishing."
 msgstr "Εφαρμογή RTMP για δημοσίευση."
 
-#: src/views/Edit/index.tsx:596
+#: src/views/Edit/index.tsx:643
 msgid "RTMP output"
 msgstr "Έξοδος RTMP"
 
-#: src/views/Settings.tsx:2339
+#: src/views/Settings.tsx:2399
 msgid "RTMP Port"
 msgstr "Θύρα RTMP"
 
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:170
-#: src/views/Settings.tsx:2296
+#: src/views/Settings.tsx:2351
 msgid "RTMP server"
 msgstr "Διακομιστής RTMP"
 
-#: src/views/Edit/Sources/Network.tsx:1218
+#: src/views/Edit/Sources/Network.tsx:1259
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:81
 msgid "RTMP server is not enabled"
 msgstr "Ο διακομιστής RTMP δεν είναι ενεργοποιημένος"
 
-#: src/views/Settings.tsx:2353
+#: src/views/Settings.tsx:2413
 msgid "RTMP server listen address."
 msgstr "Διεύθυνση ακρόασης διακομιστή RTMP."
 
-#: src/views/Settings.tsx:2406
+#: src/views/Settings.tsx:2476
 msgid "RTMP streamkey for publishing and playing. The streamkey needs to be appended to the URL."
 msgstr ""
 
-#: src/views/Settings.tsx:2359
+#: src/views/Settings.tsx:2424
 msgid "RTMPS Port"
 msgstr "Λιμάνι RTMPS"
 
-#: src/views/Settings.tsx:2307
+#: src/views/Settings.tsx:2362
 msgid "RTMPS server"
 msgstr "Διακομιστής RTMPS"
 
-#: src/views/Settings.tsx:2374
+#: src/views/Settings.tsx:2439
 msgid "RTMPS server listen address."
 msgstr "Διεύθυνση ακρόασης διακομιστή RTMPS."
 
-#: src/views/Edit/Sources/Network.tsx:625
+#: src/views/Edit/Sources/Network.tsx:626
 msgid "RTSP"
 msgstr "RTSP"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:198
+#: src/views/Edit/Sources/VirtualVideo.tsx:200
 msgid "Rule"
 msgstr "Κανόνας"
 
@@ -2508,18 +2541,18 @@ msgid "Sampling"
 msgstr "Δειγματοληψία"
 
 #: src/components/modals/Hint.tsx:217
-#: src/views/Edit/index.tsx:768
+#: src/views/Edit/index.tsx:821
 #: src/views/Edit/Wizard/License.tsx:55
-#: src/views/Playersite.tsx:866
-#: src/views/Publication/Add.tsx:658
-#: src/views/Publication/Edit.tsx:724
-#: src/views/Publication/Player.tsx:609
-#: src/views/Settings.tsx:2669
+#: src/views/Playersite.tsx:897
+#: src/views/Publication/Add.tsx:697
+#: src/views/Publication/Edit.tsx:729
+#: src/views/Publication/Player.tsx:655
+#: src/views/Settings.tsx:2749
 msgid "Save"
 msgstr "Αποθήκευση"
 
 #: src/components/filters/video/Scale.tsx:42
-#: src/views/Edit/Sources/VirtualVideo.tsx:188
+#: src/views/Edit/Sources/VirtualVideo.tsx:190
 msgid "Scale"
 msgstr "Κλίμακα"
 
@@ -2529,81 +2562,81 @@ msgstr "Κλίμακα"
 msgid "Scale size"
 msgstr "Μέγεθος κλίμακας"
 
-#: src/views/Edit/Sources/SDP.tsx:221
+#: src/views/Edit/Sources/SDP.tsx:236
 msgid "SDP"
 msgstr ""
 
-#: src/views/Settings.tsx:2197
+#: src/views/Settings.tsx:2247
 msgid "Seconds to keep files in cache."
 msgstr "Δευτερόλεπτα για τη διατήρηση των αρχείων στη μνήμη cache."
 
-#: src/components/controls/Process.tsx:71
+#: src/components/controls/Process.tsx:76
 msgid "Seconds until a process is restarted."
 msgstr "Δευτερόλεπτα μέχρι την επανεκκίνηση μιας διεργασίας."
 
-#: src/components/controls/Process.tsx:84
+#: src/components/controls/Process.tsx:94
 msgid "Seconds until a staled process is terminated."
 msgstr "Δευτερόλεπτα έως ότου τερματιστεί μια σταλμένη διεργασία."
 
-#: src/components/controls/Snapshot.tsx:62
+#: src/components/controls/Snapshot.tsx:67
 msgid "Seconds until the snapshot/thumbnail of the video source is updated."
 msgstr "Δευτερόλεπτα μέχρι να ενημερωθεί το στιγμιότυπο/μικρογραφία της πηγής βίντεο."
 
-#: src/views/Settings.tsx:1832
+#: src/views/Settings.tsx:1867
 msgid "Security"
 msgstr "Ασφάλεια"
 
-#: src/views/Publication/Services/Livespotting.tsx:129
+#: src/views/Publication/Services/Livespotting.tsx:144
 msgid "Security token"
 msgstr "Κουπόνι ασφαλείας"
 
-#: src/views/Publication/Player.tsx:450
+#: src/views/Publication/Player.tsx:456
 msgid "Seekbar color"
 msgstr "Χρώμα Seekbar"
 
-#: src/components/controls/HLS.tsx:111
+#: src/components/controls/HLS.tsx:116
 msgid "Segment length (seconds)"
 msgstr "Μήκος τμήματος (δευτερόλεπτα)"
 
-#: src/components/controls/HLS.tsx:116
+#: src/components/controls/HLS.tsx:121
 msgid "Segment will be cut on the following keyframe after this time has passed. 2 is recommended."
 msgstr "Το τμήμα θα αποκοπεί στο επόμενο καρέ πλήκτρων μετά την παρέλευση αυτού του χρόνου. Συνιστάται το 2."
 
-#: src/views/Publication/Services/DASH.tsx:518
-#: src/views/Publication/Services/HLS.tsx:431
+#: src/views/Publication/Services/DASH.tsx:578
+#: src/views/Publication/Services/HLS.tsx:461
 msgid "Segmentation"
 msgstr "Τμηματοποίηση"
 
-#: src/views/Edit/Sources/Channel.tsx:98
+#: src/views/Edit/Sources/Channel.tsx:103
 msgid "Select a channel:"
 msgstr ""
 
-#: src/views/Edit/Sources/ALSA.tsx:124
-#: src/views/Edit/Sources/AVFoundation.tsx:190
-#: src/views/Edit/Sources/Framebuffer.tsx:117
-#: src/views/Edit/Sources/Raspicam.tsx:126
-#: src/views/Edit/Sources/V4L.tsx:121
-#: src/views/Edit/Sources/X11grab.tsx:174
+#: src/views/Edit/Sources/ALSA.tsx:129
+#: src/views/Edit/Sources/AVFoundation.tsx:195
+#: src/views/Edit/Sources/Framebuffer.tsx:122
+#: src/views/Edit/Sources/Raspicam.tsx:131
+#: src/views/Edit/Sources/V4L.tsx:126
+#: src/views/Edit/Sources/X11grab.tsx:179
 #: src/views/Edit/Wizard/Sources/AVFoundation.tsx:146
 #: src/views/Edit/Wizard/Sources/Raspicam.tsx:108
 #: src/views/Edit/Wizard/Sources/V4L.tsx:133
 msgid "Select a device:"
 msgstr "Επιλέξτε μια συσκευή:"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:93
+#: src/views/Edit/Sources/VirtualAudio.tsx:95
 msgid "Select audio source:"
 msgstr "Επιλέξτε πηγή ήχου:"
 
-#: src/views/Publication/Add.tsx:553
-#: src/views/Publication/Edit.tsx:631
+#: src/views/Publication/Add.tsx:592
+#: src/views/Publication/Edit.tsx:636
 msgid "Select RTMP or SRT (if enabled) for less latency."
 msgstr "Επιλέξτε RTMP ή SRT (αν είναι ενεργοποιημένο) για μικρότερη καθυστέρηση."
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:127
+#: src/views/Edit/Sources/VirtualVideo.tsx:129
 msgid "Select source ..."
 msgstr "Επιλέξτε πηγή ..."
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:117
+#: src/views/Edit/Sources/VirtualVideo.tsx:119
 msgid "Select video source:"
 msgstr "Επιλέξτε πηγή βίντεο:"
 
@@ -2611,7 +2644,7 @@ msgstr "Επιλέξτε πηγή βίντεο:"
 msgid "Select whether you pull the stream from a <0>network source</0> (such as a network camera) or the <1>internal RTMP server</1> (e.g., OBS streams to the Restreamer)."
 msgstr "Επιλέξτε αν θα αντλήσετε τη ροή από μια <0>πηγή δικτύου</0> (όπως μια κάμερα δικτύου) ή από τον <1>εσωτερικό διακομιστή RTMP</1> (π.χ. ροές OBS στο Restreamer)."
 
-#: src/components/EncodingSelect.tsx:244
+#: src/components/EncodingSelect.tsx:243
 msgid "Select your encoding setting:"
 msgstr "Επιλέξτε τη ρύθμιση κωδικοποίησης:"
 
@@ -2619,30 +2652,30 @@ msgstr "Επιλέξτε τη ρύθμιση κωδικοποίησης:"
 msgid "Select your filter settings (optional):"
 msgstr "Επιλέξτε τις ρυθμίσεις του φίλτρου σας (προαιρετικά):"
 
-#: src/views/Playersite.tsx:653
+#: src/views/Playersite.tsx:674
 msgid "Selected"
 msgstr "Επιλεγμένα"
 
-#: src/views/Playersite.tsx:386
+#: src/views/Playersite.tsx:387
 msgid "Selected channel"
 msgstr "Επιλεγμένο κανάλι"
 
-#: src/views/Playersite.tsx:497
+#: src/views/Playersite.tsx:503
 msgid "Selection"
 msgstr "Επιλογή"
 
-#: src/views/Settings.tsx:1444
+#: src/views/Settings.tsx:1459
 msgid "Send anonymous metrics (helps us for future development)"
 msgstr "Στείλτε ανώνυμες μετρήσεις (μας βοηθά για μελλοντική ανάπτυξη)"
 
-#: src/views/Edit/Sources/Network.tsx:1256
-#: src/views/Edit/Sources/Network.tsx:1383
+#: src/views/Edit/Sources/Network.tsx:1297
+#: src/views/Edit/Sources/Network.tsx:1432
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:117
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:117
 msgid "Send stream to address ..."
 msgstr "Στείλτε ροή στη διεύθυνση ..."
 
-#: src/views/Edit/Sources/Network.tsx:1170
+#: src/views/Edit/Sources/Network.tsx:1207
 #: src/views/Edit/Wizard/Sources/InternalHLS.tsx:54
 msgid "Send stream to this address:"
 msgstr "Στείλτε ρεύμα σε αυτή τη διεύθυνση:"
@@ -2651,99 +2684,99 @@ msgstr "Στείλτε ρεύμα σε αυτή τη διεύθυνση:"
 msgid "Send video to Framebuffer"
 msgstr "Αποστολή βίντεο σε Framebuffer"
 
-#: src/views/Publication/Services/DaCast.tsx:154
+#: src/views/Publication/Services/DaCast.tsx:164
 msgid "Server"
 msgstr "Διακομιστής"
 
 #: src/views/Publication/Services/Kick.tsx:101
-#: src/views/Publication/Services/Owncast.tsx:114
+#: src/views/Publication/Services/Owncast.tsx:124
 #: src/views/Publication/Services/Rumble.tsx:101
-#: src/views/Publication/Services/Telegram.tsx:100
+#: src/views/Publication/Services/Telegram.tsx:110
 #: src/views/Publication/Services/TikTok.tsx:101
 msgid "Server URL"
 msgstr "URL διακομιστή"
 
-#: src/components/Header.tsx:303
-#: src/views/Login.tsx:259
-#: src/views/Settings.tsx:1330
-#: src/views/Settings.tsx:1491
+#: src/components/Header.tsx:306
+#: src/views/Login.tsx:271
+#: src/views/Settings.tsx:1343
+#: src/views/Settings.tsx:1506
 msgid "Service"
 msgstr "Υπηρεσία"
 
-#: src/views/Publication/Add.tsx:494
+#: src/views/Publication/Add.tsx:533
 #: src/views/Publication/Edit.tsx:528
 msgid "Service name"
 msgstr "Όνομα υπηρεσίας"
 
-#: src/views/Settings.tsx:1561
+#: src/views/Settings.tsx:1576
 msgid "Service token for monitoring."
 msgstr "Κουπόνι υπηρεσίας για παρακολούθηση."
 
-#: src/components/Footer.tsx:274
+#: src/components/Footer.tsx:281
 msgid "Sessions"
 msgstr "Συνεδρίες"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:251
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:269
 msgid "Set the rav1e configuration using a :-separated list of key=value parameters."
 msgstr "Ορίστε τη ρύθμιση παραμέτρων rav1e χρησιμοποιώντας μια λίστα παραμέτρων key=value με διαχωρισμό :-."
 
-#: src/views/Settings.tsx:1741
+#: src/views/Settings.tsx:1776
 msgid "Sets a bandwidth limit in Mbit per second for outgoing HLS data transfer. All services, such as RTMP and outgoing processes, are included in the calculation. If the bandwidth is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
 msgstr "Ορίζει ένα όριο εύρους ζώνης σε Mbit ανά δευτερόλεπτο για τη μεταφορά εξερχόμενων δεδομένων HLS. Όλες οι υπηρεσίες, όπως το RTMP και οι εξερχόμενες διεργασίες, περιλαμβάνονται στον υπολογισμό. Εάν το εύρος ζώνης ξεπεραστεί, οι θεατές HLS λαμβάνουν τον κωδικό κατάστασης HTTP 509 (υπέρβαση ορίου εύρους ζώνης). Το 0 είναι απεριόριστο."
 
-#: src/views/Settings.tsx:1720
+#: src/views/Settings.tsx:1750
 msgid "Sets a viewer limit for HLS sessions. If the limit is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
 msgstr "Ορίζει ένα όριο θεατών για συνεδρίες HLS. Εάν το όριο ξεπεραστεί, οι θεατές HLS λαμβάνουν τον κωδικό κατάστασης HTTP 509 (υπέρβαση ορίου εύρους ζώνης). Το 0 είναι απεριόριστο."
 
-#: src/views/Settings.tsx:1496
+#: src/views/Settings.tsx:1511
 msgid "Setting for connection to the service."
 msgstr "Ρύθμιση για τη σύνδεση με την υπηρεσία."
 
-#: src/views/Settings.tsx:1300
+#: src/views/Settings.tsx:1313
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: src/views/Settings.tsx:1302
+#: src/views/Settings.tsx:1315
 msgid "Settings (expert mode)"
 msgstr "Ρυθμίσεις (λειτουργία εμπειρογνώμονα)"
 
-#: src/views/Settings.tsx:2082
+#: src/views/Settings.tsx:2127
 msgid "Settings for /data path. The access is protected by "
 msgstr ""
 
-#: src/views/Settings.tsx:1974
+#: src/views/Settings.tsx:2009
 msgid "Settings for /memfs path."
 msgstr "Ρυθμίσεις για τη διαδρομή /memfs."
 
-#: src/views/Settings.tsx:1119
+#: src/views/Settings.tsx:1132
 msgid "Settings saved. All changes will be applied after restarting the application."
 msgstr "Οι ρυθμίσεις αποθηκεύονται. Όλες οι αλλαγές θα εφαρμοστούν μετά την επανεκκίνηση της εφαρμογής."
 
-#: src/views/Playersite.tsx:448
+#: src/views/Playersite.tsx:449
 msgid "Share button"
 msgstr "Κουμπί κοινής χρήσης"
 
-#: src/views/Playersite.tsx:478
+#: src/views/Playersite.tsx:479
 msgid "Shows a reference to the project."
 msgstr "Εμφανίζει μια αναφορά στο έργο."
 
-#: src/views/Login.tsx:354
+#: src/views/Login.tsx:377
 msgid "Sign up (free)"
 msgstr "Εγγραφείτε (δωρεάν)"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:102
+#: src/views/Edit/Sources/VirtualAudio.tsx:104
 msgid "Silence"
 msgstr "Σιωπή"
 
-#: src/views/Edit/Wizard/Audio.tsx:139
+#: src/views/Edit/Wizard/Audio.tsx:151
 msgid "Silence Audio"
 msgstr "Σιωπή ήχου"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:104
+#: src/views/Edit/Sources/VirtualAudio.tsx:106
 msgid "Sine"
 msgstr "Sine"
 
-#: src/views/Playersite.tsx:372
+#: src/views/Playersite.tsx:373
 msgid "Sitename"
 msgstr "Sitename"
 
@@ -2751,39 +2784,39 @@ msgstr "Sitename"
 msgid "Size"
 msgstr "Μέγεθος"
 
-#: src/views/Edit/index.tsx:641
-#: src/views/Main/index.tsx:603
+#: src/views/Edit/index.tsx:694
+#: src/views/Main/index.tsx:643
 msgid "Snapshot"
 msgstr "Στιγμιότυπο"
 
-#: src/views/Login.tsx:331
+#: src/views/Login.tsx:354
 msgid "Social-login (OAuth2, 2FA)"
 msgstr "Κοινωνική σύνδεση (OAuth2, 2FA)"
 
-#: src/views/Edit/Sources/Network.tsx:649
+#: src/views/Edit/Sources/Network.tsx:650
 msgid "Socket timeout (microseconds)"
 msgstr "Χρονικό όριο υποδοχής (μικροδευτερόλεπτα)"
 
-#: src/views/Publication/Add.tsx:437
+#: src/views/Publication/Add.tsx:476
 msgid "Software"
 msgstr "Λογισμικό"
 
 #: src/components/controls/Source.tsx:86
-#: src/views/Edit/Sources/VirtualAudio.tsx:98
-#: src/views/Edit/Sources/VirtualVideo.tsx:122
-#: src/views/Publication/Add.tsx:548
-#: src/views/Publication/Edit.tsx:626
+#: src/views/Edit/Sources/VirtualAudio.tsx:100
+#: src/views/Edit/Sources/VirtualVideo.tsx:124
+#: src/views/Publication/Add.tsx:587
+#: src/views/Publication/Edit.tsx:631
 msgid "Source"
 msgstr "Πηγή"
 
-#: src/views/Publication/Add.tsx:476
-#: src/views/Publication/Add.tsx:543
+#: src/views/Publication/Add.tsx:515
+#: src/views/Publication/Add.tsx:582
 #: src/views/Publication/Edit.tsx:510
-#: src/views/Publication/Edit.tsx:621
+#: src/views/Publication/Edit.tsx:626
 msgid "Source & Encoding"
 msgstr "Πηγή & κωδικοποίηση"
 
-#: src/components/Progress.tsx:199
+#: src/components/Progress.tsx:202
 msgid "Speed"
 msgstr "Ταχύτητα"
 
@@ -2791,106 +2824,106 @@ msgstr "Ταχύτητα"
 msgid "Speed Preset"
 msgstr "Προεπιλογή ταχύτητας"
 
-#: src/views/Edit/Sources/Network.tsx:660
-#: src/views/Main/index.tsx:591
-#: src/views/Settings.tsx:1371
-#: src/views/Settings.tsx:2418
+#: src/views/Edit/Sources/Network.tsx:661
+#: src/views/Main/index.tsx:631
+#: src/views/Settings.tsx:1384
+#: src/views/Settings.tsx:2488
 msgid "SRT"
 msgstr "SRT"
 
-#: src/views/Edit/index.tsx:622
+#: src/views/Edit/index.tsx:675
 msgid "SRT output"
 msgstr "Έξοδος SRT"
 
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:170
-#: src/views/Settings.tsx:2423
+#: src/views/Settings.tsx:2493
 msgid "SRT server"
 msgstr "Διακομιστής SRT"
 
-#: src/views/Edit/Sources/Network.tsx:1345
+#: src/views/Edit/Sources/Network.tsx:1394
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:81
 msgid "SRT server is not enabled"
 msgstr "Ο διακομιστής SRT δεν είναι ενεργοποιημένος"
 
-#: src/views/Settings.tsx:2451
+#: src/views/Settings.tsx:2526
 msgid "SRT server listen address."
 msgstr "Διεύθυνση ακρόασης διακομιστή SRT."
 
-#: src/views/Settings.tsx:2468
+#: src/views/Settings.tsx:2548
 msgid "SRT token for publishing and playing. The token is the value of the streamid parameter 'token.'"
 msgstr "SRT token για δημοσίευση και αναπαραγωγή. Το token είναι η τιμή της παραμέτρου streamid 'token'."
 
-#: src/components/controls/Process.tsx:79
+#: src/components/controls/Process.tsx:89
 msgid "Stale timeout (seconds)"
 msgstr "Καθυστερημένο χρονικό όριο (δευτερόλεπτα)"
 
-#: src/views/Edit/Sources/Network.tsx:872
+#: src/views/Edit/Sources/Network.tsx:873
 msgid "start_at_zero"
 msgstr "start_at_zero"
 
-#: src/views/Settings.tsx:1872
+#: src/views/Settings.tsx:1907
 msgid "Statistics"
 msgstr "Στατιστικά στοιχεία"
 
 #: src/components/controls/HLS.tsx:68
-#: src/views/Settings.tsx:1358
-#: src/views/Settings.tsx:1966
+#: src/views/Settings.tsx:1371
+#: src/views/Settings.tsx:2001
 msgid "Storage"
 msgstr "Αποθήκευση"
 
-#: src/views/Settings.tsx:1957
+#: src/views/Settings.tsx:1992
 msgid "Stores the viewer statistics to the disk."
 msgstr "Αποθηκεύει τα στατιστικά στοιχεία προβολής στο δίσκο."
 
 #: src/views/Edit/StreamSelect.tsx:36
 #: src/views/Edit/StreamSelect.tsx:43
 #: src/views/Edit/StreamSelect.tsx:90
-#: src/views/Edit/Wizard/Audio.tsx:105
+#: src/views/Edit/Wizard/Audio.tsx:117
 msgid "Stream"
 msgstr "Ρεύμα"
 
-#: src/views/Publication/Services/Wettercom.tsx:112
+#: src/views/Publication/Services/Wettercom.tsx:117
 msgid "Stream ID"
 msgstr ""
 
-#: src/views/Publication/Services/CDN77.tsx:126
-#: src/views/Publication/Services/DaCast.tsx:187
-#: src/views/Publication/Services/Dailymotion.tsx:121
-#: src/views/Publication/Services/DLive.tsx:82
+#: src/views/Publication/Services/CDN77.tsx:141
+#: src/views/Publication/Services/DaCast.tsx:212
+#: src/views/Publication/Services/Dailymotion.tsx:126
+#: src/views/Publication/Services/DLive.tsx:87
 #: src/views/Publication/Services/Dummy.tsx:301
-#: src/views/Publication/Services/EarthCam.tsx:101
-#: src/views/Publication/Services/Instagram.tsx:87
-#: src/views/Publication/Services/Kick.tsx:117
-#: src/views/Publication/Services/Livepush.tsx:125
-#: src/views/Publication/Services/MediaNetwork.tsx:84
-#: src/views/Publication/Services/NimoTv.tsx:116
-#: src/views/Publication/Services/Owncast.tsx:124
-#: src/views/Publication/Services/PeerTube.tsx:101
-#: src/views/Publication/Services/PicartoTv.tsx:120
-#: src/views/Publication/Services/Restream.tsx:140
-#: src/views/Publication/Services/Rumble.tsx:117
-#: src/views/Publication/Services/Telegram.tsx:110
-#: src/views/Publication/Services/TikTok.tsx:117
-#: src/views/Publication/Services/Trovo.tsx:82
-#: src/views/Publication/Services/Twitch.tsx:220
-#: src/views/Publication/Services/Twitter.tsx:209
+#: src/views/Publication/Services/EarthCam.tsx:106
+#: src/views/Publication/Services/Instagram.tsx:92
+#: src/views/Publication/Services/Kick.tsx:122
+#: src/views/Publication/Services/Livepush.tsx:130
+#: src/views/Publication/Services/MediaNetwork.tsx:89
+#: src/views/Publication/Services/NimoTv.tsx:121
+#: src/views/Publication/Services/Owncast.tsx:134
+#: src/views/Publication/Services/PeerTube.tsx:111
+#: src/views/Publication/Services/PicartoTv.tsx:125
+#: src/views/Publication/Services/Restream.tsx:145
+#: src/views/Publication/Services/Rumble.tsx:122
+#: src/views/Publication/Services/Telegram.tsx:120
+#: src/views/Publication/Services/TikTok.tsx:122
+#: src/views/Publication/Services/Trovo.tsx:87
+#: src/views/Publication/Services/Twitch.tsx:225
+#: src/views/Publication/Services/Twitter.tsx:214
 #: src/views/Publication/Services/Vimeo.tsx:80
-#: src/views/Publication/Services/Wettercom.tsx:122
-#: src/views/Publication/Services/Youtube.tsx:220
+#: src/views/Publication/Services/Wettercom.tsx:132
+#: src/views/Publication/Services/Youtube.tsx:225
 msgid "Stream key"
 msgstr "Κλειδί ροής"
 
-#: src/views/Publication/Services/RTMP.tsx:190
+#: src/views/Publication/Services/RTMP.tsx:200
 msgid "Stream Key"
 msgstr "Κλειδί ροής"
 
-#: src/views/Publication/Services/Brightcove.tsx:121
-#: src/views/Publication/Services/Red5.tsx:162
-#: src/views/Publication/Services/WOWZA.tsx:187
+#: src/views/Publication/Services/Brightcove.tsx:131
+#: src/views/Publication/Services/Red5.tsx:182
+#: src/views/Publication/Services/WOWZA.tsx:207
 msgid "Stream name"
 msgstr "Όνομα ρεύματος"
 
-#: src/views/Publication/Services/Akamai.tsx:180
+#: src/views/Publication/Services/Akamai.tsx:205
 msgid "Stream names"
 msgstr "Ονόματα ρευμάτων"
 
@@ -2898,28 +2931,28 @@ msgstr "Ονόματα ρευμάτων"
 msgid "Stream source for publication service (experimental)."
 msgstr "Πηγή ροής για την υπηρεσία δημοσίευσης (πειραματική)."
 
-#: src/views/Publication/Services/Akamai.tsx:169
-#: src/views/Publication/Services/CDN77.tsx:115
+#: src/views/Publication/Services/Akamai.tsx:189
+#: src/views/Publication/Services/CDN77.tsx:125
 #: src/views/Publication/Services/Dailymotion.tsx:99
 msgid "Stream URL"
 msgstr "URL ροής"
 
-#: src/views/Settings.tsx:2395
+#: src/views/Settings.tsx:2465
 msgid "Streamkey"
 msgstr ""
 
-#: src/views/Playersite.tsx:472
+#: src/views/Playersite.tsx:473
 msgid "Support datarhei Restreamer"
 msgstr "Υποστήριξη datarhei Restreamer"
 
-#: src/views/Edit/Sources/Network.tsx:982
+#: src/views/Edit/Sources/Network.tsx:987
 #: src/views/Edit/Wizard/Sources/Network.tsx:83
 msgid "Supports HTTP (HLS, DASH), RTP, RTSP, RTMP, SRT and more."
 msgstr "Υποστηρίζει HTTP (HLS, DASH), RTP, RTSP, RTMP, SRT και άλλα."
 
-#: src/components/Footer.tsx:212
-#: src/components/Header.tsx:324
-#: src/views/Settings.tsx:2518
+#: src/components/Footer.tsx:219
+#: src/components/Header.tsx:327
+#: src/views/Settings.tsx:2598
 msgid "System"
 msgstr "Σύστημα"
 
@@ -2927,40 +2960,40 @@ msgstr "Σύστημα"
 msgid "Target address"
 msgstr "Διεύθυνση στόχου"
 
-#: src/views/Playersite.tsx:316
-#: src/views/Playersite.tsx:487
+#: src/views/Playersite.tsx:317
+#: src/views/Playersite.tsx:488
 msgid "Template"
 msgstr "Πρότυπο"
 
-#: src/views/Playersite.tsx:513
+#: src/views/Playersite.tsx:519
 msgid "Template to be used for creating the publication website. The delete button removes the selection from the system."
 msgstr "Πρότυπο που θα χρησιμοποιηθεί για τη δημιουργία του δικτυακού τόπου δημοσίευσης. Το κουμπί διαγραφής αφαιρεί την επιλογή από το σύστημα."
 
-#: src/views/Playersite.tsx:736
+#: src/views/Playersite.tsx:767
 msgid "Terms"
 msgstr "Όροι"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:129
+#: src/views/Edit/Sources/VirtualVideo.tsx:131
 msgid "Test pattern"
 msgstr "Μοτίβο δοκιμής"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:131
+#: src/views/Edit/Sources/VirtualVideo.tsx:133
 msgid "Test pattern (extended)"
 msgstr "Μοτίβο δοκιμής (εκτεταμένο)"
 
-#: src/views/Playersite.tsx:584
+#: src/views/Playersite.tsx:605
 msgid "Text colors"
 msgstr "Χρώματα κειμένου"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:159
+#: src/views/Edit/Sources/VirtualAudio.tsx:161
 msgid "The amplitude (0.0 - 1.0) of the generated audio stream"
 msgstr "Το πλάτος (0.0 - 1.0) της παραγόμενης ροής ήχου"
 
-#: src/views/Settings.tsx:1478
+#: src/views/Settings.tsx:1493
 msgid "The application is using an older version of the settings."
 msgstr "Η εφαρμογή χρησιμοποιεί παλαιότερη έκδοση των ρυθμίσεων."
 
-#: src/views/Edit/Sources/Network.tsx:1080
+#: src/views/Edit/Sources/Network.tsx:1109
 msgid "The available FFmpeg binary doesn't support any of the required protocols."
 msgstr "Το διαθέσιμο δυαδικό αρχείο FFmpeg δεν υποστηρίζει κανένα από τα απαιτούμενα πρωτόκολλα."
 
@@ -2968,35 +3001,35 @@ msgstr "Το διαθέσιμο δυαδικό αρχείο FFmpeg δεν υπο
 msgid "The bitrate of the audio stream."
 msgstr "Το bitrate της ροής ήχου."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:184
+#: src/views/Edit/Sources/VirtualAudio.tsx:186
 msgid "The carrier frequency"
 msgstr "Η φέρουσα συχνότητα"
 
 #. placeholder {0}: $data.meta.name
-#: src/views/Edit/index.tsx:434
+#: src/views/Edit/index.tsx:459
 msgid "The channel \"{0}\" could not be deleted"
 msgstr "Το κανάλι \"{0}\" δεν μπόρεσε να διαγραφεί"
 
 #. placeholder {0}: $data.meta.name
-#: src/views/Edit/index.tsx:447
+#: src/views/Edit/index.tsx:472
 msgid "The channel \"{0}\" has been deleted"
 msgstr "Το κανάλι \"{0}\" έχει διαγραφεί"
 
-#: src/views/Edit/index.tsx:835
+#: src/views/Edit/index.tsx:888
 msgid "The deletion of this channel can not be recovered. All publications of this channel will be removed."
 msgstr "Η διαγραφή αυτού του καναλιού δεν μπορεί να ανακτηθεί. Όλες οι δημοσιεύσεις αυτού του καναλιού θα αφαιρεθούν."
 
-#: src/components/controls/Preview.tsx:76
+#: src/components/controls/Preview.tsx:81
 msgid "The H.264 encoder used."
 msgstr ""
 
-#: src/views/Edit/index.tsx:315
+#: src/views/Edit/index.tsx:340
 #: src/views/Edit/Wizard/index.tsx:192
 #: src/views/Publication/Edit.tsx:306
 msgid "The input profile is not complete. Please define a video and audio source."
 msgstr "Το προφίλ εισόδου δεν είναι πλήρες. Ορίστε μια πηγή βίντεο και ήχου."
 
-#: src/views/Publication/Add.tsx:252
+#: src/views/Publication/Add.tsx:254
 msgid "The input profile is not complete. Please define a video and/or audio source."
 msgstr "Το προφίλ εισόδου δεν είναι πλήρες. Ορίστε μια πηγή βίντεο ή/και ήχου."
 
@@ -3005,19 +3038,19 @@ msgstr "Το προφίλ εισόδου δεν είναι πλήρες. Ορί�
 msgid "The layout of the audio stream."
 msgstr "Η διάταξη της ροής ήχου."
 
-#: src/components/controls/HLS.tsx:131
+#: src/components/controls/HLS.tsx:141
 msgid "The maximum number of playlist segments. 0 will contain all the segments. 6 is recommended."
 msgstr "Ο μέγιστος αριθμός τμημάτων λίστας αναπαραγωγής. Το 0 θα περιέχει όλα τα τμήματα. Συνιστάται το 6."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:147
+#: src/views/Edit/Sources/VirtualAudio.tsx:149
 msgid "The noise color"
 msgstr "Το χρώμα του θορύβου"
 
-#: src/components/controls/License/index.tsx:63
+#: src/components/controls/License/index.tsx:65
 msgid "The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission."
 msgstr "Το πρόσωπο που συνέδεσε ένα έργο με αυτή την πράξη έχει αφιερώσει το έργο στο δημόσιο τομέα παραιτούμενος από όλα τα δικαιώματά του επί του έργου παγκοσμίως βάσει του νόμου περί πνευματικών δικαιωμάτων, συμπεριλαμβανομένων όλων των συγγενικών και συγγενικών δικαιωμάτων, στο βαθμό που επιτρέπεται από το νόμο. Μπορείτε να αντιγράψετε, να τροποποιήσετε, να διανείμετε και να εκτελέσετε το έργο, ακόμη και για εμπορικούς σκοπούς, και όλα αυτά χωρίς να ζητήσετε άδεια."
 
-#: src/views/Settings.tsx:1610
+#: src/views/Settings.tsx:1625
 msgid "The public reachable domain name of the host this Restreamer is running on. Separate multiple domain names by a comma."
 msgstr "Το δημόσιο προσβάσιμο όνομα τομέα του κεντρικού υπολογιστή στον οποίο εκτελείται αυτός ο Restreamer. Διαχωρίστε πολλαπλά ονόματα τομέα με κόμμα."
 
@@ -3027,7 +3060,7 @@ msgid "The publication service \"{0}\" could not be deleted"
 msgstr "Η υπηρεσία δημοσίευσης \"{0}\" δεν μπόρεσε να διαγραφεί"
 
 #. placeholder {0}: $settings.name
-#: src/views/Publication/Add.tsx:281
+#: src/views/Publication/Add.tsx:283
 msgid "The publication service \"{0}\" has been created"
 msgstr "Η υπηρεσία δημοσίευσης \"{0}\" έχει δημιουργηθεί"
 
@@ -3036,7 +3069,7 @@ msgstr "Η υπηρεσία δημοσίευσης \"{0}\" έχει δημιου
 msgid "The publication service \"{0}\" has been deleted"
 msgstr "Η υπηρεσία δημοσίευσης \"{0}\" έχει διαγραφεί"
 
-#: src/views/Publication/Add.tsx:278
+#: src/views/Publication/Add.tsx:280
 msgid "The publication service has been created"
 msgstr "Η υπηρεσία δημοσίευσης έχει δημιουργηθεί"
 
@@ -3049,21 +3082,21 @@ msgstr "Η έξοδος RTMP απαιτεί τον διακομιστή RTMP."
 msgid "The sample rate of the audio stream."
 msgstr "Ο ρυθμός δειγματοληψίας της ροής ήχου."
 
-#: src/views/Edit/Sources/AudioLoop.tsx:126
-#: src/views/Edit/Sources/SDP.tsx:112
-#: src/views/Edit/Sources/VideoLoop.tsx:134
-#: src/views/Playersite.tsx:187
-#: src/views/Publication/Player.tsx:215
+#: src/views/Edit/Sources/AudioLoop.tsx:127
+#: src/views/Edit/Sources/SDP.tsx:113
+#: src/views/Edit/Sources/VideoLoop.tsx:135
+#: src/views/Playersite.tsx:188
+#: src/views/Publication/Player.tsx:219
 msgid "The selected file is too big (<0/>). Only <1/> are allowed."
 msgstr "Το επιλεγμένο αρχείο είναι πολύ μεγάλο (<0/>). Επιτρέπονται μόνο <1/>."
 
 #. placeholder {0}: err.actual
 #. placeholder {1}: err.allowed.join(', ')
-#: src/views/Edit/Sources/AudioLoop.tsx:118
-#: src/views/Edit/Sources/SDP.tsx:104
-#: src/views/Edit/Sources/VideoLoop.tsx:126
-#: src/views/Playersite.tsx:179
-#: src/views/Publication/Player.tsx:207
+#: src/views/Edit/Sources/AudioLoop.tsx:119
+#: src/views/Edit/Sources/SDP.tsx:105
+#: src/views/Edit/Sources/VideoLoop.tsx:127
+#: src/views/Playersite.tsx:180
+#: src/views/Publication/Player.tsx:211
 msgid "The selected file type ({0}) is not allowed. Allowed file types are {1}"
 msgstr "Ο επιλεγμένος τύπος αρχείου ({0}) δεν επιτρέπεται. Οι επιτρεπόμενοι τύποι αρχείων είναι {1}"
 
@@ -3072,27 +3105,27 @@ msgstr "Ο επιλεγμένος τύπος αρχείου ({0}) δεν επι�
 msgid "The settings for \"{0}\" have been saved"
 msgstr "Οι ρυθμίσεις για το \"{0}\" έχουν αποθηκευτεί"
 
-#: src/views/Edit/Wizard/Audio.tsx:64
+#: src/views/Edit/Wizard/Audio.tsx:72
 msgid "The source doesn't provide any audio streams."
 msgstr "Η πηγή δεν παρέχει ροές ήχου."
 
-#: src/views/Edit/Profile.tsx:774
+#: src/views/Edit/Profile.tsx:799
 msgid "The source doesn't provide any audio streams. Please check the <0>probe details</0>."
 msgstr "Η πηγή δεν παρέχει ροές ήχου. Ελέγξτε τις λεπτομέρειες του <0>δοκιμίου</0>."
 
-#: src/views/Edit/Wizard/Audio.tsx:72
+#: src/views/Edit/Wizard/Audio.tsx:84
 msgid "The source doesn't provide any compatible audio streams."
 msgstr "Η πηγή δεν παρέχει συμβατές ροές ήχου."
 
-#: src/views/Edit/Wizard/Video.tsx:71
+#: src/views/Edit/Wizard/Video.tsx:83
 msgid "The source doesn't provide any compatible video streams. Please check the <0>requirements</0>."
 msgstr "Η πηγή δεν παρέχει συμβατές ροές βίντεο. Ελέγξτε τις <0>απαιτήσεις</0>."
 
-#: src/views/Edit/Profile.tsx:588
+#: src/views/Edit/Profile.tsx:598
 msgid "The source doesn't provide any video streams. Please check the <0>probe details</0>."
 msgstr "Η πηγή δεν παρέχει ροές βίντεο. Ελέγξτε τις λεπτομέρειες του <0>δοκιμίου</0>."
 
-#: src/views/Edit/Wizard/Video.tsx:60
+#: src/views/Edit/Wizard/Video.tsx:68
 msgid "The source doesn't provide any video streams. Please check the device."
 msgstr "Η πηγή δεν παρέχει ροές βίντεο. Ελέγξτε τη συσκευή."
 
@@ -3100,7 +3133,7 @@ msgstr "Η πηγή δεν παρέχει ροές βίντεο. Ελέγξτε 
 msgid "The SRT output requires the SRT Server."
 msgstr "Η έξοδος SRT απαιτεί τον διακομιστή SRT."
 
-#: src/views/Edit/Wizard/Audio.tsx:85
+#: src/views/Edit/Wizard/Audio.tsx:97
 msgid "The video source doesn't provide any compatible audio stream. <0>Silence audio</0> is recommended. Services e.g. YouTube, Facebook & Co. require an audio channel."
 msgstr "Η πηγή βίντεο δεν παρέχει καμία συμβατή ροή ήχου. Συνιστάται η επιλογή <0>ήχος σιωπής</0>. Οι υπηρεσίες π.χ. YouTube, Facebook & Co. απαιτούν ένα κανάλι ήχου."
 
@@ -3108,11 +3141,11 @@ msgstr "Η πηγή βίντεο δεν παρέχει καμία συμβατή
 msgid "The video source is compatible. Select the desired resolution:"
 msgstr "Η πηγή βίντεο είναι συμβατή. Επιλέξτε την επιθυμητή ανάλυση:"
 
-#: src/views/Settings.tsx:1432
+#: src/views/Settings.tsx:1447
 msgid "There are updates available. Here you get more information."
 msgstr "Υπάρχουν διαθέσιμες ενημερώσεις. Εδώ μπορείτε να πάρετε περισσότερες πληροφορίες."
 
-#: src/views/Settings.tsx:1066
+#: src/views/Settings.tsx:1074
 msgid "There was a problem storing the settings. Settings not saved."
 msgstr "Υπήρξε πρόβλημα με την αποθήκευση των ρυθμίσεων. Οι ρυθμίσεις δεν αποθηκεύτηκαν."
 
@@ -3121,23 +3154,23 @@ msgid "There was an error connecting to Restreamer Core at {address}."
 msgstr ""
 
 #. placeholder {0}: err.message
-#: src/views/Edit/Sources/AudioLoop.tsx:135
-#: src/views/Edit/Sources/SDP.tsx:121
-#: src/views/Edit/Sources/VideoLoop.tsx:143
-#: src/views/Playersite.tsx:196
-#: src/views/Publication/Player.tsx:224
+#: src/views/Edit/Sources/AudioLoop.tsx:136
+#: src/views/Edit/Sources/SDP.tsx:122
+#: src/views/Edit/Sources/VideoLoop.tsx:144
+#: src/views/Playersite.tsx:197
+#: src/views/Publication/Player.tsx:228
 msgid "There was an error during upload: {0}"
 msgstr "Υπήρξε ένα σφάλμα κατά το ανέβασμα: {0}"
 
-#: src/views/Edit/Wizard/Error.tsx:30
+#: src/views/Edit/Wizard/Error.tsx:34
 msgid "There was an error setting up the stream."
 msgstr "Υπήρξε σφάλμα στη ρύθμιση της ροής."
 
-#: src/views/Settings.tsx:1058
+#: src/views/Settings.tsx:1066
 msgid "There were some errors in the settings. Settings not saved."
 msgstr "Υπήρχαν κάποια σφάλματα στις ρυθμίσεις. Οι ρυθμίσεις δεν αποθηκεύτηκαν."
 
-#: src/views/Login.tsx:270
+#: src/views/Login.tsx:287
 msgid "There's no login method available."
 msgstr "Δεν υπάρχει διαθέσιμη μέθοδος σύνδεσης."
 
@@ -3145,7 +3178,7 @@ msgstr "Δεν υπάρχει διαθέσιμη μέθοδος σύνδεσης
 msgid "This is a dummy service that explains to you the concepts of service."
 msgstr "Πρόκειται για μια εικονική υπηρεσία που σας εξηγεί τις έννοιες της υπηρεσίας."
 
-#: src/views/Password.tsx:201
+#: src/views/Password.tsx:229
 msgid "This is not necessarily an error. However, it may take a bit longer for Restreamer Core to restart.."
 msgstr "Αυτό δεν αποτελεί απαραίτητα σφάλμα. Ωστόσο, μπορεί να πάρει λίγο περισσότερο χρόνο για να επανεκκινήσει το Restreamer Core.."
 
@@ -3153,35 +3186,35 @@ msgstr "Αυτό δεν αποτελεί απαραίτητα σφάλμα. Ωσ
 msgid "This is to mention the copyright regulations for the target of this service."
 msgstr "Πρόκειται για την αναφορά των κανονισμών περί πνευματικών δικαιωμάτων για τον στόχο αυτής της υπηρεσίας."
 
-#: src/components/controls/License/index.tsx:98
+#: src/components/controls/License/index.tsx:100
 msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, and only so long as attribution is given to the creator. The license allows for commercial use."
 msgstr "Αυτή η άδεια επιτρέπει στους χρήστες να αντιγράφουν και να διανέμουν το υλικό σε οποιοδήποτε μέσο ή μορφή μόνο σε μη προσαρμοσμένη μορφή και μόνο εφόσον γίνεται αναφορά στον δημιουργό. Η άδεια επιτρέπει την εμπορική χρήση."
 
-#: src/components/controls/License/index.tsx:105
+#: src/components/controls/License/index.tsx:107
 msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, for noncommercial purposes only, and only so long as attribution is given to the creator."
 msgstr "Αυτή η άδεια επιτρέπει στους χρήστες να αντιγράφουν και να διανέμουν το υλικό σε οποιοδήποτε μέσο ή μορφή σε μη προσαρμοσμένη μορφή, μόνο για μη εμπορικούς σκοπούς και μόνο εφόσον αναφέρεται ο δημιουργός."
 
-#: src/components/controls/License/index.tsx:84
+#: src/components/controls/License/index.tsx:86
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator."
 msgstr "Αυτή η άδεια επιτρέπει στους χρήστες να διανέμουν, να αναμειγνύουν, να προσαρμόζουν και να αξιοποιούν το υλικό σε οποιοδήποτε μέσο ή μορφή για μη εμπορικούς σκοπούς και μόνο εφόσον αναφέρεται ο δημιουργός."
 
-#: src/components/controls/License/index.tsx:91
+#: src/components/controls/License/index.tsx:93
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
 msgstr "Αυτή η άδεια επιτρέπει στους χρήστες να διανέμουν, να αναμειγνύουν, να προσαρμόζουν και να αξιοποιούν το υλικό σε οποιοδήποτε μέσο ή μορφή για μη εμπορικούς σκοπούς και μόνο εφόσον αναφέρεται ο δημιουργός. Εάν αναμίξετε, προσαρμόσετε ή αξιοποιήσετε το υλικό, θα πρέπει να αδειοδοτήσετε το τροποποιημένο υλικό με τους ίδιους όρους."
 
-#: src/components/controls/License/index.tsx:70
+#: src/components/controls/License/index.tsx:72
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use."
 msgstr "Αυτή η άδεια επιτρέπει στους επαναχρησιμοποιητές να διανέμουν, να αναμειγνύουν, να προσαρμόζουν και να αξιοποιούν το υλικό σε οποιοδήποτε μέσο ή μορφή, αρκεί να γίνεται αναφορά στον δημιουργό. Η άδεια επιτρέπει την εμπορική χρήση."
 
-#: src/components/controls/License/index.tsx:77
+#: src/components/controls/License/index.tsx:79
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
 msgstr "Αυτή η άδεια επιτρέπει στους επαναχρησιμοποιητές να διανέμουν, να αναμειγνύουν, να προσαρμόζουν και να αξιοποιούν το υλικό σε οποιοδήποτε μέσο ή μορφή, αρκεί να γίνεται αναφορά στον δημιουργό. Η άδεια επιτρέπει την εμπορική χρήση. Εάν αναμίξετε, προσαρμόσετε ή βασιστείτε στο υλικό, πρέπει να αδειοδοτήσετε το τροποποιημένο υλικό με τους ίδιους όρους."
 
-#: src/views/Edit/Sources/Network.tsx:994
+#: src/views/Edit/Sources/Network.tsx:1004
 msgid "This protocol is unknown or not supported by the available FFmpeg binary."
 msgstr "Αυτό το πρωτόκολλο είναι άγνωστο ή δεν υποστηρίζεται από το διαθέσιμο δυαδικό αρχείο FFmpeg."
 
-#: src/views/Edit/index.tsx:805
+#: src/views/Edit/index.tsx:858
 msgid "This source cannot be edited while it is in use. To continue, you have to disconnect the source."
 msgstr "Αυτή η πηγή δεν μπορεί να επεξεργαστεί όσο είναι σε χρήση. Για να συνεχίσετε, πρέπει να αποσυνδέσετε την πηγή."
 
@@ -3197,23 +3230,23 @@ msgstr ""
 msgid "This version of the UI is compatible."
 msgstr "Αυτή η έκδοση του UI είναι συμβατή."
 
-#: src/components/controls/Limits.tsx:74
+#: src/components/controls/Limits.tsx:92
 msgid "Threshold (seconds)"
 msgstr "Κατώφλι (δευτερόλεπτα)"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:234
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:249
 msgid "Tile Columns"
 msgstr "Στήλες κεραμιδιών"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:220
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:233
 msgid "Tile Rows"
 msgstr "Σειρές πλακιδίων"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:206
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:217
 msgid "Tiles"
 msgstr "Πλακάκια"
 
-#: src/views/Settings.tsx:1936
+#: src/views/Settings.tsx:1971
 msgid "Time until an inactive viewer connection is treated as closed."
 msgstr "Χρόνος μέχρι μια ανενεργή σύνδεση προβολής να θεωρηθεί κλειστή."
 
@@ -3221,8 +3254,8 @@ msgstr "Χρόνος μέχρι μια ανενεργή σύνδεση προβ�
 msgid "To stabilize the system, increase the HLS segment length for the keyframe interval by 2-3 * (Processing and Control)."
 msgstr "Για να σταθεροποιήσετε το σύστημα, αυξήστε το μήκος του τμήματος HLS για το διάστημα του καρέ κλειδιού κατά 2-3 * (Επεξεργασία και έλεγχος)."
 
-#: src/views/Settings.tsx:1550
-#: src/views/Settings.tsx:2457
+#: src/views/Settings.tsx:1565
+#: src/views/Settings.tsx:2537
 msgid "Token"
 msgstr "Token"
 
@@ -3362,7 +3395,7 @@ msgstr "Μεταδίδει το βίντεό σας ως ροή RTMP με το �
 msgid "Transmits your video stream with the required key, which was generated in Twitter Producer. You can find more information on seting up a live stream at Twitter's <0>Producer</0>."
 msgstr "Μεταδίδει τη ροή βίντεο με το απαιτούμενο κλειδί, το οποίο δημιουργήθηκε στο Twitter Producer. Μπορείτε να βρείτε περισσότερες πληροφορίες σχετικά με τη δημιουργία μιας ζωντανής ροής στο <0>Producer</0> του Twitter."
 
-#: src/views/Edit/Sources/Network.tsx:631
+#: src/views/Edit/Sources/Network.tsx:632
 msgid "Transport"
 msgstr ""
 
@@ -3378,78 +3411,90 @@ msgstr "Συντονισμός"
 msgid "UDP transport"
 msgstr "Μεταφορά UDP"
 
-#: src/views/Settings.tsx:1281
+#: src/views/Settings.tsx:1294
 msgid "Unable to load the config."
 msgstr "Αδυναμία φόρτωσης της διαμόρφωσης."
 
-#: src/views/Settings.tsx:1529
+#: src/views/Settings.tsx:1544
 msgid "Unique ident on the service."
 msgstr "Μοναδικό αναγνωριστικό στην υπηρεσία."
 
-#: src/views/Main/Egress.tsx:104
+#: src/views/Main/Egress.tsx:107
 msgid "Unknown"
 msgstr "Άγνωστος"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:139
-#: src/views/Edit/Sources/SDP.tsx:125
-#: src/views/Edit/Sources/VideoLoop.tsx:147
-#: src/views/Playersite.tsx:200
-#: src/views/Publication/Player.tsx:228
+#: src/views/Edit/Sources/AudioLoop.tsx:140
+#: src/views/Edit/Sources/SDP.tsx:126
+#: src/views/Edit/Sources/VideoLoop.tsx:148
+#: src/views/Playersite.tsx:201
+#: src/views/Publication/Player.tsx:232
 msgid "Unknown upload error"
 msgstr "Άγνωστο σφάλμα μεταφόρτωσης"
 
-#: src/views/Playersite.tsx:662
+#: src/views/Playersite.tsx:683
 msgid "Unselected"
 msgstr "Μη επιλεγμένο"
 
-#: src/components/Changelog.tsx:178
+#: src/components/Changelog.tsx:182
 msgid "Update details (Changelog)"
 msgstr "Λεπτομέρειες ενημέρωσης (Changelog)"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:198
-#: src/views/Edit/Sources/SDP.tsx:179
-#: src/views/Edit/Sources/VideoLoop.tsx:206
-#: src/views/Playersite.tsx:534
-#: src/views/Playersite.tsx:557
-#: src/views/Playersite.tsx:699
-#: src/views/Publication/Player.tsx:481
-#: src/views/Publication/Player.tsx:530
+#: src/views/Edit/Sources/AudioLoop.tsx:213
+#: src/views/Edit/Sources/SDP.tsx:194
+#: src/views/Edit/Sources/VideoLoop.tsx:221
+#: src/views/Playersite.tsx:545
+#: src/views/Playersite.tsx:578
+#: src/views/Playersite.tsx:730
+#: src/views/Publication/Player.tsx:497
+#: src/views/Publication/Player.tsx:566
 msgid "Upload"
 msgstr "Ανέβασμα"
 
 #. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
-#: src/views/Edit/Sources/AudioLoop.tsx:180
+#: src/views/Edit/Sources/AudioLoop.tsx:185
 msgid "Upload an audio file ({0}) in order to loop it."
 msgstr "Ανεβάστε ένα αρχείο ήχου ({0}) για να το κάνετε βρόχο."
 
 #. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
-#: src/views/Edit/Sources/VideoLoop.tsx:188
+#: src/views/Edit/Sources/VideoLoop.tsx:193
 msgid "Upload an image or video file ({0}) in order to loop it."
 msgstr "Ανεβάστε ένα αρχείο εικόνας ή βίντεο ({0}) για να το κάνετε βρόχο."
 
+#: src/components/controls/VideoOverlays.tsx:226
+msgid "Upload image"
+msgstr ""
+
 #. placeholder {0}: fileTypes.map((t) => t.mimetype).join(', ')
-#: src/views/Edit/Sources/SDP.tsx:163
+#: src/views/Edit/Sources/SDP.tsx:168
 msgid "Upload SDP file ({0})."
 msgstr ""
 
-#: src/views/Edit/Sources/AudioLoop.tsx:202
-#: src/views/Edit/Sources/SDP.tsx:183
-#: src/views/Edit/Sources/VideoLoop.tsx:210
-#: src/views/Playersite.tsx:561
-#: src/views/Playersite.tsx:703
+#: src/components/controls/VideoOverlays.tsx:215
+msgid "Uploaded image path"
+msgstr ""
+
+#: src/components/controls/VideoOverlays.tsx:154
+msgid "Uploaded images are burned into this output. Arrange them from bottom to top. Leave a position empty to center the image."
+msgstr ""
+
+#: src/views/Edit/Sources/AudioLoop.tsx:217
+#: src/views/Edit/Sources/SDP.tsx:198
+#: src/views/Edit/Sources/VideoLoop.tsx:225
+#: src/views/Playersite.tsx:582
+#: src/views/Playersite.tsx:734
 msgid "Uploading the file failed"
 msgstr "Το ανέβασμα του αρχείου απέτυχε"
 
-#: src/views/Publication/Player.tsx:485
+#: src/views/Publication/Player.tsx:501
 msgid "Uploading the logo failed"
 msgstr "Το ανέβασμα του λογότυπου απέτυχε"
 
-#: src/views/Publication/Player.tsx:534
+#: src/views/Publication/Player.tsx:570
 msgid "Uploading the poster failed"
 msgstr "Το ανέβασμα της αφίσας απέτυχε"
 
-#: src/components/Footer.tsx:193
-#: src/components/Progress.tsx:116
+#: src/components/Footer.tsx:200
+#: src/components/Progress.tsx:119
 #: src/views/Main/Progress.tsx:57
 msgid "Uptime"
 msgstr "Χρόνος διαθεσιμότητας"
@@ -3458,11 +3503,11 @@ msgstr "Χρόνος διαθεσιμότητας"
 msgid "Usage"
 msgstr ""
 
-#: src/views/Login.tsx:365
+#: src/views/Login.tsx:393
 msgid "Use Auth0 for your running Restreamer Core. More <0>details</0>."
 msgstr "Χρησιμοποιήστε το Auth0 για το Restreamer Core που εκτελείτε. Περισσότερες <0>λεπτομέρειες</0>."
 
-#: src/views/Edit/index.tsx:529
+#: src/views/Edit/index.tsx:554
 msgid "Use the wizard (<0/>) for a quick and easy setup, or edit (<1/>) the sources directly in custom mode."
 msgstr "Χρησιμοποιήστε τον οδηγό (<0/>) για μια γρήγορη και εύκολη ρύθμιση ή επεξεργαστείτε (<1/>) τις πηγές απευθείας στην προσαρμοσμένη λειτουργία."
 
@@ -3470,39 +3515,39 @@ msgstr "Χρησιμοποιήστε τον οδηγό (<0/>) για μια γρ
 msgid "Use your copyright and choose the correct image license. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
 msgstr "Χρησιμοποιήστε τα πνευματικά σας δικαιώματα και επιλέξτε τη σωστή άδεια χρήσης εικόνας. Είτε ελεύθερη για όλους είτε με αυστηρούς περιορισμούς. Συζητήστε εν συντομία τι επιτρέπεται να κάνουν οι άλλοι με την εικόνα σας."
 
-#: src/views/Edit/index.tsx:730
+#: src/views/Edit/index.tsx:783
 msgid "Use your copyright and choose the right image licence. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
 msgstr "Χρησιμοποιήστε τα πνευματικά σας δικαιώματα και επιλέξτε τη σωστή άδεια χρήσης εικόνας. Είτε ελεύθερη για όλους είτε με αυστηρούς περιορισμούς. Συζητήστε εν συντομία τι επιτρέπεται να κάνουν οι άλλοι με την εικόνα σας."
 
-#: src/views/Edit/Sources/Network.tsx:877
+#: src/views/Edit/Sources/Network.tsx:878
 msgid "use_wallclock_as_timestamps"
 msgstr "use_wallclock_as_timestamps"
 
-#: src/views/Password.tsx:122
+#: src/views/Password.tsx:127
 msgid "User registration"
 msgstr "Εγγραφή χρήστη"
 
-#: src/views/Edit/Sources/Network.tsx:1009
-#: src/views/Edit/Wizard/Sources/Network.tsx:101
-#: src/views/Login.tsx:285
-#: src/views/Publication/Services/DaCast.tsx:165
-#: src/views/Publication/Services/DASH.tsx:222
-#: src/views/Publication/Services/HLS.tsx:217
-#: src/views/Publication/Services/Red5.tsx:172
-#: src/views/Publication/Services/RTSP.tsx:175
-#: src/views/Publication/Services/WOWZA.tsx:197
-#: src/views/Settings.tsx:1791
-#: src/views/Settings.tsx:1998
+#: src/views/Edit/Sources/Network.tsx:1024
+#: src/views/Edit/Wizard/Sources/Network.tsx:106
+#: src/views/Login.tsx:302
+#: src/views/Publication/Services/DaCast.tsx:180
+#: src/views/Publication/Services/DASH.tsx:232
+#: src/views/Publication/Services/HLS.tsx:227
+#: src/views/Publication/Services/Red5.tsx:197
+#: src/views/Publication/Services/RTSP.tsx:185
+#: src/views/Publication/Services/WOWZA.tsx:222
+#: src/views/Settings.tsx:1826
+#: src/views/Settings.tsx:2038
 msgid "Username"
 msgstr "Όνομα χρήστη"
 
-#: src/views/Settings.tsx:1800
-#: src/views/Settings.tsx:2012
+#: src/views/Settings.tsx:1835
+#: src/views/Settings.tsx:2052
 msgid "Username for authorization."
 msgstr "Όνομα χρήστη για εξουσιοδότηση."
 
-#: src/views/Edit/Sources/Network.tsx:1014
-#: src/views/Edit/Wizard/Sources/Network.tsx:107
+#: src/views/Edit/Sources/Network.tsx:1029
+#: src/views/Edit/Wizard/Sources/Network.tsx:112
 msgid "Username for the device."
 msgstr "Όνομα χρήστη για τη συσκευή."
 
@@ -3514,7 +3559,7 @@ msgstr "Το V4L2_M2M είναι πειραματικό."
 msgid "Variable frame rate (VFR)"
 msgstr "Μεταβλητός ρυθμός καρέ (VFR)"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:144
+#: src/views/Edit/Sources/VirtualAudio.tsx:146
 msgid "velvet"
 msgstr "βελούδο"
 
@@ -3522,28 +3567,36 @@ msgstr "βελούδο"
 msgid "Vertical Flip"
 msgstr "Κάθετη αναστροφή"
 
-#: src/views/Publication/Add.tsx:580
+#: src/views/Publication/Add.tsx:619
 msgid "Video"
 msgstr "Βίντεο"
 
-#: src/components/controls/Preview.tsx:64
+#: src/components/controls/Preview.tsx:69
 msgid "Video Codec"
 msgstr ""
 
-#: src/views/Edit/Sources/AVFoundation.tsx:137
-#: src/views/Edit/Sources/Channel.tsx:104
-#: src/views/Edit/Sources/Raspicam.tsx:110
-#: src/views/Edit/Sources/V4L.tsx:127
-#: src/views/Edit/Sources/X11grab.tsx:180
+#: src/views/Edit/Sources/AVFoundation.tsx:138
+#: src/views/Edit/Sources/Channel.tsx:109
+#: src/views/Edit/Sources/Raspicam.tsx:111
+#: src/views/Edit/Sources/V4L.tsx:132
+#: src/views/Edit/Sources/X11grab.tsx:185
 #: src/views/Edit/Wizard/Sources/AVFoundation.tsx:99
 #: src/views/Edit/Wizard/Sources/Raspicam.tsx:96
 #: src/views/Edit/Wizard/Sources/V4L.tsx:121
 msgid "Video device"
 msgstr "Συσκευή βίντεο"
 
+#: src/components/controls/VideoOverlays.tsx:140
+msgid "Video overlays"
+msgstr ""
+
+#: src/components/controls/VideoOverlays.tsx:163
+msgid "Video overlays require encoding. Choose a video encoder instead of Copy before saving."
+msgstr ""
+
 #: src/views/Edit/Profile.tsx:533
 #: src/views/Edit/ProfileSummary.tsx:69
-#: src/views/Publication/Edit.tsx:658
+#: src/views/Publication/Edit.tsx:663
 msgid "Video settings"
 msgstr "Ρυθμίσεις βίντεο"
 
@@ -3557,19 +3610,19 @@ msgstr "Ρύθμιση βίντεο"
 msgid "Video source"
 msgstr "Πηγή βίντεο"
 
-#: src/components/Footer.tsx:260
-#: src/components/Footer.tsx:266
-#: src/components/Footer.tsx:279
-#: src/views/Main/Publication.tsx:187
+#: src/components/Footer.tsx:267
+#: src/components/Footer.tsx:273
+#: src/components/Footer.tsx:286
+#: src/views/Main/Publication.tsx:197
 msgid "Viewer"
 msgstr "Πρόγραμμα προβολής"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:143
+#: src/views/Edit/Sources/VirtualAudio.tsx:145
 msgid "violet"
 msgstr "βιολετί"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:218
-#: src/views/Edit/Sources/VirtualVideo.tsx:267
+#: src/views/Edit/Sources/VirtualAudio.tsx:220
+#: src/views/Edit/Sources/VirtualVideo.tsx:269
 msgid "Virtual source"
 msgstr "Εικονική πηγή"
 
@@ -3577,7 +3630,7 @@ msgstr "Εικονική πηγή"
 msgid "Volume"
 msgstr "Τόμος"
 
-#: src/views/Publication/Services/Livespotting.tsx:111
+#: src/views/Publication/Services/Livespotting.tsx:116
 msgid "VPU ID"
 msgstr "VPU ID"
 
@@ -3585,7 +3638,7 @@ msgstr "VPU ID"
 msgid "We recommend OpenMAX IL for Raspberry PI (3/4) with a 32-bit operating system."
 msgstr "Συνιστούμε το OpenMAX IL για Raspberry PI (3/4) με λειτουργικό σύστημα 32-bit."
 
-#: src/views/Welcome.tsx:29
+#: src/views/Welcome.tsx:35
 msgid "Welcome to Restreamer v2, the solution for fast and easy video publishing. Free for private and commercial use. Further help in the <0>docs</0>."
 msgstr "Καλώς ήρθατε στο Restreamer v2, τη λύση για γρήγορη και εύκολη δημοσίευση βίντεο. Δωρεάν για ιδιωτική και εμπορική χρήση. Περαιτέρω βοήθεια στα <0>docs</0>."
 
@@ -3597,7 +3650,7 @@ msgstr "Ποια προεπιλογή ταχύτητας να χρησιμοπο
 msgid "Where to store the HLS playlist and segments. In-Memory is recommended."
 msgstr "Πού να αποθηκεύσετε τη λίστα αναπαραγωγής HLS και τα τμήματα. Συνιστάται η αποθήκευση στη μνήμη."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:139
+#: src/views/Edit/Sources/VirtualAudio.tsx:141
 msgid "white"
 msgstr "λευκό"
 
@@ -3605,12 +3658,24 @@ msgstr "λευκό"
 msgid "Width"
 msgstr "Πλάτος"
 
-#: src/views/Settings.tsx:1979
+#: src/components/controls/VideoOverlays.tsx:239
+msgid "Width (pixels)"
+msgstr ""
+
+#: src/views/Settings.tsx:2014
 msgid "Write protection"
 msgstr "Προστασία εγγραφής"
 
-#: src/views/Edit/Sources/X11grab.tsx:291
+#: src/components/controls/VideoOverlays.tsx:263
+msgid "X position (pixels)"
+msgstr ""
+
+#: src/views/Edit/Sources/X11grab.tsx:296
 msgid "X11 Screen Capture"
+msgstr ""
+
+#: src/components/controls/VideoOverlays.tsx:274
+msgid "Y position (pixels)"
 msgstr ""
 
 #: src/views/Edit/Wizard/Abort.tsx:60
@@ -3621,11 +3686,11 @@ msgstr "Ναι"
 msgid "You can't abort the wizard because at least one input must be defined."
 msgstr "Δεν μπορείτε να διακόψετε τον οδηγό, επειδή πρέπει να οριστεί τουλάχιστον μία είσοδος."
 
-#: src/views/Settings.tsx:2748
+#: src/views/Settings.tsx:2828
 msgid "You have changed the configuration. In order for the changes to take effect, you have to restart the application. Do you want to restart now?"
 msgstr "Έχετε αλλάξει τη διαμόρφωση. Για να τεθούν σε ισχύ οι αλλαγές, πρέπει να επανεκκινήσετε την εφαρμογή. Θέλετε να κάνετε επανεκκίνηση τώρα;"
 
-#: src/views/Main/index.tsx:431
+#: src/views/Main/index.tsx:457
 #: src/views/Publication/Process.tsx:80
 msgid "You have to reconnect manually"
 msgstr "Πρέπει να επανασυνδεθείτε χειροκίνητα"
@@ -3642,6 +3707,6 @@ msgstr "Η ροή σας πρέπει να κωδικοποιηθεί, αλλά 
 msgid "Your stream needs to be encoded. Choose the desired encoder:"
 msgstr "Η ροή σας πρέπει να κωδικοποιηθεί. Επιλέξτε τον επιθυμητό κωδικοποιητή:"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:134
+#: src/views/Edit/Sources/VirtualVideo.tsx:136
 msgid "YUV test pattern"
 msgstr "Μοτίβο δοκιμής YUV"

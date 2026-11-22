@@ -13,24 +13,24 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/EncodingSelect.tsx:280
+#: src/components/EncodingSelect.tsx:284
 msgid "<0>Compatibility list</0>"
 msgstr "<0>Kompatibilitetsliste</0>"
 
-#: src/views/Edit/Profile.tsx:615
-#: src/views/Edit/Profile.tsx:801
+#: src/views/Edit/Profile.tsx:630
+#: src/views/Edit/Profile.tsx:831
 msgid "<0>Show probe details</0>"
 msgstr "<0>Se probe data</0>"
 
-#: src/views/Publication/Services/Core.tsx:242
+#: src/views/Publication/Services/Core.tsx:247
 msgid "1. Switch to the interface of the target Restreamer."
 msgstr "1. Skift til grænsefladen for mål-Restreamer."
 
-#: src/views/Publication/Services/Core.tsx:246
+#: src/views/Publication/Services/Core.tsx:251
 msgid "2. Create a new channel and select RTMP or SRT server."
 msgstr "2. Opret en ny kanal, og vælg RTMP- eller SRT-server."
 
-#: src/views/Publication/Services/Core.tsx:250
+#: src/views/Publication/Services/Core.tsx:255
 msgid "3. Copy the URL and paste it in the \"Target address\" field."
 msgstr "3. Kopier URL-adressen, og indsæt den i feltet \"Måladresse\"."
 
@@ -42,23 +42,23 @@ msgstr "6 (+ garanteret at starte med en nøgleramme)"
 msgid "7 (+ fragmented MP4 format)"
 msgstr "7 (+ fragmenteret MP4-format)"
 
-#: src/components/ChannelList.tsx:517
-#: src/views/Edit/index.tsx:791
-#: src/views/Edit/index.tsx:821
-#: src/views/Edit/Profile.tsx:662
+#: src/components/ChannelList.tsx:559
+#: src/views/Edit/index.tsx:844
+#: src/views/Edit/index.tsx:874
+#: src/views/Edit/Profile.tsx:677
 #: src/views/Edit/Wizard/Abort.tsx:21
-#: src/views/Publication/Edit.tsx:763
-#: src/views/Settings.tsx:2738
-#: src/views/Settings.tsx:2765
+#: src/views/Publication/Edit.tsx:768
+#: src/views/Settings.tsx:2818
+#: src/views/Settings.tsx:2845
 msgid "Abort"
 msgstr "Afbryd"
 
-#: src/components/Header.tsx:332
-#: src/components/Header.tsx:386
+#: src/components/Header.tsx:335
+#: src/components/Header.tsx:389
 msgid "About"
 msgstr "Om"
 
-#: src/components/ChannelList.tsx:530
+#: src/components/ChannelList.tsx:572
 msgid "Add"
 msgstr "Tilføj"
 
@@ -66,89 +66,93 @@ msgstr "Tilføj"
 msgid "Add Audio"
 msgstr ""
 
-#: src/views/Playersite.tsx:762
+#: src/views/Playersite.tsx:793
 msgid "Add external widgets and styles to the publication site. You can find some examples on the help page."
 msgstr "Tilføj eksterne widgets og stilarter til publikationswebstedet. Du kan finde nogle eksempler på hjælpesiden."
 
-#: src/components/ChannelList.tsx:510
+#: src/components/controls/VideoOverlays.tsx:148
+msgid "Add image"
+msgstr ""
+
+#: src/components/ChannelList.tsx:552
 msgid "Add new channel"
 msgstr "Tilføj ny kanal"
 
-#: src/views/Publication/Add.tsx:408
+#: src/views/Publication/Add.tsx:442
 msgid "Add Publication"
 msgstr "Tilføj Publicering"
 
 #. placeholder {0}: service.name
-#: src/views/Publication/Add.tsx:411
+#: src/views/Publication/Add.tsx:445
 msgid "Add: {0}"
 msgstr "Tilføj: {0}"
 
-#: src/views/Playersite.tsx:409
+#: src/views/Playersite.tsx:410
 msgid "Additional channels"
 msgstr ""
 
-#: src/views/Playersite.tsx:441
+#: src/views/Playersite.tsx:442
 msgid "Additional channels to display on the playersite."
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:976
+#: src/views/Edit/Sources/Network.tsx:981
 #: src/views/Edit/Wizard/Sources/Network.tsx:77
-#: src/views/Publication/Services/Azure.tsx:112
-#: src/views/Publication/Services/Brightcove.tsx:112
-#: src/views/Publication/Services/Core.tsx:263
-#: src/views/Publication/Services/DASH.tsx:213
-#: src/views/Publication/Services/HLS.tsx:208
-#: src/views/Publication/Services/Icecast.tsx:197
-#: src/views/Publication/Services/Image2.tsx:147
-#: src/views/Publication/Services/Linkedin.tsx:112
-#: src/views/Publication/Services/MPEGTS.tsx:203
-#: src/views/Publication/Services/Red5.tsx:141
-#: src/views/Publication/Services/RTMP.tsx:181
-#: src/views/Publication/Services/RTSP.tsx:166
-#: src/views/Publication/Services/SRT.tsx:184
-#: src/views/Publication/Services/UDP.tsx:151
-#: src/views/Publication/Services/WOWZA.tsx:157
-#: src/views/Settings.tsx:1594
+#: src/views/Publication/Services/Azure.tsx:122
+#: src/views/Publication/Services/Brightcove.tsx:122
+#: src/views/Publication/Services/Core.tsx:268
+#: src/views/Publication/Services/DASH.tsx:223
+#: src/views/Publication/Services/HLS.tsx:218
+#: src/views/Publication/Services/Icecast.tsx:207
+#: src/views/Publication/Services/Image2.tsx:157
+#: src/views/Publication/Services/Linkedin.tsx:122
+#: src/views/Publication/Services/MPEGTS.tsx:213
+#: src/views/Publication/Services/Red5.tsx:151
+#: src/views/Publication/Services/RTMP.tsx:191
+#: src/views/Publication/Services/RTSP.tsx:176
+#: src/views/Publication/Services/SRT.tsx:194
+#: src/views/Publication/Services/UDP.tsx:161
+#: src/views/Publication/Services/WOWZA.tsx:167
+#: src/views/Settings.tsx:1609
 msgid "Address"
 msgstr "Adresse"
 
-#: src/views/Playersite.tsx:694
+#: src/views/Playersite.tsx:720
 msgid "Address for the background image."
 msgstr "Adresse til baggrunds billede."
 
-#: src/views/Settings.tsx:1631
+#: src/views/Settings.tsx:1651
 msgid "Address to listen on for HTTP requests."
 msgstr "Adresse HTTP anmodninger."
 
-#: src/views/Settings.tsx:1648
+#: src/views/Settings.tsx:1673
 msgid "Address to listen on for HTTPS requests."
 msgstr "Adresse HTTPS anmodninger."
 
-#: src/views/Edit/Sources/Network.tsx:1289
-#: src/views/Edit/Sources/Network.tsx:1416
+#: src/views/Edit/Sources/Network.tsx:1334
+#: src/views/Edit/Sources/Network.tsx:1469
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:147
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:147
 msgid "Address:"
 msgstr "Adresse:"
 
-#: src/views/Playersite.tsx:577
+#: src/views/Playersite.tsx:598
 msgid "Adjust publication site colors and background as you like."
 msgstr "Du kan justere farverne og baggrunden på publikationssiden som du vil."
 
-#: src/views/Login.tsx:337
+#: src/views/Login.tsx:360
 msgid "Advanced monitoring"
 msgstr "Avanceret overvågning"
 
-#: src/views/Edit/Sources/Network.tsx:616
-#: src/views/Publication/Services/DASH.tsx:244
-#: src/views/Publication/Services/HLS.tsx:239
-#: src/views/Publication/Services/Icecast.tsx:211
-#: src/views/Publication/Services/Image2.tsx:160
-#: src/views/Publication/Services/MPEGTS.tsx:216
-#: src/views/Publication/Services/RTMP.tsx:203
-#: src/views/Publication/Services/RTSP.tsx:197
-#: src/views/Publication/Services/SRT.tsx:205
-#: src/views/Publication/Services/UDP.tsx:163
+#: src/views/Edit/Sources/Network.tsx:617
+#: src/views/Publication/Services/DASH.tsx:254
+#: src/views/Publication/Services/HLS.tsx:249
+#: src/views/Publication/Services/Icecast.tsx:221
+#: src/views/Publication/Services/Image2.tsx:170
+#: src/views/Publication/Services/MPEGTS.tsx:226
+#: src/views/Publication/Services/RTMP.tsx:213
+#: src/views/Publication/Services/RTSP.tsx:207
+#: src/views/Publication/Services/SRT.tsx:215
+#: src/views/Publication/Services/UDP.tsx:173
 msgid "Advanced settings"
 msgstr "Avanceret setup"
 
@@ -156,16 +160,16 @@ msgstr "Avanceret setup"
 msgid "Advanced setup"
 msgstr "Avanceret opsætning"
 
-#: src/views/Playersite.tsx:464
-#: src/views/Publication/Player.tsx:591
+#: src/views/Playersite.tsx:465
+#: src/views/Publication/Player.tsx:637
 msgid "AirPlay"
 msgstr "AirPlay"
 
-#: src/views/Login.tsx:340
+#: src/views/Login.tsx:363
 msgid "Alerting by email"
 msgstr "Advarsel via e-mail"
 
-#: src/views/Publication/Add.tsx:431
+#: src/views/Publication/Add.tsx:470
 msgid "All"
 msgstr "Alle"
 
@@ -173,41 +177,41 @@ msgstr "Alle"
 msgid "All frames"
 msgstr "Alle rammer"
 
-#: src/views/Settings.tsx:1402
+#: src/views/Settings.tsx:1415
 msgid "All important system settings."
 msgstr "Alle vigtige systemindstillinger."
 
-#: src/views/Settings.tsx:1837
+#: src/views/Settings.tsx:1872
 msgid "Allow all referrer"
 msgstr "Tillad alle henvisninger"
 
-#: src/views/Settings.tsx:1890
+#: src/views/Settings.tsx:1925
 msgid "Allow counting how many viewers the stream has."
 msgstr "Gør det muligt at tælle, hvor mange seere streamet har."
 
-#: src/views/Edit/Sources/ALSA.tsx:185
+#: src/views/Edit/Sources/ALSA.tsx:190
 msgid "ALSA"
 msgstr "ALSA"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:154
+#: src/views/Edit/Sources/VirtualAudio.tsx:156
 msgid "Amplitude"
 msgstr "Amplitude"
 
-#: src/components/Env.tsx:40
+#: src/components/Env.tsx:42
 msgid "An environment variable sets this value."
 msgstr "En miljøvariabel fastsætter denne værdi."
 
-#: src/views/Settings.tsx:1051
+#: src/views/Settings.tsx:1059
 msgid "API endpoint not found. Settings not saved."
 msgstr "API endpoint ikke fundet. Indstillingerne er ikke gemt."
 
-#: src/views/Settings.tsx:2379
+#: src/views/Settings.tsx:2449
 msgid "App"
 msgstr "App"
 
-#: src/components/Footer.tsx:251
-#: src/views/Publication/Services/Red5.tsx:152
-#: src/views/Publication/Services/WOWZA.tsx:177
+#: src/components/Footer.tsx:258
+#: src/views/Publication/Services/Red5.tsx:167
+#: src/views/Publication/Services/WOWZA.tsx:192
 msgid "Application"
 msgstr "Program"
 
@@ -215,12 +219,12 @@ msgstr "Program"
 msgid "Are you sure you want to abort the wizard?"
 msgstr "Er du sikker på, at du vil afbryde guiden?"
 
-#: src/views/Publication/Add.tsx:605
+#: src/views/Publication/Add.tsx:644
 msgid "Audio"
 msgstr "Lyd"
 
-#: src/views/Edit/Sources/ALSA.tsx:130
-#: src/views/Edit/Sources/AVFoundation.tsx:172
+#: src/views/Edit/Sources/ALSA.tsx:135
+#: src/views/Edit/Sources/AVFoundation.tsx:173
 msgid "Audio device"
 msgstr "Audio enhed"
 
@@ -228,14 +232,14 @@ msgstr "Audio enhed"
 msgid "Audio Device"
 msgstr "Lyd enhed"
 
-#: src/views/Edit/Wizard/Audio.tsx:100
-#: src/views/Edit/Wizard/Audio.tsx:120
+#: src/views/Edit/Wizard/Audio.tsx:112
+#: src/views/Edit/Wizard/Audio.tsx:132
 msgid "Audio from device"
 msgstr "Lyd fra enhed"
 
-#: src/views/Edit/Profile.tsx:682
-#: src/views/Edit/ProfileSummary.tsx:93
-#: src/views/Publication/Edit.tsx:683
+#: src/views/Edit/Profile.tsx:697
+#: src/views/Edit/ProfileSummary.tsx:92
+#: src/views/Publication/Edit.tsx:688
 msgid "Audio settings"
 msgstr "Lydindstillinger"
 
@@ -243,24 +247,24 @@ msgstr "Lydindstillinger"
 msgid "Audio setup"
 msgstr "Lydopsætning"
 
-#: src/views/Login.tsx:249
+#: src/views/Login.tsx:261
 msgid "Auth0"
 msgstr "Auth0"
 
-#: src/views/Login.tsx:382
+#: src/views/Login.tsx:415
 msgid "Auth0 is currently not available because this interface is loaded from an insecure origin."
 msgstr "Auth0 er i øjeblikket ikke tilgængelig, fordi denne grænseflade er indlæst fra en usikker oprindelse."
 
-#: src/views/Login.tsx:395
+#: src/views/Login.tsx:428
 msgid "Auth0 Tenant"
 msgstr "Auth0 Tenant"
 
-#: src/components/controls/Metadata.tsx:73
+#: src/components/controls/Metadata.tsx:74
 msgid "Author"
 msgstr "Forfatter"
 
-#: src/views/Settings.tsx:1343
-#: src/views/Settings.tsx:1756
+#: src/views/Settings.tsx:1356
+#: src/views/Settings.tsx:1791
 msgid "Authorization"
 msgstr "Godkendelse"
 
@@ -268,80 +272,80 @@ msgstr "Godkendelse"
 msgid "Auto"
 msgstr "Auto"
 
-#: src/components/controls/HLS.tsx:150
+#: src/components/controls/HLS.tsx:160
 msgid "Automatic cleanup of all media data"
 msgstr "Automatisk oprydning af alle mediedata"
 
-#: src/views/Publication/Player.tsx:576
+#: src/views/Publication/Player.tsx:622
 msgid "Autoplay"
 msgstr "Auto afspil"
 
-#: src/views/Playersite.tsx:492
+#: src/views/Playersite.tsx:493
 msgid "Available"
 msgstr "Tilgængelig"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:257
+#: src/views/Edit/Sources/AVFoundation.tsx:260
 msgid "AVFoundation"
 msgstr "AVFoundation"
 
-#: src/views/Edit/Sources/Network.tsx:885
+#: src/views/Edit/Sources/Network.tsx:886
 msgid "avoid_negative_ts"
 msgstr "avoid_negative_ts"
 
-#: src/views/Edit/Profile.tsx:846
+#: src/views/Edit/Profile.tsx:876
 #: src/views/Edit/Wizard/Abort.tsx:42
-#: src/views/Edit/Wizard/Audio.tsx:158
+#: src/views/Edit/Wizard/Audio.tsx:170
 #: src/views/Edit/Wizard/License.tsx:50
 #: src/views/Edit/Wizard/Metadata.tsx:49
-#: src/views/Edit/Wizard/Video.tsx:92
+#: src/views/Edit/Wizard/Video.tsx:104
 #: src/views/Edit/Wizard/VideoProfile.tsx:107
-#: src/views/Publication/Add.tsx:647
+#: src/views/Publication/Add.tsx:686
 msgid "Back"
 msgstr "Tilbage"
 
-#: src/views/Playersite.tsx:628
+#: src/views/Playersite.tsx:649
 msgid "Background colors"
 msgstr "Baggrundsfarver"
 
-#: src/views/Playersite.tsx:681
+#: src/views/Playersite.tsx:702
 msgid "Background image"
 msgstr "Baggrundsbillede"
 
-#: src/views/Publication/Services/DaCast.tsx:220
+#: src/views/Publication/Services/DaCast.tsx:255
 msgid "Backup server"
 msgstr "Backup-server"
 
-#: src/views/Publication/Services/Youtube.tsx:237
+#: src/views/Publication/Services/Youtube.tsx:247
 msgid "Backup stream"
 msgstr "Backup-strøm"
 
-#: src/views/Publication/Services/Facebook.tsx:133
+#: src/views/Publication/Services/Facebook.tsx:148
 msgid "Backup stream key"
 msgstr "Backup stream-nøgle"
 
-#: src/views/Publication/Services/Akamai.tsx:213
+#: src/views/Publication/Services/Akamai.tsx:248
 msgid "Backup URL"
 msgstr "Backup-URL"
 
-#: src/components/Footer.tsx:290
-#: src/components/Footer.tsx:304
+#: src/components/Footer.tsx:297
+#: src/components/Footer.tsx:311
 msgid "Bandwidth"
 msgstr "Båndbredde"
 
-#: src/views/Settings.tsx:1703
+#: src/views/Settings.tsx:1728
 msgid "Bandwidth control"
 msgstr "Båndbrede kontrol"
 
-#: src/components/modals/Process.tsx:157
+#: src/components/modals/Process.tsx:172
 msgid "Banner"
 msgstr "Banner"
 
-#: src/views/Login.tsx:254
-#: src/views/Settings.tsx:1761
+#: src/views/Login.tsx:266
+#: src/views/Settings.tsx:1796
 msgid "Basic"
 msgstr "Grundlæggende"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:191
+#: src/views/Edit/Sources/VirtualAudio.tsx:193
 msgid "Beep factor"
 msgstr "Bip-faktor"
 
@@ -350,11 +354,11 @@ msgstr "Bip-faktor"
 msgid "Bitrate"
 msgstr "Bitrate"
 
-#: src/views/Settings.tsx:2265
+#: src/views/Settings.tsx:2320
 msgid "Block cache types"
 msgstr "Blokcache-typer"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:142
+#: src/views/Edit/Sources/VirtualAudio.tsx:144
 msgid "blue"
 msgstr "blå"
 
@@ -362,16 +366,16 @@ msgstr "blå"
 msgid "Bottom field"
 msgstr "Nederste felt"
 
-#: src/views/Edit/index.tsx:704
+#: src/views/Edit/index.tsx:757
 #: src/views/Edit/Wizard/Metadata.tsx:35
 msgid "Briefly describe what the audience will see during the live stream."
 msgstr "Beskriv kort, hvad publikum vil se under live-streamingen."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:141
+#: src/views/Edit/Sources/VirtualAudio.tsx:143
 msgid "brown"
 msgstr "brun"
 
-#: src/views/Publication/Player.tsx:460
+#: src/views/Publication/Player.tsx:466
 msgid "Button color"
 msgstr "Knapfarve"
 
@@ -383,15 +387,15 @@ msgstr "Efter højde"
 msgid "By width"
 msgstr "Af bredde"
 
-#: src/views/Settings.tsx:2125
+#: src/views/Settings.tsx:2170
 msgid "Cache for files on /data."
 msgstr "Cache for filer på /data."
 
-#: src/views/Settings.tsx:2183
+#: src/views/Settings.tsx:2233
 msgid "Cache time (Seconds)"
 msgstr "Cache-tid (sekunder)"
 
-#: src/views/Settings.tsx:2241
+#: src/views/Settings.tsx:2296
 msgid "Cache types"
 msgstr "Cache-typer"
 
@@ -399,32 +403,32 @@ msgstr "Cache-typer"
 msgid "Capture buffer"
 msgstr "Buffer til opsamling"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:238
+#: src/views/Edit/Sources/AVFoundation.tsx:241
 msgid "Capture clicks"
 msgstr "Fang klik"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:231
+#: src/views/Edit/Sources/AVFoundation.tsx:234
 msgid "Capture cursor"
 msgstr "Fang markør"
 
-#: src/views/Edit/Sources/Channel.tsx:135
+#: src/views/Edit/Sources/Channel.tsx:140
 msgid "Channel"
 msgstr ""
 
 #. placeholder {0}: $data.meta.name
-#: src/views/Edit/index.tsx:405
+#: src/views/Edit/index.tsx:430
 msgid "Channel \"{0}\" saved"
 msgstr "Kanal \"{0}\" gemt"
 
-#: src/views/Edit/Sources/ALSA.tsx:157
+#: src/views/Edit/Sources/ALSA.tsx:162
 msgid "Channels"
 msgstr "Kanaler"
 
-#: src/views/Settings.tsx:1412
+#: src/views/Settings.tsx:1425
 msgid "Check for updates"
 msgstr "Check opdatering"
 
-#: src/views/Publication/Add.tsx:361
+#: src/views/Publication/Add.tsx:372
 msgid "Check the requirements"
 msgstr "Check nødvendigheder"
 
@@ -436,20 +440,20 @@ msgstr "Vælg en video stream"
 msgid "Choose an audio stream"
 msgstr "Vælg en audio stream"
 
-#: src/views/Edit/Sources/Channel.tsx:85
+#: src/views/Edit/Sources/Channel.tsx:86
 msgid "Choose an input channel ..."
 msgstr ""
 
-#: src/views/Edit/Sources/ALSA.tsx:107
-#: src/views/Edit/Sources/Framebuffer.tsx:93
-#: src/views/Edit/Sources/Raspicam.tsx:103
-#: src/views/Edit/Sources/V4L.tsx:103
-#: src/views/Edit/Sources/X11grab.tsx:156
+#: src/views/Edit/Sources/ALSA.tsx:108
+#: src/views/Edit/Sources/Framebuffer.tsx:94
+#: src/views/Edit/Sources/Raspicam.tsx:104
+#: src/views/Edit/Sources/V4L.tsx:104
+#: src/views/Edit/Sources/X11grab.tsx:157
 msgid "Choose an input device ..."
 msgstr "Vælg input enhed..."
 
-#: src/views/Edit/Sources/Network.tsx:1250
-#: src/views/Edit/Sources/Network.tsx:1377
+#: src/views/Edit/Sources/Network.tsx:1291
+#: src/views/Edit/Sources/Network.tsx:1426
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:111
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:111
 msgid "Choose an input stream ..."
@@ -459,68 +463,72 @@ msgstr "Vælg en inputstrøm ..."
 msgid "Choose between CFR and VFR (Auto)"
 msgstr "Vælg mellem CFR og VFR (Auto)"
 
-#: src/components/EncodingSelect.tsx:254
+#: src/components/EncodingSelect.tsx:253
 msgid "Choose codec ..."
 msgstr "Vælg codec ..."
 
-#: src/views/Login.tsx:400
+#: src/views/Login.tsx:433
 msgid "Choose tenant ..."
 msgstr "Vælg lejer ..."
 
-#: src/views/Playersite.tsx:456
-#: src/views/Publication/Player.tsx:586
+#: src/views/Playersite.tsx:457
+#: src/views/Publication/Player.tsx:632
 msgid "Chromecast"
 msgstr "Chromecast"
 
-#: src/views/Publication/Services/DASH.tsx:374
-#: src/views/Publication/Services/HLS.tsx:312
+#: src/views/Publication/Services/DASH.tsx:409
+#: src/views/Publication/Services/HLS.tsx:322
 msgid "Chunk"
 msgstr "Chunk"
 
-#: src/components/Changelog.tsx:182
-#: src/components/ModalContent.tsx:101
+#: src/components/Changelog.tsx:186
+#: src/components/ModalContent.tsx:109
 #: src/components/modals/Hint.tsx:212
-#: src/views/Edit/index.tsx:753
-#: src/views/Playersite.tsx:860
-#: src/views/Publication/Add.tsx:453
-#: src/views/Publication/Add.tsx:640
-#: src/views/Publication/Edit.tsx:713
-#: src/views/Publication/Player.tsx:603
-#: src/views/Settings.tsx:2659
+#: src/views/Edit/index.tsx:806
+#: src/views/Playersite.tsx:891
+#: src/views/Publication/Add.tsx:492
+#: src/views/Publication/Add.tsx:679
+#: src/views/Publication/Edit.tsx:718
+#: src/views/Publication/Player.tsx:649
+#: src/views/Settings.tsx:2739
 msgid "Close"
 msgstr "Luk"
 
-#: src/views/Playersite.tsx:334
+#: src/views/Playersite.tsx:335
 msgid "Code injection"
 msgstr "Code injection"
 
-#: src/components/EncodingSelect.tsx:249
+#: src/components/EncodingSelect.tsx:248
 #: src/components/modals/Hint.tsx:68
 #: src/components/modals/Hint.tsx:95
 msgid "Codec"
 msgstr "Codec"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:135
+#: src/views/Edit/Sources/VirtualAudio.tsx:137
 msgid "Color"
 msgstr "Farve"
 
-#: src/components/modals/Process.tsx:143
+#: src/components/modals/Process.tsx:153
 msgid "Command"
 msgstr "Kommando"
 
-#: src/views/Settings.tsx:1571
+#: src/views/Settings.tsx:1586
 msgid "Config"
 msgstr "Konfigurer"
 
-#: src/views/Password.tsx:157
+#: src/views/Password.tsx:174
 msgid "Confirm password"
 msgstr "Bekræft password"
+
+#: src/views/Password.tsx:182
+msgid "Confirm your password."
+msgstr ""
 
 #: src/components/ActionButton.tsx:63
 msgid "Connect"
 msgstr "Forbind"
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:181
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:191
 msgid "Connected device"
 msgstr "Tilsluttet enhed"
 
@@ -529,12 +537,12 @@ msgid "Connected since <0/>"
 msgstr "Forbundet siden <0/>"
 
 #: src/components/ActionButton.tsx:19
-#: src/views/Main/index.tsx:384
+#: src/views/Main/index.tsx:408
 #: src/views/Publication/Process.tsx:41
 msgid "Connecting ..."
 msgstr "Forbinder ..."
 
-#: src/views/Initializing.tsx:20
+#: src/views/Initializing.tsx:27
 msgid "Connecting to Restreamer Core ..."
 msgstr "Oprettelse af forbindelse til Restreamer Core ..."
 
@@ -546,41 +554,41 @@ msgstr "Oprettelse af forbindelse til Restreamer Core mislykkedes, sandsynligvis
 msgid "Constant frame rate (CFR)"
 msgstr "Konstant billedfrekvens (CFR)"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:197
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:209
 msgid "Constant Quantizer Mode (-1 to 255)."
 msgstr "Konstant kvantiseringstilstand (-1 til 255)."
 
-#: src/components/controls/Metadata.tsx:72
-#: src/views/Playersite.tsx:729
-#: src/views/Playersite.tsx:746
+#: src/components/controls/Metadata.tsx:73
+#: src/views/Playersite.tsx:760
+#: src/views/Playersite.tsx:777
 msgid "Content"
 msgstr "Indhold"
 
-#: src/views/Main/index.tsx:555
+#: src/views/Main/index.tsx:593
 msgid "Content URL"
 msgstr "Indhold URL"
 
-#: src/views/Edit/Sources/Network.tsx:867
+#: src/views/Edit/Sources/Network.tsx:868
 msgid "copyts"
 msgstr "copyts"
 
-#: src/components/Footer.tsx:225
+#: src/components/Footer.tsx:232
 msgid "Cores"
 msgstr "Cores"
 
-#: src/components/Progress.tsx:129
+#: src/components/Progress.tsx:132
 msgid "CPU"
 msgstr "CPU"
 
-#: src/components/controls/Limits.tsx:46
+#: src/components/controls/Limits.tsx:50
 msgid "CPU Limit (percent)"
 msgstr "CPU-grænse (procent)"
 
-#: src/components/controls/Limits.tsx:51
+#: src/components/controls/Limits.tsx:58
 msgid "CPU usage limit in percent (0-100%), 0 for unlimited."
 msgstr "Grænse for CPU-brug i procent (0-100%), 0 for ubegrænset."
 
-#: src/components/controls/License/index.tsx:116
+#: src/components/controls/License/index.tsx:118
 msgid "Creative Commons"
 msgstr "Creative Commons"
 
@@ -600,20 +608,20 @@ msgstr "Creative Commons"
 #: src/components/filters/audio/Resample.tsx:122
 #: src/components/filters/audio/Volume.tsx:57
 #: src/components/filters/video/Framerate.tsx:55
-#: src/views/Edit/Sources/ALSA.tsx:112
-#: src/views/Edit/Sources/AVFoundation.tsx:131
-#: src/views/Edit/Sources/AVFoundation.tsx:166
-#: src/views/Edit/Sources/V4L.tsx:109
-#: src/views/Edit/Sources/X11grab.tsx:82
-#: src/views/Edit/Sources/X11grab.tsx:162
+#: src/views/Edit/Sources/ALSA.tsx:113
+#: src/views/Edit/Sources/AVFoundation.tsx:132
+#: src/views/Edit/Sources/AVFoundation.tsx:167
+#: src/views/Edit/Sources/V4L.tsx:110
+#: src/views/Edit/Sources/X11grab.tsx:83
+#: src/views/Edit/Sources/X11grab.tsx:163
 msgid "Custom ..."
 msgstr "Tilrettet..."
 
-#: src/views/Edit/Sources/ALSA.tsx:131
+#: src/views/Edit/Sources/ALSA.tsx:136
 msgid "Custom audio device"
 msgstr "Brugerdefineret lydenhed"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:173
+#: src/views/Edit/Sources/AVFoundation.tsx:174
 msgid "Custom audio index"
 msgstr "Brugerdefineret lydindeks"
 
@@ -622,7 +630,7 @@ msgstr "Brugerdefineret lydindeks"
 msgid "Custom bitrate (kbit/s)"
 msgstr "Brugerdefineret bitrate (kbit/s)"
 
-#: src/views/Playersite.tsx:757
+#: src/views/Playersite.tsx:788
 msgid "Custom code injection"
 msgstr "Indsprøjtning af specialkode"
 
@@ -630,7 +638,7 @@ msgstr "Indsprøjtning af specialkode"
 msgid "Custom delay"
 msgstr "Brugerdefineret forsinkelse"
 
-#: src/views/Edit/Sources/Framebuffer.tsx:101
+#: src/views/Edit/Sources/Framebuffer.tsx:102
 msgid "Custom device"
 msgstr "Brugerdefineret enhed"
 
@@ -644,7 +652,7 @@ msgstr "Brugerdefineret format"
 msgid "Custom framerate"
 msgstr "Brugerdefineret framerate"
 
-#: src/views/Settings.tsx:1580
+#: src/views/Settings.tsx:1595
 msgid "Custom JSON config for datarhei Core."
 msgstr "Brugerdefineret JSON-konfiguration for datarhei Core."
 
@@ -662,7 +670,7 @@ msgstr "Brugerdefineret layout"
 msgid "Custom sampling (Hz)"
 msgstr "Brugerdefineret prøvetagning (Hz)"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:189
+#: src/views/Edit/Sources/VirtualVideo.tsx:191
 msgid "Custom scale"
 msgstr "Brugerdefineret skala"
 
@@ -681,22 +689,22 @@ msgstr "Brugerdefineret skala"
 msgid "Custom size"
 msgstr "Custom size"
 
-#: src/views/Edit/Sources/V4L.tsx:128
-#: src/views/Edit/Sources/X11grab.tsx:181
+#: src/views/Edit/Sources/V4L.tsx:133
+#: src/views/Edit/Sources/X11grab.tsx:186
 msgid "Custom video device"
 msgstr "Brugerdefineret videoenhed"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:138
+#: src/views/Edit/Sources/AVFoundation.tsx:139
 msgid "Custom video index"
 msgstr "Brugerdefineret videoindeks"
 
 #: src/components/CopyButton.tsx:27
 #: src/components/Textarea.tsx:62
-#: src/components/TextFieldCopy.tsx:47
+#: src/components/TextFieldCopy.tsx:48
 msgid "Data copied to clipboard"
 msgstr "Data kopieret til udklipsholderen"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:225
+#: src/views/Edit/Sources/VirtualVideo.tsx:227
 msgid "Death color"
 msgstr "Død farve"
 
@@ -704,29 +712,29 @@ msgstr "Død farve"
 msgid "Decibels (dB)"
 msgstr "Decibel (dB)"
 
-#: src/components/EncodingSelect.tsx:263
+#: src/components/EncodingSelect.tsx:261
 #: src/views/Edit/Wizard/VideoProfile.tsx:81
 msgid "Decoder"
 msgstr "Afkoder"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:126
-#: src/views/Edit/Sources/AVFoundation.tsx:162
+#: src/views/Edit/Sources/AVFoundation.tsx:127
+#: src/views/Edit/Sources/AVFoundation.tsx:163
 #: src/views/Edit/Wizard/Sources/AVFoundation.tsx:92
 #: src/views/Edit/Wizard/Sources/AVFoundation.tsx:127
-#: src/views/Playersite.tsx:502
-#: src/views/Playersite.tsx:591
-#: src/views/Playersite.tsx:635
+#: src/views/Playersite.tsx:508
+#: src/views/Playersite.tsx:612
+#: src/views/Playersite.tsx:656
 msgid "Default"
 msgstr "Almindelig"
 
 #. placeholder {0}: 2500
-#: src/views/Edit/Sources/Network.tsx:801
+#: src/views/Edit/Sources/Network.tsx:802
 msgid "Default {0}"
 msgstr "Standard {0}"
 
 #. placeholder {0}: 5000000
 #. placeholder {1}: 5
-#: src/views/Edit/Sources/Network.tsx:841
+#: src/views/Edit/Sources/Network.tsx:842
 msgid "Default {0} ({1} seconds)"
 msgstr "Standard {0} ({1} sekunder)"
 
@@ -750,19 +758,19 @@ msgstr "Deinterlace paritet"
 msgid "Delay"
 msgstr "Forsinkelse"
 
-#: src/views/Edit/Sources/ALSA.tsx:166
+#: src/views/Edit/Sources/ALSA.tsx:171
 msgid "Delay (ms)"
 msgstr "Forsinkelse (ms)"
 
-#: src/views/Edit/index.tsx:775
-#: src/views/Edit/index.tsx:830
-#: src/views/Playersite.tsx:526
-#: src/views/Publication/Edit.tsx:732
-#: src/views/Publication/Edit.tsx:772
+#: src/views/Edit/index.tsx:828
+#: src/views/Edit/index.tsx:883
+#: src/views/Playersite.tsx:537
+#: src/views/Publication/Edit.tsx:737
+#: src/views/Publication/Edit.tsx:777
 msgid "Delete"
 msgstr "Fjern"
 
-#: src/views/Publication/Edit.tsx:777
+#: src/views/Publication/Edit.tsx:782
 msgid "Deleting a publication service cannot be reversed. The publication stops immediately."
 msgstr "Det er ikke muligt at slette en publikationstjeneste. Offentliggørelsen stopper straks."
 
@@ -771,18 +779,18 @@ msgstr "Det er ikke muligt at slette en publikationstjeneste. Offentliggørelsen
 msgid "Delivering mode"
 msgstr "Leveringsmåde"
 
-#: src/components/controls/Metadata.tsx:93
-#: src/components/controls/Metadata.tsx:118
+#: src/components/controls/Metadata.tsx:94
+#: src/components/controls/Metadata.tsx:119
 msgid "Description"
 msgstr "Beskrivelse"
 
-#: src/views/Playersite.tsx:322
-#: src/views/Playersite.tsx:572
+#: src/views/Playersite.tsx:323
+#: src/views/Playersite.tsx:593
 msgid "Design"
 msgstr "Design"
 
-#: src/views/Edit/Sources/Framebuffer.tsx:100
-#: src/views/Edit/Wizard/Audio.tsx:125
+#: src/views/Edit/Sources/Framebuffer.tsx:101
+#: src/views/Edit/Wizard/Audio.tsx:137
 #: src/views/Publication/Services/Framebuffer.tsx:101
 msgid "Device"
 msgstr "Enhed"
@@ -793,7 +801,7 @@ msgstr "Enhed"
 msgid "Disconnect"
 msgstr "Afbrudt"
 
-#: src/views/Edit/index.tsx:800
+#: src/views/Edit/index.tsx:853
 msgid "Disconnect & Continue"
 msgstr "Afbryd forbindelsen og fortsæt"
 
@@ -803,60 +811,60 @@ msgid "Disconnecting ..."
 msgstr "Afbryder..."
 
 #: src/components/controls/HLS.tsx:76
-#: src/views/Settings.tsx:2079
+#: src/views/Settings.tsx:2124
 msgid "Disk"
 msgstr "Disk"
 
-#: src/views/Settings.tsx:2122
-#: src/views/Settings.tsx:2130
+#: src/views/Settings.tsx:2167
+#: src/views/Settings.tsx:2175
 msgid "Disk cache"
 msgstr "Disk-cache"
 
-#: src/components/Footer.tsx:352
-#: src/components/Footer.tsx:366
+#: src/components/Footer.tsx:359
+#: src/components/Footer.tsx:373
 msgid "Disk storage"
 msgstr "Diskopbevaring"
 
-#: src/views/Settings.tsx:2775
+#: src/views/Settings.tsx:2855
 msgid "Do you really want to restart the application now?"
 msgstr "Ønsker du virkelig at genstarte programmet nu?"
 
 #. placeholder {0}: $data.meta.name
-#: src/views/Edit/index.tsx:814
+#: src/views/Edit/index.tsx:867
 msgid "Do you want to delete \"{0}\"?"
 msgstr "Ønsker du at slette \"{0}\"?"
 
-#: src/views/Publication/Edit.tsx:756
+#: src/views/Publication/Edit.tsx:761
 msgid "Do you want to delete {title}?"
 msgstr "Vil du fjerne {title}?"
 
 #. placeholder {0}: $data.meta.name
-#: src/views/Edit/index.tsx:784
+#: src/views/Edit/index.tsx:837
 msgid "Do you want to disconnect \"{0}\"?"
 msgstr "Ønsker du at afbryde forbindelsen til \"{0}\"?"
 
-#: src/components/Header.tsx:342
-#: src/components/Header.tsx:396
+#: src/components/Header.tsx:345
+#: src/components/Header.tsx:399
 msgid "Docs"
 msgstr "Dokumenter"
 
-#: src/views/Publication/Services/DASH.tsx:590
-#: src/views/Publication/Services/HLS.tsx:573
-#: src/views/Publication/Services/Icecast.tsx:279
-#: src/views/Publication/Services/Image2.tsx:216
-#: src/views/Publication/Services/MPEGTS.tsx:427
-#: src/views/Publication/Services/RTMP.tsx:315
-#: src/views/Publication/Services/RTSP.tsx:285
-#: src/views/Publication/Services/SRT.tsx:487
-#: src/views/Publication/Services/UDP.tsx:279
+#: src/views/Publication/Services/DASH.tsx:675
+#: src/views/Publication/Services/HLS.tsx:613
+#: src/views/Publication/Services/Icecast.tsx:299
+#: src/views/Publication/Services/Image2.tsx:226
+#: src/views/Publication/Services/MPEGTS.tsx:507
+#: src/views/Publication/Services/RTMP.tsx:350
+#: src/views/Publication/Services/RTSP.tsx:305
+#: src/views/Publication/Services/SRT.tsx:597
+#: src/views/Publication/Services/UDP.tsx:329
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#: src/views/Edit/Sources/X11grab.tsx:261
+#: src/views/Edit/Sources/X11grab.tsx:266
 msgid "Draw mouse"
 msgstr ""
 
-#: src/components/Progress.tsx:230
+#: src/components/Progress.tsx:233
 msgid "Dup. frames"
 msgstr "Dob. rammer"
 
@@ -868,11 +876,11 @@ msgstr "Hvert felt"
 msgid "Each frames"
 msgstr "Hver ramme"
 
-#: src/views/Edit/index.tsx:472
+#: src/views/Edit/index.tsx:497
 msgid "Edit"
 msgstr "Ret"
 
-#: src/views/Edit/index.tsx:519
+#: src/views/Edit/index.tsx:544
 msgid "Edit the audio and video sources for the live stream. Add a description, and set your desired content license."
 msgstr "Rediger lyd- og videokilderne til livestreamet. Tilføj en beskrivelse, og indstil den ønskede indholdslicens."
 
@@ -880,19 +888,19 @@ msgstr "Rediger lyd- og videokilderne til livestreamet. Tilføj en beskrivelse, 
 msgid "Edit: {title}"
 msgstr "Ret: {title}"
 
-#: src/views/Publication/Player.tsx:366
+#: src/views/Publication/Player.tsx:370
 msgid "EDIT: Player"
 msgstr "EDIT: Spiller"
 
-#: src/views/Playersite.tsx:296
+#: src/views/Playersite.tsx:297
 msgid "EDIT: Publication Website"
 msgstr "EDIT: Websted for offentliggørelse"
 
-#: src/views/Settings.tsx:1680
+#: src/views/Settings.tsx:1705
 msgid "Email"
 msgstr "E-mail"
 
-#: src/views/Publication/Player.tsx:414
+#: src/views/Publication/Player.tsx:420
 msgid "Embed"
 msgstr "Indlejre"
 
@@ -901,12 +909,12 @@ msgstr "Indlejre"
 msgid "Enable"
 msgstr "Aktiver"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:196
+#: src/views/Edit/Sources/VirtualAudio.tsx:198
 msgid "Enable a periodic beep every second with this value times the carrier frequency"
 msgstr "Aktiver et periodisk bip hvert sekund med denne værdi gange bærefrekvensen"
 
 #: src/views/Publication/Services/Dummy.tsx:313
-#: src/views/Publication/Services/Facebook.tsx:153
+#: src/views/Publication/Services/Facebook.tsx:173
 msgid "Enable backup stream"
 msgstr "Aktiver Backup stream"
 
@@ -914,7 +922,7 @@ msgstr "Aktiver Backup stream"
 msgid "Enable browser-compatible H.264 stream"
 msgstr ""
 
-#: src/views/Publication/Player.tsx:565
+#: src/views/Publication/Player.tsx:611
 msgid "Enable nerd statistics"
 msgstr "Aktiver nørdstatistik"
 
@@ -924,16 +932,16 @@ msgid "Enable now"
 msgstr "Aktiver nu"
 
 #: src/views/Publication/Services/Dummy.tsx:308
-#: src/views/Publication/Services/Facebook.tsx:148
+#: src/views/Publication/Services/Facebook.tsx:168
 msgid "Enable primary stream"
 msgstr "Aktiver primær stream"
 
-#: src/views/Edit/Sources/Network.tsx:1229
+#: src/views/Edit/Sources/Network.tsx:1270
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:92
 msgid "Enable RTMP server ..."
 msgstr "Aktiver RTMP server ..."
 
-#: src/views/Publication/Services/PeerTube.tsx:118
+#: src/views/Publication/Services/PeerTube.tsx:133
 msgid "Enable RTMPS transfer"
 msgstr "Aktivering af RTMPS-overførsel"
 
@@ -941,16 +949,16 @@ msgstr "Aktivering af RTMPS-overførsel"
 msgid "Enable snapshots"
 msgstr "Aktiver snapshots"
 
-#: src/views/Edit/Sources/Network.tsx:1356
+#: src/views/Edit/Sources/Network.tsx:1405
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:92
 msgid "Enable SRT server ..."
 msgstr "Aktiver SRT-server ..."
 
-#: src/views/Settings.tsx:1779
+#: src/views/Settings.tsx:1814
 msgid "Enabling authorization is strongly advised. Otherwise, anybody can access this instance."
 msgstr "Det anbefales kraftigt at aktivere autorisation. Ellers kan alle få adgang til denne instans."
 
-#: src/views/Settings.tsx:1990
+#: src/views/Settings.tsx:2025
 msgid "Enabling basic auth is strongly advised. Otherwise, anybody could write data to /memfs."
 msgstr "Det anbefales kraftigt at aktivere grundlæggende auth. Ellers kan alle skrive data til /memfs."
 
@@ -959,31 +967,39 @@ msgid "Encoder"
 msgstr "Encoder"
 
 #: src/views/Edit/Summary.tsx:95
-#: src/views/Publication/Add.tsx:567
-#: src/views/Publication/Edit.tsx:645
+#: src/views/Publication/Add.tsx:606
+#: src/views/Publication/Edit.tsx:650
 msgid "Encoding"
 msgstr "Kodning"
 
-#: src/views/Publication/Services/HLS.tsx:518
-#: src/views/Publication/Services/RTMP.tsx:287
-#: src/views/Publication/Services/SRT.tsx:427
+#: src/views/Publication/Services/HLS.tsx:558
+#: src/views/Publication/Services/RTMP.tsx:312
+#: src/views/Publication/Services/SRT.tsx:522
 msgid "Encryption"
 msgstr "Kryptering"
 
-#: src/components/ChannelList.tsx:537
+#: src/components/ChannelList.tsx:579
 msgid "Enter a name for the new channel."
 msgstr "Indtast et navn for den nye kanal."
 
-#: src/views/Password.tsx:145
+#: src/views/Password.tsx:161
+msgid "Enter a password."
+msgstr ""
+
+#: src/views/Password.tsx:144
+msgid "Enter a username."
+msgstr ""
+
+#: src/views/Password.tsx:156
 msgid "Enter password"
 msgstr "Indtast adgangskode"
 
-#: src/views/Edit/Sources/Network.tsx:969
+#: src/views/Edit/Sources/Network.tsx:974
 #: src/views/Edit/Wizard/Sources/Network.tsx:70
 msgid "Enter the address of your network source:"
 msgstr "Indtast adressen på din netværkskilde:"
 
-#: src/views/Password.tsx:133
+#: src/views/Password.tsx:138
 msgid "Enter username"
 msgstr "Indtast brugernavn"
 
@@ -995,32 +1011,32 @@ msgstr "Entropicoder"
 #: src/views/Incompatible.tsx:29
 #: src/views/Invalid.tsx:31
 #: src/views/Publication/Process.tsx:64
-#: src/views/Settings.tsx:1279
+#: src/views/Settings.tsx:1292
 msgid "Error"
 msgstr "Fejl"
 
 #: src/components/CopyButton.tsx:33
 #: src/components/Textarea.tsx:68
-#: src/components/TextFieldCopy.tsx:53
+#: src/components/TextFieldCopy.tsx:54
 msgid "Error while copying data to clipboard"
 msgstr "Fejl under kopiering af data til udklipsholderen"
 
 #. placeholder {0}: anonymize($state.progress.error) || 'unknown'
 #. placeholder {0}: progress.error
-#: src/views/Main/index.tsx:403
+#: src/views/Main/index.tsx:429
 #: src/views/Publication/Process.tsx:65
 msgid "Error: {0}"
 msgstr "Fejl: {0}"
 
-#: src/views/Playersite.tsx:805
+#: src/views/Playersite.tsx:836
 msgid "Expands the area above the channel list (live chat)."
 msgstr "Udvider området over kanallisten (live chat)."
 
-#: src/views/Playersite.tsx:827
+#: src/views/Playersite.tsx:858
 msgid "Expands the area under the channel description (comment boxes)."
 msgstr "Udvider området under kanalbeskrivelsen (kommentarfelter)."
 
-#: src/views/Settings.tsx:1460
+#: src/views/Settings.tsx:1475
 msgid "Expert mode"
 msgstr "Eksperttilstand"
 
@@ -1028,54 +1044,54 @@ msgstr "Eksperttilstand"
 msgid "EXT-X-VERSION"
 msgstr "EXT-X-VERSION"
 
-#: src/views/Playersite.tsx:790
+#: src/views/Playersite.tsx:821
 msgid "Extend channel list"
 msgstr "Udvidelse af kanallisten"
 
-#: src/views/Playersite.tsx:812
+#: src/views/Playersite.tsx:843
 msgid "Extend content"
 msgstr "Udvidelse af indholdet"
 
-#: src/views/Playersite.tsx:835
+#: src/views/Playersite.tsx:866
 msgid "Extend footer"
 msgstr "Udvider sidefod"
 
-#: src/views/Playersite.tsx:770
+#: src/views/Playersite.tsx:801
 msgid "Extend header"
 msgstr "Forlænge overskriften"
 
-#: src/views/Edit/Sources/Network.tsx:913
+#: src/views/Edit/Sources/Network.tsx:914
 msgid "Extention settings"
 msgstr ""
 
 #. placeholder {0}: err.message
-#: src/views/Publication/Add.tsx:271
+#: src/views/Publication/Add.tsx:273
 msgid "Failed to create publication service ({0})"
 msgstr "Det lykkedes ikke at oprette en publikationstjeneste ({0})"
 
-#: src/views/Playersite.tsx:248
+#: src/views/Playersite.tsx:249
 msgid "Failed to create publication website files."
 msgstr "Det lykkedes ikke at oprette filer til publikationswebstedet."
 
-#: src/views/Edit/Profile.tsx:555
-#: src/views/Edit/Profile.tsx:742
+#: src/views/Edit/Profile.tsx:560
+#: src/views/Edit/Profile.tsx:762
 msgid "Failed to probe the source. Please check the <0>probe details</0>."
 msgstr "Mislykkes probe hos kilde. Undersøg <0> probe oplysninger</0>."
 
-#. placeholder {0}: err.message
-#: src/utils/restreamer.ts:517
+#. placeholder {0}: String(err.message)
+#: src/utils/restreamer.ts:527
 msgid "Failed to refresh token: {0}"
 msgstr "Det lykkedes ikke at opdatere token: {0}"
 
-#: src/views/Edit/index.tsx:344
+#: src/views/Edit/index.tsx:369
 msgid "Failed to save ingest metadata"
 msgstr "Det mislykkedes at gemme indlæsningsmetadata"
 
-#: src/views/Edit/index.tsx:189
+#: src/views/Edit/index.tsx:194
 msgid "Failed to stop process"
 msgstr "Det er ikke lykkedes at stoppe processen"
 
-#: src/views/Playersite.tsx:237
+#: src/views/Playersite.tsx:238
 msgid "Failed to store player size setting."
 msgstr "Det lykkedes ikke at gemme indstillingen for spillerstørrelse."
 
@@ -1085,40 +1101,40 @@ msgid "Failed to store publication service ({0})"
 msgstr "Det lykkedes ikke at gemme publikationstjenesten ({0})"
 
 #. placeholder {0}: err.message
-#: src/views/Edit/index.tsx:364
+#: src/views/Edit/index.tsx:389
 msgid "Failed to update ingest preview process ({0})"
 msgstr ""
 
 #. placeholder {0}: err.message
-#: src/views/Edit/index.tsx:333
+#: src/views/Edit/index.tsx:358
 msgid "Failed to update ingest process ({0})"
 msgstr "Opdatering af indlæsningsprocessen mislykkedes ({0})"
 
 #. placeholder {0}: err.message
-#: src/views/Edit/index.tsx:354
+#: src/views/Edit/index.tsx:379
 msgid "Failed to update ingest snapshot process ({0})"
 msgstr "Opdatering af processen for indtastning af snapshot mislykkedes ({0})"
 
-#: src/views/Edit/index.tsx:374
+#: src/views/Edit/index.tsx:399
 msgid "Failed to update the player"
 msgstr "Opdatering af spilleren mislykkedes"
 
-#: src/views/Edit/index.tsx:384
+#: src/views/Edit/index.tsx:409
 msgid "Failed to update the playersite"
 msgstr "Opdatering af spillersiden mislykkedes"
 
-#: src/views/Edit/Wizard/Audio.tsx:54
-#: src/views/Edit/Wizard/Video.tsx:49
+#: src/views/Edit/Wizard/Audio.tsx:58
+#: src/views/Edit/Wizard/Video.tsx:53
 msgid "Failed to verify the source. Please check the address."
 msgstr "Mislykkes undersøg af kilde. Undersøg adresse."
 
-#: src/views/Settings.tsx:2615
+#: src/views/Settings.tsx:2695
 msgid "FFmpeg"
 msgstr "FFmpeg"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:191
-#: src/views/Edit/Sources/SDP.tsx:172
-#: src/views/Edit/Sources/VideoLoop.tsx:199
+#: src/views/Edit/Sources/AudioLoop.tsx:201
+#: src/views/Edit/Sources/SDP.tsx:182
+#: src/views/Edit/Sources/VideoLoop.tsx:209
 msgid "File path"
 msgstr "Filsti"
 
@@ -1126,7 +1142,7 @@ msgstr "Filsti"
 msgid "Filter"
 msgstr "Filter"
 
-#: src/views/Edit/Profile.tsx:857
+#: src/views/Edit/Profile.tsx:887
 msgid "Finish"
 msgstr "Færdig"
 
@@ -1134,24 +1150,24 @@ msgstr "Færdig"
 msgid "Fix size"
 msgstr "Fast størrelse"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:243
+#: src/views/Edit/Sources/VirtualVideo.tsx:245
 msgid "Flags"
 msgstr "Flag"
 
-#: src/views/Edit/Sources/X11grab.tsx:88
 #: src/views/Edit/Sources/X11grab.tsx:89
+#: src/views/Edit/Sources/X11grab.tsx:90
 msgid "Follow mouse"
 msgstr ""
 
-#: src/views/Playersite.tsx:850
+#: src/views/Playersite.tsx:881
 msgid "For Javascripts."
 msgstr "For Javascripts."
 
-#: src/views/Playersite.tsx:785
+#: src/views/Playersite.tsx:816
 msgid "For Stylesheets."
 msgstr "Til stilark."
 
-#: src/views/Edit/Sources/Network.tsx:691
+#: src/views/Edit/Sources/Network.tsx:692
 msgid "Force input framerate"
 msgstr "Tving input framerate"
 
@@ -1163,12 +1179,12 @@ msgstr "Tvinge nøglerammer"
 msgid "Format"
 msgstr "Format"
 
-#: src/components/Progress.tsx:160
+#: src/components/Progress.tsx:163
 #: src/views/Main/Progress.tsx:77
 msgid "FPS"
 msgstr "FPS"
 
-#: src/components/Progress.tsx:217
+#: src/components/Progress.tsx:220
 msgid "Frame drops"
 msgstr "Frame falder"
 
@@ -1176,13 +1192,13 @@ msgstr "Frame falder"
 msgid "Frame is passed through (Passthrough)"
 msgstr "Rammen sendes igennem (Passthrough)"
 
-#: src/views/Edit/Sources/Framebuffer.tsx:144
+#: src/views/Edit/Sources/Framebuffer.tsx:147
 msgid "Framebuffer"
 msgstr "Framebuffer"
 
 #: src/components/coders/settings/Video.tsx:99
 #: src/components/filters/video/Framerate.tsx:36
-#: src/views/Edit/Sources/Network.tsx:704
+#: src/views/Edit/Sources/Network.tsx:705
 msgid "Framerate"
 msgstr "Framerate"
 
@@ -1194,54 +1210,54 @@ msgstr "Konvertering af framerate (frame-interpolation)"
 msgid "Framerate mode"
 msgstr "Framerate-tilstand"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:179
+#: src/views/Edit/Sources/VirtualAudio.tsx:181
 msgid "Frequency (Hz)"
 msgstr "Frekvens (Hz)"
 
-#: src/views/Edit/index.tsx:488
-#: src/views/Edit/index.tsx:514
-#: src/views/Edit/Sources/Network.tsx:757
-#: src/views/Playersite.tsx:311
-#: src/views/Playersite.tsx:349
-#: src/views/Publication/Add.tsx:471
+#: src/views/Edit/index.tsx:513
+#: src/views/Edit/index.tsx:539
+#: src/views/Edit/Sources/Network.tsx:758
+#: src/views/Playersite.tsx:312
+#: src/views/Playersite.tsx:350
+#: src/views/Publication/Add.tsx:510
 #: src/views/Publication/Edit.tsx:505
-#: src/views/Publication/Services/DASH.tsx:251
-#: src/views/Publication/Services/HLS.tsx:246
-#: src/views/Publication/Services/Icecast.tsx:218
-#: src/views/Publication/Services/Image2.tsx:167
-#: src/views/Publication/Services/RTMP.tsx:210
-#: src/views/Publication/Services/RTSP.tsx:204
-#: src/views/Publication/Services/SRT.tsx:212
-#: src/views/Settings.tsx:1323
-#: src/views/Settings.tsx:1397
+#: src/views/Publication/Services/DASH.tsx:261
+#: src/views/Publication/Services/HLS.tsx:256
+#: src/views/Publication/Services/Icecast.tsx:228
+#: src/views/Publication/Services/Image2.tsx:177
+#: src/views/Publication/Services/RTMP.tsx:220
+#: src/views/Publication/Services/RTSP.tsx:214
+#: src/views/Publication/Services/SRT.tsx:222
+#: src/views/Settings.tsx:1336
+#: src/views/Settings.tsx:1410
 msgid "General"
 msgstr "Almindelig"
 
-#: src/views/Publication/Services/DLive.tsx:89
-#: src/views/Publication/Services/EarthCam.tsx:108
-#: src/views/Publication/Services/Facebook.tsx:124
-#: src/views/Publication/Services/Facebook.tsx:142
-#: src/views/Publication/Services/Instagram.tsx:95
-#: src/views/Publication/Services/Kick.tsx:124
-#: src/views/Publication/Services/MediaNetwork.tsx:91
-#: src/views/Publication/Services/NimoTv.tsx:123
-#: src/views/Publication/Services/PeerTube.tsx:113
-#: src/views/Publication/Services/Restream.tsx:147
-#: src/views/Publication/Services/Rumble.tsx:124
-#: src/views/Publication/Services/TikTok.tsx:124
-#: src/views/Publication/Services/Trovo.tsx:89
-#: src/views/Publication/Services/Twitch.tsx:227
-#: src/views/Publication/Services/Twitter.tsx:216
-#: src/views/Publication/Services/Wettercom.tsx:129
-#: src/views/Publication/Services/Youtube.tsx:227
+#: src/views/Publication/Services/DLive.tsx:99
+#: src/views/Publication/Services/EarthCam.tsx:118
+#: src/views/Publication/Services/Facebook.tsx:134
+#: src/views/Publication/Services/Facebook.tsx:162
+#: src/views/Publication/Services/Instagram.tsx:105
+#: src/views/Publication/Services/Kick.tsx:134
+#: src/views/Publication/Services/MediaNetwork.tsx:101
+#: src/views/Publication/Services/NimoTv.tsx:133
+#: src/views/Publication/Services/PeerTube.tsx:128
+#: src/views/Publication/Services/Restream.tsx:157
+#: src/views/Publication/Services/Rumble.tsx:134
+#: src/views/Publication/Services/TikTok.tsx:134
+#: src/views/Publication/Services/Trovo.tsx:99
+#: src/views/Publication/Services/Twitch.tsx:237
+#: src/views/Publication/Services/Twitter.tsx:226
+#: src/views/Publication/Services/Wettercom.tsx:144
+#: src/views/Publication/Services/Youtube.tsx:237
 msgid "GET"
 msgstr "GET"
 
-#: src/views/Publication/Player.tsx:548
+#: src/views/Publication/Player.tsx:589
 msgid "Google Analytics ID"
 msgstr "Google Analytics ID"
 
-#: src/views/Publication/Player.tsx:558
+#: src/views/Publication/Player.tsx:604
 msgid "Google Analytics Tracker Name"
 msgstr "Google Analytics Tracker Name"
 
@@ -1249,16 +1265,16 @@ msgstr "Google Analytics Tracker Name"
 msgid "GPU"
 msgstr ""
 
-#: src/views/Edit/Sources/V4L.tsx:178
+#: src/views/Edit/Sources/V4L.tsx:183
 #: src/views/Edit/Wizard/Sources/V4L.tsx:157
 msgid "Hardware device"
 msgstr "Hardware-enhed"
 
-#: src/views/Playersite.tsx:644
+#: src/views/Playersite.tsx:665
 msgid "Header"
 msgstr "Overskrift"
 
-#: src/views/Playersite.tsx:600
+#: src/views/Playersite.tsx:621
 msgid "Headline"
 msgstr "Overskrift"
 
@@ -1266,15 +1282,19 @@ msgstr "Overskrift"
 msgid "Height"
 msgstr "Højde"
 
-#: src/views/Main/index.tsx:572
+#: src/components/controls/VideoOverlays.tsx:251
+msgid "Height (optional)"
+msgstr ""
+
+#: src/views/Main/index.tsx:612
 msgid "HLS"
 msgstr "HLS"
 
-#: src/views/Main/index.tsx:615
+#: src/views/Main/index.tsx:655
 msgid "HLS @ H.264"
 msgstr ""
 
-#: src/views/Edit/index.tsx:578
+#: src/views/Edit/index.tsx:620
 msgid "HLS output"
 msgstr "HLS-output"
 
@@ -1282,7 +1302,7 @@ msgstr "HLS-output"
 msgid "HLS server"
 msgstr "HLS-server"
 
-#: src/views/Settings.tsx:1878
+#: src/views/Settings.tsx:1913
 msgid "HLS statistic for the In-memory storage"
 msgstr "HLS-statistik for lagring i hukommelse"
 
@@ -1290,75 +1310,80 @@ msgstr "HLS-statistik for lagring i hukommelse"
 msgid "Horizontal Flip"
 msgstr "Vandret flip"
 
-#: src/views/Login.tsx:334
+#: src/views/Login.tsx:357
 msgid "Hosted Restreamer interface"
 msgstr "Hosted Restreamer-grænseflade"
 
-#: src/views/Edit/Sources/Network.tsx:681
+#: src/views/Edit/Sources/Network.tsx:682
 msgid "HTTP and HTTPS"
 msgstr "HTTP og HTTPS"
 
-#: src/views/Settings.tsx:1620
+#: src/views/Settings.tsx:1640
 msgid "HTTP port"
 msgstr "HTTP-port"
 
-#: src/views/Settings.tsx:1656
+#: src/views/Settings.tsx:1681
 msgid "HTTPS (SSL/TLS)"
 msgstr "HTTPS (SSL/TLS)"
 
-#: src/views/Settings.tsx:1637
+#: src/views/Settings.tsx:1662
 msgid "HTTPS port"
 msgstr "HTTPS-port"
 
-#: src/views/Settings.tsx:1545
+#: src/views/Settings.tsx:1560
 msgid "Human readable name on the service."
 msgstr "Menneskeligt læsbart navn på tjenesten."
 
-#: src/views/Settings.tsx:2705
+#: src/views/Settings.tsx:2785
 msgid "If you changed the ports, it might be that Restreamer Core restarted already, but it is now available on a different port."
 msgstr "Hvis du har ændret portene, kan det være, at Restreamer Core allerede er genstartet, men at den nu er tilgængelig på en anden port."
 
-#: src/views/Settings.tsx:2697
+#: src/views/Settings.tsx:2777
 msgid "If you enabled Let's Encrypt TLS it might take some time to acquire the certificates. Make sure that Restreamer Core is reachable via port 80 from the internet. Please check the console log of Restreamer Core."
 msgstr "Hvis du har aktiveret Let's Encrypt TLS, kan det tage lidt tid at skaffe certifikaterne. Sørg for, at Restreamer Core kan nås via port 80 fra internettet. Kontroller konsolloggen for Restreamer Core."
 
-#: src/views/Publication/Player.tsx:437
+#: src/views/Publication/Player.tsx:443
 msgid "iframe code"
 msgstr "iframe-kode"
 
-#: src/views/Settings.tsx:1899
+#: src/views/Settings.tsx:1934
 msgid "Ignore IP ranges"
 msgstr "Ignorer IP-ranger"
 
-#: src/views/Playersite.tsx:689
-#: src/views/Publication/Player.tsx:474
+#. placeholder {0}: index + 1
+#: src/components/controls/VideoOverlays.tsx:182
+msgid "Image overlay {0}"
+msgstr ""
+
+#: src/views/Playersite.tsx:715
+#: src/views/Publication/Player.tsx:485
 msgid "Image URL"
 msgstr "Billede URL"
 
-#: src/views/Playersite.tsx:719
+#: src/views/Playersite.tsx:750
 msgid "Imprint"
 msgstr "Tryk"
 
-#: src/views/Playersite.tsx:354
+#: src/views/Playersite.tsx:355
 msgid "In addition to the player, the Restreamer offers a complete landingpage, which you can use to present your live stream easily and quickly."
 msgstr "Ud over afspilleren tilbyder Restreamer en komplet landingpage, som du kan bruge til at præsentere din live stream nemt og hurtigt."
 
-#: src/views/Edit/Profile.tsx:568
-#: src/views/Edit/Profile.tsx:754
+#: src/views/Edit/Profile.tsx:573
+#: src/views/Edit/Profile.tsx:774
 msgid "In order to proceed anyways, you can provide <0>hints</0> about the available streams."
 msgstr ""
 
 #: src/components/controls/HLS.tsx:73
-#: src/views/Settings.tsx:1971
+#: src/views/Settings.tsx:2006
 msgid "In-memory"
 msgstr "In-memory"
 
-#: src/components/Footer.tsx:321
-#: src/components/Footer.tsx:335
+#: src/components/Footer.tsx:328
+#: src/components/Footer.tsx:342
 msgid "In-memory storage"
 msgstr "Lagring i hukommelsen"
 
-#: src/views/Publication/Add.tsx:358
+#: src/views/Publication/Add.tsx:369
 msgid "Incompatible"
 msgstr "Uforenlig"
 
@@ -1371,49 +1396,49 @@ msgstr "Uforenlig"
 msgid "Inherit"
 msgstr "Arve"
 
-#: src/views/Playersite.tsx:780
+#: src/views/Playersite.tsx:811
 msgid "Inject 1"
 msgstr "Injicere 1"
 
-#: src/views/Playersite.tsx:800
+#: src/views/Playersite.tsx:831
 msgid "Inject 2"
 msgstr "Injicere 2"
 
-#: src/views/Playersite.tsx:822
+#: src/views/Playersite.tsx:853
 msgid "Inject 3"
 msgstr "Injicere 3"
 
-#: src/views/Playersite.tsx:845
+#: src/views/Playersite.tsx:876
 msgid "Inject 4"
 msgstr "Injicere 4"
 
-#: src/views/Edit/Sources/Network.tsx:1270
-#: src/views/Edit/Sources/Network.tsx:1397
+#: src/views/Edit/Sources/Network.tsx:1315
+#: src/views/Edit/Sources/Network.tsx:1450
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:128
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:128
 msgid "Input stream"
 msgstr "Input-strøm"
 
-#: src/views/Publication/Services/PeerTube.tsx:91
+#: src/views/Publication/Services/PeerTube.tsx:96
 msgid "Instance domain"
 msgstr "Instansdomæne"
 
-#: src/views/Edit/Sources/Network.tsx:672
+#: src/views/Edit/Sources/Network.tsx:673
 msgid "Internal SRT latency in milliseconds."
 msgstr ""
 
-#: src/components/controls/Snapshot.tsx:56
+#: src/components/controls/Snapshot.tsx:61
 msgid "Interval (seconds)"
 msgstr "Interval (sekunder)"
 
-#: src/components/Header.tsx:352
-#: src/components/Header.tsx:406
+#: src/components/Header.tsx:355
+#: src/components/Header.tsx:409
 msgid "Issue alert"
 msgstr "Advarsel om spørgsmål"
 
-#: src/components/Progress.tsx:173
+#: src/components/Progress.tsx:176
 #: src/views/Main/Progress.tsx:67
-#: src/views/Main/Publication.tsx:204
+#: src/views/Main/Publication.tsx:226
 msgid "kbit/s"
 msgstr "kbit/s"
 
@@ -1421,7 +1446,7 @@ msgstr "kbit/s"
 msgid "Keyframe interval (seconds)"
 msgstr "Keyframe-interval (sekunder)"
 
-#: src/views/Edit/Sources/Network.tsx:667
+#: src/views/Edit/Sources/Network.tsx:668
 msgid "Latency (milliseconds)"
 msgstr ""
 
@@ -1430,11 +1455,11 @@ msgstr ""
 msgid "Layout"
 msgstr "Opsætning"
 
-#: src/views/Settings.tsx:1661
+#: src/views/Settings.tsx:1686
 msgid "Let's Encrypt certification"
 msgstr "Let's Encrypt certifikat"
 
-#: src/views/Settings.tsx:1672
+#: src/views/Settings.tsx:1697
 msgid "Let's Encrypt requires one or more public domain names and an accessible port 80/TCP."
 msgstr "Let's Encrypt kræver et eller flere offentlige domænenavne og en tilgængelig port 80/TCP."
 
@@ -1444,27 +1469,27 @@ msgstr "Let's Encrypt kræver et eller flere offentlige domænenavne og en tilg�
 msgid "Level"
 msgstr "Nivå"
 
-#: src/views/Settings.tsx:2593
+#: src/views/Settings.tsx:2673
 msgid "Level of system protocol."
 msgstr "Niveau af systemprotokol."
 
-#: src/views/Edit/index.tsx:503
-#: src/views/Edit/index.tsx:725
+#: src/views/Edit/index.tsx:528
+#: src/views/Edit/index.tsx:778
 #: src/views/Edit/Wizard/License.tsx:25
 msgid "License"
 msgstr "licens"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:234
+#: src/views/Edit/Sources/VirtualVideo.tsx:236
 msgid "Life color"
 msgstr "Livets farve"
 
-#: src/views/Edit/index.tsx:684
-#: src/views/Publication/Add.tsx:528
+#: src/views/Edit/index.tsx:737
+#: src/views/Publication/Add.tsx:567
 #: src/views/Publication/Edit.tsx:562
 msgid "Limits"
 msgstr "Grænser"
 
-#: src/views/Playersite.tsx:671
+#: src/views/Playersite.tsx:692
 msgid "Linecolor"
 msgstr "linjefarve"
 
@@ -1472,36 +1497,36 @@ msgstr "linjefarve"
 msgid "Lines"
 msgstr "Linjer"
 
-#: src/views/Playersite.tsx:609
-#: src/views/Publication/Player.tsx:509
+#: src/views/Playersite.tsx:630
+#: src/views/Publication/Player.tsx:535
 msgid "Link"
 msgstr "Link"
 
-#: src/views/Playersite.tsx:618
+#: src/views/Playersite.tsx:639
 msgid "Link, mouseover"
 msgstr "Link, mouseover"
 
-#: src/views/Edit/Sources/Network.tsx:738
+#: src/views/Edit/Sources/Network.tsx:739
 msgid "List of additional HTTP headers, one per line."
 msgstr ""
 
-#: src/views/Settings.tsx:2279
+#: src/views/Settings.tsx:2334
 msgid "List of file extensions not to cache (e.g. \".m3u8\"), one per line. Leave empty for none."
 msgstr "Liste over filtypenavne, der ikke skal cachelagres (f.eks. \".m3u8\"), én pr. linje. Lad den være tom for ingen."
 
-#: src/views/Settings.tsx:2255
+#: src/views/Settings.tsx:2310
 msgid "List of file extensions to cache (e.g. \".html\"), one per line. Leave empty to cache all file types."
 msgstr "Liste over filtypenavne, der skal lagres i cache (f.eks. \".html\"), én pr. linje. Lad den være tom for at cache alle filtyper."
 
-#: src/views/Settings.tsx:1912
+#: src/views/Settings.tsx:1947
 msgid "List of IP ranges in CIDR notation, e.g., 127.0.0.1/32, that the statistics will not record—one IP range per line. Leave empty to record all sessions."
 msgstr "Liste over IP-områder i CIDR-notation, f.eks. 127.0.0.0.1/32, som statistikken ikke registrerer - ét IP-område pr. linje. Lad den være tom for at registrere alle sessioner."
 
-#: src/components/controls/HLS.tsx:126
+#: src/components/controls/HLS.tsx:136
 msgid "List size (segments)"
 msgstr "Listestørrelse (segmenter)"
 
-#: src/views/Edit/Sources/Network.tsx:921
+#: src/views/Edit/Sources/Network.tsx:922
 msgid "Live stabilization"
 msgstr ""
 
@@ -1537,54 +1562,54 @@ msgstr "Streaming til Twitch Live RTMP Service."
 msgid "Live-Streaming to Vimeo Live RTMP Service"
 msgstr "Live-streaming til Vimeo Live RTMP-tjeneste"
 
-#: src/views/Publication/Services/Livespotting.tsx:120
+#: src/views/Publication/Services/Livespotting.tsx:130
 msgid "Livesource ID"
 msgstr "Livesource ID"
 
-#: src/views/Settings.tsx:2542
+#: src/views/Settings.tsx:2622
 msgid "Log level"
 msgstr "Logniveau"
 
-#: src/components/modals/Process.tsx:173
-#: src/views/Settings.tsx:1378
-#: src/views/Settings.tsx:2513
+#: src/components/modals/Process.tsx:193
+#: src/views/Settings.tsx:1391
+#: src/views/Settings.tsx:2593
 msgid "Logging"
 msgstr "Logning"
 
-#: src/views/Login.tsx:310
-#: src/views/Login.tsx:424
-#: src/views/Login.tsx:439
-#: src/views/Publication/Services/Akamai.tsx:137
+#: src/views/Login.tsx:328
+#: src/views/Login.tsx:457
+#: src/views/Login.tsx:472
+#: src/views/Publication/Services/Akamai.tsx:142
 msgid "Login"
 msgstr "Log på"
 
-#. placeholder {0}: err.message
-#: src/utils/restreamer.ts:297
-#: src/utils/restreamer.ts:343
+#. placeholder {0}: String(err.message)
+#: src/utils/restreamer.ts:307
+#: src/utils/restreamer.ts:353
 msgid "Login failed: {0}"
 msgstr "Login mislykkedes: {0}"
 
-#: src/utils/restreamer.ts:310
-#: src/utils/restreamer.ts:319
-#: src/utils/restreamer.ts:356
-#: src/utils/restreamer.ts:365
+#: src/utils/restreamer.ts:320
+#: src/utils/restreamer.ts:329
+#: src/utils/restreamer.ts:366
+#: src/utils/restreamer.ts:375
 msgid "Login failed: Couldn't load API details"
 msgstr "Login mislykkedes: Kunne ikke indlæse API-detaljer"
 
-#: src/views/Settings.tsx:1766
+#: src/views/Settings.tsx:1801
 msgid "Login/JWT authorization"
 msgstr "Login/JWT-autorisation"
 
-#: src/views/Publication/Player.tsx:415
+#: src/views/Publication/Player.tsx:421
 msgid "Logo"
 msgstr "Logginga"
 
-#: src/components/Header.tsx:364
+#: src/components/Header.tsx:367
 msgid "Logout"
 msgstr "Logout"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:240
-#: src/views/Edit/Sources/VideoLoop.tsx:248
+#: src/views/Edit/Sources/AudioLoop.tsx:255
+#: src/views/Edit/Sources/VideoLoop.tsx:263
 msgid "Loop"
 msgstr "Loop"
 
@@ -1596,12 +1621,12 @@ msgstr "Normalisering af lydstyrke"
 msgid "Low latency (Buffer)"
 msgstr "Lav latenstid (buffer)"
 
-#: src/views/Main/index.tsx:316
-#: src/views/Playersite.tsx:380
+#: src/views/Main/index.tsx:326
+#: src/views/Playersite.tsx:381
 msgid "Main channel"
 msgstr "Hovedkanal"
 
-#: src/views/Publication/Player.tsx:114
+#: src/views/Publication/Player.tsx:118
 msgid "Main channel not found"
 msgstr "Hovedkanal ikke fundet"
 
@@ -1609,15 +1634,15 @@ msgstr "Hovedkanal ikke fundet"
 msgid "Main channel saved"
 msgstr "Hoved kanal gemt"
 
-#: src/views/Playersite.tsx:403
+#: src/views/Playersite.tsx:404
 msgid "Main page channel (index.html)."
 msgstr "Kanalen på hovedsiden (index.html)."
 
-#: src/views/Edit/index.tsx:461
+#: src/views/Edit/index.tsx:486
 msgid "Main Source"
 msgstr "Hoved kilde"
 
-#: src/views/Publication/TabContent.tsx:56
+#: src/views/Publication/TabContent.tsx:61
 msgid "Maintainer:"
 msgstr "Vedligeholder:"
 
@@ -1633,23 +1658,23 @@ msgstr "Gør kanalen tilgængelig som en SRT-stream (eksperimentel)."
 msgid "Marked frames"
 msgstr "Mærkede rammer"
 
-#: src/components/controls/HLS.tsx:140
+#: src/components/controls/HLS.tsx:150
 msgid "Master playlist (increases browser/client compatibility)"
 msgstr "Hovedspilleliste (øger kompatibiliteten mellem browser/klient)"
 
-#: src/views/Settings.tsx:2177
+#: src/views/Settings.tsx:2222
 msgid "Maximum allowed cache size, 0 for unlimited."
 msgstr "Maksimal tilladt cache-størrelse, 0 for ubegrænset."
 
-#: src/views/Settings.tsx:2048
+#: src/views/Settings.tsx:2093
 msgid "Maximum allowed megabytes of RAM for /memfs, 0 for unlimited."
 msgstr "Maksimalt tilladte megabyte RAM for /memfs, 0 for ubegrænset."
 
-#: src/views/Settings.tsx:2111
+#: src/views/Settings.tsx:2156
 msgid "Maximum allowed megabytes to consume from hard disk. 0 for unlimited."
 msgstr "Maksimalt tilladte megabyte, der må forbruges fra harddisken. 0 for ubegrænset."
 
-#: src/views/Settings.tsx:1730
+#: src/views/Settings.tsx:1765
 msgid "Maximum bandwidth Mbit/s"
 msgstr "Maksimal båndbredde Mbit/s"
 
@@ -1657,71 +1682,71 @@ msgstr "Maksimal båndbredde Mbit/s"
 msgid "Maximum delay in milliseconds."
 msgstr "Maksimal forsinkelse i millisekunder."
 
-#: src/views/Settings.tsx:2203
+#: src/views/Settings.tsx:2258
 msgid "Maximum file size (Megabytes)"
 msgstr "Maksimal filstørrelse (megabytes)"
 
-#: src/views/Settings.tsx:2234
+#: src/views/Settings.tsx:2289
 msgid "Maximum file size to put in cache."
 msgstr "Maksimal filstørrelse, der skal lægges i cache."
 
-#: src/views/Settings.tsx:2638
+#: src/views/Settings.tsx:2718
 msgid "Maximum log histroy"
 msgstr "Maksimal log histroy"
 
-#: src/views/Settings.tsx:2599
-#: src/views/Settings.tsx:2621
+#: src/views/Settings.tsx:2679
+#: src/views/Settings.tsx:2701
 msgid "Maximum log lines"
 msgstr "Maksimale antal loglinjer"
 
-#: src/views/Settings.tsx:2037
-#: src/views/Settings.tsx:2100
-#: src/views/Settings.tsx:2144
+#: src/views/Settings.tsx:2082
+#: src/views/Settings.tsx:2145
+#: src/views/Settings.tsx:2189
 msgid "Maximum size (Megabytes)"
 msgstr "Maksimal størrelse (megabytes)"
 
-#: src/views/Settings.tsx:1922
+#: src/views/Settings.tsx:1957
 msgid "Maximum viewer idle time (Seconds)"
 msgstr "Maksimal inaktivitetstid for seeren (sekunder)"
 
-#: src/views/Settings.tsx:1709
+#: src/views/Settings.tsx:1739
 msgid "Maximum viewers"
 msgstr "Maksimalt antal seere"
 
-#: src/components/Footer.tsx:241
+#: src/components/Footer.tsx:248
 msgid "MB"
 msgstr "MB"
 
-#: src/components/Footer.tsx:234
-#: src/components/Progress.tsx:147
+#: src/components/Footer.tsx:241
+#: src/components/Progress.tsx:150
 msgid "Memory"
 msgstr "Hukommelse"
 
-#: src/components/controls/Limits.tsx:60
+#: src/components/controls/Limits.tsx:71
 msgid "Memory Limit (megabytes)"
 msgstr "Hukommelsesgrænse (megabyte)"
 
-#: src/components/controls/Limits.tsx:65
+#: src/components/controls/Limits.tsx:79
 msgid "Memory usage limit in megabytes, 0 for unlimited."
 msgstr "Grænse for hukommelsesforbrug i megabyte, 0 for ubegrænset."
 
-#: src/views/Edit/index.tsx:498
+#: src/views/Edit/index.tsx:523
 msgid "Meta information"
 msgstr "Meta oplysninger"
 
-#: src/views/Edit/index.tsx:699
+#: src/views/Edit/index.tsx:752
 #: src/views/Edit/Wizard/Metadata.tsx:25
 msgid "Metadata"
 msgstr "Metadata"
 
 #. placeholder {0}: 32
 #. placeholder {1}: 5000000
-#: src/views/Edit/Sources/Network.tsx:784
-#: src/views/Edit/Sources/X11grab.tsx:220
+#: src/views/Edit/Sources/Network.tsx:785
+#: src/views/Edit/Sources/X11grab.tsx:225
 msgid "Mininum {0}, default {1}"
 msgstr "Mininum {0}, standard {1}"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:207
+#: src/views/Edit/Sources/VirtualVideo.tsx:209
 msgid "Mold"
 msgstr "Skimmelsvamp"
 
@@ -1731,7 +1756,7 @@ msgstr "Skimmelsvamp"
 msgid "More about licenses here"
 msgstr "Mere om licenser her"
 
-#: src/views/Settings.tsx:1502
+#: src/views/Settings.tsx:1517
 msgid "More about the service"
 msgstr "Mere om tjenesten"
 
@@ -1743,15 +1768,15 @@ msgstr "Mere om Twitters ophavsret <0>her</0>."
 msgid "More about YouTube's copyright <0>here</0>."
 msgstr "Mere om YouTube's copyright <0>here</0>."
 
-#: src/views/Settings.tsx:2164
+#: src/views/Settings.tsx:2209
 msgid "Must be larger than maximum file size in cache."
 msgstr "Skal være større end den maksimale filstørrelse i cache."
 
-#: src/views/Settings.tsx:2223
+#: src/views/Settings.tsx:2278
 msgid "Must be smaller than maximum cache size."
 msgstr "Skal være mindre end den maksimale cache-størrelse."
 
-#: src/views/Publication/Player.tsx:581
+#: src/views/Publication/Player.tsx:627
 msgid "Mute"
 msgstr "Stille"
 
@@ -1767,40 +1792,40 @@ msgstr "Mute venstre"
 msgid "Mute right"
 msgstr "Mute højre"
 
-#: src/components/ChannelList.tsx:544
-#: src/components/controls/Metadata.tsx:81
-#: src/components/controls/Metadata.tsx:106
-#: src/views/Playersite.tsx:541
-#: src/views/Settings.tsx:1534
+#: src/components/ChannelList.tsx:586
+#: src/components/controls/Metadata.tsx:82
+#: src/components/controls/Metadata.tsx:107
+#: src/views/Playersite.tsx:557
+#: src/views/Settings.tsx:1549
 msgid "Name"
 msgstr "Navn"
 
-#: src/views/Playersite.tsx:546
+#: src/views/Playersite.tsx:562
 msgid "Name for the template. If the name already exists, it will be overwritten."
 msgstr "Navn på skabelonen. Hvis navnet allerede findes, overskrives det."
 
-#: src/views/Settings.tsx:1337
-#: src/views/Settings.tsx:1589
+#: src/views/Settings.tsx:1350
+#: src/views/Settings.tsx:1604
 msgid "Network"
 msgstr "Netværk"
 
-#: src/views/Edit/Sources/Network.tsx:1564
-#: src/views/Edit/Wizard/Sources/Network.tsx:133
+#: src/views/Edit/Sources/Network.tsx:1621
+#: src/views/Edit/Wizard/Sources/Network.tsx:143
 msgid "Network source"
 msgstr "Netværkskilde"
 
-#: src/views/Edit/Wizard/Audio.tsx:163
+#: src/views/Edit/Wizard/Audio.tsx:175
 #: src/views/Edit/Wizard/Metadata.tsx:54
-#: src/views/Edit/Wizard/Video.tsx:103
+#: src/views/Edit/Wizard/Video.tsx:115
 #: src/views/Edit/Wizard/VideoProfile.tsx:118
 msgid "Next"
 msgstr "Næste"
 
-#: src/views/Edit/Profile.tsx:670
+#: src/views/Edit/Profile.tsx:685
 msgid "Next: Audio"
 msgstr "Næste: Audio"
 
-#: src/views/Welcome.tsx:52
+#: src/views/Welcome.tsx:58
 msgid "Next: Video setup"
 msgstr "Næste: Opsætning af video"
 
@@ -1809,7 +1834,7 @@ msgid "No"
 msgstr "Nej"
 
 #: src/views/Edit/Sources/NoAudio.tsx:42
-#: src/views/Edit/Wizard/Audio.tsx:146
+#: src/views/Edit/Wizard/Audio.tsx:158
 msgid "No audio"
 msgstr "Igen lyd"
 
@@ -1817,7 +1842,7 @@ msgstr "Igen lyd"
 msgid "No audio stream available"
 msgstr "Ingen lydstrøm tilgængelig"
 
-#: src/views/Main/index.tsx:480
+#: src/views/Main/index.tsx:506
 msgid "No H.264 Stream availabe."
 msgstr ""
 
@@ -1826,7 +1851,7 @@ msgstr ""
 msgid "No input device available"
 msgstr "Ingen input-enhed tilgængelig"
 
-#: src/views/Edit/Wizard/Video.tsx:44
+#: src/views/Edit/Wizard/Video.tsx:48
 msgid "No live stream was detected. Please check the software that sends the stream."
 msgstr "Der blev ikke fundet nogen live stream. Kontroller venligst den software, der sender strømmen."
 
@@ -1834,11 +1859,15 @@ msgstr "Der blev ikke fundet nogen live stream. Kontroller venligst den software
 msgid "No source selected"
 msgstr "Igen kilde valgt"
 
-#: src/views/Edit/SourceSelect.tsx:182
+#: src/views/Edit/SourceSelect.tsx:189
 msgid "No sources available"
 msgstr "Ingen kilder til rådighed"
 
-#: src/components/EncodingSelect.tsx:199
+#: src/components/EncodingSelect.tsx:274
+msgid "No suitable decoder found for this codec."
+msgstr ""
+
+#: src/components/EncodingSelect.tsx:200
 msgid "No suitable encoder found."
 msgstr "Ingen egnet encoder fundet."
 
@@ -1846,8 +1875,8 @@ msgstr "Ingen egnet encoder fundet."
 msgid "No suitable filter found."
 msgstr "Der er ikke fundet noget egnet filter."
 
-#: src/views/Main/index.tsx:365
-#: src/views/Publication/Player.tsx:385
+#: src/views/Main/index.tsx:387
+#: src/views/Publication/Player.tsx:391
 msgid "No video"
 msgstr "Ingen video"
 
@@ -1855,65 +1884,65 @@ msgstr "Ingen video"
 msgid "No video stream available"
 msgstr "Igen stream tilgængelige"
 
-#: src/views/Settings.tsx:1522
+#: src/views/Settings.tsx:1537
 msgid "Node ID"
 msgstr "Node ID"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:103
+#: src/views/Edit/Sources/VirtualAudio.tsx:105
 msgid "Noise"
 msgstr "Støj"
 
 #: src/components/filters/video/Scale.tsx:44
-#: src/views/Edit/Sources/AVFoundation.tsx:158
+#: src/views/Edit/Sources/AVFoundation.tsx:159
 #: src/views/Edit/Summary.tsx:29
 #: src/views/Edit/Summary.tsx:109
 #: src/views/Edit/Wizard/Sources/AVFoundation.tsx:120
 msgid "None"
 msgstr "Igen"
 
-#: src/views/Playersite.tsx:328
-#: src/views/Playersite.tsx:714
+#: src/views/Playersite.tsx:329
+#: src/views/Playersite.tsx:745
 msgid "Notes"
 msgstr "Noter"
 
-#: src/views/Settings.tsx:2610
-#: src/views/Settings.tsx:2632
+#: src/views/Settings.tsx:2690
+#: src/views/Settings.tsx:2712
 msgid "Number of log lines to keep."
 msgstr "Antallet af loglinjer, der skal bevares."
 
-#: src/views/Settings.tsx:2649
+#: src/views/Settings.tsx:2729
 msgid "Number of logs to keep for each process."
 msgstr "Antallet af logfiler, der skal opbevares for hver proces."
 
-#: src/components/controls/Limits.tsx:79
+#: src/components/controls/Limits.tsx:100
 msgid "Number of seconds the limits are allowed to be exceeded."
 msgstr "Antal sekunder, grænserne må overskrides."
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:239
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:257
 msgid "Number of tiles columns to encode with."
 msgstr "Antal tiles-kolonner, der skal kodes med."
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:211
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:225
 msgid "Number of tiles encode with."
 msgstr "Antal fliser, der kodes med."
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:225
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:241
 msgid "Number of tiles rows to encode with."
 msgstr "Antal fliserækker, der skal kodes med."
 
-#: src/views/Edit/Sources/AudioLoop.tsx:225
-#: src/views/Edit/Sources/SDP.tsx:206
-#: src/views/Edit/Sources/VideoLoop.tsx:233
-#: src/views/Playersite.tsx:891
-#: src/views/Publication/Player.tsx:642
+#: src/views/Edit/Sources/AudioLoop.tsx:240
+#: src/views/Edit/Sources/SDP.tsx:221
+#: src/views/Edit/Sources/VideoLoop.tsx:248
+#: src/views/Playersite.tsx:922
+#: src/views/Publication/Player.tsx:688
 msgid "OK"
 msgstr "OK"
 
-#: src/views/Settings.tsx:1862
+#: src/views/Settings.tsx:1897
 msgid "One referrer per line, e.g. http://www.example.com"
 msgstr "Én henvisningsadresse pr. linje, f.eks. http://www.example.com"
 
-#: src/views/Playersite.tsx:876
+#: src/views/Playersite.tsx:907
 msgid "Open"
 msgstr "Åbn"
 
@@ -1925,57 +1954,61 @@ msgstr "Output buffer"
 msgid "Pan"
 msgstr "Pan"
 
-#: src/views/Publication/Services/Core.tsx:277
-#: src/views/Settings.tsx:2477
+#: src/views/Publication/Services/Core.tsx:282
+#: src/views/Settings.tsx:2557
 msgid "Passphrase"
 msgstr "Passphrase"
 
-#: src/views/Settings.tsx:2504
+#: src/views/Settings.tsx:2584
 msgid "Passphrase for SRT encryption."
 msgstr "Passphrase til SRT-kryptering."
 
-#: src/views/Settings.tsx:2491
+#: src/views/Settings.tsx:2571
 msgid "Passphrase must be between 10 and 79 characters long"
 msgstr "Passphrase skal være mellem 10 og 79 tegn lang"
 
-#: src/views/Publication/Edit.tsx:650
+#: src/views/Publication/Edit.tsx:655
 msgid "Passthrough (copy) should only be disabled if necessary. Each encoding requires additional CPU/GPU resources."
 msgstr "Passthrough (kopi) bør kun deaktiveres, hvis det er nødvendigt. Hver kodning kræver ekstra CPU/GPU-ressourcer."
 
-#: src/views/Edit/Sources/Network.tsx:1021
-#: src/views/Edit/Wizard/Sources/Network.tsx:114
-#: src/views/Login.tsx:295
-#: src/views/Publication/Services/Akamai.tsx:147
-#: src/views/Publication/Services/DaCast.tsx:176
-#: src/views/Publication/Services/DASH.tsx:231
-#: src/views/Publication/Services/HLS.tsx:226
-#: src/views/Publication/Services/Red5.tsx:183
-#: src/views/Publication/Services/RTSP.tsx:184
-#: src/views/Publication/Services/WOWZA.tsx:207
-#: src/views/Settings.tsx:1809
-#: src/views/Settings.tsx:2017
+#: src/views/Edit/Sources/Network.tsx:1041
+#: src/views/Edit/Wizard/Sources/Network.tsx:124
+#: src/views/Login.tsx:312
+#: src/views/Publication/Services/Akamai.tsx:157
+#: src/views/Publication/Services/DaCast.tsx:196
+#: src/views/Publication/Services/DASH.tsx:241
+#: src/views/Publication/Services/HLS.tsx:236
+#: src/views/Publication/Services/Red5.tsx:213
+#: src/views/Publication/Services/RTSP.tsx:194
+#: src/views/Publication/Services/WOWZA.tsx:237
+#: src/views/Settings.tsx:1844
+#: src/views/Settings.tsx:2062
 msgid "Password"
 msgstr "kodeord"
 
-#: src/views/Settings.tsx:1818
-#: src/views/Settings.tsx:2031
+#: src/views/Settings.tsx:1853
+#: src/views/Settings.tsx:2076
 msgid "Password for authorization."
 msgstr "kodeord til godkendelse."
 
-#: src/views/Edit/Sources/Network.tsx:1026
-#: src/views/Edit/Wizard/Sources/Network.tsx:120
+#: src/views/Edit/Sources/Network.tsx:1046
+#: src/views/Edit/Wizard/Sources/Network.tsx:130
 msgid "Password for the device."
 msgstr "Adgangskode til enheden."
 
-#: src/views/Settings.tsx:1944
+#: src/views/Password.tsx:184
+msgid "Passwords do not match."
+msgstr ""
+
+#: src/views/Settings.tsx:1979
 msgid "Persist viewer statistics"
 msgstr "Vedvarende seerstatistik"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:140
+#: src/views/Edit/Sources/VirtualAudio.tsx:142
 msgid "pink"
 msgstr "lyserød"
 
-#: src/views/Publication/Services/Framebuffer.tsx:115
+#: src/views/Publication/Services/Framebuffer.tsx:113
 msgid "Pixel format"
 msgstr "Pixel-format"
 
@@ -1983,43 +2016,43 @@ msgstr "Pixel-format"
 msgid "Pixel Format"
 msgstr ""
 
-#: src/views/Login.tsx:326
+#: src/views/Login.tsx:349
 msgid "Plan: <0>Starter</0>"
 msgstr "Plan: <0>Start</0>"
 
-#: src/views/Publication/Add.tsx:434
+#: src/views/Publication/Add.tsx:473
 msgid "Platforms"
 msgstr "Platforme"
 
-#: src/views/Publication/Player.tsx:423
-#: src/views/Settings.tsx:1350
-#: src/views/Settings.tsx:1827
+#: src/views/Publication/Player.tsx:429
+#: src/views/Settings.tsx:1363
+#: src/views/Settings.tsx:1862
 msgid "Playback"
 msgstr "Afspil"
 
-#: src/views/Main/Egress.tsx:108
+#: src/views/Main/Egress.tsx:111
 msgid "Player"
 msgstr "Spiller"
 
-#: src/views/Edit/index.tsx:655
+#: src/views/Edit/index.tsx:708
 msgid "Player Playback"
 msgstr ""
 
-#: src/views/Publication/Player.tsx:312
+#: src/views/Publication/Player.tsx:316
 msgid "Player settings saved"
 msgstr "Afspiller setup gemt"
 
-#: src/views/Publication/Player.tsx:431
+#: src/views/Publication/Player.tsx:437
 msgid "Player URL"
 msgstr "Spiller-URL"
 
-#: src/components/Header.tsx:313
-#: src/views/Playersite.tsx:363
+#: src/components/Header.tsx:316
+#: src/views/Playersite.tsx:364
 msgid "Playersite"
 msgstr "Afspillerside"
 
-#: src/views/Publication/Services/DASH.tsx:413
-#: src/views/Publication/Services/HLS.tsx:351
+#: src/views/Publication/Services/DASH.tsx:463
+#: src/views/Publication/Services/HLS.tsx:371
 msgid "Playlist"
 msgstr "Afspiller-liste"
 
@@ -2027,15 +2060,15 @@ msgstr "Afspiller-liste"
 msgid "Playlist version (M3U8). Version 3 has the best browser/client compatibility."
 msgstr "Version af afspilningsliste (M3U8). Version 3 har den bedste browser/klient-kompatibilitet."
 
-#: src/views/Main/index.tsx:522
+#: src/views/Main/index.tsx:548
 msgid "Please <0>edit</0> this channel and disable the second H.264 stream in the \"Processing & Control\" area."
 msgstr ""
 
-#: src/views/Main/index.tsx:485
+#: src/views/Main/index.tsx:511
 msgid "Please <0>edit</0> this channel and enable the browser-compatible H.264 stream in the \"Processing & Control\" area."
 msgstr ""
 
-#: src/views/Main/index.tsx:411
+#: src/views/Main/index.tsx:437
 msgid "Please check the <0>process log</0>"
 msgstr "Tjek venligst <0>procesloggen</0>"
 
@@ -2065,7 +2098,7 @@ msgstr "Tjek venligst <0>procesloggen</0>"
 msgid "Please contact the operator of the service and check what happens."
 msgstr "Kontakt leverandøren af service for at se hvad der skete."
 
-#: src/views/Settings.tsx:1691
+#: src/views/Settings.tsx:1716
 msgid "Please enter your email address to signify agreement with the Let's Encrypt CA's terms of service and to be notified in case of issues."
 msgstr "Indtast din e-mailadresse for at bekræfte, at du accepterer Let's Encrypt CA's vilkår for service og for at få besked i tilfælde af problemer."
 
@@ -2080,39 +2113,39 @@ msgstr "Indtast din e-mailadresse for at bekræfte, at du accepterer Let's Encry
 msgid "Please get in touch with the operator of the service and check what happens."
 msgstr "Du bedes kontakte tjenestens operatør og undersøge, hvad der sker."
 
-#: src/views/Edit/Sources/AudioLoop.tsx:114
-#: src/views/Edit/Sources/SDP.tsx:100
-#: src/views/Edit/Sources/VideoLoop.tsx:122
-#: src/views/Playersite.tsx:175
-#: src/views/Publication/Player.tsx:203
+#: src/views/Edit/Sources/AudioLoop.tsx:115
+#: src/views/Edit/Sources/SDP.tsx:101
+#: src/views/Edit/Sources/VideoLoop.tsx:123
+#: src/views/Playersite.tsx:176
+#: src/views/Publication/Player.tsx:207
 msgid "Please select a file to upload."
 msgstr "Vælg fil til upload."
 
-#: src/views/Publication/Add.tsx:572
+#: src/views/Publication/Add.tsx:611
 msgid "Please use \"Passthrough (copy)\" if possible. Encoding requires additional CPU/GPU resources."
 msgstr "Brug venligst \"Passthrough (kopi)\", hvis det er muligt. Kodning kræver ekstra CPU/GPU-ressourcer."
 
-#: src/views/Edit/Wizard/Probe.tsx:20
+#: src/views/Edit/Wizard/Probe.tsx:31
 msgid "Please wait. Probe stream data ..."
 msgstr "Vent øjeblik. Undersøger steam data ..."
 
-#: src/views/Edit/Wizard/Saving.tsx:20
+#: src/views/Edit/Wizard/Saving.tsx:27
 msgid "Please wait. Setting up the stream ..."
 msgstr "Vent øjeblik. Sætter stream op"
 
-#: src/views/Settings.tsx:2440
+#: src/views/Settings.tsx:2515
 msgid "Port"
 msgstr "Port"
 
-#: src/views/Publication/Player.tsx:494
+#: src/views/Publication/Player.tsx:515
 msgid "Position"
 msgstr "Placering"
 
-#: src/views/Publication/Player.tsx:418
+#: src/views/Publication/Player.tsx:424
 msgid "Poster"
 msgstr "Plakat"
 
-#: src/views/Publication/Player.tsx:523
+#: src/views/Publication/Player.tsx:554
 msgid "Poster image URL"
 msgstr "URL til plakatbillede"
 
@@ -2124,60 +2157,60 @@ msgstr "URL til plakatbillede"
 msgid "Preset"
 msgstr "Preset"
 
-#: src/views/Publication/Services/Youtube.tsx:232
+#: src/views/Publication/Services/Youtube.tsx:242
 msgid "Primary stream"
 msgstr "Primær stream"
 
-#: src/views/Publication/Services/Facebook.tsx:115
+#: src/views/Publication/Services/Facebook.tsx:120
 msgid "Primary stream key"
 msgstr "Primær stream key"
 
-#: src/views/Edit/Sources/ALSA.tsx:173
-#: src/views/Edit/Sources/AudioLoop.tsx:212
-#: src/views/Edit/Sources/AVFoundation.tsx:245
-#: src/views/Edit/Sources/Channel.tsx:123
-#: src/views/Edit/Sources/Framebuffer.tsx:132
-#: src/views/Edit/Sources/Network.tsx:1046
-#: src/views/Edit/Sources/Network.tsx:1186
-#: src/views/Edit/Sources/Network.tsx:1310
-#: src/views/Edit/Sources/Network.tsx:1437
-#: src/views/Edit/Sources/Raspicam.tsx:163
-#: src/views/Edit/Sources/SDP.tsx:193
-#: src/views/Edit/Sources/V4L.tsx:166
-#: src/views/Edit/Sources/VideoLoop.tsx:220
-#: src/views/Edit/Sources/VirtualAudio.tsx:206
-#: src/views/Edit/Sources/VirtualVideo.tsx:255
-#: src/views/Edit/Sources/X11grab.tsx:279
+#: src/views/Edit/Sources/ALSA.tsx:178
+#: src/views/Edit/Sources/AudioLoop.tsx:227
+#: src/views/Edit/Sources/AVFoundation.tsx:248
+#: src/views/Edit/Sources/Channel.tsx:128
+#: src/views/Edit/Sources/Framebuffer.tsx:135
+#: src/views/Edit/Sources/Network.tsx:1066
+#: src/views/Edit/Sources/Network.tsx:1223
+#: src/views/Edit/Sources/Network.tsx:1355
+#: src/views/Edit/Sources/Network.tsx:1490
+#: src/views/Edit/Sources/Raspicam.tsx:168
+#: src/views/Edit/Sources/SDP.tsx:208
+#: src/views/Edit/Sources/V4L.tsx:171
+#: src/views/Edit/Sources/VideoLoop.tsx:235
+#: src/views/Edit/Sources/VirtualAudio.tsx:208
+#: src/views/Edit/Sources/VirtualVideo.tsx:257
+#: src/views/Edit/Sources/X11grab.tsx:284
 msgid "Probe"
 msgstr "Sonde"
 
-#: src/views/Edit/index.tsx:670
-#: src/views/Publication/Add.tsx:514
+#: src/views/Edit/index.tsx:723
+#: src/views/Publication/Add.tsx:553
 #: src/views/Publication/Edit.tsx:548
 msgid "Process"
 msgstr "Proces"
 
-#: src/views/Publication/Add.tsx:481
+#: src/views/Publication/Add.tsx:520
 #: src/views/Publication/Edit.tsx:515
 msgid "Process control"
 msgstr "Proceskontrol"
 
-#: src/views/Main/index.tsx:639
-#: src/views/Main/index.tsx:661
-#: src/views/Publication/Edit.tsx:600
-#: src/views/Publication/Edit.tsx:741
+#: src/views/Main/index.tsx:689
+#: src/views/Main/index.tsx:717
+#: src/views/Publication/Edit.tsx:605
+#: src/views/Publication/Edit.tsx:746
 msgid "Process details"
 msgstr "Procesoplysninger"
 
-#: src/views/Main/index.tsx:648
-#: src/views/Main/index.tsx:669
-#: src/views/Publication/Edit.tsx:608
-#: src/views/Publication/Edit.tsx:749
+#: src/views/Main/index.tsx:698
+#: src/views/Main/index.tsx:725
+#: src/views/Publication/Edit.tsx:613
+#: src/views/Publication/Edit.tsx:754
 msgid "Process report"
 msgstr "Procesrapport"
 
-#: src/views/Edit/index.tsx:493
-#: src/views/Edit/index.tsx:570
+#: src/views/Edit/index.tsx:518
+#: src/views/Edit/index.tsx:612
 msgid "Processing & Control"
 msgstr "Behandler & kontrol"
 
@@ -2192,49 +2225,49 @@ msgstr "Behandler & kontrol"
 msgid "Profile"
 msgstr "Profil"
 
-#: src/views/Edit/Sources/Network.tsx:926
+#: src/views/Edit/Sources/Network.tsx:927
 msgid "Protect: None"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:932
+#: src/views/Edit/Sources/Network.tsx:933
 msgid "Protect: Video and audio channel"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:929
+#: src/views/Edit/Sources/Network.tsx:930
 msgid "Protect: Video channel"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:1102
-#: src/views/Publication/Services/Akamai.tsx:157
-#: src/views/Publication/Services/Akamai.tsx:199
-#: src/views/Publication/Services/Azure.tsx:100
-#: src/views/Publication/Services/Brightcove.tsx:101
-#: src/views/Publication/Services/CDN77.tsx:103
-#: src/views/Publication/Services/Core.tsx:258
-#: src/views/Publication/Services/DaCast.tsx:141
-#: src/views/Publication/Services/DaCast.tsx:206
-#: src/views/Publication/Services/DASH.tsx:201
-#: src/views/Publication/Services/HLS.tsx:196
-#: src/views/Publication/Services/Icecast.tsx:187
-#: src/views/Publication/Services/Image2.tsx:135
-#: src/views/Publication/Services/Linkedin.tsx:100
-#: src/views/Publication/Services/MPEGTS.tsx:193
-#: src/views/Publication/Services/Owncast.tsx:102
-#: src/views/Publication/Services/Red5.tsx:128
-#: src/views/Publication/Services/RTMP.tsx:164
-#: src/views/Publication/Services/RTSP.tsx:156
-#: src/views/Publication/Services/SRT.tsx:174
-#: src/views/Publication/Services/Telegram.tsx:88
-#: src/views/Publication/Services/UDP.tsx:140
-#: src/views/Publication/Services/WOWZA.tsx:144
+#: src/views/Edit/Sources/Network.tsx:1135
+#: src/views/Publication/Services/Akamai.tsx:172
+#: src/views/Publication/Services/Akamai.tsx:229
+#: src/views/Publication/Services/Azure.tsx:105
+#: src/views/Publication/Services/Brightcove.tsx:106
+#: src/views/Publication/Services/CDN77.tsx:108
+#: src/views/Publication/Services/Core.tsx:263
+#: src/views/Publication/Services/DaCast.tsx:146
+#: src/views/Publication/Services/DaCast.tsx:236
+#: src/views/Publication/Services/DASH.tsx:206
+#: src/views/Publication/Services/HLS.tsx:201
+#: src/views/Publication/Services/Icecast.tsx:192
+#: src/views/Publication/Services/Image2.tsx:140
+#: src/views/Publication/Services/Linkedin.tsx:105
+#: src/views/Publication/Services/MPEGTS.tsx:198
+#: src/views/Publication/Services/Owncast.tsx:107
+#: src/views/Publication/Services/Red5.tsx:133
+#: src/views/Publication/Services/RTMP.tsx:169
+#: src/views/Publication/Services/RTSP.tsx:161
+#: src/views/Publication/Services/SRT.tsx:179
+#: src/views/Publication/Services/Telegram.tsx:93
+#: src/views/Publication/Services/UDP.tsx:145
+#: src/views/Publication/Services/WOWZA.tsx:149
 msgid "Protocol"
 msgstr "Protokol"
 
-#: src/views/Publication/Add.tsx:440
+#: src/views/Publication/Add.tsx:479
 msgid "Protocols"
 msgstr "Protokoller"
 
-#: src/views/Settings.tsx:1599
+#: src/views/Settings.tsx:1614
 msgid "Public domain/s"
 msgstr "Offentligt domæne/offentlige domæner"
 
@@ -2243,30 +2276,30 @@ msgstr "Offentligt domæne/offentlige domæner"
 msgid "Publication service not found"
 msgstr "Publicerings service ikke fundet"
 
-#: src/views/Playersite.tsx:261
+#: src/views/Playersite.tsx:262
 msgid "Publication website settings saved"
 msgstr "Gemte indstillinger for publikationswebsted"
 
-#: src/views/Main/Publication.tsx:168
+#: src/views/Main/Publication.tsx:169
 msgid "Publications"
 msgstr "Publiceringer"
 
-#: src/views/Edit/Sources/Network.tsx:1531
+#: src/views/Edit/Sources/Network.tsx:1588
 msgid "Pull Mode"
 msgstr "Pull-tilstand"
 
-#: src/views/Edit/Sources/Network.tsx:1527
+#: src/views/Edit/Sources/Network.tsx:1584
 msgid "Pull or recieve the data:"
 msgstr "Træk eller modtag dataene:"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:192
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:201
 msgid "QP"
 msgstr "QP"
 
-#: src/components/coders/Encoders/video/h264_vaapi.tsx:166
-#: src/components/coders/Encoders/video/hevc_vaapi.tsx:168
-#: src/components/coders/Encoders/video/vp9_vaapi.tsx:168
-#: src/components/Progress.tsx:186
+#: src/components/coders/Encoders/video/h264_vaapi.tsx:181
+#: src/components/coders/Encoders/video/hevc_vaapi.tsx:183
+#: src/components/coders/Encoders/video/vp9_vaapi.tsx:183
+#: src/components/Progress.tsx:189
 msgid "Quality"
 msgstr "Kvalitet"
 
@@ -2274,8 +2307,8 @@ msgstr "Kvalitet"
 msgid "Quality and compression efficiency vs speed trade-off."
 msgstr ""
 
-#: src/views/Edit/Sources/Raspicam.tsx:175
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:124
+#: src/views/Edit/Sources/Raspicam.tsx:180
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:122
 msgid "Raspberry Pi camera"
 msgstr "Raspberry Pi-kamera"
 
@@ -2288,19 +2321,19 @@ msgstr "Raspberry Pi-kamera"
 msgid "Rate control"
 msgstr "Styring af sats"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:216
+#: src/views/Edit/Sources/VirtualVideo.tsx:218
 msgid "Ratio"
 msgstr "Forhold"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:246
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:264
 msgid "rav1e Parameters"
 msgstr "rav1e Parametre"
 
-#: src/views/Edit/Sources/Network.tsx:686
+#: src/views/Edit/Sources/Network.tsx:687
 msgid "Read input at native speed"
 msgstr "Læs input normal hastighed"
 
-#: src/views/Edit/Sources/Network.tsx:1532
+#: src/views/Edit/Sources/Network.tsx:1589
 msgid "Receive Mode"
 msgstr "Modtage tilstand"
 
@@ -2310,35 +2343,35 @@ msgstr "Modtage tilstand"
 msgid "Reconnect"
 msgstr "Genopret"
 
-#: src/components/controls/Process.tsx:65
+#: src/components/controls/Process.tsx:70
 msgid "Reconnect delay (seconds)"
 msgstr "Forsinkelse af genforbindelse (sekunder)"
 
 #. placeholder {0}: $state.progress.reconnect
 #. placeholder {0}: progress.reconnect
-#: src/views/Main/index.tsx:422
+#: src/views/Main/index.tsx:448
 #: src/views/Publication/Process.tsx:72
 #: src/views/Publication/Process.tsx:91
 msgid "Reconnecting in {0}s"
 msgstr "Genopretter om {0}s"
 
-#: src/views/Settings.tsx:2691
+#: src/views/Settings.tsx:2771
 msgid "Reconnecting to Restreamer Core failed for the last {RETRIES} seconds."
 msgstr "Genoprettelse af forbindelsen til Restreamer Core mislykkedes i de sidste {RETRIES} sekunder."
 
-#: src/views/Password.tsx:198
+#: src/views/Password.tsx:226
 msgid "Reconnecting to Restreamer Core failed."
 msgstr "Genoprettelse af forbindelsen til Restreamer Core mislykkedes."
 
-#: src/views/Edit/Sources/ALSA.tsx:143
-#: src/views/Edit/Sources/AVFoundation.tsx:204
-#: src/views/Edit/Sources/Channel.tsx:115
-#: src/views/Edit/Sources/Network.tsx:1282
-#: src/views/Edit/Sources/Network.tsx:1409
-#: src/views/Edit/Sources/Raspicam.tsx:137
-#: src/views/Edit/Sources/V4L.tsx:140
-#: src/views/Edit/Sources/X11grab.tsx:193
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:166
+#: src/views/Edit/Sources/ALSA.tsx:148
+#: src/views/Edit/Sources/AVFoundation.tsx:207
+#: src/views/Edit/Sources/Channel.tsx:120
+#: src/views/Edit/Sources/Network.tsx:1327
+#: src/views/Edit/Sources/Network.tsx:1462
+#: src/views/Edit/Sources/Raspicam.tsx:142
+#: src/views/Edit/Sources/V4L.tsx:145
+#: src/views/Edit/Sources/X11grab.tsx:198
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:176
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:140
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:140
 #: src/views/Edit/Wizard/Sources/V4L.tsx:144
@@ -2354,12 +2387,12 @@ msgstr "Opdater"
 msgid "Region"
 msgstr "Region"
 
-#: src/views/Password.tsx:177
+#: src/views/Password.tsx:205
 msgid "Register user"
 msgstr "Registrer bruger"
 
-#: src/views/Password.tsx:217
-#: src/views/Settings.tsx:2722
+#: src/views/Password.tsx:245
+#: src/views/Settings.tsx:2802
 msgid "Reload"
 msgstr "Genindlæsning"
 
@@ -2367,19 +2400,19 @@ msgstr "Genindlæsning"
 msgid "Remove Audio"
 msgstr ""
 
-#: src/views/Settings.tsx:2057
+#: src/views/Settings.tsx:2102
 msgid "Remove the oldest entries if the /memfs is full"
 msgstr "Fjern de ældste indhold hvis /memfs er fuld"
 
-#: src/views/Settings.tsx:2319
+#: src/views/Settings.tsx:2374
 msgid "Requires activation"
 msgstr "Kræver aktivering"
 
-#: src/views/Publication/Player.tsx:617
+#: src/views/Publication/Player.tsx:663
 msgid "Reset logo"
 msgstr "Nulstil logo"
 
-#: src/views/Publication/Player.tsx:626
+#: src/views/Publication/Player.tsx:672
 msgid "Reset poster"
 msgstr "Nulstil plakat"
 
@@ -2395,50 +2428,50 @@ msgstr "Nulstil plakat"
 msgid "Resize"
 msgstr ""
 
-#: src/views/Settings.tsx:1474
-#: src/views/Settings.tsx:2743
-#: src/views/Settings.tsx:2757
-#: src/views/Settings.tsx:2770
+#: src/views/Settings.tsx:1489
+#: src/views/Settings.tsx:2823
+#: src/views/Settings.tsx:2837
+#: src/views/Settings.tsx:2850
 msgid "Restart"
 msgstr "Genstart"
 
-#: src/views/Settings.tsx:2730
+#: src/views/Settings.tsx:2810
 msgid "Restart required"
 msgstr "Genstart nødvendig"
 
-#: src/views/Password.tsx:186
-#: src/views/Settings.tsx:2679
+#: src/views/Password.tsx:214
+#: src/views/Settings.tsx:2759
 msgid "Restarting"
 msgstr "Genstart af"
 
-#: src/views/Password.tsx:191
-#: src/views/Settings.tsx:2684
+#: src/views/Password.tsx:219
+#: src/views/Settings.tsx:2764
 msgid "Restarting Restreamer Core ..."
 msgstr "Genstart af Restreamer Core ..."
 
-#: src/views/Settings.tsx:1181
+#: src/views/Settings.tsx:1194
 msgid "Restarting the application failed."
 msgstr "Genstart af programmet mislykkedes."
 
-#: src/views/Publication/Services/Core.tsx:239
+#: src/views/Publication/Services/Core.tsx:244
 msgid "Restreamer instructions"
 msgstr "Restreamer-vejledning"
 
-#: src/views/Settings.tsx:1509
+#: src/views/Settings.tsx:1524
 msgid "Restreamer Service"
 msgstr "Restreamer-tjeneste"
 
-#: src/views/Main/index.tsx:293
+#: src/views/Main/index.tsx:303
 msgid "Retrieving stream data ..."
 msgstr "Modtager stream data ..."
 
-#: src/views/Edit/Wizard/Error.tsx:35
+#: src/views/Edit/Wizard/Error.tsx:39
 #: src/views/Invalid.tsx:56
-#: src/views/Settings.tsx:1290
+#: src/views/Settings.tsx:1303
 msgid "Retry"
 msgstr "Genforsøg"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:133
+#: src/views/Edit/Sources/VirtualVideo.tsx:135
 msgid "RGB test pattern"
 msgstr "RGB test mønster"
 
@@ -2446,59 +2479,59 @@ msgstr "RGB test mønster"
 msgid "Rotate"
 msgstr "Drej"
 
-#: src/views/Main/index.tsx:581
-#: src/views/Settings.tsx:1365
-#: src/views/Settings.tsx:2291
+#: src/views/Main/index.tsx:621
+#: src/views/Settings.tsx:1378
+#: src/views/Settings.tsx:2346
 msgid "RTMP"
 msgstr "RTMP"
 
-#: src/views/Settings.tsx:2390
+#: src/views/Settings.tsx:2460
 msgid "RTMP app for publishing."
 msgstr "RTMP program til publicering."
 
-#: src/views/Edit/index.tsx:596
+#: src/views/Edit/index.tsx:643
 msgid "RTMP output"
 msgstr "RTMP-udgang"
 
-#: src/views/Settings.tsx:2339
+#: src/views/Settings.tsx:2399
 msgid "RTMP Port"
 msgstr "RTMP-port"
 
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:170
-#: src/views/Settings.tsx:2296
+#: src/views/Settings.tsx:2351
 msgid "RTMP server"
 msgstr "RTMP-server"
 
-#: src/views/Edit/Sources/Network.tsx:1218
+#: src/views/Edit/Sources/Network.tsx:1259
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:81
 msgid "RTMP server is not enabled"
 msgstr "RTMP server ikke aktiv"
 
-#: src/views/Settings.tsx:2353
+#: src/views/Settings.tsx:2413
 msgid "RTMP server listen address."
 msgstr "RTMP server lytte adresse."
 
-#: src/views/Settings.tsx:2406
+#: src/views/Settings.tsx:2476
 msgid "RTMP streamkey for publishing and playing. The streamkey needs to be appended to the URL."
 msgstr ""
 
-#: src/views/Settings.tsx:2359
+#: src/views/Settings.tsx:2424
 msgid "RTMPS Port"
 msgstr "RTMPS-port"
 
-#: src/views/Settings.tsx:2307
+#: src/views/Settings.tsx:2362
 msgid "RTMPS server"
 msgstr "RTMPS-server"
 
-#: src/views/Settings.tsx:2374
+#: src/views/Settings.tsx:2439
 msgid "RTMPS server listen address."
 msgstr "RTMPS-serverens lytteadresse."
 
-#: src/views/Edit/Sources/Network.tsx:625
+#: src/views/Edit/Sources/Network.tsx:626
 msgid "RTSP"
 msgstr "RTSP"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:198
+#: src/views/Edit/Sources/VirtualVideo.tsx:200
 msgid "Rule"
 msgstr "Regel"
 
@@ -2508,18 +2541,18 @@ msgid "Sampling"
 msgstr "Prøvetagning"
 
 #: src/components/modals/Hint.tsx:217
-#: src/views/Edit/index.tsx:768
+#: src/views/Edit/index.tsx:821
 #: src/views/Edit/Wizard/License.tsx:55
-#: src/views/Playersite.tsx:866
-#: src/views/Publication/Add.tsx:658
-#: src/views/Publication/Edit.tsx:724
-#: src/views/Publication/Player.tsx:609
-#: src/views/Settings.tsx:2669
+#: src/views/Playersite.tsx:897
+#: src/views/Publication/Add.tsx:697
+#: src/views/Publication/Edit.tsx:729
+#: src/views/Publication/Player.tsx:655
+#: src/views/Settings.tsx:2749
 msgid "Save"
 msgstr "Gem"
 
 #: src/components/filters/video/Scale.tsx:42
-#: src/views/Edit/Sources/VirtualVideo.tsx:188
+#: src/views/Edit/Sources/VirtualVideo.tsx:190
 msgid "Scale"
 msgstr "Skalering"
 
@@ -2529,81 +2562,81 @@ msgstr "Skalering"
 msgid "Scale size"
 msgstr "Skalaens størrelse"
 
-#: src/views/Edit/Sources/SDP.tsx:221
+#: src/views/Edit/Sources/SDP.tsx:236
 msgid "SDP"
 msgstr ""
 
-#: src/views/Settings.tsx:2197
+#: src/views/Settings.tsx:2247
 msgid "Seconds to keep files in cache."
 msgstr "Sekunder til at beholde filer i cache."
 
-#: src/components/controls/Process.tsx:71
+#: src/components/controls/Process.tsx:76
 msgid "Seconds until a process is restarted."
 msgstr "Sekunder før process genstartes."
 
-#: src/components/controls/Process.tsx:84
+#: src/components/controls/Process.tsx:94
 msgid "Seconds until a staled process is terminated."
 msgstr "Sekunder før process afsluttes."
 
-#: src/components/controls/Snapshot.tsx:62
+#: src/components/controls/Snapshot.tsx:67
 msgid "Seconds until the snapshot/thumbnail of the video source is updated."
 msgstr "Sekunder før snapshot/billede af videokilde opdateres."
 
-#: src/views/Settings.tsx:1832
+#: src/views/Settings.tsx:1867
 msgid "Security"
 msgstr "Sikkerhed"
 
-#: src/views/Publication/Services/Livespotting.tsx:129
+#: src/views/Publication/Services/Livespotting.tsx:144
 msgid "Security token"
 msgstr "Sikkerhedstoken"
 
-#: src/views/Publication/Player.tsx:450
+#: src/views/Publication/Player.tsx:456
 msgid "Seekbar color"
 msgstr "Seekbar farve"
 
-#: src/components/controls/HLS.tsx:111
+#: src/components/controls/HLS.tsx:116
 msgid "Segment length (seconds)"
 msgstr "Segment længde (sekunder)"
 
-#: src/components/controls/HLS.tsx:116
+#: src/components/controls/HLS.tsx:121
 msgid "Segment will be cut on the following keyframe after this time has passed. 2 is recommended."
 msgstr "Segmentet vil blive klippet på det følgende keyframe, når denne tid er gået. 2 er anbefalet."
 
-#: src/views/Publication/Services/DASH.tsx:518
-#: src/views/Publication/Services/HLS.tsx:431
+#: src/views/Publication/Services/DASH.tsx:578
+#: src/views/Publication/Services/HLS.tsx:461
 msgid "Segmentation"
 msgstr "Segment opdeling"
 
-#: src/views/Edit/Sources/Channel.tsx:98
+#: src/views/Edit/Sources/Channel.tsx:103
 msgid "Select a channel:"
 msgstr ""
 
-#: src/views/Edit/Sources/ALSA.tsx:124
-#: src/views/Edit/Sources/AVFoundation.tsx:190
-#: src/views/Edit/Sources/Framebuffer.tsx:117
-#: src/views/Edit/Sources/Raspicam.tsx:126
-#: src/views/Edit/Sources/V4L.tsx:121
-#: src/views/Edit/Sources/X11grab.tsx:174
+#: src/views/Edit/Sources/ALSA.tsx:129
+#: src/views/Edit/Sources/AVFoundation.tsx:195
+#: src/views/Edit/Sources/Framebuffer.tsx:122
+#: src/views/Edit/Sources/Raspicam.tsx:131
+#: src/views/Edit/Sources/V4L.tsx:126
+#: src/views/Edit/Sources/X11grab.tsx:179
 #: src/views/Edit/Wizard/Sources/AVFoundation.tsx:146
 #: src/views/Edit/Wizard/Sources/Raspicam.tsx:108
 #: src/views/Edit/Wizard/Sources/V4L.tsx:133
 msgid "Select a device:"
 msgstr "Vælg en enhed:"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:93
+#: src/views/Edit/Sources/VirtualAudio.tsx:95
 msgid "Select audio source:"
 msgstr "Vælg lydkilde:"
 
-#: src/views/Publication/Add.tsx:553
-#: src/views/Publication/Edit.tsx:631
+#: src/views/Publication/Add.tsx:592
+#: src/views/Publication/Edit.tsx:636
 msgid "Select RTMP or SRT (if enabled) for less latency."
 msgstr "Vælg RTMP eller SRT (hvis aktiveret) for at opnå mindre ventetid."
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:127
+#: src/views/Edit/Sources/VirtualVideo.tsx:129
 msgid "Select source ..."
 msgstr "Vælg kilde ..."
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:117
+#: src/views/Edit/Sources/VirtualVideo.tsx:119
 msgid "Select video source:"
 msgstr "Vælg videokilde:"
 
@@ -2611,7 +2644,7 @@ msgstr "Vælg videokilde:"
 msgid "Select whether you pull the stream from a <0>network source</0> (such as a network camera) or the <1>internal RTMP server</1> (e.g., OBS streams to the Restreamer)."
 msgstr "Vælg, om du henter strømmen fra en <0>netværkskilde</0> (f.eks. et netværkskamera) eller den <1>interne RTMP-server</1> (f.eks. OBS-streams til Restreamer)."
 
-#: src/components/EncodingSelect.tsx:244
+#: src/components/EncodingSelect.tsx:243
 msgid "Select your encoding setting:"
 msgstr "Vælg encoder setup:"
 
@@ -2619,30 +2652,30 @@ msgstr "Vælg encoder setup:"
 msgid "Select your filter settings (optional):"
 msgstr "Vælg dine filterindstillinger (valgfrit):"
 
-#: src/views/Playersite.tsx:653
+#: src/views/Playersite.tsx:674
 msgid "Selected"
 msgstr "Udvalgte"
 
-#: src/views/Playersite.tsx:386
+#: src/views/Playersite.tsx:387
 msgid "Selected channel"
 msgstr "Valgt kanal"
 
-#: src/views/Playersite.tsx:497
+#: src/views/Playersite.tsx:503
 msgid "Selection"
 msgstr "Udvælgelse"
 
-#: src/views/Settings.tsx:1444
+#: src/views/Settings.tsx:1459
 msgid "Send anonymous metrics (helps us for future development)"
 msgstr "Send anonyme målinger (hjælper os med fremtidig udvikling)"
 
-#: src/views/Edit/Sources/Network.tsx:1256
-#: src/views/Edit/Sources/Network.tsx:1383
+#: src/views/Edit/Sources/Network.tsx:1297
+#: src/views/Edit/Sources/Network.tsx:1432
 #: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:117
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:117
 msgid "Send stream to address ..."
 msgstr "Send stream til adresse ..."
 
-#: src/views/Edit/Sources/Network.tsx:1170
+#: src/views/Edit/Sources/Network.tsx:1207
 #: src/views/Edit/Wizard/Sources/InternalHLS.tsx:54
 msgid "Send stream to this address:"
 msgstr "Send strøm til denne adresse:"
@@ -2651,99 +2684,99 @@ msgstr "Send strøm til denne adresse:"
 msgid "Send video to Framebuffer"
 msgstr "Send video til Framebuffer"
 
-#: src/views/Publication/Services/DaCast.tsx:154
+#: src/views/Publication/Services/DaCast.tsx:164
 msgid "Server"
 msgstr "Server"
 
 #: src/views/Publication/Services/Kick.tsx:101
-#: src/views/Publication/Services/Owncast.tsx:114
+#: src/views/Publication/Services/Owncast.tsx:124
 #: src/views/Publication/Services/Rumble.tsx:101
-#: src/views/Publication/Services/Telegram.tsx:100
+#: src/views/Publication/Services/Telegram.tsx:110
 #: src/views/Publication/Services/TikTok.tsx:101
 msgid "Server URL"
 msgstr "Server-URL"
 
-#: src/components/Header.tsx:303
-#: src/views/Login.tsx:259
-#: src/views/Settings.tsx:1330
-#: src/views/Settings.tsx:1491
+#: src/components/Header.tsx:306
+#: src/views/Login.tsx:271
+#: src/views/Settings.tsx:1343
+#: src/views/Settings.tsx:1506
 msgid "Service"
 msgstr "Service"
 
-#: src/views/Publication/Add.tsx:494
+#: src/views/Publication/Add.tsx:533
 #: src/views/Publication/Edit.tsx:528
 msgid "Service name"
 msgstr "Navn på tjeneste"
 
-#: src/views/Settings.tsx:1561
+#: src/views/Settings.tsx:1576
 msgid "Service token for monitoring."
 msgstr "Tjenestetoken til overvågning."
 
-#: src/components/Footer.tsx:274
+#: src/components/Footer.tsx:281
 msgid "Sessions"
 msgstr "Sessioner"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:251
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:269
 msgid "Set the rav1e configuration using a :-separated list of key=value parameters."
 msgstr "Indstil rav1e-konfigurationen ved hjælp af en :-separeret liste af nøgle=værdi-parametre."
 
-#: src/views/Settings.tsx:1741
+#: src/views/Settings.tsx:1776
 msgid "Sets a bandwidth limit in Mbit per second for outgoing HLS data transfer. All services, such as RTMP and outgoing processes, are included in the calculation. If the bandwidth is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
 msgstr "Indstiller en båndbreddegrænse i Mbit pr. sekund for udgående HLS-dataoverførsel. Alle tjenester, f.eks. RTMP og udgående processer, er medtaget i beregningen. Hvis båndbredden overskrides, modtager HLS-fremvisere HTTP-statuskode 509 (båndbreddegrænse overskredet). 0 er ubegrænset."
 
-#: src/views/Settings.tsx:1720
+#: src/views/Settings.tsx:1750
 msgid "Sets a viewer limit for HLS sessions. If the limit is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
 msgstr "Set antal HLS forbindelser.  Hvis begrænsning overskrides vil modtager få en status 509 kode. (båndbrede begrænsning overskredet). 0 er ubegrænset."
 
-#: src/views/Settings.tsx:1496
+#: src/views/Settings.tsx:1511
 msgid "Setting for connection to the service."
 msgstr "Indstilling for tilslutning til tjenesten."
 
-#: src/views/Settings.tsx:1300
+#: src/views/Settings.tsx:1313
 msgid "Settings"
 msgstr "Indstillinger"
 
-#: src/views/Settings.tsx:1302
+#: src/views/Settings.tsx:1315
 msgid "Settings (expert mode)"
 msgstr "Indstillinger (eksperttilstand)"
 
-#: src/views/Settings.tsx:2082
+#: src/views/Settings.tsx:2127
 msgid "Settings for /data path. The access is protected by "
 msgstr ""
 
-#: src/views/Settings.tsx:1974
+#: src/views/Settings.tsx:2009
 msgid "Settings for /memfs path."
 msgstr "Indstillinger for /memfs-stien."
 
-#: src/views/Settings.tsx:1119
+#: src/views/Settings.tsx:1132
 msgid "Settings saved. All changes will be applied after restarting the application."
 msgstr "Indstillinger gemt. Alle ændringer vil blive anvendt efter genstart af programmet."
 
-#: src/views/Playersite.tsx:448
+#: src/views/Playersite.tsx:449
 msgid "Share button"
 msgstr "Del-knap"
 
-#: src/views/Playersite.tsx:478
+#: src/views/Playersite.tsx:479
 msgid "Shows a reference to the project."
 msgstr "Viser en reference til projektet."
 
-#: src/views/Login.tsx:354
+#: src/views/Login.tsx:377
 msgid "Sign up (free)"
 msgstr "Tilmeld dig (gratis)"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:102
+#: src/views/Edit/Sources/VirtualAudio.tsx:104
 msgid "Silence"
 msgstr "Stille"
 
-#: src/views/Edit/Wizard/Audio.tsx:139
+#: src/views/Edit/Wizard/Audio.tsx:151
 msgid "Silence Audio"
 msgstr "Stille Audio"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:104
+#: src/views/Edit/Sources/VirtualAudio.tsx:106
 msgid "Sine"
 msgstr "Sinus"
 
-#: src/views/Playersite.tsx:372
+#: src/views/Playersite.tsx:373
 msgid "Sitename"
 msgstr "Sidenavn"
 
@@ -2751,39 +2784,39 @@ msgstr "Sidenavn"
 msgid "Size"
 msgstr "Størrelse"
 
-#: src/views/Edit/index.tsx:641
-#: src/views/Main/index.tsx:603
+#: src/views/Edit/index.tsx:694
+#: src/views/Main/index.tsx:643
 msgid "Snapshot"
 msgstr "Øjebliksbillde"
 
-#: src/views/Login.tsx:331
+#: src/views/Login.tsx:354
 msgid "Social-login (OAuth2, 2FA)"
 msgstr "Social-login (OAuth2, 2FA)"
 
-#: src/views/Edit/Sources/Network.tsx:649
+#: src/views/Edit/Sources/Network.tsx:650
 msgid "Socket timeout (microseconds)"
 msgstr "Socket timeout (mikrosekunder)"
 
-#: src/views/Publication/Add.tsx:437
+#: src/views/Publication/Add.tsx:476
 msgid "Software"
 msgstr "Software"
 
 #: src/components/controls/Source.tsx:86
-#: src/views/Edit/Sources/VirtualAudio.tsx:98
-#: src/views/Edit/Sources/VirtualVideo.tsx:122
-#: src/views/Publication/Add.tsx:548
-#: src/views/Publication/Edit.tsx:626
+#: src/views/Edit/Sources/VirtualAudio.tsx:100
+#: src/views/Edit/Sources/VirtualVideo.tsx:124
+#: src/views/Publication/Add.tsx:587
+#: src/views/Publication/Edit.tsx:631
 msgid "Source"
 msgstr "Kilde"
 
-#: src/views/Publication/Add.tsx:476
-#: src/views/Publication/Add.tsx:543
+#: src/views/Publication/Add.tsx:515
+#: src/views/Publication/Add.tsx:582
 #: src/views/Publication/Edit.tsx:510
-#: src/views/Publication/Edit.tsx:621
+#: src/views/Publication/Edit.tsx:626
 msgid "Source & Encoding"
 msgstr "Kilde og kodning"
 
-#: src/components/Progress.tsx:199
+#: src/components/Progress.tsx:202
 msgid "Speed"
 msgstr "Hastighed"
 
@@ -2791,106 +2824,106 @@ msgstr "Hastighed"
 msgid "Speed Preset"
 msgstr "Forudindstillet hastighed"
 
-#: src/views/Edit/Sources/Network.tsx:660
-#: src/views/Main/index.tsx:591
-#: src/views/Settings.tsx:1371
-#: src/views/Settings.tsx:2418
+#: src/views/Edit/Sources/Network.tsx:661
+#: src/views/Main/index.tsx:631
+#: src/views/Settings.tsx:1384
+#: src/views/Settings.tsx:2488
 msgid "SRT"
 msgstr "SRT"
 
-#: src/views/Edit/index.tsx:622
+#: src/views/Edit/index.tsx:675
 msgid "SRT output"
 msgstr "SRT-udgang"
 
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:170
-#: src/views/Settings.tsx:2423
+#: src/views/Settings.tsx:2493
 msgid "SRT server"
 msgstr "SRT-server"
 
-#: src/views/Edit/Sources/Network.tsx:1345
+#: src/views/Edit/Sources/Network.tsx:1394
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx:81
 msgid "SRT server is not enabled"
 msgstr "SRT-serveren er ikke aktiveret"
 
-#: src/views/Settings.tsx:2451
+#: src/views/Settings.tsx:2526
 msgid "SRT server listen address."
 msgstr "SRT-serverens lytteadresse."
 
-#: src/views/Settings.tsx:2468
+#: src/views/Settings.tsx:2548
 msgid "SRT token for publishing and playing. The token is the value of the streamid parameter 'token.'"
 msgstr "SRT-token til offentliggørelse og afspilning. Tokenet er værdien af streamid-parameteren \"token\"."
 
-#: src/components/controls/Process.tsx:79
+#: src/components/controls/Process.tsx:89
 msgid "Stale timeout (seconds)"
 msgstr "Forældet timeout (sekunder)"
 
-#: src/views/Edit/Sources/Network.tsx:872
+#: src/views/Edit/Sources/Network.tsx:873
 msgid "start_at_zero"
 msgstr "start_at_zero"
 
-#: src/views/Settings.tsx:1872
+#: src/views/Settings.tsx:1907
 msgid "Statistics"
 msgstr "Statistik"
 
 #: src/components/controls/HLS.tsx:68
-#: src/views/Settings.tsx:1358
-#: src/views/Settings.tsx:1966
+#: src/views/Settings.tsx:1371
+#: src/views/Settings.tsx:2001
 msgid "Storage"
 msgstr "Opbevaring"
 
-#: src/views/Settings.tsx:1957
+#: src/views/Settings.tsx:1992
 msgid "Stores the viewer statistics to the disk."
 msgstr "Gemmer seerstatistikkerne på disken."
 
 #: src/views/Edit/StreamSelect.tsx:36
 #: src/views/Edit/StreamSelect.tsx:43
 #: src/views/Edit/StreamSelect.tsx:90
-#: src/views/Edit/Wizard/Audio.tsx:105
+#: src/views/Edit/Wizard/Audio.tsx:117
 msgid "Stream"
 msgstr "Stream"
 
-#: src/views/Publication/Services/Wettercom.tsx:112
+#: src/views/Publication/Services/Wettercom.tsx:117
 msgid "Stream ID"
 msgstr ""
 
-#: src/views/Publication/Services/CDN77.tsx:126
-#: src/views/Publication/Services/DaCast.tsx:187
-#: src/views/Publication/Services/Dailymotion.tsx:121
-#: src/views/Publication/Services/DLive.tsx:82
+#: src/views/Publication/Services/CDN77.tsx:141
+#: src/views/Publication/Services/DaCast.tsx:212
+#: src/views/Publication/Services/Dailymotion.tsx:126
+#: src/views/Publication/Services/DLive.tsx:87
 #: src/views/Publication/Services/Dummy.tsx:301
-#: src/views/Publication/Services/EarthCam.tsx:101
-#: src/views/Publication/Services/Instagram.tsx:87
-#: src/views/Publication/Services/Kick.tsx:117
-#: src/views/Publication/Services/Livepush.tsx:125
-#: src/views/Publication/Services/MediaNetwork.tsx:84
-#: src/views/Publication/Services/NimoTv.tsx:116
-#: src/views/Publication/Services/Owncast.tsx:124
-#: src/views/Publication/Services/PeerTube.tsx:101
-#: src/views/Publication/Services/PicartoTv.tsx:120
-#: src/views/Publication/Services/Restream.tsx:140
-#: src/views/Publication/Services/Rumble.tsx:117
-#: src/views/Publication/Services/Telegram.tsx:110
-#: src/views/Publication/Services/TikTok.tsx:117
-#: src/views/Publication/Services/Trovo.tsx:82
-#: src/views/Publication/Services/Twitch.tsx:220
-#: src/views/Publication/Services/Twitter.tsx:209
+#: src/views/Publication/Services/EarthCam.tsx:106
+#: src/views/Publication/Services/Instagram.tsx:92
+#: src/views/Publication/Services/Kick.tsx:122
+#: src/views/Publication/Services/Livepush.tsx:130
+#: src/views/Publication/Services/MediaNetwork.tsx:89
+#: src/views/Publication/Services/NimoTv.tsx:121
+#: src/views/Publication/Services/Owncast.tsx:134
+#: src/views/Publication/Services/PeerTube.tsx:111
+#: src/views/Publication/Services/PicartoTv.tsx:125
+#: src/views/Publication/Services/Restream.tsx:145
+#: src/views/Publication/Services/Rumble.tsx:122
+#: src/views/Publication/Services/Telegram.tsx:120
+#: src/views/Publication/Services/TikTok.tsx:122
+#: src/views/Publication/Services/Trovo.tsx:87
+#: src/views/Publication/Services/Twitch.tsx:225
+#: src/views/Publication/Services/Twitter.tsx:214
 #: src/views/Publication/Services/Vimeo.tsx:80
-#: src/views/Publication/Services/Wettercom.tsx:122
-#: src/views/Publication/Services/Youtube.tsx:220
+#: src/views/Publication/Services/Wettercom.tsx:132
+#: src/views/Publication/Services/Youtube.tsx:225
 msgid "Stream key"
 msgstr "Stream nøgle"
 
-#: src/views/Publication/Services/RTMP.tsx:190
+#: src/views/Publication/Services/RTMP.tsx:200
 msgid "Stream Key"
 msgstr "Stream-nøgle"
 
-#: src/views/Publication/Services/Brightcove.tsx:121
-#: src/views/Publication/Services/Red5.tsx:162
-#: src/views/Publication/Services/WOWZA.tsx:187
+#: src/views/Publication/Services/Brightcove.tsx:131
+#: src/views/Publication/Services/Red5.tsx:182
+#: src/views/Publication/Services/WOWZA.tsx:207
 msgid "Stream name"
 msgstr "Stream navn"
 
-#: src/views/Publication/Services/Akamai.tsx:180
+#: src/views/Publication/Services/Akamai.tsx:205
 msgid "Stream names"
 msgstr "Stream navne"
 
@@ -2898,28 +2931,28 @@ msgstr "Stream navne"
 msgid "Stream source for publication service (experimental)."
 msgstr "Streamkilde til publikationstjeneste (eksperimentel)."
 
-#: src/views/Publication/Services/Akamai.tsx:169
-#: src/views/Publication/Services/CDN77.tsx:115
+#: src/views/Publication/Services/Akamai.tsx:189
+#: src/views/Publication/Services/CDN77.tsx:125
 #: src/views/Publication/Services/Dailymotion.tsx:99
 msgid "Stream URL"
 msgstr "URL til stream"
 
-#: src/views/Settings.tsx:2395
+#: src/views/Settings.tsx:2465
 msgid "Streamkey"
 msgstr ""
 
-#: src/views/Playersite.tsx:472
+#: src/views/Playersite.tsx:473
 msgid "Support datarhei Restreamer"
 msgstr "Støtte datarhei Restreamer"
 
-#: src/views/Edit/Sources/Network.tsx:982
+#: src/views/Edit/Sources/Network.tsx:987
 #: src/views/Edit/Wizard/Sources/Network.tsx:83
 msgid "Supports HTTP (HLS, DASH), RTP, RTSP, RTMP, SRT and more."
 msgstr "Understøtter HTTP (HLS, DASH), RTP, RTSP, RTSP, RTMP, SRT og meget mere."
 
-#: src/components/Footer.tsx:212
-#: src/components/Header.tsx:324
-#: src/views/Settings.tsx:2518
+#: src/components/Footer.tsx:219
+#: src/components/Header.tsx:327
+#: src/views/Settings.tsx:2598
 msgid "System"
 msgstr "System"
 
@@ -2927,40 +2960,40 @@ msgstr "System"
 msgid "Target address"
 msgstr "Måladresse"
 
-#: src/views/Playersite.tsx:316
-#: src/views/Playersite.tsx:487
+#: src/views/Playersite.tsx:317
+#: src/views/Playersite.tsx:488
 msgid "Template"
 msgstr "Skabelon"
 
-#: src/views/Playersite.tsx:513
+#: src/views/Playersite.tsx:519
 msgid "Template to be used for creating the publication website. The delete button removes the selection from the system."
 msgstr "Skabelon, der skal bruges til at oprette webstedet for publikationen. Med knappen \"Slet\" fjernes valget fra systemet."
 
-#: src/views/Playersite.tsx:736
+#: src/views/Playersite.tsx:767
 msgid "Terms"
 msgstr "Betingelser"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:129
+#: src/views/Edit/Sources/VirtualVideo.tsx:131
 msgid "Test pattern"
 msgstr "Test mønster"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:131
+#: src/views/Edit/Sources/VirtualVideo.tsx:133
 msgid "Test pattern (extended)"
 msgstr "Test mønster (udvidet)"
 
-#: src/views/Playersite.tsx:584
+#: src/views/Playersite.tsx:605
 msgid "Text colors"
 msgstr "Tekstfarver"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:159
+#: src/views/Edit/Sources/VirtualAudio.tsx:161
 msgid "The amplitude (0.0 - 1.0) of the generated audio stream"
 msgstr "Amplituden (0,0 - 1,0) af den genererede lydstrøm"
 
-#: src/views/Settings.tsx:1478
+#: src/views/Settings.tsx:1493
 msgid "The application is using an older version of the settings."
 msgstr "Programmet bruger en ældre version af indstillingerne."
 
-#: src/views/Edit/Sources/Network.tsx:1080
+#: src/views/Edit/Sources/Network.tsx:1109
 msgid "The available FFmpeg binary doesn't support any of the required protocols."
 msgstr "Den tilgængelige binære FFmpeg-version understøtter ikke nogen af de nødvendige protokoller."
 
@@ -2968,35 +3001,35 @@ msgstr "Den tilgængelige binære FFmpeg-version understøtter ikke nogen af de 
 msgid "The bitrate of the audio stream."
 msgstr "Bitraten for lydstrømmen."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:184
+#: src/views/Edit/Sources/VirtualAudio.tsx:186
 msgid "The carrier frequency"
 msgstr "Bærerfrekvensen"
 
 #. placeholder {0}: $data.meta.name
-#: src/views/Edit/index.tsx:434
+#: src/views/Edit/index.tsx:459
 msgid "The channel \"{0}\" could not be deleted"
 msgstr "Kanalen \"{0}\" kunne ikke slettes"
 
 #. placeholder {0}: $data.meta.name
-#: src/views/Edit/index.tsx:447
+#: src/views/Edit/index.tsx:472
 msgid "The channel \"{0}\" has been deleted"
 msgstr "Kanalen \"{0}\" er blevet slettet"
 
-#: src/views/Edit/index.tsx:835
+#: src/views/Edit/index.tsx:888
 msgid "The deletion of this channel can not be recovered. All publications of this channel will be removed."
 msgstr "Sletning af denne kanal kan ikke genoprettes. Alle publikationer af denne kanal vil blive fjernet."
 
-#: src/components/controls/Preview.tsx:76
+#: src/components/controls/Preview.tsx:81
 msgid "The H.264 encoder used."
 msgstr ""
 
-#: src/views/Edit/index.tsx:315
+#: src/views/Edit/index.tsx:340
 #: src/views/Edit/Wizard/index.tsx:192
 #: src/views/Publication/Edit.tsx:306
 msgid "The input profile is not complete. Please define a video and audio source."
 msgstr "Input profil er ikke komplet. Definer Video og Audio kilde."
 
-#: src/views/Publication/Add.tsx:252
+#: src/views/Publication/Add.tsx:254
 msgid "The input profile is not complete. Please define a video and/or audio source."
 msgstr "Inputprofilen er ikke komplet. Definér venligst en video- og/eller lydkilde."
 
@@ -3005,19 +3038,19 @@ msgstr "Inputprofilen er ikke komplet. Definér venligst en video- og/eller lydk
 msgid "The layout of the audio stream."
 msgstr "Layoutet af lydstrømmen."
 
-#: src/components/controls/HLS.tsx:131
+#: src/components/controls/HLS.tsx:141
 msgid "The maximum number of playlist segments. 0 will contain all the segments. 6 is recommended."
 msgstr "Det maksimale antal playlist-segmenter. 0 vil indeholde alle segmenter. 6 anbefales."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:147
+#: src/views/Edit/Sources/VirtualAudio.tsx:149
 msgid "The noise color"
 msgstr "Støjens farve"
 
-#: src/components/controls/License/index.tsx:63
+#: src/components/controls/License/index.tsx:65
 msgid "The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission."
 msgstr "Du må kopiere og rette og fordele, samt anvende dette kommercielt og ukommercielt frit uden at spørge om lov."
 
-#: src/views/Settings.tsx:1610
+#: src/views/Settings.tsx:1625
 msgid "The public reachable domain name of the host this Restreamer is running on. Separate multiple domain names by a comma."
 msgstr "Det offentlige domænenavn, der kan nås, for den vært, som Restreamer kører på. Adskil flere domænenavne med et komma."
 
@@ -3027,7 +3060,7 @@ msgid "The publication service \"{0}\" could not be deleted"
 msgstr "Publicerings service \"{0}\" kan ikke fjernes"
 
 #. placeholder {0}: $settings.name
-#: src/views/Publication/Add.tsx:281
+#: src/views/Publication/Add.tsx:283
 msgid "The publication service \"{0}\" has been created"
 msgstr "Publicerings service \"{0}\" er oprettet"
 
@@ -3036,7 +3069,7 @@ msgstr "Publicerings service \"{0}\" er oprettet"
 msgid "The publication service \"{0}\" has been deleted"
 msgstr "Publicerings service \"{0}\" fjernet"
 
-#: src/views/Publication/Add.tsx:278
+#: src/views/Publication/Add.tsx:280
 msgid "The publication service has been created"
 msgstr "Publicerings service \"{0}\" er blevet oprettet"
 
@@ -3049,21 +3082,21 @@ msgstr "RTMP-udgangen kræver RTMP-serveren."
 msgid "The sample rate of the audio stream."
 msgstr "Hastighed på audio stream."
 
-#: src/views/Edit/Sources/AudioLoop.tsx:126
-#: src/views/Edit/Sources/SDP.tsx:112
-#: src/views/Edit/Sources/VideoLoop.tsx:134
-#: src/views/Playersite.tsx:187
-#: src/views/Publication/Player.tsx:215
+#: src/views/Edit/Sources/AudioLoop.tsx:127
+#: src/views/Edit/Sources/SDP.tsx:113
+#: src/views/Edit/Sources/VideoLoop.tsx:135
+#: src/views/Playersite.tsx:188
+#: src/views/Publication/Player.tsx:219
 msgid "The selected file is too big (<0/>). Only <1/> are allowed."
 msgstr "Den valgte fil er for stor (<0/>). Kun <1/> er tilladt."
 
 #. placeholder {0}: err.actual
 #. placeholder {1}: err.allowed.join(', ')
-#: src/views/Edit/Sources/AudioLoop.tsx:118
-#: src/views/Edit/Sources/SDP.tsx:104
-#: src/views/Edit/Sources/VideoLoop.tsx:126
-#: src/views/Playersite.tsx:179
-#: src/views/Publication/Player.tsx:207
+#: src/views/Edit/Sources/AudioLoop.tsx:119
+#: src/views/Edit/Sources/SDP.tsx:105
+#: src/views/Edit/Sources/VideoLoop.tsx:127
+#: src/views/Playersite.tsx:180
+#: src/views/Publication/Player.tsx:211
 msgid "The selected file type ({0}) is not allowed. Allowed file types are {1}"
 msgstr "Den valgte filtype ({0}) er ikke tilladt. Tilladte filtyper er {1}"
 
@@ -3072,27 +3105,27 @@ msgstr "Den valgte filtype ({0}) er ikke tilladt. Tilladte filtyper er {1}"
 msgid "The settings for \"{0}\" have been saved"
 msgstr "Konfiguration til \"{0}\" er gemt"
 
-#: src/views/Edit/Wizard/Audio.tsx:64
+#: src/views/Edit/Wizard/Audio.tsx:72
 msgid "The source doesn't provide any audio streams."
 msgstr "Kilde har ingen audio streams."
 
-#: src/views/Edit/Profile.tsx:774
+#: src/views/Edit/Profile.tsx:799
 msgid "The source doesn't provide any audio streams. Please check the <0>probe details</0>."
 msgstr "Kilde har ingen audio streams. Undersøg <0>probe oplysninger</0>."
 
-#: src/views/Edit/Wizard/Audio.tsx:72
+#: src/views/Edit/Wizard/Audio.tsx:84
 msgid "The source doesn't provide any compatible audio streams."
 msgstr "Kilde har ikke kompatible audio streams."
 
-#: src/views/Edit/Wizard/Video.tsx:71
+#: src/views/Edit/Wizard/Video.tsx:83
 msgid "The source doesn't provide any compatible video streams. Please check the <0>requirements</0>."
 msgstr "Kilde har ikke kompatible audio streams. undersøg  <0>krav</0>."
 
-#: src/views/Edit/Profile.tsx:588
+#: src/views/Edit/Profile.tsx:598
 msgid "The source doesn't provide any video streams. Please check the <0>probe details</0>."
 msgstr "Kilde har ingen video streams. Undersøg <0>probe oplysninger</0>."
 
-#: src/views/Edit/Wizard/Video.tsx:60
+#: src/views/Edit/Wizard/Video.tsx:68
 msgid "The source doesn't provide any video streams. Please check the device."
 msgstr "Kilde har igen video streams. undersøg enheden."
 
@@ -3100,7 +3133,7 @@ msgstr "Kilde har igen video streams. undersøg enheden."
 msgid "The SRT output requires the SRT Server."
 msgstr "SRT-udgangen kræver SRT-serveren."
 
-#: src/views/Edit/Wizard/Audio.tsx:85
+#: src/views/Edit/Wizard/Audio.tsx:97
 msgid "The video source doesn't provide any compatible audio stream. <0>Silence audio</0> is recommended. Services e.g. YouTube, Facebook & Co. require an audio channel."
 msgstr "Videokilden leverer ikke nogen kompatibel lydstrøm. <0>Silence audio</0> anbefales. Tjenester som f.eks. YouTube, Facebook & Co. kræver en lydkanal."
 
@@ -3108,11 +3141,11 @@ msgstr "Videokilden leverer ikke nogen kompatibel lydstrøm. <0>Silence audio</0
 msgid "The video source is compatible. Select the desired resolution:"
 msgstr "Video kilde er kompatibel. Vælg opløsning:"
 
-#: src/views/Settings.tsx:1432
+#: src/views/Settings.tsx:1447
 msgid "There are updates available. Here you get more information."
 msgstr "Der er opdateringer til rådighed. Her får du flere oplysninger."
 
-#: src/views/Settings.tsx:1066
+#: src/views/Settings.tsx:1074
 msgid "There was a problem storing the settings. Settings not saved."
 msgstr "Der var et problem med at gemme indstillingerne. Indstillingerne blev ikke gemt."
 
@@ -3121,23 +3154,23 @@ msgid "There was an error connecting to Restreamer Core at {address}."
 msgstr ""
 
 #. placeholder {0}: err.message
-#: src/views/Edit/Sources/AudioLoop.tsx:135
-#: src/views/Edit/Sources/SDP.tsx:121
-#: src/views/Edit/Sources/VideoLoop.tsx:143
-#: src/views/Playersite.tsx:196
-#: src/views/Publication/Player.tsx:224
+#: src/views/Edit/Sources/AudioLoop.tsx:136
+#: src/views/Edit/Sources/SDP.tsx:122
+#: src/views/Edit/Sources/VideoLoop.tsx:144
+#: src/views/Playersite.tsx:197
+#: src/views/Publication/Player.tsx:228
 msgid "There was an error during upload: {0}"
 msgstr "Der opstod en fejl under upload: {0}"
 
-#: src/views/Edit/Wizard/Error.tsx:30
+#: src/views/Edit/Wizard/Error.tsx:34
 msgid "There was an error setting up the stream."
 msgstr "Der var en fejl i opsætning af stream."
 
-#: src/views/Settings.tsx:1058
+#: src/views/Settings.tsx:1066
 msgid "There were some errors in the settings. Settings not saved."
 msgstr "Der var nogle fejl i konfiguration. Konfiguration ikke gemt."
 
-#: src/views/Login.tsx:270
+#: src/views/Login.tsx:287
 msgid "There's no login method available."
 msgstr "Der er ingen login-metode tilgængelig."
 
@@ -3145,7 +3178,7 @@ msgstr "Der er ingen login-metode tilgængelig."
 msgid "This is a dummy service that explains to you the concepts of service."
 msgstr "Dette er en dummy-tjeneste, som forklarer dig begreberne i forbindelse med tjeneste."
 
-#: src/views/Password.tsx:201
+#: src/views/Password.tsx:229
 msgid "This is not necessarily an error. However, it may take a bit longer for Restreamer Core to restart.."
 msgstr "Dette er ikke nødvendigvis en fejl. Det kan dog tage lidt længere tid for Restreamer Core at genstarte.."
 
@@ -3153,35 +3186,35 @@ msgstr "Dette er ikke nødvendigvis en fejl. Det kan dog tage lidt længere tid 
 msgid "This is to mention the copyright regulations for the target of this service."
 msgstr "Dette er for at nævne de ophavsretlige regler for målet for denne tjeneste."
 
-#: src/components/controls/License/index.tsx:98
+#: src/components/controls/License/index.tsx:100
 msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, and only so long as attribution is given to the creator. The license allows for commercial use."
 msgstr "Denne licens tillader genbrugere at kopiere og distribuere materialet i ethvert medium eller format i ubearbejdet form, og kun så længe skaberen angives som kilde. Licensen giver mulighed for kommerciel brug."
 
-#: src/components/controls/License/index.tsx:105
+#: src/components/controls/License/index.tsx:107
 msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, for noncommercial purposes only, and only so long as attribution is given to the creator."
 msgstr "Denne licens tillader genbrugere at kopiere og distribuere materialet i ethvert medium eller format i ubearbejdet form, kun til ikke-kommercielle formål og kun så længe skaberen er nævnt."
 
-#: src/components/controls/License/index.tsx:84
+#: src/components/controls/License/index.tsx:86
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator."
 msgstr "Denne licens tillader genbrugere at distribuere, remixe, tilpasse og bygge videre på materialet i ethvert medie eller format til ikke-kommercielle formål, og kun så længe skaberen er nævnt."
 
-#: src/components/controls/License/index.tsx:91
+#: src/components/controls/License/index.tsx:93
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
 msgstr "Denne licens tillader genbrugere at distribuere, remixe, tilpasse og bygge videre på materialet i ethvert medie eller format til ikke-kommercielle formål, og kun så længe skaberen er nævnt. Hvis du remixer, tilpasser eller bygger videre på materialet, skal du give licens til det ændrede materiale på de samme vilkår."
 
-#: src/components/controls/License/index.tsx:70
+#: src/components/controls/License/index.tsx:72
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use."
 msgstr "Denne licens tillader genbrugere at distribuere, remixe, tilpasse og bygge videre på materialet i ethvert medium eller format, så længe skaberen angives. Licensen giver mulighed for kommerciel brug."
 
-#: src/components/controls/License/index.tsx:77
+#: src/components/controls/License/index.tsx:79
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
 msgstr "Denne licens tillader genbrugere at distribuere, remixe, tilpasse og bygge videre på materialet i ethvert medium eller format, så længe skaberen angives. Licensen giver mulighed for kommerciel brug. Hvis du remixer, tilpasser eller bygger videre på materialet, skal du give licens til det ændrede materiale på de samme vilkår."
 
-#: src/views/Edit/Sources/Network.tsx:994
+#: src/views/Edit/Sources/Network.tsx:1004
 msgid "This protocol is unknown or not supported by the available FFmpeg binary."
 msgstr "Denne protokol er ukendt eller understøttes ikke af den tilgængelige binære FFmpeg-protokol."
 
-#: src/views/Edit/index.tsx:805
+#: src/views/Edit/index.tsx:858
 msgid "This source cannot be edited while it is in use. To continue, you have to disconnect the source."
 msgstr "Denne kilde kan ikke redigeres, mens den er i brug. Hvis du vil fortsætte, skal du afbryde forbindelsen til kilden."
 
@@ -3197,23 +3230,23 @@ msgstr ""
 msgid "This version of the UI is compatible."
 msgstr "Denne version af brugergrænsefladen er kompatibel."
 
-#: src/components/controls/Limits.tsx:74
+#: src/components/controls/Limits.tsx:92
 msgid "Threshold (seconds)"
 msgstr "Tærskel (sekunder)"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:234
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:249
 msgid "Tile Columns"
 msgstr "Flise-søjler"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:220
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:233
 msgid "Tile Rows"
 msgstr "Fliserækker"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:206
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:217
 msgid "Tiles"
 msgstr "Fliser"
 
-#: src/views/Settings.tsx:1936
+#: src/views/Settings.tsx:1971
 msgid "Time until an inactive viewer connection is treated as closed."
 msgstr "Tid, indtil en inaktiv seerforbindelse behandles som lukket."
 
@@ -3221,8 +3254,8 @@ msgstr "Tid, indtil en inaktiv seerforbindelse behandles som lukket."
 msgid "To stabilize the system, increase the HLS segment length for the keyframe interval by 2-3 * (Processing and Control)."
 msgstr "For at stabilisere systemet skal du øge HLS-segmentlængden for keyframe-intervallet med 2-3 * (Behandling og kontrol)."
 
-#: src/views/Settings.tsx:1550
-#: src/views/Settings.tsx:2457
+#: src/views/Settings.tsx:1565
+#: src/views/Settings.tsx:2537
 msgid "Token"
 msgstr "Token"
 
@@ -3362,7 +3395,7 @@ msgstr "Overfører din video som en RTMP-stream med den nødvendige nøgle, der 
 msgid "Transmits your video stream with the required key, which was generated in Twitter Producer. You can find more information on seting up a live stream at Twitter's <0>Producer</0>."
 msgstr "Overfører din videostream med den nødvendige nøgle, som blev genereret i Twitter Producer. Du kan finde flere oplysninger om opsætning af en livestream på Twitter <0>Producer</0>."
 
-#: src/views/Edit/Sources/Network.tsx:631
+#: src/views/Edit/Sources/Network.tsx:632
 msgid "Transport"
 msgstr ""
 
@@ -3378,78 +3411,90 @@ msgstr "Afstemning"
 msgid "UDP transport"
 msgstr "UDP-transport"
 
-#: src/views/Settings.tsx:1281
+#: src/views/Settings.tsx:1294
 msgid "Unable to load the config."
 msgstr "Kan ikke indlæse konfigurationen."
 
-#: src/views/Settings.tsx:1529
+#: src/views/Settings.tsx:1544
 msgid "Unique ident on the service."
 msgstr "Unikt id på tjenesten."
 
-#: src/views/Main/Egress.tsx:104
+#: src/views/Main/Egress.tsx:107
 msgid "Unknown"
 msgstr "Ukendt"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:139
-#: src/views/Edit/Sources/SDP.tsx:125
-#: src/views/Edit/Sources/VideoLoop.tsx:147
-#: src/views/Playersite.tsx:200
-#: src/views/Publication/Player.tsx:228
+#: src/views/Edit/Sources/AudioLoop.tsx:140
+#: src/views/Edit/Sources/SDP.tsx:126
+#: src/views/Edit/Sources/VideoLoop.tsx:148
+#: src/views/Playersite.tsx:201
+#: src/views/Publication/Player.tsx:232
 msgid "Unknown upload error"
 msgstr "Ukendt uploadfejl"
 
-#: src/views/Playersite.tsx:662
+#: src/views/Playersite.tsx:683
 msgid "Unselected"
 msgstr "Ikke-valgt"
 
-#: src/components/Changelog.tsx:178
+#: src/components/Changelog.tsx:182
 msgid "Update details (Changelog)"
 msgstr "Detaljer om opdatering (Ændringsliste)"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:198
-#: src/views/Edit/Sources/SDP.tsx:179
-#: src/views/Edit/Sources/VideoLoop.tsx:206
-#: src/views/Playersite.tsx:534
-#: src/views/Playersite.tsx:557
-#: src/views/Playersite.tsx:699
-#: src/views/Publication/Player.tsx:481
-#: src/views/Publication/Player.tsx:530
+#: src/views/Edit/Sources/AudioLoop.tsx:213
+#: src/views/Edit/Sources/SDP.tsx:194
+#: src/views/Edit/Sources/VideoLoop.tsx:221
+#: src/views/Playersite.tsx:545
+#: src/views/Playersite.tsx:578
+#: src/views/Playersite.tsx:730
+#: src/views/Publication/Player.tsx:497
+#: src/views/Publication/Player.tsx:566
 msgid "Upload"
 msgstr "Overfør"
 
 #. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
-#: src/views/Edit/Sources/AudioLoop.tsx:180
+#: src/views/Edit/Sources/AudioLoop.tsx:185
 msgid "Upload an audio file ({0}) in order to loop it."
 msgstr "Upload en lydfil ({0}) for at sætte den i loop."
 
 #. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
-#: src/views/Edit/Sources/VideoLoop.tsx:188
+#: src/views/Edit/Sources/VideoLoop.tsx:193
 msgid "Upload an image or video file ({0}) in order to loop it."
 msgstr "Upload et billede eller en videofil ({0}) for at sætte den i loop."
 
+#: src/components/controls/VideoOverlays.tsx:226
+msgid "Upload image"
+msgstr ""
+
 #. placeholder {0}: fileTypes.map((t) => t.mimetype).join(', ')
-#: src/views/Edit/Sources/SDP.tsx:163
+#: src/views/Edit/Sources/SDP.tsx:168
 msgid "Upload SDP file ({0})."
 msgstr ""
 
-#: src/views/Edit/Sources/AudioLoop.tsx:202
-#: src/views/Edit/Sources/SDP.tsx:183
-#: src/views/Edit/Sources/VideoLoop.tsx:210
-#: src/views/Playersite.tsx:561
-#: src/views/Playersite.tsx:703
+#: src/components/controls/VideoOverlays.tsx:215
+msgid "Uploaded image path"
+msgstr ""
+
+#: src/components/controls/VideoOverlays.tsx:154
+msgid "Uploaded images are burned into this output. Arrange them from bottom to top. Leave a position empty to center the image."
+msgstr ""
+
+#: src/views/Edit/Sources/AudioLoop.tsx:217
+#: src/views/Edit/Sources/SDP.tsx:198
+#: src/views/Edit/Sources/VideoLoop.tsx:225
+#: src/views/Playersite.tsx:582
+#: src/views/Playersite.tsx:734
 msgid "Uploading the file failed"
 msgstr "Uploading af filen mislykkedes"
 
-#: src/views/Publication/Player.tsx:485
+#: src/views/Publication/Player.tsx:501
 msgid "Uploading the logo failed"
 msgstr "Uploading af logoet mislykkedes"
 
-#: src/views/Publication/Player.tsx:534
+#: src/views/Publication/Player.tsx:570
 msgid "Uploading the poster failed"
 msgstr "Upload af plakaten mislykkedes"
 
-#: src/components/Footer.tsx:193
-#: src/components/Progress.tsx:116
+#: src/components/Footer.tsx:200
+#: src/components/Progress.tsx:119
 #: src/views/Main/Progress.tsx:57
 msgid "Uptime"
 msgstr "Driftstid"
@@ -3458,11 +3503,11 @@ msgstr "Driftstid"
 msgid "Usage"
 msgstr ""
 
-#: src/views/Login.tsx:365
+#: src/views/Login.tsx:393
 msgid "Use Auth0 for your running Restreamer Core. More <0>details</0>."
 msgstr "Brug Auth0 til din kørende Restreamer Core. Flere <0>detaljer</0>."
 
-#: src/views/Edit/index.tsx:529
+#: src/views/Edit/index.tsx:554
 msgid "Use the wizard (<0/>) for a quick and easy setup, or edit (<1/>) the sources directly in custom mode."
 msgstr "Brug guiden (<0/>) til en hurtig og nem opsætning, eller rediger (<1/>) kilderne direkte i brugerdefineret tilstand."
 
@@ -3470,39 +3515,39 @@ msgstr "Brug guiden (<0/>) til en hurtig og nem opsætning, eller rediger (<1/>)
 msgid "Use your copyright and choose the correct image license. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
 msgstr "Brug din ophavsret, og vælg den korrekte billedlicens. Uanset om den er fri for alle eller stærkt begrænset. Diskuter kort, hvad andre må gøre med dit billede."
 
-#: src/views/Edit/index.tsx:730
+#: src/views/Edit/index.tsx:783
 msgid "Use your copyright and choose the right image licence. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
 msgstr "Brug din ophavsret, og vælg den rigtige billedlicens. Uanset om den er fri for alle eller stærkt begrænset. Diskuter kort, hvad andre må gøre med dit billede."
 
-#: src/views/Edit/Sources/Network.tsx:877
+#: src/views/Edit/Sources/Network.tsx:878
 msgid "use_wallclock_as_timestamps"
 msgstr "use_wallclock_as_timestamps"
 
-#: src/views/Password.tsx:122
+#: src/views/Password.tsx:127
 msgid "User registration"
 msgstr "Registrering af brugere"
 
-#: src/views/Edit/Sources/Network.tsx:1009
-#: src/views/Edit/Wizard/Sources/Network.tsx:101
-#: src/views/Login.tsx:285
-#: src/views/Publication/Services/DaCast.tsx:165
-#: src/views/Publication/Services/DASH.tsx:222
-#: src/views/Publication/Services/HLS.tsx:217
-#: src/views/Publication/Services/Red5.tsx:172
-#: src/views/Publication/Services/RTSP.tsx:175
-#: src/views/Publication/Services/WOWZA.tsx:197
-#: src/views/Settings.tsx:1791
-#: src/views/Settings.tsx:1998
+#: src/views/Edit/Sources/Network.tsx:1024
+#: src/views/Edit/Wizard/Sources/Network.tsx:106
+#: src/views/Login.tsx:302
+#: src/views/Publication/Services/DaCast.tsx:180
+#: src/views/Publication/Services/DASH.tsx:232
+#: src/views/Publication/Services/HLS.tsx:227
+#: src/views/Publication/Services/Red5.tsx:197
+#: src/views/Publication/Services/RTSP.tsx:185
+#: src/views/Publication/Services/WOWZA.tsx:222
+#: src/views/Settings.tsx:1826
+#: src/views/Settings.tsx:2038
 msgid "Username"
 msgstr "Brugernavn"
 
-#: src/views/Settings.tsx:1800
-#: src/views/Settings.tsx:2012
+#: src/views/Settings.tsx:1835
+#: src/views/Settings.tsx:2052
 msgid "Username for authorization."
 msgstr "Brugernavn for "
 
-#: src/views/Edit/Sources/Network.tsx:1014
-#: src/views/Edit/Wizard/Sources/Network.tsx:107
+#: src/views/Edit/Sources/Network.tsx:1029
+#: src/views/Edit/Wizard/Sources/Network.tsx:112
 msgid "Username for the device."
 msgstr "Brugernavn til enheden."
 
@@ -3514,7 +3559,7 @@ msgstr "V4L2_M2M er eksperimentel."
 msgid "Variable frame rate (VFR)"
 msgstr "Variabel billedfrekvens (VFR)"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:144
+#: src/views/Edit/Sources/VirtualAudio.tsx:146
 msgid "velvet"
 msgstr "fløjl"
 
@@ -3522,28 +3567,36 @@ msgstr "fløjl"
 msgid "Vertical Flip"
 msgstr "Lodret flip"
 
-#: src/views/Publication/Add.tsx:580
+#: src/views/Publication/Add.tsx:619
 msgid "Video"
 msgstr "Video"
 
-#: src/components/controls/Preview.tsx:64
+#: src/components/controls/Preview.tsx:69
 msgid "Video Codec"
 msgstr ""
 
-#: src/views/Edit/Sources/AVFoundation.tsx:137
-#: src/views/Edit/Sources/Channel.tsx:104
-#: src/views/Edit/Sources/Raspicam.tsx:110
-#: src/views/Edit/Sources/V4L.tsx:127
-#: src/views/Edit/Sources/X11grab.tsx:180
+#: src/views/Edit/Sources/AVFoundation.tsx:138
+#: src/views/Edit/Sources/Channel.tsx:109
+#: src/views/Edit/Sources/Raspicam.tsx:111
+#: src/views/Edit/Sources/V4L.tsx:132
+#: src/views/Edit/Sources/X11grab.tsx:185
 #: src/views/Edit/Wizard/Sources/AVFoundation.tsx:99
 #: src/views/Edit/Wizard/Sources/Raspicam.tsx:96
 #: src/views/Edit/Wizard/Sources/V4L.tsx:121
 msgid "Video device"
 msgstr "Videoenhed"
 
+#: src/components/controls/VideoOverlays.tsx:140
+msgid "Video overlays"
+msgstr ""
+
+#: src/components/controls/VideoOverlays.tsx:163
+msgid "Video overlays require encoding. Choose a video encoder instead of Copy before saving."
+msgstr ""
+
 #: src/views/Edit/Profile.tsx:533
 #: src/views/Edit/ProfileSummary.tsx:69
-#: src/views/Publication/Edit.tsx:658
+#: src/views/Publication/Edit.tsx:663
 msgid "Video settings"
 msgstr "Videoindstillinger"
 
@@ -3557,19 +3610,19 @@ msgstr "Opsætning af video"
 msgid "Video source"
 msgstr "Kilde til video"
 
-#: src/components/Footer.tsx:260
-#: src/components/Footer.tsx:266
-#: src/components/Footer.tsx:279
-#: src/views/Main/Publication.tsx:187
+#: src/components/Footer.tsx:267
+#: src/components/Footer.tsx:273
+#: src/components/Footer.tsx:286
+#: src/views/Main/Publication.tsx:197
 msgid "Viewer"
 msgstr "Seer"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:143
+#: src/views/Edit/Sources/VirtualAudio.tsx:145
 msgid "violet"
 msgstr "violet"
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:218
-#: src/views/Edit/Sources/VirtualVideo.tsx:267
+#: src/views/Edit/Sources/VirtualAudio.tsx:220
+#: src/views/Edit/Sources/VirtualVideo.tsx:269
 msgid "Virtual source"
 msgstr "Virtuel kilde"
 
@@ -3577,7 +3630,7 @@ msgstr "Virtuel kilde"
 msgid "Volume"
 msgstr "Volumen"
 
-#: src/views/Publication/Services/Livespotting.tsx:111
+#: src/views/Publication/Services/Livespotting.tsx:116
 msgid "VPU ID"
 msgstr "VPU ID"
 
@@ -3585,7 +3638,7 @@ msgstr "VPU ID"
 msgid "We recommend OpenMAX IL for Raspberry PI (3/4) with a 32-bit operating system."
 msgstr "Vi anbefaler OpenMAX IL til Raspberry PI (3/4) med et 32-bit operativsystem."
 
-#: src/views/Welcome.tsx:29
+#: src/views/Welcome.tsx:35
 msgid "Welcome to Restreamer v2, the solution for fast and easy video publishing. Free for private and commercial use. Further help in the <0>docs</0>."
 msgstr "Velkommen til Restreamer v2, løsningen til hurtig og nem udgivelse af video. Gratis til privat og kommerciel brug. Yderligere hjælp i <0>docs</0>."
 
@@ -3597,7 +3650,7 @@ msgstr "Hvilken hastighedsindstilling skal du bruge?"
 msgid "Where to store the HLS playlist and segments. In-Memory is recommended."
 msgstr "Hvor skal HLS-spillelisten og segmenterne gemmes. In-Memory anbefales."
 
-#: src/views/Edit/Sources/VirtualAudio.tsx:139
+#: src/views/Edit/Sources/VirtualAudio.tsx:141
 msgid "white"
 msgstr "hvid"
 
@@ -3605,12 +3658,24 @@ msgstr "hvid"
 msgid "Width"
 msgstr "Bredde"
 
-#: src/views/Settings.tsx:1979
+#: src/components/controls/VideoOverlays.tsx:239
+msgid "Width (pixels)"
+msgstr ""
+
+#: src/views/Settings.tsx:2014
 msgid "Write protection"
 msgstr "Beskyttelse mod skrivning"
 
-#: src/views/Edit/Sources/X11grab.tsx:291
+#: src/components/controls/VideoOverlays.tsx:263
+msgid "X position (pixels)"
+msgstr ""
+
+#: src/views/Edit/Sources/X11grab.tsx:296
 msgid "X11 Screen Capture"
+msgstr ""
+
+#: src/components/controls/VideoOverlays.tsx:274
+msgid "Y position (pixels)"
 msgstr ""
 
 #: src/views/Edit/Wizard/Abort.tsx:60
@@ -3621,11 +3686,11 @@ msgstr "Ja"
 msgid "You can't abort the wizard because at least one input must be defined."
 msgstr "Du kan ikke afbryde guiden, fordi der skal være defineret mindst ét input."
 
-#: src/views/Settings.tsx:2748
+#: src/views/Settings.tsx:2828
 msgid "You have changed the configuration. In order for the changes to take effect, you have to restart the application. Do you want to restart now?"
 msgstr "Du har ændret konfigurationen. For at ændringerne kan træde i kraft, skal du genstarte programmet. Ønsker du at genstarte nu?"
 
-#: src/views/Main/index.tsx:431
+#: src/views/Main/index.tsx:457
 #: src/views/Publication/Process.tsx:80
 msgid "You have to reconnect manually"
 msgstr "Du skal genetablere forbindelsen manuelt"
@@ -3642,6 +3707,6 @@ msgstr "Din stream skal kodes, men der er ingen egnet encoder tilgængelig."
 msgid "Your stream needs to be encoded. Choose the desired encoder:"
 msgstr "Din stream skal være kodet. Vælg den ønskede encoder:"
 
-#: src/views/Edit/Sources/VirtualVideo.tsx:134
+#: src/views/Edit/Sources/VirtualVideo.tsx:136
 msgid "YUV test pattern"
 msgstr "YUV-testmønster"
