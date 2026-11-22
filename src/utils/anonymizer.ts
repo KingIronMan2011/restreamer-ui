@@ -16,7 +16,7 @@ const anonymize_url = (url: any) => {
     if ('token' in u.query) {
       u.query.token = '***';
     }
-  } else if (u.protocol === 'srt') {
+  } else if (u.protocol === 'srt:') {
     if ('streamid' in u.query) {
       u.query.streamid = '***';
     }

@@ -106,6 +106,7 @@ export default function UploadButton({
         accept={accept.join(',')}
         type="file"
         hidden
+        disabled={disabled}
         onChange={handleUpload}
       />
     </FormInlineButton>
