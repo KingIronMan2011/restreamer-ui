@@ -149,7 +149,13 @@ const Component = function ({
                         allowCopy
                       />
                     </Grid>
-                    <Grid item xs={12} marginTop={2}>
+                    <Grid
+                      item
+                      xs={12}
+                      sx={{
+                        marginTop: 2,
+                      }}
+                    >
                       <Divider />
                     </Grid>
                     <Grid item xs={12} className={classes.logging}>
@@ -165,7 +171,13 @@ const Component = function ({
                         allowCopy
                       />
                     </Grid>
-                    <Grid item xs={12} marginTop={2}>
+                    <Grid
+                      item
+                      xs={12}
+                      sx={{
+                        marginTop: 2,
+                      }}
+                    >
                       <Divider />
                     </Grid>
                     <Grid item xs={12} className={classes.logging}>

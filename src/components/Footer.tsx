@@ -148,8 +148,10 @@ function Resources({
     <Stack
       className="footerRight"
       direction="row"
-      alignItems="center"
       spacing={0}
+      sx={{
+        alignItems: 'center',
+      }}
     >
       {(system.cpu_used >= 75 ||
         system.mem_used >= 75 ||
@@ -182,8 +184,10 @@ function Resources({
           vertical: 'top',
           horizontal: 'left',
         }}
-        PaperProps={{
-          onMouseLeave: isMobile ? null : handlePopoverClose,
+        slotProps={{
+          paper: {
+            onMouseLeave: isMobile ? undefined : handlePopoverClose,
+          },
         }}
       >
         <List
@@ -421,20 +425,26 @@ export default function Footer({
         className={classes.footer}
         spacing={0}
         direction="row"
-        alignItems="center"
+        sx={{
+          alignItems: 'center',
+        }}
       >
         <Grid item xs={12}>
           <Stack
             direction="row"
-            justifyContent="space-between"
-            alignItems="center"
             spacing={0}
+            sx={{
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
           >
             <Stack
               className="footerLeft"
               direction="row"
-              alignItems="center"
               spacing={0}
+              sx={{
+                alignItems: 'center',
+              }}
             >
               <Logo className="logo" />
               <Typography className="footerVersion">
@@ -454,20 +464,26 @@ export default function Footer({
         className={classes.footer}
         spacing={0}
         direction="row"
-        alignItems="center"
+        sx={{
+          alignItems: 'center',
+        }}
       >
         <Grid item xs={12}>
           <Stack
             direction="row"
-            justifyContent="space-between"
-            alignItems="center"
             spacing={0}
+            sx={{
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
           >
             <Stack
               className="footerLeft"
               direction="row"
-              alignItems="center"
               spacing={0}
+              sx={{
+                alignItems: 'center',
+              }}
             >
               <Logo className="logo" />
             </Stack>

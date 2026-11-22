@@ -51,83 +51,85 @@ const outlined = {
 };
 
 export default {
-  variants: [
-    {
-      props: { variant: 'big' },
-      style: {
-        height: 130,
-        width: '100%',
-        textTransform: 'initial!important',
-        color: base.palette.text.primary,
-        backgroundColor: base.palette.background.dark1,
-        border: `2px solid ${base.palette.primary.main}`,
-        '&:hover': {
-          color: base.palette.primary.contrastText,
-          backgroundColor: base.palette.background.dark1,
-          border: `2px solid ${base.palette.secondary.main}!important`,
-        },
-        '&:active': {
-          border: `2px solid ${base.palette.secondary.main}!important`,
-        },
-        '&.Mui-disabled': {
-          border: `2px solid ${base.palette.text.disabled}!important`,
-          color: `${base.palette.text.primary}!important`,
-          opacity: 0.4,
-        },
-        '& svg': {
-          fontSize: '2.5em',
-          maxHeight: '40px',
-          maxWidth: '40px',
-        },
-        '& img': {
-          fontSize: '2.5em',
-          maxHeight: '40px',
-          maxWidth: '40px',
-        },
-      },
-    },
-    {
-      props: { variant: 'bigSelected' },
-      style: {
-        height: 130,
-        width: '100%',
-        textTransform: 'initial!important',
-        color: base.palette.text.primary,
-        backgroundColor: base.palette.background.dark1,
-        border: `2px solid ${base.palette.secondary.main}!important`,
-        '&:hover': {
-          color: base.palette.primary.contrastText,
-          backgroundColor: base.palette.background.dark1,
-          border: `2px solid ${base.palette.secondary.main}!important`,
-        },
-        '& svg': {
-          fontSize: '2.5em',
-          maxHeight: '40px',
-          maxWidth: '40px',
-        },
-        '& img': {
-          fontSize: '2.5em',
-          maxHeight: '40px',
-          maxWidth: '40px',
-        },
-      },
-    },
-    {
-      props: { variant: 'service' },
-      style: {
-        color: base.palette.text.primary,
-        backgroundColor: base.palette.background.dark1,
-        border: `2px solid ${base.palette.service.main}!important`,
-        '&:hover': {
-          color: base.palette.common.black,
-          backgroundColor: base.palette.service.main,
-          border: `2px solid ${base.palette.service.main}!important`,
-        },
-      },
-    },
-  ],
   styleOverrides: {
-    root: { ...root },
+    root: {
+      ...root,
+      variants: [
+        {
+          props: { variant: 'big' },
+          style: {
+            height: 130,
+            width: '100%',
+            textTransform: 'initial!important',
+            color: base.palette.text.primary,
+            backgroundColor: base.palette.background.dark1,
+            border: `2px solid ${base.palette.primary.main}`,
+            '&:hover': {
+              color: base.palette.primary.contrastText,
+              backgroundColor: base.palette.background.dark1,
+              border: `2px solid ${base.palette.secondary.main}!important`,
+            },
+            '&:active': {
+              border: `2px solid ${base.palette.secondary.main}!important`,
+            },
+            '&.Mui-disabled': {
+              border: `2px solid ${base.palette.text.disabled}!important`,
+              color: `${base.palette.text.primary}!important`,
+              opacity: 0.4,
+            },
+            '& svg': {
+              fontSize: '2.5em',
+              maxHeight: '40px',
+              maxWidth: '40px',
+            },
+            '& img': {
+              fontSize: '2.5em',
+              maxHeight: '40px',
+              maxWidth: '40px',
+            },
+          },
+        },
+        {
+          props: { variant: 'bigSelected' },
+          style: {
+            height: 130,
+            width: '100%',
+            textTransform: 'initial!important',
+            color: base.palette.text.primary,
+            backgroundColor: base.palette.background.dark1,
+            border: `2px solid ${base.palette.secondary.main}!important`,
+            '&:hover': {
+              color: base.palette.primary.contrastText,
+              backgroundColor: base.palette.background.dark1,
+              border: `2px solid ${base.palette.secondary.main}!important`,
+            },
+            '& svg': {
+              fontSize: '2.5em',
+              maxHeight: '40px',
+              maxWidth: '40px',
+            },
+            '& img': {
+              fontSize: '2.5em',
+              maxHeight: '40px',
+              maxWidth: '40px',
+            },
+          },
+        },
+        {
+          props: { variant: 'service' },
+          style: {
+            color: base.palette.text.primary,
+            backgroundColor: base.palette.background.dark1,
+            border: `2px solid ${base.palette.service.main}!important`,
+            '&:hover': {
+              color: base.palette.common.black,
+              backgroundColor: base.palette.service.main,
+              border: `2px solid ${base.palette.service.main}!important`,
+            },
+          },
+        },
+      ],
+    },
     outlined: { ...outlined.base },
     outlinedPrimary: { ...outlined.primary },
     outlinedSecondary: { ...outlined.secondary },

@@ -200,9 +200,11 @@ function ChannelButton({
           </Image>
           <Stack
             direction="row"
-            alignItems="flex-start"
-            justifyContent="space-between"
             className={classes.imageTitle}
+            sx={{
+              alignItems: 'flex-start',
+              justifyContent: 'space-between',
+            }}
           >
             <Typography variant="body2" color="inherit">
               {title}
@@ -403,7 +405,7 @@ export default function ChannelList({
             height: $largeChannelList ? '100vh' : 'auto',
           },
         }}
-        BackdropProps={{ invisible: true }}
+        slotProps={{ backdrop: { invisible: true } }}
         classes={{
           paper: classes.drawerPaper,
         }}
@@ -413,19 +415,35 @@ export default function ChannelList({
           <Grid
             container
             spacing={2}
-            justifyContent="center"
             className={classes.channel}
+            sx={{
+              justifyContent: 'center',
+            }}
           >
             <Grid item xs={12}>
-              <Stack direction="row" spacing={1} justifyContent="space-between">
-                <Stack direction="row" spacing={1} justifyContent="flex-start">
+              <Stack
+                direction="row"
+                spacing={1}
+                sx={{
+                  justifyContent: 'space-between',
+                }}
+              >
+                <Stack
+                  direction="row"
+                  spacing={1}
+                  sx={{
+                    justifyContent: 'flex-start',
+                  }}
+                >
                   <Typography variant="h2">Channels</Typography>
                 </Stack>
                 <Stack
                   direction="row"
                   spacing={1}
-                  justifyContent="flex-end"
                   className={classes.drawerButtons}
+                  sx={{
+                    justifyContent: 'flex-end',
+                  }}
                 >
                   <IconButton
                     color="inherit"
@@ -451,13 +469,27 @@ export default function ChannelList({
                 </Stack>
               </Stack>
             </Grid>
-            <Grid item xs={12} textAlign="center">
-              <Stack direction="row" spacing={0} justifyContent="space-between">
+            <Grid
+              item
+              xs={12}
+              sx={{
+                textAlign: 'center',
+              }}
+            >
+              <Stack
+                direction="row"
+                spacing={0}
+                sx={{
+                  justifyContent: 'space-between',
+                }}
+              >
                 <Stack
                   direction="row"
                   spacing={0}
-                  alignItems="center"
                   className={classes.iconButtonLeft}
+                  sx={{
+                    alignItems: 'center',
+                  }}
                 >
                   <IconButton
                     onClick={() => {
@@ -477,7 +509,11 @@ export default function ChannelList({
                   <Grid
                     container
                     spacing={0}
-                    justifyContent={$largeChannelList ? 'flex-start' : 'center'}
+                    sx={{
+                      justifyContent: $largeChannelList
+                        ? 'flex-start'
+                        : 'center',
+                    }}
                   >
                     {$channels}
                   </Grid>
@@ -485,8 +521,10 @@ export default function ChannelList({
                 <Stack
                   direction="row"
                   spacing={0}
-                  alignItems="center"
                   className={classes.iconButtonRight}
+                  sx={{
+                    alignItems: 'center',
+                  }}
                 >
                   <IconButton
                     onClick={() => {

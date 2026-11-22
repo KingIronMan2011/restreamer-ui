@@ -40,10 +40,12 @@ const Component = function ({
           <Grid item xs={12}>
             <Stack
               direction="column"
-              justifyContent="center"
-              alignItems="center"
               spacing={1}
               className={classes.box}
+              sx={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
             >
               <Textarea
                 value={value}

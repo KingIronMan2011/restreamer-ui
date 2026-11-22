@@ -31,7 +31,13 @@ const Component = function ({
   const { classes } = useStyles();
 
   return (
-    <Grid container spacing={spacing} padding={padding}>
+    <Grid
+      container
+      spacing={spacing}
+      sx={{
+        padding: padding,
+      }}
+    >
       <Grid item xs={12} className={classes.root}>
         {typeof onAbort === 'function' && (
           <IconButton color="inherit" size="small" onClick={onAbort}>

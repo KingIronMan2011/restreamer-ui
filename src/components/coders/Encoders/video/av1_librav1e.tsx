@@ -188,10 +188,12 @@ function Coder({
           variant="outlined"
           fullWidth
           type="number"
-          inputProps={{ min: -1, max: 255 }}
           label={<Trans>QP</Trans>}
           value={settings.qp}
           onChange={update('qp')}
+          slotProps={{
+            htmlInput: { min: -1, max: 255 },
+          }}
         />
         <Typography variant="caption">
           <Trans>Constant Quantizer Mode (-1 to 255).</Trans>
@@ -202,10 +204,12 @@ function Coder({
           variant="outlined"
           fullWidth
           type="number"
-          inputProps={{ min: -1 }}
           label={<Trans>Tiles</Trans>}
           value={settings.tiles}
           onChange={update('tiles')}
+          slotProps={{
+            htmlInput: { min: -1 },
+          }}
         />
         <Typography variant="caption">
           <Trans>Number of tiles encode with.</Trans>
@@ -216,10 +220,12 @@ function Coder({
           variant="outlined"
           fullWidth
           type="number"
-          inputProps={{ min: -1 }}
           label={<Trans>Tile Rows</Trans>}
           value={settings.tile_rows}
           onChange={update('tile_rows')}
+          slotProps={{
+            htmlInput: { min: -1 },
+          }}
         />
         <Typography variant="caption">
           <Trans>Number of tiles rows to encode with.</Trans>
@@ -230,10 +236,12 @@ function Coder({
           variant="outlined"
           fullWidth
           type="number"
-          inputProps={{ min: -1 }}
           label={<Trans>Tile Columns</Trans>}
           value={settings.tile_columns}
           onChange={update('tile_columns')}
+          slotProps={{
+            htmlInput: { min: -1 },
+          }}
         />
         <Typography variant="caption">
           <Trans>Number of tiles columns to encode with.</Trans>

@@ -108,9 +108,11 @@ function Source({
   return (
     <Grid
       container
-      alignItems="flex-start"
       spacing={2}
       className={classes.gridContainer}
+      sx={{
+        alignItems: 'flex-start',
+      }}
     >
       <Grid item xs={12}>
         <Typography>

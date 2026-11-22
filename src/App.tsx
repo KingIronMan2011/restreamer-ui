@@ -531,9 +531,11 @@ export default function App({ address = '' }: any) {
       <Grid
         container
         direction="column"
-        justifyContent="flex-start"
-        alignItems="stretch"
         spacing={0}
+        sx={{
+          justifyContent: 'flex-start',
+          alignItems: 'stretch',
+        }}
       >
         <Grid className={classes.MainHeader}>
           <Header
@@ -552,9 +554,11 @@ export default function App({ address = '' }: any) {
           <Grid
             container
             className="MainContent-container"
-            justifyContent="center"
-            alignItems="center"
             spacing={0}
+            sx={{
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
           >
             <Grid item sm={1}></Grid>
             <Grid item xs={12} sm={10} className="MainContent-item">

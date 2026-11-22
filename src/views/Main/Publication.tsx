@@ -170,7 +170,13 @@ export default function Publication({ channelid = '', restreamer }: any) {
           onHelp={handleHelp}
         />
         <Grid container spacing={1}>
-          <Grid item xs={12} textAlign="center">
+          <Grid
+            item
+            xs={12}
+            sx={{
+              textAlign: 'center',
+            }}
+          >
             <Divider />
             <Typography component="div" className={classes.viewerCount}>
               <Number value={$session.viewer} />
@@ -178,9 +184,11 @@ export default function Publication({ channelid = '', restreamer }: any) {
             <Grid
               container
               direction="row"
-              justifyContent="center"
-              alignItems="center"
               className={classes.vierwerDescription}
+              sx={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
             >
               <PersonIcon fontSize="small" />
               <Typography className={classes.vierwerTypo}>
@@ -188,16 +196,25 @@ export default function Publication({ channelid = '', restreamer }: any) {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item xs={12} textAlign="center" className={classes.bandwidth}>
+          <Grid
+            item
+            xs={12}
+            className={classes.bandwidth}
+            sx={{
+              textAlign: 'center',
+            }}
+          >
             <Typography component="div" className={classes.bandwidthCount}>
               <Number value={$session.bandwidth} />
             </Typography>
             <Grid
               container
               direction="row"
-              justifyContent="center"
-              alignItems="center"
               className={classes.bandwidthDescription}
+              sx={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
             >
               <CloudUploadIcon className={classes.bandwidthIcon} />
               <Typography>

@@ -26,7 +26,12 @@ export default function TabPanel({
       id={`vertical-tabpanel-${index}`}
     >
       {value === index && (
-        <Box className={classes.root} p={0}>
+        <Box
+          className={classes.root}
+          sx={{
+            p: 0,
+          }}
+        >
           {children}
         </Box>
       )}

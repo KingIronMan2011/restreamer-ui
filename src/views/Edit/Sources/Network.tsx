@@ -960,9 +960,11 @@ function Pull({
   return (
     <Grid
       container
-      alignItems="flex-start"
       spacing={2}
       className={classes.gridContainer}
+      sx={{
+        alignItems: 'flex-start',
+      }}
     >
       <Grid item xs={12}>
         <Typography>
@@ -987,7 +989,13 @@ function Pull({
       {validURL === true && (
         <React.Fragment>
           {!supportedProtocol ? (
-            <Grid item xs={12} textAlign="center">
+            <Grid
+              item
+              xs={12}
+              sx={{
+                textAlign: 'center',
+              }}
+            >
               <BoxText color="dark">
                 <WarningIcon fontSize="large" color="error" />
                 <Typography>
@@ -1069,11 +1077,19 @@ function Push({
     return (
       <Grid
         container
-        alignItems="flex-start"
         spacing={2}
         className={classes.gridContainer}
+        sx={{
+          alignItems: 'flex-start',
+        }}
       >
-        <Grid item xs={12} textAlign="center">
+        <Grid
+          item
+          xs={12}
+          sx={{
+            textAlign: 'center',
+          }}
+        >
           <BoxText color="dark">
             <WarningIcon fontSize="large" color="error" />
             <Typography>
@@ -1092,9 +1108,11 @@ function Push({
     <React.Fragment>
       <Grid
         container
-        alignItems="flex-start"
         spacing={2}
         className={classes.gridContainer}
+        sx={{
+          alignItems: 'flex-start',
+        }}
       >
         <Grid item xs={12}>
           <Select
@@ -1161,9 +1179,11 @@ function PushHLS({
   return (
     <Grid
       container
-      alignItems="flex-start"
       spacing={2}
       className={classes.gridContainer}
+      sx={{
+        alignItems: 'flex-start',
+      }}
     >
       <Grid item xs={12}>
         <Typography>
@@ -1209,9 +1229,11 @@ function PushRTMP({
     form = (
       <Grid
         container
-        alignItems="flex-start"
         spacing={2}
         className={classes.gridContainer}
+        sx={{
+          alignItems: 'flex-start',
+        }}
       >
         <Grid item xs={12}>
           <Typography>
@@ -1260,9 +1282,11 @@ function PushRTMP({
     form = (
       <Grid
         container
-        alignItems="flex-start"
         spacing={2}
         className={classes.gridContainer}
+        sx={{
+          alignItems: 'flex-start',
+        }}
       >
         <Grid item xs={12}>
           <Select
@@ -1336,9 +1360,11 @@ function PushSRT({
     form = (
       <Grid
         container
-        alignItems="flex-start"
         spacing={2}
         className={classes.gridContainer}
+        sx={{
+          alignItems: 'flex-start',
+        }}
       >
         <Grid item xs={12}>
           <Typography>
@@ -1387,9 +1413,11 @@ function PushSRT({
     form = (
       <Grid
         container
-        alignItems="flex-start"
         spacing={2}
         className={classes.gridContainer}
+        sx={{
+          alignItems: 'flex-start',
+        }}
       >
         <Grid item xs={12}>
           <Select
@@ -1517,9 +1545,11 @@ function Source({
     <React.Fragment>
       <Grid
         container
-        alignItems="flex-start"
         spacing={2}
         className={classes.gridContainer}
+        sx={{
+          alignItems: 'flex-start',
+        }}
       >
         <Grid item xs={12}>
           <Select

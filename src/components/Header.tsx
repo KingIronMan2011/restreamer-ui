@@ -437,20 +437,26 @@ export default function Header({
       className={classes.header}
       spacing={0}
       direction="row"
-      alignItems="center"
+      sx={{
+        alignItems: 'center',
+      }}
     >
       <Grid item xs={12}>
         <Stack
           direction="row"
-          justifyContent="space-between"
-          alignItems="center"
           spacing={0}
+          sx={{
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
         >
           <Stack
             direction="row"
-            alignItems="center"
             spacing={0}
             className="headerLeft"
+            sx={{
+              alignItems: 'center',
+            }}
           >
             <Logo className="fabIcon" />
             <Typography className="headerTitle">Restreamer</Typography>
@@ -458,8 +464,10 @@ export default function Header({
           <Stack
             className="headerRight"
             direction="row"
-            alignItems="center"
             spacing={0}
+            sx={{
+              alignItems: 'center',
+            }}
           >
             <HeaderMenu
               onChannel={onChannel}

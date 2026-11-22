@@ -55,7 +55,7 @@ export default function Component({
         multiline={multiline}
         rows={rows}
         type={type}
-        inputProps={inputProps}
+        slotProps={{ input: inputProps }}
       />
       {helperText && <FormHelperText>{helperText}</FormHelperText>}
     </FormControl>

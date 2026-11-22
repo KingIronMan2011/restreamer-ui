@@ -20,11 +20,13 @@ export default function Component({
   return (
     <Stack
       direction="column"
-      justifyContent="center"
-      alignItems="center"
       spacing={1}
       className={classes.box}
       style={style}
+      sx={{
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
     >
       {children}
     </Stack>

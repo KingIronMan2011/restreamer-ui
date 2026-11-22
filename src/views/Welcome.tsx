@@ -15,7 +15,13 @@ export default function Welcome() {
 
   return (
     <Paper xs={12} md={6} className="PaperM">
-      <Grid container justifyContent="center" spacing={2}>
+      <Grid
+        container
+        spacing={2}
+        sx={{
+          justifyContent: 'center',
+        }}
+      >
         <Grid item xs={12}>
           <PaperThumb
             image="/images/welcome.png"

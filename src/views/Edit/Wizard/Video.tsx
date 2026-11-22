@@ -39,7 +39,11 @@ export default function Video({
           {status === 'error' && (
             <BoxText color="dark">
               <WarningIcon fontSize="large" color="error" />
-              <Typography textAlign="center">
+              <Typography
+                sx={{
+                  textAlign: 'center',
+                }}
+              >
                 {sourceid === 'rtmp' || sourceid === 'hls' ? (
                   <Trans>
                     No live stream was detected. Please check the software that
@@ -56,7 +60,11 @@ export default function Video({
           {status === 'nostream' && (
             <BoxText color="dark">
               <WarningIcon fontSize="large" color="error" />
-              <Typography textAlign="center">
+              <Typography
+                sx={{
+                  textAlign: 'center',
+                }}
+              >
                 <Trans>
                   The source doesn't provide any video streams. Please check the
                   device.
@@ -67,7 +75,11 @@ export default function Video({
           {status === 'nocoder' && (
             <BoxText color="dark">
               <WarningIcon fontSize="large" color="error" />
-              <Typography textAlign="center">
+              <Typography
+                sx={{
+                  textAlign: 'center',
+                }}
+              >
                 <Trans>
                   The source doesn't provide any compatible video streams.
                   Please check the{' '}

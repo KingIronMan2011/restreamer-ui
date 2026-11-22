@@ -42,10 +42,12 @@ export default function Control({
           variant="outlined"
           fullWidth
           type="number"
-          inputProps={{ min: 0, max: 100 }}
           label={<Trans>CPU Limit (percent)</Trans>}
           value={settings.cpu_usage}
           onChange={handleChange('cpu_usage')}
+          slotProps={{
+            htmlInput: { min: 0, max: 100 },
+          }}
         />
         <Typography variant="caption">
           <Trans>CPU usage limit in percent (0-100%), 0 for unlimited.</Trans>
@@ -56,10 +58,12 @@ export default function Control({
           variant="outlined"
           fullWidth
           type="number"
-          inputProps={{ min: 0 }}
           label={<Trans>Memory Limit (megabytes)</Trans>}
           value={settings.memory_mbytes}
           onChange={handleChange('memory_mbytes')}
+          slotProps={{
+            htmlInput: { min: 0 },
+          }}
         />
         <Typography variant="caption">
           <Trans>Memory usage limit in megabytes, 0 for unlimited.</Trans>
@@ -70,10 +74,12 @@ export default function Control({
           variant="outlined"
           fullWidth
           type="number"
-          inputProps={{ min: 0 }}
           label={<Trans>Threshold (seconds)</Trans>}
           value={settings.waitfor_seconds}
           onChange={handleChange('waitfor_seconds')}
+          slotProps={{
+            htmlInput: { min: 0 },
+          }}
         />
         <Typography variant="caption">
           <Trans>

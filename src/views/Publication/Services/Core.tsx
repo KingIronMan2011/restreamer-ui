@@ -231,7 +231,13 @@ function Service({
           onChange={handleChange('v2_address')}
         />
       </Grid>
-      <Grid item xs={12} textAlign="left">
+      <Grid
+        item
+        xs={12}
+        sx={{
+          textAlign: 'left',
+        }}
+      >
         <BoxText alignItems="left" justifyContent="left">
           {!settings.v2_address && (
             <Typography>

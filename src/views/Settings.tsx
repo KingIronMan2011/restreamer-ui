@@ -651,7 +651,13 @@ function ErrorTab(
 
   if (errors === true) {
     label = (
-      <Stack direction="row" spacing={1} alignItems="center">
+      <Stack
+        direction="row"
+        spacing={1}
+        sx={{
+          alignItems: 'center',
+        }}
+      >
         <WarningIcon color="error" />
         <Typography>{label}</Typography>
       </Stack>
@@ -1418,7 +1424,9 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                       <Typography
                         variant="inherit"
                         color="inherit"
-                        width="100%"
+                        sx={{
+                          width: '100%',
+                        }}
                       >
                         <Link
                           color="inherit"

@@ -590,7 +590,13 @@ export default function Edit({ restreamer }: any) {
                             progress={$progress}
                           />
                         </Grid>
-                        <Grid item xs={12} textAlign="right">
+                        <Grid
+                          item
+                          xs={12}
+                          sx={{
+                            textAlign: 'right',
+                          }}
+                        >
                           <Link
                             color="textSecondary"
                             href="#!"

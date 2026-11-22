@@ -147,14 +147,26 @@ function Source({
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <Grid container alignItems="center" spacing={1}>
+        <Grid
+          container
+          spacing={1}
+          sx={{
+            alignItems: 'center',
+          }}
+        >
           <Grid item xs={12}>
             {videoDevices}
           </Grid>
         </Grid>
       </Grid>
       <Grid item xs={12}>
-        <Grid container alignItems="center" spacing={1}>
+        <Grid
+          container
+          spacing={1}
+          sx={{
+            alignItems: 'center',
+          }}
+        >
           <Grid item xs={12}>
             {audioDevices}
             <Button

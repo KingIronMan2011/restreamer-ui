@@ -285,7 +285,14 @@ export default function Main({ restreamer }: any) {
   if ($state.ready === false) {
     return (
       <Paper xs={8} sm={6} md={4} className="PaperM">
-        <Grid container justifyContent="center" spacing={2} textAlign="center">
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            justifyContent: 'center',
+            textAlign: 'center',
+          }}
+        >
           <Grid item xs={12}>
             <CircularProgress color="primary" />
           </Grid>
@@ -335,9 +342,11 @@ export default function Main({ restreamer }: any) {
     <React.Fragment>
       <Grid
         container
-        justifyContent="center"
         spacing={1}
         className={classes.gridContainerL1}
+        sx={{
+          justifyContent: 'center',
+        }}
       >
         <Grid item xs={12} sm={12} md={8}>
           <Paper marginBottom="0">
@@ -356,9 +365,11 @@ export default function Main({ restreamer }: any) {
                         container
                         direction="column"
                         className={classes.playerL3}
-                        justifyContent="center"
-                        alignItems="center"
                         spacing={2}
+                        sx={{
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
                       >
                         <Grid item>
                           <Typography variant="h2">
@@ -372,9 +383,11 @@ export default function Main({ restreamer }: any) {
                         container
                         direction="column"
                         className={classes.playerL3}
-                        justifyContent="center"
-                        alignItems="center"
                         spacing={2}
+                        sx={{
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
                       >
                         <Grid item>
                           <CircularProgress color="inherit" />
@@ -391,9 +404,11 @@ export default function Main({ restreamer }: any) {
                         container
                         direction="column"
                         className={classes.playerL3}
-                        justifyContent="center"
-                        alignItems="center"
                         spacing={2}
+                        sx={{
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
                       >
                         <Grid item>
                           <WarningIcon className={classes.playerWarningIcon} />
@@ -465,10 +480,12 @@ export default function Main({ restreamer }: any) {
                           container
                           direction="column"
                           className={classes.playerL3}
-                          justifyContent="center"
-                          alignItems="center"
-                          textAlign={'center'}
                           spacing={2}
+                          sx={{
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            textAlign: 'center',
+                          }}
                         >
                           <Grid item>
                             <WarningIcon
@@ -508,9 +525,11 @@ export default function Main({ restreamer }: any) {
                           container
                           direction="column"
                           className={classes.playerL3}
-                          justifyContent="center"
-                          alignItems="center"
                           spacing={2}
+                          sx={{
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                          }}
                         >
                           <Grid item>
                             <WarningIcon
@@ -541,24 +560,40 @@ export default function Main({ restreamer }: any) {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={12} marginTop="-.3em">
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  marginTop: '-.3em',
+                }}
+              >
                 <Progress progress={$state.progress} />
               </Grid>
-              <Grid item xs={12} marginTop="-.2em">
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  marginTop: '-.2em',
+                }}
+              >
                 <Stack
                   direction="row"
-                  justifyContent="space-between"
-                  alignItems="center"
                   spacing={2}
+                  sx={{
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }}
                 >
                   <Typography variant="body">
                     <Trans>Content URL</Trans>
                   </Typography>
                   <Stack
                     direction="row"
-                    justifyContent="flex-end"
-                    alignItems="center"
                     spacing={0.5}
+                    sx={{
+                      justifyContent: 'flex-end',
+                      alignItems: 'center',
+                    }}
                   >
                     <CopyButton
                       variant="outlined"
@@ -618,7 +653,13 @@ export default function Main({ restreamer }: any) {
                   </Stack>
                 </Stack>
               </Grid>
-              <Grid item xs={12} marginTop="0em">
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  marginTop: '0em',
+                }}
+              >
                 <ActionButton
                   order={$state.order}
                   state={$state.state}
@@ -628,7 +669,13 @@ export default function Main({ restreamer }: any) {
                   onReconnect={reconnect}
                 />
               </Grid>
-              <Grid item xs={12} textAlign="right">
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  textAlign: 'right',
+                }}
+              >
                 <Link
                   variant="body2"
                   color="textSecondary"

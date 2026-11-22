@@ -548,7 +548,13 @@ export default function Profile({
             {$videoProbe.status !== 'none' && (
               <React.Fragment>
                 {$videoProbe.status === 'error' && (
-                  <Grid item xs={12} textAlign="center">
+                  <Grid
+                    item
+                    xs={12}
+                    sx={{
+                      textAlign: 'center',
+                    }}
+                  >
                     <BoxText color="dark">
                       <WarningIcon fontSize="large" color="error" />
                       <Typography>
@@ -581,7 +587,13 @@ export default function Profile({
                   </Grid>
                 )}
                 {$videoProbe.status === 'nostream' && (
-                  <Grid item xs={12} textAlign="center">
+                  <Grid
+                    item
+                    xs={12}
+                    sx={{
+                      textAlign: 'center',
+                    }}
+                  >
                     <BoxText color="dark">
                       <WarningIcon fontSize="large" color="error" />
                       <Typography>
@@ -610,7 +622,13 @@ export default function Profile({
                         onChange={handleStreamSelect('video')}
                       />
                     </Grid>
-                    <Grid item xs={12} textAlign="right">
+                    <Grid
+                      item
+                      xs={12}
+                      sx={{
+                        textAlign: 'right',
+                      }}
+                    >
                       <Typography>
                         <Trans>
                           <Link
@@ -735,7 +753,13 @@ export default function Profile({
                 {$audioProbe.status !== 'none' && (
                   <React.Fragment>
                     {$audioProbe.status === 'error' && (
-                      <Grid item xs={12} textAlign="center">
+                      <Grid
+                        item
+                        xs={12}
+                        sx={{
+                          textAlign: 'center',
+                        }}
+                      >
                         <BoxText color="dark">
                           <WarningIcon fontSize="large" color="error" />
                           <Typography>
@@ -767,7 +791,13 @@ export default function Profile({
                       </Grid>
                     )}
                     {$audioProbe.status === 'nostream' && (
-                      <Grid item xs={12} textAlign="center">
+                      <Grid
+                        item
+                        xs={12}
+                        sx={{
+                          textAlign: 'center',
+                        }}
+                      >
                         <BoxText color="dark">
                           <WarningIcon fontSize="large" color="error" />
                           <Typography>
@@ -796,7 +826,13 @@ export default function Profile({
                             onChange={handleStreamSelect('audio')}
                           />
                         </Grid>
-                        <Grid item xs={12} textAlign="right">
+                        <Grid
+                          item
+                          xs={12}
+                          sx={{
+                            textAlign: 'right',
+                          }}
+                        >
                           <Typography>
                             <Trans>
                               <Link

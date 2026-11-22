@@ -26,16 +26,20 @@ export default function TabContent({ service = null, children = '' }: any) {
       <Grid item xs={12}>
         <Stack
           direction="row"
-          justifyContent="flex-start"
-          alignItems="center"
           spacing={2}
+          sx={{
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+          }}
         >
           <service.icon className={classes.serviceIcon} />
           <Stack
             direction="column"
-            justifyContent="center"
-            alignItems="flex-start"
             spacing={0}
+            sx={{
+              justifyContent: 'center',
+              alignItems: 'flex-start',
+            }}
           >
             <Typography variant="h1" className={classes.serviceName}>
               {service.name}

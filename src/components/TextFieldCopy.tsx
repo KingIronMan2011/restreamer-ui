@@ -64,9 +64,7 @@ export default function Component({
         value={value}
         label={label}
         type={type}
-        inputProps={{
-          readOnly: true,
-        }}
+        slotProps={{ input: { readOnly: true } }}
         size={size}
         endAdornment={
           <IconButton size="small" onClick={handleCopy}>

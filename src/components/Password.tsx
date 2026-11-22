@@ -69,7 +69,7 @@ export default function Password({
         endAdornment={adornment}
         label={label}
         autoComplete={autoComplete}
-        inputProps={inputProps}
+        slotProps={{ input: inputProps }}
         error={error}
       />
       {helperText && <FormHelperText>{helperText}</FormHelperText>}

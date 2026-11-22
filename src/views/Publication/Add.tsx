@@ -350,7 +350,16 @@ export default function Add({ restreamer }: any) {
       // TODO: Style Tooltip + Fix Tooltip + Disabled
       if (helper.checkServiceRequirements(s.requires, $skills) === false) {
         serviceList.push(
-          <Grid item xs={12} sm={6} md={3} textAlign="center" key={s.id}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={3}
+            key={s.id}
+            sx={{
+              textAlign: 'center',
+            }}
+          >
             <Tooltip
               title={
                 <React.Fragment>
@@ -378,7 +387,16 @@ export default function Add({ restreamer }: any) {
         );
       } else {
         serviceList.push(
-          <Grid item xs={12} sm={6} md={3} textAlign="center" key={s.id}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={3}
+            key={s.id}
+            sx={{
+              textAlign: 'center',
+            }}
+          >
             <Button variant="big" onClick={handleServiceSelect(s.id)}>
               <div>
                 <Icon />
@@ -419,7 +437,13 @@ export default function Add({ restreamer }: any) {
         {$service === '' ? (
           <React.Fragment>
             <Grid container spacing={2}>
-              <Grid item xs={12} textAlign="center">
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  textAlign: 'center',
+                }}
+              >
                 <ToggleButtonGroup
                   className={classes.buttonGroup}
                   size={breakpointUpSm ? 'medium' : 'small'}

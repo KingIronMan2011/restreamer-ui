@@ -376,9 +376,11 @@ export default function Edit({ restreamer }: any) {
                     container
                     direction="column"
                     className={classes.playerL3}
-                    justifyContent="center"
-                    alignItems="center"
                     spacing={1}
+                    sx={{
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
                   >
                     <Grid item>
                       <Typography variant="h2">

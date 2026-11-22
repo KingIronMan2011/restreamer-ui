@@ -7,9 +7,9 @@ import React from 'react';
 import { makeStyles } from 'tss-react/mui';
 
 const MenuProps = {
-  PaperProps: {
-    style: {
-      width: 250,
+  slotProps: {
+    paper: {
+      style: { width: 250 },
     },
   },
 };

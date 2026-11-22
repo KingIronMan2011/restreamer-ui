@@ -9,9 +9,11 @@ const Component = function ({
   return (
     <Grid
       container
-      justifyContent="center"
       spacing={spacing}
-      textAlign={textAlign}
+      sx={{
+        justifyContent: 'center',
+        textAlign: textAlign,
+      }}
     >
       <Grid item xs={12}>
         {children}

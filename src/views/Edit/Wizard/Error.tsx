@@ -26,7 +26,11 @@ export default function Error({
       <Grid container spacing={3}>
         <BoxText color="dark">
           <WarningIcon fontSize="large" color="error" />
-          <Typography textAlign="center">
+          <Typography
+            sx={{
+              textAlign: 'center',
+            }}
+          >
             <Trans>There was an error setting up the stream.</Trans>
           </Typography>
         </BoxText>

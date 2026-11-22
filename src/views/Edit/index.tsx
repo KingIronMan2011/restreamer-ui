@@ -608,9 +608,11 @@ export default function Edit({ restreamer }: any) {
                     <Grid
                       item
                       xs={12}
-                      display={{
-                        xs: 'block',
-                        md: 'none',
+                      sx={{
+                        display: {
+                          xs: 'block',
+                          md: 'none',
+                        },
                       }}
                     >
                       <Divider />

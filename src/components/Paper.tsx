@@ -38,9 +38,11 @@ const Component = React.forwardRef<any, any>(
     return (
       <Grid
         container
-        justifyContent="center"
         spacing={1}
         style={{ marginBottom: marginBottom }}
+        sx={{
+          justifyContent: 'center',
+        }}
       >
         <Grid item xs={xs} sm={sm} md={md} lg={lg}>
           <Paper

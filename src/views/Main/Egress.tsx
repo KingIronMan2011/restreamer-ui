@@ -148,22 +148,32 @@ export default function Egress({
       <Grid item xs={12}>
         <Stack
           direction="row"
-          justifyContent="space-between"
-          alignItems="center"
           spacing={0}
+          sx={{
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
         >
           <Stack
             className="egress-left"
             direction="row"
-            alignItems="center"
             spacing={0}
+            sx={{
+              alignItems: 'center',
+            }}
           >
             <IconButton size="small" className="egress-left">
               {egress_icon}
             </IconButton>
             <Typography className="egress-name">{egress_name}</Typography>
           </Stack>
-          <Stack direction="row" alignItems="center" spacing={0}>
+          <Stack
+            direction="row"
+            spacing={0}
+            sx={{
+              alignItems: 'center',
+            }}
+          >
             {service !== 'player' && (
               <Switch
                 checked={checked}

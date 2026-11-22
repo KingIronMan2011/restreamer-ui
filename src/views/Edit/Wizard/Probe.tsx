@@ -11,12 +11,23 @@ export default function Probe({ onAbort = () => {} }: any) {
   return (
     <Paper xs={12} md={5} marginBottom="6em" className="PaperM">
       <PaperHeader spacing={2} variant="h1" onAbort={onAbort} />
-      <Grid container justifyContent="center" spacing={2} textAlign="center">
+      <Grid
+        container
+        spacing={2}
+        sx={{
+          justifyContent: 'center',
+          textAlign: 'center',
+        }}
+      >
         <Grid item xs={12}>
           <CircularProgress color="inherit" />
         </Grid>
         <Grid item xs={12}>
-          <Typography textAlign="center">
+          <Typography
+            sx={{
+              textAlign: 'center',
+            }}
+          >
             <Trans>Please wait. Probe stream data ...</Trans>
           </Typography>
         </Grid>

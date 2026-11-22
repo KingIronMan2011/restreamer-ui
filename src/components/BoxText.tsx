@@ -53,9 +53,6 @@ export default function Component({
   return (
     <Stack
       direction="column"
-      justifyContent={justifyContent}
-      alignItems={alignItems}
-      textAlign={textAlign}
       spacing={1}
       className={
         color === 'dark'
@@ -67,6 +64,11 @@ export default function Component({
               : classes.light
       }
       style={style}
+      sx={{
+        justifyContent: justifyContent,
+        alignItems: alignItems,
+        textAlign: textAlign,
+      }}
     >
       {children}
     </Stack>

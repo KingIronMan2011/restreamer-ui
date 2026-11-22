@@ -63,10 +63,12 @@ export default function VideoJS({
     <Grid
       container
       direction="column"
-      justifyContent="center"
-      alignItems="center"
       spacing={2}
       style={{ position: 'absolute', inset: 0 }}
+      sx={{
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
     >
       <LiveVideoPlayer poster={options.poster}>
         <LiveVideoSkin
