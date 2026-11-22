@@ -47,7 +47,7 @@ msgstr "7 (+ fragmented MP4 格式)"
 #: src/views/Edit/index.tsx:874
 #: src/views/Edit/Profile.tsx:677
 #: src/views/Edit/Wizard/Abort.tsx:21
-#: src/views/Publication/Edit.tsx:768
+#: src/views/Publication/Edit.tsx:783
 #: src/views/Settings.tsx:2818
 #: src/views/Settings.tsx:2845
 msgid "Abort"
@@ -78,12 +78,12 @@ msgstr ""
 msgid "Add new channel"
 msgstr "添加新频道"
 
-#: src/views/Publication/Add.tsx:442
+#: src/views/Publication/Add.tsx:458
 msgid "Add Publication"
 msgstr "添加串流输出"
 
 #. placeholder {0}: service.name
-#: src/views/Publication/Add.tsx:445
+#: src/views/Publication/Add.tsx:461
 msgid "Add: {0}"
 msgstr "添加：{0}"
 
@@ -95,9 +95,9 @@ msgstr ""
 msgid "Additional channels to display on the playersite."
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:981
-#: src/views/Edit/Wizard/Sources/Network.tsx:77
-#: src/views/Publication/Services/Azure.tsx:122
+#: src/views/Edit/Sources/Network.tsx:964
+#: src/views/Edit/Wizard/Sources/Network.tsx:72
+#: src/views/Publication/Services/Azure.tsx:123
 #: src/views/Publication/Services/Brightcove.tsx:122
 #: src/views/Publication/Services/Core.tsx:268
 #: src/views/Publication/Services/DASH.tsx:223
@@ -107,9 +107,9 @@ msgstr ""
 #: src/views/Publication/Services/Linkedin.tsx:122
 #: src/views/Publication/Services/MPEGTS.tsx:213
 #: src/views/Publication/Services/Red5.tsx:151
-#: src/views/Publication/Services/RTMP.tsx:191
+#: src/views/Publication/Services/RTMP.tsx:192
 #: src/views/Publication/Services/RTSP.tsx:176
-#: src/views/Publication/Services/SRT.tsx:194
+#: src/views/Publication/Services/SRT.tsx:195
 #: src/views/Publication/Services/UDP.tsx:161
 #: src/views/Publication/Services/WOWZA.tsx:167
 #: src/views/Settings.tsx:1609
@@ -128,10 +128,10 @@ msgstr "HTTP请求监听的地址。"
 msgid "Address to listen on for HTTPS requests."
 msgstr "HTTPS请求监听地址。"
 
-#: src/views/Edit/Sources/Network.tsx:1334
-#: src/views/Edit/Sources/Network.tsx:1469
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:147
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:147
+#: src/views/Edit/Sources/Network.tsx:1319
+#: src/views/Edit/Sources/Network.tsx:1454
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:143
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:143
 msgid "Address:"
 msgstr "地址"
 
@@ -143,15 +143,15 @@ msgstr "根据喜好调整发布站点的颜色和背景。"
 msgid "Advanced monitoring"
 msgstr "高级监控"
 
-#: src/views/Edit/Sources/Network.tsx:617
+#: src/views/Edit/Sources/Network.tsx:604
 #: src/views/Publication/Services/DASH.tsx:254
 #: src/views/Publication/Services/HLS.tsx:249
 #: src/views/Publication/Services/Icecast.tsx:221
 #: src/views/Publication/Services/Image2.tsx:170
 #: src/views/Publication/Services/MPEGTS.tsx:226
-#: src/views/Publication/Services/RTMP.tsx:213
+#: src/views/Publication/Services/RTMP.tsx:216
 #: src/views/Publication/Services/RTSP.tsx:207
-#: src/views/Publication/Services/SRT.tsx:215
+#: src/views/Publication/Services/SRT.tsx:218
 #: src/views/Publication/Services/UDP.tsx:173
 msgid "Advanced settings"
 msgstr "高级设置"
@@ -169,7 +169,7 @@ msgstr "AirPlay"
 msgid "Alerting by email"
 msgstr "邮件通知"
 
-#: src/views/Publication/Add.tsx:470
+#: src/views/Publication/Add.tsx:486
 msgid "All"
 msgstr "全部"
 
@@ -189,7 +189,7 @@ msgstr "允许所有来源"
 msgid "Allow counting how many viewers the stream has."
 msgstr "允许统计媒体流播放量。"
 
-#: src/views/Edit/Sources/ALSA.tsx:190
+#: src/views/Edit/Sources/ALSA.tsx:185
 msgid "ALSA"
 msgstr "ALSA"
 
@@ -219,16 +219,16 @@ msgstr "Application"
 msgid "Are you sure you want to abort the wizard?"
 msgstr "确定要终止向导吗？"
 
-#: src/views/Publication/Add.tsx:644
+#: src/views/Publication/Add.tsx:661
 msgid "Audio"
 msgstr "音频"
 
-#: src/views/Edit/Sources/ALSA.tsx:135
-#: src/views/Edit/Sources/AVFoundation.tsx:173
+#: src/views/Edit/Sources/ALSA.tsx:130
+#: src/views/Edit/Sources/AVFoundation.tsx:170
 msgid "Audio device"
 msgstr "音频设备"
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:134
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:130
 msgid "Audio Device"
 msgstr "音频设备"
 
@@ -239,7 +239,7 @@ msgstr "来自设备的音频"
 
 #: src/views/Edit/Profile.tsx:697
 #: src/views/Edit/ProfileSummary.tsx:92
-#: src/views/Publication/Edit.tsx:688
+#: src/views/Publication/Edit.tsx:703
 msgid "Audio settings"
 msgstr "音频设置"
 
@@ -284,11 +284,11 @@ msgstr "自动播放"
 msgid "Available"
 msgstr "可用的"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:260
+#: src/views/Edit/Sources/AVFoundation.tsx:257
 msgid "AVFoundation"
 msgstr "AVFoundation"
 
-#: src/views/Edit/Sources/Network.tsx:886
+#: src/views/Edit/Sources/Network.tsx:873
 msgid "avoid_negative_ts"
 msgstr "avoid_negative_ts"
 
@@ -299,7 +299,7 @@ msgstr "avoid_negative_ts"
 #: src/views/Edit/Wizard/Metadata.tsx:49
 #: src/views/Edit/Wizard/Video.tsx:104
 #: src/views/Edit/Wizard/VideoProfile.tsx:107
-#: src/views/Publication/Add.tsx:686
+#: src/views/Publication/Add.tsx:703
 msgid "Back"
 msgstr "返回"
 
@@ -399,19 +399,19 @@ msgstr "缓存时间（秒）"
 msgid "Cache types"
 msgstr "缓存类型"
 
-#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:231
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:225
 msgid "Capture buffer"
 msgstr "捕获缓冲区"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:241
+#: src/views/Edit/Sources/AVFoundation.tsx:238
 msgid "Capture clicks"
 msgstr "捕获点击"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:234
+#: src/views/Edit/Sources/AVFoundation.tsx:231
 msgid "Capture cursor"
 msgstr "捕获指针"
 
-#: src/views/Edit/Sources/Channel.tsx:140
+#: src/views/Edit/Sources/Channel.tsx:138
 msgid "Channel"
 msgstr ""
 
@@ -420,7 +420,7 @@ msgstr ""
 msgid "Channel \"{0}\" saved"
 msgstr "已保存频道 \"{0}\""
 
-#: src/views/Edit/Sources/ALSA.tsx:162
+#: src/views/Edit/Sources/ALSA.tsx:157
 msgid "Channels"
 msgstr "频道"
 
@@ -428,7 +428,7 @@ msgstr "频道"
 msgid "Check for updates"
 msgstr "检查更新"
 
-#: src/views/Publication/Add.tsx:372
+#: src/views/Publication/Add.tsx:388
 msgid "Check the requirements"
 msgstr "检查"
 
@@ -440,22 +440,22 @@ msgstr "选择一个视频流"
 msgid "Choose an audio stream"
 msgstr "选择一个音频流"
 
-#: src/views/Edit/Sources/Channel.tsx:86
+#: src/views/Edit/Sources/Channel.tsx:84
 msgid "Choose an input channel ..."
 msgstr ""
 
-#: src/views/Edit/Sources/ALSA.tsx:108
+#: src/views/Edit/Sources/ALSA.tsx:103
 #: src/views/Edit/Sources/Framebuffer.tsx:94
-#: src/views/Edit/Sources/Raspicam.tsx:104
-#: src/views/Edit/Sources/V4L.tsx:104
+#: src/views/Edit/Sources/Raspicam.tsx:102
+#: src/views/Edit/Sources/V4L.tsx:102
 #: src/views/Edit/Sources/X11grab.tsx:157
 msgid "Choose an input device ..."
 msgstr "选择一个输入设备 ..."
 
-#: src/views/Edit/Sources/Network.tsx:1291
-#: src/views/Edit/Sources/Network.tsx:1426
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:111
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:111
+#: src/views/Edit/Sources/Network.tsx:1276
+#: src/views/Edit/Sources/Network.tsx:1411
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:107
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:107
 msgid "Choose an input stream ..."
 msgstr "选择输入流 ..."
 
@@ -486,9 +486,9 @@ msgstr "块"
 #: src/components/modals/Hint.tsx:212
 #: src/views/Edit/index.tsx:806
 #: src/views/Playersite.tsx:891
-#: src/views/Publication/Add.tsx:492
-#: src/views/Publication/Add.tsx:679
-#: src/views/Publication/Edit.tsx:718
+#: src/views/Publication/Add.tsx:508
+#: src/views/Publication/Add.tsx:696
+#: src/views/Publication/Edit.tsx:733
 #: src/views/Publication/Player.tsx:649
 #: src/views/Settings.tsx:2739
 msgid "Close"
@@ -528,7 +528,7 @@ msgstr ""
 msgid "Connect"
 msgstr "连接"
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:191
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:187
 msgid "Connected device"
 msgstr "已连接的设备"
 
@@ -554,7 +554,7 @@ msgstr "连接到 Restreamer Core 失败，原因可能是 mixed content。"
 msgid "Constant frame rate (CFR)"
 msgstr "固定帧率（CFR）"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:209
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:203
 msgid "Constant Quantizer Mode (-1 to 255)."
 msgstr "常数量化器模式（-1 至 255）。"
 
@@ -568,7 +568,7 @@ msgstr "内容"
 msgid "Content URL"
 msgstr "内容 URL"
 
-#: src/views/Edit/Sources/Network.tsx:868
+#: src/views/Edit/Sources/Network.tsx:855
 msgid "copyts"
 msgstr "copyts"
 
@@ -592,7 +592,7 @@ msgstr "CPU 使用限制，单位为百分比（0-100%），0 表示无限制。
 msgid "Creative Commons"
 msgstr "创作许可"
 
-#: src/components/coders/Encoders/audio/opus.tsx:81
+#: src/components/coders/Encoders/audio/opus.tsx:67
 #: src/components/coders/settings/Audio.tsx:33
 #: src/components/coders/settings/Audio.tsx:120
 #: src/components/coders/settings/Audio.tsx:170
@@ -608,20 +608,20 @@ msgstr "创作许可"
 #: src/components/filters/audio/Resample.tsx:122
 #: src/components/filters/audio/Volume.tsx:57
 #: src/components/filters/video/Framerate.tsx:55
-#: src/views/Edit/Sources/ALSA.tsx:113
-#: src/views/Edit/Sources/AVFoundation.tsx:132
-#: src/views/Edit/Sources/AVFoundation.tsx:167
-#: src/views/Edit/Sources/V4L.tsx:110
+#: src/views/Edit/Sources/ALSA.tsx:108
+#: src/views/Edit/Sources/AVFoundation.tsx:129
+#: src/views/Edit/Sources/AVFoundation.tsx:164
+#: src/views/Edit/Sources/V4L.tsx:108
 #: src/views/Edit/Sources/X11grab.tsx:83
 #: src/views/Edit/Sources/X11grab.tsx:163
 msgid "Custom ..."
 msgstr "自定义 ..."
 
-#: src/views/Edit/Sources/ALSA.tsx:136
+#: src/views/Edit/Sources/ALSA.tsx:131
 msgid "Custom audio device"
 msgstr "自定义音频设备"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:174
+#: src/views/Edit/Sources/AVFoundation.tsx:171
 msgid "Custom audio index"
 msgstr "自定义音频索引"
 
@@ -634,7 +634,7 @@ msgstr "自定义比特率（kbit/s）"
 msgid "Custom code injection"
 msgstr "自定义代码注入"
 
-#: src/components/coders/Encoders/audio/opus.tsx:66
+#: src/components/coders/Encoders/audio/opus.tsx:52
 msgid "Custom delay"
 msgstr "自定义延迟"
 
@@ -674,27 +674,27 @@ msgstr "自定义采样率（Hz）"
 msgid "Custom scale"
 msgstr "自定义缩放"
 
-#: src/components/coders/Decoders/video/h264_cuvid.tsx:81
-#: src/components/coders/Decoders/video/hevc_cuvid.tsx:81
-#: src/components/coders/Decoders/video/mjpeg_cuvid.tsx:81
-#: src/components/coders/Decoders/video/mpeg1_cuvid.tsx:81
-#: src/components/coders/Decoders/video/mpeg2_cuvid.tsx:81
-#: src/components/coders/Decoders/video/mpeg4_cuvid.tsx:81
-#: src/components/coders/Decoders/video/vc1_cuvid.tsx:81
-#: src/components/coders/Decoders/video/vp8_cuvid.tsx:81
-#: src/components/coders/Decoders/video/vp9_cuvid.tsx:81
+#: src/components/coders/Decoders/video/h264_cuvid.tsx:75
+#: src/components/coders/Decoders/video/hevc_cuvid.tsx:75
+#: src/components/coders/Decoders/video/mjpeg_cuvid.tsx:75
+#: src/components/coders/Decoders/video/mpeg1_cuvid.tsx:75
+#: src/components/coders/Decoders/video/mpeg2_cuvid.tsx:75
+#: src/components/coders/Decoders/video/mpeg4_cuvid.tsx:75
+#: src/components/coders/Decoders/video/vc1_cuvid.tsx:75
+#: src/components/coders/Decoders/video/vp8_cuvid.tsx:75
+#: src/components/coders/Decoders/video/vp9_cuvid.tsx:75
 #: src/components/coders/settings/Video.tsx:156
 #: src/components/coders/settings/Video.tsx:204
 #: src/components/coders/settings/Video.tsx:245
 msgid "Custom size"
 msgstr "自定义尺寸"
 
-#: src/views/Edit/Sources/V4L.tsx:133
+#: src/views/Edit/Sources/V4L.tsx:131
 #: src/views/Edit/Sources/X11grab.tsx:186
 msgid "Custom video device"
 msgstr "自定义视频设备"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:139
+#: src/views/Edit/Sources/AVFoundation.tsx:136
 msgid "Custom video index"
 msgstr "自定义视频索引"
 
@@ -708,7 +708,7 @@ msgstr "已复制到剪贴板"
 msgid "Death color"
 msgstr "Death color"
 
-#: src/components/filters/audio/Volume.tsx:72
+#: src/components/filters/audio/Volume.tsx:68
 msgid "Decibels (dB)"
 msgstr "分贝（dB）"
 
@@ -717,10 +717,10 @@ msgstr "分贝（dB）"
 msgid "Decoder"
 msgstr "解码器"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:127
-#: src/views/Edit/Sources/AVFoundation.tsx:163
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:92
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:127
+#: src/views/Edit/Sources/AVFoundation.tsx:124
+#: src/views/Edit/Sources/AVFoundation.tsx:160
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:88
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:123
 #: src/views/Playersite.tsx:508
 #: src/views/Playersite.tsx:612
 #: src/views/Playersite.tsx:656
@@ -728,13 +728,13 @@ msgid "Default"
 msgstr "默认"
 
 #. placeholder {0}: 2500
-#: src/views/Edit/Sources/Network.tsx:802
+#: src/views/Edit/Sources/Network.tsx:789
 msgid "Default {0}"
 msgstr "默认 {0}"
 
 #. placeholder {0}: 5000000
 #. placeholder {1}: 5
-#: src/views/Edit/Sources/Network.tsx:842
+#: src/views/Edit/Sources/Network.tsx:829
 msgid "Default {0} ({1} seconds)"
 msgstr "默认 {0} （{1} 秒）"
 
@@ -754,23 +754,23 @@ msgstr "去隔行模式"
 msgid "Deinterlace parity"
 msgstr "去隔行校验"
 
-#: src/components/coders/Encoders/audio/opus.tsx:65
+#: src/components/coders/Encoders/audio/opus.tsx:51
 msgid "Delay"
 msgstr "延迟"
 
-#: src/views/Edit/Sources/ALSA.tsx:171
+#: src/views/Edit/Sources/ALSA.tsx:166
 msgid "Delay (ms)"
 msgstr "延迟（ms）"
 
 #: src/views/Edit/index.tsx:828
 #: src/views/Edit/index.tsx:883
 #: src/views/Playersite.tsx:537
-#: src/views/Publication/Edit.tsx:737
-#: src/views/Publication/Edit.tsx:777
+#: src/views/Publication/Edit.tsx:752
+#: src/views/Publication/Edit.tsx:792
 msgid "Delete"
 msgstr "删除"
 
-#: src/views/Publication/Edit.tsx:782
+#: src/views/Publication/Edit.tsx:797
 msgid "Deleting a publication service cannot be reversed. The publication stops immediately."
 msgstr "删除串流输出服务无法撤消。串流输出立即停止。"
 
@@ -834,7 +834,7 @@ msgstr "确定要立刻重启应用吗？"
 msgid "Do you want to delete \"{0}\"?"
 msgstr "确定要删除 \"{0}\" 吗？"
 
-#: src/views/Publication/Edit.tsx:761
+#: src/views/Publication/Edit.tsx:776
 msgid "Do you want to delete {title}?"
 msgstr "确定要删除 {title} 吗？"
 
@@ -853,9 +853,9 @@ msgstr "文档"
 #: src/views/Publication/Services/Icecast.tsx:299
 #: src/views/Publication/Services/Image2.tsx:226
 #: src/views/Publication/Services/MPEGTS.tsx:507
-#: src/views/Publication/Services/RTMP.tsx:350
+#: src/views/Publication/Services/RTMP.tsx:353
 #: src/views/Publication/Services/RTSP.tsx:305
-#: src/views/Publication/Services/SRT.tsx:597
+#: src/views/Publication/Services/SRT.tsx:602
 #: src/views/Publication/Services/UDP.tsx:329
 msgid "Documentation"
 msgstr "文档"
@@ -884,7 +884,7 @@ msgstr "编辑"
 msgid "Edit the audio and video sources for the live stream. Add a description, and set your desired content license."
 msgstr "编辑直播流的音频和视频源。添加描述，并设置您想要的内容许可。"
 
-#: src/views/Publication/Edit.tsx:488
+#: src/views/Publication/Edit.tsx:502
 msgid "Edit: {title}"
 msgstr "编辑：{title}"
 
@@ -936,8 +936,8 @@ msgstr "现在启用"
 msgid "Enable primary stream"
 msgstr "启用主媒体流"
 
-#: src/views/Edit/Sources/Network.tsx:1270
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:92
+#: src/views/Edit/Sources/Network.tsx:1255
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:88
 msgid "Enable RTMP server ..."
 msgstr "启用 RTMP 服务 ..."
 
@@ -949,8 +949,8 @@ msgstr "启用 RTMPS 传输"
 msgid "Enable snapshots"
 msgstr "允许快照"
 
-#: src/views/Edit/Sources/Network.tsx:1405
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:92
+#: src/views/Edit/Sources/Network.tsx:1390
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:88
 msgid "Enable SRT server ..."
 msgstr "启用 SRT 服务器 ..."
 
@@ -967,14 +967,14 @@ msgid "Encoder"
 msgstr "编码器"
 
 #: src/views/Edit/Summary.tsx:95
-#: src/views/Publication/Add.tsx:606
-#: src/views/Publication/Edit.tsx:650
+#: src/views/Publication/Add.tsx:623
+#: src/views/Publication/Edit.tsx:665
 msgid "Encoding"
 msgstr "编码"
 
 #: src/views/Publication/Services/HLS.tsx:558
-#: src/views/Publication/Services/RTMP.tsx:312
-#: src/views/Publication/Services/SRT.tsx:522
+#: src/views/Publication/Services/RTMP.tsx:315
+#: src/views/Publication/Services/SRT.tsx:525
 msgid "Encryption"
 msgstr "加密"
 
@@ -994,8 +994,8 @@ msgstr ""
 msgid "Enter password"
 msgstr "输入密码"
 
-#: src/views/Edit/Sources/Network.tsx:974
-#: src/views/Edit/Wizard/Sources/Network.tsx:70
+#: src/views/Edit/Sources/Network.tsx:957
+#: src/views/Edit/Wizard/Sources/Network.tsx:65
 msgid "Enter the address of your network source:"
 msgstr "输入网络源地址："
 
@@ -1060,12 +1060,12 @@ msgstr "扩展底栏"
 msgid "Extend header"
 msgstr "扩展顶栏"
 
-#: src/views/Edit/Sources/Network.tsx:914
+#: src/views/Edit/Sources/Network.tsx:897
 msgid "Extention settings"
 msgstr ""
 
 #. placeholder {0}: err.message
-#: src/views/Publication/Add.tsx:273
+#: src/views/Publication/Add.tsx:289
 msgid "Failed to create publication service ({0})"
 msgstr "创建串流输出服务失败（{0}）"
 
@@ -1096,7 +1096,7 @@ msgid "Failed to store player size setting."
 msgstr "保存播放器尺寸设置失败。"
 
 #. placeholder {0}: err.message
-#: src/views/Publication/Edit.tsx:325
+#: src/views/Publication/Edit.tsx:339
 msgid "Failed to store publication service ({0})"
 msgstr "保存串流输出服务失败（{0}）"
 
@@ -1132,9 +1132,9 @@ msgstr "验证媒体源失败。请检查地址。"
 msgid "FFmpeg"
 msgstr "FFmpeg"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:201
-#: src/views/Edit/Sources/SDP.tsx:182
-#: src/views/Edit/Sources/VideoLoop.tsx:209
+#: src/views/Edit/Sources/AudioLoop.tsx:200
+#: src/views/Edit/Sources/SDP.tsx:175
+#: src/views/Edit/Sources/VideoLoop.tsx:208
 msgid "File path"
 msgstr "文件路径"
 
@@ -1167,11 +1167,11 @@ msgstr "For Javascripts."
 msgid "For Stylesheets."
 msgstr "For Stylesheets."
 
-#: src/views/Edit/Sources/Network.tsx:692
+#: src/views/Edit/Sources/Network.tsx:679
 msgid "Force input framerate"
 msgstr "强制输入帧率"
 
-#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:223
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:217
 msgid "Force key frames"
 msgstr "强制帧率"
 
@@ -1198,7 +1198,7 @@ msgstr "帧缓冲"
 
 #: src/components/coders/settings/Video.tsx:99
 #: src/components/filters/video/Framerate.tsx:36
-#: src/views/Edit/Sources/Network.tsx:705
+#: src/views/Edit/Sources/Network.tsx:692
 msgid "Framerate"
 msgstr "帧率"
 
@@ -1216,18 +1216,18 @@ msgstr "频率（Hz）"
 
 #: src/views/Edit/index.tsx:513
 #: src/views/Edit/index.tsx:539
-#: src/views/Edit/Sources/Network.tsx:758
+#: src/views/Edit/Sources/Network.tsx:745
 #: src/views/Playersite.tsx:312
 #: src/views/Playersite.tsx:350
-#: src/views/Publication/Add.tsx:510
-#: src/views/Publication/Edit.tsx:505
+#: src/views/Publication/Add.tsx:526
+#: src/views/Publication/Edit.tsx:519
 #: src/views/Publication/Services/DASH.tsx:261
 #: src/views/Publication/Services/HLS.tsx:256
 #: src/views/Publication/Services/Icecast.tsx:228
 #: src/views/Publication/Services/Image2.tsx:177
-#: src/views/Publication/Services/RTMP.tsx:220
+#: src/views/Publication/Services/RTMP.tsx:223
 #: src/views/Publication/Services/RTSP.tsx:214
-#: src/views/Publication/Services/SRT.tsx:222
+#: src/views/Publication/Services/SRT.tsx:225
 #: src/views/Settings.tsx:1336
 #: src/views/Settings.tsx:1410
 msgid "General"
@@ -1238,13 +1238,13 @@ msgstr "常规"
 #: src/views/Publication/Services/Facebook.tsx:134
 #: src/views/Publication/Services/Facebook.tsx:162
 #: src/views/Publication/Services/Instagram.tsx:105
-#: src/views/Publication/Services/Kick.tsx:134
+#: src/views/Publication/Services/Kick.tsx:133
 #: src/views/Publication/Services/MediaNetwork.tsx:101
 #: src/views/Publication/Services/NimoTv.tsx:133
 #: src/views/Publication/Services/PeerTube.tsx:128
 #: src/views/Publication/Services/Restream.tsx:157
-#: src/views/Publication/Services/Rumble.tsx:134
-#: src/views/Publication/Services/TikTok.tsx:134
+#: src/views/Publication/Services/Rumble.tsx:133
+#: src/views/Publication/Services/TikTok.tsx:133
 #: src/views/Publication/Services/Trovo.tsx:99
 #: src/views/Publication/Services/Twitch.tsx:237
 #: src/views/Publication/Services/Twitter.tsx:226
@@ -1265,8 +1265,8 @@ msgstr "Google Analytics Tracker Name"
 msgid "GPU"
 msgstr ""
 
-#: src/views/Edit/Sources/V4L.tsx:183
-#: src/views/Edit/Wizard/Sources/V4L.tsx:157
+#: src/views/Edit/Sources/V4L.tsx:181
+#: src/views/Edit/Wizard/Sources/V4L.tsx:153
 msgid "Hardware device"
 msgstr "硬件设备"
 
@@ -1306,7 +1306,7 @@ msgstr "HLS 服务器"
 msgid "HLS statistic for the In-memory storage"
 msgstr "内存存储器的HLS统计"
 
-#: src/components/filters/video/HFlip.tsx:68
+#: src/components/filters/video/HFlip.tsx:58
 msgid "Horizontal Flip"
 msgstr "水平翻转"
 
@@ -1314,7 +1314,7 @@ msgstr "水平翻转"
 msgid "Hosted Restreamer interface"
 msgstr "托管的 Restreamer 接口"
 
-#: src/views/Edit/Sources/Network.tsx:682
+#: src/views/Edit/Sources/Network.tsx:669
 msgid "HTTP and HTTPS"
 msgstr "HTTP 和 HTTPS"
 
@@ -1383,7 +1383,7 @@ msgstr "In-memory"
 msgid "In-memory storage"
 msgstr "In-memory 存储"
 
-#: src/views/Publication/Add.tsx:369
+#: src/views/Publication/Add.tsx:385
 msgid "Incompatible"
 msgstr "不兼容"
 
@@ -1412,10 +1412,10 @@ msgstr "注入 3"
 msgid "Inject 4"
 msgstr "注入 4"
 
-#: src/views/Edit/Sources/Network.tsx:1315
-#: src/views/Edit/Sources/Network.tsx:1450
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:128
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:128
+#: src/views/Edit/Sources/Network.tsx:1300
+#: src/views/Edit/Sources/Network.tsx:1435
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:124
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:124
 msgid "Input stream"
 msgstr "输入流"
 
@@ -1423,7 +1423,7 @@ msgstr "输入流"
 msgid "Instance domain"
 msgstr "实例域名"
 
-#: src/views/Edit/Sources/Network.tsx:673
+#: src/views/Edit/Sources/Network.tsx:660
 msgid "Internal SRT latency in milliseconds."
 msgstr ""
 
@@ -1446,7 +1446,7 @@ msgstr "kbit/s"
 msgid "Keyframe interval (seconds)"
 msgstr "关键帧间隔（秒）"
 
-#: src/views/Edit/Sources/Network.tsx:668
+#: src/views/Edit/Sources/Network.tsx:655
 msgid "Latency (milliseconds)"
 msgstr ""
 
@@ -1484,8 +1484,8 @@ msgid "Life color"
 msgstr "Life color"
 
 #: src/views/Edit/index.tsx:737
-#: src/views/Publication/Add.tsx:567
-#: src/views/Publication/Edit.tsx:562
+#: src/views/Publication/Add.tsx:584
+#: src/views/Publication/Edit.tsx:577
 msgid "Limits"
 msgstr "限制"
 
@@ -1506,7 +1506,7 @@ msgstr "链接"
 msgid "Link, mouseover"
 msgstr "链接，鼠标悬停时"
 
-#: src/views/Edit/Sources/Network.tsx:739
+#: src/views/Edit/Sources/Network.tsx:726
 msgid "List of additional HTTP headers, one per line."
 msgstr ""
 
@@ -1526,7 +1526,7 @@ msgstr "以 CIDR 表示法表示的 IP 范围列表，例如 127.0.0.1/32，统�
 msgid "List size (segments)"
 msgstr "列表大小（segments）"
 
-#: src/views/Edit/Sources/Network.tsx:922
+#: src/views/Edit/Sources/Network.tsx:905
 msgid "Live stabilization"
 msgstr ""
 
@@ -1608,12 +1608,12 @@ msgstr "图标"
 msgid "Logout"
 msgstr "退出登录"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:255
-#: src/views/Edit/Sources/VideoLoop.tsx:263
+#: src/views/Edit/Sources/AudioLoop.tsx:254
+#: src/views/Edit/Sources/VideoLoop.tsx:262
 msgid "Loop"
 msgstr "循环"
 
-#: src/components/filters/audio/Loudnorm.tsx:69
+#: src/components/filters/audio/Loudnorm.tsx:59
 msgid "Loudness Normalization"
 msgstr "响度归一化"
 
@@ -1678,7 +1678,7 @@ msgstr "允许占用硬盘的最大字节数。0 表示无限制。"
 msgid "Maximum bandwidth Mbit/s"
 msgstr "最大带宽 Mbit/s"
 
-#: src/components/coders/Encoders/audio/opus.tsx:96
+#: src/components/coders/Encoders/audio/opus.tsx:82
 msgid "Maximum delay in milliseconds."
 msgstr "最大延迟毫秒数。"
 
@@ -1741,7 +1741,7 @@ msgstr "元数据"
 
 #. placeholder {0}: 32
 #. placeholder {1}: 5000000
-#: src/views/Edit/Sources/Network.tsx:785
+#: src/views/Edit/Sources/Network.tsx:772
 #: src/views/Edit/Sources/X11grab.tsx:225
 msgid "Mininum {0}, default {1}"
 msgstr "最小 {0}，默认 {1}"
@@ -1809,8 +1809,8 @@ msgstr "模板名称。如果名称已存在，则覆盖已有模板。"
 msgid "Network"
 msgstr "网络"
 
-#: src/views/Edit/Sources/Network.tsx:1621
-#: src/views/Edit/Wizard/Sources/Network.tsx:143
+#: src/views/Edit/Sources/Network.tsx:1636
+#: src/views/Edit/Wizard/Sources/Network.tsx:138
 msgid "Network source"
 msgstr "网络源"
 
@@ -1833,7 +1833,7 @@ msgstr "下一步：视频设置"
 msgid "No"
 msgstr "否"
 
-#: src/views/Edit/Sources/NoAudio.tsx:42
+#: src/views/Edit/Sources/NoAudio.tsx:37
 #: src/views/Edit/Wizard/Audio.tsx:158
 msgid "No audio"
 msgstr "无音频"
@@ -1846,8 +1846,8 @@ msgstr "没有可用的音频流"
 msgid "No H.264 Stream availabe."
 msgstr ""
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:86
-#: src/views/Edit/Wizard/Sources/V4L.tsx:114
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:82
+#: src/views/Edit/Wizard/Sources/V4L.tsx:110
 msgid "No input device available"
 msgstr "没有可用的输入设备"
 
@@ -1893,10 +1893,10 @@ msgid "Noise"
 msgstr "噪音"
 
 #: src/components/filters/video/Scale.tsx:44
-#: src/views/Edit/Sources/AVFoundation.tsx:159
+#: src/views/Edit/Sources/AVFoundation.tsx:156
 #: src/views/Edit/Summary.tsx:29
 #: src/views/Edit/Summary.tsx:109
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:120
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:116
 msgid "None"
 msgstr "无"
 
@@ -1918,21 +1918,21 @@ msgstr "每个进程保存日志的行数。"
 msgid "Number of seconds the limits are allowed to be exceeded."
 msgstr "允许超过限制的秒数。"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:257
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:251
 msgid "Number of tiles columns to encode with."
 msgstr "要编码的瓷砖列数。"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:225
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:219
 msgid "Number of tiles encode with."
 msgstr "编码瓦片数。"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:241
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:235
 msgid "Number of tiles rows to encode with."
 msgstr "要编码的瓦片行数。"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:240
-#: src/views/Edit/Sources/SDP.tsx:221
-#: src/views/Edit/Sources/VideoLoop.tsx:248
+#: src/views/Edit/Sources/AudioLoop.tsx:239
+#: src/views/Edit/Sources/SDP.tsx:214
+#: src/views/Edit/Sources/VideoLoop.tsx:247
 #: src/views/Playersite.tsx:922
 #: src/views/Publication/Player.tsx:688
 msgid "OK"
@@ -1946,7 +1946,7 @@ msgstr "每行一个来源，例如 http://www.example.com"
 msgid "Open"
 msgstr "打开"
 
-#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:239
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:233
 msgid "Output buffer"
 msgstr "输出缓冲区"
 
@@ -1967,12 +1967,12 @@ msgstr "SRT 加密的密码。"
 msgid "Passphrase must be between 10 and 79 characters long"
 msgstr "密码长度必须介于 10 和 79 之间"
 
-#: src/views/Publication/Edit.tsx:655
+#: src/views/Publication/Edit.tsx:670
 msgid "Passthrough (copy) should only be disabled if necessary. Each encoding requires additional CPU/GPU resources."
 msgstr "仅在必要时才应禁用直通（复制）。每种编码都需要额外的 CPU/GPU 资源。"
 
-#: src/views/Edit/Sources/Network.tsx:1041
-#: src/views/Edit/Wizard/Sources/Network.tsx:124
+#: src/views/Edit/Sources/Network.tsx:1026
+#: src/views/Edit/Wizard/Sources/Network.tsx:119
 #: src/views/Login.tsx:312
 #: src/views/Publication/Services/Akamai.tsx:157
 #: src/views/Publication/Services/DaCast.tsx:196
@@ -1991,8 +1991,8 @@ msgstr "密码"
 msgid "Password for authorization."
 msgstr "用于身份验证密码。"
 
-#: src/views/Edit/Sources/Network.tsx:1046
-#: src/views/Edit/Wizard/Sources/Network.tsx:130
+#: src/views/Edit/Sources/Network.tsx:1031
+#: src/views/Edit/Wizard/Sources/Network.tsx:125
 msgid "Password for the device."
 msgstr "设备密码。"
 
@@ -2020,7 +2020,7 @@ msgstr ""
 msgid "Plan: <0>Starter</0>"
 msgstr "计划：<0>起步</0>"
 
-#: src/views/Publication/Add.tsx:473
+#: src/views/Publication/Add.tsx:489
 msgid "Platforms"
 msgstr "直播平台"
 
@@ -2113,15 +2113,15 @@ msgstr "请输入您的电子邮件地址以表示同意 Let's Encrypt CA 的服
 msgid "Please get in touch with the operator of the service and check what happens."
 msgstr "请与该服务的运营商联系并检查发生了什么。"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:115
-#: src/views/Edit/Sources/SDP.tsx:101
-#: src/views/Edit/Sources/VideoLoop.tsx:123
+#: src/views/Edit/Sources/AudioLoop.tsx:114
+#: src/views/Edit/Sources/SDP.tsx:63
+#: src/views/Edit/Sources/VideoLoop.tsx:122
 #: src/views/Playersite.tsx:176
 #: src/views/Publication/Player.tsx:207
 msgid "Please select a file to upload."
 msgstr "请选择要上传的文件。"
 
-#: src/views/Publication/Add.tsx:611
+#: src/views/Publication/Add.tsx:628
 msgid "Please use \"Passthrough (copy)\" if possible. Encoding requires additional CPU/GPU resources."
 msgstr "请尽可能使用 \"直通（复制）\"。编码需要额外的 CPU/GPU 资源。"
 
@@ -2165,19 +2165,19 @@ msgstr "主媒体流"
 msgid "Primary stream key"
 msgstr "主线路 key"
 
-#: src/views/Edit/Sources/ALSA.tsx:178
-#: src/views/Edit/Sources/AudioLoop.tsx:227
-#: src/views/Edit/Sources/AVFoundation.tsx:248
-#: src/views/Edit/Sources/Channel.tsx:128
+#: src/views/Edit/Sources/ALSA.tsx:173
+#: src/views/Edit/Sources/AudioLoop.tsx:226
+#: src/views/Edit/Sources/AVFoundation.tsx:245
+#: src/views/Edit/Sources/Channel.tsx:126
 #: src/views/Edit/Sources/Framebuffer.tsx:135
-#: src/views/Edit/Sources/Network.tsx:1066
-#: src/views/Edit/Sources/Network.tsx:1223
-#: src/views/Edit/Sources/Network.tsx:1355
-#: src/views/Edit/Sources/Network.tsx:1490
-#: src/views/Edit/Sources/Raspicam.tsx:168
-#: src/views/Edit/Sources/SDP.tsx:208
-#: src/views/Edit/Sources/V4L.tsx:171
-#: src/views/Edit/Sources/VideoLoop.tsx:235
+#: src/views/Edit/Sources/Network.tsx:1051
+#: src/views/Edit/Sources/Network.tsx:1208
+#: src/views/Edit/Sources/Network.tsx:1340
+#: src/views/Edit/Sources/Network.tsx:1475
+#: src/views/Edit/Sources/Raspicam.tsx:166
+#: src/views/Edit/Sources/SDP.tsx:201
+#: src/views/Edit/Sources/V4L.tsx:169
+#: src/views/Edit/Sources/VideoLoop.tsx:234
 #: src/views/Edit/Sources/VirtualAudio.tsx:208
 #: src/views/Edit/Sources/VirtualVideo.tsx:257
 #: src/views/Edit/Sources/X11grab.tsx:284
@@ -2185,27 +2185,27 @@ msgid "Probe"
 msgstr "检测媒体流信息"
 
 #: src/views/Edit/index.tsx:723
-#: src/views/Publication/Add.tsx:553
-#: src/views/Publication/Edit.tsx:548
+#: src/views/Publication/Add.tsx:570
+#: src/views/Publication/Edit.tsx:563
 msgid "Process"
 msgstr "串流进程"
 
-#: src/views/Publication/Add.tsx:520
-#: src/views/Publication/Edit.tsx:515
+#: src/views/Publication/Add.tsx:536
+#: src/views/Publication/Edit.tsx:529
 msgid "Process control"
 msgstr "进程控制"
 
 #: src/views/Main/index.tsx:689
 #: src/views/Main/index.tsx:717
-#: src/views/Publication/Edit.tsx:605
-#: src/views/Publication/Edit.tsx:746
+#: src/views/Publication/Edit.tsx:620
+#: src/views/Publication/Edit.tsx:761
 msgid "Process details"
 msgstr "进程详情"
 
 #: src/views/Main/index.tsx:698
 #: src/views/Main/index.tsx:725
-#: src/views/Publication/Edit.tsx:613
-#: src/views/Publication/Edit.tsx:754
+#: src/views/Publication/Edit.tsx:628
+#: src/views/Publication/Edit.tsx:769
 msgid "Process report"
 msgstr "进程报告"
 
@@ -2225,24 +2225,24 @@ msgstr "串流进程和控制"
 msgid "Profile"
 msgstr "Profile"
 
-#: src/views/Edit/Sources/Network.tsx:927
+#: src/views/Edit/Sources/Network.tsx:910
 msgid "Protect: None"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:933
+#: src/views/Edit/Sources/Network.tsx:916
 msgid "Protect: Video and audio channel"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:930
+#: src/views/Edit/Sources/Network.tsx:913
 msgid "Protect: Video channel"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:1135
+#: src/views/Edit/Sources/Network.tsx:1120
 #: src/views/Publication/Services/Akamai.tsx:172
 #: src/views/Publication/Services/Akamai.tsx:229
-#: src/views/Publication/Services/Azure.tsx:105
+#: src/views/Publication/Services/Azure.tsx:106
 #: src/views/Publication/Services/Brightcove.tsx:106
-#: src/views/Publication/Services/CDN77.tsx:108
+#: src/views/Publication/Services/CDN77.tsx:109
 #: src/views/Publication/Services/Core.tsx:263
 #: src/views/Publication/Services/DaCast.tsx:146
 #: src/views/Publication/Services/DaCast.tsx:236
@@ -2252,18 +2252,18 @@ msgstr ""
 #: src/views/Publication/Services/Image2.tsx:140
 #: src/views/Publication/Services/Linkedin.tsx:105
 #: src/views/Publication/Services/MPEGTS.tsx:198
-#: src/views/Publication/Services/Owncast.tsx:107
+#: src/views/Publication/Services/Owncast.tsx:108
 #: src/views/Publication/Services/Red5.tsx:133
-#: src/views/Publication/Services/RTMP.tsx:169
+#: src/views/Publication/Services/RTMP.tsx:170
 #: src/views/Publication/Services/RTSP.tsx:161
-#: src/views/Publication/Services/SRT.tsx:179
-#: src/views/Publication/Services/Telegram.tsx:93
+#: src/views/Publication/Services/SRT.tsx:180
+#: src/views/Publication/Services/Telegram.tsx:94
 #: src/views/Publication/Services/UDP.tsx:145
 #: src/views/Publication/Services/WOWZA.tsx:149
 msgid "Protocol"
 msgstr "协议"
 
-#: src/views/Publication/Add.tsx:479
+#: src/views/Publication/Add.tsx:495
 msgid "Protocols"
 msgstr "串流协议"
 
@@ -2271,8 +2271,8 @@ msgstr "串流协议"
 msgid "Public domain/s"
 msgstr "公有域名"
 
-#: src/views/Publication/Edit.tsx:129
-#: src/views/Publication/Edit.tsx:143
+#: src/views/Publication/Edit.tsx:133
+#: src/views/Publication/Edit.tsx:147
 msgid "Publication service not found"
 msgstr "找不到串流输出服务"
 
@@ -2284,21 +2284,21 @@ msgstr "已保存发布页设置"
 msgid "Publications"
 msgstr "串流输出"
 
-#: src/views/Edit/Sources/Network.tsx:1588
+#: src/views/Edit/Sources/Network.tsx:1602
 msgid "Pull Mode"
 msgstr "拉取模式"
 
-#: src/views/Edit/Sources/Network.tsx:1584
+#: src/views/Edit/Sources/Network.tsx:1598
 msgid "Pull or recieve the data:"
 msgstr "拉取或接收数据："
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:201
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:195
 msgid "QP"
 msgstr "QP"
 
-#: src/components/coders/Encoders/video/h264_vaapi.tsx:181
-#: src/components/coders/Encoders/video/hevc_vaapi.tsx:183
-#: src/components/coders/Encoders/video/vp9_vaapi.tsx:183
+#: src/components/coders/Encoders/video/h264_vaapi.tsx:175
+#: src/components/coders/Encoders/video/hevc_vaapi.tsx:177
+#: src/components/coders/Encoders/video/vp9_vaapi.tsx:177
 #: src/components/Progress.tsx:189
 msgid "Quality"
 msgstr "质量"
@@ -2307,8 +2307,8 @@ msgstr "质量"
 msgid "Quality and compression efficiency vs speed trade-off."
 msgstr ""
 
-#: src/views/Edit/Sources/Raspicam.tsx:180
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:122
+#: src/views/Edit/Sources/Raspicam.tsx:178
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:117
 msgid "Raspberry Pi camera"
 msgstr "树莓派相机"
 
@@ -2325,15 +2325,15 @@ msgstr "帧率控制"
 msgid "Ratio"
 msgstr "比率"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:264
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:258
 msgid "rav1e Parameters"
 msgstr "rav1e 参数"
 
-#: src/views/Edit/Sources/Network.tsx:687
+#: src/views/Edit/Sources/Network.tsx:674
 msgid "Read input at native speed"
 msgstr "以原始速率读取输入"
 
-#: src/views/Edit/Sources/Network.tsx:1589
+#: src/views/Edit/Sources/Network.tsx:1603
 msgid "Receive Mode"
 msgstr "接收模式"
 
@@ -2363,18 +2363,18 @@ msgstr "在最后 {RETRIES} 秒内重连 Restreamer Core 失败。"
 msgid "Reconnecting to Restreamer Core failed."
 msgstr "重连 Restreamer Core 失败。"
 
-#: src/views/Edit/Sources/ALSA.tsx:148
-#: src/views/Edit/Sources/AVFoundation.tsx:207
-#: src/views/Edit/Sources/Channel.tsx:120
-#: src/views/Edit/Sources/Network.tsx:1327
-#: src/views/Edit/Sources/Network.tsx:1462
-#: src/views/Edit/Sources/Raspicam.tsx:142
-#: src/views/Edit/Sources/V4L.tsx:145
+#: src/views/Edit/Sources/ALSA.tsx:143
+#: src/views/Edit/Sources/AVFoundation.tsx:204
+#: src/views/Edit/Sources/Channel.tsx:118
+#: src/views/Edit/Sources/Network.tsx:1312
+#: src/views/Edit/Sources/Network.tsx:1447
+#: src/views/Edit/Sources/Raspicam.tsx:140
+#: src/views/Edit/Sources/V4L.tsx:143
 #: src/views/Edit/Sources/X11grab.tsx:198
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:176
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:140
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:140
-#: src/views/Edit/Wizard/Sources/V4L.tsx:144
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:172
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:136
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:136
+#: src/views/Edit/Wizard/Sources/V4L.tsx:140
 msgid "Refresh"
 msgstr "刷新"
 
@@ -2416,15 +2416,15 @@ msgstr "重置图标"
 msgid "Reset poster"
 msgstr "重置海报"
 
-#: src/components/coders/Decoders/video/h264_cuvid.tsx:80
-#: src/components/coders/Decoders/video/hevc_cuvid.tsx:80
-#: src/components/coders/Decoders/video/mjpeg_cuvid.tsx:80
-#: src/components/coders/Decoders/video/mpeg1_cuvid.tsx:80
-#: src/components/coders/Decoders/video/mpeg2_cuvid.tsx:80
-#: src/components/coders/Decoders/video/mpeg4_cuvid.tsx:80
-#: src/components/coders/Decoders/video/vc1_cuvid.tsx:80
-#: src/components/coders/Decoders/video/vp8_cuvid.tsx:80
-#: src/components/coders/Decoders/video/vp9_cuvid.tsx:80
+#: src/components/coders/Decoders/video/h264_cuvid.tsx:74
+#: src/components/coders/Decoders/video/hevc_cuvid.tsx:74
+#: src/components/coders/Decoders/video/mjpeg_cuvid.tsx:74
+#: src/components/coders/Decoders/video/mpeg1_cuvid.tsx:74
+#: src/components/coders/Decoders/video/mpeg2_cuvid.tsx:74
+#: src/components/coders/Decoders/video/mpeg4_cuvid.tsx:74
+#: src/components/coders/Decoders/video/vc1_cuvid.tsx:74
+#: src/components/coders/Decoders/video/vp8_cuvid.tsx:74
+#: src/components/coders/Decoders/video/vp9_cuvid.tsx:74
 msgid "Resize"
 msgstr ""
 
@@ -2497,13 +2497,13 @@ msgstr "RTMP 输出"
 msgid "RTMP Port"
 msgstr "RTMP 端口"
 
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:170
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:166
 #: src/views/Settings.tsx:2351
 msgid "RTMP server"
 msgstr "RTMP 服务器"
 
-#: src/views/Edit/Sources/Network.tsx:1259
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:81
+#: src/views/Edit/Sources/Network.tsx:1244
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:77
 msgid "RTMP server is not enabled"
 msgstr "未启用 RTMP 服务器"
 
@@ -2527,7 +2527,7 @@ msgstr "RTMPS 服务器"
 msgid "RTMPS server listen address."
 msgstr "RTMP 服务器监听地址。"
 
-#: src/views/Edit/Sources/Network.tsx:626
+#: src/views/Edit/Sources/Network.tsx:613
 msgid "RTSP"
 msgstr "RTSP"
 
@@ -2544,8 +2544,8 @@ msgstr "采样"
 #: src/views/Edit/index.tsx:821
 #: src/views/Edit/Wizard/License.tsx:55
 #: src/views/Playersite.tsx:897
-#: src/views/Publication/Add.tsx:697
-#: src/views/Publication/Edit.tsx:729
+#: src/views/Publication/Add.tsx:714
+#: src/views/Publication/Edit.tsx:744
 #: src/views/Publication/Player.tsx:655
 #: src/views/Settings.tsx:2749
 msgid "Save"
@@ -2562,7 +2562,7 @@ msgstr "缩放"
 msgid "Scale size"
 msgstr "缩放尺寸"
 
-#: src/views/Edit/Sources/SDP.tsx:236
+#: src/views/Edit/Sources/SDP.tsx:229
 msgid "SDP"
 msgstr ""
 
@@ -2607,19 +2607,19 @@ msgstr "该值所示时间过后，片段将在下一个关键帧被剪切。推
 msgid "Segmentation"
 msgstr "分片"
 
-#: src/views/Edit/Sources/Channel.tsx:103
+#: src/views/Edit/Sources/Channel.tsx:101
 msgid "Select a channel:"
 msgstr ""
 
-#: src/views/Edit/Sources/ALSA.tsx:129
-#: src/views/Edit/Sources/AVFoundation.tsx:195
+#: src/views/Edit/Sources/ALSA.tsx:124
+#: src/views/Edit/Sources/AVFoundation.tsx:192
 #: src/views/Edit/Sources/Framebuffer.tsx:122
-#: src/views/Edit/Sources/Raspicam.tsx:131
-#: src/views/Edit/Sources/V4L.tsx:126
+#: src/views/Edit/Sources/Raspicam.tsx:129
+#: src/views/Edit/Sources/V4L.tsx:124
 #: src/views/Edit/Sources/X11grab.tsx:179
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:146
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:108
-#: src/views/Edit/Wizard/Sources/V4L.tsx:133
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:142
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:103
+#: src/views/Edit/Wizard/Sources/V4L.tsx:129
 msgid "Select a device:"
 msgstr "选择一个设备："
 
@@ -2627,8 +2627,8 @@ msgstr "选择一个设备："
 msgid "Select audio source:"
 msgstr "选择音频源："
 
-#: src/views/Publication/Add.tsx:592
-#: src/views/Publication/Edit.tsx:636
+#: src/views/Publication/Add.tsx:609
+#: src/views/Publication/Edit.tsx:651
 msgid "Select RTMP or SRT (if enabled) for less latency."
 msgstr "选择 RTMP 或 SRT （如果可用）以减少延迟。"
 
@@ -2668,14 +2668,14 @@ msgstr "选项"
 msgid "Send anonymous metrics (helps us for future development)"
 msgstr "发送匿名数据（用于未来的开发）"
 
-#: src/views/Edit/Sources/Network.tsx:1297
-#: src/views/Edit/Sources/Network.tsx:1432
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:117
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:117
+#: src/views/Edit/Sources/Network.tsx:1282
+#: src/views/Edit/Sources/Network.tsx:1417
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:113
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:113
 msgid "Send stream to address ..."
 msgstr "将数据流发送至地址..."
 
-#: src/views/Edit/Sources/Network.tsx:1207
+#: src/views/Edit/Sources/Network.tsx:1192
 #: src/views/Edit/Wizard/Sources/InternalHLS.tsx:54
 msgid "Send stream to this address:"
 msgstr "将媒体流发送到该地址："
@@ -2688,11 +2688,11 @@ msgstr "发送视频到帧缓冲"
 msgid "Server"
 msgstr "服务器"
 
-#: src/views/Publication/Services/Kick.tsx:101
-#: src/views/Publication/Services/Owncast.tsx:124
-#: src/views/Publication/Services/Rumble.tsx:101
-#: src/views/Publication/Services/Telegram.tsx:110
-#: src/views/Publication/Services/TikTok.tsx:101
+#: src/views/Publication/Services/Kick.tsx:102
+#: src/views/Publication/Services/Owncast.tsx:125
+#: src/views/Publication/Services/Rumble.tsx:102
+#: src/views/Publication/Services/Telegram.tsx:111
+#: src/views/Publication/Services/TikTok.tsx:102
 msgid "Server URL"
 msgstr "服务器 URL"
 
@@ -2703,8 +2703,8 @@ msgstr "服务器 URL"
 msgid "Service"
 msgstr "服务"
 
-#: src/views/Publication/Add.tsx:533
-#: src/views/Publication/Edit.tsx:528
+#: src/views/Publication/Add.tsx:549
+#: src/views/Publication/Edit.tsx:542
 msgid "Service name"
 msgstr "服务名称"
 
@@ -2716,7 +2716,7 @@ msgstr "用于监视的服务 token。"
 msgid "Sessions"
 msgstr "会话"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:269
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:263
 msgid "Set the rav1e configuration using a :-separated list of key=value parameters."
 msgstr "使用以 :分隔的 key=value 参数列表设置 rav1e 配置。"
 
@@ -2793,26 +2793,26 @@ msgstr "截图"
 msgid "Social-login (OAuth2, 2FA)"
 msgstr "通过社交媒体登录（OAuth2, 2FA）"
 
-#: src/views/Edit/Sources/Network.tsx:650
+#: src/views/Edit/Sources/Network.tsx:637
 msgid "Socket timeout (microseconds)"
 msgstr "Socket 超时（毫秒）"
 
-#: src/views/Publication/Add.tsx:476
+#: src/views/Publication/Add.tsx:492
 msgid "Software"
 msgstr "软件"
 
 #: src/components/controls/Source.tsx:86
 #: src/views/Edit/Sources/VirtualAudio.tsx:100
 #: src/views/Edit/Sources/VirtualVideo.tsx:124
-#: src/views/Publication/Add.tsx:587
-#: src/views/Publication/Edit.tsx:631
+#: src/views/Publication/Add.tsx:604
+#: src/views/Publication/Edit.tsx:646
 msgid "Source"
 msgstr "媒体源"
 
-#: src/views/Publication/Add.tsx:515
-#: src/views/Publication/Add.tsx:582
-#: src/views/Publication/Edit.tsx:510
-#: src/views/Publication/Edit.tsx:626
+#: src/views/Publication/Add.tsx:531
+#: src/views/Publication/Add.tsx:599
+#: src/views/Publication/Edit.tsx:524
+#: src/views/Publication/Edit.tsx:641
 msgid "Source & Encoding"
 msgstr "媒体源 & 编码"
 
@@ -2824,7 +2824,7 @@ msgstr "速度"
 msgid "Speed Preset"
 msgstr "速度预设"
 
-#: src/views/Edit/Sources/Network.tsx:661
+#: src/views/Edit/Sources/Network.tsx:648
 #: src/views/Main/index.tsx:631
 #: src/views/Settings.tsx:1384
 #: src/views/Settings.tsx:2488
@@ -2835,13 +2835,13 @@ msgstr "SRT"
 msgid "SRT output"
 msgstr "SRT 输出"
 
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:170
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:166
 #: src/views/Settings.tsx:2493
 msgid "SRT server"
 msgstr "SRT 服务器"
 
-#: src/views/Edit/Sources/Network.tsx:1394
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:81
+#: src/views/Edit/Sources/Network.tsx:1379
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:77
 msgid "SRT server is not enabled"
 msgstr "SRT 服务器不可用"
 
@@ -2857,7 +2857,7 @@ msgstr "SRT 用于发布和播放的 token。该 token 是 streamed 参数 'toke
 msgid "Stale timeout (seconds)"
 msgstr "Stale 超时（秒）"
 
-#: src/views/Edit/Sources/Network.tsx:873
+#: src/views/Edit/Sources/Network.tsx:860
 msgid "start_at_zero"
 msgstr "start_at_zero"
 
@@ -2886,24 +2886,24 @@ msgstr "媒体流"
 msgid "Stream ID"
 msgstr ""
 
-#: src/views/Publication/Services/CDN77.tsx:141
+#: src/views/Publication/Services/CDN77.tsx:144
 #: src/views/Publication/Services/DaCast.tsx:212
 #: src/views/Publication/Services/Dailymotion.tsx:126
 #: src/views/Publication/Services/DLive.tsx:87
 #: src/views/Publication/Services/Dummy.tsx:301
 #: src/views/Publication/Services/EarthCam.tsx:106
 #: src/views/Publication/Services/Instagram.tsx:92
-#: src/views/Publication/Services/Kick.tsx:122
+#: src/views/Publication/Services/Kick.tsx:119
 #: src/views/Publication/Services/Livepush.tsx:130
 #: src/views/Publication/Services/MediaNetwork.tsx:89
 #: src/views/Publication/Services/NimoTv.tsx:121
-#: src/views/Publication/Services/Owncast.tsx:134
+#: src/views/Publication/Services/Owncast.tsx:137
 #: src/views/Publication/Services/PeerTube.tsx:111
 #: src/views/Publication/Services/PicartoTv.tsx:125
 #: src/views/Publication/Services/Restream.tsx:145
-#: src/views/Publication/Services/Rumble.tsx:122
-#: src/views/Publication/Services/Telegram.tsx:120
-#: src/views/Publication/Services/TikTok.tsx:122
+#: src/views/Publication/Services/Rumble.tsx:119
+#: src/views/Publication/Services/Telegram.tsx:123
+#: src/views/Publication/Services/TikTok.tsx:119
 #: src/views/Publication/Services/Trovo.tsx:87
 #: src/views/Publication/Services/Twitch.tsx:225
 #: src/views/Publication/Services/Twitter.tsx:214
@@ -2913,7 +2913,7 @@ msgstr ""
 msgid "Stream key"
 msgstr "Stream key"
 
-#: src/views/Publication/Services/RTMP.tsx:200
+#: src/views/Publication/Services/RTMP.tsx:203
 msgid "Stream Key"
 msgstr "流钥匙"
 
@@ -2932,7 +2932,7 @@ msgid "Stream source for publication service (experimental)."
 msgstr "发布服务的媒体源（实验性）。"
 
 #: src/views/Publication/Services/Akamai.tsx:189
-#: src/views/Publication/Services/CDN77.tsx:125
+#: src/views/Publication/Services/CDN77.tsx:126
 #: src/views/Publication/Services/Dailymotion.tsx:99
 msgid "Stream URL"
 msgstr "媒体流 URL"
@@ -2945,8 +2945,8 @@ msgstr ""
 msgid "Support datarhei Restreamer"
 msgstr "赞助 datarhei Restreamer"
 
-#: src/views/Edit/Sources/Network.tsx:987
-#: src/views/Edit/Wizard/Sources/Network.tsx:83
+#: src/views/Edit/Sources/Network.tsx:972
+#: src/views/Edit/Wizard/Sources/Network.tsx:78
 msgid "Supports HTTP (HLS, DASH), RTP, RTSP, RTMP, SRT and more."
 msgstr "支持 HTTP (HLS, DASH), RT, RTSP, RTMP, SRT 以及其他。"
 
@@ -2993,7 +2993,7 @@ msgstr "生成音频流的幅度（0.0 - 1.0）"
 msgid "The application is using an older version of the settings."
 msgstr "该应用使用旧版本的设置。"
 
-#: src/views/Edit/Sources/Network.tsx:1109
+#: src/views/Edit/Sources/Network.tsx:1094
 msgid "The available FFmpeg binary doesn't support any of the required protocols."
 msgstr "可用的 FFmpeg 不支持任何一种要求的协议。"
 
@@ -3025,11 +3025,11 @@ msgstr ""
 
 #: src/views/Edit/index.tsx:340
 #: src/views/Edit/Wizard/index.tsx:192
-#: src/views/Publication/Edit.tsx:306
+#: src/views/Publication/Edit.tsx:320
 msgid "The input profile is not complete. Please define a video and audio source."
 msgstr "输入设置不完整。请设置视频源和音频源。"
 
-#: src/views/Publication/Add.tsx:254
+#: src/views/Publication/Add.tsx:270
 msgid "The input profile is not complete. Please define a video and/or audio source."
 msgstr "输入配置文件不完整。请定义视频和/或音频源。"
 
@@ -3055,21 +3055,21 @@ msgid "The public reachable domain name of the host this Restreamer is running o
 msgstr "运行 Restreamer 主机的公网域名。用逗号分隔多个域名。"
 
 #. placeholder {0}: $settings.name
-#: src/views/Publication/Edit.tsx:382
+#: src/views/Publication/Edit.tsx:396
 msgid "The publication service \"{0}\" could not be deleted"
 msgstr "无法删除串流输出服务 \"{0}\""
 
 #. placeholder {0}: $settings.name
-#: src/views/Publication/Add.tsx:283
+#: src/views/Publication/Add.tsx:299
 msgid "The publication service \"{0}\" has been created"
 msgstr "已创建串流输出服务 \"{0}\""
 
 #. placeholder {0}: $settings.name
-#: src/views/Publication/Edit.tsx:393
+#: src/views/Publication/Edit.tsx:407
 msgid "The publication service \"{0}\" has been deleted"
 msgstr "已删除串流输出服务 \"{0}\""
 
-#: src/views/Publication/Add.tsx:280
+#: src/views/Publication/Add.tsx:296
 msgid "The publication service has been created"
 msgstr "已创建串流输出服务"
 
@@ -3082,9 +3082,9 @@ msgstr "RTMP 输出需要 RTMP 服务器。"
 msgid "The sample rate of the audio stream."
 msgstr "音频流采样率。"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:127
-#: src/views/Edit/Sources/SDP.tsx:113
-#: src/views/Edit/Sources/VideoLoop.tsx:135
+#: src/views/Edit/Sources/AudioLoop.tsx:126
+#: src/views/Edit/Sources/SDP.tsx:73
+#: src/views/Edit/Sources/VideoLoop.tsx:134
 #: src/views/Playersite.tsx:188
 #: src/views/Publication/Player.tsx:219
 msgid "The selected file is too big (<0/>). Only <1/> are allowed."
@@ -3092,16 +3092,16 @@ msgstr "所选文件太大 (<0/>)。只允许 <1/>。"
 
 #. placeholder {0}: err.actual
 #. placeholder {1}: err.allowed.join(', ')
-#: src/views/Edit/Sources/AudioLoop.tsx:119
-#: src/views/Edit/Sources/SDP.tsx:105
-#: src/views/Edit/Sources/VideoLoop.tsx:127
+#: src/views/Edit/Sources/AudioLoop.tsx:118
+#: src/views/Edit/Sources/SDP.tsx:66
+#: src/views/Edit/Sources/VideoLoop.tsx:126
 #: src/views/Playersite.tsx:180
 #: src/views/Publication/Player.tsx:211
 msgid "The selected file type ({0}) is not allowed. Allowed file types are {1}"
 msgstr "不允许使用所选文件类型（{0}）。允许的文件类型为 {1}"
 
 #. placeholder {0}: $settings.name
-#: src/views/Publication/Edit.tsx:337
+#: src/views/Publication/Edit.tsx:351
 msgid "The settings for \"{0}\" have been saved"
 msgstr "已保存 \"{0}\" 的设置"
 
@@ -3154,9 +3154,9 @@ msgid "There was an error connecting to Restreamer Core at {address}."
 msgstr ""
 
 #. placeholder {0}: err.message
-#: src/views/Edit/Sources/AudioLoop.tsx:136
-#: src/views/Edit/Sources/SDP.tsx:122
-#: src/views/Edit/Sources/VideoLoop.tsx:144
+#: src/views/Edit/Sources/AudioLoop.tsx:135
+#: src/views/Edit/Sources/SDP.tsx:80
+#: src/views/Edit/Sources/VideoLoop.tsx:143
 #: src/views/Playersite.tsx:197
 #: src/views/Publication/Player.tsx:228
 msgid "There was an error during upload: {0}"
@@ -3210,7 +3210,7 @@ msgstr "该许可证允许再利用者以任何媒体或格式分发、重新混
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
 msgstr "该许可证允许再利用者以任何媒体或格式分发、重新混合、改编和构建材料，只要注明创作者的署名即可。该许可证允许用于商业用途。如果您重新混合、改编或构建这些材料，您必须根据相同的条款许可修改后的材料。"
 
-#: src/views/Edit/Sources/Network.tsx:1004
+#: src/views/Edit/Sources/Network.tsx:989
 msgid "This protocol is unknown or not supported by the available FFmpeg binary."
 msgstr "该协议未知或不被当前可用的 FFmpeg 支持。"
 
@@ -3234,15 +3234,15 @@ msgstr "该版本的 UI 是兼容的。"
 msgid "Threshold (seconds)"
 msgstr "阈值（秒）"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:249
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:243
 msgid "Tile Columns"
 msgstr "瓷砖立柱"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:233
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:227
 msgid "Tile Rows"
 msgstr "瓷砖行"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:217
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:211
 msgid "Tiles"
 msgstr "瓷砖"
 
@@ -3250,7 +3250,7 @@ msgstr "瓷砖"
 msgid "Time until an inactive viewer connection is treated as closed."
 msgstr "超出该时间的不活动查看器连接将被视为已关闭。"
 
-#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:207
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:201
 msgid "To stabilize the system, increase the HLS segment length for the keyframe interval by 2-3 * (Processing and Control)."
 msgstr "为了稳定系统，将关键帧间隔的 HLS 段长度增加 2-3 *（处理和控制）。"
 
@@ -3395,7 +3395,7 @@ msgstr "将主媒体作为一个 RTMP 流与在 YouTube Studio 中生成的秘�
 msgid "Transmits your video stream with the required key, which was generated in Twitter Producer. You can find more information on seting up a live stream at Twitter's <0>Producer</0>."
 msgstr "将媒体流与在 Twitter Producer 中生成的秘钥传输。有关在 Twitter 的 Producer 中设置直播流的更多详细信息，请访问<0>这里</0>。"
 
-#: src/views/Edit/Sources/Network.tsx:632
+#: src/views/Edit/Sources/Network.tsx:619
 msgid "Transport"
 msgstr ""
 
@@ -3407,7 +3407,7 @@ msgstr ""
 msgid "Tune"
 msgstr "Tune"
 
-#: src/views/Edit/Wizard/Sources/Network.tsx:91
+#: src/views/Edit/Wizard/Sources/Network.tsx:86
 msgid "UDP transport"
 msgstr "UDP 传输"
 
@@ -3423,9 +3423,9 @@ msgstr "服务的唯一标识。"
 msgid "Unknown"
 msgstr "未知的"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:140
-#: src/views/Edit/Sources/SDP.tsx:126
-#: src/views/Edit/Sources/VideoLoop.tsx:148
+#: src/views/Edit/Sources/AudioLoop.tsx:139
+#: src/views/Edit/Sources/SDP.tsx:82
+#: src/views/Edit/Sources/VideoLoop.tsx:147
 #: src/views/Playersite.tsx:201
 #: src/views/Publication/Player.tsx:232
 msgid "Unknown upload error"
@@ -3439,9 +3439,9 @@ msgstr "未选中"
 msgid "Update details (Changelog)"
 msgstr "更新详情（Changelog）"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:213
-#: src/views/Edit/Sources/SDP.tsx:194
-#: src/views/Edit/Sources/VideoLoop.tsx:221
+#: src/views/Edit/Sources/AudioLoop.tsx:212
+#: src/views/Edit/Sources/SDP.tsx:187
+#: src/views/Edit/Sources/VideoLoop.tsx:220
 #: src/views/Playersite.tsx:545
 #: src/views/Playersite.tsx:578
 #: src/views/Playersite.tsx:730
@@ -3451,12 +3451,12 @@ msgid "Upload"
 msgstr "上传"
 
 #. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
-#: src/views/Edit/Sources/AudioLoop.tsx:185
+#: src/views/Edit/Sources/AudioLoop.tsx:184
 msgid "Upload an audio file ({0}) in order to loop it."
 msgstr "上传音频文件 ({0}) 以循环播放。"
 
 #. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
-#: src/views/Edit/Sources/VideoLoop.tsx:193
+#: src/views/Edit/Sources/VideoLoop.tsx:192
 msgid "Upload an image or video file ({0}) in order to loop it."
 msgstr "上传图片或视频文件 ({0}) 以循环播放。"
 
@@ -3465,7 +3465,7 @@ msgid "Upload image"
 msgstr ""
 
 #. placeholder {0}: fileTypes.map((t) => t.mimetype).join(', ')
-#: src/views/Edit/Sources/SDP.tsx:168
+#: src/views/Edit/Sources/SDP.tsx:161
 msgid "Upload SDP file ({0})."
 msgstr ""
 
@@ -3477,9 +3477,9 @@ msgstr ""
 msgid "Uploaded images are burned into this output. Arrange them from bottom to top. Leave a position empty to center the image."
 msgstr ""
 
-#: src/views/Edit/Sources/AudioLoop.tsx:217
-#: src/views/Edit/Sources/SDP.tsx:198
-#: src/views/Edit/Sources/VideoLoop.tsx:225
+#: src/views/Edit/Sources/AudioLoop.tsx:216
+#: src/views/Edit/Sources/SDP.tsx:191
+#: src/views/Edit/Sources/VideoLoop.tsx:224
 #: src/views/Playersite.tsx:582
 #: src/views/Playersite.tsx:734
 msgid "Uploading the file failed"
@@ -3519,7 +3519,7 @@ msgstr "使用您的版权并选择正确的图像许可。无论是对所有人
 msgid "Use your copyright and choose the right image licence. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
 msgstr "使用您的版权并选择正确的图像许可。无论是对所有人免费还是受到高度限制。简要讨论其他人可以用您的形象做什么。"
 
-#: src/views/Edit/Sources/Network.tsx:878
+#: src/views/Edit/Sources/Network.tsx:865
 msgid "use_wallclock_as_timestamps"
 msgstr "use_wallclock_as_timestamps"
 
@@ -3527,8 +3527,8 @@ msgstr "use_wallclock_as_timestamps"
 msgid "User registration"
 msgstr "用户注册"
 
-#: src/views/Edit/Sources/Network.tsx:1024
-#: src/views/Edit/Wizard/Sources/Network.tsx:106
+#: src/views/Edit/Sources/Network.tsx:1009
+#: src/views/Edit/Wizard/Sources/Network.tsx:101
 #: src/views/Login.tsx:302
 #: src/views/Publication/Services/DaCast.tsx:180
 #: src/views/Publication/Services/DASH.tsx:232
@@ -3546,12 +3546,12 @@ msgstr "用户名"
 msgid "Username for authorization."
 msgstr "用于身份认证的用户名。"
 
-#: src/views/Edit/Sources/Network.tsx:1029
-#: src/views/Edit/Wizard/Sources/Network.tsx:112
+#: src/views/Edit/Sources/Network.tsx:1014
+#: src/views/Edit/Wizard/Sources/Network.tsx:107
 msgid "Username for the device."
 msgstr "设备用户名。"
 
-#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:177
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:171
 msgid "V4L2_M2M is experimental."
 msgstr "V4L2_M2M 是实验性的。"
 
@@ -3563,11 +3563,11 @@ msgstr "可变帧率（VFR）"
 msgid "velvet"
 msgstr "天鹅绒"
 
-#: src/components/filters/video/VFlip.tsx:68
+#: src/components/filters/video/VFlip.tsx:58
 msgid "Vertical Flip"
 msgstr "垂直翻转"
 
-#: src/views/Publication/Add.tsx:619
+#: src/views/Publication/Add.tsx:636
 msgid "Video"
 msgstr "视频"
 
@@ -3575,14 +3575,14 @@ msgstr "视频"
 msgid "Video Codec"
 msgstr ""
 
-#: src/views/Edit/Sources/AVFoundation.tsx:138
-#: src/views/Edit/Sources/Channel.tsx:109
-#: src/views/Edit/Sources/Raspicam.tsx:111
-#: src/views/Edit/Sources/V4L.tsx:132
+#: src/views/Edit/Sources/AVFoundation.tsx:135
+#: src/views/Edit/Sources/Channel.tsx:107
+#: src/views/Edit/Sources/Raspicam.tsx:109
+#: src/views/Edit/Sources/V4L.tsx:130
 #: src/views/Edit/Sources/X11grab.tsx:185
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:99
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:96
-#: src/views/Edit/Wizard/Sources/V4L.tsx:121
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:95
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:91
+#: src/views/Edit/Wizard/Sources/V4L.tsx:117
 msgid "Video device"
 msgstr "视频设备"
 
@@ -3596,7 +3596,7 @@ msgstr ""
 
 #: src/views/Edit/Profile.tsx:533
 #: src/views/Edit/ProfileSummary.tsx:69
-#: src/views/Publication/Edit.tsx:663
+#: src/views/Publication/Edit.tsx:678
 msgid "Video settings"
 msgstr "视频设置"
 
@@ -3606,7 +3606,7 @@ msgstr "视频设置"
 msgid "Video setup"
 msgstr "视频设置"
 
-#: src/views/Edit/Sources/VideoAudio.tsx:42
+#: src/views/Edit/Sources/VideoAudio.tsx:37
 msgid "Video source"
 msgstr "视频源"
 
@@ -3634,7 +3634,7 @@ msgstr "音量"
 msgid "VPU ID"
 msgstr "VPU ID"
 
-#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:179
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:173
 msgid "We recommend OpenMAX IL for Raspberry PI (3/4) with a 32-bit operating system."
 msgstr "对于 Raspberry PI (3/4)，推荐使用 32 位操作系统的 OpenMAX IL。"
 
@@ -3695,7 +3695,7 @@ msgstr "配置已更改。请重启应用以使更改生效。要立刻重启吗
 msgid "You have to reconnect manually"
 msgstr "需要手动重连"
 
-#: src/views/Publication/Edit.tsx:577
+#: src/views/Publication/Edit.tsx:592
 msgid "You have unsaved changes. Please save them before you can control the service again."
 msgstr "有未保存的更改。请保存以再次管理服务。"
 

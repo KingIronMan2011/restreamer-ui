@@ -29,6 +29,7 @@ import PaperFooter from '../../components/PaperFooter';
 import PaperHeader from '../../components/PaperHeader';
 import TabPanel from '../../components/TabPanel';
 import TabsVerticalGrid from '../../components/TabsVerticalGrid';
+import { getPublicationSettingsErrors } from '../../lib/validation';
 import type { CoreSource } from '../../types/core';
 import H from '../../utils/help';
 import * as M from '../../utils/metadata';
@@ -62,6 +63,9 @@ export default function Add({ restreamer }: any) {
   const notify = React.useContext(NotifyContext);
   const [$service, setService] = React.useState('');
   const [$settings, setSettings] = React.useState(M.initEgressMetadata({}));
+  const [$validationErrors, setValidationErrors] = React.useState<
+    Record<string, string>
+  >({});
   const [$sources, setSources] = React.useState<CoreSource[]>([]);
   const [$localSources, setLocalSources] = React.useState<
     Record<string, any>[]
@@ -136,6 +140,8 @@ export default function Add({ restreamer }: any) {
   };
 
   const handleServiceSelect = (service: any) => () => {
+    setValidationErrors({});
+
     if (service.length !== 0) {
       const s = Services.Get(service);
       if (s === null) {
@@ -189,6 +195,7 @@ export default function Add({ restreamer }: any) {
       outputs: outputs,
       settings: settings,
     });
+    setValidationErrors(getPublicationSettingsErrors($service, settings));
   };
 
   const handleProcessing = (type: any) => (encoder: any, decoder: any) => {
@@ -237,6 +244,15 @@ export default function Add({ restreamer }: any) {
   };
 
   const handleServiceDone = async () => {
+    const validationErrors = getPublicationSettingsErrors(
+      $service,
+      $settings.settings,
+    );
+    setValidationErrors(validationErrors);
+    if (Object.keys(validationErrors).length !== 0) {
+      return;
+    }
+
     setSaving(true);
 
     const [global, inputs, outputs] = helper.createInputsOutputs(
@@ -538,6 +554,7 @@ export default function Add({ restreamer }: any) {
                     <Grid size={12}>
                       <ServiceControl
                         settings={$settings.settings}
+                        validationErrors={$validationErrors}
                         skills={serviceSkills}
                         metadata={$metadata}
                         streams={$settings.streams}

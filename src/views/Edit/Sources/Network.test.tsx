@@ -1,7 +1,7 @@
 import React from 'react';
 import { vi } from 'vitest';
 
-import { render, fireEvent, screen } from '../../../utils/testing';
+import { render, fireEvent, screen, waitFor } from '../../../utils/testing';
 import * as Network from './Network';
 
 const $skills_ffmpeg6 = {
@@ -149,6 +149,20 @@ test('source:network pull', async () => {
       `This protocol is unknown or not supported by the available FFmpeg binary.`,
     ),
   ).toBe(null);
+});
+
+test('source:network pull disables probing without an address', () => {
+  const onProbe = vi.fn();
+  render(
+    <Network.component
+      settings={{ mode: 'pull', address: '' }}
+      onProbe={onProbe}
+      knownDevices={[]}
+    />,
+  );
+
+  expect(screen.getByRole('button', { name: 'Probe' })).toBeDisabled();
+  expect(onProbe).not.toHaveBeenCalled();
 });
 
 const pullmatrix = {
@@ -500,7 +514,7 @@ test.each(pullmatrix.tests)(
     const button = getByRole('button', { name: 'Probe' });
     fireEvent.click(button, { bubbles: true });
 
-    expect($inputs.length).toBe(1);
+    await waitFor(() => expect($inputs.length).toBe(1));
     expect($inputs[0]).toStrictEqual(data.input);
   },
 );
@@ -661,7 +675,7 @@ test.each([
   ['SRT', 'srt', { id: 'srt-camera', name: 'SRT camera', media: 'srt' }],
 ])(
   'source:network enabled %s push refreshes and selects discovered streams',
-  (label, type, device) => {
+  async (label, type, device) => {
     let settings: any = { mode: 'push', push: { type, name: 'external' } };
     const onChange = (next: any) => {
       settings = next;
@@ -691,9 +705,11 @@ test.each([
     expect(settings.push.name).toBe(device.id);
     view.rerender(<Network.component {...props} settings={settings} />);
     fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
-    expect(onProbe).toHaveBeenCalledWith(
-      settings,
-      Network.func.createInputs(settings, $config, $skills_ffmpeg5),
+    await waitFor(() =>
+      expect(onProbe).toHaveBeenCalledWith(
+        settings,
+        Network.func.createInputs(settings, $config, $skills_ffmpeg5),
+      ),
     );
   },
 );
@@ -970,7 +986,7 @@ test.each(pushmatrix.tests as any[])(
     const button = getByRole('button', { name: 'Probe' });
     fireEvent.click(button, { bubbles: true });
 
-    expect($inputs.length).toBe(1);
+    await waitFor(() => expect($inputs.length).toBe(1));
     expect($inputs[0]).toStrictEqual(data.input);
   },
 );
@@ -1241,7 +1257,7 @@ test('source:network builds insecure RTMP, SRT, and HLS output addresses', () =>
   expect(Network.func.getSRT(config)).toContain('mode:publish');
 });
 
-test('source:network renders HLS push output and extension controls', () => {
+test('source:network renders HLS push output and extension controls', async () => {
   const onProbe = vi.fn();
   const onChange = vi.fn();
   const settings = { mode: 'push', push: { type: 'hls', name: 'external' } };
@@ -1275,12 +1291,14 @@ test('source:network renders HLS push output and extension controls', () => {
       extentions: expect.objectContaining({ liveguard: 'video' }),
     }),
   );
-  expect(onProbe).toHaveBeenCalledWith(
-    expect.objectContaining({
-      mode: 'push',
-      push: expect.objectContaining({ type: 'hls' }),
-    }),
-    Network.func.createInputs(onChange.mock.calls[0][0], config, skills),
+  await waitFor(() =>
+    expect(onProbe).toHaveBeenCalledWith(
+      expect.objectContaining({
+        mode: 'push',
+        push: expect.objectContaining({ type: 'hls' }),
+      }),
+      Network.func.createInputs(onChange.mock.calls[0][0], config, skills),
+    ),
   );
 });
 

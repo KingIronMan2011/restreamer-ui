@@ -30,6 +30,7 @@ import PaperHeader from '../../components/PaperHeader';
 import TabPanel from '../../components/TabPanel';
 import TabsVerticalGrid from '../../components/TabsVerticalGrid';
 import useInterval from '../../hooks/useInterval';
+import { getPublicationSettingsErrors } from '../../lib/validation';
 import type { CoreSource } from '../../types/core';
 import H from '../../utils/help';
 import * as M from '../../utils/metadata';
@@ -62,6 +63,9 @@ export default function Edit({ restreamer }: any) {
   const notify = React.useContext(NotifyContext);
   const [$ready, setReady] = React.useState(false);
   const [$settings, setSettings] = React.useState(M.getDefaultEgressMetadata());
+  const [$validationErrors, setValidationErrors] = React.useState<
+    Record<string, string>
+  >({});
   const [$sources, setSources] = React.useState<CoreSource[]>([]);
   const [$localSources, setLocalSources] = React.useState<
     Record<string, any>[]
@@ -237,6 +241,7 @@ export default function Edit({ restreamer }: any) {
       outputs: outputs,
       settings: settings,
     });
+    setValidationErrors(getPublicationSettingsErrors(_service, settings));
 
     setUnsavedChanges(true);
   };
@@ -289,6 +294,15 @@ export default function Edit({ restreamer }: any) {
   };
 
   const handleServiceDone = async () => {
+    const validationErrors = getPublicationSettingsErrors(
+      _service,
+      $settings.settings,
+    );
+    setValidationErrors(validationErrors);
+    if (Object.keys(validationErrors).length !== 0) {
+      return;
+    }
+
     setSaving(true);
 
     const [global, inputs, outputs] = helper.createInputsOutputs(
@@ -533,6 +547,7 @@ export default function Edit({ restreamer }: any) {
                 <Grid size={12}>
                   <ServiceControl
                     settings={$settings.settings}
+                    validationErrors={$validationErrors}
                     skills={$serviceSkills}
                     metadata={$metadata}
                     streams={$settings.streams}

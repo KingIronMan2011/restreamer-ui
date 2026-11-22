@@ -68,6 +68,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -101,12 +102,8 @@ function Service({
           label={<Trans>Server URL</Trans>}
           value={settings.server_url}
           onChange={handleChange('server_url')}
-          error={settings.server_url.includes('rtmps://') ? false : true}
-          helperText={
-            settings.server_url.includes('rtmps://')
-              ? false
-              : 'Please enter a valid RTMPS URL.'
-          }
+          error={Boolean(validationErrors.server_url)}
+          helperText={validationErrors.server_url}
         />
       </Grid>
       <Grid
@@ -122,6 +119,8 @@ function Service({
           label={<Trans>Stream key</Trans>}
           value={settings.stream_key}
           onChange={handleChange('stream_key')}
+          error={Boolean(validationErrors.stream_key)}
+          helperText={validationErrors.stream_key}
         />
       </Grid>
       <Grid

@@ -90,6 +90,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -190,6 +191,8 @@ function Service({
           type="url"
           label={<Trans>Address</Trans>}
           value={settings.address}
+          error={Boolean(validationErrors.address)}
+          helperText={validationErrors.address}
           onChange={handleChange('address')}
         />
       </Grid>

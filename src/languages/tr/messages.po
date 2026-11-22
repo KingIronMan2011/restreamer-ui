@@ -47,7 +47,7 @@ msgstr "7 (+ parçalanmış MP4 biçimi)"
 #: src/views/Edit/index.tsx:874
 #: src/views/Edit/Profile.tsx:677
 #: src/views/Edit/Wizard/Abort.tsx:21
-#: src/views/Publication/Edit.tsx:768
+#: src/views/Publication/Edit.tsx:783
 #: src/views/Settings.tsx:2818
 #: src/views/Settings.tsx:2845
 msgid "Abort"
@@ -78,12 +78,12 @@ msgstr ""
 msgid "Add new channel"
 msgstr "Yeni kanal ekle"
 
-#: src/views/Publication/Add.tsx:442
+#: src/views/Publication/Add.tsx:458
 msgid "Add Publication"
 msgstr "Yayın Ekle"
 
 #. placeholder {0}: service.name
-#: src/views/Publication/Add.tsx:445
+#: src/views/Publication/Add.tsx:461
 msgid "Add: {0}"
 msgstr "Ekle: {0}"
 
@@ -95,9 +95,9 @@ msgstr ""
 msgid "Additional channels to display on the playersite."
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:981
-#: src/views/Edit/Wizard/Sources/Network.tsx:77
-#: src/views/Publication/Services/Azure.tsx:122
+#: src/views/Edit/Sources/Network.tsx:964
+#: src/views/Edit/Wizard/Sources/Network.tsx:72
+#: src/views/Publication/Services/Azure.tsx:123
 #: src/views/Publication/Services/Brightcove.tsx:122
 #: src/views/Publication/Services/Core.tsx:268
 #: src/views/Publication/Services/DASH.tsx:223
@@ -107,9 +107,9 @@ msgstr ""
 #: src/views/Publication/Services/Linkedin.tsx:122
 #: src/views/Publication/Services/MPEGTS.tsx:213
 #: src/views/Publication/Services/Red5.tsx:151
-#: src/views/Publication/Services/RTMP.tsx:191
+#: src/views/Publication/Services/RTMP.tsx:192
 #: src/views/Publication/Services/RTSP.tsx:176
-#: src/views/Publication/Services/SRT.tsx:194
+#: src/views/Publication/Services/SRT.tsx:195
 #: src/views/Publication/Services/UDP.tsx:161
 #: src/views/Publication/Services/WOWZA.tsx:167
 #: src/views/Settings.tsx:1609
@@ -128,10 +128,10 @@ msgstr "HTTP istekleri için dinlenecek adres."
 msgid "Address to listen on for HTTPS requests."
 msgstr "HTTPS istekleri için dinlenecek adres."
 
-#: src/views/Edit/Sources/Network.tsx:1334
-#: src/views/Edit/Sources/Network.tsx:1469
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:147
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:147
+#: src/views/Edit/Sources/Network.tsx:1319
+#: src/views/Edit/Sources/Network.tsx:1454
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:143
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:143
 msgid "Address:"
 msgstr "Adres:"
 
@@ -143,15 +143,15 @@ msgstr "Yayın sitesi renklerini ve arka planını istediğiniz gibi ayarlayın.
 msgid "Advanced monitoring"
 msgstr "Gelişmiş izleme"
 
-#: src/views/Edit/Sources/Network.tsx:617
+#: src/views/Edit/Sources/Network.tsx:604
 #: src/views/Publication/Services/DASH.tsx:254
 #: src/views/Publication/Services/HLS.tsx:249
 #: src/views/Publication/Services/Icecast.tsx:221
 #: src/views/Publication/Services/Image2.tsx:170
 #: src/views/Publication/Services/MPEGTS.tsx:226
-#: src/views/Publication/Services/RTMP.tsx:213
+#: src/views/Publication/Services/RTMP.tsx:216
 #: src/views/Publication/Services/RTSP.tsx:207
-#: src/views/Publication/Services/SRT.tsx:215
+#: src/views/Publication/Services/SRT.tsx:218
 #: src/views/Publication/Services/UDP.tsx:173
 msgid "Advanced settings"
 msgstr "Gelişmiş ayarlar"
@@ -169,7 +169,7 @@ msgstr "AirPlay"
 msgid "Alerting by email"
 msgstr "E-posta ile uyarı"
 
-#: src/views/Publication/Add.tsx:470
+#: src/views/Publication/Add.tsx:486
 msgid "All"
 msgstr "Tümü"
 
@@ -189,7 +189,7 @@ msgstr "Tüm yönlendirenlere izin ver"
 msgid "Allow counting how many viewers the stream has."
 msgstr "Akışın kaç izleyicisi olduğunu saymaya izin verin."
 
-#: src/views/Edit/Sources/ALSA.tsx:190
+#: src/views/Edit/Sources/ALSA.tsx:185
 msgid "ALSA"
 msgstr "ALSA"
 
@@ -219,16 +219,16 @@ msgstr "Uygulama"
 msgid "Are you sure you want to abort the wizard?"
 msgstr "Sihirbazı iptal etmek istediğinizden emin misiniz?"
 
-#: src/views/Publication/Add.tsx:644
+#: src/views/Publication/Add.tsx:661
 msgid "Audio"
 msgstr "Ses"
 
-#: src/views/Edit/Sources/ALSA.tsx:135
-#: src/views/Edit/Sources/AVFoundation.tsx:173
+#: src/views/Edit/Sources/ALSA.tsx:130
+#: src/views/Edit/Sources/AVFoundation.tsx:170
 msgid "Audio device"
 msgstr "Ses cihazı"
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:134
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:130
 msgid "Audio Device"
 msgstr "Ses aygıtı"
 
@@ -239,7 +239,7 @@ msgstr "Cihazdan gelen ses"
 
 #: src/views/Edit/Profile.tsx:697
 #: src/views/Edit/ProfileSummary.tsx:92
-#: src/views/Publication/Edit.tsx:688
+#: src/views/Publication/Edit.tsx:703
 msgid "Audio settings"
 msgstr "Ses ayarları"
 
@@ -284,11 +284,11 @@ msgstr "Otomatik Oynatma"
 msgid "Available"
 msgstr "Mevcut"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:260
+#: src/views/Edit/Sources/AVFoundation.tsx:257
 msgid "AVFoundation"
 msgstr "AVFoundation"
 
-#: src/views/Edit/Sources/Network.tsx:886
+#: src/views/Edit/Sources/Network.tsx:873
 msgid "avoid_negative_ts"
 msgstr "avoid_negative_ts"
 
@@ -299,7 +299,7 @@ msgstr "avoid_negative_ts"
 #: src/views/Edit/Wizard/Metadata.tsx:49
 #: src/views/Edit/Wizard/Video.tsx:104
 #: src/views/Edit/Wizard/VideoProfile.tsx:107
-#: src/views/Publication/Add.tsx:686
+#: src/views/Publication/Add.tsx:703
 msgid "Back"
 msgstr "Geri"
 
@@ -399,19 +399,19 @@ msgstr "Önbellek süresi (Saniye)"
 msgid "Cache types"
 msgstr "Önbellek türleri"
 
-#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:231
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:225
 msgid "Capture buffer"
 msgstr "Tampon yakalama"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:241
+#: src/views/Edit/Sources/AVFoundation.tsx:238
 msgid "Capture clicks"
 msgstr "Tıklamaları yakalayın"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:234
+#: src/views/Edit/Sources/AVFoundation.tsx:231
 msgid "Capture cursor"
 msgstr "İmleci yakala"
 
-#: src/views/Edit/Sources/Channel.tsx:140
+#: src/views/Edit/Sources/Channel.tsx:138
 msgid "Channel"
 msgstr ""
 
@@ -420,7 +420,7 @@ msgstr ""
 msgid "Channel \"{0}\" saved"
 msgstr "Kanal \"{0}\" kaydedildi"
 
-#: src/views/Edit/Sources/ALSA.tsx:162
+#: src/views/Edit/Sources/ALSA.tsx:157
 msgid "Channels"
 msgstr "Kanallar"
 
@@ -428,7 +428,7 @@ msgstr "Kanallar"
 msgid "Check for updates"
 msgstr "Güncellemeleri kontrol edin"
 
-#: src/views/Publication/Add.tsx:372
+#: src/views/Publication/Add.tsx:388
 msgid "Check the requirements"
 msgstr "Gereksinimleri kontrol edin"
 
@@ -440,22 +440,22 @@ msgstr "Bir video akışı seçin"
 msgid "Choose an audio stream"
 msgstr "Bir ses akışı seçin"
 
-#: src/views/Edit/Sources/Channel.tsx:86
+#: src/views/Edit/Sources/Channel.tsx:84
 msgid "Choose an input channel ..."
 msgstr ""
 
-#: src/views/Edit/Sources/ALSA.tsx:108
+#: src/views/Edit/Sources/ALSA.tsx:103
 #: src/views/Edit/Sources/Framebuffer.tsx:94
-#: src/views/Edit/Sources/Raspicam.tsx:104
-#: src/views/Edit/Sources/V4L.tsx:104
+#: src/views/Edit/Sources/Raspicam.tsx:102
+#: src/views/Edit/Sources/V4L.tsx:102
 #: src/views/Edit/Sources/X11grab.tsx:157
 msgid "Choose an input device ..."
 msgstr "Bir giriş cihazı seçin ..."
 
-#: src/views/Edit/Sources/Network.tsx:1291
-#: src/views/Edit/Sources/Network.tsx:1426
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:111
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:111
+#: src/views/Edit/Sources/Network.tsx:1276
+#: src/views/Edit/Sources/Network.tsx:1411
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:107
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:107
 msgid "Choose an input stream ..."
 msgstr "Bir giriş akışı seçin ..."
 
@@ -486,9 +486,9 @@ msgstr "Chunk"
 #: src/components/modals/Hint.tsx:212
 #: src/views/Edit/index.tsx:806
 #: src/views/Playersite.tsx:891
-#: src/views/Publication/Add.tsx:492
-#: src/views/Publication/Add.tsx:679
-#: src/views/Publication/Edit.tsx:718
+#: src/views/Publication/Add.tsx:508
+#: src/views/Publication/Add.tsx:696
+#: src/views/Publication/Edit.tsx:733
 #: src/views/Publication/Player.tsx:649
 #: src/views/Settings.tsx:2739
 msgid "Close"
@@ -528,7 +528,7 @@ msgstr ""
 msgid "Connect"
 msgstr "Bağlan"
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:191
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:187
 msgid "Connected device"
 msgstr "Bağlı cihaz"
 
@@ -554,7 +554,7 @@ msgstr "Restreamer Core'a bağlanmak muhtemelen karışık içerik nedeniyle ba�
 msgid "Constant frame rate (CFR)"
 msgstr "Sabit kare hızı (CFR)"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:209
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:203
 msgid "Constant Quantizer Mode (-1 to 255)."
 msgstr "Sabit Quantizer Modu (-1 ila 255)."
 
@@ -568,7 +568,7 @@ msgstr "İçerik"
 msgid "Content URL"
 msgstr "İçerik URL'si"
 
-#: src/views/Edit/Sources/Network.tsx:868
+#: src/views/Edit/Sources/Network.tsx:855
 msgid "copyts"
 msgstr "copyts"
 
@@ -592,7 +592,7 @@ msgstr "CPU kullanım sınırı yüzde olarak (0-100%), sınırsız için 0."
 msgid "Creative Commons"
 msgstr "Creative Commons"
 
-#: src/components/coders/Encoders/audio/opus.tsx:81
+#: src/components/coders/Encoders/audio/opus.tsx:67
 #: src/components/coders/settings/Audio.tsx:33
 #: src/components/coders/settings/Audio.tsx:120
 #: src/components/coders/settings/Audio.tsx:170
@@ -608,20 +608,20 @@ msgstr "Creative Commons"
 #: src/components/filters/audio/Resample.tsx:122
 #: src/components/filters/audio/Volume.tsx:57
 #: src/components/filters/video/Framerate.tsx:55
-#: src/views/Edit/Sources/ALSA.tsx:113
-#: src/views/Edit/Sources/AVFoundation.tsx:132
-#: src/views/Edit/Sources/AVFoundation.tsx:167
-#: src/views/Edit/Sources/V4L.tsx:110
+#: src/views/Edit/Sources/ALSA.tsx:108
+#: src/views/Edit/Sources/AVFoundation.tsx:129
+#: src/views/Edit/Sources/AVFoundation.tsx:164
+#: src/views/Edit/Sources/V4L.tsx:108
 #: src/views/Edit/Sources/X11grab.tsx:83
 #: src/views/Edit/Sources/X11grab.tsx:163
 msgid "Custom ..."
 msgstr "Özel ..."
 
-#: src/views/Edit/Sources/ALSA.tsx:136
+#: src/views/Edit/Sources/ALSA.tsx:131
 msgid "Custom audio device"
 msgstr "Özel ses cihazı"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:174
+#: src/views/Edit/Sources/AVFoundation.tsx:171
 msgid "Custom audio index"
 msgstr "Özel ses dizini"
 
@@ -634,7 +634,7 @@ msgstr "Özel bit hızı (kbit/s)"
 msgid "Custom code injection"
 msgstr "Özel kod enjeksiyonu"
 
-#: src/components/coders/Encoders/audio/opus.tsx:66
+#: src/components/coders/Encoders/audio/opus.tsx:52
 msgid "Custom delay"
 msgstr "Özel gecikme"
 
@@ -674,27 +674,27 @@ msgstr "Özel örnekleme (Hz)"
 msgid "Custom scale"
 msgstr "Özel ölçek"
 
-#: src/components/coders/Decoders/video/h264_cuvid.tsx:81
-#: src/components/coders/Decoders/video/hevc_cuvid.tsx:81
-#: src/components/coders/Decoders/video/mjpeg_cuvid.tsx:81
-#: src/components/coders/Decoders/video/mpeg1_cuvid.tsx:81
-#: src/components/coders/Decoders/video/mpeg2_cuvid.tsx:81
-#: src/components/coders/Decoders/video/mpeg4_cuvid.tsx:81
-#: src/components/coders/Decoders/video/vc1_cuvid.tsx:81
-#: src/components/coders/Decoders/video/vp8_cuvid.tsx:81
-#: src/components/coders/Decoders/video/vp9_cuvid.tsx:81
+#: src/components/coders/Decoders/video/h264_cuvid.tsx:75
+#: src/components/coders/Decoders/video/hevc_cuvid.tsx:75
+#: src/components/coders/Decoders/video/mjpeg_cuvid.tsx:75
+#: src/components/coders/Decoders/video/mpeg1_cuvid.tsx:75
+#: src/components/coders/Decoders/video/mpeg2_cuvid.tsx:75
+#: src/components/coders/Decoders/video/mpeg4_cuvid.tsx:75
+#: src/components/coders/Decoders/video/vc1_cuvid.tsx:75
+#: src/components/coders/Decoders/video/vp8_cuvid.tsx:75
+#: src/components/coders/Decoders/video/vp9_cuvid.tsx:75
 #: src/components/coders/settings/Video.tsx:156
 #: src/components/coders/settings/Video.tsx:204
 #: src/components/coders/settings/Video.tsx:245
 msgid "Custom size"
 msgstr "Özel boyut"
 
-#: src/views/Edit/Sources/V4L.tsx:133
+#: src/views/Edit/Sources/V4L.tsx:131
 #: src/views/Edit/Sources/X11grab.tsx:186
 msgid "Custom video device"
 msgstr "Özel video cihazı"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:139
+#: src/views/Edit/Sources/AVFoundation.tsx:136
 msgid "Custom video index"
 msgstr "Özel video dizini"
 
@@ -708,7 +708,7 @@ msgstr "Panoya kopyalanan veriler"
 msgid "Death color"
 msgstr "Yayın kapalı rengi"
 
-#: src/components/filters/audio/Volume.tsx:72
+#: src/components/filters/audio/Volume.tsx:68
 msgid "Decibels (dB)"
 msgstr "Desibel (dB)"
 
@@ -717,10 +717,10 @@ msgstr "Desibel (dB)"
 msgid "Decoder"
 msgstr "Kod Çözücü"
 
-#: src/views/Edit/Sources/AVFoundation.tsx:127
-#: src/views/Edit/Sources/AVFoundation.tsx:163
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:92
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:127
+#: src/views/Edit/Sources/AVFoundation.tsx:124
+#: src/views/Edit/Sources/AVFoundation.tsx:160
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:88
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:123
 #: src/views/Playersite.tsx:508
 #: src/views/Playersite.tsx:612
 #: src/views/Playersite.tsx:656
@@ -728,13 +728,13 @@ msgid "Default"
 msgstr "Varsayılan"
 
 #. placeholder {0}: 2500
-#: src/views/Edit/Sources/Network.tsx:802
+#: src/views/Edit/Sources/Network.tsx:789
 msgid "Default {0}"
 msgstr "Varsayılan {0}"
 
 #. placeholder {0}: 5000000
 #. placeholder {1}: 5
-#: src/views/Edit/Sources/Network.tsx:842
+#: src/views/Edit/Sources/Network.tsx:829
 msgid "Default {0} ({1} seconds)"
 msgstr "Varsayılan {0} ({1} saniye)"
 
@@ -754,23 +754,23 @@ msgstr "Deinterlace modu"
 msgid "Deinterlace parity"
 msgstr "Deinterlace paritesi"
 
-#: src/components/coders/Encoders/audio/opus.tsx:65
+#: src/components/coders/Encoders/audio/opus.tsx:51
 msgid "Delay"
 msgstr "Gecikme"
 
-#: src/views/Edit/Sources/ALSA.tsx:171
+#: src/views/Edit/Sources/ALSA.tsx:166
 msgid "Delay (ms)"
 msgstr "Gecikme (ms)"
 
 #: src/views/Edit/index.tsx:828
 #: src/views/Edit/index.tsx:883
 #: src/views/Playersite.tsx:537
-#: src/views/Publication/Edit.tsx:737
-#: src/views/Publication/Edit.tsx:777
+#: src/views/Publication/Edit.tsx:752
+#: src/views/Publication/Edit.tsx:792
 msgid "Delete"
 msgstr "Sil"
 
-#: src/views/Publication/Edit.tsx:782
+#: src/views/Publication/Edit.tsx:797
 msgid "Deleting a publication service cannot be reversed. The publication stops immediately."
 msgstr "Bir yayın hizmetinin silinmesi geri alınamaz. Yayın derhal durdurulur."
 
@@ -834,7 +834,7 @@ msgstr "Uygulamayı gerçekten şimdi yeniden başlatmak istiyor musunuz?"
 msgid "Do you want to delete \"{0}\"?"
 msgstr "\"{0}\" silmek istiyor musunuz?"
 
-#: src/views/Publication/Edit.tsx:761
+#: src/views/Publication/Edit.tsx:776
 msgid "Do you want to delete {title}?"
 msgstr "{title}'ı silmek istiyor musunuz?"
 
@@ -853,9 +853,9 @@ msgstr "Dokümanlar"
 #: src/views/Publication/Services/Icecast.tsx:299
 #: src/views/Publication/Services/Image2.tsx:226
 #: src/views/Publication/Services/MPEGTS.tsx:507
-#: src/views/Publication/Services/RTMP.tsx:350
+#: src/views/Publication/Services/RTMP.tsx:353
 #: src/views/Publication/Services/RTSP.tsx:305
-#: src/views/Publication/Services/SRT.tsx:597
+#: src/views/Publication/Services/SRT.tsx:602
 #: src/views/Publication/Services/UDP.tsx:329
 msgid "Documentation"
 msgstr "Dokümantasyon"
@@ -884,7 +884,7 @@ msgstr "Düzenle"
 msgid "Edit the audio and video sources for the live stream. Add a description, and set your desired content license."
 msgstr "Canlı akış için ses ve video kaynaklarını düzenleyin. Bir açıklama ekleyin ve istediğiniz içerik lisansını ayarlayın."
 
-#: src/views/Publication/Edit.tsx:488
+#: src/views/Publication/Edit.tsx:502
 msgid "Edit: {title}"
 msgstr "Düzenleme: {title}"
 
@@ -936,8 +936,8 @@ msgstr "Şuan etkin"
 msgid "Enable primary stream"
 msgstr "Birincil akışı etkinleştirin"
 
-#: src/views/Edit/Sources/Network.tsx:1270
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:92
+#: src/views/Edit/Sources/Network.tsx:1255
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:88
 msgid "Enable RTMP server ..."
 msgstr "RTMP sunucusunu etkinleştir ..."
 
@@ -949,8 +949,8 @@ msgstr "RTMPS aktarımını etkinleştir"
 msgid "Enable snapshots"
 msgstr "Anlık görüntüleri etkinleştirin"
 
-#: src/views/Edit/Sources/Network.tsx:1405
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:92
+#: src/views/Edit/Sources/Network.tsx:1390
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:88
 msgid "Enable SRT server ..."
 msgstr "SRT sunucusunu etkinleştir ..."
 
@@ -967,14 +967,14 @@ msgid "Encoder"
 msgstr "Kodlayıcı"
 
 #: src/views/Edit/Summary.tsx:95
-#: src/views/Publication/Add.tsx:606
-#: src/views/Publication/Edit.tsx:650
+#: src/views/Publication/Add.tsx:623
+#: src/views/Publication/Edit.tsx:665
 msgid "Encoding"
 msgstr "Kodlama"
 
 #: src/views/Publication/Services/HLS.tsx:558
-#: src/views/Publication/Services/RTMP.tsx:312
-#: src/views/Publication/Services/SRT.tsx:522
+#: src/views/Publication/Services/RTMP.tsx:315
+#: src/views/Publication/Services/SRT.tsx:525
 msgid "Encryption"
 msgstr "Şifreleme"
 
@@ -994,8 +994,8 @@ msgstr ""
 msgid "Enter password"
 msgstr "Şifre girin"
 
-#: src/views/Edit/Sources/Network.tsx:974
-#: src/views/Edit/Wizard/Sources/Network.tsx:70
+#: src/views/Edit/Sources/Network.tsx:957
+#: src/views/Edit/Wizard/Sources/Network.tsx:65
 msgid "Enter the address of your network source:"
 msgstr "Ağ kaynağınızın adresini girin:"
 
@@ -1060,12 +1060,12 @@ msgstr "Altbilgiyi genişlet"
 msgid "Extend header"
 msgstr "Başlığı genişlet"
 
-#: src/views/Edit/Sources/Network.tsx:914
+#: src/views/Edit/Sources/Network.tsx:897
 msgid "Extention settings"
 msgstr ""
 
 #. placeholder {0}: err.message
-#: src/views/Publication/Add.tsx:273
+#: src/views/Publication/Add.tsx:289
 msgid "Failed to create publication service ({0})"
 msgstr "Yayın hizmeti oluşturulamadı ({0})"
 
@@ -1096,7 +1096,7 @@ msgid "Failed to store player size setting."
 msgstr "Oyuncu boyutu ayarı kaydedilemedi."
 
 #. placeholder {0}: err.message
-#: src/views/Publication/Edit.tsx:325
+#: src/views/Publication/Edit.tsx:339
 msgid "Failed to store publication service ({0})"
 msgstr "Yayın hizmeti depolanamadı ({0})"
 
@@ -1132,9 +1132,9 @@ msgstr "Kaynak doğrulanamadı. Lütfen adresi kontrol edin."
 msgid "FFmpeg"
 msgstr "FFmpeg"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:201
-#: src/views/Edit/Sources/SDP.tsx:182
-#: src/views/Edit/Sources/VideoLoop.tsx:209
+#: src/views/Edit/Sources/AudioLoop.tsx:200
+#: src/views/Edit/Sources/SDP.tsx:175
+#: src/views/Edit/Sources/VideoLoop.tsx:208
 msgid "File path"
 msgstr "Dosya yolu"
 
@@ -1167,11 +1167,11 @@ msgstr "Javascripts için."
 msgid "For Stylesheets."
 msgstr "Stil Sayfaları için."
 
-#: src/views/Edit/Sources/Network.tsx:692
+#: src/views/Edit/Sources/Network.tsx:679
 msgid "Force input framerate"
 msgstr "Giriş kare hızını zorla"
 
-#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:223
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:217
 msgid "Force key frames"
 msgstr "Anahtar çerçevelerini zorla"
 
@@ -1198,7 +1198,7 @@ msgstr "Framebuffer"
 
 #: src/components/coders/settings/Video.tsx:99
 #: src/components/filters/video/Framerate.tsx:36
-#: src/views/Edit/Sources/Network.tsx:705
+#: src/views/Edit/Sources/Network.tsx:692
 msgid "Framerate"
 msgstr "Çerçeve hızı"
 
@@ -1216,18 +1216,18 @@ msgstr "Frekans (Hz)"
 
 #: src/views/Edit/index.tsx:513
 #: src/views/Edit/index.tsx:539
-#: src/views/Edit/Sources/Network.tsx:758
+#: src/views/Edit/Sources/Network.tsx:745
 #: src/views/Playersite.tsx:312
 #: src/views/Playersite.tsx:350
-#: src/views/Publication/Add.tsx:510
-#: src/views/Publication/Edit.tsx:505
+#: src/views/Publication/Add.tsx:526
+#: src/views/Publication/Edit.tsx:519
 #: src/views/Publication/Services/DASH.tsx:261
 #: src/views/Publication/Services/HLS.tsx:256
 #: src/views/Publication/Services/Icecast.tsx:228
 #: src/views/Publication/Services/Image2.tsx:177
-#: src/views/Publication/Services/RTMP.tsx:220
+#: src/views/Publication/Services/RTMP.tsx:223
 #: src/views/Publication/Services/RTSP.tsx:214
-#: src/views/Publication/Services/SRT.tsx:222
+#: src/views/Publication/Services/SRT.tsx:225
 #: src/views/Settings.tsx:1336
 #: src/views/Settings.tsx:1410
 msgid "General"
@@ -1238,13 +1238,13 @@ msgstr "Genel"
 #: src/views/Publication/Services/Facebook.tsx:134
 #: src/views/Publication/Services/Facebook.tsx:162
 #: src/views/Publication/Services/Instagram.tsx:105
-#: src/views/Publication/Services/Kick.tsx:134
+#: src/views/Publication/Services/Kick.tsx:133
 #: src/views/Publication/Services/MediaNetwork.tsx:101
 #: src/views/Publication/Services/NimoTv.tsx:133
 #: src/views/Publication/Services/PeerTube.tsx:128
 #: src/views/Publication/Services/Restream.tsx:157
-#: src/views/Publication/Services/Rumble.tsx:134
-#: src/views/Publication/Services/TikTok.tsx:134
+#: src/views/Publication/Services/Rumble.tsx:133
+#: src/views/Publication/Services/TikTok.tsx:133
 #: src/views/Publication/Services/Trovo.tsx:99
 #: src/views/Publication/Services/Twitch.tsx:237
 #: src/views/Publication/Services/Twitter.tsx:226
@@ -1265,8 +1265,8 @@ msgstr "Google Analiz İzleyici Adı"
 msgid "GPU"
 msgstr ""
 
-#: src/views/Edit/Sources/V4L.tsx:183
-#: src/views/Edit/Wizard/Sources/V4L.tsx:157
+#: src/views/Edit/Sources/V4L.tsx:181
+#: src/views/Edit/Wizard/Sources/V4L.tsx:153
 msgid "Hardware device"
 msgstr "Donanım cihazı"
 
@@ -1306,7 +1306,7 @@ msgstr "HLS sunucu"
 msgid "HLS statistic for the In-memory storage"
 msgstr "Bellek içi depolama için HLS istatistiği"
 
-#: src/components/filters/video/HFlip.tsx:68
+#: src/components/filters/video/HFlip.tsx:58
 msgid "Horizontal Flip"
 msgstr "Yan çevir"
 
@@ -1314,7 +1314,7 @@ msgstr "Yan çevir"
 msgid "Hosted Restreamer interface"
 msgstr "Barındırılan Restreamer arayüzü"
 
-#: src/views/Edit/Sources/Network.tsx:682
+#: src/views/Edit/Sources/Network.tsx:669
 msgid "HTTP and HTTPS"
 msgstr "HTTP ve HTTPS"
 
@@ -1383,7 +1383,7 @@ msgstr "Bellek içi"
 msgid "In-memory storage"
 msgstr "Bellek içi depolama"
 
-#: src/views/Publication/Add.tsx:369
+#: src/views/Publication/Add.tsx:385
 msgid "Incompatible"
 msgstr "Uyumsuz"
 
@@ -1412,10 +1412,10 @@ msgstr "Enjekte 3"
 msgid "Inject 4"
 msgstr "Enjekte 4"
 
-#: src/views/Edit/Sources/Network.tsx:1315
-#: src/views/Edit/Sources/Network.tsx:1450
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:128
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:128
+#: src/views/Edit/Sources/Network.tsx:1300
+#: src/views/Edit/Sources/Network.tsx:1435
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:124
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:124
 msgid "Input stream"
 msgstr "Girdi akışı"
 
@@ -1423,7 +1423,7 @@ msgstr "Girdi akışı"
 msgid "Instance domain"
 msgstr "Örnek etki alanı"
 
-#: src/views/Edit/Sources/Network.tsx:673
+#: src/views/Edit/Sources/Network.tsx:660
 msgid "Internal SRT latency in milliseconds."
 msgstr ""
 
@@ -1446,7 +1446,7 @@ msgstr "kbit/s"
 msgid "Keyframe interval (seconds)"
 msgstr "Anahtar kare aralığı (saniye)"
 
-#: src/views/Edit/Sources/Network.tsx:668
+#: src/views/Edit/Sources/Network.tsx:655
 msgid "Latency (milliseconds)"
 msgstr ""
 
@@ -1484,8 +1484,8 @@ msgid "Life color"
 msgstr "Yaşam rengi"
 
 #: src/views/Edit/index.tsx:737
-#: src/views/Publication/Add.tsx:567
-#: src/views/Publication/Edit.tsx:562
+#: src/views/Publication/Add.tsx:584
+#: src/views/Publication/Edit.tsx:577
 msgid "Limits"
 msgstr "Sınırlar"
 
@@ -1506,7 +1506,7 @@ msgstr "Bağlantı"
 msgid "Link, mouseover"
 msgstr "Bağlantı, fareyle üzerine gelme"
 
-#: src/views/Edit/Sources/Network.tsx:739
+#: src/views/Edit/Sources/Network.tsx:726
 msgid "List of additional HTTP headers, one per line."
 msgstr ""
 
@@ -1526,7 +1526,7 @@ msgstr "İstatistiklerin kaydetmeyeceği CIDR gösterimindeki IP aralıklarını
 msgid "List size (segments)"
 msgstr "Liste boyutu (segmentler)"
 
-#: src/views/Edit/Sources/Network.tsx:922
+#: src/views/Edit/Sources/Network.tsx:905
 msgid "Live stabilization"
 msgstr ""
 
@@ -1608,12 +1608,12 @@ msgstr "Logo"
 msgid "Logout"
 msgstr "Oturum Kapatma"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:255
-#: src/views/Edit/Sources/VideoLoop.tsx:263
+#: src/views/Edit/Sources/AudioLoop.tsx:254
+#: src/views/Edit/Sources/VideoLoop.tsx:262
 msgid "Loop"
 msgstr "Döngü"
 
-#: src/components/filters/audio/Loudnorm.tsx:69
+#: src/components/filters/audio/Loudnorm.tsx:59
 msgid "Loudness Normalization"
 msgstr "Ses Yüksekliği Normalizasyonu"
 
@@ -1678,7 +1678,7 @@ msgstr "Sabit diskten tüketilmesine izin verilen maksimum megabayt. Sınırsız
 msgid "Maximum bandwidth Mbit/s"
 msgstr "Maksimum bant genişliği Mbit/s"
 
-#: src/components/coders/Encoders/audio/opus.tsx:96
+#: src/components/coders/Encoders/audio/opus.tsx:82
 msgid "Maximum delay in milliseconds."
 msgstr "Milisaniye cinsinden maksimum gecikme."
 
@@ -1741,7 +1741,7 @@ msgstr "Metadata"
 
 #. placeholder {0}: 32
 #. placeholder {1}: 5000000
-#: src/views/Edit/Sources/Network.tsx:785
+#: src/views/Edit/Sources/Network.tsx:772
 #: src/views/Edit/Sources/X11grab.tsx:225
 msgid "Mininum {0}, default {1}"
 msgstr "Mininum {0}, varsayılan {1}"
@@ -1809,8 +1809,8 @@ msgstr "Şablon için ad. İsim zaten mevcutsa, üzerine yazılacaktır."
 msgid "Network"
 msgstr "Ağ"
 
-#: src/views/Edit/Sources/Network.tsx:1621
-#: src/views/Edit/Wizard/Sources/Network.tsx:143
+#: src/views/Edit/Sources/Network.tsx:1636
+#: src/views/Edit/Wizard/Sources/Network.tsx:138
 msgid "Network source"
 msgstr "Ağ kaynağı"
 
@@ -1833,7 +1833,7 @@ msgstr "Sonraki: Video kurulumu"
 msgid "No"
 msgstr "Hayır"
 
-#: src/views/Edit/Sources/NoAudio.tsx:42
+#: src/views/Edit/Sources/NoAudio.tsx:37
 #: src/views/Edit/Wizard/Audio.tsx:158
 msgid "No audio"
 msgstr "Ses yok"
@@ -1846,8 +1846,8 @@ msgstr "Ses akışı mevcut değil"
 msgid "No H.264 Stream availabe."
 msgstr ""
 
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:86
-#: src/views/Edit/Wizard/Sources/V4L.tsx:114
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:82
+#: src/views/Edit/Wizard/Sources/V4L.tsx:110
 msgid "No input device available"
 msgstr "Giriş cihazı mevcut değil"
 
@@ -1893,10 +1893,10 @@ msgid "Noise"
 msgstr "Gürültü"
 
 #: src/components/filters/video/Scale.tsx:44
-#: src/views/Edit/Sources/AVFoundation.tsx:159
+#: src/views/Edit/Sources/AVFoundation.tsx:156
 #: src/views/Edit/Summary.tsx:29
 #: src/views/Edit/Summary.tsx:109
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:120
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:116
 msgid "None"
 msgstr "Hiçbiri"
 
@@ -1918,21 +1918,21 @@ msgstr "Her işlem için tutulacak günlük sayısı."
 msgid "Number of seconds the limits are allowed to be exceeded."
 msgstr "Limitlerin aşılmasına izin verilen saniye sayısı."
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:257
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:251
 msgid "Number of tiles columns to encode with."
 msgstr "Kodlanacak karo sütunlarının sayısı."
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:225
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:219
 msgid "Number of tiles encode with."
 msgstr "Kodlanan karo sayısı."
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:241
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:235
 msgid "Number of tiles rows to encode with."
 msgstr "Kodlanacak karo satır sayısı."
 
-#: src/views/Edit/Sources/AudioLoop.tsx:240
-#: src/views/Edit/Sources/SDP.tsx:221
-#: src/views/Edit/Sources/VideoLoop.tsx:248
+#: src/views/Edit/Sources/AudioLoop.tsx:239
+#: src/views/Edit/Sources/SDP.tsx:214
+#: src/views/Edit/Sources/VideoLoop.tsx:247
 #: src/views/Playersite.tsx:922
 #: src/views/Publication/Player.tsx:688
 msgid "OK"
@@ -1946,7 +1946,7 @@ msgstr "Satır başına bir yönlendirici, örneğin http://www.example.com"
 msgid "Open"
 msgstr "Açık"
 
-#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:239
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:233
 msgid "Output buffer"
 msgstr "Çıkış tamponu"
 
@@ -1967,12 +1967,12 @@ msgstr "SRT şifrelemesi için parola."
 msgid "Passphrase must be between 10 and 79 characters long"
 msgstr "Parola 10 ila 79 karakter uzunluğunda olmalıdır"
 
-#: src/views/Publication/Edit.tsx:655
+#: src/views/Publication/Edit.tsx:670
 msgid "Passthrough (copy) should only be disabled if necessary. Each encoding requires additional CPU/GPU resources."
 msgstr "Passthrough (kopyalama) yalnızca gerekli olduğunda devre dışı bırakılmalıdır. Her kodlama ek CPU/GPU kaynakları gerektirir."
 
-#: src/views/Edit/Sources/Network.tsx:1041
-#: src/views/Edit/Wizard/Sources/Network.tsx:124
+#: src/views/Edit/Sources/Network.tsx:1026
+#: src/views/Edit/Wizard/Sources/Network.tsx:119
 #: src/views/Login.tsx:312
 #: src/views/Publication/Services/Akamai.tsx:157
 #: src/views/Publication/Services/DaCast.tsx:196
@@ -1991,8 +1991,8 @@ msgstr "Şifre"
 msgid "Password for authorization."
 msgstr "Yetkilendirme için şifre."
 
-#: src/views/Edit/Sources/Network.tsx:1046
-#: src/views/Edit/Wizard/Sources/Network.tsx:130
+#: src/views/Edit/Sources/Network.tsx:1031
+#: src/views/Edit/Wizard/Sources/Network.tsx:125
 msgid "Password for the device."
 msgstr "Cihaz için şifre."
 
@@ -2020,7 +2020,7 @@ msgstr ""
 msgid "Plan: <0>Starter</0>"
 msgstr "Plan: <0>Başlangıç</0>"
 
-#: src/views/Publication/Add.tsx:473
+#: src/views/Publication/Add.tsx:489
 msgid "Platforms"
 msgstr "Platformlar"
 
@@ -2113,15 +2113,15 @@ msgstr "Let's Encrypt CA'nın hizmet koşullarını kabul ettiğinizi belirtmek 
 msgid "Please get in touch with the operator of the service and check what happens."
 msgstr "Lütfen hizmetin operatörü ile iletişime geçin ve neler olduğunu kontrol edin."
 
-#: src/views/Edit/Sources/AudioLoop.tsx:115
-#: src/views/Edit/Sources/SDP.tsx:101
-#: src/views/Edit/Sources/VideoLoop.tsx:123
+#: src/views/Edit/Sources/AudioLoop.tsx:114
+#: src/views/Edit/Sources/SDP.tsx:63
+#: src/views/Edit/Sources/VideoLoop.tsx:122
 #: src/views/Playersite.tsx:176
 #: src/views/Publication/Player.tsx:207
 msgid "Please select a file to upload."
 msgstr "Lütfen yüklemek için bir dosya seçin."
 
-#: src/views/Publication/Add.tsx:611
+#: src/views/Publication/Add.tsx:628
 msgid "Please use \"Passthrough (copy)\" if possible. Encoding requires additional CPU/GPU resources."
 msgstr "Lütfen mümkünse \"Passthrough (kopya)\" kullanın. Kodlama ek CPU/GPU kaynakları gerektirir."
 
@@ -2165,19 +2165,19 @@ msgstr "Birincil akış"
 msgid "Primary stream key"
 msgstr "Birincil akış anahtarı"
 
-#: src/views/Edit/Sources/ALSA.tsx:178
-#: src/views/Edit/Sources/AudioLoop.tsx:227
-#: src/views/Edit/Sources/AVFoundation.tsx:248
-#: src/views/Edit/Sources/Channel.tsx:128
+#: src/views/Edit/Sources/ALSA.tsx:173
+#: src/views/Edit/Sources/AudioLoop.tsx:226
+#: src/views/Edit/Sources/AVFoundation.tsx:245
+#: src/views/Edit/Sources/Channel.tsx:126
 #: src/views/Edit/Sources/Framebuffer.tsx:135
-#: src/views/Edit/Sources/Network.tsx:1066
-#: src/views/Edit/Sources/Network.tsx:1223
-#: src/views/Edit/Sources/Network.tsx:1355
-#: src/views/Edit/Sources/Network.tsx:1490
-#: src/views/Edit/Sources/Raspicam.tsx:168
-#: src/views/Edit/Sources/SDP.tsx:208
-#: src/views/Edit/Sources/V4L.tsx:171
-#: src/views/Edit/Sources/VideoLoop.tsx:235
+#: src/views/Edit/Sources/Network.tsx:1051
+#: src/views/Edit/Sources/Network.tsx:1208
+#: src/views/Edit/Sources/Network.tsx:1340
+#: src/views/Edit/Sources/Network.tsx:1475
+#: src/views/Edit/Sources/Raspicam.tsx:166
+#: src/views/Edit/Sources/SDP.tsx:201
+#: src/views/Edit/Sources/V4L.tsx:169
+#: src/views/Edit/Sources/VideoLoop.tsx:234
 #: src/views/Edit/Sources/VirtualAudio.tsx:208
 #: src/views/Edit/Sources/VirtualVideo.tsx:257
 #: src/views/Edit/Sources/X11grab.tsx:284
@@ -2185,27 +2185,27 @@ msgid "Probe"
 msgstr "Prob"
 
 #: src/views/Edit/index.tsx:723
-#: src/views/Publication/Add.tsx:553
-#: src/views/Publication/Edit.tsx:548
+#: src/views/Publication/Add.tsx:570
+#: src/views/Publication/Edit.tsx:563
 msgid "Process"
 msgstr "İşlem"
 
-#: src/views/Publication/Add.tsx:520
-#: src/views/Publication/Edit.tsx:515
+#: src/views/Publication/Add.tsx:536
+#: src/views/Publication/Edit.tsx:529
 msgid "Process control"
 msgstr "Süreç kontrolü"
 
 #: src/views/Main/index.tsx:689
 #: src/views/Main/index.tsx:717
-#: src/views/Publication/Edit.tsx:605
-#: src/views/Publication/Edit.tsx:746
+#: src/views/Publication/Edit.tsx:620
+#: src/views/Publication/Edit.tsx:761
 msgid "Process details"
 msgstr "Süreç ayrıntıları"
 
 #: src/views/Main/index.tsx:698
 #: src/views/Main/index.tsx:725
-#: src/views/Publication/Edit.tsx:613
-#: src/views/Publication/Edit.tsx:754
+#: src/views/Publication/Edit.tsx:628
+#: src/views/Publication/Edit.tsx:769
 msgid "Process report"
 msgstr "Süreç raporu"
 
@@ -2225,24 +2225,24 @@ msgstr "İşleme ve Kontrol"
 msgid "Profile"
 msgstr "Profil"
 
-#: src/views/Edit/Sources/Network.tsx:927
+#: src/views/Edit/Sources/Network.tsx:910
 msgid "Protect: None"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:933
+#: src/views/Edit/Sources/Network.tsx:916
 msgid "Protect: Video and audio channel"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:930
+#: src/views/Edit/Sources/Network.tsx:913
 msgid "Protect: Video channel"
 msgstr ""
 
-#: src/views/Edit/Sources/Network.tsx:1135
+#: src/views/Edit/Sources/Network.tsx:1120
 #: src/views/Publication/Services/Akamai.tsx:172
 #: src/views/Publication/Services/Akamai.tsx:229
-#: src/views/Publication/Services/Azure.tsx:105
+#: src/views/Publication/Services/Azure.tsx:106
 #: src/views/Publication/Services/Brightcove.tsx:106
-#: src/views/Publication/Services/CDN77.tsx:108
+#: src/views/Publication/Services/CDN77.tsx:109
 #: src/views/Publication/Services/Core.tsx:263
 #: src/views/Publication/Services/DaCast.tsx:146
 #: src/views/Publication/Services/DaCast.tsx:236
@@ -2252,18 +2252,18 @@ msgstr ""
 #: src/views/Publication/Services/Image2.tsx:140
 #: src/views/Publication/Services/Linkedin.tsx:105
 #: src/views/Publication/Services/MPEGTS.tsx:198
-#: src/views/Publication/Services/Owncast.tsx:107
+#: src/views/Publication/Services/Owncast.tsx:108
 #: src/views/Publication/Services/Red5.tsx:133
-#: src/views/Publication/Services/RTMP.tsx:169
+#: src/views/Publication/Services/RTMP.tsx:170
 #: src/views/Publication/Services/RTSP.tsx:161
-#: src/views/Publication/Services/SRT.tsx:179
-#: src/views/Publication/Services/Telegram.tsx:93
+#: src/views/Publication/Services/SRT.tsx:180
+#: src/views/Publication/Services/Telegram.tsx:94
 #: src/views/Publication/Services/UDP.tsx:145
 #: src/views/Publication/Services/WOWZA.tsx:149
 msgid "Protocol"
 msgstr "Protokol"
 
-#: src/views/Publication/Add.tsx:479
+#: src/views/Publication/Add.tsx:495
 msgid "Protocols"
 msgstr "Protokoller"
 
@@ -2271,8 +2271,8 @@ msgstr "Protokoller"
 msgid "Public domain/s"
 msgstr "Kamu malı/ları"
 
-#: src/views/Publication/Edit.tsx:129
-#: src/views/Publication/Edit.tsx:143
+#: src/views/Publication/Edit.tsx:133
+#: src/views/Publication/Edit.tsx:147
 msgid "Publication service not found"
 msgstr "Yayın hizmeti bulunamadı"
 
@@ -2284,21 +2284,21 @@ msgstr "Yayın web sitesi ayarları kaydedildi"
 msgid "Publications"
 msgstr "Yayınlar"
 
-#: src/views/Edit/Sources/Network.tsx:1588
+#: src/views/Edit/Sources/Network.tsx:1602
 msgid "Pull Mode"
 msgstr "Çekme Modu"
 
-#: src/views/Edit/Sources/Network.tsx:1584
+#: src/views/Edit/Sources/Network.tsx:1598
 msgid "Pull or recieve the data:"
 msgstr "Verileri çekin veya alın:"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:201
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:195
 msgid "QP"
 msgstr "QP"
 
-#: src/components/coders/Encoders/video/h264_vaapi.tsx:181
-#: src/components/coders/Encoders/video/hevc_vaapi.tsx:183
-#: src/components/coders/Encoders/video/vp9_vaapi.tsx:183
+#: src/components/coders/Encoders/video/h264_vaapi.tsx:175
+#: src/components/coders/Encoders/video/hevc_vaapi.tsx:177
+#: src/components/coders/Encoders/video/vp9_vaapi.tsx:177
 #: src/components/Progress.tsx:189
 msgid "Quality"
 msgstr "Kalite"
@@ -2307,8 +2307,8 @@ msgstr "Kalite"
 msgid "Quality and compression efficiency vs speed trade-off."
 msgstr ""
 
-#: src/views/Edit/Sources/Raspicam.tsx:180
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:122
+#: src/views/Edit/Sources/Raspicam.tsx:178
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:117
 msgid "Raspberry Pi camera"
 msgstr "Raspberry Pi kamera"
 
@@ -2325,15 +2325,15 @@ msgstr "Oran kontrolü"
 msgid "Ratio"
 msgstr "Oran"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:264
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:258
 msgid "rav1e Parameters"
 msgstr "rav1e Parametreler"
 
-#: src/views/Edit/Sources/Network.tsx:687
+#: src/views/Edit/Sources/Network.tsx:674
 msgid "Read input at native speed"
 msgstr "Girdiyi yerel hızda okuyun"
 
-#: src/views/Edit/Sources/Network.tsx:1589
+#: src/views/Edit/Sources/Network.tsx:1603
 msgid "Receive Mode"
 msgstr "Alma Modu"
 
@@ -2363,18 +2363,18 @@ msgstr "Restreamer Core'a yeniden bağlanma son {RETRIES} saniye için başarıs
 msgid "Reconnecting to Restreamer Core failed."
 msgstr "Restreamer Core'a yeniden bağlanma başarısız oldu."
 
-#: src/views/Edit/Sources/ALSA.tsx:148
-#: src/views/Edit/Sources/AVFoundation.tsx:207
-#: src/views/Edit/Sources/Channel.tsx:120
-#: src/views/Edit/Sources/Network.tsx:1327
-#: src/views/Edit/Sources/Network.tsx:1462
-#: src/views/Edit/Sources/Raspicam.tsx:142
-#: src/views/Edit/Sources/V4L.tsx:145
+#: src/views/Edit/Sources/ALSA.tsx:143
+#: src/views/Edit/Sources/AVFoundation.tsx:204
+#: src/views/Edit/Sources/Channel.tsx:118
+#: src/views/Edit/Sources/Network.tsx:1312
+#: src/views/Edit/Sources/Network.tsx:1447
+#: src/views/Edit/Sources/Raspicam.tsx:140
+#: src/views/Edit/Sources/V4L.tsx:143
 #: src/views/Edit/Sources/X11grab.tsx:198
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:176
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:140
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:140
-#: src/views/Edit/Wizard/Sources/V4L.tsx:144
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:172
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:136
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:136
+#: src/views/Edit/Wizard/Sources/V4L.tsx:140
 msgid "Refresh"
 msgstr "Yenile"
 
@@ -2416,15 +2416,15 @@ msgstr "Logoyu sil"
 msgid "Reset poster"
 msgstr "Posteri sıfırla"
 
-#: src/components/coders/Decoders/video/h264_cuvid.tsx:80
-#: src/components/coders/Decoders/video/hevc_cuvid.tsx:80
-#: src/components/coders/Decoders/video/mjpeg_cuvid.tsx:80
-#: src/components/coders/Decoders/video/mpeg1_cuvid.tsx:80
-#: src/components/coders/Decoders/video/mpeg2_cuvid.tsx:80
-#: src/components/coders/Decoders/video/mpeg4_cuvid.tsx:80
-#: src/components/coders/Decoders/video/vc1_cuvid.tsx:80
-#: src/components/coders/Decoders/video/vp8_cuvid.tsx:80
-#: src/components/coders/Decoders/video/vp9_cuvid.tsx:80
+#: src/components/coders/Decoders/video/h264_cuvid.tsx:74
+#: src/components/coders/Decoders/video/hevc_cuvid.tsx:74
+#: src/components/coders/Decoders/video/mjpeg_cuvid.tsx:74
+#: src/components/coders/Decoders/video/mpeg1_cuvid.tsx:74
+#: src/components/coders/Decoders/video/mpeg2_cuvid.tsx:74
+#: src/components/coders/Decoders/video/mpeg4_cuvid.tsx:74
+#: src/components/coders/Decoders/video/vc1_cuvid.tsx:74
+#: src/components/coders/Decoders/video/vp8_cuvid.tsx:74
+#: src/components/coders/Decoders/video/vp9_cuvid.tsx:74
 msgid "Resize"
 msgstr ""
 
@@ -2497,13 +2497,13 @@ msgstr "RTMP çıkışı"
 msgid "RTMP Port"
 msgstr "RTMP Bağlantı Noktası"
 
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:170
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:166
 #: src/views/Settings.tsx:2351
 msgid "RTMP server"
 msgstr "RTMP sunucusu"
 
-#: src/views/Edit/Sources/Network.tsx:1259
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:81
+#: src/views/Edit/Sources/Network.tsx:1244
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:77
 msgid "RTMP server is not enabled"
 msgstr "RTMP sunucusu etkin değil"
 
@@ -2527,7 +2527,7 @@ msgstr "RTMPS sunucusu"
 msgid "RTMPS server listen address."
 msgstr "RTMPS sunucusu dinleme adresi."
 
-#: src/views/Edit/Sources/Network.tsx:626
+#: src/views/Edit/Sources/Network.tsx:613
 msgid "RTSP"
 msgstr "RTSP"
 
@@ -2544,8 +2544,8 @@ msgstr "Örnek"
 #: src/views/Edit/index.tsx:821
 #: src/views/Edit/Wizard/License.tsx:55
 #: src/views/Playersite.tsx:897
-#: src/views/Publication/Add.tsx:697
-#: src/views/Publication/Edit.tsx:729
+#: src/views/Publication/Add.tsx:714
+#: src/views/Publication/Edit.tsx:744
 #: src/views/Publication/Player.tsx:655
 #: src/views/Settings.tsx:2749
 msgid "Save"
@@ -2562,7 +2562,7 @@ msgstr "Ölçekle"
 msgid "Scale size"
 msgstr "Ölçek boyutu"
 
-#: src/views/Edit/Sources/SDP.tsx:236
+#: src/views/Edit/Sources/SDP.tsx:229
 msgid "SDP"
 msgstr ""
 
@@ -2607,19 +2607,19 @@ msgstr "Segment, bu süre geçtikten sonra bir sonraki ana karede kesilecektir. 
 msgid "Segmentation"
 msgstr "Parçalara ayrılma"
 
-#: src/views/Edit/Sources/Channel.tsx:103
+#: src/views/Edit/Sources/Channel.tsx:101
 msgid "Select a channel:"
 msgstr ""
 
-#: src/views/Edit/Sources/ALSA.tsx:129
-#: src/views/Edit/Sources/AVFoundation.tsx:195
+#: src/views/Edit/Sources/ALSA.tsx:124
+#: src/views/Edit/Sources/AVFoundation.tsx:192
 #: src/views/Edit/Sources/Framebuffer.tsx:122
-#: src/views/Edit/Sources/Raspicam.tsx:131
-#: src/views/Edit/Sources/V4L.tsx:126
+#: src/views/Edit/Sources/Raspicam.tsx:129
+#: src/views/Edit/Sources/V4L.tsx:124
 #: src/views/Edit/Sources/X11grab.tsx:179
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:146
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:108
-#: src/views/Edit/Wizard/Sources/V4L.tsx:133
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:142
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:103
+#: src/views/Edit/Wizard/Sources/V4L.tsx:129
 msgid "Select a device:"
 msgstr "Bir cihaz seçin:"
 
@@ -2627,8 +2627,8 @@ msgstr "Bir cihaz seçin:"
 msgid "Select audio source:"
 msgstr "Ses kaynağını seçin:"
 
-#: src/views/Publication/Add.tsx:592
-#: src/views/Publication/Edit.tsx:636
+#: src/views/Publication/Add.tsx:609
+#: src/views/Publication/Edit.tsx:651
 msgid "Select RTMP or SRT (if enabled) for less latency."
 msgstr "Daha az gecikme için RTMP veya SRT'yi (etkinleştirilmişse) seçin."
 
@@ -2668,14 +2668,14 @@ msgstr "Seçim"
 msgid "Send anonymous metrics (helps us for future development)"
 msgstr "Anonim ölçümler gönderin (gelecekteki gelişim için bize yardımcı olur)"
 
-#: src/views/Edit/Sources/Network.tsx:1297
-#: src/views/Edit/Sources/Network.tsx:1432
-#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:117
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:117
+#: src/views/Edit/Sources/Network.tsx:1282
+#: src/views/Edit/Sources/Network.tsx:1417
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx:113
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:113
 msgid "Send stream to address ..."
 msgstr "Akışı adrese gönder ..."
 
-#: src/views/Edit/Sources/Network.tsx:1207
+#: src/views/Edit/Sources/Network.tsx:1192
 #: src/views/Edit/Wizard/Sources/InternalHLS.tsx:54
 msgid "Send stream to this address:"
 msgstr "Bu adrese akış gönderin:"
@@ -2688,11 +2688,11 @@ msgstr "Videoyu Framebuffer'a gönder"
 msgid "Server"
 msgstr "Sunucu"
 
-#: src/views/Publication/Services/Kick.tsx:101
-#: src/views/Publication/Services/Owncast.tsx:124
-#: src/views/Publication/Services/Rumble.tsx:101
-#: src/views/Publication/Services/Telegram.tsx:110
-#: src/views/Publication/Services/TikTok.tsx:101
+#: src/views/Publication/Services/Kick.tsx:102
+#: src/views/Publication/Services/Owncast.tsx:125
+#: src/views/Publication/Services/Rumble.tsx:102
+#: src/views/Publication/Services/Telegram.tsx:111
+#: src/views/Publication/Services/TikTok.tsx:102
 msgid "Server URL"
 msgstr "Sunucu adresi"
 
@@ -2703,8 +2703,8 @@ msgstr "Sunucu adresi"
 msgid "Service"
 msgstr "Hizmet"
 
-#: src/views/Publication/Add.tsx:533
-#: src/views/Publication/Edit.tsx:528
+#: src/views/Publication/Add.tsx:549
+#: src/views/Publication/Edit.tsx:542
 msgid "Service name"
 msgstr "Hizmet adı"
 
@@ -2716,7 +2716,7 @@ msgstr "İzleme için hizmet belirteci."
 msgid "Sessions"
 msgstr "Oturumlar"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:269
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:263
 msgid "Set the rav1e configuration using a :-separated list of key=value parameters."
 msgstr "Anahtar=değer parametrelerinin :-ayrılmış bir listesini kullanarak rav1e yapılandırmasını ayarlayın."
 
@@ -2793,26 +2793,26 @@ msgstr "Anlık görüntü"
 msgid "Social-login (OAuth2, 2FA)"
 msgstr "Sosyal giriş (OAuth2, 2FA)"
 
-#: src/views/Edit/Sources/Network.tsx:650
+#: src/views/Edit/Sources/Network.tsx:637
 msgid "Socket timeout (microseconds)"
 msgstr "Soket zaman aşımı (mikrosaniye)"
 
-#: src/views/Publication/Add.tsx:476
+#: src/views/Publication/Add.tsx:492
 msgid "Software"
 msgstr "Yazılım"
 
 #: src/components/controls/Source.tsx:86
 #: src/views/Edit/Sources/VirtualAudio.tsx:100
 #: src/views/Edit/Sources/VirtualVideo.tsx:124
-#: src/views/Publication/Add.tsx:587
-#: src/views/Publication/Edit.tsx:631
+#: src/views/Publication/Add.tsx:604
+#: src/views/Publication/Edit.tsx:646
 msgid "Source"
 msgstr "Kaynak"
 
-#: src/views/Publication/Add.tsx:515
-#: src/views/Publication/Add.tsx:582
-#: src/views/Publication/Edit.tsx:510
-#: src/views/Publication/Edit.tsx:626
+#: src/views/Publication/Add.tsx:531
+#: src/views/Publication/Add.tsx:599
+#: src/views/Publication/Edit.tsx:524
+#: src/views/Publication/Edit.tsx:641
 msgid "Source & Encoding"
 msgstr "Kaynak ve Kodlama"
 
@@ -2824,7 +2824,7 @@ msgstr "Hız"
 msgid "Speed Preset"
 msgstr "Hız Ön Ayarı"
 
-#: src/views/Edit/Sources/Network.tsx:661
+#: src/views/Edit/Sources/Network.tsx:648
 #: src/views/Main/index.tsx:631
 #: src/views/Settings.tsx:1384
 #: src/views/Settings.tsx:2488
@@ -2835,13 +2835,13 @@ msgstr "SRT"
 msgid "SRT output"
 msgstr "SRT çıkışı"
 
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:170
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:166
 #: src/views/Settings.tsx:2493
 msgid "SRT server"
 msgstr "SRT sunucusu"
 
-#: src/views/Edit/Sources/Network.tsx:1394
-#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:81
+#: src/views/Edit/Sources/Network.tsx:1379
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx:77
 msgid "SRT server is not enabled"
 msgstr "SRT sunucu etkin değil"
 
@@ -2857,7 +2857,7 @@ msgstr "Yayınlama ve oynatma için SRT belirteci. Belirteç, streamid parametre
 msgid "Stale timeout (seconds)"
 msgstr "Eski zaman aşımı (saniye)"
 
-#: src/views/Edit/Sources/Network.tsx:873
+#: src/views/Edit/Sources/Network.tsx:860
 msgid "start_at_zero"
 msgstr "start_at_zero"
 
@@ -2886,24 +2886,24 @@ msgstr "Akış"
 msgid "Stream ID"
 msgstr ""
 
-#: src/views/Publication/Services/CDN77.tsx:141
+#: src/views/Publication/Services/CDN77.tsx:144
 #: src/views/Publication/Services/DaCast.tsx:212
 #: src/views/Publication/Services/Dailymotion.tsx:126
 #: src/views/Publication/Services/DLive.tsx:87
 #: src/views/Publication/Services/Dummy.tsx:301
 #: src/views/Publication/Services/EarthCam.tsx:106
 #: src/views/Publication/Services/Instagram.tsx:92
-#: src/views/Publication/Services/Kick.tsx:122
+#: src/views/Publication/Services/Kick.tsx:119
 #: src/views/Publication/Services/Livepush.tsx:130
 #: src/views/Publication/Services/MediaNetwork.tsx:89
 #: src/views/Publication/Services/NimoTv.tsx:121
-#: src/views/Publication/Services/Owncast.tsx:134
+#: src/views/Publication/Services/Owncast.tsx:137
 #: src/views/Publication/Services/PeerTube.tsx:111
 #: src/views/Publication/Services/PicartoTv.tsx:125
 #: src/views/Publication/Services/Restream.tsx:145
-#: src/views/Publication/Services/Rumble.tsx:122
-#: src/views/Publication/Services/Telegram.tsx:120
-#: src/views/Publication/Services/TikTok.tsx:122
+#: src/views/Publication/Services/Rumble.tsx:119
+#: src/views/Publication/Services/Telegram.tsx:123
+#: src/views/Publication/Services/TikTok.tsx:119
 #: src/views/Publication/Services/Trovo.tsx:87
 #: src/views/Publication/Services/Twitch.tsx:225
 #: src/views/Publication/Services/Twitter.tsx:214
@@ -2913,7 +2913,7 @@ msgstr ""
 msgid "Stream key"
 msgstr "Akış anahtarı"
 
-#: src/views/Publication/Services/RTMP.tsx:200
+#: src/views/Publication/Services/RTMP.tsx:203
 msgid "Stream Key"
 msgstr "Akış Anahtarı"
 
@@ -2932,7 +2932,7 @@ msgid "Stream source for publication service (experimental)."
 msgstr "Yayın hizmeti için akış kaynağı (deneysel)."
 
 #: src/views/Publication/Services/Akamai.tsx:189
-#: src/views/Publication/Services/CDN77.tsx:125
+#: src/views/Publication/Services/CDN77.tsx:126
 #: src/views/Publication/Services/Dailymotion.tsx:99
 msgid "Stream URL"
 msgstr "Akış URL'si"
@@ -2945,8 +2945,8 @@ msgstr ""
 msgid "Support datarhei Restreamer"
 msgstr "Destek datarhei Restreamer"
 
-#: src/views/Edit/Sources/Network.tsx:987
-#: src/views/Edit/Wizard/Sources/Network.tsx:83
+#: src/views/Edit/Sources/Network.tsx:972
+#: src/views/Edit/Wizard/Sources/Network.tsx:78
 msgid "Supports HTTP (HLS, DASH), RTP, RTSP, RTMP, SRT and more."
 msgstr "HTTP (HLS, DASH), RTP, RTSP, RTMP, SRT ve daha fazlasını destekler."
 
@@ -2993,7 +2993,7 @@ msgstr "Oluşturulan ses akışının genliği (0.0 - 1.0)"
 msgid "The application is using an older version of the settings."
 msgstr "Uygulama, ayarların eski bir sürümünü kullanıyor."
 
-#: src/views/Edit/Sources/Network.tsx:1109
+#: src/views/Edit/Sources/Network.tsx:1094
 msgid "The available FFmpeg binary doesn't support any of the required protocols."
 msgstr "Mevcut FFmpeg ikili dosyası gerekli protokollerin hiçbirini desteklemiyor."
 
@@ -3025,11 +3025,11 @@ msgstr ""
 
 #: src/views/Edit/index.tsx:340
 #: src/views/Edit/Wizard/index.tsx:192
-#: src/views/Publication/Edit.tsx:306
+#: src/views/Publication/Edit.tsx:320
 msgid "The input profile is not complete. Please define a video and audio source."
 msgstr "Giriş profili tamamlanmadı. Lütfen bir video ve ses kaynağı tanımlayın."
 
-#: src/views/Publication/Add.tsx:254
+#: src/views/Publication/Add.tsx:270
 msgid "The input profile is not complete. Please define a video and/or audio source."
 msgstr "Giriş profili tam değil. Lütfen bir video ve/veya ses kaynağı tanımlayın."
 
@@ -3055,21 +3055,21 @@ msgid "The public reachable domain name of the host this Restreamer is running o
 msgstr "Bu Restreamer'ın üzerinde çalıştığı ana bilgisayarın genel erişilebilir alan adı. Birden fazla alan adını virgülle ayırın."
 
 #. placeholder {0}: $settings.name
-#: src/views/Publication/Edit.tsx:382
+#: src/views/Publication/Edit.tsx:396
 msgid "The publication service \"{0}\" could not be deleted"
 msgstr "\"{0}\" yayın hizmeti silinemedi"
 
 #. placeholder {0}: $settings.name
-#: src/views/Publication/Add.tsx:283
+#: src/views/Publication/Add.tsx:299
 msgid "The publication service \"{0}\" has been created"
 msgstr "\"{0}\" yayın hizmeti oluşturuldu"
 
 #. placeholder {0}: $settings.name
-#: src/views/Publication/Edit.tsx:393
+#: src/views/Publication/Edit.tsx:407
 msgid "The publication service \"{0}\" has been deleted"
 msgstr "\"{0}\" yayın hizmeti silindi"
 
-#: src/views/Publication/Add.tsx:280
+#: src/views/Publication/Add.tsx:296
 msgid "The publication service has been created"
 msgstr "Yayın hizmeti oluşturuldu"
 
@@ -3082,9 +3082,9 @@ msgstr "RTMP çıktısı için RTMP Sunucusu gerekir."
 msgid "The sample rate of the audio stream."
 msgstr "Ses akışının örnekleme hızı."
 
-#: src/views/Edit/Sources/AudioLoop.tsx:127
-#: src/views/Edit/Sources/SDP.tsx:113
-#: src/views/Edit/Sources/VideoLoop.tsx:135
+#: src/views/Edit/Sources/AudioLoop.tsx:126
+#: src/views/Edit/Sources/SDP.tsx:73
+#: src/views/Edit/Sources/VideoLoop.tsx:134
 #: src/views/Playersite.tsx:188
 #: src/views/Publication/Player.tsx:219
 msgid "The selected file is too big (<0/>). Only <1/> are allowed."
@@ -3092,16 +3092,16 @@ msgstr "Seçilen dosya çok büyük (<0/>). Yalnızca <1/>'e izin verilir."
 
 #. placeholder {0}: err.actual
 #. placeholder {1}: err.allowed.join(', ')
-#: src/views/Edit/Sources/AudioLoop.tsx:119
-#: src/views/Edit/Sources/SDP.tsx:105
-#: src/views/Edit/Sources/VideoLoop.tsx:127
+#: src/views/Edit/Sources/AudioLoop.tsx:118
+#: src/views/Edit/Sources/SDP.tsx:66
+#: src/views/Edit/Sources/VideoLoop.tsx:126
 #: src/views/Playersite.tsx:180
 #: src/views/Publication/Player.tsx:211
 msgid "The selected file type ({0}) is not allowed. Allowed file types are {1}"
 msgstr "Seçilen dosya türüne ({0}) izin verilmiyor. İzin verilen dosya türleri şunlardır {1}"
 
 #. placeholder {0}: $settings.name
-#: src/views/Publication/Edit.tsx:337
+#: src/views/Publication/Edit.tsx:351
 msgid "The settings for \"{0}\" have been saved"
 msgstr "\"{0}\" için ayarlar kaydedildi"
 
@@ -3154,9 +3154,9 @@ msgid "There was an error connecting to Restreamer Core at {address}."
 msgstr ""
 
 #. placeholder {0}: err.message
-#: src/views/Edit/Sources/AudioLoop.tsx:136
-#: src/views/Edit/Sources/SDP.tsx:122
-#: src/views/Edit/Sources/VideoLoop.tsx:144
+#: src/views/Edit/Sources/AudioLoop.tsx:135
+#: src/views/Edit/Sources/SDP.tsx:80
+#: src/views/Edit/Sources/VideoLoop.tsx:143
 #: src/views/Playersite.tsx:197
 #: src/views/Publication/Player.tsx:228
 msgid "There was an error during upload: {0}"
@@ -3210,7 +3210,7 @@ msgstr "Bu lisans, yaratıcıya atıfta bulunulduğu sürece, yeniden kullanıc�
 msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
 msgstr "Bu lisans, yaratıcıya atıfta bulunulduğu sürece, yeniden kullanıcıların materyali herhangi bir ortam veya formatta dağıtmasına, remikslemesine, uyarlamasına ve üzerine inşa etmesine izin verir. Lisans ticari kullanıma izin verir. Materyali yeniden karıştırır, uyarlar veya üzerine inşa ederseniz, değiştirilmiş materyali aynı koşullar altında lisanslamanız gerekir."
 
-#: src/views/Edit/Sources/Network.tsx:1004
+#: src/views/Edit/Sources/Network.tsx:989
 msgid "This protocol is unknown or not supported by the available FFmpeg binary."
 msgstr "Bu profil bilinmiyor ya da FFmpeg tarafından desteklenmiyor."
 
@@ -3234,15 +3234,15 @@ msgstr "Kullanıcı arayüzünün bu sürümü uyumludur."
 msgid "Threshold (seconds)"
 msgstr "Eşik (saniye)"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:249
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:243
 msgid "Tile Columns"
 msgstr "Karo Kolonlar"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:233
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:227
 msgid "Tile Rows"
 msgstr "Karo Sıraları"
 
-#: src/components/coders/Encoders/video/av1_librav1e.tsx:217
+#: src/components/coders/Encoders/video/av1_librav1e.tsx:211
 msgid "Tiles"
 msgstr "Fayanslar"
 
@@ -3250,7 +3250,7 @@ msgstr "Fayanslar"
 msgid "Time until an inactive viewer connection is treated as closed."
 msgstr "Etkin olmayan bir görüntüleyici bağlantısının kapalı olarak değerlendirilmesine kadar geçen süre."
 
-#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:207
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:201
 msgid "To stabilize the system, increase the HLS segment length for the keyframe interval by 2-3 * (Processing and Control)."
 msgstr "Sistemi stabilize etmek için, ana kare aralığı için HLS segment uzunluğunu 2-3 * (İşleme ve Kontrol) kadar artırın."
 
@@ -3395,7 +3395,7 @@ msgstr "YouTube Studio'da oluşturulan gerekli anahtarla videonuzu bir RTMP akı
 msgid "Transmits your video stream with the required key, which was generated in Twitter Producer. You can find more information on seting up a live stream at Twitter's <0>Producer</0>."
 msgstr "Video akışınızı, Twitter Producer'da oluşturulan gerekli anahtarla iletir. Canlı yayın ayarlama hakkında daha fazla bilgiyi Twitter'ın <0>Producer</0> adresinde bulabilirsiniz."
 
-#: src/views/Edit/Sources/Network.tsx:632
+#: src/views/Edit/Sources/Network.tsx:619
 msgid "Transport"
 msgstr ""
 
@@ -3407,7 +3407,7 @@ msgstr ""
 msgid "Tune"
 msgstr "Tune"
 
-#: src/views/Edit/Wizard/Sources/Network.tsx:91
+#: src/views/Edit/Wizard/Sources/Network.tsx:86
 msgid "UDP transport"
 msgstr "UDP aktarımı"
 
@@ -3423,9 +3423,9 @@ msgstr "Hizmette benzersiz kimlik."
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:140
-#: src/views/Edit/Sources/SDP.tsx:126
-#: src/views/Edit/Sources/VideoLoop.tsx:148
+#: src/views/Edit/Sources/AudioLoop.tsx:139
+#: src/views/Edit/Sources/SDP.tsx:82
+#: src/views/Edit/Sources/VideoLoop.tsx:147
 #: src/views/Playersite.tsx:201
 #: src/views/Publication/Player.tsx:232
 msgid "Unknown upload error"
@@ -3439,9 +3439,9 @@ msgstr "Seçilmemiş"
 msgid "Update details (Changelog)"
 msgstr "Güncelleme ayrıntıları (Changelog)"
 
-#: src/views/Edit/Sources/AudioLoop.tsx:213
-#: src/views/Edit/Sources/SDP.tsx:194
-#: src/views/Edit/Sources/VideoLoop.tsx:221
+#: src/views/Edit/Sources/AudioLoop.tsx:212
+#: src/views/Edit/Sources/SDP.tsx:187
+#: src/views/Edit/Sources/VideoLoop.tsx:220
 #: src/views/Playersite.tsx:545
 #: src/views/Playersite.tsx:578
 #: src/views/Playersite.tsx:730
@@ -3451,12 +3451,12 @@ msgid "Upload"
 msgstr "Yükle"
 
 #. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
-#: src/views/Edit/Sources/AudioLoop.tsx:185
+#: src/views/Edit/Sources/AudioLoop.tsx:184
 msgid "Upload an audio file ({0}) in order to loop it."
 msgstr "Döngü yapmak için bir ses dosyası ({0}) yükleyin."
 
 #. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
-#: src/views/Edit/Sources/VideoLoop.tsx:193
+#: src/views/Edit/Sources/VideoLoop.tsx:192
 msgid "Upload an image or video file ({0}) in order to loop it."
 msgstr "Döngü oluşturmak için bir resim veya video dosyası ({0}) yükleyin."
 
@@ -3465,7 +3465,7 @@ msgid "Upload image"
 msgstr ""
 
 #. placeholder {0}: fileTypes.map((t) => t.mimetype).join(', ')
-#: src/views/Edit/Sources/SDP.tsx:168
+#: src/views/Edit/Sources/SDP.tsx:161
 msgid "Upload SDP file ({0})."
 msgstr ""
 
@@ -3477,9 +3477,9 @@ msgstr ""
 msgid "Uploaded images are burned into this output. Arrange them from bottom to top. Leave a position empty to center the image."
 msgstr ""
 
-#: src/views/Edit/Sources/AudioLoop.tsx:217
-#: src/views/Edit/Sources/SDP.tsx:198
-#: src/views/Edit/Sources/VideoLoop.tsx:225
+#: src/views/Edit/Sources/AudioLoop.tsx:216
+#: src/views/Edit/Sources/SDP.tsx:191
+#: src/views/Edit/Sources/VideoLoop.tsx:224
 #: src/views/Playersite.tsx:582
 #: src/views/Playersite.tsx:734
 msgid "Uploading the file failed"
@@ -3519,7 +3519,7 @@ msgstr "Telif hakkınızı kullanın ve doğru görsel lisansını seçin. Herke
 msgid "Use your copyright and choose the right image licence. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
 msgstr "Telif hakkınızı kullanın ve doğru görsel lisansını seçin. İster herkes için ücretsiz ister oldukça kısıtlı olsun. Başkalarının görselinizle ne yapmasına izin verildiğini kısaca tartışın."
 
-#: src/views/Edit/Sources/Network.tsx:878
+#: src/views/Edit/Sources/Network.tsx:865
 msgid "use_wallclock_as_timestamps"
 msgstr "use_wallclock_as_timestamps"
 
@@ -3527,8 +3527,8 @@ msgstr "use_wallclock_as_timestamps"
 msgid "User registration"
 msgstr "Kullanıcı kaydı"
 
-#: src/views/Edit/Sources/Network.tsx:1024
-#: src/views/Edit/Wizard/Sources/Network.tsx:106
+#: src/views/Edit/Sources/Network.tsx:1009
+#: src/views/Edit/Wizard/Sources/Network.tsx:101
 #: src/views/Login.tsx:302
 #: src/views/Publication/Services/DaCast.tsx:180
 #: src/views/Publication/Services/DASH.tsx:232
@@ -3546,12 +3546,12 @@ msgstr "Kullanıcı Adı"
 msgid "Username for authorization."
 msgstr "Yetkilendirme için kullanıcı adı."
 
-#: src/views/Edit/Sources/Network.tsx:1029
-#: src/views/Edit/Wizard/Sources/Network.tsx:112
+#: src/views/Edit/Sources/Network.tsx:1014
+#: src/views/Edit/Wizard/Sources/Network.tsx:107
 msgid "Username for the device."
 msgstr "Cihaz için kullanıcı adı."
 
-#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:177
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:171
 msgid "V4L2_M2M is experimental."
 msgstr "V4L2_M2M deneyseldir."
 
@@ -3563,11 +3563,11 @@ msgstr "Değişken kare hızı (VFR)"
 msgid "velvet"
 msgstr "kadife"
 
-#: src/components/filters/video/VFlip.tsx:68
+#: src/components/filters/video/VFlip.tsx:58
 msgid "Vertical Flip"
 msgstr "Dikey Çevirme"
 
-#: src/views/Publication/Add.tsx:619
+#: src/views/Publication/Add.tsx:636
 msgid "Video"
 msgstr "Video"
 
@@ -3575,14 +3575,14 @@ msgstr "Video"
 msgid "Video Codec"
 msgstr ""
 
-#: src/views/Edit/Sources/AVFoundation.tsx:138
-#: src/views/Edit/Sources/Channel.tsx:109
-#: src/views/Edit/Sources/Raspicam.tsx:111
-#: src/views/Edit/Sources/V4L.tsx:132
+#: src/views/Edit/Sources/AVFoundation.tsx:135
+#: src/views/Edit/Sources/Channel.tsx:107
+#: src/views/Edit/Sources/Raspicam.tsx:109
+#: src/views/Edit/Sources/V4L.tsx:130
 #: src/views/Edit/Sources/X11grab.tsx:185
-#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:99
-#: src/views/Edit/Wizard/Sources/Raspicam.tsx:96
-#: src/views/Edit/Wizard/Sources/V4L.tsx:121
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx:95
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx:91
+#: src/views/Edit/Wizard/Sources/V4L.tsx:117
 msgid "Video device"
 msgstr "Video cihazı"
 
@@ -3596,7 +3596,7 @@ msgstr ""
 
 #: src/views/Edit/Profile.tsx:533
 #: src/views/Edit/ProfileSummary.tsx:69
-#: src/views/Publication/Edit.tsx:663
+#: src/views/Publication/Edit.tsx:678
 msgid "Video settings"
 msgstr "Video ayarları"
 
@@ -3606,7 +3606,7 @@ msgstr "Video ayarları"
 msgid "Video setup"
 msgstr "Video kurulumu"
 
-#: src/views/Edit/Sources/VideoAudio.tsx:42
+#: src/views/Edit/Sources/VideoAudio.tsx:37
 msgid "Video source"
 msgstr "Video kaynağı"
 
@@ -3634,7 +3634,7 @@ msgstr "Ses Düzeyi "
 msgid "VPU ID"
 msgstr "VPU Kimliği"
 
-#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:179
+#: src/components/coders/Encoders/video/h264_v4l2m2m.tsx:173
 msgid "We recommend OpenMAX IL for Raspberry PI (3/4) with a 32-bit operating system."
 msgstr "32-bit işletim sistemine sahip Raspberry PI (3/4) için OpenMAX IL'yi öneriyoruz."
 
@@ -3695,7 +3695,7 @@ msgstr "Yapılandırmayı değiştirdiniz. Değişikliklerin etkili olması içi
 msgid "You have to reconnect manually"
 msgstr "Manuel olarak yeniden bağlanmanız gerekir"
 
-#: src/views/Publication/Edit.tsx:577
+#: src/views/Publication/Edit.tsx:592
 msgid "You have unsaved changes. Please save them before you can control the service again."
 msgstr "Kaydedilmemiş değişiklikleriniz var. Hizmeti tekrar kontrol edebilmeniz için lütfen bunları kaydedin."
 

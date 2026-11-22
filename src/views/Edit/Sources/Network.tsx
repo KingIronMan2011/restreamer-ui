@@ -1,3 +1,4 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
@@ -13,9 +14,11 @@ import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import React from 'react';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import urlparser from 'url-parse';
+import { z } from 'zod';
 
 import BoxText from '../../../components/BoxText';
 import BoxTextarea from '../../../components/BoxTextarea';
@@ -25,6 +28,9 @@ import MultiSelect from '../../../components/MultiSelect';
 import Password from '../../../components/Password';
 import Select from '../../../components/Select';
 import Textarea from '../../../components/Textarea';
+import { networkSourceSettingsSchema } from '../../../lib/validation';
+
+type NetworkSourceSettings = z.infer<typeof networkSourceSettingsSchema>;
 
 const useStyles = () => {
   return {
@@ -923,6 +929,7 @@ function Pull({
   settings = {},
   config = {},
   skills = null,
+  validationError = '',
   onChange,
   onProbe,
 }: any) {
@@ -957,6 +964,8 @@ function Pull({
           label={<Trans>Address</Trans>}
           placeholder="rtsp://ip:port/path"
           value={settings.address}
+          error={Boolean(validationError)}
+          helperText={validationError}
           onChange={onChange('', 'address')}
         />
         <Typography variant="caption">
@@ -1484,9 +1493,18 @@ function Source({
 }: any) {
   const classes = useStyles();
   const { i18n } = useLingui();
+  const [addressError, setAddressError] = useState('');
   config = initConfig(config);
   settings = initSettings(settings, config);
   skills = initSkills(skills);
+  const { setValue, trigger } = useForm<NetworkSourceSettings>({
+    resolver: zodResolver(networkSourceSettingsSchema),
+    mode: 'onChange',
+    defaultValues: {
+      mode: settings.mode,
+      address: settings.address,
+    },
+  });
 
   const handleChange = (section: any, what: any) => (event: any) => {
     const value = event.target.value;
@@ -1522,12 +1540,39 @@ function Source({
       settings[what] = value;
     }
 
+    if (section === '' && what === 'mode') {
+      setValue('mode', value, { shouldValidate: true });
+    } else if (section === '' && what === 'address') {
+      setValue('address', value, { shouldValidate: true });
+      setAddressError('');
+    }
+
     onChange({
       ...settings,
     });
   };
 
-  const handleProbe = () => {
+  const handleProbe = async () => {
+    setValue('mode', settings.mode);
+    setValue('address', settings.address);
+
+    const result = networkSourceSettingsSchema.safeParse({
+      mode: settings.mode,
+      address: settings.address,
+    });
+    if (!result.success) {
+      const addressIssue = result.error.issues.find(
+        (issue) => issue.path[0] === 'address',
+      );
+      setAddressError(
+        addressIssue?.message ?? 'Invalid network source address.',
+      );
+      return;
+    }
+    setAddressError('');
+
+    if (!(await trigger())) return;
+
     onProbe(settings, createInputs(settings, config, skills));
   };
 
@@ -1564,6 +1609,7 @@ function Source({
           settings={settings}
           config={config}
           skills={skills}
+          validationError={addressError}
           onChange={handleChange}
           onProbe={handleProbe}
         />

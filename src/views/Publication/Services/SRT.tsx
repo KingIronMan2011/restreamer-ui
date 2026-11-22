@@ -114,6 +114,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -193,6 +194,8 @@ function Service({
           fullWidth
           label={<Trans>Address</Trans>}
           value={settings.address}
+          error={Boolean(validationErrors.address)}
+          helperText={validationErrors.address}
           onChange={handleChange('address')}
         />
       </Grid>
@@ -529,6 +532,8 @@ function Service({
                   type="text"
                   label="passphrase"
                   value={settings.params.passphrase}
+                  error={Boolean(validationErrors['params.passphrase'])}
+                  helperText={validationErrors['params.passphrase']}
                   onChange={handleChange('passphrase')}
                 />
               </Grid>
