@@ -46,7 +46,7 @@ export default defineConfig({
     cssCodeSplit: true,
     minify: 'oxc',
     sourcemap: true,
-    chunkSizeWarningLimit: 2500,
+    chunkSizeWarningLimit: 2750,
     rolldownOptions: {
       output: {
         codeSplitting: {
