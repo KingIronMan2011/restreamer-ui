@@ -12,7 +12,7 @@ Please base pull requests on the project's development branch.
 ### For the Restreamer interface
 
 ```bash
-git clone --branch dev github.com/datarhei/restreamer-ui
+git clone https://github.com/KingIronMan2011/restreamer-ui.git
 cd restreamer-ui
 pnpm install
 pnpm dev
