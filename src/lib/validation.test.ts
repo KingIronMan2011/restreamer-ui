@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import {
   networkSourceSettingsSchema,
+  getPublicationSettingsErrors,
   rtmpPublicationSettingsSchema,
   srtPublicationSettingsSchema,
   validatePublicationSettings,
@@ -71,6 +72,15 @@ describe('publication settings validation', () => {
       params: { passphrase: '', enforced_encryption: false },
     };
     expect(srtPublicationSettingsSchema.safeParse(base).success).toBe(true);
+    expect(
+      srtPublicationSettingsSchema.safeParse({ ...base, address: '' }).success,
+    ).toBe(false);
+    expect(
+      srtPublicationSettingsSchema.safeParse({
+        ...base,
+        address: 'not a host',
+      }).success,
+    ).toBe(false);
     expect(
       srtPublicationSettingsSchema.safeParse({
         ...base,
@@ -224,6 +234,58 @@ describe('publication settings validation', () => {
         mode: 'rtmps',
       }).success,
     ).toBe(true);
+    expect(
+      validatePublicationSettings('facebook', {
+        rtmp_primary: false,
+        rtmp_backup: true,
+        stream_key_primary: 'primary',
+        stream_key_backup: '',
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('facebook', {
+        rtmp_primary: false,
+        rtmp_backup: false,
+        stream_key_primary: '',
+        stream_key_backup: '',
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('facebook', {
+        rtmp_primary: true,
+        rtmp_backup: true,
+        stream_key_primary: 'primary',
+        stream_key_backup: 'backup',
+      }).success,
+    ).toBe(true);
+    expect(
+      validatePublicationSettings('youtube', {
+        stream_key: '',
+        primary: true,
+        backup: false,
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('youtube', {
+        stream_key: 'key',
+        primary: false,
+        backup: false,
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('dummy', {
+        stream_key: '',
+        rtmp_primary: false,
+        rtmp_backup: false,
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('dummy', {
+        stream_key: '',
+        rtmp_primary: true,
+        rtmp_backup: false,
+      }).success,
+    ).toBe(false);
   });
 
   it('validates the remaining destination and output device settings', () => {
@@ -234,6 +296,20 @@ describe('publication settings validation', () => {
         stream_name: 'camera',
       }).success,
     ).toBe(true);
+    expect(
+      validatePublicationSettings('brightcove', {
+        protocol: 'rtmp://',
+        address: 'ingest.example/live/',
+        stream_name: '',
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('brightcove', {
+        protocol: 'rtmp://',
+        address: 'bad host',
+        stream_name: 'camera',
+      }).success,
+    ).toBe(false);
     expect(
       validatePublicationSettings('datarheicore', {
         v2_address: 'srt://target.example:9000',
@@ -257,6 +333,12 @@ describe('publication settings validation', () => {
       }).success,
     ).toBe(true);
     expect(
+      validatePublicationSettings('earthcam', {
+        server_url: 'https://invalid.example/live',
+        stream_key: '',
+      }).success,
+    ).toBe(false);
+    expect(
       validatePublicationSettings('framebuffer', { device: 'none' }).success,
     ).toBe(false);
     expect(
@@ -271,6 +353,106 @@ describe('publication settings validation', () => {
         server_url: 'wettercom.example/live',
         stream_id: 'camera-1',
         stream_key: 'token',
+      }).success,
+    ).toBe(true);
+    expect(
+      validatePublicationSettings('wettercom', {
+        protocol: 'rtmp://',
+        server_url: '',
+        stream_id: '',
+        stream_key: '',
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('framebuffer', { device: '/dev/fb0' })
+        .success,
+    ).toBe(true);
+  });
+
+  it('reports errors for invalid known services and ignores unvalidated ids', () => {
+    expect(getPublicationSettingsErrors(undefined, {})).toEqual({});
+    expect(getPublicationSettingsErrors('unknown-service', {})).toEqual({});
+    expect(
+      getPublicationSettingsErrors('rtmp', {
+        protocol: 'rtmp://',
+        address: '',
+        options: { rtmp_playpath: '' },
+      }),
+    ).toEqual({ address: 'Enter an RTMP server address.' });
+    expect(
+      getPublicationSettingsErrors('rtmp', {
+        protocol: 'rtmp://',
+        address: 'publish.example/app',
+        options: { rtmp_playpath: '' },
+      }),
+    ).toEqual({});
+    expect(
+      validatePublicationSettings('azure', {
+        protocol: 'rtmps://',
+        address: '',
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('azure', {
+        protocol: 'rtmps://',
+        address: 'not a host',
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('dacast', {
+        protocol: 'rtmp://',
+        server: 'primary.example/app',
+        stream_key: 'key',
+        backup_server: '',
+        enable_backup_server: false,
+        username: '',
+        password: '',
+      }).success,
+    ).toBe(true);
+    expect(
+      validatePublicationSettings('dacast', {
+        protocol: 'rtmp://',
+        server: '',
+        stream_key: '',
+        backup_server: '',
+        enable_backup_server: true,
+        username: '',
+        password: '',
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('dacast', {
+        protocol: 'rtmp://',
+        server: 'primary.example/app',
+        stream_key: 'key',
+        backup_server: 'backup.example/app',
+        enable_backup_server: true,
+        username: '',
+        password: '',
+      }).success,
+    ).toBe(true);
+    expect(
+      validatePublicationSettings('akamai', {
+        protocol: 'rtmp://',
+        stream_url: '',
+        backup_url: '',
+        enable_backup_stream: false,
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('akamai', {
+        protocol: 'rtmp://',
+        stream_url: 'primary.example/live',
+        backup_url: '',
+        enable_backup_stream: true,
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('akamai', {
+        protocol: 'rtmp://',
+        stream_url: 'primary.example/live',
+        backup_url: 'backup.example/live',
+        enable_backup_stream: true,
       }).success,
     ).toBe(true);
   });
