@@ -5,7 +5,23 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   base: process.env.PUBLIC_URL ?? '/',
-  plugins: [react(), lingui({ macroTransform: true }), vitePages()],
+  plugins: [
+    react(),
+    lingui({ macroTransform: true }),
+    vitePages(),
+    {
+      name: 'filter-react-compiler-runtime-directive-warning',
+      onLog(_level, log) {
+        const sourceId = log.id?.replaceAll('\\', '/');
+        if (
+          log.code === 'MODULE_LEVEL_DIRECTIVE' &&
+          sourceId?.includes('/react-compiler-runtime/dist/index.js')
+        ) {
+          return false;
+        }
+      },
+    },
+  ],
   define: {
     'process.env': {},
   },
@@ -30,7 +46,7 @@ export default defineConfig({
     cssCodeSplit: true,
     minify: 'oxc',
     sourcemap: true,
-    chunkSizeWarningLimit: 3000,
+    chunkSizeWarningLimit: 3200,
     rolldownOptions: {
       output: {
         codeSplitting: {
