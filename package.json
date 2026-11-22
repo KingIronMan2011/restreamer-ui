@@ -25,6 +25,7 @@
     "@emotion/styled": "^11.14.1",
     "@fontsource/dosis": "^5.3.0",
     "@fontsource/roboto": "^5.3.0",
+    "@hookform/resolvers": "^7.0.8",
     "@lingui/core": "^6.12.0",
     "@lingui/react": "^6.12.0",
     "@mui/icons-material": "^9.5.0",
@@ -38,12 +39,14 @@
     "react-colorful": "^5.8.1",
     "react-device-detect": "^2.2.3",
     "react-dom": "^19.3.1",
+    "react-hook-form": "7.92.0",
     "react-markdown": "^10.1.0",
     "react-router": "^8.5.2",
     "semver": "^7.8.6",
     "url-parse": "^1.5.10",
     "uuid": "^14.0.3",
-    "video.js": "^10.6.0"
+    "video.js": "^10.6.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@kingironman2011/vite-pages": "^1.1.0",

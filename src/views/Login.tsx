@@ -10,11 +10,20 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Typography from '@mui/material/Typography';
 import React from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 import Paper from '../components/Paper';
 import Password from '../components/Password';
 import Select from '../components/Select';
 import * as auth0 from '../utils/auth0';
+
+const loginSchema = z.object({
+  username: z.string().trim().min(1, 'Enter your username.'),
+  password: z.string().min(1, 'Enter your password.'),
+});
+type LoginValues = z.infer<typeof loginSchema>;
 
 function hasAuthType(auths: any, type: any) {
   for (let i = 0; i < auths.length; i++) {
@@ -115,16 +124,19 @@ export default function Login({
   onAuth0 = function () {},
 }: any) {
   const [$auths] = React.useState(initAuths(auths));
-  const [$login, setLogin] = React.useState<Record<string, any>>({
-    username: '',
-    password: '',
-    showPassword: false,
-  });
   const [$auth0, setAuth0] = React.useState('none');
   const [$isAuthenticated, setIsAuthenticated] = React.useState(false);
   const [$canUseAuth0] = React.useState(auth0.canUseAuth0());
   const [$loginTarget, setLoginTarget] = React.useState('none');
   const [$loginCheck, setLoginCheck] = React.useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginValues>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: { username: '', password: '' },
+  });
 
   React.useEffect(() => {
     (async () => {
@@ -147,12 +159,10 @@ export default function Login({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleLogin = async (event: any) => {
-    event.preventDefault();
-
+  const handleLogin = async ({ username, password }: LoginValues) => {
     setLoginCheck(true);
 
-    const res = await onLogin($login.username, $login.password);
+    const res = await onLogin(username, password);
     if (res === false) {
       setLoginCheck(false);
     }
@@ -208,15 +218,6 @@ export default function Login({
   const handleAuth0 = async () => {
     setLoginCheck(true);
     await onAuth0();
-  };
-
-  const handleChange = (what: any) => (event: any) => {
-    const value = event.target.value;
-
-    setLogin({
-      ...$login,
-      [what]: value,
-    });
   };
 
   const handleAuth0Change = (event: any) => {
@@ -291,7 +292,7 @@ export default function Login({
         {$loginTarget === 'local' && hasAuthType($auths, 'local') && (
           <React.Fragment>
             <Grid size={12}>
-              <form noValidate>
+              <form noValidate onSubmit={handleSubmit(handleLogin)}>
                 <Grid container spacing={3}>
                   <Grid size={12}>
                     <TextField
@@ -299,17 +300,19 @@ export default function Login({
                       fullWidth
                       id="username"
                       label={<Trans>Username</Trans>}
-                      value={$login.username}
-                      onChange={handleChange('username')}
+                      {...register('username')}
+                      error={Boolean(errors.username)}
+                      helperText={errors.username?.message}
                       autoComplete="username"
                     />
                   </Grid>
                   <Grid size={12}>
                     <Password
-                      value={$login.password}
                       id="password"
                       label={<Trans>Password</Trans>}
-                      onChange={handleChange('password')}
+                      {...register('password')}
+                      error={Boolean(errors.password)}
+                      helperText={errors.password?.message}
                       autoComplete="current-password"
                     />
                   </Grid>
@@ -321,7 +324,6 @@ export default function Login({
                       size="large"
                       type="submit"
                       name="login_local"
-                      onClick={handleLogin}
                     >
                       <Trans>Login</Trans>
                     </Button>
