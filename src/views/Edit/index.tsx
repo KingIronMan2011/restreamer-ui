@@ -4,16 +4,17 @@ import { Trans } from '@lingui/react/macro';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import EditIcon from '@mui/icons-material/Edit';
 import Backdrop from '@mui/material/Backdrop';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
+import { useTheme } from '@mui/material/styles';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router';
-import { makeStyles } from 'tss-react/mui';
 
 import NotifyContext from '../../components/contexts/Notify';
 import HLSControl from '../../components/controls/HLS';
@@ -37,25 +38,28 @@ import * as M from '../../utils/metadata';
 import Profile from './Profile';
 import ProfileSummary from './ProfileSummary';
 
-const useStyles = makeStyles()((theme) => ({
-  wizardButtonElement: {
-    display: 'flex',
-    alignItems: 'left',
-  },
-  wizardButton: {
-    marginLeft: '1em',
-    padding: ' 0em 2em 0em 2em',
-  },
-  link: {
-    color: theme.palette.common.white,
-  },
-  inlineIcon: {
-    marginBottom: '-.2rem',
-  },
-}));
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    wizardButtonElement: {
+      display: 'flex',
+      alignItems: 'left',
+    },
+    wizardButton: {
+      marginLeft: '1em',
+      padding: ' 0em 2em 0em 2em',
+    },
+    link: {
+      color: theme.palette.common.white,
+    },
+    inlineIcon: {
+      marginBottom: '-.2rem',
+    },
+  };
+};
 
 export default function Edit({ restreamer }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const { channelid: _channelid, tab: _tab } = useParams();
@@ -524,17 +528,17 @@ export default function Edit({ restreamer }: any) {
                 </Grid>
                 {$state.editing === false && (
                   <Grid item xs={12}>
-                    <div className={classes.wizardButtonElement}>
+                    <Box component="div" sx={classes.wizardButtonElement}>
                       <Typography>
                         <Trans>
                           Use the wizard (
-                          <AutoFixHighIcon className={classes.inlineIcon} />)
-                          for a quick and easy setup, or edit (
-                          <EditIcon className={classes.inlineIcon} />) the
-                          sources directly in custom mode.
+                          <AutoFixHighIcon sx={classes.inlineIcon} />) for a
+                          quick and easy setup, or edit (
+                          <EditIcon sx={classes.inlineIcon} />) the sources
+                          directly in custom mode.
                         </Trans>
                       </Typography>
-                    </div>
+                    </Box>
                   </Grid>
                 )}
                 <Grid item xs={12}>

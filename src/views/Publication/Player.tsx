@@ -6,12 +6,12 @@ import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
+import { useTheme } from '@mui/material/styles';
 import Tab from '@mui/material/Tab';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router';
-import { makeStyles } from 'tss-react/mui';
 
 import Checkbox from '../../components/Checkbox';
 import NotifyContext from '../../components/contexts/Notify';
@@ -28,27 +28,30 @@ import TextFieldCopy from '../../components/TextFieldCopy';
 import UploadButton from '../../components/UploadButton';
 import H from '../../utils/help';
 
-const useStyles = makeStyles()((theme) => ({
-  gridContainer: {
-    paddingTop: '1em',
-  },
-  playerL1: {
-    padding: '4px 1px 4px 18px',
-  },
-  playerL2: {
-    position: 'relative',
-    width: '100%',
-    paddingTop: '56.25%',
-  },
-  playerL3: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    backgroundColor: theme.palette.common.black,
-  },
-}));
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    gridContainer: {
+      paddingTop: '1em',
+    },
+    playerL1: {
+      padding: '4px 1px 4px 18px',
+    },
+    playerL2: {
+      position: 'relative',
+      width: '100%',
+      paddingTop: '56.25%',
+    },
+    playerL3: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      right: 0,
+      backgroundColor: theme.palette.common.black,
+    },
+  };
+};
 
 const logoImageTypes = [
   { mimetype: 'image/gif', extension: 'gif', maxSize: 1 * 1024 * 1024 },
@@ -64,7 +67,7 @@ const posterImageTypes = [
 ];
 
 export default function Edit({ restreamer }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const navigate = useNavigate();
   const { channelid: _channelid } = useParams();
   const { i18n } = useLingui();
@@ -367,20 +370,21 @@ export default function Edit({ restreamer }: any) {
           onAbort={handleAbort}
           onHelp={handleHelp}
         />
-        <Grid container spacing={1} className={classes.gridContainer}>
+        <Grid container spacing={1} sx={classes.gridContainer}>
           <Grid item xs={12}>
-            <Grid container spacing={0} className={classes.playerL1}>
-              <Grid item xs={12} className={classes.playerL2}>
+            <Grid container spacing={0} sx={classes.playerL1}>
+              <Grid item xs={12} sx={classes.playerL2}>
                 {$state !== 'connected' ? (
                   <Grid
                     container
                     direction="column"
-                    className={classes.playerL3}
-                    spacing={1}
-                    sx={{
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    }}
+                    sx={[
+                      classes.playerL3,
+                      {
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      },
+                    ]}
                   >
                     <Grid item>
                       <Typography variant="h2">

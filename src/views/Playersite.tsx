@@ -13,7 +13,6 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { makeStyles } from 'tss-react/mui';
 
 import Checkbox from '../components/Checkbox';
 import ColorPicker from '../components/ColorPicker';
@@ -33,12 +32,14 @@ import UploadButton from '../components/UploadButton';
 import H from '../utils/help';
 import * as M from '../utils/metadata';
 
-const useStyles = makeStyles()((theme) => ({
-  buttonOpen: {
-    float: 'right',
-    marginLeft: '.5em',
-  },
-}));
+const useStyles = () => {
+  return {
+    buttonOpen: {
+      float: 'right',
+      marginLeft: '.5em',
+    },
+  };
+};
 
 const imageTypes = [
   { mimetype: 'image/gif', extension: 'gif', maxSize: 1 * 1024 * 1024 },
@@ -52,7 +53,7 @@ const templateTypes = [
 ];
 
 export default function Playersite({ restreamer }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const navigate = useNavigate();
   const { i18n } = useLingui();
   const address = restreamer.Address() + '/';
@@ -721,7 +722,7 @@ export default function Playersite({ restreamer }: any) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className={classes.buttonOpen}
+                    sx={classes.buttonOpen}
                     variant="outlined"
                     fullWidth
                     multiline
@@ -738,7 +739,7 @@ export default function Playersite({ restreamer }: any) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className={classes.buttonOpen}
+                    sx={classes.buttonOpen}
                     variant="outlined"
                     fullWidth
                     multiline
@@ -772,7 +773,7 @@ export default function Playersite({ restreamer }: any) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className={classes.buttonOpen}
+                    sx={classes.buttonOpen}
                     variant="outlined"
                     fullWidth
                     multiline
@@ -792,7 +793,7 @@ export default function Playersite({ restreamer }: any) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className={classes.buttonOpen}
+                    sx={classes.buttonOpen}
                     variant="outlined"
                     fullWidth
                     multiline
@@ -814,7 +815,7 @@ export default function Playersite({ restreamer }: any) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className={classes.buttonOpen}
+                    sx={classes.buttonOpen}
                     variant="outlined"
                     fullWidth
                     multiline
@@ -837,7 +838,7 @@ export default function Playersite({ restreamer }: any) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className={classes.buttonOpen}
+                    sx={classes.buttonOpen}
                     variant="outlined"
                     fullWidth
                     multiline
@@ -868,7 +869,7 @@ export default function Playersite({ restreamer }: any) {
               <Button
                 variant="outlined"
                 color="primary"
-                className={classes.buttonOpen}
+                sx={classes.buttonOpen}
                 href={address + playersiteUrl}
                 target="blank"
                 disabled={!$available}

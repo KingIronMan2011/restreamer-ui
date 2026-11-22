@@ -5,59 +5,62 @@ import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
 import Services from '../Publication/Services';
 
-const useStyles = makeStyles()((theme) => ({
-  egressBar: {
-    marginTop: '-.4em',
-    marginBottom: '-.2em',
-    '& .lucide': {
-      width: '1.4em',
-      height: '1.4em',
-    },
-    '& .egress-icon': {
-      height: '1.4em',
-      paddingButton: '.1em',
-    },
-    '& .egress-left': {
-      minHeight: 24,
-      minWidth: 30,
-      marginRight: 6,
-      float: 'left',
-      '& img': {
-        maxWidth: 22,
-        maxHeight: 22,
-        marginBottom: '0!important',
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    egressBar: {
+      marginTop: '-.4em',
+      marginBottom: '-.2em',
+      '& .lucide': {
+        width: '1.4em',
+        height: '1.4em',
+      },
+      '& .egress-icon': {
+        height: '1.4em',
+        paddingButton: '.1em',
+      },
+      '& .egress-left': {
+        minHeight: 24,
+        minWidth: 30,
+        marginRight: 6,
+        float: 'left',
+        '& img': {
+          maxWidth: 22,
+          maxHeight: 22,
+          marginBottom: '0!important',
+        },
+      },
+      '& .egress-right-edit': {
+        float: 'right',
+        marginLeft: 5,
+        marginTop: 2,
+      },
+      '& .egress-right-switch': {
+        float: 'right',
+        marginLeft: 5,
+      },
+      '& .egress-name': {
+        float: 'left',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        maxWidth: '100%',
+        fontSize: '.9rem',
+      },
+      '& .player-icon': {
+        color: theme.palette.secondary.main,
+        fontSize: '1.5rem',
       },
     },
-    '& .egress-right-edit': {
-      float: 'right',
-      marginLeft: 5,
-      marginTop: 2,
-    },
-    '& .egress-right-switch': {
-      float: 'right',
-      marginLeft: 5,
-    },
-    '& .egress-name': {
-      float: 'left',
-      whiteSpace: 'nowrap',
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-      maxWidth: '100%',
-      fontSize: '.9rem',
-    },
-    '& .player-icon': {
-      color: theme.palette.secondary.main,
-      fontSize: '1.5rem',
-    },
-  },
-}));
+  };
+};
 
 export default function Egress({
   service = '',
@@ -68,7 +71,7 @@ export default function Egress({
   onEdit = function () {},
   onOrder = function (order: any) {},
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const [$order, setOrder] = React.useState('stop');
 
   React.useEffect(() => {
@@ -144,7 +147,7 @@ export default function Egress({
   }
 
   return (
-    <Grid container className={classes.egressBar}>
+    <Grid container sx={classes.egressBar}>
       <Grid item xs={12}>
         <Stack
           direction="row"

@@ -3,18 +3,19 @@ import Grid from '@mui/material/Grid';
 import Tab from '@mui/material/Tab';
 import TextField from '@mui/material/TextField';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
 import TabPanel from '../TabPanel';
 import TabsHorizontal from '../TabsHorizontal';
 
-const useStyles = makeStyles()((theme) => ({
-  root: {
-    '& .MuiOutlinedInput-input': {
-      whiteSpace: 'pre-line',
+const useStyles = () => {
+  return {
+    root: {
+      '& .MuiOutlinedInput-input': {
+        whiteSpace: 'pre-line',
+      },
     },
-  },
-}));
+  };
+};
 
 function init(settings: any) {
   const initSettings = {
@@ -37,7 +38,7 @@ export default function Control({
   settings = {},
   onChange = function (metadata: any) {},
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const [$tab, setTab] = React.useState('content');
   settings = init(settings);
 
@@ -85,7 +86,7 @@ export default function Control({
             </Grid>
             <Grid item xs={12}>
               <TextField
-                className={classes.root}
+                sx={classes.root}
                 variant="outlined"
                 fullWidth
                 multiline
@@ -110,7 +111,7 @@ export default function Control({
             </Grid>
             <Grid item xs={12}>
               <TextField
-                className={classes.root}
+                sx={classes.root}
                 variant="outlined"
                 fullWidth
                 multiline

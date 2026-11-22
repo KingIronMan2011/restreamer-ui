@@ -1,36 +1,40 @@
 import { Trans } from '@lingui/react/macro';
+import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
+import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
 import ModalContent from '../ModalContent';
 import Progress from '../Progress';
 import Textarea from '../Textarea';
 
-const useStyles = makeStyles()((theme) => ({
-  title: {
-    marginBottom: '-.3em',
-    marginTop: '0em',
-    fontWeight: 'bold',
-  },
-  textarea: {
-    marginBottom: '-1em',
-  },
-  box: {
-    backgroundColor: theme.palette.background.modalbox,
-    borderRadius: 4,
-    padding: '1em',
-  },
-  banner: {
-    marginBottom: '-1em',
-  },
-  logging: {
-    marginTop: '.15em',
-  },
-}));
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    title: {
+      marginBottom: '-.3em',
+      marginTop: '0em',
+      fontWeight: 'bold',
+    },
+    textarea: {
+      marginBottom: '-1em',
+    },
+    box: {
+      backgroundColor: theme.palette.background.modalbox,
+      borderRadius: 4,
+      padding: '1em',
+    },
+    banner: {
+      marginBottom: '-1em',
+    },
+    logging: {
+      marginTop: '.15em',
+    },
+  };
+};
 
 const initLogdata = (logdata: any) => {
   if (!logdata) {
@@ -123,7 +127,7 @@ const Component = function ({
   onClose = null as (() => void) | null,
   onHelp = null as (() => void) | null,
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   logdata = initLogdata({
     ...logdata,
     command: progress?.command,
@@ -136,10 +140,10 @@ const Component = function ({
           <Grid item xs={12} md={8} lg={10}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <div className={classes.box}>
+                <Box component="div" sx={classes.box}>
                   <Grid container spacing={1}>
-                    <Grid item xs={12} className={classes.banner}>
-                      <Typography variant="body1" className={classes.title}>
+                    <Grid item xs={12} sx={classes.banner}>
+                      <Typography variant="body1" sx={classes.title}>
                         <Trans>Command</Trans>
                       </Typography>
                       <Textarea
@@ -158,8 +162,8 @@ const Component = function ({
                     >
                       <Divider />
                     </Grid>
-                    <Grid item xs={12} className={classes.logging}>
-                      <Typography variant="body1" className={classes.title}>
+                    <Grid item xs={12} sx={classes.logging}>
+                      <Typography variant="body1" sx={classes.title}>
                         <Trans>Banner</Trans>
                       </Typography>
                       {/* <Textarea rows={9} value={filterPrelude(logdata.prelude).join('\n')} scrollTo="bottom" readOnly allowCopy /> */}
@@ -180,8 +184,8 @@ const Component = function ({
                     >
                       <Divider />
                     </Grid>
-                    <Grid item xs={12} className={classes.logging}>
-                      <Typography variant="body1" className={classes.title}>
+                    <Grid item xs={12} sx={classes.logging}>
+                      <Typography variant="body1" sx={classes.title}>
                         <Trans>Logging</Trans>
                       </Typography>
                       {/* <Textarea rows={16} value={filterLoglines(logdata.log, 'info').map(formatLogline).join('\n')} scrollTo="bottom" readOnly allowCopy /> */}
@@ -194,7 +198,7 @@ const Component = function ({
                       />
                     </Grid>
                   </Grid>
-                </div>
+                </Box>
               </Grid>
             </Grid>
           </Grid>

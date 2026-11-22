@@ -1,12 +1,12 @@
 import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
 import Select from '../../Select';
 import cc_by_nc_nd from './images/by-nc-nd.svg';
@@ -17,22 +17,24 @@ import cc_by_sa from './images/by-sa.svg';
 import cc_by from './images/by.svg';
 import cc_zero from './images/cc-zero.svg';
 
-const useStyles = makeStyles()((theme) => ({
-  boxGray: {
-    marginBottom: '.5em',
-    marginTop: '.5em',
-  },
-  link: {
-    marginTop: '.5em',
-    wordBreak: 'break-word',
-  },
-}));
+const useStyles = () => {
+  return {
+    boxGray: {
+      marginBottom: '.5em',
+      marginTop: '.5em',
+    },
+    link: {
+      marginTop: '.5em',
+      wordBreak: 'break-word',
+    },
+  };
+};
 
 export default function License({
   license = 'none',
   onChange = function (license: any) {},
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   const { i18n } = useLingui();
 
@@ -129,9 +131,9 @@ export default function License({
       </Grid>
       {description.length !== 0 && (
         <Grid item xs={12}>
-          <div className="boxGray {classes.root}">
+          <Box component="div" className="boxGray" sx={classes.boxGray}>
             <Typography>{description}</Typography>
-            <Typography className={classes.link}>
+            <Typography sx={classes.link}>
               <Link
                 color="secondary"
                 href={link}
@@ -141,7 +143,7 @@ export default function License({
                 {link}
               </Link>
             </Typography>
-          </div>
+          </Box>
         </Grid>
       )}
       {image !== null && (

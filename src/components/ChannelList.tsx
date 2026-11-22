@@ -18,49 +18,50 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
 import Dialog from './modals/Dialog';
 
-const useStyles = makeStyles()((theme) => ({
-  drawerPaper: {
-    marginBottom: '60px',
-    boxShadow:
-      '0px -20px 10px -14px rgb(0 0 0 / 25%), 0px -20px 10px -10px rgb(0 0 0 / 10%)',
-    paddingLeft: 50,
-    paddingRight: 50,
-  },
-  drawerButtons: {
-    marginRight: '-15px!important',
-  },
-  channel: {
-    marginBottom: '1em',
-  },
-  channelBar: {
-    maxWidth: '1200px',
-  },
-  channelItems: {
-    width: '100%',
-    maxWidth: '980px',
-  },
-  iconButton: {
-    '& .MuiSvgIcon-root': {
-      fontSize: '2.5em',
+const useStyles = () => {
+  return {
+    drawerPaper: {
+      marginBottom: '60px',
+      boxShadow:
+        '0px -20px 10px -14px rgb(0 0 0 / 25%), 0px -20px 10px -10px rgb(0 0 0 / 10%)',
+      paddingLeft: 50,
+      paddingRight: 50,
     },
-  },
-  iconButtonLeft: {
-    marginLeft: '-1.5em!important',
-    paddingBottom: '1em',
-  },
-  iconButtonRight: {
-    marginRight: '-1.5em!important',
-    paddingBottom: '1em',
-  },
-  imageTitle: {
-    textAlign: 'initial',
-    padding: '.5em 0em 0em .1em',
-  },
-}));
+    drawerButtons: {
+      marginRight: '-15px!important',
+    },
+    channel: {
+      marginBottom: '1em',
+    },
+    channelBar: {
+      maxWidth: '1200px',
+    },
+    channelItems: {
+      width: '100%',
+      maxWidth: '980px',
+    },
+    iconButton: {
+      '& .MuiSvgIcon-root': {
+        fontSize: '2.5em',
+      },
+    },
+    iconButtonLeft: {
+      marginLeft: '-1.5em!important',
+      paddingBottom: '1em',
+    },
+    iconButtonRight: {
+      marginRight: '-1.5em!important',
+      paddingBottom: '1em',
+    },
+    imageTitle: {
+      textAlign: 'initial',
+      padding: '.5em 0em 0em .1em',
+    },
+  };
+};
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   '&:hover, &.Mui-focusVisible': {
@@ -129,7 +130,7 @@ function ChannelButton({
   onClick = () => {},
   largeChannelList = [],
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const theme = useTheme();
 
   let color = theme.palette.primary.main;
@@ -200,11 +201,13 @@ function ChannelButton({
           </Image>
           <Stack
             direction="row"
-            className={classes.imageTitle}
-            sx={{
-              alignItems: 'flex-start',
-              justifyContent: 'space-between',
-            }}
+            sx={[
+              classes.imageTitle,
+              {
+                alignItems: 'flex-start',
+                justifyContent: 'space-between',
+              },
+            ]}
           >
             <Typography variant="body2" color="inherit">
               {title}
@@ -257,7 +260,7 @@ export default function ChannelList({
     return states;
   },
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const theme = useTheme();
   const breakpointSmall = useMediaQuery(theme.breakpoints.up('sm'));
   const breakpointMedium = useMediaQuery(theme.breakpoints.up('md'));
@@ -401,24 +404,24 @@ export default function ChannelList({
         sx={{
           marginButtom: 60,
           '& .MuiDrawer-paper': {
+            ...classes.drawerPaper,
             top: $largeChannelList ? '0px!important' : 'auto!important',
             height: $largeChannelList ? '100vh' : 'auto',
           },
         }}
         slotProps={{ backdrop: { invisible: true } }}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
         disableScrollLock
       >
         <React.Fragment>
           <Grid
             container
             spacing={2}
-            className={classes.channel}
-            sx={{
-              justifyContent: 'center',
-            }}
+            sx={[
+              classes.channel,
+              {
+                justifyContent: 'center',
+              },
+            ]}
           >
             <Grid item xs={12}>
               <Stack
@@ -440,10 +443,12 @@ export default function ChannelList({
                 <Stack
                   direction="row"
                   spacing={1}
-                  className={classes.drawerButtons}
-                  sx={{
-                    justifyContent: 'flex-end',
-                  }}
+                  sx={[
+                    classes.drawerButtons,
+                    {
+                      justifyContent: 'flex-end',
+                    },
+                  ]}
                 >
                   <IconButton
                     color="inherit"
@@ -486,26 +491,24 @@ export default function ChannelList({
                 <Stack
                   direction="row"
                   spacing={0}
-                  className={classes.iconButtonLeft}
-                  sx={{
-                    alignItems: 'center',
-                  }}
+                  sx={[
+                    classes.iconButtonLeft,
+                    {
+                      alignItems: 'center',
+                    },
+                  ]}
                 >
                   <IconButton
                     onClick={() => {
                       setPos($pos - 1);
                     }}
                     disabled={$pos === 0}
-                    className={classes.iconButton}
+                    sx={classes.iconButton}
                   >
                     <NavigateBeforeIcon />
                   </IconButton>
                 </Stack>
-                <Stack
-                  direction="row"
-                  spacing={0}
-                  className={classes.channelItems}
-                >
+                <Stack direction="row" spacing={0} sx={classes.channelItems}>
                   <Grid
                     container
                     spacing={0}
@@ -521,17 +524,19 @@ export default function ChannelList({
                 <Stack
                   direction="row"
                   spacing={0}
-                  className={classes.iconButtonRight}
-                  sx={{
-                    alignItems: 'center',
-                  }}
+                  sx={[
+                    classes.iconButtonRight,
+                    {
+                      alignItems: 'center',
+                    },
+                  ]}
                 >
                   <IconButton
                     onClick={() => {
                       setPos($pos + 1);
                     }}
                     disabled={$pos + $nChannels >= allChannels.length}
-                    className={classes.iconButton}
+                    sx={classes.iconButton}
                   >
                     <NavigateNextIcon />
                   </IconButton>

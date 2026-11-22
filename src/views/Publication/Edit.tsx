@@ -13,7 +13,6 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router';
-import { makeStyles } from 'tss-react/mui';
 
 import BoxText from '../../components/BoxText';
 import NotifyContext from '../../components/contexts/Notify';
@@ -38,7 +37,7 @@ import Process from './Process';
 import Services from './Services';
 import TabContent from './TabContent';
 
-const useStyles = makeStyles()(() => ({
+const useStyles = () => ({
   gridContainer: {
     marginTop: '0.5em',
     marginBottom: '1em',
@@ -47,10 +46,10 @@ const useStyles = makeStyles()(() => ({
     marginLeft: 10,
     overflowWrap: 'anywhere',
   },
-}));
+});
 
 export default function Edit({ restreamer }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const { i18n } = useLingui();
   const {
     channelid: _channelid,
@@ -569,7 +568,7 @@ export default function Edit({ restreamer }: any) {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <Grid container spacing={1} className={classes.gridContainer}>
+                  <Grid container spacing={1} sx={classes.gridContainer}>
                     {$unsavedChanges === true && (
                       <Grid item xs={12}>
                         <BoxText>
@@ -601,7 +600,7 @@ export default function Edit({ restreamer }: any) {
                             color="textSecondary"
                             href="#!"
                             onClick={handleProcessDetails}
-                            className={classes.link}
+                            sx={classes.link}
                           >
                             <Trans>Process details</Trans>
                           </Link>
@@ -609,7 +608,7 @@ export default function Edit({ restreamer }: any) {
                             color="textSecondary"
                             href="#!"
                             onClick={handleProcessDebug}
-                            className={classes.link}
+                            sx={classes.link}
                           >
                             <Trans>Process report</Trans>
                           </Link>

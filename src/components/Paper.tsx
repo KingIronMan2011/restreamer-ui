@@ -1,21 +1,24 @@
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import { useTheme } from '@mui/material/styles';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles()((theme) => ({
-  PaperM: {
-    padding: '3em 3.5em 3em 3.5em!important',
-  },
-  PaperL: {
-    padding: '4em 4.5em 4em 4.5em!important',
-  },
-  PaperService: {
-    padding: '4em 4.5em 4em 4.5em!important',
-    border: `1px solid ${theme.palette.background.light1}`,
-    backgroundColor: theme.palette.service.contrastText,
-  },
-}));
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    PaperM: {
+      padding: '3em 3.5em 3em 3.5em!important',
+    },
+    PaperL: {
+      padding: '4em 4.5em 4em 4.5em!important',
+    },
+    PaperService: {
+      padding: '4em 4.5em 4em 4.5em!important',
+      border: `1px solid ${theme.palette.background.light1}`,
+      backgroundColor: theme.palette.service.contrastText,
+    },
+  };
+};
 
 const Component = React.forwardRef<any, any>(
   (
@@ -33,7 +36,7 @@ const Component = React.forwardRef<any, any>(
     },
     ref,
   ) => {
-    const { classes } = useStyles();
+    const classes = useStyles();
 
     return (
       <Grid
@@ -46,7 +49,7 @@ const Component = React.forwardRef<any, any>(
       >
         <Grid item xs={xs} sm={sm} md={md} lg={lg}>
           <Paper
-            className={classes[className as keyof typeof classes]}
+            sx={classes[className as keyof typeof classes]}
             elevation={elevation}
             ref={ref}
             tabIndex={tabIndex}

@@ -8,70 +8,73 @@ import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import Popover from '@mui/material/Popover';
 import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { isMobile } from 'react-device-detect';
-import { makeStyles } from 'tss-react/mui';
 
 import useInterval from '../hooks/useInterval';
 import Duration from './Duration';
 import Logo from './Logo';
 import Number from './Number';
 
-const useStyles = makeStyles()((theme) => ({
-  footer: {
-    zIndex: '2',
-    position: 'fixed',
-    bottom: 0,
-    width: '100%',
-    height: 60,
-    background: `-webkit-linear-gradient(left, ${theme.palette.background.footer1} 0, ${theme.palette.background.footer2} 100%)`,
-    color: theme.palette.text.secondary,
-    '& .footerLeft': {
-      textOverflow: 'ellipsis',
-      overflow: 'hidden !important',
-      whiteSpace: 'nowrap',
-      marginLeft: 40,
-    },
-    '& .footerRight': {
-      marginLeft: 20,
-      marginRight: 40,
-    },
-    '& .footerVersion': {
-      textOverflow: 'ellipsis',
-      overflow: 'hidden !important',
-      whiteSpace: 'nowrap',
-    },
-    '@media (max-width: 599px)': {
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    footer: {
+      zIndex: '2',
+      position: 'fixed',
+      bottom: 0,
+      width: '100%',
+      height: 60,
+      background: `-webkit-linear-gradient(left, ${theme.palette.background.footer1} 0, ${theme.palette.background.footer2} 100%)`,
+      color: theme.palette.text.secondary,
       '& .footerLeft': {
-        marginRight: 20,
+        textOverflow: 'ellipsis',
+        overflow: 'hidden !important',
+        whiteSpace: 'nowrap',
+        marginLeft: 40,
       },
       '& .footerRight': {
         marginLeft: 20,
+        marginRight: 40,
       },
       '& .footerVersion': {
-        display: 'none',
+        textOverflow: 'ellipsis',
+        overflow: 'hidden !important',
+        whiteSpace: 'nowrap',
+      },
+      '@media (max-width: 599px)': {
+        '& .footerLeft': {
+          marginRight: 20,
+        },
+        '& .footerRight': {
+          marginLeft: 20,
+        },
+        '& .footerVersion': {
+          display: 'none',
+        },
       },
     },
-  },
-  warningIcon: {
-    fontSize: '1.1rem',
-    marginTop: -1,
-    marginRight: 5,
-  },
-  subheader: {
-    color: `${theme.palette.service.main}`,
-    textTransform: 'uppercase',
-    fontWeight: 'bold',
-  },
-}));
+    warningIcon: {
+      fontSize: '1.1rem',
+      marginTop: -1,
+      marginRight: 5,
+    },
+    subheader: {
+      color: `${theme.palette.service.main}`,
+      textTransform: 'uppercase',
+      fontWeight: 'bold',
+    },
+  };
+};
 
 function Resources({
   getResources,
 }: {
   getResources: () => Promise<Record<string, any> | null>;
 }) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const [$popover, setPopover] = React.useState<HTMLElement | null>(null);
   const [$resources, setResources] = React.useState<Record<string, any> | null>(
     null,
@@ -158,7 +161,7 @@ function Resources({
         core.memfs_used >= 75 ||
         core.disk_used >= 75 ||
         core.net_used >= 75) && (
-        <WarningIcon className={classes.warningIcon} color="service" />
+        <WarningIcon sx={classes.warningIcon} color="service" />
       )}
       <Typography
         variant="button"
@@ -193,7 +196,7 @@ function Resources({
         <List
           size="small"
           subheader={
-            <ListSubheader className={classes.subheader}>
+            <ListSubheader sx={classes.subheader}>
               <Trans>Uptime</Trans>
             </ListSubheader>
           }
@@ -212,7 +215,7 @@ function Resources({
         <List
           size="small"
           subheader={
-            <ListSubheader className={classes.subheader}>
+            <ListSubheader sx={classes.subheader}>
               <Trans>System</Trans>
             </ListSubheader>
           }
@@ -251,7 +254,7 @@ function Resources({
         <List
           size="small"
           subheader={
-            <ListSubheader className={classes.subheader}>
+            <ListSubheader sx={classes.subheader}>
               <Trans>Application</Trans>
             </ListSubheader>
           }
@@ -416,18 +419,18 @@ export default function Footer({
   version?: any;
   getResources?: () => Promise<Record<string, any> | null>;
 }) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   if (expand === true) {
     return (
       <Grid
         container
-        className={classes.footer}
-        spacing={0}
-        direction="row"
-        sx={{
-          alignItems: 'center',
-        }}
+        sx={[
+          classes.footer,
+          {
+            alignItems: 'center',
+          },
+        ]}
       >
         <Grid item xs={12}>
           <Stack
@@ -461,12 +464,12 @@ export default function Footer({
     return (
       <Grid
         container
-        className={classes.footer}
-        spacing={0}
-        direction="row"
-        sx={{
-          alignItems: 'center',
-        }}
+        sx={[
+          classes.footer,
+          {
+            alignItems: 'center',
+          },
+        ]}
       >
         <Grid item xs={12}>
           <Stack

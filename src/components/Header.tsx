@@ -18,10 +18,9 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Modal from '@mui/material/Modal';
 import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
 import * as Version from '../lib/version';
 import * as Storage from '../utils/storage';
@@ -30,93 +29,96 @@ import Logo from './Logo/rsLogo';
 import ModalContent from './ModalContent';
 import PaperThumb from './PaperThumb';
 
-const useStyles = makeStyles()((theme) => ({
-  header: {
-    width: '100%',
-    height: 132,
-    lineHeight: '132px',
-    backgroundColor: 'transparent',
-    color: theme.palette.text.secondary,
-    '& .headerRight': {
-      float: 'right',
-      marginRight: 42,
-    },
-    '& .headerFab': {
-      height: 60,
-      width: 60,
-      marginLeft: '1em',
-      boxShadow: 'unset',
-      '& .fabIcon': {
-        fontSize: 30,
-      },
-      '&:hover': {
-        backgroundColor: theme.palette.background.box_default,
-      },
-    },
-    '& .headerFabHighlight': {
-      height: 60,
-      width: 60,
-      marginLeft: '1em',
-      boxShadow: 'unset',
-      border: `3px solid ${theme.palette.secondary.main}`,
-      '& .fabIcon': {
-        fontSize: 30,
-      },
-      '&:hover': {
-        backgroundColor: theme.palette.background.box_default,
-      },
-    },
-    '& .headerLeft': {
-      fontSize: '3.5rem',
-      fontWeight: 300,
-      marginLeft: 40,
-    },
-    '& .headerTitle': {
-      fontFamily: '"Dosis", "Roboto", "Helvetica", "Arial", sans-serif',
-      fontSize: '3rem',
-      fontWeight: 300,
-      marginLeft: 10,
-      marginBottom: '0.2em',
-    },
-    '@media (max-width: 599px)': {
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    header: {
+      width: '100%',
+      height: 132,
+      lineHeight: '132px',
+      backgroundColor: 'transparent',
+      color: theme.palette.text.secondary,
       '& .headerRight': {
-        marginRight: 20,
+        float: 'right',
+        marginRight: 42,
+      },
+      '& .headerFab': {
+        height: 60,
+        width: 60,
+        marginLeft: '1em',
+        boxShadow: 'unset',
+        '& .fabIcon': {
+          fontSize: 30,
+        },
+        '&:hover': {
+          backgroundColor: theme.palette.background.box_default,
+        },
+      },
+      '& .headerFabHighlight': {
+        height: 60,
+        width: 60,
+        marginLeft: '1em',
+        boxShadow: 'unset',
+        border: `3px solid ${theme.palette.secondary.main}`,
+        '& .fabIcon': {
+          fontSize: 30,
+        },
+        '&:hover': {
+          backgroundColor: theme.palette.background.box_default,
+        },
       },
       '& .headerLeft': {
-        marginLeft: 20,
+        fontSize: '3.5rem',
+        fontWeight: 300,
+        marginLeft: 40,
       },
       '& .headerTitle': {
-        fontSize: '2.4rem',
+        fontFamily: '"Dosis", "Roboto", "Helvetica", "Arial", sans-serif',
+        fontSize: '3rem',
+        fontWeight: 300,
+        marginLeft: 10,
+        marginBottom: '0.2em',
+      },
+      '@media (max-width: 599px)': {
+        '& .headerRight': {
+          marginRight: 20,
+        },
+        '& .headerLeft': {
+          marginLeft: 20,
+        },
+        '& .headerTitle': {
+          fontSize: '2.4rem',
+        },
+      },
+      '@media (max-width: 415px)': {
+        '& .headerRight': {
+          marginRight: 20,
+        },
+        '& .headerLeft': {
+          marginLeft: 20,
+        },
+        '& .headerTitle': {
+          display: 'none',
+        },
       },
     },
-    '@media (max-width: 415px)': {
-      '& .headerRight': {
-        marginRight: 20,
-      },
-      '& .headerLeft': {
-        marginLeft: 20,
-      },
-      '& .headerTitle': {
-        display: 'none',
-      },
+    modalPaper: {
+      padding: '1em 1.5em 1.3em 1.5em',
+      width: '95%',
+      maxWidth: 350,
+      maxHeight: '95%',
+      overflow: 'scroll',
+      backgroundColor: theme.palette.background.modal,
+      color: theme.palette.text.primary,
     },
-  },
-  modalPaper: {
-    padding: '1em 1.5em 1.3em 1.5em',
-    width: '95%',
-    maxWidth: 350,
-    maxHeight: '95%',
-    overflow: 'scroll',
-    backgroundColor: theme.palette.background.modal,
-    color: theme.palette.text.primary,
-  },
-  aboutImage: {
-    paddingLeft: '1em',
-  },
-  colorHighlight: {
-    color: `${theme.palette.secondary.main}!important`,
-  },
-}));
+    aboutImage: {
+      paddingLeft: '1em',
+    },
+    colorHighlight: {
+      color: `${theme.palette.secondary.main}!important`,
+    },
+  };
+};
 
 const StyledMenu = styled((props: React.ComponentProps<typeof Menu>) => (
   <Menu
@@ -159,17 +161,17 @@ const StyledMenu = styled((props: React.ComponentProps<typeof Menu>) => (
 }));
 
 function AboutModal({ open = false, onClose = () => {} }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   return (
     <Modal open={open} onClose={onClose} className="modal">
       <ModalContent
         title="About datarhei Restreamer"
         onClose={onClose}
-        className={classes.modalPaper}
+        sx={classes.modalPaper}
       >
         <Grid container spacing={1}>
-          <Grid item xs={12} className={classes.aboutImage}>
+          <Grid item xs={12} sx={classes.aboutImage}>
             <PaperThumb
               image="/images/welcome.png"
               title="Welcome to Restreamer v2"
@@ -253,7 +255,7 @@ function HeaderMenu({
   hasUpdates = false,
   hasService = false,
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   const [$anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
   const [$about, setAbout] = React.useState(false);
@@ -318,7 +320,7 @@ function HeaderMenu({
               <ListItemIcon>
                 <Settings
                   fontSize="small"
-                  className={hasUpdates ? classes.colorHighlight : ''}
+                  sx={hasUpdates ? classes.colorHighlight : {}}
                 />
               </ListItemIcon>
               <Trans>System</Trans>
@@ -429,17 +431,17 @@ export default function Header({
   hasUpdates = false,
   hasService = false,
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   return (
     <Grid
       container
-      className={classes.header}
-      spacing={0}
-      direction="row"
-      sx={{
-        alignItems: 'center',
-      }}
+      sx={[
+        classes.header,
+        {
+          alignItems: 'center',
+        },
+      ]}
     >
       <Grid item xs={12}>
         <Stack

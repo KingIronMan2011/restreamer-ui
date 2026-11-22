@@ -6,7 +6,6 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
 import CircularProgress from '../../../components/CircularProgress';
 import Filesize from '../../../components/Filesize';
@@ -16,11 +15,13 @@ import UploadButton from '../../../components/UploadButton';
 
 const imageTypes = [{ mimetype: 'audio/*', extension: 'audio', maxSize: 0 }];
 
-const useStyles = makeStyles()((theme) => ({
-  gridContainer: {
-    marginTop: '0.5em',
-  },
-}));
+const useStyles = () => {
+  return {
+    gridContainer: {
+      marginTop: '0.5em',
+    },
+  };
+};
 
 const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
@@ -59,7 +60,7 @@ function Source({
     return '';
   },
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   settings = initSettings(settings);
 
   const [$progress, setProgress] = React.useState<Record<string, any>>({
@@ -172,10 +173,12 @@ function Source({
       <Grid
         container
         spacing={2}
-        className={classes.gridContainer}
-        sx={{
-          alignItems: 'flex-start',
-        }}
+        sx={[
+          classes.gridContainer,
+          {
+            alignItems: 'flex-start',
+          },
+        ]}
       >
         <Grid item xs={12}>
           <Typography variant="caption">

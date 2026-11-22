@@ -3,6 +3,7 @@ import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
 import WarningIcon from '@mui/icons-material/Warning';
 import Backdrop from '@mui/material/Backdrop';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Divider from '@mui/material/Divider';
@@ -16,7 +17,6 @@ import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router';
-import { makeStyles } from 'tss-react/mui';
 
 import BoxText from '../components/BoxText';
 import BoxTextarea from '../components/BoxTextarea';
@@ -39,11 +39,13 @@ import useInterval from '../hooks/useInterval';
 import H from '../utils/help';
 import Restreamer from '../utils/restreamer';
 
-const useStyles = makeStyles()((theme) => ({
-  inlineEnv: {
-    float: 'right',
-  },
-}));
+const useStyles = () => {
+  return {
+    inlineEnv: {
+      float: 'right',
+    },
+  };
+};
 
 type ConfigValues = Record<
   string,
@@ -712,7 +714,7 @@ const toInt = (val: string | number) => {
 };
 
 export default function Settings({ restreamer }: { restreamer: Restreamer }) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const { tab: _tab } = useParams();
@@ -2555,41 +2557,41 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <MenuItem value="silent">
                       Silent
                       {env('log.level') && (
-                        <div className={classes.inlineEnv}>
+                        <Box component="div" sx={classes.inlineEnv}>
                           <Env />
-                        </div>
+                        </Box>
                       )}
                     </MenuItem>
                     <MenuItem value="error">
                       Error
                       {env('log.level') && (
-                        <div className={classes.inlineEnv}>
+                        <Box component="div" sx={classes.inlineEnv}>
                           <Env />
-                        </div>
+                        </Box>
                       )}
                     </MenuItem>
                     <MenuItem value="warn">
                       Warn
                       {env('log.level') && (
-                        <div className={classes.inlineEnv}>
+                        <Box component="div" sx={classes.inlineEnv}>
                           <Env />
-                        </div>
+                        </Box>
                       )}
                     </MenuItem>
                     <MenuItem value="info">
                       Info
                       {env('log.level') && (
-                        <div className={classes.inlineEnv}>
+                        <Box component="div" sx={classes.inlineEnv}>
                           <Env />
-                        </div>
+                        </Box>
                       )}
                     </MenuItem>
                     <MenuItem value="debug">
                       Debug
                       {env('loglevel') && (
-                        <div className={classes.inlineEnv}>
+                        <Box component="div" sx={classes.inlineEnv}>
                           <Env />
-                        </div>
+                        </Box>
                       )}
                     </MenuItem>
                   </Select>

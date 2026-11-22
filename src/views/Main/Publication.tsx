@@ -6,7 +6,6 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { makeStyles } from 'tss-react/mui';
 
 import Number from '../../components/Number';
 import Paper from '../../components/Paper';
@@ -16,35 +15,37 @@ import H from '../../utils/help';
 import Services from '../Publication/Services';
 import Egress from './Egress';
 
-const useStyles = makeStyles()((theme) => ({
-  viewerCount: {
-    fontSize: '3.5rem',
-    fontWeight: 600,
-  },
-  vierwerDescription: {
-    marginTop: '-1em',
-  },
-  vierwerTypo: {
-    fontSize: '1.1rem',
-  },
-  bandwidth: {
-    marginBottom: '.3em',
-  },
-  bandwidthCount: {
-    fontSize: '2.5rem',
-    fontWeight: 600,
-  },
-  bandwidthDescription: {
-    marginTop: '-.5em',
-  },
-  bandwidthIcon: {
-    fontSize: '1.7rem',
-    paddingRight: 7,
-  },
-}));
+const useStyles = () => {
+  return {
+    viewerCount: {
+      fontSize: '3.5rem',
+      fontWeight: 600,
+    },
+    vierwerDescription: {
+      marginTop: '-1em',
+    },
+    vierwerTypo: {
+      fontSize: '1.1rem',
+    },
+    bandwidth: {
+      marginBottom: '.3em',
+    },
+    bandwidthCount: {
+      fontSize: '2.5rem',
+      fontWeight: 600,
+    },
+    bandwidthDescription: {
+      marginTop: '-.5em',
+    },
+    bandwidthIcon: {
+      fontSize: '1.7rem',
+      paddingRight: 7,
+    },
+  };
+};
 
 export default function Publication({ channelid = '', restreamer }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   const navigate = useNavigate();
   const services = Services.IDs();
@@ -178,20 +179,22 @@ export default function Publication({ channelid = '', restreamer }: any) {
             }}
           >
             <Divider />
-            <Typography component="div" className={classes.viewerCount}>
+            <Typography component="div" sx={classes.viewerCount}>
               <Number value={$session.viewer} />
             </Typography>
             <Grid
               container
               direction="row"
-              className={classes.vierwerDescription}
-              sx={{
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
+              sx={[
+                classes.vierwerDescription,
+                {
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                },
+              ]}
             >
               <PersonIcon fontSize="small" />
-              <Typography className={classes.vierwerTypo}>
+              <Typography sx={classes.vierwerTypo}>
                 <Trans>Viewer</Trans>
               </Typography>
             </Grid>
@@ -199,24 +202,28 @@ export default function Publication({ channelid = '', restreamer }: any) {
           <Grid
             item
             xs={12}
-            className={classes.bandwidth}
-            sx={{
-              textAlign: 'center',
-            }}
+            sx={[
+              classes.bandwidth,
+              {
+                textAlign: 'center',
+              },
+            ]}
           >
-            <Typography component="div" className={classes.bandwidthCount}>
+            <Typography component="div" sx={classes.bandwidthCount}>
               <Number value={$session.bandwidth} />
             </Typography>
             <Grid
               container
               direction="row"
-              className={classes.bandwidthDescription}
-              sx={{
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
+              sx={[
+                classes.bandwidthDescription,
+                {
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                },
+              ]}
             >
-              <CloudUploadIcon className={classes.bandwidthIcon} />
+              <CloudUploadIcon sx={classes.bandwidthIcon} />
               <Typography>
                 <Trans>kbit/s</Trans>
               </Typography>

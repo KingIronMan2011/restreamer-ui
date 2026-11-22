@@ -1,29 +1,30 @@
 import Grid from '@mui/material/Grid';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles()((theme) => ({
-  root: {
-    marginBottom: '.3em',
-    marginTop: '1.2em',
-    minHeight: '38px',
-    '& button': {
-      marginRight: '.5em',
+const useStyles = () => {
+  return {
+    root: {
+      marginBottom: '.3em',
+      marginTop: '1.2em',
+      minHeight: '38px',
+      '& button': {
+        marginRight: '.5em',
+      },
+      '& div button': {
+        float: 'right',
+        marginRight: '0',
+        marginLeft: '.5em',
+      },
     },
-    '& div button': {
-      float: 'right',
-      marginRight: '0',
-      marginLeft: '.5em',
-    },
-  },
-}));
+  };
+};
 
 const Component = function ({ buttonsLeft = null, buttonsRight = null }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12} className={classes.root}>
+      <Grid item xs={12} sx={classes.root}>
         <div>{buttonsRight}</div>
         {buttonsLeft}
       </Grid>

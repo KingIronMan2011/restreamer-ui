@@ -15,7 +15,6 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { makeStyles } from 'tss-react/mui';
 import urlparser from 'url-parse';
 
 import BoxText from '../../../components/BoxText';
@@ -27,11 +26,13 @@ import Password from '../../../components/Password';
 import Select from '../../../components/Select';
 import Textarea from '../../../components/Textarea';
 
-const useStyles = makeStyles()((theme) => ({
-  gridContainer: {
-    marginTop: '0.5em',
-  },
-}));
+const useStyles = () => {
+  return {
+    gridContainer: {
+      marginTop: '0.5em',
+    },
+  };
+};
 
 const initSettings = (initialSettings: any, config: any) => {
   if (!initialSettings) {
@@ -949,7 +950,7 @@ function Pull({
   onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const authProtocol = isAuthProtocol(settings.address);
   const validURL = isValidURL(settings.address);
   const supportedProtocol = isSupportedProtocol(
@@ -961,10 +962,12 @@ function Pull({
     <Grid
       container
       spacing={2}
-      className={classes.gridContainer}
-      sx={{
-        alignItems: 'flex-start',
-      }}
+      sx={[
+        classes.gridContainer,
+        {
+          alignItems: 'flex-start',
+        },
+      ]}
     >
       <Grid item xs={12}>
         <Typography>
@@ -1067,7 +1070,7 @@ function Push({
   onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   //const supportsHLS = isSupportedProtocol('http://', skills.protocols.input);
   const supportsRTMP = isSupportedProtocol('rtmp://', skills.protocols.input);
@@ -1078,10 +1081,12 @@ function Push({
       <Grid
         container
         spacing={2}
-        className={classes.gridContainer}
-        sx={{
-          alignItems: 'flex-start',
-        }}
+        sx={[
+          classes.gridContainer,
+          {
+            alignItems: 'flex-start',
+          },
+        ]}
       >
         <Grid
           item
@@ -1109,10 +1114,12 @@ function Push({
       <Grid
         container
         spacing={2}
-        className={classes.gridContainer}
-        sx={{
-          alignItems: 'flex-start',
-        }}
+        sx={[
+          classes.gridContainer,
+          {
+            alignItems: 'flex-start',
+          },
+        ]}
       >
         <Grid item xs={12}>
           <Select
@@ -1172,7 +1179,7 @@ function PushHLS({
   onChange = function (settings: any) {},
   onProbe = function (settings: any, inputs: any) {},
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   const HLS = getHLS(config);
 
@@ -1180,10 +1187,12 @@ function PushHLS({
     <Grid
       container
       spacing={2}
-      className={classes.gridContainer}
-      sx={{
-        alignItems: 'flex-start',
-      }}
+      sx={[
+        classes.gridContainer,
+        {
+          alignItems: 'flex-start',
+        },
+      ]}
     >
       <Grid item xs={12}>
         <Typography>
@@ -1220,7 +1229,7 @@ function PushRTMP({
   onRefresh = function () {},
 }: any) {
   const { i18n } = useLingui();
-  const { classes } = useStyles();
+  const classes = useStyles();
   const navigate = useNavigate();
 
   let form = null;
@@ -1230,10 +1239,12 @@ function PushRTMP({
       <Grid
         container
         spacing={2}
-        className={classes.gridContainer}
-        sx={{
-          alignItems: 'flex-start',
-        }}
+        sx={[
+          classes.gridContainer,
+          {
+            alignItems: 'flex-start',
+          },
+        ]}
       >
         <Grid item xs={12}>
           <Typography>
@@ -1283,10 +1294,12 @@ function PushRTMP({
       <Grid
         container
         spacing={2}
-        className={classes.gridContainer}
-        sx={{
-          alignItems: 'flex-start',
-        }}
+        sx={[
+          classes.gridContainer,
+          {
+            alignItems: 'flex-start',
+          },
+        ]}
       >
         <Grid item xs={12}>
           <Select
@@ -1351,7 +1364,7 @@ function PushSRT({
   onRefresh = function () {},
 }: any) {
   const { i18n } = useLingui();
-  const { classes } = useStyles();
+  const classes = useStyles();
   const navigate = useNavigate();
 
   let form = null;
@@ -1361,10 +1374,12 @@ function PushSRT({
       <Grid
         container
         spacing={2}
-        className={classes.gridContainer}
-        sx={{
-          alignItems: 'flex-start',
-        }}
+        sx={[
+          classes.gridContainer,
+          {
+            alignItems: 'flex-start',
+          },
+        ]}
       >
         <Grid item xs={12}>
           <Typography>
@@ -1414,10 +1429,12 @@ function PushSRT({
       <Grid
         container
         spacing={2}
-        className={classes.gridContainer}
-        sx={{
-          alignItems: 'flex-start',
-        }}
+        sx={[
+          classes.gridContainer,
+          {
+            alignItems: 'flex-start',
+          },
+        ]}
       >
         <Grid item xs={12}>
           <Select
@@ -1484,7 +1501,7 @@ function Source({
     return '';
   },
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const { i18n } = useLingui();
   config = initConfig(config);
   settings = initSettings(settings, config);
@@ -1546,10 +1563,12 @@ function Source({
       <Grid
         container
         spacing={2}
-        className={classes.gridContainer}
-        sx={{
-          alignItems: 'flex-start',
-        }}
+        sx={[
+          classes.gridContainer,
+          {
+            alignItems: 'flex-start',
+          },
+        ]}
       >
         <Grid item xs={12}>
           <Select

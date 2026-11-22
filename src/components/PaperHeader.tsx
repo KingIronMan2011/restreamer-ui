@@ -6,17 +6,18 @@ import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles()((theme) => ({
-  root: {
-    marginBottom: '.3em',
-    '& button': {
-      float: 'right',
-      marginLeft: '.5em',
+const useStyles = () => {
+  return {
+    root: {
+      marginBottom: '.3em',
+      '& button': {
+        float: 'right',
+        marginLeft: '.5em',
+      },
     },
-  },
-}));
+  };
+};
 
 const Component = function ({
   spacing = 0,
@@ -28,7 +29,7 @@ const Component = function ({
   onEdit = null,
   onAdd = null,
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   return (
     <Grid
@@ -38,7 +39,7 @@ const Component = function ({
         padding: padding,
       }}
     >
-      <Grid item xs={12} className={classes.root}>
+      <Grid item xs={12} sx={classes.root}>
         {typeof onAbort === 'function' && (
           <IconButton color="inherit" size="small" onClick={onAbort}>
             <CloseIcon />

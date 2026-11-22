@@ -6,42 +6,45 @@ import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles()((theme) => ({
-  modalHeader: {
-    marginBottom: '.7em',
-    '& button': {
-      float: 'right',
-      marginLeft: '.5em',
-      paddingTop: '.25em',
-      marginRight: '-.7em',
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    modalHeader: {
+      marginBottom: '.7em',
+      '& button': {
+        float: 'right',
+        marginLeft: '.5em',
+        paddingTop: '.25em',
+        marginRight: '-.7em',
+      },
     },
-  },
-  modalFooter: {
-    marginTop: '1.2em',
-    minHeight: '38px',
-    '& button': {
-      marginRight: '.5em',
+    modalFooter: {
+      marginTop: '1.2em',
+      minHeight: '38px',
+      '& button': {
+        marginRight: '.5em',
+      },
+      '& .right': {
+        float: 'right',
+        marginRight: '0',
+        marginLeft: '.5em',
+      },
     },
-    '& .right': {
-      float: 'right',
-      marginRight: '0',
-      marginLeft: '.5em',
+    modalPaper: {
+      padding: '1em 1.5em 1.3em 1.5em',
+      width: '95%',
+      maxWidth: 980,
+      maxHeight: '95%',
+      overflow: 'scroll',
+      backgroundColor: theme.palette.background.modal,
+      color: theme.palette.text.primary,
     },
-  },
-  modalPaper: {
-    padding: '1em 1.5em 1.3em 1.5em',
-    width: '95%',
-    maxWidth: 980,
-    maxHeight: '95%',
-    overflow: 'scroll',
-    backgroundColor: theme.palette.background.modal,
-    color: theme.palette.text.primary,
-  },
-}));
+  };
+};
 
 const Component = React.forwardRef<any, any>(
   (
@@ -55,18 +58,19 @@ const Component = React.forwardRef<any, any>(
     },
     ref,
   ) => {
-    const { classes } = useStyles();
+    const classes = useStyles();
 
     return (
       <Paper
-        className={className ? className : classes.modalPaper}
+        className={className}
+        sx={classes.modalPaper}
         elevation={0}
         tabIndex={-1}
         ref={ref}
         style={style}
       >
         <Grid container spacing={0}>
-          <Grid item xs={12} className={classes.modalHeader}>
+          <Grid item xs={12} sx={classes.modalHeader}>
             <Stack
               direction="row"
               spacing={2}
@@ -100,7 +104,7 @@ const Component = React.forwardRef<any, any>(
         </Grid>
         {children}
         <Grid container spacing={0}>
-          <Grid item xs={12} className={classes.modalFooter}>
+          <Grid item xs={12} sx={classes.modalFooter}>
             <Button variant="outlined" color="default" onClick={onClose}>
               <Trans>Close</Trans>
             </Button>

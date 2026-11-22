@@ -1,36 +1,39 @@
 import { useLingui } from '@lingui/react';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import { useTheme } from '@mui/material/styles';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles()((theme) => ({
-  root: {
-    fontSize: '1rem',
-    fontWeight: '400',
-    backgroundColor: 'none',
-    color: theme.palette.text.primary,
-    borderButtom: 'none',
-    '&:hover': {
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    root: {
+      fontSize: '1rem',
+      fontWeight: '400',
+      backgroundColor: 'none',
       color: theme.palette.text.primary,
+      borderButtom: 'none',
+      '&:hover': {
+        color: theme.palette.text.primary,
+      },
+      '& fieldset': {
+        display: 'none',
+      },
+      '& .MuiSelect-select': {
+        padding: '0px 0px',
+        marginRight: '10px',
+      },
+      '&:before': {
+        borderBottom: 'none',
+      },
     },
-    '& fieldset': {
-      display: 'none',
-    },
-    '& .MuiSelect-select': {
-      padding: '0px 0px',
-      marginRight: '10px',
-    },
-    '&:before': {
-      borderBottom: 'none',
-    },
-  },
-}));
+  };
+};
 
 export default function LanguageSelect({
   onChange = function (lang: any) {},
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const { i18n } = useLingui();
 
   const handleChange = (event: any) => {
@@ -43,7 +46,7 @@ export default function LanguageSelect({
 
   return (
     <Select
-      className={classes.root}
+      sx={classes.root}
       variant="standard"
       displayEmpty
       value={i18n.locale}

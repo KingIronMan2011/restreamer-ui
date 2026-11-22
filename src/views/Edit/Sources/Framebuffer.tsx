@@ -5,17 +5,18 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { Images } from 'lucide-react';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
 import Video from '../../../components/coders/settings/Video';
 import FormInlineButton from '../../../components/FormInlineButton';
 import SelectCustom from '../../../components/SelectCustom';
 
-const useStyles = makeStyles()((theme) => ({
-  gridContainer: {
-    marginTop: '0.5em',
-  },
-}));
+const useStyles = () => {
+  return {
+    gridContainer: {
+      marginTop: '0.5em',
+    },
+  };
+};
 
 const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
@@ -57,7 +58,7 @@ function Source({
     return '';
   },
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const { i18n } = useLingui();
   settings = initSettings(settings);
 
@@ -109,10 +110,12 @@ function Source({
     <Grid
       container
       spacing={2}
-      className={classes.gridContainer}
-      sx={{
-        alignItems: 'flex-start',
-      }}
+      sx={[
+        classes.gridContainer,
+        {
+          alignItems: 'flex-start',
+        },
+      ]}
     >
       <Grid item xs={12}>
         <Typography>

@@ -41,7 +41,6 @@
     "react-markdown": "^10.1.0",
     "react-router": "^8.5.2",
     "semver": "^7.8.6",
-    "tss-react": "^4.9.21",
     "url-parse": "^1.5.10",
     "uuid": "^14.0.3",
     "video.js": "^10.6.0"

@@ -1,19 +1,22 @@
 import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
 import ModalContent from '../ModalContent';
 import Textarea from '../Textarea';
 
-const useStyles = makeStyles()((theme) => ({
-  box: {
-    backgroundColor: theme.palette.background.modalbox,
-    borderRadius: 4,
-    padding: '0em 1em 1em 1em',
-  },
-}));
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    box: {
+      backgroundColor: theme.palette.background.modalbox,
+      borderRadius: 4,
+      padding: '0em 1em 1em 1em',
+    },
+  };
+};
 
 const Component = function ({
   open = false,
@@ -26,7 +29,7 @@ const Component = function ({
   onClose = null as (() => void) | null,
   onHelp = null as (() => void) | null,
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   return (
     <Modal open={open} onClose={onClose} className="modal">
@@ -41,11 +44,13 @@ const Component = function ({
             <Stack
               direction="column"
               spacing={1}
-              className={classes.box}
-              sx={{
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
+              sx={[
+                classes.box,
+                {
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                },
+              ]}
             >
               <Textarea
                 value={value}

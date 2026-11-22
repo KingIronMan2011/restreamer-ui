@@ -1,13 +1,14 @@
 import Button from '@mui/material/Button';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles()((theme) => ({
-  button: {
-    fontSize: '.9rem!important',
-    height: '56px!important',
-  },
-}));
+const useStyles = () => {
+  return {
+    button: {
+      fontSize: '.9rem!important',
+      height: '56px!important',
+    },
+  };
+};
 // component="label" variant={variant} color={color} disabled={disabled}
 // onClick disabled
 // target="blank" href={stream_key_link} component="a"
@@ -23,7 +24,7 @@ export default function Component({
   onClick = () => {},
   children = null as import('react').ReactNode,
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   return (
     <Button
@@ -33,7 +34,8 @@ export default function Component({
       disabled={disabled}
       fullWidth
       color={color}
-      className={className ? className : classes.button}
+      className={className}
+      sx={classes.button}
       target={target}
       href={href}
       onClick={onClick}

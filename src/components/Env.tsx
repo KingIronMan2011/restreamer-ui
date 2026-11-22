@@ -1,38 +1,40 @@
 import { Trans } from '@lingui/react/macro';
 import Chip from '@mui/material/Chip';
-import Tooltip from '@mui/material/Tooltip';
+import { styled, useTheme } from '@mui/material/styles';
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
-import { withStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles()((theme) => ({
-  root: {
-    color: theme.palette.text.primary,
-    backgroundColor: theme.palette.error.main,
-    borderRadius: 4,
-    fontWeight: 'bold',
-    height: 20,
-  },
-  labelSmall: {
-    paddingLeft: 6,
-    paddingRight: 6,
-  },
-}));
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    root: {
+      color: theme.palette.text.primary,
+      backgroundColor: theme.palette.error.main,
+      borderRadius: 4,
+      fontWeight: 'bold',
+      height: 20,
+    },
+    labelSmall: {
+      paddingLeft: 6,
+      paddingRight: 6,
+    },
+  };
+};
 
-const HtmlTooltip = withStyles(Tooltip, (theme) => ({
-  tooltip: {
+const HtmlTooltip = styled(Tooltip)(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
     backgroundColor: theme.palette.error.main,
     color: theme.palette.text.primary,
     maxWidth: 100,
     fontSize: '.8rem',
   },
-  arrow: {
+  [`& .${tooltipClasses.arrow}`]: {
     color: theme.palette.error.main,
   },
 }));
 
 export default function Component({ style = null }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   return (
     <HtmlTooltip
       title={
@@ -43,7 +45,12 @@ export default function Component({ style = null }: any) {
       placement="right"
       arrow
     >
-      <Chip size="small" label="ENV" className={classes.root} style={style} />
+      <Chip
+        size="small"
+        label="ENV"
+        sx={[classes.root, { '& .MuiChip-label': classes.labelSmall }]}
+        style={style}
+      />
     </HtmlTooltip>
   );
 }

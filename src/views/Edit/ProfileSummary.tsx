@@ -5,7 +5,6 @@ import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
 import * as M from '../../utils/metadata';
 import Summary from './Summary';
@@ -18,15 +17,17 @@ function IconEdit(props: any) {
   return <EditIcon {...props} />;
 }
 
-const useStyles = makeStyles()((theme) => ({
-  title: {
-    float: 'left',
-  },
-  edit: {
-    float: 'right',
-    marginTop: '.5em',
-  },
-}));
+const useStyles = () => {
+  return {
+    title: {
+      float: 'left',
+    },
+    edit: {
+      float: 'right',
+      marginTop: '.5em',
+    },
+  };
+};
 
 export default function ProfileSummary({
   sources = [],
@@ -34,7 +35,7 @@ export default function ProfileSummary({
   onEdit = function (type: any) {},
   onWizard = function () {},
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   profile = M.initProfile(profile);
 
@@ -89,7 +90,7 @@ export default function ProfileSummary({
         <IconButton size="small" color="inherit" onClick={handleWizard()}>
           <IconWizard />
         </IconButton>
-        <Typography variant="h3" className={classes.title}>
+        <Typography variant="h3" sx={classes.title}>
           <Trans>Audio settings</Trans>
         </Typography>
       </Grid>

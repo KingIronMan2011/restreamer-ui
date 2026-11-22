@@ -5,10 +5,10 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router';
-import { makeStyles } from 'tss-react/mui';
 
 import ActionButton from '../../components/ActionButton';
 import CopyButton from '../../components/CopyButton';
@@ -25,42 +25,45 @@ import Welcome from '../Welcome';
 import Progress from './Progress';
 import Publication from './Publication';
 
-const useStyles = makeStyles()((theme) => ({
-  gridContainerL1: {
-    marginBottom: '6em',
-  },
-  gridContainerL2: {
-    paddingTop: '.6em',
-  },
-  link: {
-    marginLeft: 10,
-  },
-  playerL1: {
-    //padding: '4px 1px 4px 8px',
-    paddingTop: 10,
-    paddingLeft: 18,
-  },
-  playerL2: {
-    position: 'relative',
-    width: '100%',
-    paddingTop: '56.25%',
-  },
-  playerL3: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    backgroundColor: theme.palette.common.black,
-  },
-  playerWarningIcon: {
-    color: theme.palette.warning.main,
-    fontSize: 'xxx-large',
-  },
-}));
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    gridContainerL1: {
+      marginBottom: '6em',
+    },
+    gridContainerL2: {
+      paddingTop: '.6em',
+    },
+    link: {
+      marginLeft: 10,
+    },
+    playerL1: {
+      //padding: '4px 1px 4px 8px',
+      paddingTop: 10,
+      paddingLeft: 18,
+    },
+    playerL2: {
+      position: 'relative',
+      width: '100%',
+      paddingTop: '56.25%',
+    },
+    playerL3: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      right: 0,
+      backgroundColor: theme.palette.common.black,
+    },
+    playerWarningIcon: {
+      color: theme.palette.warning.main,
+      fontSize: 'xxx-large',
+    },
+  };
+};
 
 export default function Main({ restreamer }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
   const navigate = useNavigate();
   const { channelid: _channelid } = useParams();
   const [$state, setState] = React.useState<Record<string, any>>({
@@ -343,10 +346,12 @@ export default function Main({ restreamer }: any) {
       <Grid
         container
         spacing={1}
-        className={classes.gridContainerL1}
-        sx={{
-          justifyContent: 'center',
-        }}
+        sx={[
+          classes.gridContainerL1,
+          {
+            justifyContent: 'center',
+          },
+        ]}
       >
         <Grid item xs={12} sm={12} md={8}>
           <Paper marginBottom="0">
@@ -355,21 +360,22 @@ export default function Main({ restreamer }: any) {
               onEdit={() => navigate(`/${_channelid}/edit`)}
               onHelp={handleHelp('main')}
             />
-            <Grid container spacing={1} className={classes.gridContainerL2}>
+            <Grid container spacing={1} sx={classes.gridContainerL2}>
               <Grid item xs={12}>
-                <Grid container spacing={0} className={classes.playerL1}>
-                  <Grid item xs={12} className={classes.playerL2}>
+                <Grid container spacing={0} sx={classes.playerL1}>
+                  <Grid item xs={12} sx={classes.playerL2}>
                     {($state.state === 'disconnected' ||
                       $state.state === 'disconnecting') && (
                       <Grid
                         container
                         direction="column"
-                        className={classes.playerL3}
-                        spacing={2}
-                        sx={{
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                        }}
+                        sx={[
+                          classes.playerL3,
+                          {
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                          },
+                        ]}
                       >
                         <Grid item>
                           <Typography variant="h2">
@@ -382,12 +388,13 @@ export default function Main({ restreamer }: any) {
                       <Grid
                         container
                         direction="column"
-                        className={classes.playerL3}
-                        spacing={2}
-                        sx={{
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                        }}
+                        sx={[
+                          classes.playerL3,
+                          {
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                          },
+                        ]}
                       >
                         <Grid item>
                           <CircularProgress color="inherit" />
@@ -403,15 +410,16 @@ export default function Main({ restreamer }: any) {
                       <Grid
                         container
                         direction="column"
-                        className={classes.playerL3}
-                        spacing={2}
-                        sx={{
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                        }}
+                        sx={[
+                          classes.playerL3,
+                          {
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                          },
+                        ]}
                       >
                         <Grid item>
-                          <WarningIcon className={classes.playerWarningIcon} />
+                          <WarningIcon sx={classes.playerWarningIcon} />
                         </Grid>
                         <Grid item>
                           <Typography>
@@ -479,18 +487,17 @@ export default function Main({ restreamer }: any) {
                         <Grid
                           container
                           direction="column"
-                          className={classes.playerL3}
-                          spacing={2}
-                          sx={{
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            textAlign: 'center',
-                          }}
+                          sx={[
+                            classes.playerL3,
+                            {
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                              textAlign: 'center',
+                            },
+                          ]}
                         >
                           <Grid item>
-                            <WarningIcon
-                              className={classes.playerWarningIcon}
-                            />
+                            <WarningIcon sx={classes.playerWarningIcon} />
                           </Grid>
                           <Grid item>
                             <Typography>
@@ -524,17 +531,16 @@ export default function Main({ restreamer }: any) {
                         <Grid
                           container
                           direction="column"
-                          className={classes.playerL3}
-                          spacing={2}
-                          sx={{
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                          }}
+                          sx={[
+                            classes.playerL3,
+                            {
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                            },
+                          ]}
                         >
                           <Grid item>
-                            <WarningIcon
-                              className={classes.playerWarningIcon}
-                            />
+                            <WarningIcon sx={classes.playerWarningIcon} />
                           </Grid>
                           <Grid item>
                             <Typography>
@@ -681,7 +687,7 @@ export default function Main({ restreamer }: any) {
                   color="textSecondary"
                   href="#!"
                   onClick={handleProcessDetails}
-                  className={classes.link}
+                  sx={classes.link}
                 >
                   <Trans>Process details</Trans>
                 </Link>
@@ -690,7 +696,7 @@ export default function Main({ restreamer }: any) {
                   color="textSecondary"
                   href="#!"
                   onClick={handleProcessDebug}
-                  className={classes.link}
+                  sx={classes.link}
                 >
                   <Trans>Process report</Trans>
                 </Link>

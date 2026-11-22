@@ -1,41 +1,44 @@
 import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles()((theme) => ({
-  box: {
-    borderBottom: `2px solid ${theme.palette.background.light1}`,
-    padding: '0em',
-    marginBottom: '1em',
-    marginTop: '-1.7em',
-  },
-  tabs: {
-    '& .tab': {
-      minWidth: '0px',
-      margin: 'unset',
-      color: theme.palette.text.primary,
-      borderRadius: '4px 4px 0px 0px',
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    box: {
+      borderBottom: `2px solid ${theme.palette.background.light1}`,
+      padding: '0em',
+      marginBottom: '1em',
+      marginTop: '-1.7em',
     },
-    '@media (max-width: 415px)': {
+    tabs: {
       '& .tab': {
-        padding: '10px 6px!important',
+        minWidth: '0px',
+        margin: 'unset',
+        color: theme.palette.text.primary,
+        borderRadius: '4px 4px 0px 0px',
+      },
+      '@media (max-width: 415px)': {
+        '& .tab': {
+          padding: '10px 6px!important',
+        },
       },
     },
-  },
-}));
+  };
+};
 
 export default function Component({
   value = '',
   children = null as import('react').ReactNode,
   onChange = function (event: any) {},
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   return (
-    <Box className={classes.box}>
+    <Box sx={classes.box}>
       <Tabs
-        className={classes.tabs}
+        sx={classes.tabs}
         variant="scrollable"
         scrollButtons
         allowScrollButtonsMobile

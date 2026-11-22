@@ -17,7 +17,6 @@ import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router';
-import { makeStyles } from 'tss-react/mui';
 
 import NotifyContext from '../../components/contexts/Notify';
 import LimitsControl from '../../components/controls/Limits';
@@ -36,23 +35,25 @@ import * as helper from './helper';
 import Services from './Services';
 import TabContent from './TabContent';
 
-const useStyles = makeStyles()((theme) => ({
-  buttonAbort: {
-    marginBottom: '0.3em',
-  },
-  gridContainer: {
-    marginTop: '0.5em',
-  },
-  buttonGroup: {
-    marginTop: '0.5em',
-    marginBottom: '-0.5em',
-  },
-}));
+const useStyles = () => {
+  return {
+    buttonAbort: {
+      marginBottom: '0.3em',
+    },
+    gridContainer: {
+      marginTop: '0.5em',
+    },
+    buttonGroup: {
+      marginTop: '0.5em',
+      marginBottom: '-0.5em',
+    },
+  };
+};
 
 export default function Add({ restreamer }: any) {
   const theme = useTheme();
   const breakpointUpSm = useMediaQuery(theme.breakpoints.up('sm'));
-  const { classes } = useStyles();
+  const classes = useStyles();
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const [$ready, setReady] = React.useState(false);
@@ -445,7 +446,7 @@ export default function Add({ restreamer }: any) {
                 }}
               >
                 <ToggleButtonGroup
-                  className={classes.buttonGroup}
+                  sx={classes.buttonGroup}
                   size={breakpointUpSm ? 'medium' : 'small'}
                   value={$filter}
                   exclusive
@@ -466,9 +467,9 @@ export default function Add({ restreamer }: any) {
                 </ToggleButtonGroup>
               </Grid>
             </Grid>
-            <Grid container spacing={2} className={classes.gridContainer}>
+            <Grid container spacing={2} sx={classes.gridContainer}>
               {serviceList}
-              <Grid item xs={12} className={classes.buttonAbort}>
+              <Grid item xs={12} sx={classes.buttonAbort}>
                 <Button
                   variant="outlined"
                   color="default"

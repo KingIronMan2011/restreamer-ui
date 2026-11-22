@@ -1,21 +1,24 @@
 import { Trans } from '@lingui/react/macro';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
+import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
 import Duration from './Duration';
 import Number from './Number';
 
-const useStyles = makeStyles()((theme) => ({
-  box: {
-    backgroundColor: theme.palette.background.modalbox,
-    borderRadius: 4,
-    padding: '1em',
-    height: '100%',
-  },
-}));
+const useStyles = () => {
+  const theme = useTheme();
+  return {
+    box: {
+      backgroundColor: theme.palette.background.modalbox,
+      borderRadius: 4,
+      padding: '1em',
+      height: '100%',
+    },
+  };
+};
 
 function init({
   valid = false,
@@ -81,7 +84,7 @@ export default function Progress({
   video_codec = '',
   audio_codec = '',
 }: any) {
-  const { classes } = useStyles();
+  const classes = useStyles();
 
   const progress = init({
     valid: valid,
@@ -105,7 +108,7 @@ export default function Progress({
   });
 
   return (
-    <Grid container className={classes.box}>
+    <Grid container sx={classes.box}>
       <Grid item xs={12}>
         <Typography variant="h4">
           <strong>
