@@ -17,7 +17,7 @@ RUN corepack enable && \
 
 FROM $CADDY_IMAGE
 
-COPY --from=builder /ui/build /ui/build
+COPY --from=builder /ui/dist /ui/dist
 COPY --from=builder /ui/Caddyfile /ui/Caddyfile
 
 WORKDIR /ui
