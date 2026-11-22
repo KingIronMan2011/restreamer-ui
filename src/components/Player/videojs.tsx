@@ -1,10 +1,7 @@
-import '@videojs/react/live-video/skin.css';
 import Stack from '@mui/material/Stack';
 import { LiveVideoPlayer, LiveVideoSkin } from '@videojs/react/live-video';
 import { HlsJsVideo } from '@videojs/react/media/hlsjs-video';
 import { useState, type CSSProperties, type SyntheticEvent } from 'react';
-
-import './videojs-v10.css';
 
 type PlayerLogo = {
   image?: string;

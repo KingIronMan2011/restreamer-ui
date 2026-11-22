@@ -1,10 +1,14 @@
 import CssBaseline from '@mui/material/CssBaseline';
+import GlobalStyles from '@mui/material/GlobalStyles';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import React from 'react';
 import '@fontsource/dosis';
 import '@fontsource/roboto';
+
+import '@videojs/react/live-video/skin.css';
 import { createRoot } from 'react-dom/client';
 
+import './index.css';
 import I18n from './i18n';
 import theme from './lib/theme';
 import Root from './Root';
@@ -20,7 +24,8 @@ if (urlParams.has('address') === true) {
 }
 
 createRoot(document.getElementById('root')!).render(
-  <StyledEngineProvider injectFirst>
+  <StyledEngineProvider enableCssLayer>
+    <GlobalStyles styles="@layer theme, base, mui, components, utilities;" />
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <I18n>

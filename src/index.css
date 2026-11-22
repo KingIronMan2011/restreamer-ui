@@ -1,0 +1,336 @@
+@layer theme, base, mui, components, utilities;
+@import 'tailwindcss';
+
+/* Source: videojs-v10.css */
+.videojs-player {
+  position: relative;
+  max-height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.videojs-player__logo {
+  position: absolute;
+  z-index: 10;
+  display: block;
+  max-width: 25%;
+  line-height: 0;
+}
+
+.videojs-player__logo img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Source: video-js-skin-public.css */
+.vjs-public {
+  --video-js--primary: #eaea05;
+}
+
+/* play btn */
+
+.vjs-public .vjs-big-play-button {
+  width: 70px;
+  height: 70px;
+  background: none;
+  line-height: 180px;
+  font-size: 180px;
+  border: none;
+  top: 50%;
+  left: 50%;
+  margin-top: -90px;
+  margin-left: -90px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.vjs-public:hover .vjs-big-play-button,
+.vjs-public.vjs-big-play-button:focus {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 1);
+}
+
+/* controlbar */
+
+.vjs-public .vjs-control-bar {
+  height: 70px;
+  padding-top: 20px;
+  background: none;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.85), transparent);
+}
+
+.vjs-public .vjs-time-tooltip {
+  z-index: 0;
+}
+
+.vjs-public .vjs-button > .vjs-icon-placeholder:before {
+  line-height: 50px;
+}
+
+/* progressbar */
+
+.vjs-public .vjs-play-progress:before {
+  display: none;
+}
+
+.vjs-public .vjs-progress-control {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 15px;
+  width: calc(100% - 30px);
+  height: 20px;
+}
+
+.vjs-public .vjs-progress-control .vjs-progress-holder {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.vjs-public .vjs-play-progress {
+  background-color: var(--video-js--primary);
+}
+
+.vjs-public .vjs-slider {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.vjs-public .vjs-load-progress {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.vjs-public .vjs-load-progress div {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.vjs-public .vjs-remaining-time {
+  order: 0;
+  line-height: 50px;
+  flex: 3;
+  text-align: left;
+}
+
+.vjs-public .vjs-live-control {
+  line-height: 50px;
+}
+
+/* volume-panel */
+
+.vjs-public .vjs-volume-panel .vjs-volume-control.vjs-volume-horizontal {
+  padding-top: 0.95em;
+}
+
+.vjs-public .vjs-control .vjs-volume-panel {
+  width: 4.5em;
+}
+
+/* live display */
+
+.vjs-public .vjs-live-display {
+  margin-left: 1.8em;
+}
+
+/* disable caps */
+
+.vjs-public .vjs-subs-caps-button {
+  display: none !important;
+}
+
+/* spacer */
+
+.vjs-public .vjs-custom-control-spacer {
+  display: block;
+  width: 100%;
+}
+
+/* overlay */
+
+.vjs-public .vjs-overlay-no-background {
+  max-width: 25% !important;
+}
+
+.vjs-public .vjs-overlay-no-background > img,
+.vjs-public .vjs-overlay-no-background > a > img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.vjs-public .vjs-overlay-top-left {
+  top: 15px !important;
+  left: 20px !important;
+  text-align: right;
+}
+
+.vjs-public .vjs-overlay-top-right {
+  top: 15px !important;
+  right: 20px !important;
+  text-align: right;
+}
+
+.vjs-public .vjs-overlay-bottom-left {
+  bottom: 15px !important;
+  left: 20px !important;
+  text-align: left;
+}
+
+.vjs-public .vjs-overlay-bottom-right {
+  bottom: 15px !important;
+  right: 20px !important;
+  text-align: left;
+}
+
+/* context menu */
+
+.vjs-public .vjs-license .vjs-menu .vjs-menu-content {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.vjs-public .vjs-license-top-level-header {
+  background: unset !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.vjs-public .vjs-lock-open {
+  z-index: 1000;
+}
+
+/* Source: video-js-skin-internal.css */
+.vjs-internal {
+  --video-js--primary: #eaea05;
+}
+
+/* play-button */
+.vjs-internal .vjs-big-play-button {
+  width: 70px;
+  height: 70px;
+  background: none;
+  line-height: 180px;
+  font-size: 180px;
+  border: none;
+  top: 50%;
+  left: 50%;
+  margin-top: -90px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.vjs-internal:hover .vjs-big-play-button,
+.vjs-internal.vjs-big-play-button:focus {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 1);
+}
+
+/* controlbar */
+
+.vjs-internal .vjs-control-bar {
+  top: calc(50% - 45px);
+  height: 100px;
+  width: 50px;
+  background-color: rgb(77, 77, 77);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.vjs-internal .vjs-button > .vjs-icon-placeholder:before {
+  line-height: 50px;
+}
+
+/* progressbar */
+
+.vjs-internal .vjs-play-progress:before {
+  display: none;
+}
+
+.vjs-internal .vjs-progress-control {
+  display: none;
+}
+
+/* buttons */
+
+.vjs-internal .vjs-playing,
+.vjs-internal .vjs-paused {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: rgb(77, 77, 77);
+}
+
+.vjs-internal .vjs-volume-panel {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  padding-left: 4px;
+  background-color: rgb(77, 77, 77);
+  margin: 50px 0px 0px -50px;
+}
+
+.vjs-internal .vjs-volume-panel .vjs-volume-control.vjs-volume-horizontal {
+  padding-top: 1em;
+  transition:
+    visibility 1s,
+    opacity 1s,
+    height 1s 1s,
+    width 1s,
+    right 1s 1s,
+    top 1s 1s;
+}
+
+.vjs-internal
+  .vjs-volume-panel.vjs-hover
+  .vjs-mute-control
+  ~ .vjs-volume-control,
+.vjs-internal .vjs-volume-panel.vjs-hover .vjs-volume-control,
+.vjs-internal .vjs-volume-panel .vjs-volume-control.vjs-slider-active,
+.vjs-internal .vjs-volume-panel .vjs-volume-control:active,
+.vjs-internal .vjs-volume-panel:active .vjs-volume-control,
+.vjs-internal .vjs-volume-panel:focus .vjs-volume-control {
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  transition:
+    visibility 0.1s,
+    opacity 0.1s,
+    height 0.1s,
+    width 0.1s,
+    right 0s,
+    top 0s;
+}
+
+.vjs-internal .vjs-slider-horizontal .vjs-volume-level:before {
+  top: 0em;
+  right: -0.5em;
+}
+
+.vjs-internal .vjs-remaining-time {
+  display: none;
+}
+
+.vjs-internal .vjs-live-display {
+  display: none;
+}
+
+.vjs-internal .vjs-picture-in-picture-control {
+  display: none;
+}
+
+.vjs-internal .vjs-fullscreen-control {
+  display: none;
+}
+
+.vjs-internal .vjs-seek-to-live-control {
+  display: none;
+}
+
+.vjs-internal .vjs-subs-caps-button {
+  display: none;
+}
+
+/* spacer */
+.vjs-internal .vjs-custom-control-spacer {
+  display: block;
+  width: 100%;
+}

@@ -270,6 +270,7 @@ function HeaderMenu({
 
   const handleLanguageChange = (language: any) => {
     Storage.Set('language', language);
+    handleMenuClose();
   };
 
   if (expand === true) {

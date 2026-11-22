@@ -1,39 +1,11 @@
 import { useLingui } from '@lingui/react';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
-import { useTheme } from '@mui/material/styles';
 import React from 'react';
-
-const useStyles = () => {
-  const theme = useTheme();
-  return {
-    root: {
-      fontSize: '1rem',
-      fontWeight: '400',
-      backgroundColor: 'none',
-      color: theme.palette.text.primary,
-      borderButtom: 'none',
-      '&:hover': {
-        color: theme.palette.text.primary,
-      },
-      '& fieldset': {
-        display: 'none',
-      },
-      '& .MuiSelect-select': {
-        padding: '0px 0px',
-        marginRight: '10px',
-      },
-      '&:before': {
-        borderBottom: 'none',
-      },
-    },
-  };
-};
 
 export default function LanguageSelect({
   onChange = function (lang: any) {},
 }: any) {
-  const classes = useStyles();
   const { i18n } = useLingui();
 
   const handleChange = (event: any) => {
@@ -46,11 +18,32 @@ export default function LanguageSelect({
 
   return (
     <Select
-      sx={classes.root}
+      size="small"
       variant="standard"
+      disableUnderline
       displayEmpty
       value={i18n.locale}
       onChange={handleChange}
+      onClick={(event) => event.stopPropagation()}
+      sx={{
+        minWidth: 112,
+        borderRadius: 1,
+        color: 'inherit',
+        fontSize: '1rem',
+        '& .MuiSelect-select': {
+          padding: '4px 28px 4px 8px',
+        },
+        '& .MuiSelect-icon': {
+          color: 'inherit',
+          right: 4,
+        },
+        '&:hover, &.Mui-focused': {
+          backgroundColor: 'action.hover',
+        },
+        '& .MuiSelect-select:focus': {
+          backgroundColor: 'transparent',
+        },
+      }}
     >
       <MenuItem value="en">English</MenuItem>
       <MenuItem value="da">Dansk</MenuItem>
