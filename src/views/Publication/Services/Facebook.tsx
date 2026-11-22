@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import { UsersRound } from 'lucide-react';
 import React from 'react';
@@ -108,7 +108,12 @@ function Service({
   return (
     <Grid container spacing={2}>
       {settings.rtmp_primary === true && (
-        <Grid item xs={12} md={9}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 9,
+          }}
+        >
           <TextField
             variant="outlined"
             fullWidth
@@ -119,14 +124,24 @@ function Service({
         </Grid>
       )}
       {settings.rtmp_primary === true && (
-        <Grid item xs={12} md={3}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 3,
+          }}
+        >
           <FormInlineButton target="blank" href={stream_key_link} component="a">
             <Trans>GET</Trans>
           </FormInlineButton>
         </Grid>
       )}
       {settings.rtmp_backup === true && (
-        <Grid item xs={12} md={9}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 9,
+          }}
+        >
           <TextField
             variant="outlined"
             fullWidth
@@ -137,13 +152,18 @@ function Service({
         </Grid>
       )}
       {settings.rtmp_backup === true && (
-        <Grid item xs={12} md={3}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 3,
+          }}
+        >
           <FormInlineButton target="blank" href={stream_key_link} component="a">
             <Trans>GET</Trans>
           </FormInlineButton>
         </Grid>
       )}
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Checkbox
           label={<Trans>Enable primary stream</Trans>}
           checked={settings.rtmp_primary}

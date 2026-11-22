@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/react/macro';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
@@ -27,10 +27,10 @@ export default function Metadata({
         onHelp={onHelp}
       />
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Divider />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography>
             <Trans>
               Briefly describe what the audience will see during the live
@@ -38,18 +38,18 @@ export default function Metadata({
             </Trans>
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <MetadataControl settings={metadata} onChange={onChange} />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Divider />
         </Grid>
-        <Grid item xs={3}>
+        <Grid size={3}>
           <Button variant="outlined" color="default" fullWidth onClick={onBack}>
             <Trans>Back</Trans>
           </Button>
         </Grid>
-        <Grid item xs={9}>
+        <Grid size={9}>
           <Button variant="outlined" fullWidth color="primary" onClick={onNext}>
             <Trans>Next</Trans>
           </Button>

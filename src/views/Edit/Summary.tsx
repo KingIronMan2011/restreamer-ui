@@ -1,7 +1,7 @@
 import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
@@ -84,19 +84,19 @@ export default function Summary({ type = '', sources = [], profile }: any) {
   return (
     <BoxText>
       <Grid container spacing={1}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography variant="subtitle2">{name}</Typography>
           <Typography variant="body1">{address}</Typography>
         </Grid>
         {showEncoding === true && (
           <React.Fragment>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography variant="subtitle2">
                 <Trans>Encoding</Trans>
               </Typography>
               <Typography variant="body1">{encodingSummary}</Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography variant="subtitle2">
                 <Trans>Filter</Trans>
               </Typography>

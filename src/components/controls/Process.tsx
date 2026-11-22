@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -45,7 +45,7 @@ export default function Control({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Checkbox
           label={<Trans>Reconnect</Trans>}
           checked={settings.reconnect}
@@ -57,7 +57,12 @@ export default function Control({
           onChange={handleChange('low_delay')}
         />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 6,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -71,7 +76,12 @@ export default function Control({
           <Trans>Seconds until a process is restarted.</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 6,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth

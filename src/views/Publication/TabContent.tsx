@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -24,7 +24,7 @@ export default function TabContent({ service = null, children = '' }: any) {
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Stack
           direction="row"
           spacing={2}
@@ -49,14 +49,14 @@ export default function TabContent({ service = null, children = '' }: any) {
           </Stack>
         </Stack>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Divider />
       </Grid>
       {children}
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Divider />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography>
           <Trans>Maintainer:</Trans>{' '}
           <Link

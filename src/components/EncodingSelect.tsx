@@ -1,7 +1,7 @@
 import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
@@ -194,7 +194,7 @@ export default function EncodingSelect({
   if (encoderSettings === null || encoderList.length === 0) {
     return (
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography>
             <Trans>No suitable encoder found.</Trans>
           </Typography>
@@ -239,12 +239,12 @@ export default function EncodingSelect({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography>
           <Trans>Select your encoding setting:</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Select
           label={<Trans>Codec</Trans>}
           value={profile.encoder.coder}
@@ -258,7 +258,7 @@ export default function EncodingSelect({
       </Grid>
       {decoderList.length >= 2 && (
         <React.Fragment>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Select
               label={<Trans>Decoder</Trans>}
               value={profile.decoder.coder}
@@ -267,16 +267,12 @@ export default function EncodingSelect({
               {decoderList}
             </Select>
           </Grid>
-          <Grid item xs={12}>
-            {decoderSettings}
-          </Grid>
+          <Grid size={12}>{decoderSettings}</Grid>
         </React.Fragment>
       )}
-      <Grid item xs={12}>
-        {encoderSettings}
-      </Grid>
+      <Grid size={12}>{encoderSettings}</Grid>
       {encoderSettingsHelp !== null && (
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Trans>
             <Link color="secondary" href="#" onClick={encoderSettingsHelp}>
               Compatibility list

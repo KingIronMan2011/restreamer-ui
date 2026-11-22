@@ -2,7 +2,7 @@ import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import EditIcon from '@mui/icons-material/Edit';
 import HelpIcon from '@mui/icons-material/HelpOutline';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -39,7 +39,7 @@ const Component = function ({
         padding: padding,
       }}
     >
-      <Grid item xs={12} sx={classes.root}>
+      <Grid sx={classes.root} size={12}>
         {typeof onAbort === 'function' && (
           <IconButton color="inherit" size="small" onClick={onAbort}>
             <CloseIcon />

@@ -4,7 +4,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -528,12 +528,12 @@ export default function Profile({
       {$activeStep === 0 && (
         <React.Fragment>
           <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography variant="h3">
                 <Trans>Video settings</Trans>
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <SourceSelect
                 type="video"
                 skills={skills}
@@ -549,11 +549,10 @@ export default function Profile({
               <React.Fragment>
                 {$videoProbe.status === 'error' && (
                   <Grid
-                    item
-                    xs={12}
                     sx={{
                       textAlign: 'center',
                     }}
+                    size={12}
                   >
                     <BoxText color="dark">
                       <WarningIcon fontSize="large" color="error" />
@@ -588,11 +587,10 @@ export default function Profile({
                 )}
                 {$videoProbe.status === 'nostream' && (
                   <Grid
-                    item
-                    xs={12}
                     sx={{
                       textAlign: 'center',
                     }}
+                    size={12}
                   >
                     <BoxText color="dark">
                       <WarningIcon fontSize="large" color="error" />
@@ -614,7 +612,7 @@ export default function Profile({
                 )}
                 {$videoProbe.status === 'success' && (
                   <React.Fragment>
-                    <Grid item xs={12}>
+                    <Grid size={12}>
                       <StreamSelect
                         type="video"
                         streams={$sources.video.streams}
@@ -623,11 +621,10 @@ export default function Profile({
                       />
                     </Grid>
                     <Grid
-                      item
-                      xs={12}
                       sx={{
                         textAlign: 'right',
                       }}
+                      size={12}
                     >
                       <Typography>
                         <Trans>
@@ -640,7 +637,7 @@ export default function Profile({
                         </Trans>
                       </Typography>
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid size={12}>
                       <EncodingSelect
                         type="video"
                         streams={$sources.video.streams}
@@ -652,7 +649,7 @@ export default function Profile({
                     </Grid>
                     {$profile.video.encoder.coder !== 'none' &&
                       $profile.video.encoder.coder !== 'copy' && (
-                        <Grid item xs={12}>
+                        <Grid size={12}>
                           <FilterSelect
                             type="video"
                             profile={$profile.video}
@@ -665,7 +662,7 @@ export default function Profile({
                 )}
               </React.Fragment>
             )}
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Divider />
             </Grid>
           </Grid>
@@ -695,12 +692,12 @@ export default function Profile({
       {$activeStep === 1 && (
         <React.Fragment>
           <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography variant="h3">
                 <Trans>Audio settings</Trans>
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <SourceSelect
                 type="audio"
                 skills={skills}
@@ -716,7 +713,7 @@ export default function Profile({
             {$profile.custom.selected === false &&
               $profile.custom.stream >= 0 && (
                 <React.Fragment>
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <StreamSelect
                       type="audio"
                       streams={$sources.video.streams}
@@ -724,7 +721,7 @@ export default function Profile({
                       onChange={handleStreamSelect('audio', 'custom')}
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <EncodingSelect
                       type="audio"
                       streams={$sources.video.streams}
@@ -737,7 +734,7 @@ export default function Profile({
                   {$profile.audio.encoder.coder !== 'none' &&
                     $profile.audio.encoder.coder !== 'copy' &&
                     $profile.audio.source !== -1 && (
-                      <Grid item xs={12}>
+                      <Grid size={12}>
                         <FilterSelect
                           type="audio"
                           profile={$profile.audio}
@@ -754,11 +751,10 @@ export default function Profile({
                   <React.Fragment>
                     {$audioProbe.status === 'error' && (
                       <Grid
-                        item
-                        xs={12}
                         sx={{
                           textAlign: 'center',
                         }}
+                        size={12}
                       >
                         <BoxText color="dark">
                           <WarningIcon fontSize="large" color="error" />
@@ -792,11 +788,10 @@ export default function Profile({
                     )}
                     {$audioProbe.status === 'nostream' && (
                       <Grid
-                        item
-                        xs={12}
                         sx={{
                           textAlign: 'center',
                         }}
+                        size={12}
                       >
                         <BoxText color="dark">
                           <WarningIcon fontSize="large" color="error" />
@@ -818,7 +813,7 @@ export default function Profile({
                     )}
                     {$audioProbe.status === 'success' && (
                       <React.Fragment>
-                        <Grid item xs={12}>
+                        <Grid size={12}>
                           <StreamSelect
                             type="audio"
                             streams={$sources.audio.streams}
@@ -827,11 +822,10 @@ export default function Profile({
                           />
                         </Grid>
                         <Grid
-                          item
-                          xs={12}
                           sx={{
                             textAlign: 'right',
                           }}
+                          size={12}
                         >
                           <Typography>
                             <Trans>
@@ -844,7 +838,7 @@ export default function Profile({
                             </Trans>
                           </Typography>
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid size={12}>
                           <EncodingSelect
                             type="audio"
                             streams={$sources.audio.streams}
@@ -856,7 +850,7 @@ export default function Profile({
                         </Grid>
                         {$profile.audio.encoder.coder !== 'none' &&
                           $profile.audio.encoder.coder !== 'copy' && (
-                            <Grid item xs={12}>
+                            <Grid size={12}>
                               <FilterSelect
                                 type="audio"
                                 profile={$profile.audio}
@@ -871,7 +865,7 @@ export default function Profile({
                 )}
               </React.Fragment>
             )}
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Divider />
             </Grid>
           </Grid>

@@ -4,7 +4,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -190,7 +190,12 @@ function Service({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} md={3}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 3,
+        }}
+      >
         <Select
           type="select"
           label={<Trans>Protocol</Trans>}
@@ -201,7 +206,12 @@ function Service({
           <MenuItem value="https://">https://</MenuItem>
         </Select>
       </Grid>
-      <Grid item xs={12} md={9}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 9,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -210,7 +220,7 @@ function Service({
           onChange={handleChange('address')}
         />
       </Grid>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <TextField
           variant="outlined"
           fullWidth
@@ -219,7 +229,7 @@ function Service({
           onChange={handleChange('username')}
         />
       </Grid>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <Password
           variant="outlined"
           fullWidth
@@ -228,7 +238,7 @@ function Service({
           onChange={handleChange('password')}
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Accordion className="accordion">
           <AccordionSummary
             className="accordion-summary"
@@ -241,12 +251,12 @@ function Service({
           </AccordionSummary>
           <AccordionDetails>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography variant="h3">
                   <Trans>General</Trans>
                 </Typography>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -256,7 +266,7 @@ function Service({
                   onChange={handleChange('headers')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -266,7 +276,7 @@ function Service({
                   onChange={handleChange('http_user_agent')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Select
                   type="select"
                   label="method"
@@ -278,7 +288,7 @@ function Service({
                   <MenuItem value="POST">POST</MenuItem>
                 </Select>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -290,7 +300,7 @@ function Service({
                   onChange={handleChange('timeout')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Checkbox
                   label="hls_allow_cache"
                   checked={settings.options.hls_allow_cache}
@@ -307,12 +317,17 @@ function Service({
                   onChange={handleChange('ignore_io_errors')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography variant="h3">
                   <Trans>Chunk</Trans>
                 </Typography>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 6,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -324,7 +339,12 @@ function Service({
                   onChange={handleChange('hls_init_time')}
                 />
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 6,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -336,7 +356,7 @@ function Service({
                   onChange={handleChange('hls_time')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -346,12 +366,12 @@ function Service({
                   onChange={handleChange('hls_ts_options')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography variant="h3">
                   <Trans>Playlist</Trans>
                 </Typography>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Select
                   type="select"
                   label="hls_playlist_type"
@@ -363,7 +383,12 @@ function Service({
                   <MenuItem value="vod">vod</MenuItem>
                 </Select>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 6,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -375,7 +400,12 @@ function Service({
                   onChange={handleChange('hls_list_size')}
                 />
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 6,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -387,7 +417,7 @@ function Service({
                   onChange={handleChange('hls_delete_threshold')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -397,7 +427,7 @@ function Service({
                   onChange={handleChange('hls_base_url')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <MultiSelect
                   type="select"
                   label="hls_flags"
@@ -426,12 +456,12 @@ function Service({
                   ]}
                 ></MultiSelect>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography variant="h3">
                   <Trans>Segmentation</Trans>
                 </Typography>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Select
                   type="select"
                   label="hls_segment_type"
@@ -442,7 +472,7 @@ function Service({
                   <MenuItem value="fmp4">fmp4</MenuItem>
                 </Select>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -453,7 +483,7 @@ function Service({
                 />
               </Grid>
               {settings.options.hls_segment_type === 'fmp4' && (
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -465,7 +495,7 @@ function Service({
                 </Grid>
               )}
               {settings.options.hls_segment_type === 'fmp4' && (
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -478,7 +508,12 @@ function Service({
                   />
                 </Grid>
               )}
-              <Grid item xs={12} md={6}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 6,
+                }}
+              >
                 <Select
                   type="select"
                   label="hls_start_number_source"
@@ -491,7 +526,12 @@ function Service({
                   <MenuItem value="datetime">datetime</MenuItem>
                 </Select>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 6,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -503,7 +543,7 @@ function Service({
                   onChange={handleChange('start_number')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -513,12 +553,12 @@ function Service({
                   onChange={handleChange('strftime_mkdir')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography variant="h3">
                   <Trans>Encryption</Trans>
                 </Typography>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -528,7 +568,7 @@ function Service({
                   onChange={handleChange('hls_key_info_file')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -538,7 +578,7 @@ function Service({
                   onChange={handleChange('hls_enc_key')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -548,7 +588,7 @@ function Service({
                   onChange={handleChange('hls_enc_key_url')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -558,17 +598,17 @@ function Service({
                   onChange={handleChange('hls_enc_iv')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Checkbox
                   label="hls_enc"
                   checked={settings.options.hls_enc}
                   onChange={handleChange('hls_enc')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Divider />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography>
                   <Trans>Documentation</Trans>{' '}
                   <Link

@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import Icon from '@mui/icons-material/KeyboardTab';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
@@ -49,12 +49,12 @@ function Source({
 
   return (
     <React.Fragment>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography>
           <Trans>Send stream to this address:</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <BoxTextarea>
           <Textarea rows={1} value={HLS} readOnly allowCopy />
         </BoxTextarea>

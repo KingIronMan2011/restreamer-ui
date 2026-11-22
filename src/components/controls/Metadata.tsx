@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Tab from '@mui/material/Tab';
 import TextField from '@mui/material/TextField';
 import React from 'react';
@@ -68,14 +68,14 @@ export default function Control({
 
   return (
     <Grid container spacing={0}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <TabsHorizontal value={$tab} onChange={handleChangeTab}>
           <Tab className="tab" label={<Trans>Content</Trans>} value="content" />
           <Tab className="tab" label={<Trans>Author</Trans>} value="author" />
         </TabsHorizontal>
         <TabPanel value={$tab} index="content">
           <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <TextField
                 variant="outlined"
                 fullWidth
@@ -84,7 +84,7 @@ export default function Control({
                 onChange={handleChange('name')}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <TextField
                 sx={classes.root}
                 variant="outlined"
@@ -100,7 +100,7 @@ export default function Control({
         </TabPanel>
         <TabPanel value={$tab} index="author">
           <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <TextField
                 variant="outlined"
                 fullWidth
@@ -109,7 +109,7 @@ export default function Control({
                 onChange={handleChange('author.name')}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <TextField
                 sx={classes.root}
                 variant="outlined"

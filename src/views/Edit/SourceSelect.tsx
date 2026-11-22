@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import SemverSatisfies from 'semver/functions/satisfies';
@@ -117,7 +117,7 @@ export default function SourceSelect({
 
   return (
     <Grid container spacing={1}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Select
           type={type}
           selected={$source}
@@ -126,9 +126,7 @@ export default function SourceSelect({
           onSelect={handleSource}
         />
       </Grid>
-      <Grid item xs={12}>
-        {sourceControl}
-      </Grid>
+      <Grid size={12}>{sourceControl}</Grid>
     </Grid>
   );
 }
@@ -164,12 +162,13 @@ function Select({
 
     selectAvailableSources.push(
       <Grid
-        item
-        xs={6}
-        md={4}
         key={s.id}
         sx={{
           textAlign: 'center',
+        }}
+        size={{
+          xs: 6,
+          md: 4,
         }}
       >
         <Button variant={variant} onClick={handleSource(s.id)}>
@@ -185,7 +184,7 @@ function Select({
   if (selectAvailableSources.length === 0) {
     return (
       <Grid container spacing={1}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography variant="body1">
             <Trans>No sources available</Trans>
           </Typography>

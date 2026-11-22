@@ -2,7 +2,7 @@ import { Trans } from '@lingui/react/macro';
 import Icon from '@mui/icons-material/Cached';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -180,7 +180,7 @@ function Source({
           },
         ]}
       >
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography variant="caption">
             <Trans>
               Upload an audio file (
@@ -189,7 +189,12 @@ function Source({
             </Trans>
           </Typography>
         </Grid>
-        <Grid item xs={12} md={9}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 9,
+          }}
+        >
           <TextField
             variant="outlined"
             fullWidth
@@ -198,7 +203,12 @@ function Source({
             readOnly
           />
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 3,
+          }}
+        >
           <UploadButton
             label={<Trans>Upload</Trans>}
             acceptTypes={imageTypes}
@@ -209,7 +219,7 @@ function Source({
             onUpload={handleFileUpload}
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <FormInlineButton
             onClick={handleProbe}
             disabled={!settings.address.length}

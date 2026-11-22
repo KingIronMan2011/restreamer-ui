@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/react/macro';
 import WarningIcon from '@mui/icons-material/Warning';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
@@ -34,7 +34,7 @@ export default function Error({
             <Trans>There was an error setting up the stream.</Trans>
           </Typography>
         </BoxText>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Button variant="outlined" fullWidth color="primary" onClick={onNext}>
             <Trans>Retry</Trans>
           </Button>

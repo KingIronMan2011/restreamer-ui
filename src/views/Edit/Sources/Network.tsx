@@ -9,7 +9,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -610,7 +610,7 @@ function AdvancedSettings({
   }
 
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <Accordion className="accordion">
         <AccordionSummary elevation={0} expandIcon={<ArrowDropDownIcon />}>
           <Typography>
@@ -621,12 +621,12 @@ function AdvancedSettings({
           <Grid container spacing={2}>
             {protocolClass === 'rtsp' && (
               <React.Fragment>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>RTSP</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Select
                     type="select"
                     label={<Trans>Transport</Trans>}
@@ -640,7 +640,7 @@ function AdvancedSettings({
                     <MenuItem value="https">HTTPS tunneling</MenuItem>
                   </Select>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     variant="outlined"
                     type="number"
@@ -656,12 +656,12 @@ function AdvancedSettings({
             )}
             {protocolClass === 'srt' && settings.mode === 'push' && (
               <React.Fragment>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>SRT</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -677,12 +677,12 @@ function AdvancedSettings({
             )}
             {protocolClass === 'http' && (
               <React.Fragment>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>HTTP and HTTPS</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Read input at native speed</Trans>}
                     checked={settings.http.readNative}
@@ -695,7 +695,7 @@ function AdvancedSettings({
                   />
                 </Grid>
                 {settings.http.forceFramerate === true && (
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <TextField
                       variant="outlined"
                       type="number"
@@ -708,7 +708,7 @@ function AdvancedSettings({
                     />
                   </Grid>
                 )}
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -717,7 +717,7 @@ function AdvancedSettings({
                     onChange={onChange('http', 'userAgent')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -726,7 +726,7 @@ function AdvancedSettings({
                     onChange={onChange('http', 'referer')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -741,7 +741,7 @@ function AdvancedSettings({
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -753,12 +753,12 @@ function AdvancedSettings({
                 </Grid>
               </React.Fragment>
             )}
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography variant="h3">
                 <Trans>General</Trans>
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <TextField
                 variant="outlined"
                 type="number"
@@ -770,7 +770,7 @@ function AdvancedSettings({
                 onChange={onChange('general', 'thread_queue_size')}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <TextField
                 variant="outlined"
                 type="number"
@@ -787,7 +787,7 @@ function AdvancedSettings({
                 </Trans>
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <TextField
                 variant="outlined"
                 type="number"
@@ -802,7 +802,7 @@ function AdvancedSettings({
                 <Trans>Default {2500}</Trans>
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <TextField
                 variant="outlined"
                 type="number"
@@ -844,7 +844,7 @@ function AdvancedSettings({
                 </Trans>
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <MultiSelect
                 type="select"
                 label="flags"
@@ -863,7 +863,7 @@ function AdvancedSettings({
                 ]}
               ></MultiSelect>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Checkbox
                 label={<Trans>copyts</Trans>}
                 checked={settings.general.copyts}
@@ -880,7 +880,7 @@ function AdvancedSettings({
                 onChange={onChange('general', 'use_wallclock_as_timestamps')}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Select
                 type="select"
                 label={<Trans>avoid_negative_ts</Trans>}
@@ -907,7 +907,7 @@ function ExtentionSettings({
 }: any) {
   if (!skills.protocols.input.includes('playout')) return null;
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <Accordion className="accordion">
         <AccordionSummary elevation={0} expandIcon={<ArrowDropDownIcon />}>
           <Typography>
@@ -916,7 +916,7 @@ function ExtentionSettings({
         </AccordionSummary>
         <AccordionDetails>
           <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Select
                 type="select"
                 label={<Trans>Live stabilization</Trans>}
@@ -969,12 +969,12 @@ function Pull({
         },
       ]}
     >
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography>
           <Trans>Enter the address of your network source:</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <TextField
           variant="outlined"
           fullWidth
@@ -993,11 +993,10 @@ function Pull({
         <React.Fragment>
           {!supportedProtocol ? (
             <Grid
-              item
-              xs={12}
               sx={{
                 textAlign: 'center',
               }}
+              size={12}
             >
               <BoxText color="dark">
                 <WarningIcon fontSize="large" color="error" />
@@ -1013,7 +1012,12 @@ function Pull({
             <React.Fragment>
               {authProtocol && (
                 <React.Fragment>
-                  <Grid item md={6} xs={12}>
+                  <Grid
+                    size={{
+                      md: 6,
+                      xs: 12,
+                    }}
+                  >
                     <TextField
                       variant="outlined"
                       fullWidth
@@ -1025,7 +1029,12 @@ function Pull({
                       <Trans>Username for the device.</Trans>
                     </Typography>
                   </Grid>
-                  <Grid item md={6} xs={12}>
+                  <Grid
+                    size={{
+                      md: 6,
+                      xs: 12,
+                    }}
+                  >
                     <Password
                       variant="outlined"
                       fullWidth
@@ -1049,7 +1058,7 @@ function Pull({
           )}
         </React.Fragment>
       )}
-      <Grid item xs={12}>
+      <Grid size={12}>
         <FormInlineButton
           disabled={!validURL || !supportedProtocol}
           onClick={onProbe}
@@ -1089,11 +1098,10 @@ function Push({
         ]}
       >
         <Grid
-          item
-          xs={12}
           sx={{
             textAlign: 'center',
           }}
+          size={12}
         >
           <BoxText color="dark">
             <WarningIcon fontSize="large" color="error" />
@@ -1121,7 +1129,7 @@ function Push({
           },
         ]}
       >
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Select
             type="select"
             label={<Trans>Protocol</Trans>}
@@ -1194,12 +1202,12 @@ function PushHLS({
         },
       ]}
     >
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography>
           <Trans>Send stream to this address:</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <BoxTextarea>
           <Textarea rows={1} value={HLS} readOnly allowCopy />
         </BoxTextarea>
@@ -1210,7 +1218,7 @@ function PushHLS({
         skills={skills}
         onChange={onChange}
       />
-      <Grid item xs={12}>
+      <Grid size={12}>
         <FormInlineButton onClick={onProbe}>
           <Trans>Probe</Trans>
         </FormInlineButton>
@@ -1246,12 +1254,12 @@ function PushRTMP({
           },
         ]}
       >
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography>
             <Trans>RTMP server is not enabled</Trans>
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Button
             variant="outlined"
             size="large"
@@ -1301,7 +1309,7 @@ function PushRTMP({
           },
         ]}
       >
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Select
             type="select"
             label={<Trans>Input stream</Trans>}
@@ -1321,12 +1329,12 @@ function PushRTMP({
         </Grid>
         {settings.push.name === config.channelid && (
           <React.Fragment>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography>
                 <Trans>Address:</Trans>
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <BoxTextarea>
                 <Textarea rows={1} value={RTMP} readOnly allowCopy />
               </BoxTextarea>
@@ -1339,7 +1347,7 @@ function PushRTMP({
           skills={skills}
           onChange={onChange}
         />
-        <Grid item xs={12}>
+        <Grid size={12}>
           <FormInlineButton
             onClick={onProbe}
             disabled={settings.push.name === 'none'}
@@ -1381,12 +1389,12 @@ function PushSRT({
           },
         ]}
       >
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography>
             <Trans>SRT server is not enabled</Trans>
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Button
             variant="outlined"
             size="large"
@@ -1436,7 +1444,7 @@ function PushSRT({
           },
         ]}
       >
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Select
             type="select"
             label={<Trans>Input stream</Trans>}
@@ -1456,12 +1464,12 @@ function PushSRT({
         </Grid>
         {settings.push.name === config.channelid && (
           <React.Fragment>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography>
                 <Trans>Address:</Trans>
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <BoxTextarea>
                 <Textarea rows={1} value={SRT} readOnly allowCopy />
               </BoxTextarea>
@@ -1474,7 +1482,7 @@ function PushSRT({
           skills={skills}
           onChange={onChange}
         />
-        <Grid item xs={12}>
+        <Grid size={12}>
           <FormInlineButton
             onClick={onProbe}
             disabled={settings.push.name === 'none'}
@@ -1570,7 +1578,7 @@ function Source({
           },
         ]}
       >
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Select
             type="select"
             label={<Trans>Pull or recieve the data:</Trans>}

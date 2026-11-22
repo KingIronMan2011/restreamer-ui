@@ -5,7 +5,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
@@ -339,18 +339,18 @@ export default function Playersite({ restreamer }: any) {
             </Tabs>
             <TabPanel value={$tab} index="general">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <PaperThumb
                     image="/images/playersite.png"
                     title="Playersite"
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h1">
                     <Trans>General</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="body1">
                     <Trans>
                       In addition to the player, the Restreamer offers a
@@ -359,14 +359,14 @@ export default function Playersite({ restreamer }: any) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Playersite</Trans>}
                     checked={$settings.playersite}
                     onChange={handleChange('playersite')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -376,7 +376,7 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('title')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Select
                     label={<Trans>Main channel</Trans>}
                     value={$settings.channelid}
@@ -404,7 +404,7 @@ export default function Playersite({ restreamer }: any) {
                     <Trans>Main page channel (index.html).</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <MultiSelect
                     disabled={!$settings.playersite}
                     label={<Trans>Additional channels</Trans>}
@@ -444,7 +444,7 @@ export default function Playersite({ restreamer }: any) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Share button</Trans>}
                     checked={$settings.share}
@@ -452,7 +452,7 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('share')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Chromecast</Trans>}
                     checked={$settings.chromecast}
@@ -460,7 +460,7 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('chromecast')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>AirPlay</Trans>}
                     checked={$settings.airplay}
@@ -468,7 +468,7 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('airplay')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Support datarhei Restreamer</Trans>}
                     checked={$settings.support}
@@ -483,17 +483,22 @@ export default function Playersite({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="template">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h1">
                     <Trans>Template</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="body1">
                     <Trans>Available</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={9}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 9,
+                  }}
+                >
                   <Select
                     label={<Trans>Selection</Trans>}
                     value={$settings.template}
@@ -517,7 +522,12 @@ export default function Playersite({ restreamer }: any) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={3}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 3,
+                  }}
+                >
                   <FormInlineButton
                     variant="outlined"
                     color="secondary"
@@ -527,15 +537,20 @@ export default function Playersite({ restreamer }: any) {
                     <Trans>Delete</Trans>
                   </FormInlineButton>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="body1">
                     <Trans>Upload</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={9}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 9,
+                  }}
+                >
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -550,7 +565,12 @@ export default function Playersite({ restreamer }: any) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={3}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 3,
+                  }}
+                >
                   <UploadButton
                     variant="outlined"
                     color="primary"
@@ -568,24 +588,24 @@ export default function Playersite({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="design">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h1">
                     <Trans>Design</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="body1">
                     <Trans>
                       Adjust publication site colors and background as you like.
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Text colors</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <ColorPicker
                     variant="outlined"
                     fullWidth
@@ -594,7 +614,7 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('textcolor_default')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <ColorPicker
                     variant="outlined"
                     fullWidth
@@ -603,7 +623,7 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('textcolor_title')}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <ColorPicker
                     variant="outlined"
                     fullWidth
@@ -612,7 +632,7 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('textcolor_link')}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <ColorPicker
                     variant="outlined"
                     fullWidth
@@ -621,15 +641,15 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('textcolor_link_hover')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Background colors</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <ColorPicker
                     variant="outlined"
                     fullWidth
@@ -638,7 +658,7 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('bgcolor_default')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <ColorPicker
                     variant="outlined"
                     fullWidth
@@ -647,7 +667,7 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('bgcolor_header')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <ColorPicker
                     variant="outlined"
                     fullWidth
@@ -656,7 +676,7 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('bgcolor_selected')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <ColorPicker
                     variant="outlined"
                     fullWidth
@@ -665,7 +685,7 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('bgcolor_unselected')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <ColorPicker
                     variant="outlined"
                     fullWidth
@@ -674,16 +694,21 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('hrcolor')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Background image</Trans>
                   </Typography>
                 </Grid>
 
-                <Grid item xs={12} md={8}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 8,
+                  }}
+                >
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -695,7 +720,12 @@ export default function Playersite({ restreamer }: any) {
                     <Trans>Address for the background image.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={4}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 4,
+                  }}
+                >
                   <UploadButton
                     label={<Trans>Upload</Trans>}
                     acceptTypes={imageTypes}
@@ -710,17 +740,17 @@ export default function Playersite({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="notes">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>Notes</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Imprint</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     sx={classes.buttonOpen}
                     variant="outlined"
@@ -732,12 +762,12 @@ export default function Playersite({ restreamer }: any) {
                     onChange={handleChange('imprint')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Terms</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     sx={classes.buttonOpen}
                     variant="outlined"
@@ -753,12 +783,12 @@ export default function Playersite({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="code_injection">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>Custom code injection</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="body1">
                     <Trans>
                       Add external widgets and styles to the publication site.
@@ -766,12 +796,12 @@ export default function Playersite({ restreamer }: any) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Extend header</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     sx={classes.buttonOpen}
                     variant="outlined"
@@ -786,12 +816,12 @@ export default function Playersite({ restreamer }: any) {
                     <Trans>For Stylesheets.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Extend channel list</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     sx={classes.buttonOpen}
                     variant="outlined"
@@ -808,12 +838,12 @@ export default function Playersite({ restreamer }: any) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Extend content</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     sx={classes.buttonOpen}
                     variant="outlined"
@@ -831,12 +861,12 @@ export default function Playersite({ restreamer }: any) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Extend footer</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     sx={classes.buttonOpen}
                     variant="outlined"

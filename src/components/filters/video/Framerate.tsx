@@ -1,7 +1,7 @@
 import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import React from 'react';
 
 import Checkbox from '../../Checkbox';
@@ -104,7 +104,7 @@ function Filter({
 
   return (
     <React.Fragment>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Checkbox
           label={<Trans>Framerate conversion (frame interpolation)</Trans>}
           checked={settings.enabled}
@@ -113,7 +113,7 @@ function Filter({
       </Grid>
       {settings.enabled && (
         <React.Fragment>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Framerate
               value={settings.fps}
               onChange={update('fps')}

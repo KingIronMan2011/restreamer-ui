@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/react/macro';
 import WarningIcon from '@mui/icons-material/Warning';
 //import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -432,7 +432,7 @@ export default function Footer({
           },
         ]}
       >
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Stack
             direction="row"
             spacing={0}
@@ -471,7 +471,7 @@ export default function Footer({
           },
         ]}
       >
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Stack
             direction="row"
             spacing={0}

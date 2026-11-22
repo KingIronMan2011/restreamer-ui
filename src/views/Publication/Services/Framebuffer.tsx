@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import { Images } from 'lucide-react';
 import React from 'react';
@@ -107,10 +107,8 @@ function Service({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
-        {videoDevices}
-      </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>{videoDevices}</Grid>
+      <Grid size={12}>
         <Select
           label={<Trans>Pixel format</Trans>}
           value={settings.pix_fmt}

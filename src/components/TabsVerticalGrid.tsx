@@ -1,4 +1,4 @@
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import React from 'react';
 
 const useStyles = () => {
@@ -17,7 +17,7 @@ export default function Component({
   const classes = useStyles();
 
   return (
-    <Grid item xs={12} sx={classes.grid}>
+    <Grid sx={classes.grid} size={12}>
       {children}
     </Grid>
   );

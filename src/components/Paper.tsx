@@ -1,4 +1,4 @@
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { useTheme } from '@mui/material/styles';
 import React from 'react';
@@ -47,7 +47,14 @@ const Component = React.forwardRef<any, any>(
           justifyContent: 'center',
         }}
       >
-        <Grid item xs={xs} sm={sm} md={md} lg={lg}>
+        <Grid
+          size={{
+            xs: xs,
+            sm: sm,
+            md: md,
+            lg: lg,
+          }}
+        >
           <Paper
             sx={classes[className as keyof typeof classes]}
             elevation={elevation}

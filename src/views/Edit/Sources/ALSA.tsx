@@ -4,7 +4,7 @@ import { Trans } from '@lingui/react/macro';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import Icon from '@mui/icons-material/Usb';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -124,12 +124,12 @@ function Source({
         },
       ]}
     >
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography>
           <Trans>Select a device:</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <SelectCustom
           options={options}
           label={<Trans>Audio device</Trans>}
@@ -148,14 +148,14 @@ function Source({
           <Trans>Refresh</Trans>
         </Button>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Audio.Sampling
           value={settings.sampling}
           onChange={handleChange('sampling')}
           allowCustom
         />
       </Grid>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <TextField
           variant="outlined"
           fullWidth
@@ -164,7 +164,7 @@ function Source({
           onChange={handleChange('channels')}
         />
       </Grid>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <TextField
           variant="outlined"
           fullWidth
@@ -173,7 +173,7 @@ function Source({
           onChange={handleChange('delay')}
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <FormInlineButton onClick={handleProbe}>
           <Trans>Probe</Trans>
         </FormInlineButton>

@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import React from 'react';
 
@@ -77,7 +77,12 @@ function Service({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} md={9}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 9,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -86,7 +91,12 @@ function Service({
           onChange={handleChange('key')}
         />
       </Grid>
-      <Grid item xs={12} md={3}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 3,
+        }}
+      >
         <FormInlineButton target="blank" href={stream_key_link} component="a">
           <Trans>GET</Trans>
         </FormInlineButton>

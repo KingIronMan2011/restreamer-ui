@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -99,7 +99,7 @@ function Service({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Select
           label={<Trans>Region</Trans>}
           value={settings.region}
@@ -113,7 +113,12 @@ function Service({
           <MenuItem value="live.eu-west1">Europe</MenuItem>
         </Select>
       </Grid>
-      <Grid item xs={12} md={9}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 9,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth

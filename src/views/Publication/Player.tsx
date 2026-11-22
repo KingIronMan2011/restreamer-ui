@@ -4,8 +4,9 @@ import { Trans } from '@lingui/react/macro';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
+import Stack from '@mui/material/Stack';
 import { useTheme } from '@mui/material/styles';
 import Tab from '@mui/material/Tab';
 import TextField from '@mui/material/TextField';
@@ -371,12 +372,11 @@ export default function Edit({ restreamer }: any) {
           onHelp={handleHelp}
         />
         <Grid container spacing={1} sx={classes.gridContainer}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Grid container spacing={0} sx={classes.playerL1}>
-              <Grid item xs={12} sx={classes.playerL2}>
+              <Grid sx={classes.playerL2} size={12}>
                 {$state !== 'connected' ? (
-                  <Grid
-                    container
+                  <Stack
                     direction="column"
                     sx={[
                       classes.playerL3,
@@ -386,12 +386,12 @@ export default function Edit({ restreamer }: any) {
                       },
                     ]}
                   >
-                    <Grid item>
+                    <Grid>
                       <Typography variant="h2">
                         <Trans>No video</Trans>
                       </Typography>
                     </Grid>
-                  </Grid>
+                  </Stack>
                 ) : (
                   <Player
                     key={$revision}
@@ -415,7 +415,7 @@ export default function Edit({ restreamer }: any) {
           </Grid>
         </Grid>
         <Grid container spacing={0}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <TabsHorizontal value={$tab} onChange={handleChangeTab}>
               <Tab className="tab" label={<Trans>Embed</Trans>} value="embed" />
               <Tab className="tab" label={<Trans>Logo</Trans>} value="logo" />
@@ -432,13 +432,13 @@ export default function Edit({ restreamer }: any) {
             </TabsHorizontal>
             <TabPanel value={$tab} index="embed">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextFieldCopy
                     label={<Trans>Player URL</Trans>}
                     value={playerAddress}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextFieldCopy
                     label={<Trans>iframe code</Trans>}
                     value={iframeCode}
@@ -448,7 +448,7 @@ export default function Edit({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="colors">
               <Grid container spacing={2}>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -458,7 +458,7 @@ export default function Edit({ restreamer }: any) {
                     onChange={handleChange('seekbar', 'color')}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -472,7 +472,12 @@ export default function Edit({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="logo">
               <Grid container spacing={2}>
-                <Grid item xs={12} md={9}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 9,
+                  }}
+                >
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -482,7 +487,12 @@ export default function Edit({ restreamer }: any) {
                     onChange={handleChange('image', 'logo')}
                   />
                 </Grid>
-                <Grid item xs={12} md={3}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 3,
+                  }}
+                >
                   <UploadButton
                     label={<Trans>Upload</Trans>}
                     acceptTypes={logoImageTypes}
@@ -493,7 +503,12 @@ export default function Edit({ restreamer }: any) {
                     onUpload={handleLogoUpload}
                   />
                 </Grid>
-                <Grid item xs={12} md={4}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 4,
+                  }}
+                >
                   <Select
                     variant="outlined"
                     fullWidth
@@ -507,7 +522,12 @@ export default function Edit({ restreamer }: any) {
                     <MenuItem value="bottom-right">Bottom-Right</MenuItem>
                   </Select>
                 </Grid>
-                <Grid item xs={12} md={8}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 8,
+                  }}
+                >
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -521,7 +541,12 @@ export default function Edit({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="poster">
               <Grid container spacing={2}>
-                <Grid item xs={12} md={9}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 9,
+                  }}
+                >
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -531,7 +556,12 @@ export default function Edit({ restreamer }: any) {
                     onChange={handleChange('poster')}
                   />
                 </Grid>
-                <Grid item xs={12} md={3}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 3,
+                  }}
+                >
                   <UploadButton
                     label={<Trans>Upload</Trans>}
                     acceptTypes={posterImageTypes}
@@ -546,7 +576,12 @@ export default function Edit({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="statistic">
               <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 6,
+                  }}
+                >
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -556,7 +591,12 @@ export default function Edit({ restreamer }: any) {
                     onChange={handleChange('account', 'ga')}
                   />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 6,
+                  }}
+                >
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -566,7 +606,7 @@ export default function Edit({ restreamer }: any) {
                     onChange={handleChange('name', 'ga')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Enable nerd statistics</Trans>}
                     checked={$settings.statistics}
@@ -577,7 +617,7 @@ export default function Edit({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="playback">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Autoplay</Trans>}
                     checked={$settings.autoplay}

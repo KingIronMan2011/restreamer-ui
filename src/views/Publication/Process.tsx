@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
@@ -34,7 +34,7 @@ export default function Process({
 
   return (
     <Grid container spacing={1}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         {progress.state === 'connecting' && (
           <BoxText>
             <Typography variant="body2" gutterBottom>
@@ -93,7 +93,7 @@ export default function Process({
           </BoxText>
         )}
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <ActionButton
           order={progress.order}
           state={progress.state}

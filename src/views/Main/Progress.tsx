@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import type { CSSProperties } from 'react';
@@ -48,7 +48,7 @@ export default function Progress({ progress = {} }: any) {
 
   return (
     <Grid container spacing={1}>
-      <Grid item xs={4}>
+      <Grid size={4}>
         <div style={uptimeStyle}>
           <Typography variant="body1" style={valueStyle}>
             <Duration seconds={uptime} />
@@ -58,7 +58,7 @@ export default function Progress({ progress = {} }: any) {
           </Typography>
         </div>
       </Grid>
-      <Grid item xs={4}>
+      <Grid size={4}>
         <div style={bitrateStyle}>
           <Typography variant="body1" style={valueStyle}>
             <Number value={bitrate} digits={0} />
@@ -68,7 +68,7 @@ export default function Progress({ progress = {} }: any) {
           </Typography>
         </div>
       </Grid>
-      <Grid item xs={4}>
+      <Grid size={4}>
         <div style={fpsStyle}>
           <Typography variant="body1" style={valueStyle}>
             <Number value={fps} digits={0} />

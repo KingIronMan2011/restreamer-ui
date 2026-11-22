@@ -2,7 +2,7 @@ import { Trans } from '@lingui/react/macro';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import PersonIcon from '@mui/icons-material/Person';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate } from 'react-router';
@@ -144,10 +144,10 @@ export default function Publication({ channelid = '', restreamer }: any) {
   for (let e of $egresses.values()) {
     egresses.push(
       <React.Fragment key={e.id}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Divider />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Egress
             service={e.service}
             name={e.name}
@@ -172,11 +172,10 @@ export default function Publication({ channelid = '', restreamer }: any) {
         />
         <Grid container spacing={1}>
           <Grid
-            item
-            xs={12}
             sx={{
               textAlign: 'center',
             }}
+            size={12}
           >
             <Divider />
             <Typography component="div" sx={classes.viewerCount}>
@@ -200,14 +199,13 @@ export default function Publication({ channelid = '', restreamer }: any) {
             </Grid>
           </Grid>
           <Grid
-            item
-            xs={12}
             sx={[
               classes.bandwidth,
               {
                 textAlign: 'center',
               },
             ]}
+            size={12}
           >
             <Typography component="div" sx={classes.bandwidthCount}>
               <Number value={$session.bandwidth} />

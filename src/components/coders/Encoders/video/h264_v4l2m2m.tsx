@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
@@ -172,7 +172,7 @@ function Coder({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <BoxText color="danger">
           <Trans>V4L2_M2M is experimental.</Trans>
           <br />
@@ -182,21 +182,21 @@ function Coder({
           </Trans>
         </BoxText>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Video.Bitrate
           value={settings.bitrate}
           onChange={update('bitrate')}
           allowCustom
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Video.Framerate
           value={settings.fps}
           onChange={update('fps')}
           allowCustom
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Video.GOP
           value={settings.gop}
           onChange={update('gop')}
@@ -211,14 +211,14 @@ function Coder({
         </Typography>
       </Grid>
       {skills.ffmpeg.version_major >= 5 && (
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Video.FpsMode
             value={settings.fps_mode}
             onChange={update('fps_mode')}
           />
         </Grid>
       )}
-      <Grid item xs={12}>
+      <Grid size={12}>
         <TextField
           label={<Trans>Force key frames</Trans>}
           type="text"
@@ -226,7 +226,7 @@ function Coder({
           onChange={update('force_key_frames')}
         />
       </Grid>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <TextField
           label={<Trans>Capture buffer</Trans>}
           type="number"
@@ -234,7 +234,7 @@ function Coder({
           onChange={update('num_capture_buffers')}
         />
       </Grid>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <TextField
           label={<Trans>Output buffer</Trans>}
           type="number"

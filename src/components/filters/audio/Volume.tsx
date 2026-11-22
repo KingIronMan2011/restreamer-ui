@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import React from 'react';
@@ -110,10 +110,10 @@ function Filter({
 
   return (
     <React.Fragment>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <VolumeLevel value={settings.level} onChange={update('level')} />
       </Grid>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <VolumeDB
           value={settings.db}
           onChange={update('db')}

@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate } from 'react-router';
@@ -46,7 +46,7 @@ export default function Control({
   return (
     <Grid container spacing={2}>
       {enabled && (
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Checkbox
             label={<Trans>Enable</Trans>}
             checked={settings.enable}
@@ -61,7 +61,7 @@ export default function Control({
         </Grid>
       )}
       {!enabled && (
-        <Grid item xs={12}>
+        <Grid size={12}>
           <BoxText textAlign="center">
             <Trans>The RTMP output requires the RTMP Server.</Trans>
             <Button

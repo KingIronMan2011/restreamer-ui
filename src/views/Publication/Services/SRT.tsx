@@ -4,7 +4,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -167,7 +167,12 @@ function Service({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} md={3}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 3,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -177,7 +182,12 @@ function Service({
           disabled
         />
       </Grid>
-      <Grid item xs={12} md={9}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 9,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -186,7 +196,7 @@ function Service({
           onChange={handleChange('address')}
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <TextField
           variant="outlined"
           fullWidth
@@ -195,7 +205,7 @@ function Service({
           onChange={handleChange('streamid')}
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Accordion className="accordion">
           <AccordionSummary
             expandIcon={<ArrowDropDownIcon />}
@@ -207,12 +217,17 @@ function Service({
           </AccordionSummary>
           <AccordionDetails>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography variant="h3">
                   <Trans>General</Trans>
                 </Typography>
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -224,7 +239,12 @@ function Service({
                   onChange={handleChange('connect_timeout')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -236,7 +256,12 @@ function Service({
                   onChange={handleChange('ffs')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -248,7 +273,12 @@ function Service({
                   onChange={handleChange('inputbw')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -258,7 +288,12 @@ function Service({
                   onChange={handleChange('iptos')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -270,7 +305,12 @@ function Service({
                   onChange={handleChange('ipttl')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -282,7 +322,12 @@ function Service({
                   onChange={handleChange('latency')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -294,7 +339,12 @@ function Service({
                   onChange={handleChange('maxbw')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <Select
                   label="mode"
                   value={settings.params.mode}
@@ -305,7 +355,12 @@ function Service({
                   <MenuItem value="rendezvous">rendezvous</MenuItem>
                 </Select>
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -317,7 +372,12 @@ function Service({
                   onChange={handleChange('mss')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -330,7 +390,12 @@ function Service({
                   onChange={handleChange('oheadbw')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -342,7 +407,12 @@ function Service({
                   onChange={handleChange('payload_size')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -354,7 +424,12 @@ function Service({
                   onChange={handleChange('send_buffer_size')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -366,7 +441,12 @@ function Service({
                   onChange={handleChange('sndbuf')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -378,7 +458,12 @@ function Service({
                   onChange={handleChange('rcvbuf')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -390,7 +475,12 @@ function Service({
                   onChange={handleChange('lossmaxttl')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <Select
                   label="smoother"
                   value={settings.params.smoother}
@@ -400,7 +490,12 @@ function Service({
                   <MenuItem value="file">file</MenuItem>
                 </Select>
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <Select
                   label="transtype"
                   value={settings.params.transtype}
@@ -410,7 +505,7 @@ function Service({
                   <MenuItem value="file">file</MenuItem>
                 </Select>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Checkbox
                   label="nakreport"
                   checked={settings.params.nakreport}
@@ -422,12 +517,12 @@ function Service({
                   onChange={handleChange('tlpktdrop')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography variant="h3">
                   <Trans>Encryption</Trans>
                 </Typography>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -437,7 +532,12 @@ function Service({
                   onChange={handleChange('passphrase')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -449,7 +549,12 @@ function Service({
                   onChange={handleChange('kmrefreshrate')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -461,7 +566,12 @@ function Service({
                   onChange={handleChange('kmpreannounce')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <Select
                   label="pbkeylen"
                   value={settings.params.pbkeylen}
@@ -472,17 +582,17 @@ function Service({
                   <MenuItem value="32">32</MenuItem>
                 </Select>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Checkbox
                   label="enforced_encryption"
                   checked={settings.params.enforced_encryption}
                   onChange={handleChange('enforced_encryption')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Divider />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography>
                   <Trans>Documentation</Trans>{' '}
                   <Link

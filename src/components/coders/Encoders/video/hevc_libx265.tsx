@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
 
@@ -147,21 +147,31 @@ function Coder({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Video.Bitrate
           value={settings.bitrate}
           onChange={update('bitrate')}
           allowCustom
         />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 6,
+        }}
+      >
         <Video.Framerate
           value={settings.fps}
           onChange={update('fps')}
           allowCustom
         />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 6,
+        }}
+      >
         <Video.GOP
           value={settings.gop}
           onChange={update('gop')}
@@ -170,20 +180,20 @@ function Coder({
         />
       </Grid>
       {skills.ffmpeg.version_major >= 5 && (
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Video.FpsMode
             value={settings.fps_mode}
             onChange={update('fps_mode')}
           />
         </Grid>
       )}
-      <Grid item xs={6}>
+      <Grid size={6}>
         <Preset value={settings.preset} onChange={update('preset')} />
       </Grid>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <Video.Profile value={settings.profile} onChange={update('profile')} />
       </Grid>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <Tune value={settings.tune} onChange={update('tune')} />
       </Grid>
     </Grid>

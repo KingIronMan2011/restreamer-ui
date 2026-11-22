@@ -1,5 +1,5 @@
 import '@videojs/react/live-video/skin.css';
-import Grid from '@mui/material/GridLegacy';
+import Stack from '@mui/material/Stack';
 import { LiveVideoPlayer, LiveVideoSkin } from '@videojs/react/live-video';
 import { HlsJsVideo } from '@videojs/react/media/hlsjs-video';
 import { useState, type CSSProperties, type SyntheticEvent } from 'react';
@@ -60,8 +60,7 @@ export default function VideoJS({
   };
 
   return (
-    <Grid
-      container
+    <Stack
       direction="column"
       spacing={2}
       style={{ position: 'absolute', inset: 0 }}
@@ -109,6 +108,6 @@ export default function VideoJS({
           )}
         </LiveVideoSkin>
       </LiveVideoPlayer>
-    </Grid>
+    </Stack>
   );
 }

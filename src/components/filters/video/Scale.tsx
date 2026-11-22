@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
 
@@ -88,11 +88,11 @@ function Filter({
 
   return (
     <React.Fragment>
-      <Grid item xs={settings.mode === 'none' ? 12 : 4}>
+      <Grid size={settings.mode === 'none' ? 12 : 4}>
         <Mode value={settings.mode} onChange={update('mode')}></Mode>
       </Grid>
       {settings.mode === 'fix' && (
-        <Grid item xs={8}>
+        <Grid size={8}>
           <Video.Size
             allowCustom
             label={<Trans>Scale size</Trans>}
@@ -102,7 +102,7 @@ function Filter({
         </Grid>
       )}
       {settings.mode === 'width' && (
-        <Grid item xs={8}>
+        <Grid size={8}>
           <Video.Width
             allowCustom
             label={<Trans>Scale size</Trans>}
@@ -112,7 +112,7 @@ function Filter({
         </Grid>
       )}
       {settings.mode === 'height' && (
-        <Grid item xs={8}>
+        <Grid size={8}>
           <Video.Height
             allowCustom
             label={<Trans>Scale size</Trans>}

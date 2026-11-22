@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -63,7 +63,7 @@ const Stream = function ({ stream = {}, onChange = () => {} }: any) {
 			</Grid> */}
       {stream.type === 'audio' ? (
         <React.Fragment>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Select
               label={<Trans>Codec</Trans>}
               value={stream.codec}
@@ -73,14 +73,14 @@ const Stream = function ({ stream = {}, onChange = () => {} }: any) {
               <MenuItem value="mp3">MP3</MenuItem>
             </Select>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Audio.Sampling
               value={stream.sampling_hz}
               onChange={handleChange('sampling_hz')}
               allowCustom
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Audio.Layout
               value={stream.layout}
               onChange={handleChange('layout')}
@@ -90,7 +90,7 @@ const Stream = function ({ stream = {}, onChange = () => {} }: any) {
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Select
               label={<Trans>Codec</Trans>}
               value={stream.codec}
@@ -103,14 +103,14 @@ const Stream = function ({ stream = {}, onChange = () => {} }: any) {
               <MenuItem value="vp8">VP8</MenuItem>
             </Select>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Video.Size
               value={stream.width + 'x' + stream.height}
               onChange={handleChange('size')}
               allowCustom
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Video.PixFormat
               value={stream.pix_fmt}
               onChange={handleChange('pix_fmt')}
@@ -163,7 +163,7 @@ const Streams = function ({
   return (
     <Grid container spacing={1}>
       {streams.map((stream: any, index: number) => (
-        <Grid key={stream.index + ':' + stream.stream} item xs={12}>
+        <Grid key={stream.index + ':' + stream.stream} size={12}>
           <Stack>
             <Typography sx={{ textTransform: 'UPPERCASE', marginBottom: 2 }}>
               {stream.type}
@@ -172,7 +172,7 @@ const Streams = function ({
           </Stack>
         </Grid>
       ))}
-      <Grid item xs={12}>
+      <Grid size={12}>
         {streams.length < 2 && (
           <Button variant="outlined" color="default" onClick={handleAddStream}>
             <Trans>Add Audio</Trans>

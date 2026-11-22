@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -37,7 +37,12 @@ export default function Control({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} md={4}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 4,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -53,7 +58,12 @@ export default function Control({
           <Trans>CPU usage limit in percent (0-100%), 0 for unlimited.</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 4,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -69,7 +79,12 @@ export default function Control({
           <Trans>Memory usage limit in megabytes, 0 for unlimited.</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 4,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth

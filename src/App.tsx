@@ -1,8 +1,9 @@
 import Alert from '@mui/material/Alert';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Snackbar from '@mui/material/Snackbar';
+import Stack from '@mui/material/Stack';
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router';
 import { HashRouter as DOMRouter } from 'react-router';
@@ -529,8 +530,7 @@ export default function App({ address = '' }: any) {
 
   return (
     <NotifyProvider value={{ Dispatch: notify }}>
-      <Grid
-        container
+      <Stack
         direction="column"
         spacing={0}
         sx={{
@@ -551,7 +551,7 @@ export default function App({ address = '' }: any) {
             onLogout={handleLogout}
           />
         </Grid>
-        <Grid item sx={classes.MainContent}>
+        <Grid sx={classes.MainContent}>
           <Grid
             container
             className="MainContent-container"
@@ -561,14 +561,28 @@ export default function App({ address = '' }: any) {
               alignItems: 'center',
             }}
           >
-            <Grid item sm={1}></Grid>
-            <Grid item xs={12} sm={10} className="MainContent-item">
+            <Grid
+              size={{
+                sm: 1,
+              }}
+            ></Grid>
+            <Grid
+              className="MainContent-item"
+              size={{
+                xs: 12,
+                sm: 10,
+              }}
+            >
               {view}
             </Grid>
-            <Grid item sm={1}></Grid>
+            <Grid
+              size={{
+                sm: 1,
+              }}
+            ></Grid>
           </Grid>
         </Grid>
-      </Grid>
+      </Stack>
       <Footer
         expand={$state.connected}
         app={app}

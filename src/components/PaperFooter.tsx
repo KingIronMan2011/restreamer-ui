@@ -1,4 +1,4 @@
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import React from 'react';
 
 const useStyles = () => {
@@ -24,7 +24,7 @@ const Component = function ({ buttonsLeft = null, buttonsRight = null }: any) {
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12} sx={classes.root}>
+      <Grid sx={classes.root} size={12}>
         <div>{buttonsRight}</div>
         {buttonsLeft}
       </Grid>

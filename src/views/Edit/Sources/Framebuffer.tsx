@@ -1,7 +1,7 @@
 import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { Images } from 'lucide-react';
 import React from 'react';
@@ -117,22 +117,20 @@ function Source({
         },
       ]}
     >
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography>
           <Trans>Select a device:</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
-        {videoDevices}
-      </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>{videoDevices}</Grid>
+      <Grid size={12}>
         <Video.Framerate
           value={settings.framerate}
           onChange={handleChange('framerate')}
           allowCustom
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <FormInlineButton onClick={handleProbe}>
           <Trans>Probe</Trans>
         </FormInlineButton>

@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import React from 'react';
 
 import Checkbox from '../../Checkbox';
@@ -64,7 +64,7 @@ function Filter({
 
   return (
     <React.Fragment>
-      <Grid item>
+      <Grid>
         <Checkbox
           label={<Trans>Loudness Normalization</Trans>}
           checked={settings.enabled}

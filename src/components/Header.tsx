@@ -11,7 +11,7 @@ import VideocamIcon from '@mui/icons-material/Videocam';
 import WebIcon from '@mui/icons-material/Web';
 import Divider from '@mui/material/Divider';
 import Fab from '@mui/material/Fab';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Menu from '@mui/material/Menu';
@@ -171,14 +171,14 @@ function AboutModal({ open = false, onClose = () => {} }: any) {
         sx={classes.modalPaper}
       >
         <Grid container spacing={1}>
-          <Grid item xs={12} sx={classes.aboutImage}>
+          <Grid sx={classes.aboutImage} size={12}>
             <PaperThumb
               image="/images/welcome.png"
               title="Welcome to Restreamer v2"
               height="200px"
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="body1">
               This is the frontend and a part of a free open source
               livestreaming solution for video data. The second part is the{' '}
@@ -192,8 +192,8 @@ function AboutModal({ open = false, onClose = () => {} }: any) {
               which can be operated separately.
             </Typography>
           </Grid>
-          <Grid item xs={12}></Grid>
-          <Grid item xs={12}>
+          <Grid size={12}></Grid>
+          <Grid size={12}>
             <Typography>
               <strong>Release</strong>: {Version.UI}
             </Typography>
@@ -443,7 +443,7 @@ export default function Header({
         },
       ]}
     >
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Stack
           direction="row"
           spacing={0}

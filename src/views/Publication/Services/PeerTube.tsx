@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import React from 'react';
 
@@ -84,7 +84,12 @@ function Service({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} md={12}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 12,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -94,7 +99,12 @@ function Service({
           onChange={handleChange('domain')}
         />
       </Grid>
-      <Grid item xs={12} md={9}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 9,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -103,7 +113,12 @@ function Service({
           onChange={handleChange('key')}
         />
       </Grid>
-      <Grid item xs={12} md={3}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 3,
+        }}
+      >
         <FormInlineButton
           target="blank"
           href={`https://${settings.domain}${stream_key_link}`}
@@ -113,7 +128,7 @@ function Service({
           <Trans>GET</Trans>
         </FormInlineButton>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Checkbox
           label={<Trans>Enable RTMPS transfer</Trans>}
           checked={settings.rtmps}

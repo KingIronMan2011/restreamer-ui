@@ -4,7 +4,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -129,7 +129,12 @@ function Service({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} md={3}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 3,
+        }}
+      >
         <Select
           type="select"
           label={<Trans>Protocol</Trans>}
@@ -140,7 +145,12 @@ function Service({
           <MenuItem value="https://">https://</MenuItem>
         </Select>
       </Grid>
-      <Grid item xs={12} md={9}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 9,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -149,7 +159,7 @@ function Service({
           onChange={handleChange('address')}
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Accordion className="accordion">
           <AccordionSummary
             className="accordion-summary"
@@ -162,12 +172,12 @@ function Service({
           </AccordionSummary>
           <AccordionDetails>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography variant="h3">
                   <Trans>General</Trans>
                 </Typography>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -179,7 +189,7 @@ function Service({
                   onChange={handleChange('start_number')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Select
                   type="select"
                   label="method"
@@ -191,7 +201,7 @@ function Service({
                   <MenuItem value="POST">POST</MenuItem>
                 </Select>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Checkbox
                   label="frame_pts"
                   checked={settings.options.frame_pts}
@@ -208,10 +218,10 @@ function Service({
                   onChange={handleChange('strftime')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Divider />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography>
                   <Trans>Documentation</Trans>{' '}
                   <Link

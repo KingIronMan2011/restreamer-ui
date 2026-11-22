@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -203,7 +203,7 @@ function Service({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Select
           label={<Trans>Delivering mode</Trans>}
           value={settings.mode}
@@ -213,7 +213,12 @@ function Service({
           {allowHLS === true && <MenuItem value="hls">HLS</MenuItem>}
         </Select>
       </Grid>
-      <Grid item xs={12} md={9}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 9,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -222,12 +227,17 @@ function Service({
           onChange={handleChange('stream_key')}
         />
       </Grid>
-      <Grid item xs={12} md={3}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 3,
+        }}
+      >
         <FormInlineButton target="blank" href={stream_key_link} component="a">
           <Trans>GET</Trans>
         </FormInlineButton>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Checkbox
           label={<Trans>Primary stream</Trans>}
           checked={settings.primary}

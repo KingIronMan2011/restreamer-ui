@@ -4,7 +4,7 @@ import { Trans } from '@lingui/react/macro';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import ScreenshotMonitorIcon from '@mui/icons-material/ScreenshotMonitor';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -174,12 +174,12 @@ function Source({
         },
       ]}
     >
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography>
           <Trans>Select a device:</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <SelectCustom
           options={options}
           label={<Trans>Video device</Trans>}
@@ -198,7 +198,7 @@ function Source({
           <Trans>Refresh</Trans>
         </Button>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <TextField
           variant="outlined"
           type="number"
@@ -210,7 +210,7 @@ function Source({
           onChange={handleChange('thread_queue_size')}
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <TextField
           variant="outlined"
           type="number"
@@ -227,7 +227,7 @@ function Source({
           </Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <MultiSelect
           type="select"
           label="flags"
@@ -246,22 +246,22 @@ function Source({
           ]}
         ></MultiSelect>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Video.Framerate
           value={settings.framerate}
           onChange={handleChange('framerate')}
           allowCustom
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Video.Size
           value={settings.video_size}
           onChange={handleChange('video_size')}
           allowCustom
         />
       </Grid>
-      <Grid item xs={12}>
-        <Grid item>
+      <Grid size={12}>
+        <Grid>
           <Checkbox
             label={<Trans>Draw mouse</Trans>}
             checked={settings.draw_mouse}
@@ -269,8 +269,8 @@ function Source({
           />
         </Grid>
       </Grid>
-      <Grid item xs={12}>
-        <Grid item>
+      <Grid size={12}>
+        <Grid>
           <FollowMouse
             disabled={!settings.draw_mouse}
             value={settings.follow_mouse}
@@ -279,7 +279,7 @@ function Source({
           />
         </Grid>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <FormInlineButton onClick={handleProbe}>
           <Trans>Probe</Trans>
         </FormInlineButton>

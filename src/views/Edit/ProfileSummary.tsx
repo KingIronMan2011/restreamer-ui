@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/react/macro';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import EditIcon from '@mui/icons-material/Edit';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -50,8 +50,6 @@ export default function ProfileSummary({
   return (
     <Grid container spacing={2}>
       <Grid
-        item
-        xs={12}
         sx={{
           '& button': {
             marginTop: '1em',
@@ -59,6 +57,7 @@ export default function ProfileSummary({
             marginLeft: '1em',
           },
         }}
+        size={12}
       >
         <IconButton size="small" color="inherit" onClick={handleEdit('video')}>
           <IconEdit />
@@ -70,12 +69,10 @@ export default function ProfileSummary({
           <Trans>Video settings</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Summary type="video" sources={sources} profile={profile.video} />
       </Grid>
       <Grid
-        item
-        xs={12}
         sx={{
           '& button': {
             marginTop: '1em',
@@ -83,6 +80,7 @@ export default function ProfileSummary({
             marginLeft: '1em',
           },
         }}
+        size={12}
       >
         <IconButton size="small" color="inherit" onClick={handleEdit('audio')}>
           <IconEdit />
@@ -94,7 +92,7 @@ export default function ProfileSummary({
           <Trans>Audio settings</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Summary type="audio" sources={sources} profile={profile.audio} />
       </Grid>
     </Grid>

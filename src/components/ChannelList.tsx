@@ -9,7 +9,7 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Button from '@mui/material/Button';
 import ButtonBase from '@mui/material/ButtonBase';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import { styled, useTheme } from '@mui/material/styles';
@@ -165,12 +165,13 @@ function ChannelButton({
 
   return (
     <Grid
-      item
-      xs={12}
-      sm={6}
-      md={4}
-      lg={3}
       style={{ paddingBottom: largeChannelList ? '10px' : 'auto' }}
+      size={{
+        xs: 12,
+        sm: 6,
+        md: 4,
+        lg: 3,
+      }}
     >
       <ImageButton
         focusRipple
@@ -423,7 +424,7 @@ export default function ChannelList({
               },
             ]}
           >
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Stack
                 direction="row"
                 spacing={1}
@@ -475,11 +476,10 @@ export default function ChannelList({
               </Stack>
             </Grid>
             <Grid
-              item
-              xs={12}
               sx={{
                 textAlign: 'center',
               }}
+              size={12}
             >
               <Stack
                 direction="row"
@@ -574,12 +574,12 @@ export default function ChannelList({
         }
       >
         <Grid container spacing={2}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography>
               <Trans>Enter a name for the new channel.</Trans>
             </Typography>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <TextField
               variant="outlined"
               fullWidth

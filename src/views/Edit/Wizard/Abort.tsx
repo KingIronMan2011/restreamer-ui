@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
@@ -24,7 +24,7 @@ export default function Abort({
       <Grid container spacing={3}>
         {nchannels <= 1 ? (
           <React.Fragment>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography>
                 <Trans>
                   You can't abort the wizard because at least one input must be
@@ -32,7 +32,7 @@ export default function Abort({
                 </Trans>
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Button
                 variant="outlined"
                 color="primary"
@@ -45,12 +45,12 @@ export default function Abort({
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography>
                 <Trans>Are you sure you want to abort the wizard?</Trans>
               </Typography>
             </Grid>
-            <Grid item xs={6}>
+            <Grid size={6}>
               <Button
                 variant="outlined"
                 color="default"
@@ -60,7 +60,7 @@ export default function Abort({
                 <Trans>Yes</Trans>
               </Button>
             </Grid>
-            <Grid item xs={6}>
+            <Grid size={6}>
               <Button
                 variant="outlined"
                 color="primary"

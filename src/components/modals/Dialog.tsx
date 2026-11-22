@@ -1,6 +1,6 @@
 import CloseIcon from '@mui/icons-material/Close';
 import HelpIcon from '@mui/icons-material/HelpOutline';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';
@@ -76,7 +76,7 @@ const Component = React.forwardRef<any, any>(
           style={paperStyle}
         >
           <Grid container spacing={0}>
-            <Grid item xs={12} sx={classes.modalHeader}>
+            <Grid sx={classes.modalHeader} size={12}>
               <Typography variant="button">{title}</Typography>
               {typeof onClose === 'function' && (
                 <IconButton color="inherit" size="small" onClick={onClose}>
@@ -90,11 +90,9 @@ const Component = React.forwardRef<any, any>(
               )}
             </Grid>
           </Grid>
-          <Grid item xs={12}>
-            {children}
-          </Grid>
+          <Grid size={12}>{children}</Grid>
           <Grid container spacing={0}>
-            <Grid item xs={12} sx={classes.modalFooter}>
+            <Grid sx={classes.modalFooter} size={12}>
               <div>{buttonsRight}</div>
               {buttonsLeft}
             </Grid>

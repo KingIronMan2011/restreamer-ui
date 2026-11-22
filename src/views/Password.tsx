@@ -2,7 +2,7 @@ import { Trans } from '@lingui/react/macro';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -118,20 +118,19 @@ export default function ResetPassword({
     <Paper xs={12} sm={10} md={6} className="PaperL">
       <Grid container spacing={3}>
         <Grid
-          item
-          xs={12}
           sx={{
             textAlign: 'center',
           }}
+          size={12}
         >
           <Typography variant="h1">
             <Trans>User registration</Trans>
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <form noValidate>
             <Grid container spacing={3}>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -144,7 +143,7 @@ export default function ResetPassword({
                   env={usernameOverride}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Password
                   value={$login.password}
                   id="password"
@@ -156,7 +155,7 @@ export default function ResetPassword({
                   env={passwordOverride}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Password
                   value={$login.passwordConfirm}
                   id="password_confirm"
@@ -167,10 +166,10 @@ export default function ResetPassword({
                   env={passwordOverride}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Divider />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Button
                   variant="outlined"
                   color="primary"

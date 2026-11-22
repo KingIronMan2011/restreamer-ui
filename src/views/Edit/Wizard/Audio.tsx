@@ -5,7 +5,7 @@ import WarningIcon from '@mui/icons-material/Warning';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import Typography from '@mui/material/Typography';
@@ -43,10 +43,10 @@ export default function Audio({
         onHelp={onHelp}
       />
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Divider />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           {status === 'error' && (
             <BoxText color="dark">
               <WarningIcon fontSize="large" color="error" />
@@ -88,11 +88,11 @@ export default function Audio({
             </BoxText>
           )}
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <RadioGroup row value={source} onChange={onSource}>
             <Grid container spacing={2}>
               {streamList.length === 0 && (
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography>
                     <Trans>
                       The video source doesn't provide any compatible audio
@@ -105,14 +105,14 @@ export default function Audio({
               )}
               {streamList.length !== 0 && (
                 <React.Fragment>
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <FormControlLabel
                       value="video"
                       control={<Radio color="secondary" />}
                       label={i18n._(t`Audio from device`)}
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <Select
                       label={<Trans>Stream</Trans>}
                       value={stream}
@@ -125,14 +125,14 @@ export default function Audio({
               )}
               {deviceList.length !== 0 && (
                 <React.Fragment>
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <FormControlLabel
                       value="alsa"
                       control={<Radio color="secondary" />}
                       label={i18n._(t`Audio from device`)}
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <Select
                       label={<Trans>Device</Trans>}
                       value={address}
@@ -143,7 +143,7 @@ export default function Audio({
                   </Grid>
                 </React.Fragment>
               )}
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <div>
                   <FormControlLabel
                     value="silence"
@@ -162,15 +162,15 @@ export default function Audio({
             </Grid>
           </RadioGroup>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Divider />
         </Grid>
-        <Grid item xs={3}>
+        <Grid size={3}>
           <Button variant="outlined" color="default" fullWidth onClick={onBack}>
             <Trans>Back</Trans>
           </Button>
         </Grid>
-        <Grid item xs={9}>
+        <Grid size={9}>
           <Button variant="outlined" fullWidth color="primary" onClick={onNext}>
             <Trans>Next</Trans>
           </Button>

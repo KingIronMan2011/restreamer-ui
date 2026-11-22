@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -138,7 +138,12 @@ function Service({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} md={3}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 3,
+        }}
+      >
         <Select
           type="select"
           label={<Trans>Protocol</Trans>}
@@ -149,7 +154,12 @@ function Service({
           <MenuItem value="rtmp://">rtmp://</MenuItem>
         </Select>
       </Grid>
-      <Grid item xs={12} md={9}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 9,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -161,7 +171,7 @@ function Service({
         />
       </Grid>
       {settings.protocol === 'rtsp://' && (
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Checkbox
             label="rtsp_over_udp"
             checked={settings.rtsp_over_udp}
@@ -169,7 +179,12 @@ function Service({
           />
         </Grid>
       )}
-      <Grid item xs={12} md={6}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 6,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -179,7 +194,12 @@ function Service({
           onChange={handleChange('application')}
         />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 6,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -189,7 +209,12 @@ function Service({
           onChange={handleChange('stream_name')}
         />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 6,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -199,7 +224,12 @@ function Service({
           onChange={handleChange('username')}
         />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 6,
+        }}
+      >
         <Password
           variant="outlined"
           fullWidth

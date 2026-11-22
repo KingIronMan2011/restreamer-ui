@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -22,15 +22,15 @@ export default function Welcome() {
           justifyContent: 'center',
         }}
       >
-        <Grid item xs={12}>
+        <Grid size={12}>
           <PaperThumb
             image="/images/welcome.png"
             title="Welcome to Restreamer v2"
             height="200px"
           />
         </Grid>
-        <Grid item xs={12}></Grid>
-        <Grid item xs={12}>
+        <Grid size={12}></Grid>
+        <Grid size={12}>
           <Typography align="center">
             <Trans>
               Welcome to Restreamer v2, the solution for fast and easy video
@@ -47,8 +47,8 @@ export default function Welcome() {
             </Trans>
           </Typography>
         </Grid>
-        <Grid item xs={12}></Grid>
-        <Grid item xs={12}>
+        <Grid size={12}></Grid>
+        <Grid size={12}>
           <Button
             fullWidth
             variant="outlined"

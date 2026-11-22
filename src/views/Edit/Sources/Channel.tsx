@@ -4,7 +4,7 @@ import { Trans } from '@lingui/react/macro';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
@@ -98,12 +98,12 @@ function Source({
         },
       ]}
     >
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography>
           <Trans>Select a channel:</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <SelectCustom
           options={options}
           label={<Trans>Video device</Trans>}
@@ -120,7 +120,7 @@ function Source({
           <Trans>Refresh</Trans>
         </Button>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <FormInlineButton
           onClick={handleProbe}
           disabled={settings.channelid === 'none'}

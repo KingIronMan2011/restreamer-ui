@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
@@ -107,7 +107,7 @@ export default function FilterSelect({
   if (filterSettings === null && !hwaccel) {
     return (
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography>
             <Trans>No suitable filter found.</Trans>
           </Typography>
@@ -122,7 +122,7 @@ export default function FilterSelect({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography>
           <Trans>Select your filter settings (optional):</Trans>
         </Typography>

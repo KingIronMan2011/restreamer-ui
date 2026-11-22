@@ -1,4 +1,4 @@
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import React from 'react';
 
 import Helper from '../../helper';
@@ -78,7 +78,7 @@ function Coder({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Audio.Bitrate
           value={settings.bitrate}
           onChange={update('bitrate')}

@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
@@ -510,15 +510,15 @@ export default function Edit({ restreamer }: any) {
             </Tabs>
             <TabPanel value={$tab} index="general" className="panel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <PaperThumb image="/images/livesource.png" title="General" />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>General</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="body1">
                     <Trans>
                       Edit the audio and video sources for the live stream. Add
@@ -527,7 +527,7 @@ export default function Edit({ restreamer }: any) {
                   </Typography>
                 </Grid>
                 {$state.editing === false && (
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <Box component="div" sx={classes.wizardButtonElement}>
                       <Typography>
                         <Trans>
@@ -541,7 +541,7 @@ export default function Edit({ restreamer }: any) {
                     </Box>
                   </Grid>
                 )}
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
               </Grid>
@@ -569,38 +569,43 @@ export default function Edit({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="control" className="panel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>Processing &amp; Control</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>HLS output</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <HLSControl
                     settings={$data.control.hls}
                     onChange={handleControlChange('hls')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Grid container spacing={2}>
-                    <Grid item xs={12} md={6}>
+                    <Grid
+                      size={{
+                        xs: 12,
+                        md: 6,
+                      }}
+                    >
                       <Grid container spacing={2}>
-                        <Grid item xs={12}>
+                        <Grid size={12}>
                           <Typography variant="h3">
                             <Trans>RTMP output</Trans>
                           </Typography>
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid size={12}>
                           <RTMPControl
                             settings={$data.control.rtmp}
                             enabled={$config.source.network.rtmp.enabled}
@@ -610,25 +615,29 @@ export default function Edit({ restreamer }: any) {
                       </Grid>
                     </Grid>
                     <Grid
-                      item
-                      xs={12}
                       sx={{
                         display: {
                           xs: 'block',
                           md: 'none',
                         },
                       }}
+                      size={12}
                     >
                       <Divider />
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid
+                      size={{
+                        xs: 12,
+                        md: 6,
+                      }}
+                    >
                       <Grid container spacing={2}>
-                        <Grid item xs={12}>
+                        <Grid size={12}>
                           <Typography variant="h3">
                             <Trans>SRT output</Trans>
                           </Typography>
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid size={12}>
                           <SRTControl
                             settings={$data.control.srt}
                             enabled={$config.source.network.srt.enabled}
@@ -639,58 +648,58 @@ export default function Edit({ restreamer }: any) {
                     </Grid>
                   </Grid>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Snapshot</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <SnapshotControl
                     settings={$data.control.snapshot}
                     onChange={handleControlChange('snapshot')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Player Playback</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <PreviewControl
                     availableEncoders={$skills.encoders.video}
                     settings={$data.control.preview}
                     onChange={handleControlChange('preview')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Process</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <ProcessControl
                     settings={$data.control.process}
                     onChange={handleControlChange('process')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Limits</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <LimitsControl
                     settings={$data.control.limits}
                     onChange={handleControlChange('limits')}
@@ -700,12 +709,12 @@ export default function Edit({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="meta" className="panel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>Metadata</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography>
                     <Trans>
                       Briefly describe what the audience will see during the
@@ -713,10 +722,10 @@ export default function Edit({ restreamer }: any) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <MetadataControl
                     settings={$data.meta}
                     onChange={handleMetadataChange}
@@ -726,12 +735,12 @@ export default function Edit({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="license" className="panel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>License</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography>
                     <Trans>
                       Use your copyright and choose the right image licence.
@@ -740,10 +749,10 @@ export default function Edit({ restreamer }: any) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <LicenseControl
                     license={$data.license}
                     onChange={handleLicenseChange}

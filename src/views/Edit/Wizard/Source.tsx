@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/react/macro';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
@@ -24,7 +24,7 @@ export default function Source({
         onHelp={onHelp}
       />
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography>
             <Trans>
               Select whether you pull the stream from a{' '}
@@ -34,18 +34,18 @@ export default function Source({
             </Trans>
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Divider />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Grid container spacing={2}>
             {sources}
           </Grid>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Divider />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Button
             variant="outlined"
             fullWidth

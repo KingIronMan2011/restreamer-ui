@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/react/macro';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
@@ -137,12 +137,18 @@ const Component = function ({
     <Modal open={open} onClose={onClose} className="modal">
       <ModalContent title={title} onClose={onClose} onHelp={onHelp}>
         <Grid container spacing={1}>
-          <Grid item xs={12} md={8} lg={10}>
+          <Grid
+            size={{
+              xs: 12,
+              md: 8,
+              lg: 10,
+            }}
+          >
             <Grid container spacing={3}>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Box component="div" sx={classes.box}>
                   <Grid container spacing={1}>
-                    <Grid item xs={12} sx={classes.banner}>
+                    <Grid sx={classes.banner} size={12}>
                       <Typography variant="body1" sx={classes.title}>
                         <Trans>Command</Trans>
                       </Typography>
@@ -154,15 +160,14 @@ const Component = function ({
                       />
                     </Grid>
                     <Grid
-                      item
-                      xs={12}
                       sx={{
                         marginTop: 2,
                       }}
+                      size={12}
                     >
                       <Divider />
                     </Grid>
-                    <Grid item xs={12} sx={classes.logging}>
+                    <Grid sx={classes.logging} size={12}>
                       <Typography variant="body1" sx={classes.title}>
                         <Trans>Banner</Trans>
                       </Typography>
@@ -176,15 +181,14 @@ const Component = function ({
                       />
                     </Grid>
                     <Grid
-                      item
-                      xs={12}
                       sx={{
                         marginTop: 2,
                       }}
+                      size={12}
                     >
                       <Divider />
                     </Grid>
-                    <Grid item xs={12} sx={classes.logging}>
+                    <Grid sx={classes.logging} size={12}>
                       <Typography variant="body1" sx={classes.title}>
                         <Trans>Logging</Trans>
                       </Typography>
@@ -202,7 +206,13 @@ const Component = function ({
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12} md={4} lg={2}>
+          <Grid
+            size={{
+              xs: 12,
+              md: 4,
+              lg: 2,
+            }}
+          >
             {progress !== null && <Progress {...progress} />}
           </Grid>
         </Grid>

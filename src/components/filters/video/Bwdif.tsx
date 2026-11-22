@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
 
@@ -125,7 +125,7 @@ function Filter({
 
   return (
     <React.Fragment>
-      <Grid item>
+      <Grid>
         <Checkbox
           label={<Trans>Deinterlace (bwdif)</Trans>}
           checked={settings.enabled}
@@ -134,16 +134,16 @@ function Filter({
       </Grid>
       {settings.enabled && (
         <React.Fragment>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Mode value={settings.mode} onChange={update('mode')}></Mode>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Parity
               value={settings.parity}
               onChange={update('parity')}
             ></Parity>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={6}>
             <Deint value={settings.deint} onChange={update('deint')}></Deint>
           </Grid>
         </React.Fragment>

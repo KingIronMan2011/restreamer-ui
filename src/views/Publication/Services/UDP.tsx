@@ -4,7 +4,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -133,7 +133,12 @@ function Service({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} md={3}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 3,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -143,7 +148,12 @@ function Service({
           disabled
         />
       </Grid>
-      <Grid item xs={12} md={9}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 9,
+        }}
+      >
         <TextField
           variant="outlined"
           type="url"
@@ -153,7 +163,7 @@ function Service({
           onChange={handleChange('address')}
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Accordion className="accordion">
           <AccordionSummary
             expandIcon={<ArrowDropDownIcon />}
@@ -165,7 +175,12 @@ function Service({
           </AccordionSummary>
           <AccordionDetails>
             <Grid container spacing={2}>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -177,7 +192,12 @@ function Service({
                   onChange={handleChange('buffer_size')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -189,7 +209,12 @@ function Service({
                   onChange={handleChange('bitrate')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -201,7 +226,12 @@ function Service({
                   onChange={handleChange('burst_bits')}
                 />
               </Grid>
-              <Grid item xs={12} md={8}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 8,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -211,7 +241,12 @@ function Service({
                   onChange={handleChange('localaddr')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -223,7 +258,12 @@ function Service({
                   onChange={handleChange('localport')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -235,7 +275,12 @@ function Service({
                   onChange={handleChange('pkt_size')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -247,7 +292,12 @@ function Service({
                   onChange={handleChange('ttl')}
                 />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid
+                size={{
+                  xs: 12,
+                  md: 4,
+                }}
+              >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -259,7 +309,7 @@ function Service({
                   onChange={handleChange('fifo_size')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Checkbox
                   label="overrun_nonfatal"
                   checked={settings.params.overrun_nonfatal}
@@ -271,10 +321,10 @@ function Service({
                   onChange={handleChange('broadcast')}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Divider />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography>
                   <Trans>Documentation</Trans>{' '}
                   <Link

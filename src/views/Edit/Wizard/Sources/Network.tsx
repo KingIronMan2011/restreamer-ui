@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import Icon from '@mui/icons-material/SettingsEthernet';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -65,12 +65,12 @@ function Source({
 
   return (
     <React.Fragment>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography>
           <Trans>Enter the address of your network source:</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <TextField
           variant="outlined"
           fullWidth
@@ -86,7 +86,7 @@ function Source({
         </Typography>
       </Grid>
       {protocol === 'rtsp' && (
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Checkbox
             label={<Trans>UDP transport</Trans>}
             checked={settings.rtsp.udp}
@@ -94,7 +94,12 @@ function Source({
           />
         </Grid>
       )}
-      <Grid item md={6} xs={12}>
+      <Grid
+        size={{
+          md: 6,
+          xs: 12,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -107,7 +112,12 @@ function Source({
           <Trans>Username for the device.</Trans>
         </Typography>
       </Grid>
-      <Grid item md={6} xs={12}>
+      <Grid
+        size={{
+          md: 6,
+          xs: 12,
+        }}
+      >
         <Password
           variant="outlined"
           fullWidth

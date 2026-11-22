@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/react/macro';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
@@ -35,17 +35,17 @@ export default function VideoProfile({
         onHelp={onHelp}
       />
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Divider />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography>
             <Trans>
               The video source is compatible. Select the desired resolution:
             </Trans>
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Select
             label={<Trans>Profile</Trans>}
             value={stream}
@@ -57,7 +57,7 @@ export default function VideoProfile({
         {compatible === false && (
           <React.Fragment>
             {encodersList.length === 0 ? (
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Typography>
                   <Trans>
                     Your stream needs to be encoded, but there's no suitable
@@ -67,7 +67,7 @@ export default function VideoProfile({
               </Grid>
             ) : (
               <React.Fragment>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography>
                     <Trans>
                       Your stream needs to be encoded. Choose the desired
@@ -76,7 +76,7 @@ export default function VideoProfile({
                   </Typography>
                 </Grid>
                 {decodersList.length >= 2 && (
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <Select
                       label={<Trans>Decoder</Trans>}
                       value={decoder}
@@ -86,7 +86,7 @@ export default function VideoProfile({
                     </Select>
                   </Grid>
                 )}
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Select
                     label={<Trans>Encoder</Trans>}
                     value={encoder}
@@ -99,15 +99,15 @@ export default function VideoProfile({
             )}
           </React.Fragment>
         )}
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Divider />
         </Grid>
-        <Grid item xs={3}>
+        <Grid size={3}>
           <Button variant="outlined" color="default" fullWidth onClick={onBack}>
             <Trans>Back</Trans>
           </Button>
         </Grid>
-        <Grid item xs={9}>
+        <Grid size={9}>
           <Button
             variant="outlined"
             fullWidth

@@ -4,7 +4,7 @@ import { Trans } from '@lingui/react/macro';
 import Icon from '@mui/icons-material/KeyboardTab';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -76,12 +76,12 @@ function Source({
   if (config.rtmp.enabled === false) {
     form = (
       <React.Fragment>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography>
             <Trans>RTMP server is not enabled</Trans>
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Button
             variant="outlined"
             size="large"
@@ -122,7 +122,7 @@ function Source({
 
     form = (
       <React.Fragment>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Select
             type="select"
             label={<Trans>Input stream</Trans>}
@@ -142,12 +142,12 @@ function Source({
         </Grid>
         {settings.push.name === config.channelid && (
           <React.Fragment>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Typography>
                 <Trans>Address:</Trans>
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <BoxTextarea>
                 <Textarea rows={1} value={RTMP} readOnly allowCopy />
               </BoxTextarea>

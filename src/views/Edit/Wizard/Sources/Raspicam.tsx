@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import { Cpu } from 'lucide-react';
@@ -103,14 +103,12 @@ function Source({
 
   return (
     <React.Fragment>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography>
           <Trans>Select a device:</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
-        {videoDevices}
-      </Grid>
+      <Grid size={12}>{videoDevices}</Grid>
     </React.Fragment>
   );
 }

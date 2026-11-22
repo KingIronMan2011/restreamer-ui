@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import ExtensionIcon from '@mui/icons-material/Extension';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import React from 'react';
 
@@ -294,7 +294,7 @@ function Service({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <TextField
           variant="outlined"
           fullWidth
@@ -303,7 +303,7 @@ function Service({
           onChange={handleChange('stream_key')}
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Checkbox
           label={<Trans>Enable primary stream</Trans>}
           checked={settings.rtmp_primary}

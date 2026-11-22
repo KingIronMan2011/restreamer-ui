@@ -2,7 +2,7 @@ import { Trans } from '@lingui/react/macro';
 import DeviceUnknownIcon from '@mui/icons-material/DeviceUnknown';
 import EditIcon from '@mui/icons-material/Edit';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import { useTheme } from '@mui/material/styles';
@@ -148,7 +148,7 @@ export default function Egress({
 
   return (
     <Grid container sx={classes.egressBar}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Stack
           direction="row"
           spacing={0}

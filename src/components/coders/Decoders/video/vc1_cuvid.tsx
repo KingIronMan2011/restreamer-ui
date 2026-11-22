@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import React from 'react';
 
 import Helper from '../../helper';
@@ -74,7 +74,7 @@ function Coder({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <Video.Size
           value={settings.resize}
           label={<Trans>Resize</Trans>}
@@ -84,10 +84,10 @@ function Coder({
           allowAuto={true}
         />
       </Grid>
-      <Grid item xs={6}>
+      <Grid size={6}>
         <Video.GPU value={settings.gpu} onChange={update('gpu')} />
       </Grid>
-      <Grid item xs={12}></Grid>
+      <Grid size={12}></Grid>
     </Grid>
   );
 }

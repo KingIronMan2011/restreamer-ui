@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/react/macro';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -188,7 +188,7 @@ export default function Changelog({
       }
     >
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <BoxText alignItems="left">
             <ReactMarkdown components={renderers}>{$data}</ReactMarkdown>
           </BoxText>

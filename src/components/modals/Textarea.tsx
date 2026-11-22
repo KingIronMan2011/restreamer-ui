@@ -1,4 +1,4 @@
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import Stack from '@mui/material/Stack';
 import { useTheme } from '@mui/material/styles';
@@ -40,7 +40,7 @@ const Component = function ({
         style={{ overflow: 'hidden' }}
       >
         <Grid container spacing={1}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Stack
               direction="column"
               spacing={1}

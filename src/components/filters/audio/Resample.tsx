@@ -1,7 +1,7 @@
 import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 
@@ -191,7 +191,7 @@ function Filter({
 
   return (
     <React.Fragment>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Sampling
           value={settings.sampling}
           onChange={update('sampling')}
@@ -199,7 +199,7 @@ function Filter({
           allowCustom
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Layout
           value={settings.layout}
           onChange={update('layout')}

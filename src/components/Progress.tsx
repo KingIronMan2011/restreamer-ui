@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -109,7 +109,7 @@ export default function Progress({
 
   return (
     <Grid container sx={classes.box}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography variant="h4">
           <strong>
             <Duration seconds={progress.time} />
@@ -119,10 +119,10 @@ export default function Progress({
           <Trans>Uptime</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Divider />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography variant="h4">
           <strong>
             <Number value={progress.cpu} digits={2} minDigits={2} />%
@@ -132,10 +132,10 @@ export default function Progress({
           <Trans>CPU</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Divider />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography variant="h4">
           <strong>
             <Number
@@ -150,10 +150,10 @@ export default function Progress({
           <Trans>Memory</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Divider />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography variant="h4">
           <strong>
             <Number value={progress.fps} digits={2} minDigits={2} />
@@ -163,10 +163,10 @@ export default function Progress({
           <Trans>FPS</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Divider />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography variant="h4">
           <strong>
             <Number value={progress.bitrate} digits={2} minDigits={2} />
@@ -176,10 +176,10 @@ export default function Progress({
           <Trans>kbit/s</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Divider />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography variant="h4">
           <strong>
             <Number value={progress.q} digits={2} minDigits={2} />
@@ -189,10 +189,10 @@ export default function Progress({
           <Trans>Quality</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Divider />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography variant="h4">
           <strong>
             <Number value={progress.speed} digits={2} minDigits={2} />
@@ -202,10 +202,10 @@ export default function Progress({
           <Trans>Speed</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Divider />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography variant="h4">
           <strong>
             <Number
@@ -220,10 +220,10 @@ export default function Progress({
           <Trans>Frame drops</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Divider />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography variant="h4">
           <strong>
             <Number value={progress.dup} digits={2} minDigits={2} />

@@ -2,7 +2,7 @@ import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
@@ -113,7 +113,7 @@ export default function License({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Select
           label={<Trans>Creative Commons</Trans>}
           value={license}
@@ -130,7 +130,7 @@ export default function License({
         </Select>
       </Grid>
       {description.length !== 0 && (
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Box component="div" className="boxGray" sx={classes.boxGray}>
             <Typography>{description}</Typography>
             <Typography sx={classes.link}>
@@ -147,7 +147,7 @@ export default function License({
         </Grid>
       )}
       {image !== null && (
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Link href={link} target="_blank" rel="noopener noreferrer">
             <img src={image} alt={license} />
           </Link>

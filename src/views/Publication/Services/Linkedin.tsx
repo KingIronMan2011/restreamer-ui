@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -94,7 +94,12 @@ function Service({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} md={3}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 3,
+        }}
+      >
         <Select
           type="select"
           label={<Trans>Protocol</Trans>}
@@ -105,7 +110,12 @@ function Service({
           <MenuItem value="rtmps://">rtmps://</MenuItem>
         </Select>
       </Grid>
-      <Grid item xs={12} md={9}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 9,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth

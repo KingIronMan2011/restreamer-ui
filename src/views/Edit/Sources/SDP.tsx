@@ -3,7 +3,7 @@ import Icon from '@mui/icons-material/VideoFile';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -163,14 +163,19 @@ function Source({
           },
         ]}
       >
-        <Grid item xs={12}>
+        <Grid size={12}>
           <Typography variant="caption">
             <Trans>
               Upload SDP file ({fileTypes.map((t) => t.mimetype).join(', ')}).
             </Trans>
           </Typography>
         </Grid>
-        <Grid item xs={12} md={9}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 9,
+          }}
+        >
           <TextField
             variant="outlined"
             fullWidth
@@ -179,7 +184,12 @@ function Source({
             readOnly
           />
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid
+          size={{
+            xs: 12,
+            md: 3,
+          }}
+        >
           <UploadButton
             label={<Trans>Upload</Trans>}
             acceptTypes={fileTypes}
@@ -190,7 +200,7 @@ function Source({
             onUpload={handleFileUpload}
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <FormInlineButton
             onClick={handleProbe}
             disabled={!settings.address.length}

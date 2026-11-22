@@ -5,7 +5,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
@@ -517,10 +517,10 @@ export default function Edit({ restreamer }: any) {
             </Tabs>
             <TabPanel value={$tab} index="general" className="panel">
               <TabContent service={$service}>
-                <Grid item xs={12} sx={{ margin: '1em 0em 1em 0em' }}>
+                <Grid sx={{ margin: '1em 0em 1em 0em' }} size={12}>
                   <Typography>{$service.description}</Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -529,7 +529,7 @@ export default function Edit({ restreamer }: any) {
                     onChange={handleServiceName}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <ServiceControl
                     settings={$settings.settings}
                     skills={$serviceSkills}
@@ -542,35 +542,35 @@ export default function Edit({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="process" className="panel">
               <TabContent service={$service}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>Process</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <ProcessControl
                     settings={$settings.control.process}
                     onChange={handleControlChange('process')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>Limits</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <LimitsControl
                     settings={$settings.control.limits}
                     onChange={handleControlChange('limits')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Grid container spacing={1} sx={classes.gridContainer}>
                     {$unsavedChanges === true && (
-                      <Grid item xs={12}>
+                      <Grid size={12}>
                         <BoxText>
                           <Typography variant="body2" gutterBottom>
                             <Trans>
@@ -583,18 +583,17 @@ export default function Edit({ restreamer }: any) {
                     )}
                     {$unsavedChanges === false && (
                       <React.Fragment>
-                        <Grid item xs={12}>
+                        <Grid size={12}>
                           <Process
                             onAction={handleServiceAction}
                             progress={$progress}
                           />
                         </Grid>
                         <Grid
-                          item
-                          xs={12}
                           sx={{
                             textAlign: 'right',
                           }}
+                          size={12}
                         >
                           <Link
                             color="textSecondary"
@@ -621,36 +620,36 @@ export default function Edit({ restreamer }: any) {
             </TabPanel>
             <TabPanel value={$tab} index="encoding" className="panel">
               <TabContent service={$service}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>Source &amp; Encoding</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Source</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="subheading">
                     <Trans>
                       Select RTMP or SRT (if enabled) for less latency.
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <SourceControl
                     settings={$settings.control.source}
                     sources={$localSources}
                     onChange={handleControlChange('source')}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Encoding</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="subheading">
                     <Trans>
                       Passthrough (copy) should only be disabled if necessary.
@@ -658,12 +657,12 @@ export default function Edit({ restreamer }: any) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h4">
                     <Trans>Video settings</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <EncodingSelect
                     type="video"
                     streams={$sources[0].streams}
@@ -674,7 +673,7 @@ export default function Edit({ restreamer }: any) {
                   />
                 </Grid>
                 {$settings.profiles[0].video.encoder.coder !== 'copy' && (
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <FilterSelect
                       type="video"
                       profile={$settings.profiles[0].video}
@@ -683,12 +682,12 @@ export default function Edit({ restreamer }: any) {
                     />
                   </Grid>
                 )}
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h4">
                     <Trans>Audio settings</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <EncodingSelect
                     type="audio"
                     streams={$sources[0].streams}
@@ -699,7 +698,7 @@ export default function Edit({ restreamer }: any) {
                   />
                 </Grid>
                 {$settings.profiles[0].audio.encoder.coder !== 'copy' && (
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <FilterSelect
                       type="audio"
                       profile={$settings.profiles[0].audio}

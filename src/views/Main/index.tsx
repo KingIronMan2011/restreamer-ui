@@ -2,7 +2,7 @@ import { Trans } from '@lingui/react/macro';
 import WarningIcon from '@mui/icons-material/Warning';
 import Chip from '@mui/material/Chip';
 import CircularProgress from '@mui/material/CircularProgress';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import { useTheme } from '@mui/material/styles';
@@ -296,10 +296,10 @@ export default function Main({ restreamer }: any) {
             textAlign: 'center',
           }}
         >
-          <Grid item xs={12}>
+          <Grid size={12}>
             <CircularProgress color="primary" />
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Trans>Retrieving stream data ...</Trans>
           </Grid>
         </Grid>
@@ -353,7 +353,13 @@ export default function Main({ restreamer }: any) {
           },
         ]}
       >
-        <Grid item xs={12} sm={12} md={8}>
+        <Grid
+          size={{
+            xs: 12,
+            sm: 12,
+            md: 8,
+          }}
+        >
           <Paper marginBottom="0">
             <PaperHeader
               title={title}
@@ -361,13 +367,12 @@ export default function Main({ restreamer }: any) {
               onHelp={handleHelp('main')}
             />
             <Grid container spacing={1} sx={classes.gridContainerL2}>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Grid container spacing={0} sx={classes.playerL1}>
-                  <Grid item xs={12} sx={classes.playerL2}>
+                  <Grid sx={classes.playerL2} size={12}>
                     {($state.state === 'disconnected' ||
                       $state.state === 'disconnecting') && (
-                      <Grid
-                        container
+                      <Stack
                         direction="column"
                         sx={[
                           classes.playerL3,
@@ -377,16 +382,15 @@ export default function Main({ restreamer }: any) {
                           },
                         ]}
                       >
-                        <Grid item>
+                        <Grid>
                           <Typography variant="h2">
                             <Trans>No video</Trans>
                           </Typography>
                         </Grid>
-                      </Grid>
+                      </Stack>
                     )}
                     {$state.state === 'connecting' && (
-                      <Grid
-                        container
+                      <Stack
                         direction="column"
                         sx={[
                           classes.playerL3,
@@ -396,19 +400,18 @@ export default function Main({ restreamer }: any) {
                           },
                         ]}
                       >
-                        <Grid item>
+                        <Grid>
                           <CircularProgress color="inherit" />
                         </Grid>
-                        <Grid item>
+                        <Grid>
                           <Typography>
                             <Trans>Connecting ...</Trans>
                           </Typography>
                         </Grid>
-                      </Grid>
+                      </Stack>
                     )}
                     {$state.state === 'error' && (
-                      <Grid
-                        container
+                      <Stack
                         direction="column"
                         sx={[
                           classes.playerL3,
@@ -418,10 +421,10 @@ export default function Main({ restreamer }: any) {
                           },
                         ]}
                       >
-                        <Grid item>
+                        <Grid>
                           <WarningIcon sx={classes.playerWarningIcon} />
                         </Grid>
-                        <Grid item>
+                        <Grid>
                           <Typography>
                             <Trans>
                               Error:{' '}
@@ -429,7 +432,7 @@ export default function Main({ restreamer }: any) {
                             </Trans>
                           </Typography>
                         </Grid>
-                        <Grid item>
+                        <Grid>
                           <Typography>
                             <Trans>
                               Please check the{' '}
@@ -440,7 +443,7 @@ export default function Main({ restreamer }: any) {
                           </Typography>
                         </Grid>
                         {$state.progress.reconnect !== -1 && (
-                          <Grid item>
+                          <Grid>
                             <Typography>
                               <Trans>
                                 Reconnecting in {$state.progress.reconnect}s
@@ -449,13 +452,13 @@ export default function Main({ restreamer }: any) {
                           </Grid>
                         )}
                         {$state.progress.reconnect === -1 && (
-                          <Grid item>
+                          <Grid>
                             <Typography>
                               <Trans>You have to reconnect manually</Trans>
                             </Typography>
                           </Grid>
                         )}
-                      </Grid>
+                      </Stack>
                     )}
                     {$state.state === 'connected' &&
                       $state.progress.video_codec === 'h264' &&
@@ -484,8 +487,7 @@ export default function Main({ restreamer }: any) {
                     {$state.state === 'connected' &&
                       $state.progress.video_codec !== 'h264' &&
                       !$metadata.control.preview.enable && (
-                        <Grid
-                          container
+                        <Stack
                           direction="column"
                           sx={[
                             classes.playerL3,
@@ -496,15 +498,15 @@ export default function Main({ restreamer }: any) {
                             },
                           ]}
                         >
-                          <Grid item>
+                          <Grid>
                             <WarningIcon sx={classes.playerWarningIcon} />
                           </Grid>
-                          <Grid item>
+                          <Grid>
                             <Typography>
                               <Trans>No H.264 Stream availabe.</Trans>
                             </Typography>
                           </Grid>
-                          <Grid item>
+                          <Grid>
                             <Typography>
                               <Trans>
                                 Please{' '}
@@ -523,13 +525,12 @@ export default function Main({ restreamer }: any) {
                               </Trans>
                             </Typography>
                           </Grid>
-                        </Grid>
+                        </Stack>
                       )}
                     {$state.state === 'connected' &&
                       $state.progress.video_codec === 'h264' &&
                       $metadata.control.preview.enable && (
-                        <Grid
-                          container
+                        <Stack
                           direction="column"
                           sx={[
                             classes.playerL3,
@@ -539,10 +540,10 @@ export default function Main({ restreamer }: any) {
                             },
                           ]}
                         >
-                          <Grid item>
+                          <Grid>
                             <WarningIcon sx={classes.playerWarningIcon} />
                           </Grid>
-                          <Grid item>
+                          <Grid>
                             <Typography>
                               <Trans>
                                 Please{' '}
@@ -561,26 +562,24 @@ export default function Main({ restreamer }: any) {
                               </Trans>
                             </Typography>
                           </Grid>
-                        </Grid>
+                        </Stack>
                       )}
                   </Grid>
                 </Grid>
               </Grid>
               <Grid
-                item
-                xs={12}
                 sx={{
                   marginTop: '-.3em',
                 }}
+                size={12}
               >
                 <Progress progress={$state.progress} />
               </Grid>
               <Grid
-                item
-                xs={12}
                 sx={{
                   marginTop: '-.2em',
                 }}
+                size={12}
               >
                 <Stack
                   direction="row"
@@ -660,11 +659,10 @@ export default function Main({ restreamer }: any) {
                 </Stack>
               </Grid>
               <Grid
-                item
-                xs={12}
                 sx={{
                   marginTop: '0em',
                 }}
+                size={12}
               >
                 <ActionButton
                   order={$state.order}
@@ -676,11 +674,10 @@ export default function Main({ restreamer }: any) {
                 />
               </Grid>
               <Grid
-                item
-                xs={12}
                 sx={{
                   textAlign: 'right',
                 }}
+                size={12}
               >
                 <Link
                   variant="body2"
@@ -704,7 +701,13 @@ export default function Main({ restreamer }: any) {
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={12} sm={12} md={4}>
+        <Grid
+          size={{
+            xs: 12,
+            sm: 12,
+            md: 4,
+          }}
+        >
           <Publication restreamer={restreamer} channelid={_channelid} />
         </Grid>
       </Grid>

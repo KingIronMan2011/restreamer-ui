@@ -1,4 +1,4 @@
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import React from 'react';
 
 const Component = function ({
@@ -15,9 +15,7 @@ const Component = function ({
         textAlign: textAlign,
       }}
     >
-      <Grid item xs={12}>
-        {children}
-      </Grid>
+      <Grid size={12}>{children}</Grid>
     </Grid>
   );
 };

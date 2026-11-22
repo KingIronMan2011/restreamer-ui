@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -222,7 +222,7 @@ function Service({
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <TextField
           variant="outlined"
           fullWidth
@@ -232,11 +232,10 @@ function Service({
         />
       </Grid>
       <Grid
-        item
-        xs={12}
         sx={{
           textAlign: 'left',
         }}
+        size={12}
       >
         <BoxText alignItems="left" justifyContent="left">
           {!settings.v2_address && (

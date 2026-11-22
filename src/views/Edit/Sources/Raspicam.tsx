@@ -3,7 +3,7 @@ import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { Cpu } from 'lucide-react';
 import React from 'react';
@@ -126,12 +126,12 @@ function Source({
         },
       ]}
     >
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Typography>
           <Trans>Select a device:</Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         {videoDevices}
         <Button
           size="small"
@@ -142,28 +142,28 @@ function Source({
           <Trans>Refresh</Trans>
         </Button>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Video.Format
           value={settings.format}
           onChange={handleChange('format')}
           allowCustom
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Video.Framerate
           value={settings.framerate}
           onChange={handleChange('framerate')}
           allowCustom
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Video.Size
           value={settings.size}
           onChange={handleChange('size')}
           allowCustom
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <FormInlineButton onClick={handleProbe}>
           <Trans>Probe</Trans>
         </FormInlineButton>

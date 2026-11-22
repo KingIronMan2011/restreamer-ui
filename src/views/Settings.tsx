@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import LinearProgress from '@mui/material/LinearProgress';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
@@ -1391,8 +1391,8 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
             </Tabs>
             <TabPanel value={$tab} index="general" className="panel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <Grid item xs={12}>
+                <Grid size={12}>
+                  <Grid size={12}>
                     <PaperThumb
                       image="/images/settings.png"
                       title="Welcome to Restreamer v2"
@@ -1400,22 +1400,22 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     />
                   </Grid>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>General</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="body1">
                     <Trans>All important system settings.</Trans>
                   </Typography>
                 </Grid>
                 {$tabs.general.errors && (
-                  <Grid item xs={12}>
+                  <Grid size={12}>
                     <ErrorBox messages={$tabs.general.messages} />
                   </Grid>
                 )}
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Check for updates</Trans>}
                     checked={$updates.want}
@@ -1448,7 +1448,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </BoxText>
                   )}
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={
                       <Trans>
@@ -1465,17 +1465,17 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     messages={$tabs.general.messages}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Expert mode</Trans>}
                     checked={$expert}
                     onChange={handleExpertMode}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Button
                     variant="outlined"
                     color="secondary"
@@ -1496,12 +1496,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
             </TabPanel>
             <TabPanel value={$tab} index="service" className="panel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>Service</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="body1">
                     <Trans>Setting for connection to the service.</Trans>{' '}
                     <Link
@@ -1514,7 +1514,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     .
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Restreamer Service</Trans>}
                     checked={config.service.enable}
@@ -1527,7 +1527,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     messages={$tabs.service.messages}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     label={<Trans>Node ID</Trans>}
                     env={env('id')}
@@ -1539,7 +1539,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Unique ident on the service.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     label={<Trans>Name</Trans>}
                     env={env('name')}
@@ -1555,7 +1555,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Human readable name on the service.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     label={<Trans>Token</Trans>}
                     env={env('service.token')}
@@ -1571,7 +1571,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Service token for monitoring.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     variant="outlined"
                     fullWidth
@@ -1594,17 +1594,17 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
             </TabPanel>
             <TabPanel value={$tab} index="network" className="panel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>Network</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Address</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     label={<Trans>Public domain/s</Trans>}
                     env={env('host.name')}
@@ -1624,7 +1624,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 6,
+                  }}
+                >
                   <TextField
                     type="number"
                     label={<Trans>HTTP port</Trans>}
@@ -1641,7 +1646,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Address to listen on for HTTP requests.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 6,
+                  }}
+                >
                   <TextField
                     type="number"
                     label={<Trans>HTTPS port</Trans>}
@@ -1658,15 +1668,15 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Address to listen on for HTTPS requests.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>HTTPS (SSL/TLS)</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Let's Encrypt certification</Trans>}
                     checked={config.tls.auto}
@@ -1685,7 +1695,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     label={<Trans>Email</Trans>}
                     env={env('tls.email')}
@@ -1705,15 +1715,20 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Bandwidth control</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={12}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 12,
+                  }}
+                >
                   <TextField
                     type="number"
                     label={<Trans>Maximum viewers</Trans>}
@@ -1734,7 +1749,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={12}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 12,
+                  }}
+                >
                   <TextField
                     type="number"
                     label={<Trans>Maximum bandwidth Mbit/s</Trans>}
@@ -1761,17 +1781,17 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
             </TabPanel>
             <TabPanel value={$tab} index="auth" className="panel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>Authorization</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Basic</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Login/JWT authorization</Trans>}
                     checked={config.api.auth.enable}
@@ -1792,7 +1812,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     env={env('api.auth.username')}
                     disabled={
@@ -1810,7 +1830,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Username for authorization.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Password
                     env={env('api.auth.password')}
                     disabled={
@@ -1832,17 +1852,17 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
             </TabPanel>
             <TabPanel value={$tab} index="playback" className="panel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>Playback</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Security</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Allow all referrer</Trans>}
                     checked={config.storage.cors.allow_all}
@@ -1851,7 +1871,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                   />{' '}
                   {env('storage.cors.allow_all') && <Env />}
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     multiline
                     rows={5}
@@ -1874,15 +1894,15 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Statistics</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={
                       <Trans>HLS statistic for the In-memory storage</Trans>
@@ -1902,7 +1922,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     multiline
                     rows={5}
@@ -1926,7 +1946,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     type="number"
                     label={<Trans>Maximum viewer idle time (Seconds)</Trans>}
@@ -1949,7 +1969,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Persist viewer statistics</Trans>}
                     checked={config.sessions.persist}
@@ -1971,12 +1991,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
             </TabPanel>
             <TabPanel value={$tab} index="storage" className="panel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>Storage</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>In-memory</Trans>
                   </Typography>
@@ -1984,7 +2004,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Settings for /memfs path.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Write protection</Trans>}
                     checked={config.storage.memory.auth.enable}
@@ -2003,7 +2023,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 6,
+                  }}
+                >
                   <TextField
                     label={<Trans>Username</Trans>}
                     env={env('storage.memory.auth.username')}
@@ -2022,7 +2047,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Username for authorization.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 6,
+                  }}
+                >
                   <Password
                     label={<Trans>Password</Trans>}
                     env={env('storage.memory.auth.password')}
@@ -2041,7 +2071,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Password for authorization.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     type="number"
                     label={<Trans>Maximum size (Megabytes)</Trans>}
@@ -2061,7 +2091,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={
                       <Trans>
@@ -2081,10 +2111,10 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     messages={$tabs.storage.messages}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Disk</Trans>
                   </Typography>
@@ -2104,7 +2134,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     .
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     type="number"
                     label={<Trans>Maximum size (Megabytes)</Trans>}
@@ -2124,10 +2154,10 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>Disk cache</Trans>
                   </Typography>
@@ -2135,7 +2165,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Cache for files on /data.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>Disk cache</Trans>}
                     checked={config.storage.disk.cache.enable}
@@ -2148,7 +2178,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     messages={$tabs.storage.messages}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <TextField
                     type="number"
                     label={<Trans>Maximum size (Megabytes)</Trans>}
@@ -2187,7 +2217,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Maximum allowed cache size, 0 for unlimited.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 6,
+                  }}
+                >
                   <TextField
                     type="number"
                     label={<Trans>Cache time (Seconds)</Trans>}
@@ -2207,7 +2242,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Seconds to keep files in cache.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 6,
+                  }}
+                >
                   <TextField
                     type="number"
                     label={<Trans>Maximum file size (Megabytes)</Trans>}
@@ -2244,7 +2284,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Maximum file size to put in cache.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <TextField
                     multiline
                     rows={5}
@@ -2268,7 +2308,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <TextField
                     multiline
                     rows={5}
@@ -2296,12 +2336,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
             </TabPanel>
             <TabPanel value={$tab} index="rtmp" className="panel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>RTMP</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>RTMP server</Trans>}
                     checked={config.rtmp.enable}
@@ -2340,10 +2380,15 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Typography>
                   )}
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid
+                  size={{
+                    xs: 6,
+                    md: 3,
+                  }}
+                >
                   <TextField
                     type="number"
                     label={<Trans>RTMP Port</Trans>}
@@ -2363,7 +2408,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>RTMP server listen address.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid
+                  size={{
+                    xs: 6,
+                    md: 3,
+                  }}
+                >
                   <TextField
                     type="number"
                     label={<Trans>RTMPS Port</Trans>}
@@ -2384,7 +2434,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>RTMPS server listen address.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid
+                  size={{
+                    xs: 12,
+                    md: 6,
+                  }}
+                >
                   <TextField
                     label={<Trans>App</Trans>}
                     env={env('rtmp.app')}
@@ -2400,7 +2455,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>RTMP app for publishing.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Password
                     label={<Trans>Streamkey</Trans>}
                     env={env('rtmp.token')}
@@ -2423,12 +2478,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
             </TabPanel>
             <TabPanel value={$tab} index="srt" className="panel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>SRT</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Checkbox
                     label={<Trans>SRT server</Trans>}
                     checked={config.srt.enable}
@@ -2441,10 +2496,15 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     messages={$tabs.srt.messages}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Divider />
                 </Grid>
-                <Grid item xs={6} md={4}>
+                <Grid
+                  size={{
+                    xs: 6,
+                    md: 4,
+                  }}
+                >
                   <TextField
                     type="number"
                     label={<Trans>Port</Trans>}
@@ -2461,7 +2521,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>SRT server listen address.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={6} md={8}>
+                <Grid
+                  size={{
+                    xs: 6,
+                    md: 8,
+                  }}
+                >
                   <Password
                     id="srt_token"
                     label={<Trans>Token</Trans>}
@@ -2481,7 +2546,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     </Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Password
                     id="srt_passphrase"
                     label={<Trans>Passphrase</Trans>}
@@ -2518,17 +2583,17 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
             </TabPanel>
             <TabPanel value={$tab} index="logging" className="panel">
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h2">
                     <Trans>Logging</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>System</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <BoxTextarea
                     style={{
                       paddingTop: '.2em',
@@ -2547,7 +2612,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     />
                   </BoxTextarea>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <Select
                     label={<Trans>Log level</Trans>}
                     value={config.log.level}
@@ -2603,7 +2668,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Level of system protocol.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <TextField
                     type="number"
                     label={<Trans>Maximum log lines</Trans>}
@@ -2620,12 +2685,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Number of log lines to keep.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Typography variant="h3">
                     <Trans>FFmpeg</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <TextField
                     type="number"
                     label={<Trans>Maximum log lines</Trans>}
@@ -2642,7 +2707,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
                     <Trans>Number of log lines to keep.</Trans>
                   </Typography>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid size={6}>
                   <TextField
                     type="number"
                     label={<Trans>Maximum log histroy</Trans>}

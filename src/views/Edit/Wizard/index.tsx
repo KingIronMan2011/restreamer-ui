@@ -3,7 +3,7 @@ import { useLingui } from '@lingui/react';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import React from 'react';
@@ -293,12 +293,11 @@ export default function Wizard({ restreamer }: any) {
 
       availableSources.push(
         <Grid
-          item
-          xs={6}
           key={s.id}
           sx={{
             textAlign: 'center',
           }}
+          size={6}
         >
           <Button variant="big" onClick={handleNext(s.id)}>
             <div>

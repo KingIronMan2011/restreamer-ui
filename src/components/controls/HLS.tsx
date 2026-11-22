@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -63,7 +63,7 @@ export default function Control({
 					</Typography>
 				</Grid>
 			*/}
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Select
           label={<Trans>Storage</Trans>}
           value={settings.storage}
@@ -83,7 +83,7 @@ export default function Control({
           </Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Select
           label={<Trans>EXT-X-VERSION</Trans>}
           value={settings.version}
@@ -104,7 +104,12 @@ export default function Control({
           </Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 6,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -119,7 +124,12 @@ export default function Control({
           </Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 6,
+        }}
+      >
         <TextField
           variant="outlined"
           fullWidth
@@ -134,7 +144,7 @@ export default function Control({
           </Trans>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Checkbox
           label={
             <Trans>
@@ -145,7 +155,7 @@ export default function Control({
           onChange={handleChange('master_playlist')}
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Checkbox
           label={<Trans>Automatic cleanup of all media data</Trans>}
           checked={settings.cleanup}

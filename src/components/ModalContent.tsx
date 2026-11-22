@@ -2,7 +2,7 @@ import { Trans } from '@lingui/react/macro';
 import CloseIcon from '@mui/icons-material/Close';
 import HelpIcon from '@mui/icons-material/HelpOutline';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
@@ -70,7 +70,7 @@ const Component = React.forwardRef<any, any>(
         style={style}
       >
         <Grid container spacing={0}>
-          <Grid item xs={12} sx={classes.modalHeader}>
+          <Grid sx={classes.modalHeader} size={12}>
             <Stack
               direction="row"
               spacing={2}
@@ -104,7 +104,7 @@ const Component = React.forwardRef<any, any>(
         </Grid>
         {children}
         <Grid container spacing={0}>
-          <Grid item xs={12} sx={classes.modalFooter}>
+          <Grid sx={classes.modalFooter} size={12}>
             <Button variant="outlined" color="default" onClick={onClose}>
               <Trans>Close</Trans>
             </Button>
