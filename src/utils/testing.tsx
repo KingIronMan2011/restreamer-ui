@@ -61,12 +61,6 @@ const NoRoute = (props: any) => {
 const AllTheProviders =
   (initialEntries: any, path: any) =>
   ({ children }: { children: React.ReactNode }) => {
-    if (typeof initialEntries === 'undefined') {
-      initialEntries = '/';
-    }
-    if (typeof path === 'undefined') {
-      path = '/';
-    }
     return (
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>

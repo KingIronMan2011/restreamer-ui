@@ -67,4 +67,8 @@ describe('scale filter', () => {
     fireEvent.click(screen.getByRole('option', { name: 'By width' }));
     expect(screen.queryByLabelText('Scale size')).not.toBeInTheDocument();
   });
+
+  it('accepts the default change callback', () => {
+    render(<Scale.component />);
+  });
 });

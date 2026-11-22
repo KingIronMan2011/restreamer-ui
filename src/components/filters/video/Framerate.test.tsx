@@ -45,4 +45,8 @@ describe('framerate filter', () => {
       }),
     ).toBeChecked();
   });
+
+  it('accepts the default change callback', () => {
+    render(<Framerate.component />);
+  });
 });

@@ -80,3 +80,26 @@ test.each([
     ),
   ).toBe(true);
 });
+
+it('selects hardware decoders for supported codecs and skips unavailable ones', () => {
+  const available = Decoders.Video.Coders();
+  const hardwareDecoder = Decoders.Video.GetCoderForCodec('h264', available);
+  expect(hardwareDecoder).not.toBeNull();
+  expect(
+    Decoders.Video.GetCoderForCodec('h264', ['not-an-available-decoder']),
+  ).toBeNull();
+  expect(
+    Decoders.Video.GetCodersForCodec('h264', available, 'yes').some(
+      (coder) => coder.hwaccel === true,
+    ),
+  ).toBe(true);
+});
+
+it('returns hardware video encoders when codec and availability match', () => {
+  const available = Encoders.Video.Coders();
+  expect(
+    Encoders.Video.GetCodersForCodec('h264', available, 'yes').some(
+      (coder) => coder.hwaccel === true,
+    ),
+  ).toBe(true);
+});

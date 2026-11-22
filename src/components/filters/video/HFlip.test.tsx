@@ -17,4 +17,9 @@ describe('horizontal flip filter', () => {
     fireEvent.click(screen.getByRole('checkbox', { name: 'Horizontal Flip' }));
     expect(onChange.mock.lastCall?.[1]).toBe('hflip');
   });
+
+  it('accepts the default change callback', () => {
+    render(<HFlip.component />);
+    fireEvent.click(screen.getByRole('checkbox', { name: 'Horizontal Flip' }));
+  });
 });

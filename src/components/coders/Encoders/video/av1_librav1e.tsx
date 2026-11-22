@@ -82,7 +82,7 @@ function createMapping(settings: any, stream: any, skills: any) {
   return mapping;
 }
 
-function Speed({ value = '', onChange = function (event: any) {} }: any) {
+function Speed({ value = '', onChange }: any) {
   return (
     <React.Fragment>
       <Select

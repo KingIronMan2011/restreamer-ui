@@ -65,7 +65,7 @@ function createMapping(settings: any, stream: any, skills: any) {
   return mapping;
 }
 
-function Entropy({ value = '', onChange = function (event: any) {} }: any) {
+function Entropy({ value = '', onChange }: any) {
   return (
     <Select
       label={<Trans>Entropy coder</Trans>}

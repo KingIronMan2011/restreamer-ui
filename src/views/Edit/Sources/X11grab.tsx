@@ -74,7 +74,7 @@ const createInputs = (settings: any) => {
 function FollowMouse({
   value = '',
   allowCustom = false,
-  onChange = function (event: any) {},
+  onChange,
   disabled = false,
 }: any) {
   const { i18n } = useLingui();

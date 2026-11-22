@@ -75,6 +75,41 @@ describe('Restreamer config and metadata helpers', () => {
     });
   });
 
+  it('uses the configured public hostname when the core address uses a DNS name', async () => {
+    const restreamer = client('https://core.example:8080');
+    restreamer.Config = vi.fn().mockResolvedValue({
+      config: {
+        host: { name: ['public.example'] },
+        tls: { enable: true, address: '0.0.0.0:8443' },
+        address: '0.0.0.0:8080',
+        rtmp: {
+          enable: false,
+          enable_tls: false,
+          token: '',
+          app: '/',
+          address: '0.0.0.0:1935',
+          address_tls: '0.0.0.0:1935',
+        },
+        srt: {
+          enable: false,
+          passphrase: '',
+          token: '',
+          address: '0.0.0.0:9000',
+        },
+        storage: {
+          memory: { auth: { enable: false, username: '', password: '' } },
+        },
+        api: { auth: { enable: false, username: '', password: '' } },
+      },
+      overrides: [],
+    });
+
+    await restreamer._initConfig();
+
+    expect(restreamer.config.hostname).toBe('core.example');
+    expect(restreamer.config.http.host).toBe('core.example:8443');
+  });
+
   it('derives public hosts, protocol ports, credentials, and endpoint settings', async () => {
     const restreamer = client();
     restreamer.SetAddress('https://127.0.0.1/api');

@@ -1514,11 +1514,7 @@ function Source({
         settings.http[what] = value;
       }
     } else if (section === 'rtsp') {
-      if (['udp'].includes(what)) {
-        settings.rtsp[what] = !settings.rtsp[what];
-      } else {
-        settings.rtsp[what] = value;
-      }
+      settings.rtsp[what] = value;
     } else if (section === 'srt') {
       settings.srt[what] = value;
     } else if (section === 'general') {

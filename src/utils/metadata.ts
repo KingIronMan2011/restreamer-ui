@@ -1467,6 +1467,7 @@ export {
   initProfile,
   analyzeStreams,
   preselectProfile,
+  transformMetadata,
   cleanupProfile,
   cleanupSources,
 };

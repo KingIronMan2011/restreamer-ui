@@ -8,7 +8,7 @@ import Audio from './Audio';
 describe('wizard audio step', () => {
   it('renders each probe warning and exercises optional audio controls', () => {
     const streamList = [
-      <MenuItem key="stream-0" value={0}>
+      <MenuItem key="stream-1" value={1}>
         AAC track
       </MenuItem>,
     ];
@@ -23,7 +23,7 @@ describe('wizard audio step', () => {
         source="video"
         streamList={streamList}
         deviceList={deviceList}
-        address="hw:0"
+        address="hw:1"
       />,
     );
     expect(

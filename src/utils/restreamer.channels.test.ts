@@ -290,6 +290,46 @@ describe('Restreamer channel helpers', () => {
     ]);
   });
 
+  it('compares reverse and equal egress sort keys', async () => {
+    const restreamer = client();
+    const current = channel('one');
+    const zuluId = 'restreamer-ui:egress:twitch:zulu';
+    const alphaId = 'restreamer-ui:egress:twitch:alpha';
+    const sameId = 'restreamer-ui:egress:twitch:same';
+    restreamer.channels.set('one', current);
+    restreamer.SetChannelEgress('one', zuluId, {
+      service: 'twitch',
+      index: '2',
+      name: 'Zulu',
+    });
+    restreamer.SetChannelEgress('one', alphaId, {
+      service: 'twitch',
+      index: '1',
+      name: 'Alpha',
+    });
+    restreamer.SetChannelEgress('one', sameId, {
+      service: 'twitch',
+      index: '1',
+      name: 'Alpha',
+    });
+    restreamer._listProcesses = vi
+      .fn()
+      .mockResolvedValue([
+        { id: alphaId },
+        { id: zuluId },
+        { id: sameId },
+        { id: current.id },
+      ]);
+
+    const result = await restreamer.ListIngestEgresses('one');
+    expect(result.map((process: any) => process.id)).toEqual([
+      current.id,
+      alphaId,
+      sameId,
+      zuluId,
+    ]);
+  });
+
   it('creates a first channel when discovery returns no ingest and clears imported metadata', async () => {
     const restreamer = client();
     restreamer._listProcesses = vi.fn().mockResolvedValue([]);

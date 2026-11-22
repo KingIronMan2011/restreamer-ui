@@ -32,5 +32,10 @@ describe('TextField', () => {
     render(<TextField label="Token" env multiline rows={3} disabled />);
     expect(screen.getByLabelText('Token')).toBeDisabled();
     expect(document.querySelector('input, textarea')).toHaveAttribute('id');
+
+    render(<TextField label="Default handler" />);
+    fireEvent.change(screen.getByLabelText('Default handler'), {
+      target: { value: 'ignored safely' },
+    });
   });
 });

@@ -44,4 +44,19 @@ describe('Metadata control', () => {
       false,
     );
   });
+
+  it('supports the default change callback across author and content tabs', () => {
+    render(<Metadata />);
+    fireEvent.click(screen.getByRole('tab', { name: 'Author' }));
+    fireEvent.change(screen.getByLabelText('Name'), {
+      target: { value: 'Host' },
+    });
+    fireEvent.change(screen.getByLabelText('Description'), {
+      target: { value: 'About the host' },
+    });
+    fireEvent.click(screen.getByRole('tab', { name: 'Content' }));
+    fireEvent.change(screen.getByLabelText('Description'), {
+      target: { value: 'About the stream' },
+    });
+  });
 });

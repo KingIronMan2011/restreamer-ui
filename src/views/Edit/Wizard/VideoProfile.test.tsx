@@ -83,4 +83,28 @@ describe('wizard video profile step', () => {
     render(<VideoProfile compatible streamList={streamList} />);
     fireEvent.click(screen.getByRole('button', { name: 'Next' }));
   });
+
+  it('allows selecting default decoder and encoder options', () => {
+    render(
+      <VideoProfile
+        compatible={false}
+        streamList={streamList}
+        decodersList={[
+          <MenuItem key="decoder-1" value="decoder-1">
+            Decoder 1
+          </MenuItem>,
+          <MenuItem key="decoder-2" value="decoder-2">
+            Decoder 2
+          </MenuItem>,
+        ]}
+        encodersList={<MenuItem value="encoder">Encoder</MenuItem>}
+      />,
+    );
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[0]);
+    fireEvent.click(screen.getByRole('option', { name: '1280x720, H264' }));
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[1]);
+    fireEvent.click(screen.getByRole('option', { name: 'Decoder 2' }));
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[2]);
+    fireEvent.click(screen.getByRole('option', { name: 'Encoder' }));
+  });
 });

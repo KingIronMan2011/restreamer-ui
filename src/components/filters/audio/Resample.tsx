@@ -236,5 +236,7 @@ export {
   summarize,
   defaults,
   createGraph,
+  Layout,
+  Sampling,
   Filter as component,
 };

@@ -69,4 +69,20 @@ describe('SelectCustom', () => {
     fireEvent.click(screen.getByRole('option', { name: 'Two' }));
     expect(onChange).toHaveBeenLastCalledWith({ target: { value: 'two' } });
   });
+
+  it('uses the label as its custom field label and safely defaults onChange', () => {
+    render(
+      <SelectCustom
+        label="Address"
+        value="custom-address"
+        options={options}
+        allowCustom
+      />,
+    );
+    const fields = screen.getAllByLabelText('Address');
+    expect(fields[0]).toHaveValue('custom-address');
+    fireEvent.change(fields[0], {
+      target: { value: 'rtmp://localhost/live' },
+    });
+  });
 });

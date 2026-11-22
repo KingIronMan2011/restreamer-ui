@@ -14,6 +14,12 @@ const devices = [
     extra: 'UVC camera',
   },
   {
+    id: '/dev/video2',
+    name: 'Second USB camera',
+    media: 'video',
+    extra: 'UVC camera',
+  },
+  {
     id: '/dev/video1',
     name: 'Pi camera',
     media: 'video',
@@ -84,12 +90,78 @@ describe('wizard hardware sources', () => {
     expect(onRefresh).toHaveBeenCalledOnce();
   });
 
+  it('shows a disabled placeholder when Apple video devices are unavailable', () => {
+    render(<AVFoundation.component knownDevices={[]} />);
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[0]);
+    expect(
+      screen.getByRole('option', { name: 'No input device available' }),
+    ).toHaveAttribute('aria-disabled', 'true');
+  });
+
+  it('repairs stale camera IDs and handles an empty device list', () => {
+    const onChange = vi.fn();
+    render(
+      <Raspicam.component
+        settings={{ device: '/dev/custom-camera' }}
+        knownDevices={devices}
+        onChange={onChange}
+      />,
+    );
+    expect(onChange).toHaveBeenCalledWith(
+      Raspicam.id,
+      expect.objectContaining({ device: '/dev/video1' }),
+      expect.any(Array),
+      true,
+    );
+    expect(screen.getByRole('combobox')).toBeInTheDocument();
+
+    const emptyDeviceChange = vi.fn();
+    render(
+      <Raspicam.component knownDevices={[]} onChange={emptyDeviceChange} />,
+    );
+    expect(emptyDeviceChange).toHaveBeenCalledWith(
+      Raspicam.id,
+      expect.any(Object),
+      expect.any(Array),
+      true,
+    );
+  });
+
+  it('updates the selected Raspberry Pi camera', () => {
+    const onChange = vi.fn();
+    render(
+      <Raspicam.component
+        settings={{ device: '/dev/video1' }}
+        knownDevices={[
+          devices[2],
+          {
+            id: '/dev/video2',
+            name: 'Second Pi camera',
+            media: 'video',
+            extra: 'bcm2835_v4l2',
+          },
+        ]}
+        onChange={onChange}
+      />,
+    );
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    fireEvent.click(
+      screen.getByRole('option', { name: 'Second Pi camera (/dev/video2)' }),
+    );
+    expect(onChange).toHaveBeenLastCalledWith(
+      Raspicam.id,
+      expect.objectContaining({ device: '/dev/video2' }),
+      expect.any(Array),
+      true,
+    );
+  });
+
   it('runs default hardware source handlers and renders their icons', () => {
     const v4l = render(<V4L.component knownDevices={devices} />);
     fireEvent.click(screen.getByRole('button', { name: 'Refresh' }));
     fireEvent.mouseDown(screen.getByRole('combobox'));
     fireEvent.click(
-      screen.getByRole('option', { name: 'USB camera (/dev/video0)' }),
+      screen.getByRole('option', { name: 'Second USB camera (/dev/video2)' }),
     );
     render(<V4L.icon data-testid="v4l-icon" />);
     expect(screen.getByTestId('v4l-icon')).toBeInTheDocument();

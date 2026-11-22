@@ -1,7 +1,7 @@
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
-import { render, screen } from '../../../utils/testing';
+import { fireEvent, render, screen } from '../../../utils/testing';
 import Abort from './Abort';
 
 describe('wizard abort screen', () => {
@@ -36,5 +36,12 @@ describe('wizard abort screen', () => {
     render(<Abort nchannels={0} onHelp={onHelp} />);
     await user.click(screen.getAllByRole('button')[0]);
     expect(onHelp).toHaveBeenCalledOnce();
+  });
+
+  it('keeps all default actions safe to invoke', () => {
+    render(<Abort nchannels={1} />);
+    fireEvent.click(screen.getAllByRole('button')[0]);
+    fireEvent.click(screen.getAllByRole('button')[1]);
+    fireEvent.click(screen.getByRole('button', { name: 'Back' }));
   });
 });

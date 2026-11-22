@@ -9,6 +9,8 @@ describe('License control', () => {
     render(<License />);
     expect(screen.getByRole('combobox')).toHaveTextContent('none');
     expect(screen.queryByRole('img')).not.toBeInTheDocument();
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    fireEvent.click(screen.getByRole('option', { name: 'CC BY 4.0' }));
   });
 
   it.each([

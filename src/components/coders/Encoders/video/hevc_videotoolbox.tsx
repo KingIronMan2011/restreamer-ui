@@ -60,7 +60,7 @@ function createMapping(settings: any, stream: any, skills: any) {
   return mapping;
 }
 
-function Profile({ value = '', onChange = function (event: any) {} }: any) {
+function Profile({ value = '', onChange }: any) {
   return (
     <Select label={<Trans>Profile</Trans>} value={value} onChange={onChange}>
       <MenuItem value="auto">auto</MenuItem>

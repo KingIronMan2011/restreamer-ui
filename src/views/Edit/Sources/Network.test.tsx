@@ -1137,11 +1137,49 @@ test('source:network input builder handles HTTP headers, proxy, timestamps, and 
     protocols: { input: ['tls', 'rtsp'] },
   });
   expect(rtspSkills.protocols.input).toContain('rtsps');
+
+  const emptyCodecSkills = Network.func.initSkills({
+    ffmpeg: { version: '6.1.0', version_major: 6, version_minor: 1 },
+    formats: { demuxers: [] },
+    protocols: { input: ['rtmp'] },
+    codecs: { audio: {}, video: { hevc: [], av1: [], vp9: [] } },
+  });
+  const rtmpInput = Network.func.createInputs(
+    Network.func.initSettings(
+      { mode: 'pull', address: 'rtmp://example.test/live' },
+      { channelid: 'test' },
+    ),
+    { channelid: 'test' },
+    emptyCodecSkills,
+  )[0];
+  expect(rtmpInput.options).not.toContain('-rtmp_enhanced_codecs');
 });
 
 test('source:network icon renders', () => {
   const { container } = render(<Network.icon />);
   expect(container.querySelector('svg')).toBeInTheDocument();
+});
+
+test('classifies malformed, MMS, and unsupported network protocols', () => {
+  expect(Network.func.getProtocolClass(null)).toBe('');
+  expect(Network.func.getProtocolClass('mmsh://example.test/live')).toBe('mms');
+  expect(Network.func.getProtocolClass('custom://example.test/live')).toBe(
+    'custom',
+  );
+  expect(Network.func.isAuthProtocol('custom://example.test/live')).toBe(false);
+  expect(Network.func.isSupportedProtocol('invalid', ['http'])).toBe(false);
+  expect(
+    Network.func.isSupportedProtocol('https://example.test', ['https']),
+  ).toBe(true);
+});
+
+test('initializes Network settings when no settings object is provided', () => {
+  expect(
+    Network.func.initSettings(null, { channelid: 'channel' }),
+  ).toMatchObject({
+    address: '',
+    mode: 'pull',
+  });
 });
 
 test('source:network HLS push replaces the none name with the channel ID', () => {

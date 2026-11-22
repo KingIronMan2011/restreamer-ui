@@ -48,4 +48,11 @@ describe('bwdif filter', () => {
     );
     expect(onChange.mock.lastCall?.[1]).toBe('');
   });
+
+  it('accepts default settings and its default change callback', () => {
+    render(<Bwdif.component />);
+    fireEvent.click(
+      screen.getByRole('checkbox', { name: 'Deinterlace (bwdif)' }),
+    );
+  });
 });

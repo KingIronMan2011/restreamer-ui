@@ -19,21 +19,7 @@ function init(initialState: any) {
   return state;
 }
 
-function createMapping(settings: any, stream: any, skills: any) {
-  stream = Helper.InitStream(stream);
-  skills = Helper.InitSkills(skills);
-
-  let sampling = settings.sampling;
-  let layout = settings.layout;
-
-  if (sampling === 'inherit') {
-    sampling = stream.sampling_hz;
-  }
-
-  if (layout === 'inherit') {
-    layout = stream.layout;
-  }
-
+function createMapping(settings: any) {
   const local = [
     '-codec:a',
     'opus',
@@ -64,7 +50,7 @@ function Delay({
   allowCustom = false,
   label = <Trans>Delay</Trans>,
   customLabel = <Trans>Custom delay</Trans>,
-  onChange = function () {},
+  onChange,
 }: any) {
   const { i18n } = useLingui();
   const options = [
@@ -116,11 +102,7 @@ function Coder({
       automatic = true;
     }
 
-    onChange(
-      newSettings,
-      createMapping(newSettings, stream, skills),
-      automatic,
-    );
+    onChange(newSettings, createMapping(newSettings), automatic);
   };
 
   const update = (what: any) => (event: any) => {
@@ -175,7 +157,7 @@ function defaults(stream: any, skills: any) {
 
   return {
     settings: settings,
-    mapping: createMapping(settings, stream, skills),
+    mapping: createMapping(settings),
   };
 }
 

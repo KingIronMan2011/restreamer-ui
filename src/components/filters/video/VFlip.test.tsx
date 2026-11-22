@@ -17,4 +17,9 @@ describe('vertical flip filter', () => {
     fireEvent.click(screen.getByRole('checkbox', { name: 'Vertical Flip' }));
     expect(onChange.mock.lastCall?.[1]).toBe('vflip');
   });
+
+  it('accepts the default change callback', () => {
+    render(<VFlip.component />);
+    fireEvent.click(screen.getByRole('checkbox', { name: 'Vertical Flip' }));
+  });
 });

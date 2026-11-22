@@ -42,4 +42,11 @@ describe('Password', () => {
     fireEvent(screen.getByRole('button'), mouseDown);
     expect(mouseDown.defaultPrevented).toBe(true);
   });
+
+  it('renders the environment indicator beside enabled and disabled fields', () => {
+    const view = render(<Password label="Environment" env />);
+    expect(view.container.querySelectorAll('svg').length).toBeGreaterThan(0);
+    view.rerender(<Password label="Environment" env disabled />);
+    expect(screen.getByLabelText('Environment')).toBeDisabled();
+  });
 });

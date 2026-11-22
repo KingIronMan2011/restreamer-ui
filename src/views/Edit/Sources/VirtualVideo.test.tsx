@@ -116,9 +116,15 @@ describe('virtual video source', () => {
   });
 
   it('runs default handlers and renders the source icon', () => {
-    render(<VirtualVideo.component />);
-    fireEvent.mouseDown(screen.getByRole('combobox'));
-    fireEvent.click(screen.getByRole('option', { name: 'Test pattern' }));
+    render(
+      <VirtualVideo.component
+        settings={{ source: 'testsrc', ...dimensions }}
+      />,
+    );
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[0]);
+    fireEvent.click(
+      screen.getByRole('option', { name: 'Test pattern (extended)' }),
+    );
     fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
     render(<VirtualVideo.icon data-testid="virtual-video-icon" />);
     expect(screen.getByTestId('virtual-video-icon')).toBeInTheDocument();

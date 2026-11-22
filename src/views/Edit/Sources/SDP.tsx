@@ -57,6 +57,32 @@ const createInputs = (settings: any) => {
   return [input];
 };
 
+const getUploadErrorMessage = (err: any) => {
+  switch (err.type) {
+    case 'nofiles':
+      return <Trans>Please select a file to upload.</Trans>;
+    case 'mimetype':
+      return (
+        <Trans>
+          The selected file type ({err.actual}) is not allowed. Allowed file
+          types are {err.allowed.join(', ')}
+        </Trans>
+      );
+    case 'size':
+      return (
+        <Trans>
+          The selected file is too big (
+          <Filesize bytes={err.actual} />
+          ). Only <Filesize bytes={err.allowed} /> are allowed.
+        </Trans>
+      );
+    case 'read':
+      return <Trans>There was an error during upload: {err.message}</Trans>;
+    default:
+      return <Trans>Unknown upload error</Trans>;
+  }
+};
+
 function Source({
   knownDevices = [],
   settings = {},
@@ -93,41 +119,9 @@ function Source({
   };
 
   const handleUploadError = (title: any) => (err: any) => {
-    let message = null;
-
-    switch (err.type) {
-      case 'nofiles':
-        message = <Trans>Please select a file to upload.</Trans>;
-        break;
-      case 'mimetype':
-        message = (
-          <Trans>
-            The selected file type ({err.actual}) is not allowed. Allowed file
-            types are {err.allowed.join(', ')}
-          </Trans>
-        );
-        break;
-      case 'size':
-        message = (
-          <Trans>
-            The selected file is too big (
-            <Filesize bytes={err.actual} />
-            ). Only <Filesize bytes={err.allowed} /> are allowed.
-          </Trans>
-        );
-        break;
-      case 'read':
-        message = (
-          <Trans>There was an error during upload: {err.message}</Trans>
-        );
-        break;
-      default:
-        message = <Trans>Unknown upload error</Trans>;
-    }
-
     setSaving(false);
 
-    showUploadError(title, message);
+    showUploadError(title, getUploadErrorMessage(err));
   };
 
   const showUploadError = (title: any, message: any) => {
@@ -249,4 +243,5 @@ export {
   SourceIcon as icon,
   Source as component,
   func,
+  getUploadErrorMessage,
 };

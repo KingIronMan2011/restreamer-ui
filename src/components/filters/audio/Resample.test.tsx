@@ -34,5 +34,56 @@ describe('aresample filter', () => {
       channels: 1,
     });
     expect(onChange.mock.lastCall?.[1]).toBe('aresample=osr=44100:ochl=mono');
+
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[1]);
+    fireEvent.click(screen.getByRole('option', { name: 'stereo' }));
+    expect(onChange.mock.lastCall?.[0]).toMatchObject({
+      layout: 'stereo',
+      channels: 2,
+    });
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[1]);
+    fireEvent.click(screen.getByRole('option', { name: 'Inherit' }));
+    expect(onChange.mock.lastCall?.[0]).toMatchObject({
+      layout: 'inherit',
+      channels: 2,
+    });
+  });
+
+  it('supports automatic and custom layout and sampling values', () => {
+    const onChange = vi.fn();
+    const layout = render(
+      <Resample.Layout
+        value="stereo"
+        allowAuto
+        allowInherit
+        allowCustom
+        onChange={onChange}
+      />,
+    );
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    expect(screen.getByRole('option', { name: 'auto' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('option', { name: 'Custom ...' }));
+    fireEvent.change(screen.getByLabelText('Custom layout'), {
+      target: { value: '5.1' },
+    });
+    expect(onChange.mock.lastCall?.[0].target.value).toBe('5.1');
+    layout.unmount();
+
+    render(
+      <Resample.Sampling
+        value="44100"
+        allowAuto
+        allowInherit
+        allowCustom
+        onChange={onChange}
+      />,
+    );
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    expect(screen.getByRole('option', { name: 'auto' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('option', { name: 'Custom ...' }));
+    fireEvent.change(screen.getByLabelText('Custom sampling (Hz)'), {
+      target: { value: '32000' },
+    });
+    expect(onChange.mock.lastCall?.[0].target.value).toBe('32000');
   });
 });

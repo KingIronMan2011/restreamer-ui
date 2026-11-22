@@ -76,6 +76,8 @@ describe('AVFoundation source', () => {
     );
 
     fireEvent.click(screen.getByRole('button', { name: 'Refresh' }));
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[0]);
+    fireEvent.click(screen.getByRole('option', { name: 'Camera' }));
     fireEvent.click(screen.getByRole('checkbox', { name: 'Capture cursor' }));
     fireEvent.click(screen.getByRole('checkbox', { name: 'Capture clicks' }));
     expect(onRefresh).toHaveBeenCalledOnce();

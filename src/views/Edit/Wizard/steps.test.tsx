@@ -23,15 +23,24 @@ describe('wizard steps', () => {
     license.unmount();
 
     const metadata = render(<MetadataStep />);
+    fireEvent.change(screen.getByLabelText('Name'), {
+      target: { value: 'default callback' },
+    });
+    fireEvent.click(screen.getAllByRole('button')[0]);
+    fireEvent.click(screen.getAllByRole('button')[1]);
     fireEvent.click(screen.getByRole('button', { name: 'Back' }));
     fireEvent.click(screen.getByRole('button', { name: 'Next' }));
     metadata.unmount();
 
     const source = render(<SourceStep />);
+    fireEvent.click(screen.getAllByRole('button')[0]);
+    fireEvent.click(screen.getAllByRole('button')[1]);
     fireEvent.click(screen.getByRole('button', { name: 'Advanced setup' }));
     source.unmount();
 
     const video = render(<VideoStep ready />);
+    fireEvent.click(screen.getAllByRole('button')[0]);
+    fireEvent.click(screen.getAllByRole('button')[1]);
     fireEvent.click(screen.getByRole('button', { name: 'Back' }));
     fireEvent.click(screen.getByRole('button', { name: 'Next' }));
     video.unmount();

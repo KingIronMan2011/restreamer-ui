@@ -74,6 +74,28 @@ describe('SDP source', () => {
     expect(screen.getByLabelText('File path')).toHaveValue('');
   });
 
+  it('allows probing an existing SDP file with the default probe handler', () => {
+    render(
+      <SDP.component
+        settings={{
+          address: '/uploads/input.sdp',
+          mimetype: 'application/sdp',
+        }}
+      />,
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
+  });
+
+  it.each([
+    [{ type: 'nofiles' }],
+    [{ type: 'mimetype', actual: 'text/plain', allowed: ['application/sdp'] }],
+    [{ type: 'size', actual: 10, allowed: 5 }],
+    [{ type: 'read', message: 'disk error' }],
+    [{ type: 'unknown' }],
+  ])('builds a message for upload error %s', (error) => {
+    expect(SDP.getUploadErrorMessage(error)).toBeTruthy();
+  });
+
   it('renders the SDP source icon', () => {
     render(<SDP.icon data-testid="sdp-icon" />);
     expect(screen.getByTestId('sdp-icon')).toBeInTheDocument();

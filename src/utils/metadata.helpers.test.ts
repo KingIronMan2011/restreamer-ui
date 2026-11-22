@@ -140,6 +140,38 @@ describe('metadata defaults and normalization', () => {
     expect(migrated.profiles[2].audio.filter.graph).toBe('');
   });
 
+  it('normalizes numeric versions and applies eligible transforms in order', () => {
+    const applied: string[] = [];
+    const metadata: any = { version: 1, applied };
+    const transformed = Metadata.transformMetadata(metadata, '2.0.0', {
+      '1.2.0': (value: any) => {
+        value.applied.push('1.2.0');
+        value.version = '1.2.0';
+        return value;
+      },
+      '1.0.1': (value: any) => {
+        value.applied.push('1.0.1');
+        value.version = '1.0.1';
+        return value;
+      },
+      '0.9.0': (value: any) => {
+        value.applied.push('0.9.0');
+        return value;
+      },
+    });
+
+    expect(transformed.version).toBe('1.2.0');
+    expect(transformed.applied).toEqual(['1.0.1', '1.2.0']);
+    expect(Metadata.transformMetadata({ version: 1 }, 1, {})).toMatchObject({
+      version: '1.0.0',
+    });
+    expect(
+      Metadata.transformMetadata({ version: '1.2.0' }, '1.2.0', {}),
+    ).toEqual({
+      version: '1.2.0',
+    });
+  });
+
   it('normalizes profiles with array and object mappings and removes unused sources', () => {
     expect(Metadata.initProfile(null)).toMatchObject({
       video: { encoder: { coder: 'none' }, decoder: { coder: 'default' } },
@@ -513,6 +545,74 @@ describe('profile selection and validation', () => {
       stream: 0,
       encoder: { coder: 'copy' },
     });
+  });
+
+  it('rejects unknown and codec-mismatched encoders for selected streams', () => {
+    const streams = [
+      { type: 'video', codec: 'h264' },
+      { type: 'audio', codec: 'aac' },
+    ];
+    const unknownVideoEncoder = profile({
+      video: { source: 0, stream: 0, encoder: { coder: 'missing-encoder' } },
+    });
+    Metadata.preselectProfile('video', streams, unknownVideoEncoder, {
+      video: [],
+      audio: [],
+    });
+    expect(unknownVideoEncoder.video.encoder.coder).toBe('copy');
+
+    const wrongVideoCodec = profile({
+      video: { source: 0, stream: 0, encoder: { coder: 'libx265' } },
+    });
+    Metadata.preselectProfile('video', streams, wrongVideoCodec, {
+      video: [],
+      audio: [],
+    });
+    expect(wrongVideoCodec.video.encoder.coder).toBe('copy');
+
+    const unknownAudioEncoder = profile({
+      audio: { source: 0, stream: 1, encoder: { coder: 'missing-encoder' } },
+    });
+    Metadata.preselectProfile('video', streams, unknownAudioEncoder, {
+      video: [],
+      audio: [],
+    });
+    expect(unknownAudioEncoder.audio.encoder.coder).toBe('copy');
+
+    const wrongAudioCodec = profile({
+      audio: { source: 0, stream: 1, encoder: { coder: 'libopus' } },
+    });
+    Metadata.preselectProfile('video', streams, wrongAudioCodec, {
+      video: [],
+      audio: [],
+    });
+    expect(wrongAudioCodec.audio.encoder.coder).toBe('copy');
+  });
+
+  it('rejects copied unsupported audio and preserves a valid AAC encoder', () => {
+    const streams = [
+      { type: 'video', codec: 'h264' },
+      { type: 'audio', codec: 'opus' },
+    ];
+    const copiedUnsupported = profile({
+      audio: { source: 0, stream: 1, encoder: { coder: 'copy' } },
+    });
+    Metadata.preselectProfile('video', streams, copiedUnsupported, {
+      video: [],
+      audio: [],
+    });
+    expect(copiedUnsupported.audio.encoder.coder).toBe('none');
+
+    const validAac = profile({
+      audio: { source: 0, stream: 1, encoder: { coder: 'aac' } },
+    });
+    Metadata.preselectProfile(
+      'video',
+      [streams[0], { type: 'audio', codec: 'aac' }],
+      validAac,
+      { video: [], audio: [] },
+    );
+    expect(validAac.audio.encoder.coder).toBe('aac');
   });
 
   it('keeps missing compatible encoders disabled and honors plausible stream copies', () => {

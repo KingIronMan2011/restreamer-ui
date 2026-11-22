@@ -95,6 +95,7 @@ describe('Restreamer ingest and session methods', () => {
     restreamer2.GetDebug = vi.fn().mockResolvedValue({ debug: true });
     restreamer2._startProcess = vi.fn().mockResolvedValue(true);
     restreamer2._stopProcess = vi.fn().mockResolvedValue(true);
+    restreamer2._deleteProcess = vi.fn().mockResolvedValue(true);
 
     await expect(restreamer2.GetIngest('channel', [])).resolves.toEqual({
       id: 'process',
@@ -119,11 +120,23 @@ describe('Restreamer ingest and session methods', () => {
     );
     await expect(restreamer2.StopIngest('channel')).resolves.toBe(true);
     await expect(restreamer2.StopIngestSnapshot('channel')).resolves.toBe(true);
+    await expect(restreamer2.DeleteIngest('channel')).resolves.toBe(true);
+    await expect(restreamer2.DeleteIngestSnapshot('channel')).resolves.toBe(
+      true,
+    );
     expect(restreamer2._startProcess).toHaveBeenNthCalledWith(
       2,
       'restreamer-ui:ingest:channel_snapshot',
     );
     expect(restreamer2._stopProcess).toHaveBeenNthCalledWith(
+      2,
+      'restreamer-ui:ingest:channel_snapshot',
+    );
+    expect(restreamer2._deleteProcess).toHaveBeenNthCalledWith(
+      1,
+      'restreamer-ui:ingest:channel',
+    );
+    expect(restreamer2._deleteProcess).toHaveBeenNthCalledWith(
       2,
       'restreamer-ui:ingest:channel_snapshot',
     );
@@ -198,6 +211,12 @@ describe('Restreamer ingest and session methods', () => {
       null,
     ]);
     expect(restreamer._deleteProcess).toHaveBeenCalledTimes(5);
+
+    restreamer._call = vi.fn().mockResolvedValue([null, { code: 500 }]);
+    await expect(restreamer.ProbeIngest('channel')).resolves.toEqual([
+      null,
+      { code: 500 },
+    ]);
   });
 
   it('upserts snapshot and preview processes with enable-dependent controls', async () => {

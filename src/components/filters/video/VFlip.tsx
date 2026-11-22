@@ -44,14 +44,12 @@ function Filter({
     onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what: any) => (event: any) => {
+  const update = (what: any) => () => {
     const newSettings = {
       ...settings,
     };
     if (['enabled'].includes(what)) {
       newSettings[what] = !settings.enabled;
-    } else {
-      newSettings[what] = event.target.value;
     }
 
     handleChange(newSettings);

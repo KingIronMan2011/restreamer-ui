@@ -14,6 +14,7 @@ describe('anonymize_url', () => {
     expect(
       anonymize_url('rtmp://user:secret@localhost/live?token=private'),
     ).toContain('token=***');
+    expect(anonymize_url('rtmp://localhost/live')).toContain('/live');
   });
 
   it('masks SRT stream IDs and passphrases for localhost', () => {
@@ -22,6 +23,7 @@ describe('anonymize_url', () => {
     );
     expect(result).toContain('streamid=***');
     expect(result).toContain('passphrase=***');
+    expect(anonymize_url('srt://localhost:9000')).toContain('localhost:9000');
   });
 });
 
@@ -36,5 +38,9 @@ describe('anonymize', () => {
     expect(anonymize('File at /channels/main/logo.png')).toContain(
       '/[anonymized]/logo.png',
     );
+  });
+
+  it('preserves a one-segment local path', () => {
+    expect(anonymize('/logo.png')).toBe('/logo.png');
   });
 });

@@ -24,7 +24,6 @@ function Source({
   config = null,
   skills = null,
   onChange = function (type: any, settings: any, inputs: any, ready: any) {},
-  onRefresh = function () {},
 }: any) {
   config = S.func.initConfig(config);
   settings = initSettings(settings, config);

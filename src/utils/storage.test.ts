@@ -52,4 +52,28 @@ describe('local storage helpers', () => {
     expect(Get('token')).toBe('stored');
     expect(storage.setItem).toHaveBeenCalledTimes(2);
   });
+
+  it.each([
+    ['legacy Firefox quota code', 1014, 'UnknownError'],
+    ['quota exception name', 0, 'QuotaExceededError'],
+    ['Firefox quota exception name', 0, 'NS_ERROR_DOM_QUOTA_REACHED'],
+  ])('accepts %s when storage contains data', (_label, code, name) => {
+    const error = new DOMException('full');
+    Object.defineProperty(error, 'code', { value: code });
+    Object.defineProperty(error, 'name', { value: name });
+    const storage = {
+      length: 1,
+      setItem: vi.fn(() => {
+        throw error;
+      }),
+      getItem: vi.fn(() => 'stored'),
+      removeItem: vi.fn(),
+    };
+    Object.defineProperty(window, 'localStorage', {
+      configurable: true,
+      value: storage,
+    });
+
+    expect(Get('token')).toBe('stored');
+  });
 });

@@ -31,4 +31,10 @@ describe('transpose filter', () => {
       'transpose=dir=clock:passthrough=none,transpose=dir=clock:passthrough=none',
     );
   });
+
+  it('accepts the default change callback', () => {
+    render(<Transpose.component />);
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    fireEvent.click(screen.getByRole('option', { name: '90°' }));
+  });
 });

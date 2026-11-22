@@ -64,7 +64,7 @@ function createMapping(settings: any, stream: any, skills: any) {
   return mapping;
 }
 
-function Usage({ value = '', onChange = function (event: any) {} }: any) {
+function Usage({ value = '', onChange }: any) {
   return (
     <React.Fragment>
       <Select label={<Trans>Usage</Trans>} value={value} onChange={onChange}>

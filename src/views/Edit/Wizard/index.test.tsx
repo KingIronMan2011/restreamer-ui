@@ -3,7 +3,9 @@ import { vi } from 'vitest';
 
 import Wizard from '.';
 import NotifyContext from '../../../components/contexts/Notify';
+import * as Metadata from '../../../utils/metadata';
 import { render, fireEvent, act, screen } from '../../../utils/testing';
+import Sources from './Sources';
 
 let lastUpsertIngest = null;
 
@@ -381,6 +383,26 @@ test('wizard advanced setup navigates to channel editing', async () => {
   ).not.toBeInTheDocument();
 });
 
+test('wizard returns to source selection when a selected source is unavailable', async () => {
+  const getSource = vi.spyOn(Sources, 'Get').mockReturnValue(null as any);
+  try {
+    render(
+      <Wizard restreamer={restreamer} />,
+      {},
+      '/wizard/test',
+      '/wizard/:channelid',
+    );
+    fireEvent.click(
+      await screen.findByRole('button', { name: 'Network source' }),
+    );
+    expect(
+      await screen.findByRole('button', { name: 'Network source' }),
+    ).toBeInTheDocument();
+  } finally {
+    getSource.mockRestore();
+  }
+});
+
 test('wizard lists hardware video sources reported by FFmpeg', async () => {
   const getSkills = restreamer.Skills;
   const originalRefreshSkills = restreamer.RefreshSkills;
@@ -639,6 +661,8 @@ test('wizard audio setup handles stream changes, silence, no audio, and back nav
     await screen.findByRole('radio', { name: 'Silence Audio' }),
   ).toBeInTheDocument();
   fireEvent.click(screen.getByRole('radio', { name: 'Silence Audio' }));
+  fireEvent.click(screen.getByRole('radio', { name: 'Audio from device' }));
+  fireEvent.click(screen.getByRole('radio', { name: 'Silence Audio' }));
   fireEvent.click(screen.getByRole('radio', { name: 'No audio' }));
   fireEvent.click(screen.getByRole('button', { name: 'Next' }));
 
@@ -652,6 +676,46 @@ test('wizard audio setup handles stream changes, silence, no audio, and back nav
       /The video source is compatible. Select the desired resolution:/,
     ),
   ).toBeInTheDocument();
+});
+
+test('wizard rejects an incomplete ingest before saving', async () => {
+  const createInputsOutputs = vi
+    .spyOn(Metadata, 'createInputsOutputs')
+    .mockReturnValue([{}, [], []] as any);
+  const dispatch = vi.fn();
+  try {
+    render(
+      <NotifyContext.Provider value={{ Dispatch: dispatch }}>
+        <Wizard restreamer={restreamer} />
+      </NotifyContext.Provider>,
+      {},
+      '/wizard/test',
+      '/wizard/:channelid',
+    );
+    fireEvent.click(await screen.findByRole('button', { name: 'RTMP server' }));
+    for (let step = 0; step < 2; step++) {
+      await act(async () =>
+        fireEvent.click(screen.getByRole('button', { name: 'Next' })),
+      );
+    }
+    fireEvent.click(await screen.findByRole('radio', { name: 'No audio' }));
+    await act(async () =>
+      fireEvent.click(screen.getByRole('button', { name: 'Next' })),
+    );
+    await act(async () =>
+      fireEvent.click(screen.getByRole('button', { name: 'Next' })),
+    );
+    await act(async () =>
+      fireEvent.click(screen.getByRole('button', { name: 'Save' })),
+    );
+    expect(dispatch).toHaveBeenCalledWith(
+      'error',
+      'save:ingest',
+      expect.stringMatching(/input profile is not complete/i),
+    );
+  } finally {
+    createInputsOutputs.mockRestore();
+  }
 });
 
 test('wizard selects a non-default audio stream', async () => {
@@ -1040,6 +1104,23 @@ test('wizard shows an error when saving the ingest fails', async () => {
 });
 
 test('wizard: network source video h264', async () => {
+  const originalPreselectProfile = Metadata.preselectProfile;
+  const preselectProfile = vi
+    .spyOn(Metadata, 'preselectProfile')
+    .mockImplementation(
+      (type: any, streams: any, profile: any, encoders: any) => {
+        const result = originalPreselectProfile(
+          type,
+          streams,
+          profile,
+          encoders,
+        );
+        if (type === 'video') {
+          result.video.encoder.coder = 'none';
+        }
+        return result;
+      },
+    );
   await act(async () => {
     render(
       <Wizard restreamer={restreamer} />,
@@ -1067,6 +1148,14 @@ test('wizard: network source video h264', async () => {
 
   await act(async () => {
     fireEvent.click(button);
+  });
+
+  expect(
+    await screen.findByText(/doesn't provide any compatible video streams/i),
+  ).toBeInTheDocument();
+  preselectProfile.mockRestore();
+  await act(async () => {
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
   });
 
   expect(
@@ -1262,6 +1351,16 @@ test('wizard: network source audio non-aac', async () => {
 });
 
 test('wizard: network source silence audio', async () => {
+  const originalPreselectProfile = Metadata.preselectProfile;
+  const preselectProfile = vi
+    .spyOn(Metadata, 'preselectProfile')
+    .mockImplementation((type: any, streams: any, profile: any, encoders: any) => {
+      const result = originalPreselectProfile(type, streams, profile, encoders);
+      if (type === 'audio') {
+        result.audio.encoder.coder = 'none';
+      }
+      return result;
+    });
   await act(async () => {
     render(
       <Wizard restreamer={restreamer} />,
@@ -1323,6 +1422,14 @@ test('wizard: network source silence audio', async () => {
 
   await act(async () => {
     fireEvent.click(button);
+  });
+
+  expect(
+    screen.queryByText(/doesn't provide any compatible audio streams/i),
+  ).toBeInTheDocument();
+  preselectProfile.mockRestore();
+  await act(async () => {
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
   });
 
   expect(screen.queryByText(/Metadata/)).toBeInTheDocument();
