@@ -946,5 +946,7 @@ export default function Wizard({ restreamer }: any) {
     );
   }
 
+  // Every supported wizard step is handled above; this guards unexpected state.
+  /* v8 ignore next */
   return null;
 }

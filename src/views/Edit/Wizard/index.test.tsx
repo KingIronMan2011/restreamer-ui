@@ -1354,13 +1354,20 @@ test('wizard: network source silence audio', async () => {
   const originalPreselectProfile = Metadata.preselectProfile;
   const preselectProfile = vi
     .spyOn(Metadata, 'preselectProfile')
-    .mockImplementation((type: any, streams: any, profile: any, encoders: any) => {
-      const result = originalPreselectProfile(type, streams, profile, encoders);
-      if (type === 'audio') {
-        result.audio.encoder.coder = 'none';
-      }
-      return result;
-    });
+    .mockImplementation(
+      (type: any, streams: any, profile: any, encoders: any) => {
+        const result = originalPreselectProfile(
+          type,
+          streams,
+          profile,
+          encoders,
+        );
+        if (type === 'audio') {
+          result.audio.encoder.coder = 'none';
+        }
+        return result;
+      },
+    );
   await act(async () => {
     render(
       <Wizard restreamer={restreamer} />,
