@@ -1,77 +1,57 @@
-var config = {
-  controls: true,
-  poster: playerConfig.poster + '?t=' + String(new Date().getTime()),
-  autoplay: autoplay ? 'muted' : false,
-  muted: true,
-  liveui: true,
-  responsive: true,
-  fluid: true,
-  // Needed to append the url origin in order for the source to properly pass to the cast device
-  sources: [
-    {
-      src: window.location.origin + '/' + playerConfig.source,
-      type: 'application/x-mpegURL',
-    },
-  ],
-  plugins: {},
-};
+var media = document.getElementById('player-media');
+var player = document.getElementById('player');
+var skin = player.querySelector('live-video-skin');
 
-if (chromecast) {
-  config.techOrder = ['chromecast', 'html5'];
-  // Provide a default reciever application ID
-  config.plugins.chromecast = {
-    receiverApplicationId: 'CC1AD845',
-  };
+var source = playerConfig.source.replace(/^\/+/, '');
+media.setAttribute('src', new URL(source, window.location.origin + '/').href);
+media.setAttribute('playsinline', '');
+
+if (playerConfig.poster) {
+  var poster = playerConfig.poster.replace(/^\/+/, '');
+  player.setAttribute(
+    'poster',
+    new URL(poster, window.location.origin + '/').href + '?t=' + Date.now(),
+  );
 }
 
-var player = videojs('player', config);
+if (autoplay) {
+  media.setAttribute('autoplay', '');
+  media.setAttribute('muted', '');
+} else if (mute) {
+  media.setAttribute('muted', '');
+}
 
-player.ready(function () {
-  if (chromecast) {
-    player.chromecast();
-  }
+var logo = playerConfig.logo;
+if (logo && logo.image) {
+  var logoLink = document.createElement('a');
+  logoLink.className =
+    'playersite-videojs-logo ' + (logo.position || 'top-left');
+  logoLink.href = logo.link || '#';
+  logoLink.target = logo.link ? '_blank' : '';
+  logoLink.rel = 'noopener noreferrer';
 
-  if (airplay) {
-    player.airPlay();
-  }
+  var logoImage = document.createElement('img');
+  logoImage.src =
+    logo.image + (logo.image.includes('?') ? '&' : '?') + Date.now();
+  logoImage.alt = 'Stream logo';
+  logoLink.appendChild(logoImage);
+  skin.appendChild(logoLink);
 
-  player.license(playerConfig.license);
+  media.addEventListener('playing', function () {
+    logoLink.hidden = false;
+  });
+  media.addEventListener('pause', function () {
+    logoLink.hidden = true;
+  });
+  logoLink.hidden = true;
+}
 
-  if (playerConfig.logo.image.length != 0) {
-    var overlay = null;
-
-    var imgTag = new Image();
-    imgTag.onLoad = function () {
-      imgTag.setAttribute('width', this.width);
-      imgTag.setAttribute('height'.this.height);
-    };
-    imgTag.src = playerConfig.logo.image + '?' + Math.random();
-
-    if (playerConfig.logo.link.length !== 0) {
-      var aTag = document.createElement('a');
-      aTag.setAttribute('href', playerConfig.logo.link);
-      aTag.setAttribute('target', '_blank');
-      aTag.appendChild(imgTag);
-      overlay = aTag.outerHTML;
-    } else {
-      overlay = imgTag.outerHTML;
-    }
-
-    player.overlay({
-      align: playerConfig.logo.position,
-      overlays: [
-        {
-          showBackground: false,
-          content: overlay,
-          start: 'playing',
-          end: 'pause',
-        },
-      ],
-    });
-  }
-
-  if (autoplay === true) {
-    // https://videojs.com/blog/autoplay-best-practices-with-video-js/
-    player.play();
-  }
-});
+var license = playerConfig.license;
+if (license && (license.license || license.title || license.author)) {
+  var licenseBadge = document.createElement('small');
+  licenseBadge.className = 'playersite-videojs-license';
+  licenseBadge.textContent = [license.title, license.author, license.license]
+    .filter(Boolean)
+    .join(' · ');
+  skin.appendChild(licenseBadge);
+}

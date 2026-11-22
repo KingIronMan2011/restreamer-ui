@@ -1,9 +1,9 @@
-import { CompatVideoSkin, VideoPlayer } from '@videojs/react/video';
-import { HlsJsVideo } from '@videojs/react/media/hlsjs-video';
+import '@videojs/react/live-video/skin.css';
 import Grid from '@mui/material/Grid';
+import { LiveVideoPlayer, LiveVideoSkin } from '@videojs/react/live-video';
+import { HlsJsVideo } from '@videojs/react/media/hlsjs-video';
 import { useState, type CSSProperties, type SyntheticEvent } from 'react';
 
-import '@videojs/react/video/compat-skin.css';
 import './videojs-v10.css';
 
 type PlayerLogo = {
@@ -48,7 +48,10 @@ export default function VideoJS({
 
   const retryVideo = (event: SyntheticEvent<HTMLVideoElement>) => {
     const video = event.currentTarget;
-    if (video.error?.code === MediaError.MEDIA_ERR_NETWORK || video.error?.code === MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED) {
+    if (
+      video.error?.code === MediaError.MEDIA_ERR_NETWORK ||
+      video.error?.code === MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED
+    ) {
       window.setTimeout(() => {
         video.load();
         void video.play().catch(() => undefined);
@@ -65,10 +68,16 @@ export default function VideoJS({
       spacing={2}
       style={{ position: 'absolute', inset: 0 }}
     >
-      <VideoPlayer poster={options.poster}>
-        <CompatVideoSkin
+      <LiveVideoPlayer poster={options.poster}>
+        <LiveVideoSkin
           className={`videojs-player ${type}`}
-          style={{ '--media-accent-color': '#eaea05' } as CSSProperties}
+          style={
+            {
+              width: '100%',
+              aspectRatio: '16 / 9',
+              '--media-controls-before-start': 'visible',
+            } as CSSProperties
+          }
         >
           <HlsJsVideo
             source={{
@@ -88,13 +97,16 @@ export default function VideoJS({
               href={logo.link || undefined}
               target={logo.link ? '_blank' : undefined}
               rel={logo.link ? 'noreferrer' : undefined}
-              style={logoPosition[logo.position ?? 'top-right'] ?? logoPosition['top-right']}
+              style={
+                logoPosition[logo.position ?? 'top-right'] ??
+                logoPosition['top-right']
+              }
             >
-              <img src={logo.image} alt="" />
+              <img src={logo.image} alt="Stream logo" />
             </a>
           )}
-        </CompatVideoSkin>
-      </VideoPlayer>
+        </LiveVideoSkin>
+      </LiveVideoPlayer>
     </Grid>
   );
 }

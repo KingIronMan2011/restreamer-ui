@@ -6,21 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="{{description}}" />
     <meta name="author" content="datarhei restreamer" />
-    <style>
-      html {
-        min-height: 100vh;
-      }
-      body {
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-      }
-      #player {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-      }
-    </style>
     <title>{{name}}</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link
@@ -36,140 +21,169 @@
       title="{{name}}"
     />
     <script src="channels/{{channelid}}/config.js"></script>
-    <link href="player/videojs/dist/video-js.min.css" rel="stylesheet" />
-    <link href="player/videojs/dist/video-js-skin.min.css" rel="stylesheet" />
-    <link href="player/videojs/dist/videojs-overlay.min.css" rel="stylesheet" />
-    <link href="player/videojs/dist/videojs-license.min.css" rel="stylesheet" />
-    {{#if airplay}}
-    <link href="player/videojs/dist/videojs-airplay.min.css" rel="stylesheet" />
-    {{/if}} {{#if chromecast}}
-    <link
-      href="player/videojs/dist/videojs-chromecast.min.css"
-      rel="stylesheet"
-    />
-    {{/if}}
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.6.0/live-video.js"
+    ></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.6.0/media/hlsjs-video.js"
+    ></script>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+      live-video-player {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background: #000;
+      }
+      live-video-skin {
+        display: block;
+        width: 100%;
+        height: 100%;
+        --media-controls-before-start: visible;
+      }
+      .player-logo,
+      .player-license {
+        position: absolute;
+        z-index: 5;
+      }
+      .player-logo {
+        max-width: 25%;
+        line-height: 0;
+      }
+      .player-logo img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      .top-left {
+        top: 15px;
+        left: 20px;
+      }
+      .top {
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .top-right {
+        top: 15px;
+        right: 20px;
+      }
+      .left {
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+      }
+      .center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .right {
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+      }
+      .bottom-left {
+        bottom: 55px;
+        left: 20px;
+      }
+      .bottom {
+        bottom: 55px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .bottom-right {
+        bottom: 55px;
+        right: 20px;
+      }
+      .player-license {
+        right: 12px;
+        bottom: 55px;
+        max-width: calc(100% - 24px);
+        padding: 4px 8px;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.65);
+        font: 12px/1.4 sans-serif;
+      }
+    </style>
   </head>
   <body>
-    <div>
-      <video
-        id="player"
-        class="vjs-public video-js"
-        controls
-        playsinline
-      ></video>
-    </div>
-    <script src="player/videojs/dist/video.min.js"></script>
-    <script src="player/videojs/dist/videojs-overlay.min.js"></script>
-    <script src="player/videojs/dist/videojs-license.min.js"></script>
-    {{#if airplay}}
-    <script src="player/videojs/dist/videojs-airplay.min.js"></script>
-    {{/if}} {{#if chromecast}}
-    <script src="player/videojs/dist/videojs-chromecast.min.js"></script>
-    <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
-    {{/if}}
+    <live-video-player id="player">
+      <live-video-skin>
+        <hlsjs-video id="player-media" playsinline></hlsjs-video>
+      </live-video-skin>
+    </live-video-player>
     <script>
-      function getQueryParam(key, defaultValue) {
-        var query = window.location.search.substring(1);
-        var vars = query.split('&');
-        for (var i = 0; i < vars.length; i++) {
-          var pair = vars[i].split('=');
-          if (pair[0] == key) {
-            return pair[1];
-          }
-        }
-        return defaultValue;
-      }
+      const params = new URLSearchParams(window.location.search);
+      const enabled = (value) =>
+        value === true ||
+        ['true', '1', 'yes', 'on'].includes(String(value).toLowerCase());
+      const autoplay = enabled(params.get('autoplay') ?? playerConfig.autoplay);
+      const muted =
+        autoplay || enabled(params.get('mute') ?? playerConfig.mute);
+      const player = document.getElementById('player');
+      const media = document.getElementById('player-media');
+      const skin = player.querySelector('live-video-skin');
+      const assetUrl = (path) =>
+        new URL(
+          String(path || '').replace(/^\/+/, ''),
+          window.location.origin + '/',
+        ).href;
 
-      function convertBoolParam(key, defaultValue) {
-        var val = getQueryParam(key, defaultValue);
-        return (
-          val === true ||
-          val === 'true' ||
-          val === '1' ||
-          val === 'yes' ||
-          val === 'on'
+      media.setAttribute('src', assetUrl(playerConfig.source));
+      media.setAttribute('playsinline', '');
+      if (autoplay) media.setAttribute('autoplay', '');
+      if (muted) media.setAttribute('muted', '');
+      if (playerConfig.poster) {
+        player.setAttribute(
+          'poster',
+          assetUrl(playerConfig.poster) + '?t=' + Date.now(),
         );
       }
 
-      function convertColorParam(parameter, defaultColor) {
-        var re = new RegExp('^#([0-9a-f]{3}|[0-9a-f]{6})$');
-        var c = getQueryParam(parameter, defaultColor);
-        // decode color as # has to be represented by %23
-        var c = decodeURIComponent(c);
-        // if color was given without leading #, prepend it
-        if (!String(c).startsWith('#')) c = '#' + c;
-
-        if (re.test(c)) {
-          return c;
-        } else {
-          return defaultColor;
+      const logo = playerConfig.logo;
+      if (logo && logo.image) {
+        const link = document.createElement('a');
+        link.className = 'player-logo ' + (logo.position || 'top-left');
+        link.href = logo.link || '#';
+        if (logo.link) {
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
         }
+        const image = document.createElement('img');
+        image.src =
+          logo.image + (logo.image.includes('?') ? '&' : '?') + Date.now();
+        image.alt = 'Stream logo';
+        link.appendChild(image);
+        link.hidden = true;
+        skin.appendChild(link);
+        media.addEventListener('playing', () => {
+          link.hidden = false;
+        });
+        media.addEventListener('pause', () => {
+          link.hidden = true;
+        });
       }
 
-      var autoplay = convertBoolParam('autoplay', playerConfig.autoplay);
-      var mute = convertBoolParam('mute', playerConfig.mute);
-      var statistics = convertBoolParam('stats', playerConfig.statistics);
-      var color = convertColorParam('color', playerConfig.color.buttons);
-
-      var config = {
-        controls: true,
-        poster: playerConfig.poster + '?t=' + String(new Date().getTime()),
-        autoplay: autoplay ? 'muted' : false,
-        muted: mute,
-        liveui: true,
-        responsive: true,
-        sources: [
-          {
-            src: window.location.origin + '/' + playerConfig.source,
-            type: 'application/x-mpegURL',
-          },
-        ],
-        plugins: {},
-      };
-
-      if (playerConfig.chromecast) {
-        config.techOrder = ['chromecast', 'html5'];
-        config.plugins.chromecast = {
-          receiverApplicationId: 'CC1AD845',
-        };
+      const license = playerConfig.license;
+      if (license && (license.license || license.title || license.author)) {
+        const badge = document.createElement('small');
+        badge.className = 'player-license';
+        badge.textContent = [license.title, license.author, license.license]
+          .filter(Boolean)
+          .join(' · ');
+        skin.appendChild(badge);
       }
-
-      if (playerConfig.airplay) {
-        config.plugins.airPlay = {};
-      }
-
-      var player = videojs('player', config);
-
-      if (playerConfig.logo.image.length != 0) {
-        const imgTag = new Image();
-        imgTag.src = playerConfig.logo.image;
-        imgTag.onload = function () {
-          const logoWidth = imgTag.width;
-          const logoHeight = imgTag.height;
-          const overlayPosition = playerConfig.logo.position || 'top-left';
-          const overlayLink = playerConfig.logo.link || '#';
-          player.overlay({
-            overlays: [
-              {
-                content: `<a href="${overlayLink}" target="_blank"><img src="${playerConfig.logo.image + '?' + Math.random()}" alt="Logo" width="${logoWidth}" height="${logoHeight}"></a>`,
-                start: 'play',
-                end: 'pause',
-                align: overlayPosition,
-                showBackground: false,
-              },
-            ],
-          });
-        };
-      }
-
-      player.ready(function () {
-        player.license(playerConfig.license);
-
-        if (autoplay === true) {
-          // https://videojs.com/blog/autoplay-best-practices-with-video-js/
-          player.play();
-        }
-      });
     </script>
   </body>
 </html>

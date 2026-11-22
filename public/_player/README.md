@@ -15,7 +15,8 @@ The following placeholders will be replaced by their respective value:
 | width       | The width of the video/poster.            |
 | height      | The height of the video/poster.           |
 
-# File list
+## File list
 
-Each player directory has a `files.txt` that contains a list of files, that need to
-be copied besides the `player.html`.
+Add a `files.txt` to a player directory when it has supplemental files that need to
+be copied besides `player.html`. The file is optional when the player has no
+supplemental assets.

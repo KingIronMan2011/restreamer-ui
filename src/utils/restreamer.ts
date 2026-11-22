@@ -3575,11 +3575,7 @@ class Restreamer {
     const data = await this._getLocalAssetAsString(
       `/_player/${player}/files.txt`,
     );
-    if (data === null) {
-      return false;
-    }
-
-    const files = data.split(/\n/);
+    const files = data?.split(/\r?\n/) ?? [];
 
     // upload player files
     for (let file of files) {

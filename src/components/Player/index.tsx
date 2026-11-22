@@ -43,12 +43,6 @@ export default function Player({
       sources: [{ src: source, type: 'application/x-mpegURL' }],
     };
 
-    return (
-      <VideoJS
-        type={type}
-        options={config}
-        logo={logo}
-      />
-    );
+    return <VideoJS type={type} options={config} logo={logo} />;
   }
 }
