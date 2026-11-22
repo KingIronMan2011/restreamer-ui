@@ -900,7 +900,7 @@ const createOutputStreams = (
   profiles: CoreProfile[],
   requireVideo = true,
 ): CoreStream[] => {
-  const streams: any[] = [];
+  const streams: CoreStream[] = [];
 
   // Generate a list of output streams from the profiles
   for (let profile of profiles) {

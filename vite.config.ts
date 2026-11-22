@@ -46,7 +46,7 @@ export default defineConfig({
     cssCodeSplit: true,
     minify: 'oxc',
     sourcemap: true,
-    chunkSizeWarningLimit: 3200,
+    chunkSizeWarningLimit: 2500,
     rolldownOptions: {
       output: {
         codeSplitting: {
@@ -80,7 +80,7 @@ export default defineConfig({
             ].map((lang) => ({
               name: `lang-${lang}`,
               test: new RegExp(
-                String.raw`[/\\]src[/\\]languages[/\\]${lang}[/\\]messages\\.js$`,
+                String.raw`[/\\]src[/\\]languages[/\\]${lang}[/\\]messages\.js$`,
               ),
             })),
           ],

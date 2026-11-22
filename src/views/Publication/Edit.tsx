@@ -30,6 +30,7 @@ import PaperHeader from '../../components/PaperHeader';
 import TabPanel from '../../components/TabPanel';
 import TabsVerticalGrid from '../../components/TabsVerticalGrid';
 import useInterval from '../../hooks/useInterval';
+import type { CoreSource } from '../../types/core';
 import H from '../../utils/help';
 import * as M from '../../utils/metadata';
 import * as helper from './helper';
@@ -61,7 +62,7 @@ export default function Edit({ restreamer }: any) {
   const notify = React.useContext(NotifyContext);
   const [$ready, setReady] = React.useState(false);
   const [$settings, setSettings] = React.useState(M.getDefaultEgressMetadata());
-  const [$sources, setSources] = React.useState<Record<string, any>[]>([]);
+  const [$sources, setSources] = React.useState<CoreSource[]>([]);
   const [$localSources, setLocalSources] = React.useState<
     Record<string, any>[]
   >([]);

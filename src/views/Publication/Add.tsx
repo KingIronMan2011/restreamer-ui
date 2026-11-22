@@ -29,6 +29,7 @@ import PaperFooter from '../../components/PaperFooter';
 import PaperHeader from '../../components/PaperHeader';
 import TabPanel from '../../components/TabPanel';
 import TabsVerticalGrid from '../../components/TabsVerticalGrid';
+import type { CoreSource } from '../../types/core';
 import H from '../../utils/help';
 import * as M from '../../utils/metadata';
 import * as helper from './helper';
@@ -61,7 +62,7 @@ export default function Add({ restreamer }: any) {
   const notify = React.useContext(NotifyContext);
   const [$service, setService] = React.useState('');
   const [$settings, setSettings] = React.useState(M.initEgressMetadata({}));
-  const [$sources, setSources] = React.useState<Record<string, any>[]>([]);
+  const [$sources, setSources] = React.useState<CoreSource[]>([]);
   const [$localSources, setLocalSources] = React.useState<
     Record<string, any>[]
   >([]);

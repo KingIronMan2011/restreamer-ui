@@ -1,3 +1,4 @@
+import type { CoreApiError } from '../types/core';
 import { fetch } from './fetch';
 
 type RequestOptions = {
@@ -10,15 +11,15 @@ type RequestOptions = {
     | null;
 };
 
-type APIResult = {
-  err: { code: number; message: any } | null;
+export type APIResult = {
+  err: CoreApiError | null;
   val: any;
 };
 
 class API {
   address!: string;
   token: string | (() => Promise<string>) = '';
-  cache!: Map<string, any>;
+  cache!: Map<string, { payload: APIResult; ts: number }>;
   base!: string;
 
   constructor(address: string) {
@@ -33,7 +34,7 @@ class API {
     //console.log(`[CoreAPI] ${message}`);
   }
 
-  _error(message: string) {
+  _error(message: CoreApiError['message']) {
     console.error(`[CoreAPI] Error: ${message}`);
   }
 
@@ -168,10 +169,24 @@ class API {
       if (isJSON === true) {
         const body = await response.json();
 
+        let message: unknown = body;
         if ('code' in body && 'message' in body) {
-          res.err.message = body.message;
+          message = body.message;
+          if ('status' in body && typeof body.status === 'string') {
+            res.err.status = body.status;
+          }
+        }
+
+        if (typeof message === 'string') {
+          res.err.message = message;
+        } else if (
+          typeof message === 'object' &&
+          message !== null &&
+          !Array.isArray(message)
+        ) {
+          res.err.message = message as Record<string, unknown>;
         } else {
-          res.err.message = body;
+          res.err.message = String(message);
         }
       } else {
         const body = await response.text();

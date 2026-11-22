@@ -1,5 +1,11 @@
 export type FFmpegOption = string | number;
 
+export type CoreApiError = {
+  code: number;
+  message: string | Record<string, unknown>;
+  status?: string;
+};
+
 export type FFmpegMapping = {
   global: unknown[];
   local: FFmpegOption[];

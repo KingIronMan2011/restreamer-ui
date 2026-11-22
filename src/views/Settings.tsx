@@ -1082,7 +1082,12 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
       };
 
       if (err.code === 409) {
-        for (let errorfield in err.message) {
+        const fieldErrors =
+          typeof err.message === 'string'
+            ? {}
+            : (err.message as Record<string, string[]>);
+
+        for (let errorfield in fieldErrors) {
           if (!(errorfield in configValues)) {
             continue;
           }
@@ -1096,7 +1101,7 @@ export default function Settings({ restreamer }: { restreamer: Restreamer }) {
             };
           }
 
-          for (let m of err.message[errorfield]) {
+          for (let m of fieldErrors[errorfield]) {
             tabs[tab].messages.push({
               configvalue: errorfield,
               error: ucfirst(m),

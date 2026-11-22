@@ -1,5 +1,3 @@
-import Handlebars from 'handlebars';
-
 import type RestreamerClient from '../restreamer';
 
 export async function UpdateEgress(

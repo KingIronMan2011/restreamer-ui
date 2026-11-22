@@ -12,6 +12,7 @@ import {
 import { v4 as uuidv4 } from 'uuid';
 
 import * as Version from '../lib/version';
+import type { CoreApiError } from '../types/core';
 import { anonymize } from './anonymizer';
 import API from './api';
 import * as M from './metadata';
@@ -36,6 +37,10 @@ class Restreamer {
   config!: Record<string, any> | null;
   cache!: { assets: Map<string, any> };
   channels!: Map<string, any>;
+  channel!: Record<string, any> | null;
+  refresh!: number | null;
+  refreshToken!: string | null;
+  updates!: number | null;
   hasUpdates!: boolean;
   hasService!: boolean;
 
@@ -197,7 +202,10 @@ class Restreamer {
 
   // API calls
 
-  async _call(fn: any, ...args: any[]) {
+  async _call(
+    fn: (...args: any[]) => Promise<import('./api').APIResult>,
+    ...args: any[]
+  ): Promise<[any, CoreApiError | null]> {
     const res = await fn.apply(this.api, args);
     if (res.err !== null && !this.ignoreAPIErrors) {
       if (res.err.code === -1) {
@@ -296,7 +304,7 @@ class Restreamer {
       this._dispatchEvent(
         'error',
         'login',
-        i18n._(t`Login failed: ${err.message}`),
+        i18n._(t`Login failed: ${String(err.message)}`),
       );
       return false;
     }
@@ -342,7 +350,7 @@ class Restreamer {
       this._dispatchEvent(
         'error',
         'login',
-        i18n._(t`Login failed: ${err.message}`),
+        i18n._(t`Login failed: ${String(err.message)}`),
       );
       return false;
     }
@@ -378,7 +386,7 @@ class Restreamer {
   }
 
   Logout() {
-    clearTimeout(this.refresh);
+    window.clearTimeout(this.refresh ?? undefined);
     this._setAccessToken(null);
     this._setRefreshToken(null);
   }
@@ -454,13 +462,13 @@ class Restreamer {
   }
 
   _setTokenRefresh(expiresIn: any) {
-    clearTimeout(this.refresh);
+    window.clearTimeout(this.refresh ?? undefined);
 
     if (expiresIn > 60) {
       expiresIn -= 60;
     }
 
-    this.refresh = setTimeout(async () => {
+    this.refresh = window.setTimeout(async () => {
       await this.RefreshToken();
     }, expiresIn * 1000);
 
@@ -516,7 +524,7 @@ class Restreamer {
       this._dispatchEvent(
         'error',
         'auth',
-        i18n._(t`Failed to refresh token: ${err.message}`),
+        i18n._(t`Failed to refresh token: ${String(err.message)}`),
       );
       return false;
     }
@@ -1033,7 +1041,7 @@ class Restreamer {
   ConfigActive() {
     const config = JSON.parse(JSON.stringify(this.config));
 
-    config.source.network.channelid = this.channel.channelid;
+    config.source.network.channelid = this.channel!.channelid;
 
     return config;
   }
@@ -1492,7 +1500,7 @@ class Restreamer {
       return '';
     }
 
-    return this.channel.channelid;
+    return this.channel!.channelid;
   }
 
   // Get the path for the HLS manifest
@@ -1554,7 +1562,7 @@ class Restreamer {
       }
 
       for (let s of val[p]) {
-        if (!s.reference.startsWith(this.channel.channelid)) {
+        if (!s.reference.startsWith(this.channel!.channelid)) {
           continue;
         }
 
@@ -1585,7 +1593,7 @@ class Restreamer {
       return false;
     }
 
-    return this.channel.available;
+    return this.channel!.available;
   }
 
   // Get process information for ingest
@@ -1609,7 +1617,7 @@ class Restreamer {
 
     metadata = M.initIngestMetadata(metadata);
     if (metadata.meta.name.length === 0) {
-      metadata.meta.name = this.channel.name;
+      metadata.meta.name = this.channel!.name;
     }
 
     return metadata;
@@ -2355,7 +2363,7 @@ class Restreamer {
       return null;
     }
 
-    const egress = this.channel.egresses.get(id);
+    const egress = this.channel!.egresses.get(id);
 
     egress.name = metadata.name ? metadata.name : '';
 
@@ -2418,7 +2426,7 @@ class Restreamer {
     const res = await this._deleteProcess(id);
 
     if (res === true) {
-      this.channel.egresses.delete(id);
+      this.channel!.egresses.delete(id);
     }
 
     return res;
@@ -2651,7 +2659,7 @@ class Restreamer {
       Storage.Set('updates', true);
     }
 
-    clearTimeout(this.updates);
+    window.clearTimeout(this.updates ?? undefined);
 
     if (!this.CheckForUpdates()) {
       return;
@@ -2725,7 +2733,7 @@ class Restreamer {
       }
     })();
 
-    this.updates = setTimeout(
+    this.updates = window.setTimeout(
       () => {
         this._checkForUpdates();
       },
