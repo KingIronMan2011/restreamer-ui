@@ -4,9 +4,7 @@ import { vi } from 'vitest';
 
 import UploadButton from './UploadButton';
 
-const imageTypes = [
-  { mimetype: 'image/*', extension: 'png', maxSize: 4 },
-];
+const imageTypes = [{ mimetype: 'image/*', extension: 'png', maxSize: 4 }];
 
 describe('UploadButton', () => {
   it('starts and uploads an accepted file', async () => {
@@ -35,13 +33,19 @@ describe('UploadButton', () => {
   it('reports disallowed mimetypes', async () => {
     const onError = vi.fn();
     render(
-      <UploadButton label="Upload image" acceptTypes={imageTypes} onError={onError} />,
+      <UploadButton
+        label="Upload image"
+        acceptTypes={imageTypes}
+        onError={onError}
+      />,
     );
 
-    await userEvent.setup({ applyAccept: false }).upload(
-      screen.getByLabelText('Upload image'),
-      new File(['text'], 'note.txt', { type: 'text/plain' }),
-    );
+    await userEvent
+      .setup({ applyAccept: false })
+      .upload(
+        screen.getByLabelText('Upload image'),
+        new File(['text'], 'note.txt', { type: 'text/plain' }),
+      );
 
     expect(onError).toHaveBeenCalledWith({
       type: 'mimetype',
@@ -53,13 +57,19 @@ describe('UploadButton', () => {
   it('reports files exceeding their size limit', async () => {
     const onError = vi.fn();
     render(
-      <UploadButton label="Upload image" acceptTypes={imageTypes} onError={onError} />,
+      <UploadButton
+        label="Upload image"
+        acceptTypes={imageTypes}
+        onError={onError}
+      />,
     );
 
-    await userEvent.setup().upload(
-      screen.getByLabelText('Upload image'),
-      new File(['12345'], 'large.png', { type: 'image/png' }),
-    );
+    await userEvent
+      .setup()
+      .upload(
+        screen.getByLabelText('Upload image'),
+        new File(['12345'], 'large.png', { type: 'image/png' }),
+      );
 
     expect(onError).toHaveBeenCalledWith({
       type: 'size',
@@ -71,7 +81,11 @@ describe('UploadButton', () => {
   it('reports when the selection is cleared without choosing a file', () => {
     const onError = vi.fn();
     render(
-      <UploadButton label="Upload image" acceptTypes={imageTypes} onError={onError} />,
+      <UploadButton
+        label="Upload image"
+        acceptTypes={imageTypes}
+        onError={onError}
+      />,
     );
 
     fireEvent.change(screen.getByLabelText('Upload image'), {

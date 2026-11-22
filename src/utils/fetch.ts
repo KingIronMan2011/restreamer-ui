@@ -29,7 +29,7 @@ const fetch = async (url: string, options: FetchOptions = {}) => {
             .split('\r\n')
             .reduce((result, current) => {
               let [name, value] = current.split(': ');
-              result.set(name, value);
+              result.set(name.toLowerCase(), value);
               return result;
             }, new Map()),
         },
