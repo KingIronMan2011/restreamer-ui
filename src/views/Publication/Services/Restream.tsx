@@ -68,6 +68,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -145,6 +146,8 @@ function Service({
           label={<Trans>Stream key</Trans>}
           value={settings.stream_key}
           onChange={handleChange('stream_key')}
+          error={Boolean(validationErrors.stream_key)}
+          helperText={validationErrors.stream_key}
         />
       </Grid>
       <Grid

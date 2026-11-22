@@ -69,6 +69,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -123,6 +124,8 @@ function Service({
           value={settings.address}
           onChange={handleChange('address')}
           placeholder="{custom_id}.channel.media.azure.net:2935/live/{custom_id}"
+          error={Boolean(validationErrors.address)}
+          helperText={validationErrors.address}
         />
       </Grid>
     </Grid>

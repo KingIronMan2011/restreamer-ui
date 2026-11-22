@@ -26,6 +26,12 @@ describe('network source validation', () => {
       }).success,
     ).toBe(true);
     expect(
+      networkSourceSettingsSchema.safeParse({
+        mode: 'pull',
+        address: 'rtsp://user:password@camera.example/live',
+      }).success,
+    ).toBe(true);
+    expect(
       networkSourceSettingsSchema.safeParse({ mode: 'push', address: '' })
         .success,
     ).toBe(true);
@@ -127,6 +133,41 @@ describe('publication settings validation', () => {
           stream_key: 'key',
         },
       ],
+      ['hls', { protocol: 'https://', address: 'stream.example/live.m3u8' }],
+      ['dash', { protocol: 'https://', address: 'stream.example/live.mpd' }],
+      [
+        'icecast',
+        {
+          protocol: 'icecast://',
+          address: 'user:password@stream.example:8000/live',
+        },
+      ],
+      ['rtsp', { protocol: 'rtsp://', address: 'stream.example:8554/live' }],
+      ['udp', { protocol: 'udp://', address: '239.0.0.1:1234' }],
+      ['mpegts', { protocol: 'udp://', address: '239.0.0.1:1234' }],
+      [
+        'dacast',
+        {
+          protocol: 'rtmps://',
+          server: 'primary.example/app',
+          backup_server: '',
+          enable_backup_server: false,
+          stream_key: 'key',
+          username: '',
+          password: '',
+        },
+      ],
+      ['red5', { protocol: 'rtmp://', address: 'stream.example:1935' }],
+      ['wowza', { protocol: 'rtsp://', address: 'stream.example:554' }],
+      [
+        'akamai',
+        {
+          protocol: 'rtmp://',
+          stream_url: 'edge.example/entry',
+          backup_url: '',
+          enable_backup_stream: false,
+        },
+      ],
     ] as const;
 
     for (const [serviceId, settings] of cases) {
@@ -143,5 +184,45 @@ describe('publication settings validation', () => {
         }).success,
       ).toBe(false);
     }
+  });
+
+  it('requires credentials that are used to build platform output addresses', () => {
+    expect(
+      validatePublicationSettings('instagram', { key: 'instagram-key' })
+        .success,
+    ).toBe(true);
+    expect(validatePublicationSettings('instagram', { key: ' ' }).success).toBe(
+      false,
+    );
+    expect(
+      validatePublicationSettings('livespotting', {
+        vpu_id: 'vpu',
+        livesource_id: 'source',
+        rtmp_token: 'secret',
+      }).success,
+    ).toBe(true);
+    expect(
+      validatePublicationSettings('livespotting', {
+        vpu_id: 'vpu',
+        livesource_id: '',
+        rtmp_token: 'secret',
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('facebook', {
+        rtmp_primary: true,
+        rtmp_backup: false,
+        stream_key_primary: '',
+        stream_key_backup: '',
+      }).success,
+    ).toBe(false);
+    expect(
+      validatePublicationSettings('youtube', {
+        stream_key: 'secret',
+        primary: true,
+        backup: false,
+        mode: 'rtmps',
+      }).success,
+    ).toBe(true);
   });
 });

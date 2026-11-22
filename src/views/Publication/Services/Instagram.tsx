@@ -55,6 +55,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -93,6 +94,8 @@ function Service({
           placeholder="IG-10101942686003993-0-AbyaAF64MLbaxSBJ"
           value={settings.key}
           onChange={handleChange('key')}
+          error={Boolean(validationErrors.key)}
+          helperText={validationErrors.key}
         />
       </Grid>
       <Grid

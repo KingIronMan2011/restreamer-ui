@@ -75,6 +75,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -121,7 +122,7 @@ function Service({
           ':' +
           settings.password +
           '@' +
-          settings.server +
+          settings.backup_server +
           '/' +
           settings.stream_key,
         options: options,
@@ -165,6 +166,8 @@ function Service({
           value={settings.server}
           onChange={handleChange('server')}
           required
+          error={Boolean(validationErrors.server)}
+          helperText={validationErrors.server}
         />
       </Grid>
       <Grid
@@ -255,6 +258,8 @@ function Service({
             label={<Trans>Backup server</Trans>}
             value={settings.backup_server}
             onChange={handleChange('backup_server')}
+            error={Boolean(validationErrors.backup_server)}
+            helperText={validationErrors.backup_server}
           />
         </Grid>
       )}

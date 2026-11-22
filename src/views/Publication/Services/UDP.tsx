@@ -91,6 +91,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -161,6 +162,8 @@ function Service({
           label={<Trans>Address</Trans>}
           value={settings.address}
           onChange={handleChange('address')}
+          error={Boolean(validationErrors.address)}
+          helperText={validationErrors.address}
         />
       </Grid>
       <Grid size={12}>

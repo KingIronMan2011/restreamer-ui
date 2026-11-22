@@ -71,6 +71,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -116,6 +117,8 @@ function Service({
           label={<Trans>VPU ID</Trans>}
           value={settings.vpu_id}
           onChange={handleChange('vpu_id')}
+          error={Boolean(validationErrors.vpu_id)}
+          helperText={validationErrors.vpu_id}
         />
       </Grid>
       <Grid
@@ -130,6 +133,8 @@ function Service({
           label={<Trans>Livesource ID</Trans>}
           value={settings.livesource_id}
           onChange={handleChange('livesource_id')}
+          error={Boolean(validationErrors.livesource_id)}
+          helperText={validationErrors.livesource_id}
         />
       </Grid>
       <Grid
@@ -144,6 +149,8 @@ function Service({
           label={<Trans>Security token</Trans>}
           value={settings.rtmp_token}
           onChange={handleChange('rtmp_token')}
+          error={Boolean(validationErrors.rtmp_token)}
+          helperText={validationErrors.rtmp_token}
         />
       </Grid>
     </Grid>

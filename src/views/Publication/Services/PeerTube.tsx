@@ -55,6 +55,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -97,6 +98,8 @@ function Service({
           placeholder="joinpeertube.org"
           value={settings.domain}
           onChange={handleChange('domain')}
+          error={Boolean(validationErrors.domain)}
+          helperText={validationErrors.domain}
         />
       </Grid>
       <Grid
@@ -111,6 +114,8 @@ function Service({
           label={<Trans>Stream key</Trans>}
           value={settings.key}
           onChange={handleChange('key')}
+          error={Boolean(validationErrors.key)}
+          helperText={validationErrors.key}
         />
       </Grid>
       <Grid

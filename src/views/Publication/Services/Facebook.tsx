@@ -55,6 +55,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -120,6 +121,8 @@ function Service({
             label={<Trans>Primary stream key</Trans>}
             value={settings.stream_key_primary}
             onChange={handleChange('stream_key_primary')}
+            error={Boolean(validationErrors.stream_key_primary)}
+            helperText={validationErrors.stream_key_primary}
           />
         </Grid>
       )}
@@ -148,6 +151,8 @@ function Service({
             label={<Trans>Backup stream key</Trans>}
             value={settings.stream_key_backup}
             onChange={handleChange('stream_key_backup')}
+            error={Boolean(validationErrors.stream_key_backup)}
+            helperText={validationErrors.stream_key_backup}
           />
         </Grid>
       )}

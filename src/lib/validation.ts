@@ -6,8 +6,6 @@ const validAddress = (value: string, protocols?: string[]) => {
     return (
       address.protocol.length > 1 &&
       address.hostname.length > 0 &&
-      !address.username &&
-      !address.password &&
       (!protocols || protocols.includes(address.protocol))
     );
   } catch {
@@ -128,6 +126,102 @@ const rtmpProtocols = [
   'rtmpts://',
 ] as const;
 
+const protocolAddressSettingsSchema = (
+  protocols: readonly [string, ...string[]],
+  message: string,
+) =>
+  z
+    .object({ protocol: z.enum(protocols), address: z.string() })
+    .passthrough()
+    .superRefine(({ protocol, address }, context) => {
+      if (!address.trim() || !validAddress(`${protocol}${address.trim()}`)) {
+        context.addIssue({
+          code: 'custom',
+          path: ['address'],
+          message,
+        });
+      }
+    });
+
+const requiredSettingsSchema = (...fields: string[]) =>
+  z
+    .object({})
+    .passthrough()
+    .superRefine((settings, context) => {
+      const values = settings as Record<string, unknown>;
+      for (const field of fields) {
+        const value = values[field];
+        if (typeof value !== 'string' || !value.trim()) {
+          context.addIssue({
+            code: 'custom',
+            path: [field],
+            message: 'This field is required.',
+          });
+        }
+      }
+    });
+
+const facebookSettingsSchema = z
+  .object({
+    rtmp_primary: z.boolean(),
+    rtmp_backup: z.boolean(),
+    stream_key_primary: z.string(),
+    stream_key_backup: z.string(),
+  })
+  .passthrough()
+  .superRefine(
+    (
+      { rtmp_primary, rtmp_backup, stream_key_primary, stream_key_backup },
+      context,
+    ) => {
+      if (!rtmp_primary && !rtmp_backup) {
+        context.addIssue({
+          code: 'custom',
+          path: ['rtmp_primary'],
+          message: 'Enable a primary or backup stream.',
+        });
+      }
+      if (rtmp_primary && !stream_key_primary.trim()) {
+        context.addIssue({
+          code: 'custom',
+          path: ['stream_key_primary'],
+          message: 'Enter the primary stream key.',
+        });
+      }
+      if (rtmp_backup && !stream_key_backup.trim()) {
+        context.addIssue({
+          code: 'custom',
+          path: ['stream_key_backup'],
+          message: 'Enter the backup stream key.',
+        });
+      }
+    },
+  );
+
+const youtubeSettingsSchema = z
+  .object({
+    stream_key: z.string(),
+    primary: z.boolean(),
+    backup: z.boolean(),
+  })
+  .passthrough()
+  .superRefine(({ stream_key, primary, backup }, context) => {
+    if (!primary && !backup) {
+      context.addIssue({
+        code: 'custom',
+        path: ['primary'],
+        message: 'Enable a primary or backup stream.',
+      });
+    }
+    if ((primary || backup) && !stream_key.trim()) {
+      context.addIssue({
+        code: 'custom',
+        path: ['stream_key'],
+        message: 'Enter a stream key.',
+      });
+    }
+  });
+
 const rtmpEndpointSettingsSchema = z
   .object({
     protocol: z.enum(rtmpProtocols),
@@ -222,6 +316,81 @@ const concatenatedRtmpSettingsSchema = z
     }
   });
 
+const dacastSettingsSchema = z
+  .object({
+    protocol: z.enum(['rtmp://', 'rtmps://']),
+    server: z.string(),
+    stream_key: z.string(),
+    enable_backup_server: z.boolean(),
+    backup_server: z.string(),
+  })
+  .passthrough()
+  .superRefine(
+    (
+      { protocol, server, stream_key, enable_backup_server, backup_server },
+      context,
+    ) => {
+      if (!server.trim() || !validAddress(`${protocol}${server.trim()}`)) {
+        context.addIssue({
+          code: 'custom',
+          path: ['server'],
+          message: 'Enter a valid RTMP server address.',
+        });
+      }
+      if (!stream_key.trim()) {
+        context.addIssue({
+          code: 'custom',
+          path: ['stream_key'],
+          message: 'Enter a stream key.',
+        });
+      }
+      if (
+        enable_backup_server &&
+        (!backup_server.trim() ||
+          !validAddress(`${protocol}${backup_server.trim()}`))
+      ) {
+        context.addIssue({
+          code: 'custom',
+          path: ['backup_server'],
+          message: 'Enter a valid backup RTMP server address.',
+        });
+      }
+    },
+  );
+
+const akamaiSettingsSchema = z
+  .object({
+    protocol: z.literal('rtmp://'),
+    stream_url: z.string(),
+    backup_url: z.string(),
+    enable_backup_stream: z.boolean(),
+  })
+  .passthrough()
+  .superRefine(
+    ({ protocol, stream_url, backup_url, enable_backup_stream }, context) => {
+      if (
+        !stream_url.trim() ||
+        !validAddress(`${protocol}${stream_url.trim()}`)
+      ) {
+        context.addIssue({
+          code: 'custom',
+          path: ['stream_url'],
+          message: 'Enter a valid RTMP stream URL.',
+        });
+      }
+      if (
+        enable_backup_stream &&
+        (!backup_url.trim() || !validAddress(`${protocol}${backup_url.trim()}`))
+      ) {
+        context.addIssue({
+          code: 'custom',
+          path: ['backup_url'],
+          message: 'Enter a valid backup RTMP URL.',
+        });
+      }
+    },
+  );
+
 export const publicationSettingsSchemas = {
   rtmp: rtmpPublicationSettingsSchema,
   srt: srtPublicationSettingsSchema,
@@ -233,6 +402,60 @@ export const publicationSettingsSchemas = {
   tiktok: directRtmpUrlSettingsSchema,
   rumble: directRtmpUrlSettingsSchema,
   telegram: concatenatedRtmpSettingsSchema,
+  hls: protocolAddressSettingsSchema(
+    ['http://', 'https://'],
+    'Enter a valid HTTP(S) publication address.',
+  ),
+  dash: protocolAddressSettingsSchema(
+    ['http://', 'https://'],
+    'Enter a valid HTTP(S) publication address.',
+  ),
+  icecast: protocolAddressSettingsSchema(
+    ['icecast://'],
+    'Enter a valid Icecast publication address.',
+  ),
+  rtsp: protocolAddressSettingsSchema(
+    ['rtsp://'],
+    'Enter a valid RTSP publication address.',
+  ),
+  udp: protocolAddressSettingsSchema(
+    ['udp://'],
+    'Enter a valid UDP publication address.',
+  ),
+  mpegts: protocolAddressSettingsSchema(
+    ['udp://'],
+    'Enter a valid MPEG-TS publication address.',
+  ),
+  dacast: dacastSettingsSchema,
+  red5: protocolAddressSettingsSchema(
+    ['rtsp://', 'rtmp://'],
+    'Enter a valid RTMP or RTSP server address.',
+  ),
+  wowza: protocolAddressSettingsSchema(
+    ['rtsp://', 'rtmp://'],
+    'Enter a valid RTMP or RTSP server address.',
+  ),
+  akamai: akamaiSettingsSchema,
+  brightcove: requiredSettingsSchema('address', 'stream_name'),
+  linkedin: protocolAddressSettingsSchema(
+    ['rtmp://', 'rtmps://'],
+    'Enter a valid RTMP(S) publication address.',
+  ),
+  dlive: requiredSettingsSchema('key'),
+  instagram: requiredSettingsSchema('key'),
+  vimeo: requiredSettingsSchema('key'),
+  youtube: youtubeSettingsSchema,
+  facebook: facebookSettingsSchema,
+  twitch: requiredSettingsSchema('key'),
+  twitter: requiredSettingsSchema('stream_key'),
+  restream: requiredSettingsSchema('stream_key'),
+  trovo: requiredSettingsSchema('key'),
+  medianetwork: requiredSettingsSchema('key'),
+  nimotv: requiredSettingsSchema('stream_key'),
+  picartotv: requiredSettingsSchema('stream_key'),
+  livepush: requiredSettingsSchema('stream_key'),
+  livespotting: requiredSettingsSchema('vpu_id', 'livesource_id', 'rtmp_token'),
+  peertube: requiredSettingsSchema('domain', 'key'),
 } as const;
 
 export function validatePublicationSettings(

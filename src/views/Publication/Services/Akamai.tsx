@@ -81,6 +81,7 @@ function Service({
   skills = {},
   metadata = {},
   streams = [],
+  validationErrors = {},
   onChange = function (output: any, settings: any) {},
 }: any) {
   settings = init(settings);
@@ -190,6 +191,8 @@ function Service({
           placeholder="p.ab12345.i.akamaientrypoint.net/EntryPoint"
           value={settings.stream_url}
           onChange={handleChange('stream_url')}
+          error={Boolean(validationErrors.stream_url)}
+          helperText={validationErrors.stream_url}
         />
       </Grid>
       <Grid
@@ -249,6 +252,8 @@ function Service({
             placeholder="b.ab12345.i.akamaientrypoint.net/EntryPoint"
             value={settings.backup_url}
             onChange={handleChange('backup_url')}
+            error={Boolean(validationErrors.backup_url)}
+            helperText={validationErrors.backup_url}
           />
         </Grid>
       )}

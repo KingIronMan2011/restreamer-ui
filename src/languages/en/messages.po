@@ -98,20 +98,20 @@ msgstr "Additional channels to display on the playersite."
 #: src/views/Edit/Sources/Network.tsx:964
 #: src/views/Edit/Wizard/Sources/Network.tsx:72
 #: src/views/Publication/Services/Azure.tsx:123
-#: src/views/Publication/Services/Brightcove.tsx:122
+#: src/views/Publication/Services/Brightcove.tsx:123
 #: src/views/Publication/Services/Core.tsx:268
-#: src/views/Publication/Services/DASH.tsx:223
-#: src/views/Publication/Services/HLS.tsx:218
-#: src/views/Publication/Services/Icecast.tsx:207
+#: src/views/Publication/Services/DASH.tsx:224
+#: src/views/Publication/Services/HLS.tsx:219
+#: src/views/Publication/Services/Icecast.tsx:208
 #: src/views/Publication/Services/Image2.tsx:157
-#: src/views/Publication/Services/Linkedin.tsx:122
-#: src/views/Publication/Services/MPEGTS.tsx:213
-#: src/views/Publication/Services/Red5.tsx:151
+#: src/views/Publication/Services/Linkedin.tsx:123
+#: src/views/Publication/Services/MPEGTS.tsx:214
+#: src/views/Publication/Services/Red5.tsx:152
 #: src/views/Publication/Services/RTMP.tsx:192
-#: src/views/Publication/Services/RTSP.tsx:176
+#: src/views/Publication/Services/RTSP.tsx:177
 #: src/views/Publication/Services/SRT.tsx:195
-#: src/views/Publication/Services/UDP.tsx:161
-#: src/views/Publication/Services/WOWZA.tsx:167
+#: src/views/Publication/Services/UDP.tsx:162
+#: src/views/Publication/Services/WOWZA.tsx:168
 #: src/views/Settings.tsx:1609
 msgid "Address"
 msgstr "Address"
@@ -144,15 +144,15 @@ msgid "Advanced monitoring"
 msgstr "Advanced monitoring"
 
 #: src/views/Edit/Sources/Network.tsx:604
-#: src/views/Publication/Services/DASH.tsx:254
-#: src/views/Publication/Services/HLS.tsx:249
-#: src/views/Publication/Services/Icecast.tsx:221
+#: src/views/Publication/Services/DASH.tsx:257
+#: src/views/Publication/Services/HLS.tsx:252
+#: src/views/Publication/Services/Icecast.tsx:224
 #: src/views/Publication/Services/Image2.tsx:170
-#: src/views/Publication/Services/MPEGTS.tsx:226
+#: src/views/Publication/Services/MPEGTS.tsx:229
 #: src/views/Publication/Services/RTMP.tsx:216
-#: src/views/Publication/Services/RTSP.tsx:207
+#: src/views/Publication/Services/RTSP.tsx:210
 #: src/views/Publication/Services/SRT.tsx:218
-#: src/views/Publication/Services/UDP.tsx:173
+#: src/views/Publication/Services/UDP.tsx:176
 msgid "Advanced settings"
 msgstr "Advanced settings"
 
@@ -210,8 +210,8 @@ msgid "App"
 msgstr "App"
 
 #: src/components/Footer.tsx:258
-#: src/views/Publication/Services/Red5.tsx:167
-#: src/views/Publication/Services/WOWZA.tsx:192
+#: src/views/Publication/Services/Red5.tsx:170
+#: src/views/Publication/Services/WOWZA.tsx:195
 msgid "Application"
 msgstr "Application"
 
@@ -311,19 +311,19 @@ msgstr "Background colors"
 msgid "Background image"
 msgstr "Background image"
 
-#: src/views/Publication/Services/DaCast.tsx:255
+#: src/views/Publication/Services/DaCast.tsx:258
 msgid "Backup server"
 msgstr "Backup server"
 
-#: src/views/Publication/Services/Youtube.tsx:247
+#: src/views/Publication/Services/Youtube.tsx:250
 msgid "Backup stream"
 msgstr "Backup stream"
 
-#: src/views/Publication/Services/Facebook.tsx:148
+#: src/views/Publication/Services/Facebook.tsx:151
 msgid "Backup stream key"
 msgstr "Backup stream key"
 
-#: src/views/Publication/Services/Akamai.tsx:248
+#: src/views/Publication/Services/Akamai.tsx:251
 msgid "Backup URL"
 msgstr "Backup URL"
 
@@ -476,8 +476,8 @@ msgstr "Choose tenant ..."
 msgid "Chromecast"
 msgstr "Chromecast"
 
-#: src/views/Publication/Services/DASH.tsx:409
-#: src/views/Publication/Services/HLS.tsx:322
+#: src/views/Publication/Services/DASH.tsx:412
+#: src/views/Publication/Services/HLS.tsx:325
 msgid "Chunk"
 msgstr "Chunk"
 
@@ -774,8 +774,8 @@ msgstr "Delete"
 msgid "Deleting a publication service cannot be reversed. The publication stops immediately."
 msgstr "Deleting a publication service cannot be reversed. The publication stops immediately."
 
-#: src/views/Publication/Services/Twitter.tsx:161
-#: src/views/Publication/Services/Youtube.tsx:208
+#: src/views/Publication/Services/Twitter.tsx:162
+#: src/views/Publication/Services/Youtube.tsx:209
 msgid "Delivering mode"
 msgstr "Delivering mode"
 
@@ -848,15 +848,15 @@ msgstr "Do you want to disconnect \"{0}\"?"
 msgid "Docs"
 msgstr "Docs"
 
-#: src/views/Publication/Services/DASH.tsx:675
-#: src/views/Publication/Services/HLS.tsx:613
-#: src/views/Publication/Services/Icecast.tsx:299
+#: src/views/Publication/Services/DASH.tsx:678
+#: src/views/Publication/Services/HLS.tsx:616
+#: src/views/Publication/Services/Icecast.tsx:302
 #: src/views/Publication/Services/Image2.tsx:226
-#: src/views/Publication/Services/MPEGTS.tsx:507
+#: src/views/Publication/Services/MPEGTS.tsx:510
 #: src/views/Publication/Services/RTMP.tsx:353
-#: src/views/Publication/Services/RTSP.tsx:305
+#: src/views/Publication/Services/RTSP.tsx:308
 #: src/views/Publication/Services/SRT.tsx:602
-#: src/views/Publication/Services/UDP.tsx:329
+#: src/views/Publication/Services/UDP.tsx:332
 msgid "Documentation"
 msgstr "Documentation"
 
@@ -914,7 +914,7 @@ msgid "Enable a periodic beep every second with this value times the carrier fre
 msgstr "Enable a periodic beep every second with this value times the carrier frequency"
 
 #: src/views/Publication/Services/Dummy.tsx:313
-#: src/views/Publication/Services/Facebook.tsx:173
+#: src/views/Publication/Services/Facebook.tsx:178
 msgid "Enable backup stream"
 msgstr "Enable backup stream"
 
@@ -932,7 +932,7 @@ msgid "Enable now"
 msgstr "Enable now"
 
 #: src/views/Publication/Services/Dummy.tsx:308
-#: src/views/Publication/Services/Facebook.tsx:168
+#: src/views/Publication/Services/Facebook.tsx:173
 msgid "Enable primary stream"
 msgstr "Enable primary stream"
 
@@ -941,7 +941,7 @@ msgstr "Enable primary stream"
 msgid "Enable RTMP server ..."
 msgstr "Enable RTMP server ..."
 
-#: src/views/Publication/Services/PeerTube.tsx:133
+#: src/views/Publication/Services/PeerTube.tsx:138
 msgid "Enable RTMPS transfer"
 msgstr "Enable RTMPS transfer"
 
@@ -972,7 +972,7 @@ msgstr "Encoder"
 msgid "Encoding"
 msgstr "Encoding"
 
-#: src/views/Publication/Services/HLS.tsx:558
+#: src/views/Publication/Services/HLS.tsx:561
 #: src/views/Publication/Services/RTMP.tsx:315
 #: src/views/Publication/Services/SRT.tsx:525
 msgid "Encryption"
@@ -1221,35 +1221,35 @@ msgstr "Frequency (Hz)"
 #: src/views/Playersite.tsx:350
 #: src/views/Publication/Add.tsx:526
 #: src/views/Publication/Edit.tsx:519
-#: src/views/Publication/Services/DASH.tsx:261
-#: src/views/Publication/Services/HLS.tsx:256
-#: src/views/Publication/Services/Icecast.tsx:228
+#: src/views/Publication/Services/DASH.tsx:264
+#: src/views/Publication/Services/HLS.tsx:259
+#: src/views/Publication/Services/Icecast.tsx:231
 #: src/views/Publication/Services/Image2.tsx:177
 #: src/views/Publication/Services/RTMP.tsx:223
-#: src/views/Publication/Services/RTSP.tsx:214
+#: src/views/Publication/Services/RTSP.tsx:217
 #: src/views/Publication/Services/SRT.tsx:225
 #: src/views/Settings.tsx:1336
 #: src/views/Settings.tsx:1410
 msgid "General"
 msgstr "General"
 
-#: src/views/Publication/Services/DLive.tsx:99
+#: src/views/Publication/Services/DLive.tsx:102
 #: src/views/Publication/Services/EarthCam.tsx:118
-#: src/views/Publication/Services/Facebook.tsx:134
-#: src/views/Publication/Services/Facebook.tsx:162
-#: src/views/Publication/Services/Instagram.tsx:105
+#: src/views/Publication/Services/Facebook.tsx:137
+#: src/views/Publication/Services/Facebook.tsx:167
+#: src/views/Publication/Services/Instagram.tsx:108
 #: src/views/Publication/Services/Kick.tsx:133
-#: src/views/Publication/Services/MediaNetwork.tsx:101
-#: src/views/Publication/Services/NimoTv.tsx:133
-#: src/views/Publication/Services/PeerTube.tsx:128
-#: src/views/Publication/Services/Restream.tsx:157
+#: src/views/Publication/Services/MediaNetwork.tsx:104
+#: src/views/Publication/Services/NimoTv.tsx:136
+#: src/views/Publication/Services/PeerTube.tsx:133
+#: src/views/Publication/Services/Restream.tsx:160
 #: src/views/Publication/Services/Rumble.tsx:133
 #: src/views/Publication/Services/TikTok.tsx:133
-#: src/views/Publication/Services/Trovo.tsx:99
-#: src/views/Publication/Services/Twitch.tsx:237
-#: src/views/Publication/Services/Twitter.tsx:226
+#: src/views/Publication/Services/Trovo.tsx:102
+#: src/views/Publication/Services/Twitch.tsx:240
+#: src/views/Publication/Services/Twitter.tsx:229
 #: src/views/Publication/Services/Wettercom.tsx:144
-#: src/views/Publication/Services/Youtube.tsx:237
+#: src/views/Publication/Services/Youtube.tsx:240
 msgid "GET"
 msgstr "GET"
 
@@ -1419,7 +1419,7 @@ msgstr "Inject 4"
 msgid "Input stream"
 msgstr "Input stream"
 
-#: src/views/Publication/Services/PeerTube.tsx:96
+#: src/views/Publication/Services/PeerTube.tsx:97
 msgid "Instance domain"
 msgstr "Instance domain"
 
@@ -1493,7 +1493,7 @@ msgstr "Limits"
 msgid "Linecolor"
 msgstr "Linecolor"
 
-#: src/views/Publication/Services/NimoTv.tsx:104
+#: src/views/Publication/Services/NimoTv.tsx:105
 msgid "Lines"
 msgstr "Lines"
 
@@ -1562,7 +1562,7 @@ msgstr "Live-Streaming to Twitch Live RTMP Service."
 msgid "Live-Streaming to Vimeo Live RTMP Service"
 msgstr "Live-Streaming to Vimeo Live RTMP Service"
 
-#: src/views/Publication/Services/Livespotting.tsx:130
+#: src/views/Publication/Services/Livespotting.tsx:133
 msgid "Livesource ID"
 msgstr "Livesource ID"
 
@@ -1579,7 +1579,7 @@ msgstr "Logging"
 #: src/views/Login.tsx:328
 #: src/views/Login.tsx:457
 #: src/views/Login.tsx:472
-#: src/views/Publication/Services/Akamai.tsx:142
+#: src/views/Publication/Services/Akamai.tsx:143
 msgid "Login"
 msgstr "Login"
 
@@ -1974,13 +1974,13 @@ msgstr "Passthrough (copy) should only be disabled if necessary. Each encoding r
 #: src/views/Edit/Sources/Network.tsx:1026
 #: src/views/Edit/Wizard/Sources/Network.tsx:119
 #: src/views/Login.tsx:312
-#: src/views/Publication/Services/Akamai.tsx:157
-#: src/views/Publication/Services/DaCast.tsx:196
-#: src/views/Publication/Services/DASH.tsx:241
-#: src/views/Publication/Services/HLS.tsx:236
-#: src/views/Publication/Services/Red5.tsx:213
-#: src/views/Publication/Services/RTSP.tsx:194
-#: src/views/Publication/Services/WOWZA.tsx:237
+#: src/views/Publication/Services/Akamai.tsx:158
+#: src/views/Publication/Services/DaCast.tsx:199
+#: src/views/Publication/Services/DASH.tsx:244
+#: src/views/Publication/Services/HLS.tsx:239
+#: src/views/Publication/Services/Red5.tsx:216
+#: src/views/Publication/Services/RTSP.tsx:197
+#: src/views/Publication/Services/WOWZA.tsx:240
 #: src/views/Settings.tsx:1844
 #: src/views/Settings.tsx:2062
 msgid "Password"
@@ -2051,8 +2051,8 @@ msgstr "Player URL"
 msgid "Playersite"
 msgstr "Playersite"
 
-#: src/views/Publication/Services/DASH.tsx:463
-#: src/views/Publication/Services/HLS.tsx:371
+#: src/views/Publication/Services/DASH.tsx:466
+#: src/views/Publication/Services/HLS.tsx:374
 msgid "Playlist"
 msgstr "Playlist"
 
@@ -2157,11 +2157,11 @@ msgstr "Poster image URL"
 msgid "Preset"
 msgstr "Preset"
 
-#: src/views/Publication/Services/Youtube.tsx:242
+#: src/views/Publication/Services/Youtube.tsx:245
 msgid "Primary stream"
 msgstr "Primary stream"
 
-#: src/views/Publication/Services/Facebook.tsx:120
+#: src/views/Publication/Services/Facebook.tsx:121
 msgid "Primary stream key"
 msgstr "Primary stream key"
 
@@ -2238,28 +2238,28 @@ msgid "Protect: Video channel"
 msgstr "Protect: Video channel"
 
 #: src/views/Edit/Sources/Network.tsx:1120
-#: src/views/Publication/Services/Akamai.tsx:172
-#: src/views/Publication/Services/Akamai.tsx:229
+#: src/views/Publication/Services/Akamai.tsx:173
+#: src/views/Publication/Services/Akamai.tsx:232
 #: src/views/Publication/Services/Azure.tsx:106
-#: src/views/Publication/Services/Brightcove.tsx:106
+#: src/views/Publication/Services/Brightcove.tsx:107
 #: src/views/Publication/Services/CDN77.tsx:109
 #: src/views/Publication/Services/Core.tsx:263
-#: src/views/Publication/Services/DaCast.tsx:146
-#: src/views/Publication/Services/DaCast.tsx:236
-#: src/views/Publication/Services/DASH.tsx:206
-#: src/views/Publication/Services/HLS.tsx:201
-#: src/views/Publication/Services/Icecast.tsx:192
+#: src/views/Publication/Services/DaCast.tsx:147
+#: src/views/Publication/Services/DaCast.tsx:239
+#: src/views/Publication/Services/DASH.tsx:207
+#: src/views/Publication/Services/HLS.tsx:202
+#: src/views/Publication/Services/Icecast.tsx:193
 #: src/views/Publication/Services/Image2.tsx:140
-#: src/views/Publication/Services/Linkedin.tsx:105
-#: src/views/Publication/Services/MPEGTS.tsx:198
+#: src/views/Publication/Services/Linkedin.tsx:106
+#: src/views/Publication/Services/MPEGTS.tsx:199
 #: src/views/Publication/Services/Owncast.tsx:108
-#: src/views/Publication/Services/Red5.tsx:133
+#: src/views/Publication/Services/Red5.tsx:134
 #: src/views/Publication/Services/RTMP.tsx:170
-#: src/views/Publication/Services/RTSP.tsx:161
+#: src/views/Publication/Services/RTSP.tsx:162
 #: src/views/Publication/Services/SRT.tsx:180
 #: src/views/Publication/Services/Telegram.tsx:94
-#: src/views/Publication/Services/UDP.tsx:145
-#: src/views/Publication/Services/WOWZA.tsx:149
+#: src/views/Publication/Services/UDP.tsx:146
+#: src/views/Publication/Services/WOWZA.tsx:150
 msgid "Protocol"
 msgstr "Protocol"
 
@@ -2378,12 +2378,12 @@ msgstr "Reconnecting to Restreamer Core failed."
 msgid "Refresh"
 msgstr "Refresh"
 
-#: src/views/Publication/Services/Livepush.tsx:100
-#: src/views/Publication/Services/PicartoTv.tsx:104
-#: src/views/Publication/Services/Restream.tsx:102
-#: src/views/Publication/Services/Twitch.tsx:104
-#: src/views/Publication/Services/Twitter.tsx:174
-#: src/views/Publication/Services/Twitter.tsx:194
+#: src/views/Publication/Services/Livepush.tsx:101
+#: src/views/Publication/Services/PicartoTv.tsx:105
+#: src/views/Publication/Services/Restream.tsx:103
+#: src/views/Publication/Services/Twitch.tsx:105
+#: src/views/Publication/Services/Twitter.tsx:175
+#: src/views/Publication/Services/Twitter.tsx:195
 msgid "Region"
 msgstr "Region"
 
@@ -2586,7 +2586,7 @@ msgstr "Seconds until the snapshot/thumbnail of the video source is updated."
 msgid "Security"
 msgstr "Security"
 
-#: src/views/Publication/Services/Livespotting.tsx:144
+#: src/views/Publication/Services/Livespotting.tsx:149
 msgid "Security token"
 msgstr "Security token"
 
@@ -2602,8 +2602,8 @@ msgstr "Segment length (seconds)"
 msgid "Segment will be cut on the following keyframe after this time has passed. 2 is recommended."
 msgstr "Segment will be cut on the following keyframe after this time has passed. 2 is recommended."
 
-#: src/views/Publication/Services/DASH.tsx:578
-#: src/views/Publication/Services/HLS.tsx:461
+#: src/views/Publication/Services/DASH.tsx:581
+#: src/views/Publication/Services/HLS.tsx:464
 msgid "Segmentation"
 msgstr "Segmentation"
 
@@ -2684,7 +2684,7 @@ msgstr "Send stream to this address:"
 msgid "Send video to Framebuffer"
 msgstr "Send video to Framebuffer"
 
-#: src/views/Publication/Services/DaCast.tsx:164
+#: src/views/Publication/Services/DaCast.tsx:165
 msgid "Server"
 msgstr "Server"
 
@@ -2887,29 +2887,29 @@ msgid "Stream ID"
 msgstr "Stream ID"
 
 #: src/views/Publication/Services/CDN77.tsx:144
-#: src/views/Publication/Services/DaCast.tsx:212
-#: src/views/Publication/Services/Dailymotion.tsx:126
-#: src/views/Publication/Services/DLive.tsx:87
+#: src/views/Publication/Services/DaCast.tsx:215
+#: src/views/Publication/Services/Dailymotion.tsx:117
+#: src/views/Publication/Services/DLive.tsx:88
 #: src/views/Publication/Services/Dummy.tsx:301
 #: src/views/Publication/Services/EarthCam.tsx:106
-#: src/views/Publication/Services/Instagram.tsx:92
+#: src/views/Publication/Services/Instagram.tsx:93
 #: src/views/Publication/Services/Kick.tsx:119
-#: src/views/Publication/Services/Livepush.tsx:130
-#: src/views/Publication/Services/MediaNetwork.tsx:89
-#: src/views/Publication/Services/NimoTv.tsx:121
+#: src/views/Publication/Services/Livepush.tsx:131
+#: src/views/Publication/Services/MediaNetwork.tsx:90
+#: src/views/Publication/Services/NimoTv.tsx:122
 #: src/views/Publication/Services/Owncast.tsx:137
-#: src/views/Publication/Services/PeerTube.tsx:111
-#: src/views/Publication/Services/PicartoTv.tsx:125
-#: src/views/Publication/Services/Restream.tsx:145
+#: src/views/Publication/Services/PeerTube.tsx:114
+#: src/views/Publication/Services/PicartoTv.tsx:126
+#: src/views/Publication/Services/Restream.tsx:146
 #: src/views/Publication/Services/Rumble.tsx:119
 #: src/views/Publication/Services/Telegram.tsx:123
 #: src/views/Publication/Services/TikTok.tsx:119
-#: src/views/Publication/Services/Trovo.tsx:87
-#: src/views/Publication/Services/Twitch.tsx:225
-#: src/views/Publication/Services/Twitter.tsx:214
-#: src/views/Publication/Services/Vimeo.tsx:80
+#: src/views/Publication/Services/Trovo.tsx:88
+#: src/views/Publication/Services/Twitch.tsx:226
+#: src/views/Publication/Services/Twitter.tsx:215
+#: src/views/Publication/Services/Vimeo.tsx:81
 #: src/views/Publication/Services/Wettercom.tsx:132
-#: src/views/Publication/Services/Youtube.tsx:225
+#: src/views/Publication/Services/Youtube.tsx:226
 msgid "Stream key"
 msgstr "Stream key"
 
@@ -2917,13 +2917,13 @@ msgstr "Stream key"
 msgid "Stream Key"
 msgstr "Stream Key"
 
-#: src/views/Publication/Services/Brightcove.tsx:131
-#: src/views/Publication/Services/Red5.tsx:182
-#: src/views/Publication/Services/WOWZA.tsx:207
+#: src/views/Publication/Services/Brightcove.tsx:134
+#: src/views/Publication/Services/Red5.tsx:185
+#: src/views/Publication/Services/WOWZA.tsx:210
 msgid "Stream name"
 msgstr "Stream name"
 
-#: src/views/Publication/Services/Akamai.tsx:205
+#: src/views/Publication/Services/Akamai.tsx:208
 msgid "Stream names"
 msgstr "Stream names"
 
@@ -2931,9 +2931,9 @@ msgstr "Stream names"
 msgid "Stream source for publication service (experimental)."
 msgstr "Stream source for publication service (experimental)."
 
-#: src/views/Publication/Services/Akamai.tsx:189
+#: src/views/Publication/Services/Akamai.tsx:190
 #: src/views/Publication/Services/CDN77.tsx:126
-#: src/views/Publication/Services/Dailymotion.tsx:99
+#: src/views/Publication/Services/Dailymotion.tsx:100
 msgid "Stream URL"
 msgstr "Stream URL"
 
@@ -3530,12 +3530,12 @@ msgstr "User registration"
 #: src/views/Edit/Sources/Network.tsx:1009
 #: src/views/Edit/Wizard/Sources/Network.tsx:101
 #: src/views/Login.tsx:302
-#: src/views/Publication/Services/DaCast.tsx:180
-#: src/views/Publication/Services/DASH.tsx:232
-#: src/views/Publication/Services/HLS.tsx:227
-#: src/views/Publication/Services/Red5.tsx:197
-#: src/views/Publication/Services/RTSP.tsx:185
-#: src/views/Publication/Services/WOWZA.tsx:222
+#: src/views/Publication/Services/DaCast.tsx:183
+#: src/views/Publication/Services/DASH.tsx:235
+#: src/views/Publication/Services/HLS.tsx:230
+#: src/views/Publication/Services/Red5.tsx:200
+#: src/views/Publication/Services/RTSP.tsx:188
+#: src/views/Publication/Services/WOWZA.tsx:225
 #: src/views/Settings.tsx:1826
 #: src/views/Settings.tsx:2038
 msgid "Username"
@@ -3630,7 +3630,7 @@ msgstr "Virtual source"
 msgid "Volume"
 msgstr "Volume"
 
-#: src/views/Publication/Services/Livespotting.tsx:116
+#: src/views/Publication/Services/Livespotting.tsx:117
 msgid "VPU ID"
 msgstr "VPU ID"
 
