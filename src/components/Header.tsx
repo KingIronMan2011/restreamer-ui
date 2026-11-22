@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import BugReportIcon from '@mui/icons-material/BugReport';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutlined';
 import LayersIcon from '@mui/icons-material/Layers';
 import Logout from '@mui/icons-material/Logout';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';

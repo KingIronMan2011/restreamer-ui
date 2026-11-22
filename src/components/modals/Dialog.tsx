@@ -1,5 +1,5 @@
 import CloseIcon from '@mui/icons-material/Close';
-import HelpIcon from '@mui/icons-material/HelpOutline';
+import HelpIcon from '@mui/icons-material/HelpOutlined';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Modal from '@mui/material/Modal';

@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import CloseIcon from '@mui/icons-material/Close';
-import HelpIcon from '@mui/icons-material/HelpOutline';
+import HelpIcon from '@mui/icons-material/HelpOutlined';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
