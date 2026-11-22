@@ -1,5 +1,7 @@
 allowBuilds:
   browser-tabs-lock: true
   esbuild: true
+overrides:
+  happy-dom: 21.0.4
 update:
   githubActions: true
