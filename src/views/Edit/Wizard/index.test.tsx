@@ -9,6 +9,7 @@ const restreamer = {
   SelectChannel: () => {
     return 'test';
   },
+  ListChannels: () => [{ channelid: 'test' }],
   GetChannel: () => {
     return {
       id: 'test',
@@ -345,6 +346,90 @@ test('wizard', async () => {
   expect(screen.queryByText('Network source')).toBeInTheDocument();
   expect(screen.queryByText('RTMP server')).toBeInTheDocument();
   expect(screen.queryByText('SRT server')).toBeInTheDocument();
+});
+
+test('wizard abort can be cancelled when it is the only channel', async () => {
+  const view = render(
+    <Wizard restreamer={restreamer} />,
+    {},
+    '/wizard/test',
+    '/wizard/:channelid',
+  );
+  await screen.findByText(/Select whether you pull the stream from a/);
+
+  await act(async () => {
+    fireEvent.click(view.container.querySelector('button')!);
+  });
+
+  expect(screen.getByText(/You can't abort the wizard/)).toBeInTheDocument();
+  const back = screen.getByRole('button', { name: 'Back' });
+  await act(async () => fireEvent.click(back));
+  expect(
+    screen.getByText(/Select whether you pull the stream from a/),
+  ).toBeInTheDocument();
+});
+
+test('wizard redirects invalid channels before loading skills', async () => {
+  const selectChannel = restreamer.SelectChannel;
+  const skills = restreamer.Skills;
+  let skillsCalls = 0;
+  restreamer.SelectChannel = () => '';
+  restreamer.Skills = () => {
+    skillsCalls++;
+    return {};
+  };
+
+  await act(async () => {
+    render(
+      <Wizard restreamer={restreamer} />,
+      {},
+      '/wizard/missing',
+      '/wizard/:channelid',
+    );
+  });
+
+  expect(skillsCalls).toBe(0);
+  restreamer.SelectChannel = selectChannel;
+  restreamer.Skills = skills;
+});
+
+test('wizard abort deletes the current channel when another channel exists', async () => {
+  const listChannels = restreamer.ListChannels;
+  const selectChannel = restreamer.SelectChannel;
+  const deleteChannel = restreamer.DeleteChannel;
+  const deleted: string[] = [];
+  const selected: string[] = [];
+  restreamer.ListChannels = () => [
+    { channelid: 'test' },
+    { channelid: 'other' },
+  ];
+  restreamer.SelectChannel = (id: string) => {
+    selected.push(id);
+    return id;
+  };
+  restreamer.DeleteChannel = (id: string) => {
+    deleted.push(id);
+  };
+
+  const view = render(
+    <Wizard restreamer={restreamer} />,
+    {},
+    '/wizard/test',
+    '/wizard/:channelid',
+  );
+  await screen.findByText(/Select whether you pull the stream from a/);
+  await act(async () =>
+    fireEvent.click(view.container.querySelector('button')!),
+  );
+  await act(async () =>
+    fireEvent.click(screen.getByRole('button', { name: 'Yes' })),
+  );
+
+  expect(deleted).toEqual(['test']);
+  expect(selected).toEqual(['test', 'test']);
+  restreamer.ListChannels = listChannels;
+  restreamer.SelectChannel = selectChannel;
+  restreamer.DeleteChannel = deleteChannel;
 });
 
 test('wizard: rtmp source video h264-aac', async () => {

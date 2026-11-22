@@ -2983,7 +2983,7 @@ class Restreamer {
     return true;
   }
 
-  async _uploadAssetData(remotePath: any, data: any, onprogress = null) {
+  async _uploadAssetData(remotePath: any, data: any, onprogress: any = null) {
     await this._call(this.api.DataPutFile, remotePath, data, onprogress);
 
     return true;

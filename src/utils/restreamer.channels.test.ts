@@ -1,0 +1,210 @@
+import { afterEach, describe, expect, it, vi } from 'vitest';
+
+import '../i18n';
+import Restreamer from './restreamer';
+import * as Storage from './storage';
+
+function client() {
+  vi.spyOn(Storage, 'Get').mockReturnValue('false');
+  return new Restreamer('https://core.example');
+}
+
+const channel = (channelid: string) => ({
+  id: `restreamer-ui:ingest:${channelid}`,
+  channelid,
+  name: channelid,
+  egresses: new Map(),
+  available: true,
+});
+
+afterEach(() => vi.restoreAllMocks());
+
+describe('Restreamer channel helpers', () => {
+  it('creates, selects, and reports channels with an ordered egress list', () => {
+    const restreamer = client();
+    const id = restreamer.CreateChannel('Test channel');
+    expect(id).toMatch(/^[0-9a-f-]{36}$/);
+    expect(restreamer.SelectChannel(id)).toBe(id);
+    expect(restreamer.GetCurrentChannelID()).toBe(id);
+    expect(restreamer.ListChannels()).toHaveLength(1);
+
+    restreamer.SetChannelEgress(id, 'egress-1', {
+      id: 'egress-1',
+      service: 'twitch',
+      index: '0',
+      channelid: id,
+      name: 'Output',
+    });
+    expect(restreamer.GetChannelEgress(id, 'egress-1')).toEqual({
+      id: 'egress-1',
+      service: 'twitch',
+      index: '0',
+      channelid: id,
+      name: 'Output',
+    });
+    expect(restreamer.GetChannel(id)?.egresses).toEqual(['egress-1']);
+    expect(restreamer.SetChannel(id, { name: 'Updated' })).toBe(true);
+    expect(restreamer.GetChannel(id)?.name).toBe('Updated');
+    restreamer.DeleteChannelEgress(id, 'egress-1');
+    expect(restreamer.GetChannelEgress(id, 'egress-1')).toBeNull();
+  });
+
+  it('returns safe failure values for unknown channel or egress IDs', () => {
+    const restreamer = client();
+    expect(restreamer.GetChannel('missing')).toBeNull();
+    expect(restreamer.GetChannelEgress('missing', 'egress')).toBeNull();
+    expect(restreamer.GetChannelEgress('missing', 'egress')).toBeNull();
+    expect(restreamer.SetChannel('missing', {})).toBe(false);
+    expect(restreamer.SetChannelEgress('missing', 'egress', {})).toBe(false);
+    expect(restreamer.DeleteChannelEgress('missing', 'egress')).toBe(false);
+    expect(restreamer.SelectChannel('missing')).toBe('');
+    expect(restreamer.GetCurrentChannelID()).toBe('');
+  });
+
+  it('builds channel paths and addresses for each storage type', () => {
+    const restreamer = client();
+    expect(restreamer.GetChannelManifestPath('one', undefined)).toBe(
+      'memfs/one.m3u8',
+    );
+    expect(restreamer.GetChannelManifestPath('one', 'memfs')).toBe(
+      'memfs/one.m3u8',
+    );
+    expect(restreamer.GetChannelManifestPath('one', 'diskfs')).toBe('one.m3u8');
+    expect(restreamer.GetChannelPosterPath('one', 'diskfs')).toBe(
+      'memfs/one.jpg',
+    );
+    expect(restreamer.GetChannelPlayerPath('one')).toBe('one.html');
+    expect(restreamer.GetChannelAddress('hls+memfs', 'one')).toBe(
+      'https://core.example/memfs/one.m3u8',
+    );
+    expect(restreamer.GetChannelAddress('hls+diskfs', 'one')).toBe(
+      'https://core.example/one.m3u8',
+    );
+    expect(restreamer.GetChannelAddress('snapshot+memfs', 'one')).toBe(
+      'https://core.example/memfs/one.jpg',
+    );
+    expect(restreamer.GetChannelAddress('snapshot+diskfs', 'one')).toBe(
+      'https://core.example/memfs/one.jpg',
+    );
+    expect(restreamer.GetChannelAddress('player', 'one')).toBe(
+      'https://core.example/one.html',
+    );
+    expect(restreamer.GetChannelAddress('unsupported', 'one')).toBeUndefined();
+  });
+
+  it('embeds an iframe for an existing channel and returns empty for a missing one', () => {
+    const restreamer = client();
+    expect(restreamer.GetPublicIframeCode('missing')).toBe('');
+    restreamer.channels.set('one', channel('one'));
+    vi.spyOn(restreamer, 'GetPublicHTTPAddress').mockReturnValue(
+      'https://public.example',
+    );
+    expect(restreamer.GetPublicIframeCode('one')).toContain(
+      '<iframe src="https://public.example/one.html"',
+    );
+  });
+
+  it('deletes channels, removes their outputs, and creates a replacement when needed', async () => {
+    const restreamer = client();
+    restreamer.channels.set('one', channel('one'));
+    restreamer.SelectChannel('one');
+    restreamer.StopAllEgresses = vi.fn().mockResolvedValue(undefined);
+    restreamer.DeleteIngest = vi.fn().mockResolvedValue(undefined);
+    restreamer.DeleteIngestSnapshot = vi.fn().mockResolvedValue(undefined);
+    restreamer.DeleteEgress = vi.fn().mockResolvedValue(undefined);
+
+    await expect(restreamer.DeleteChannel('missing')).resolves.toBe(false);
+    await expect(restreamer.DeleteChannel('one')).resolves.toBe(true);
+    expect(restreamer.StopAllEgresses).toHaveBeenCalledWith('one');
+    expect(restreamer.DeleteIngest).toHaveBeenCalledWith('one');
+    expect(restreamer.DeleteIngestSnapshot).toHaveBeenCalledWith('one');
+    expect(restreamer.channels.size).toBe(1);
+    expect(restreamer.GetCurrentChannelID()).toBe(
+      [...restreamer.channels.keys()][0],
+    );
+  });
+
+  it('discovers valid ingest and egress records, ignoring malformed and duplicate IDs', async () => {
+    const restreamer = client();
+    const id = '11111111-1111-1111-1111-111111111111';
+    const other = '22222222-2222-2222-2222-222222222222';
+    restreamer._listProcesses = vi.fn().mockResolvedValue([
+      {
+        id: 'restreamer-ui:egress:twitch:33333333-3333-3333-3333-333333333333',
+        reference: id,
+        metadata: { name: 'Twitch' },
+      },
+      { id: 'unsupported', reference: id, metadata: {} },
+      {
+        id: `restreamer-ui:ingest:${other}`,
+        reference: id,
+        metadata: { meta: { name: 'mismatch' } },
+      },
+      {
+        id: `restreamer-ui:ingest:${id}`,
+        reference: id,
+        metadata: { meta: { name: 'Main' } },
+      },
+      {
+        id: `restreamer-ui:ingest:${id}`,
+        reference: id,
+        metadata: { meta: { name: 'duplicate' } },
+      },
+      {
+        id: `restreamer-ui:ingest:${other}`,
+        reference: other,
+        metadata: { meta: { name: 'Other' } },
+      },
+      {
+        id: 'restreamer-ui:egress:youtube:44444444-4444-4444-4444-444444444444',
+        reference: 'orphan',
+        metadata: { name: 'Orphan' },
+      },
+    ]);
+    restreamer.about.id = 'core';
+    vi.spyOn(Storage, 'Get').mockImplementation((key) =>
+      key === 'core:channel' ? other : 'false',
+    );
+
+    await restreamer._discoverChannels();
+
+    expect([...restreamer.channels.keys()]).toEqual([id, other]);
+    expect(restreamer.GetChannel(id)?.name).toBe('Main');
+    expect(restreamer.GetChannel(id)?.egresses).toEqual([
+      'restreamer-ui:egress:twitch:33333333-3333-3333-3333-333333333333',
+    ]);
+    expect(restreamer.GetCurrentChannelID()).toBe(other);
+  });
+
+  it('creates a first channel when discovery returns no ingest and clears imported metadata', async () => {
+    const restreamer = client();
+    restreamer._listProcesses = vi.fn().mockResolvedValue([]);
+    await restreamer._discoverChannels();
+    expect(restreamer.channels.size).toBe(1);
+    expect(restreamer.GetCurrentChannelID()).toBe(
+      [...restreamer.channels.keys()][0],
+    );
+
+    const id = '55555555-5555-5555-5555-555555555555';
+    restreamer._listProcesses = vi
+      .fn()
+      .mockResolvedValue([
+        {
+          id: `restreamer-ui:ingest:${id}`,
+          reference: id,
+          metadata: { imported: true },
+        },
+      ]);
+    restreamer.UpdatePlayer = vi.fn().mockResolvedValue(true);
+    const metadata = { imported: true, meta: { name: 'Imported' } };
+    restreamer.GetIngestMetadata = vi.fn().mockResolvedValue(metadata);
+    restreamer.SetIngestMetadata = vi.fn().mockResolvedValue(true);
+
+    await restreamer._discoverChannels();
+
+    expect(restreamer.UpdatePlayer).toHaveBeenCalledWith(id);
+    expect(restreamer.GetIngestMetadata).toHaveBeenCalledWith(id);
+    expect(metadata).not.toHaveProperty('imported');
+    expect(restreamer.SetIngestMetadata).toHaveBeenCalledWith(id, metadata);
+  });
+});

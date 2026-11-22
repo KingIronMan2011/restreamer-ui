@@ -253,6 +253,33 @@ describe('Restreamer client basics', () => {
     });
   });
 
+  it('only initializes compatible cores and refreshes access before expiry', async () => {
+    const client = createRestreamer();
+    client.Compatibility = vi
+      .fn()
+      .mockReturnValue({ core: { compatible: false } });
+    client._initConfig = vi.fn();
+    client._discoverChannels = vi.fn();
+    client._initSkills = vi.fn();
+    await client._init();
+    expect(client._initConfig).not.toHaveBeenCalled();
+
+    client.Compatibility = vi
+      .fn()
+      .mockReturnValue({ core: { compatible: true } });
+    await client._init();
+    expect(client._initConfig).toHaveBeenCalledOnce();
+    expect(client._discoverChannels).toHaveBeenCalledOnce();
+    expect(client._initSkills).toHaveBeenCalledOnce();
+
+    vi.useFakeTimers();
+    client.RefreshToken = vi.fn().mockResolvedValue(true);
+    client._setTokenRefresh(61);
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(client.RefreshToken).toHaveBeenCalledOnce();
+    vi.useRealTimers();
+  });
+
   it('validates unauthenticated cores and initializes connected ones', async () => {
     const client = createRestreamer();
     client._getRefreshToken = vi.fn(() => null);
