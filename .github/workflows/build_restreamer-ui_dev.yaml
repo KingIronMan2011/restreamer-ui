@@ -25,16 +25,20 @@ jobs:
       - name: Set up pnpm
         uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
 
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
       - name: Lint with Oxlint
         run: pnpm run lint
 
       - name: Check TypeScript syntax
         run: pnpm run types
 
+      - name: Run tests
+        run: pnpm test
+
       - name: Build Vite app
-        run: |
-          pnpm install --frozen-lockfile
-          pnpm run build
+        run: pnpm run build
         env:
           PUBLIC_URL: './'
 

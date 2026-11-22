@@ -7,28 +7,31 @@ The user interface of the Restreamer for the connection to the [datarhei Core](h
 
 ## Development
 
-Please checkout the `dev` branch and base your pull request on this branch.
+Please base pull requests on the project's development branch.
 
-### For the Restreamer interface:
+### For the Restreamer interface
 
-```
-$ git clone --branch dev github.com/datarhei/restreamer-ui
-$ cd restreamer-ui
-$ pnpm install
-$ pnpm start
-$ pnpm lint
+```bash
+git clone --branch dev github.com/datarhei/restreamer-ui
+cd restreamer-ui
+pnpm install
+pnpm dev
+pnpm lint
+pnpm types
+pnpm test
+pnpm build
 ```
 
 Connect the UI with a [datarhei Core](https://github.com/datarhei/core):
-http://localhost:3000?address=http://core-ip:core-port
+<http://localhost:5173?address=http://core-ip:core-port>
 
-### To add/fix translations:
+### To add/fix translations
 
 Locales are located in `src/languages`
 
-```
-$ npm run i18n-extract:clean
-$ npm run i18n-compile
+```bash
+pnpm run i18n:extract:clean
+pnpm run i18n:compile
 ```
 
 In order to contribute translations, please visit [Restreamer on poeditor.com](https://poeditor.com/join/project/ogATl3F48K)

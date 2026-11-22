@@ -15,6 +15,7 @@ import * as Version from '../lib/version';
 import { anonymize } from './anonymizer';
 import API from './api';
 import * as M from './metadata';
+import * as ProcessAPI from './restreamer/process';
 import * as Storage from './storage';
 
 class Restreamer {
@@ -3347,30 +3348,24 @@ class Restreamer {
     reference = '',
     ids: string[] = [],
   ) {
-    const [val, err] = await this._call(
-      this.api.Processes,
+    return ProcessAPI.listProcesses(
+      this.api,
+      this._call.bind(this),
+      this._sanitizeProcess.bind(this),
+      filter,
       reference,
       ids,
-      filter,
     );
-    if (err !== null) {
-      return [];
-    }
-
-    for (let i = 0; i < val.length; i++) {
-      val[i] = this._sanitizeProcess(val[i]);
-    }
-
-    return val;
   }
 
   async _getProcess(id: any, filter: string[] = []) {
-    const [val, err] = await this._call(this.api.Process, id, filter);
-    if (err !== null) {
-      return null;
-    }
-
-    return this._sanitizeProcess(val);
+    return ProcessAPI.getProcess(
+      this.api,
+      this._call.bind(this),
+      this._sanitizeProcess.bind(this),
+      id,
+      filter,
+    );
   }
 
   _sanitizeProcess(proc: any) {
@@ -3406,165 +3401,53 @@ class Restreamer {
   }
 
   async _getProcessConfig(id: any) {
-    const [val, err] = await this._call(this.api.ProcessConfig, id);
-    if (err !== null) {
-      return null;
-    }
-
-    return val;
+    return ProcessAPI.getProcessConfig(this.api, this._call.bind(this), id);
   }
 
   async _getProcessState(id: any) {
-    const [val, err] = await this._call(this.api.ProcessState, id);
-    if (err !== null) {
-      return null;
-    }
-
-    return val;
+    return ProcessAPI.getProcessState(this.api, this._call.bind(this), id);
   }
 
   async _getProcessLog(id: any) {
-    const [val, err] = await this._call(this.api.ProcessReport, id);
-    if (err !== null) {
-      return null;
-    }
-
-    return val;
+    return ProcessAPI.getProcessLog(this.api, this._call.bind(this), id);
   }
 
   async _getProcessDebug(id: any) {
-    const [p, err] = await this._call(this.api.Process, id, [
-      'config',
-      'state',
-      'report',
-    ]);
-    if (err !== null) {
-      return null;
-    }
-
-    if (p.config) {
-      p.config.options = p.config.options.map(anonymize);
-
-      for (let i in p.config.input) {
-        p.config.input[i].address = anonymize(p.config.input[i].address);
-        p.config.input[i].options = p.config.input[i].options.map(anonymize);
-      }
-
-      for (let i in p.config.output) {
-        p.config.output[i].address = anonymize(p.config.output[i].address);
-        p.config.output[i].options = p.config.output[i].options.map(anonymize);
-      }
-    }
-
-    if (p.state) {
-      for (let i in p.state.progress.inputs) {
-        p.state.progress.inputs[i].address = anonymize(
-          p.state.progress.inputs[i].address,
-        );
-      }
-
-      for (let i in p.state.progress.outputs) {
-        p.state.progress.outputs[i].address = anonymize(
-          p.state.progress.outputs[i].address,
-        );
-      }
-
-      if (!p.state.command) {
-        p.state.command = [];
-      }
-
-      p.state.command = p.state.command.map(anonymize);
-      p.state.last_logline = anonymize(p.state.last_logline);
-    }
-
-    if (p.report) {
-      if (!p.report.prelude) {
-        p.report.prelude = [];
-      }
-
-      p.report.prelude = p.report.prelude.map(anonymize);
-      p.report.log = p.report.log.map((l: any) => [l[0], anonymize(l[1])]);
-
-      for (let i in p.report.history) {
-        p.report.history[i].prelude =
-          p.report.history[i].prelude.map(anonymize);
-        p.report.history[i].log = p.report.history[i].log.map((l: any) => [
-          l[0],
-          anonymize(l[1]),
-        ]);
-      }
-    }
-
-    return p;
+    return ProcessAPI.getProcessDebug(this.api, this._call.bind(this), id);
   }
 
   async _startProcess(id: any) {
-    const [, err] = await this._call(this.api.ProcessCommand, id, 'start');
-    if (err !== null) {
-      return false;
-    }
-
-    return true;
+    return ProcessAPI.startProcess(this.api, this._call.bind(this), id);
   }
 
   async _stopProcess(id: any) {
-    const [, err] = await this._call(this.api.ProcessCommand, id, 'stop');
-    if (err !== null) {
-      return false;
-    }
-
-    return true;
+    return ProcessAPI.stopProcess(this.api, this._call.bind(this), id);
   }
 
   async _upsertProcess(id: any, config: any) {
-    const [val, err] = await this._call(this.api.ProcessUpdate, id, config);
-    if (err !== null) {
-      if (err.code === 404) {
-        return await this._call(this.api.ProcessAdd, config);
-      }
-    }
-
-    return [val, err];
+    return ProcessAPI.upsertProcess(
+      this.api,
+      this._call.bind(this),
+      id,
+      config,
+    );
   }
 
   async _deleteProcess(id: any) {
-    const [, err] = await this._call(this.api.ProcessDelete, id);
-    if (err !== null) {
-      if (err.code === 404) {
-        return true;
-      }
-
-      return false;
-    }
-
-    return true;
+    return ProcessAPI.deleteProcess(this.api, this._call.bind(this), id);
   }
 
   async _setProcessMetadata(id: any, data: any) {
-    const [, err] = await this._call(
-      this.api.ProcessSetMetadata,
+    return ProcessAPI.setProcessMetadata(
+      this.api,
+      this._call.bind(this),
       id,
-      'restreamer-ui',
       data,
     );
-    if (err !== null) {
-      return false;
-    }
-
-    return true;
   }
 
   async _getProcessMetadata(id: any) {
-    const [val, err] = await this._call(
-      this.api.ProcessGetMetadata,
-      id,
-      'restreamer-ui',
-    );
-    if (err !== null) {
-      return null;
-    }
-
-    return val;
+    return ProcessAPI.getProcessMetadata(this.api, this._call.bind(this), id);
   }
 
   // Assets
