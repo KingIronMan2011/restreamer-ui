@@ -186,15 +186,13 @@ describe('Restreamer channel helpers', () => {
     );
 
     const id = '55555555-5555-5555-5555-555555555555';
-    restreamer._listProcesses = vi
-      .fn()
-      .mockResolvedValue([
-        {
-          id: `restreamer-ui:ingest:${id}`,
-          reference: id,
-          metadata: { imported: true },
-        },
-      ]);
+    restreamer._listProcesses = vi.fn().mockResolvedValue([
+      {
+        id: `restreamer-ui:ingest:${id}`,
+        reference: id,
+        metadata: { imported: true },
+      },
+    ]);
     restreamer.UpdatePlayer = vi.fn().mockResolvedValue(true);
     const metadata = { imported: true, meta: { name: 'Imported' } };
     restreamer.GetIngestMetadata = vi.fn().mockResolvedValue(metadata);

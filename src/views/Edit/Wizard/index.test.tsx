@@ -5,7 +5,7 @@ import { render, fireEvent, act, screen } from '../../../utils/testing';
 
 let lastUpsertIngest = null;
 
-const restreamer = {
+const restreamer: any = {
   SelectChannel: () => {
     return 'test';
   },
