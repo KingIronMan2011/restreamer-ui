@@ -109,4 +109,13 @@ describe('UploadButton', () => {
     expect(screen.getByLabelText('Upload image')).toBeDisabled();
     expect(onStart).not.toHaveBeenCalled();
   });
+
+  it('accepts default handlers for upload and an empty selection', () => {
+    render(<UploadButton label="Default upload" acceptTypes={imageTypes} />);
+    const input = screen.getByLabelText('Default upload');
+    fireEvent.change(input, {
+      target: { files: [new File(['img'], 'logo.png', { type: 'image/png' })] },
+    });
+    fireEvent.change(input, { target: { files: [] } });
+  });
 });

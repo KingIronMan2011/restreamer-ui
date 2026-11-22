@@ -1,7 +1,7 @@
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
-import { fireEvent, render, screen } from '../utils/testing';
+import { createEvent, fireEvent, render, screen } from '../utils/testing';
 import Password from './Password';
 
 describe('Password', () => {
@@ -32,5 +32,14 @@ describe('Password', () => {
       'type',
       'password',
     );
+  });
+
+  it('uses default change handling and prevents the visibility button focus event', () => {
+    render(<Password label="Default handler" value="secret" />);
+    const input = screen.getByLabelText('Default handler');
+    fireEvent.change(input, { target: { value: 'updated' } });
+    const mouseDown = createEvent.mouseDown(screen.getByRole('button'));
+    fireEvent(screen.getByRole('button'), mouseDown);
+    expect(mouseDown.defaultPrevented).toBe(true);
   });
 });

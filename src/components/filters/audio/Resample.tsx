@@ -52,7 +52,7 @@ function Layout({
   allowCustom = false,
   label = <Trans>Layout</Trans>,
   customLabel = <Trans>Custom layout</Trans>,
-  onChange = function () {},
+  onChange,
 }: any) {
   const { i18n } = useLingui();
   const options = [
@@ -98,7 +98,7 @@ function Sampling({
   allowCustom = false,
   label = <Trans>Sampling</Trans>,
   customLabel = <Trans>Custom sampling (Hz)</Trans>,
-  onChange = function () {},
+  onChange,
 }: any) {
   const { i18n } = useLingui();
   const options = [

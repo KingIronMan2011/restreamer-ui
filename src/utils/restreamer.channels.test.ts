@@ -49,7 +49,7 @@ describe('Restreamer channel helpers', () => {
     expect(restreamer.GetChannelEgress(id, 'egress-1')).toBeNull();
   });
 
-  it('returns safe failure values for unknown channel or egress IDs', () => {
+  it('returns safe failure values for unknown channel or egress IDs', async () => {
     const restreamer = client();
     expect(restreamer.GetChannel('missing')).toBeNull();
     expect(restreamer.GetChannelEgress('missing', 'egress')).toBeNull();
@@ -59,6 +59,13 @@ describe('Restreamer channel helpers', () => {
     expect(restreamer.DeleteChannelEgress('missing', 'egress')).toBe(false);
     expect(restreamer.SelectChannel('missing')).toBe('');
     expect(restreamer.GetCurrentChannelID()).toBe('');
+    await expect(restreamer.DeleteIngest('missing')).resolves.toBe(false);
+    await expect(restreamer.DeleteIngestSnapshot('missing')).resolves.toBe(
+      false,
+    );
+    await expect(
+      restreamer.SetIngestMetadata('missing', { meta: {} }),
+    ).resolves.toBe(false);
   });
 
   it('builds channel paths and addresses for each storage type', () => {
@@ -123,6 +130,43 @@ describe('Restreamer channel helpers', () => {
     expect(restreamer.channels.size).toBe(1);
     expect(restreamer.GetCurrentChannelID()).toBe(
       [...restreamer.channels.keys()][0],
+    );
+  });
+
+  it('keeps and selects remaining channels and removes only successfully deleted egresses', async () => {
+    const restreamer = client();
+    restreamer.channels.set('one', channel('one'));
+    restreamer.channels.set('two', channel('two'));
+    restreamer.SelectChannel('one');
+    restreamer.StopAllEgresses = vi.fn().mockResolvedValue(undefined);
+    restreamer.DeleteIngest = vi.fn().mockResolvedValue(undefined);
+    restreamer.DeleteIngestSnapshot = vi.fn().mockResolvedValue(undefined);
+    restreamer.DeleteEgress = vi.fn().mockResolvedValue(undefined);
+
+    await expect(restreamer.DeleteChannel('one')).resolves.toBe(true);
+    expect(restreamer.channels.size).toBe(1);
+    expect(restreamer.GetCurrentChannelID()).toBe('two');
+
+    restreamer.SetChannelEgress('two', 'output', { id: 'output' });
+    restreamer._deleteProcess = vi.fn().mockResolvedValue(false);
+    await expect(restreamer.DeleteEgress('two', 'output')).resolves.toBe(false);
+    expect(restreamer.GetChannelEgress('two', 'output')).not.toBeNull();
+    restreamer._deleteProcess = vi.fn().mockResolvedValue(true);
+    await expect(restreamer.DeleteEgress('two', 'output')).resolves.toBe(true);
+    expect(restreamer.GetChannelEgress('two', 'output')).toBeNull();
+  });
+
+  it('uses the existing channel name when ingest metadata has no name', async () => {
+    const restreamer = client();
+    restreamer.channels.set('one', channel('one'));
+    restreamer._setProcessMetadata = vi.fn().mockResolvedValue(true);
+    await expect(
+      restreamer.SetIngestMetadata('one', { meta: { name: '' } }),
+    ).resolves.toBe(true);
+    expect(restreamer.GetChannel('one')?.name).toBe('one');
+    expect(restreamer._setProcessMetadata).toHaveBeenCalledWith(
+      'restreamer-ui:ingest:one',
+      { meta: { name: '' } },
     );
   });
 

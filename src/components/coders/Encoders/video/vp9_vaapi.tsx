@@ -68,7 +68,7 @@ function createMapping(settings: any, stream: any, skills: any) {
   };
 }
 
-function RateControl({ value = '', onChange = function (event: any) {} }: any) {
+function RateControl({ value = '', onChange }: any) {
   return (
     <Select
       label={<Trans>Rate control</Trans>}
@@ -86,7 +86,7 @@ function RateControl({ value = '', onChange = function (event: any) {} }: any) {
   );
 }
 
-function Profile({ value = '', onChange = function (event: any) {} }: any) {
+function Profile({ value = '', onChange }: any) {
   return (
     <Select label={<Trans>Profile</Trans>} value={value} onChange={onChange}>
       <MenuItem value="578">baseline (constrained)</MenuItem>

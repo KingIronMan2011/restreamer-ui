@@ -1,7 +1,7 @@
 import React from 'react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { fireEvent, render, screen } from '../utils/testing';
+import { fireEvent, render, screen, waitFor } from '../utils/testing';
 import Textarea from './Textarea';
 
 afterEach(() => {
@@ -98,6 +98,28 @@ describe('Textarea', () => {
     if (originalExecCommand)
       Object.defineProperty(document, 'execCommand', originalExecCommand);
     else Reflect.deleteProperty(document, 'execCommand');
+    if (originalClipboard)
+      Object.defineProperty(navigator, 'clipboard', originalClipboard);
+    else Reflect.deleteProperty(navigator, 'clipboard');
+  });
+
+  it('uses default change handling and reports clipboard rejection', async () => {
+    const originalClipboard = Object.getOwnPropertyDescriptor(
+      navigator,
+      'clipboard',
+    );
+    Object.defineProperty(navigator, 'clipboard', {
+      configurable: true,
+      value: { writeText: vi.fn().mockRejectedValue(new Error('denied')) },
+    });
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    render(<Textarea value="copy me" readOnly={false} allowCopy />);
+    fireEvent.change(screen.getByRole('textbox'), {
+      target: { value: 'edited' },
+    });
+    fireEvent.click(screen.getByRole('button'));
+    await waitFor(() => expect(warn).toHaveBeenCalledWith(expect.any(Error)));
+
     if (originalClipboard)
       Object.defineProperty(navigator, 'clipboard', originalClipboard);
     else Reflect.deleteProperty(navigator, 'clipboard');

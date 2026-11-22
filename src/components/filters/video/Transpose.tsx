@@ -43,7 +43,7 @@ function createGraph(settings: any) {
 }
 
 // filter
-function Rotate({ value = '', onChange = function (event: any) {} }: any) {
+function Rotate({ value = '', onChange }: any) {
   return (
     <Select label={<Trans>Rotate</Trans>} value={value} onChange={onChange}>
       <MenuItem value="none">None</MenuItem>

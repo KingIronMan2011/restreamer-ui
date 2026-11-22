@@ -185,6 +185,50 @@ describe('Restreamer config and metadata helpers', () => {
     });
   });
 
+  it('parses IPv6 API hosts and port-only bind addresses', async () => {
+    const restreamer = client('https://[::1]');
+    restreamer.Config = vi.fn().mockResolvedValue({
+      config: {
+        host: { name: [] },
+        tls: { enable: false, address: '443' },
+        address: '8080',
+        rtmp: {
+          enable: true,
+          enable_tls: false,
+          token: '',
+          app: 'live',
+          address: '1936',
+          address_tls: '1935',
+        },
+        srt: {
+          enable: true,
+          passphrase: '',
+          token: '',
+          address: '9000',
+        },
+        storage: {
+          memory: { auth: { enable: false, username: '', password: '' } },
+        },
+        api: { auth: { enable: false, username: '', password: '' } },
+      },
+      overrides: [],
+    });
+
+    await restreamer._initConfig();
+
+    expect(restreamer.config).toMatchObject({
+      hostname: '[::1]',
+      http: { secure: true, host: '[::1]' },
+      source: {
+        network: {
+          hls: { local: 'localhost:8080' },
+          rtmp: { app: '/live', host: '[::1]:1936', local: 'localhost:1936' },
+          srt: { host: '[::1]:9000', local: 'localhost:9000' },
+        },
+      },
+    });
+  });
+
   it('returns config values, overrides, and a channel-scoped clone', () => {
     const restreamer = client();
     restreamer.channel = { channelid: 'channel-1' };

@@ -41,14 +41,20 @@ describe('channel and pseudo-source helpers', () => {
   });
 
   it('handles defaults, changes, and icon props', () => {
-    render(
+    const defaults = render(
       <Channel.component knownDevices={[{ id: 'two', name: 'Backup' }]} />,
     );
     fireEvent.mouseDown(screen.getByRole('combobox'));
     fireEvent.click(screen.getByRole('option', { name: 'Backup (two)' }));
     fireEvent.click(screen.getByRole('button', { name: 'Refresh' }));
     fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
-    expect(<Channel.icon data-testid="channel-icon" />).toHaveProperty('props');
+    expect(screen.getByRole('button', { name: 'Probe' })).toBeDisabled();
+    defaults.unmount();
+
+    render(<Channel.component settings={{ channelid: 'two' }} />);
+    fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
+    render(<Channel.icon data-testid="channel-icon" />);
+    expect(screen.getByTestId('channel-icon')).toBeInTheDocument();
   });
 
   it('initializes and creates empty inputs for no-audio and video-audio pseudo-sources', () => {

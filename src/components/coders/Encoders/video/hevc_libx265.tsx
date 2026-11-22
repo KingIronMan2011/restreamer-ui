@@ -77,7 +77,7 @@ function createMapping(settings: any, stream: any, skills: any) {
   return mapping;
 }
 
-function Preset({ value = '', onChange = function (event: any) {} }: any) {
+function Preset({ value = '', onChange }: any) {
   return (
     <Select label={<Trans>Preset</Trans>} value={value} onChange={onChange}>
       <MenuItem value="ultrafast">ultrafast</MenuItem>
@@ -93,7 +93,7 @@ function Preset({ value = '', onChange = function (event: any) {} }: any) {
   );
 }
 
-function Tune({ value = '', onChange = function (event: any) {} }: any) {
+function Tune({ value = '', onChange }: any) {
   return (
     <Select label={<Trans>Tune</Trans>} value={value} onChange={onChange}>
       <MenuItem value="none">none</MenuItem>

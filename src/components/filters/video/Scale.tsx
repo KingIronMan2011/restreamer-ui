@@ -37,7 +37,7 @@ function createGraph(settings: any) {
   return mapping.join(',');
 }
 
-function Mode({ value = '', onChange = function (event: any) {} }: any) {
+function Mode({ value = '', onChange }: any) {
   return (
     <Select label={<Trans>Scale</Trans>} value={value} onChange={onChange}>
       <MenuItem value="none">

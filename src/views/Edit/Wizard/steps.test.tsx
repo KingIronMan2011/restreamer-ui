@@ -14,6 +14,10 @@ import VideoStep from './Video';
 describe('wizard steps', () => {
   it('runs default callbacks across wizard steps', () => {
     const license = render(<LicenseStep />);
+    fireEvent.click(screen.getAllByRole('button')[0]);
+    fireEvent.click(screen.getAllByRole('button')[1]);
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    fireEvent.click(screen.getByRole('option', { name: 'CC BY 4.0' }));
     fireEvent.click(screen.getByRole('button', { name: 'Back' }));
     fireEvent.click(screen.getByRole('button', { name: 'Save' }));
     license.unmount();

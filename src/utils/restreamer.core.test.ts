@@ -130,6 +130,12 @@ describe('Restreamer client basics', () => {
       core: { compatible: true, have: '16.12.0' },
       ffmpeg: { compatible: true, have: '8.1.0' },
     });
+    client.skills = null;
+    expect(client.Compatibility()).toMatchObject({
+      compatible: false,
+      core: { compatible: true },
+      ffmpeg: { compatible: false, have: '0.0.0' },
+    });
   });
 
   it('dispatches API network and authentication errors and ignores suppressed errors', async () => {
@@ -252,11 +258,78 @@ describe('Restreamer client basics', () => {
     const events = listener.mock.calls.length;
     await client._call(request);
     expect(listener).toHaveBeenCalledTimes(events);
+
+    request
+      .mockResolvedValueOnce({
+        val: null,
+        err: { code: 401, message: 'expired' },
+      })
+      .mockResolvedValueOnce({
+        val: null,
+        err: { code: 503, status: 'HTTP_ERROR', message: 'unavailable' },
+      });
+    await client._call(request);
+    expect(listener).toHaveBeenCalledTimes(events);
+  });
+
+  it('handles refresh and login endpoints without unnecessary auth retries', async () => {
+    const client = createRestreamer();
+    const listener = vi.fn();
+    client.AddListener(listener);
+    const refreshRequest = vi.fn().mockResolvedValue({
+      val: null,
+      err: { code: 401, message: 'refresh expired' },
+    });
+    const loginRequest = vi.fn().mockResolvedValue({
+      val: null,
+      err: { code: 401, message: 'login rejected' },
+    });
+    const tokenLoginRequest = vi.fn().mockResolvedValue({
+      val: null,
+      err: { code: 401, message: 'token rejected' },
+    });
+    client.api = {
+      RefreshToken: refreshRequest,
+      Login: loginRequest,
+      LoginWithToken: tokenLoginRequest,
+    } as never;
+    client.RefreshToken = vi.fn().mockResolvedValue(false);
+
+    await client._call(refreshRequest);
+    expect(client.RefreshToken).not.toHaveBeenCalled();
+    expect(listener).toHaveBeenLastCalledWith({
+      severity: 'error',
+      type: 'auth',
+      message: 'refresh expired',
+    });
+
+    listener.mockClear();
+    await client._call(loginRequest);
+    await client._call(tokenLoginRequest);
+    expect(listener).not.toHaveBeenCalled();
+  });
+
+  it('returns ordinary HTTP errors without dispatching or retrying them', async () => {
+    const client = createRestreamer();
+    const listener = vi.fn();
+    client.AddListener(listener);
+    const request = vi.fn().mockResolvedValue({
+      val: null,
+      err: { code: 503, message: 'unavailable' },
+    });
+
+    await expect(client._call(request)).resolves.toEqual([
+      null,
+      { code: 503, message: 'unavailable' },
+    ]);
+    expect(request).toHaveBeenCalledOnce();
+    expect(listener).not.toHaveBeenCalled();
   });
 
   it('sets and clears local auth tokens on logout', () => {
     const client = createRestreamer();
     const setToken = vi.spyOn(client.api, 'SetToken');
+    client.Logout();
     client.refresh = window.setTimeout(() => {}, 10_000);
     client.Logout();
     expect(setToken).toHaveBeenCalledWith('');
@@ -298,6 +371,8 @@ describe('Restreamer client basics', () => {
 
     client._call = vi.fn().mockResolvedValue([null, { message: 'expired' }]);
     await expect(client.RefreshToken()).resolves.toBe(false);
+    client._call = vi.fn().mockResolvedValue([null, { message: 'offline' }]);
+    await expect(client.About()).resolves.toBeNull();
     client._call = vi.fn().mockResolvedValue([null, null]);
     await expect(client.About()).resolves.toBeNull();
     client._call = vi.fn().mockResolvedValue(['not an object', null]);
@@ -343,6 +418,9 @@ describe('Restreamer client basics', () => {
     client._setTokenRefresh(61);
     await vi.advanceTimersByTimeAsync(1000);
     expect(client.RefreshToken).toHaveBeenCalledOnce();
+    client._setTokenRefresh(30);
+    await vi.advanceTimersByTimeAsync(30_000);
+    expect(client.RefreshToken).toHaveBeenCalledTimes(2);
     vi.useRealTimers();
   });
 
@@ -372,6 +450,13 @@ describe('Restreamer client basics', () => {
     await expect(client.Validate()).resolves.toBe(true);
     expect(client.requiresLogin).toBe(false);
     expect(client.IsConnected()).toBe(true);
+
+    const clearRefreshToken = vi.fn();
+    client._getRefreshToken = vi.fn(() => 'expired-refresh-token');
+    client.RefreshToken = vi.fn().mockResolvedValue(false);
+    client._setRefreshToken = clearRefreshToken;
+    await expect(client.Validate()).resolves.toBe(true);
+    expect(clearRefreshToken).toHaveBeenCalledWith(null);
   });
 
   it.each([

@@ -38,7 +38,7 @@ function Framerate({
   value = '',
   variant = 'outlined',
   allowCustom = true,
-  onChange = function (event: any) {},
+  onChange,
 }: any) {
   const { i18n } = useLingui();
   const sizes = [

@@ -58,4 +58,5 @@ registry.Register(SDP);
 registry.Register(X11grab);
 registry.Register(Channel);
 
+export { Registry };
 export default registry;

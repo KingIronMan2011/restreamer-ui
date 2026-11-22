@@ -83,4 +83,28 @@ describe('wizard hardware sources', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Refresh' }));
     expect(onRefresh).toHaveBeenCalledOnce();
   });
+
+  it('runs default hardware source handlers and renders their icons', () => {
+    const v4l = render(<V4L.component knownDevices={devices} />);
+    fireEvent.click(screen.getByRole('button', { name: 'Refresh' }));
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    fireEvent.click(
+      screen.getByRole('option', { name: 'USB camera (/dev/video0)' }),
+    );
+    render(<V4L.icon data-testid="v4l-icon" />);
+    expect(screen.getByTestId('v4l-icon')).toBeInTheDocument();
+    v4l.unmount();
+
+    const apple = render(<AVFoundation.component knownDevices={devices} />);
+    fireEvent.click(screen.getByRole('button', { name: 'Refresh' }));
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[0]);
+    fireEvent.click(screen.getByRole('option', { name: 'USB camera' }));
+    render(<AVFoundation.icon data-testid="avfoundation-wizard-icon" />);
+    expect(screen.getByTestId('avfoundation-wizard-icon')).toBeInTheDocument();
+    apple.unmount();
+
+    render(<Raspicam.component knownDevices={devices} />);
+    render(<Raspicam.icon data-testid="raspicam-icon" />);
+    expect(screen.getByTestId('raspicam-icon')).toBeInTheDocument();
+  });
 });

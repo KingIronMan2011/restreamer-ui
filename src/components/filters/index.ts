@@ -63,4 +63,4 @@ videoRegistry.Register(HFlip);
 videoRegistry.Register(VFlip);
 
 // Export registrys for ../SelectFilters.js
-export { audioRegistry as Audio, videoRegistry as Video };
+export { Registry, audioRegistry as Audio, videoRegistry as Video };

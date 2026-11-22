@@ -74,6 +74,11 @@ describe('SDP source', () => {
     expect(screen.getByLabelText('File path')).toHaveValue('');
   });
 
+  it('renders the SDP source icon', () => {
+    render(<SDP.icon data-testid="sdp-icon" />);
+    expect(screen.getByTestId('sdp-icon')).toBeInTheDocument();
+  });
+
   it.each([
     [
       new File(['bad'], 'bad.txt', { type: 'text/plain' }),

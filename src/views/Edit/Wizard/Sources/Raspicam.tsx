@@ -56,7 +56,6 @@ function Source({
   config = null,
   skills = null,
   onChange = function (type: any, settings: any, inputs: any, ready: any) {},
-  onRefresh = function () {},
 }: any) {
   const devices = initDevices(knownDevices);
   settings = initSettings(settings, knownDevices);
