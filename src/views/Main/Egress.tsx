@@ -2,7 +2,7 @@ import { Trans } from '@lingui/react/macro';
 import DeviceUnknownIcon from '@mui/icons-material/DeviceUnknown';
 import EditIcon from '@mui/icons-material/Edit';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import { useTheme } from '@mui/material/styles';

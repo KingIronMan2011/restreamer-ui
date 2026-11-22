@@ -1,5 +1,5 @@
 import '@videojs/react/live-video/skin.css';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import { LiveVideoPlayer, LiveVideoSkin } from '@videojs/react/live-video';
 import { HlsJsVideo } from '@videojs/react/media/hlsjs-video';
 import { useState, type CSSProperties, type SyntheticEvent } from 'react';

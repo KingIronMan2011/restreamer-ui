@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/react/macro';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Modal from '@mui/material/Modal';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';

@@ -1,6 +1,6 @@
 import CloseIcon from '@mui/icons-material/Close';
 import HelpIcon from '@mui/icons-material/HelpOutline';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import IconButton from '@mui/material/IconButton';
 import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';

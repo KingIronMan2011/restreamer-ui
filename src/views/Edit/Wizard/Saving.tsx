@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import CircularProgress from '@mui/material/CircularProgress';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 

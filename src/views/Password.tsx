@@ -2,7 +2,7 @@ import { Trans } from '@lingui/react/macro';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import React from 'react';

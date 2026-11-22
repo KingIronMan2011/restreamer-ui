@@ -1,4 +1,4 @@
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Paper from '@mui/material/Paper';
 import { useTheme } from '@mui/material/styles';
 import React from 'react';

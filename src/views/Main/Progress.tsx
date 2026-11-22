@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import type { CSSProperties } from 'react';

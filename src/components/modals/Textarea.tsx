@@ -1,4 +1,4 @@
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Modal from '@mui/material/Modal';
 import Stack from '@mui/material/Stack';
 import { useTheme } from '@mui/material/styles';

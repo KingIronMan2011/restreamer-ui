@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import MenuItem from '@mui/material/MenuItem';
 import { Images } from 'lucide-react';
 import React from 'react';

@@ -1,7 +1,7 @@
 import Alert from '@mui/material/Alert';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Snackbar from '@mui/material/Snackbar';
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router';

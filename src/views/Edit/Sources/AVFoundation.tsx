@@ -4,7 +4,7 @@ import { Trans } from '@lingui/react/macro';
 import Icon from '@mui/icons-material/Apple';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 

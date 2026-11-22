@@ -2,7 +2,7 @@ import { Trans } from '@lingui/react/macro';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import PersonIcon from '@mui/icons-material/Person';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import { useNavigate } from 'react-router';

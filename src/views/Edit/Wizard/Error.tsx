@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/react/macro';
 import WarningIcon from '@mui/icons-material/Warning';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 

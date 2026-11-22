@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro';
 import Icon from '@mui/icons-material/KeyboardTab';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 

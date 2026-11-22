@@ -2,7 +2,7 @@ import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';

@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import { Music2 } from 'lucide-react';

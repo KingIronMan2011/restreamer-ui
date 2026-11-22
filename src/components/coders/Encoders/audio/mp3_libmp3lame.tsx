@@ -1,4 +1,4 @@
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import React from 'react';
 
 import Helper from '../../helper';

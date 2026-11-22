@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/react/macro';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import { useTheme } from '@mui/material/styles';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';

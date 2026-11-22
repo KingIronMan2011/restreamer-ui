@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Tab from '@mui/material/Tab';
 import TextField from '@mui/material/TextField';
 import React from 'react';

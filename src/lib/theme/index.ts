@@ -43,6 +43,7 @@ import globals from './global';
 
 const theme = createTheme({
   ...base,
+  cssVariables: { nativeColor: true },
 
   components: {
     MuiCssBaseline: {
