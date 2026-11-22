@@ -138,6 +138,12 @@ export default function ResetPassword({
                   label={<Trans>Enter username</Trans>}
                   value={$login.username}
                   onChange={handleChange('username')}
+                  error={$login.username.length === 0}
+                  helperText={
+                    $login.username.length === 0 ? (
+                      <Trans>Enter a username.</Trans>
+                    ) : null
+                  }
                   autoComplete="username"
                   disabled={usernameOverride}
                   env={usernameOverride}
@@ -149,6 +155,12 @@ export default function ResetPassword({
                   id="password"
                   label={<Trans>Enter password</Trans>}
                   onChange={handleChange('password')}
+                  error={$login.password.length === 0}
+                  helperText={
+                    $login.password.length === 0 ? (
+                      <Trans>Enter a password.</Trans>
+                    ) : null
+                  }
                   show={$login.showPassword}
                   autoComplete="current-password"
                   disabled={passwordOverride}
@@ -161,6 +173,17 @@ export default function ResetPassword({
                   id="password_confirm"
                   label={<Trans>Confirm password</Trans>}
                   onChange={handleChange('passwordConfirm')}
+                  error={
+                    $login.passwordConfirm.length === 0 ||
+                    $login.password !== $login.passwordConfirm
+                  }
+                  helperText={
+                    $login.passwordConfirm.length === 0 ? (
+                      <Trans>Confirm your password.</Trans>
+                    ) : $login.password !== $login.passwordConfirm ? (
+                      <Trans>Passwords do not match.</Trans>
+                    ) : null
+                  }
                   show={$login.showPassword}
                   disabled={passwordOverride}
                   env={passwordOverride}

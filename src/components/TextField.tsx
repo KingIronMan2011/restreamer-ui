@@ -20,6 +20,7 @@ export default function Component({
   min = null,
   max = null,
   helperText = null,
+  error = false,
   onChange = function (value: any) {},
 }: any) {
   id = id === null ? uuidv4() : id;
@@ -55,6 +56,7 @@ export default function Component({
         multiline={multiline}
         rows={rows}
         type={type}
+        error={error}
         slotProps={{ input: inputProps }}
       />
       {helperText && <FormHelperText>{helperText}</FormHelperText>}
