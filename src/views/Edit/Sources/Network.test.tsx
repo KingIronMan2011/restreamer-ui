@@ -1232,6 +1232,12 @@ test('source:network builds insecure RTMP, SRT, and HLS output addresses', () =>
   expect(Network.func.getRTMP(config)).toBe(
     'rtmp://stream.example/live/channel.stream',
   );
+  expect(
+    Network.func.getRTMP({
+      ...config,
+      rtmp: { ...config.rtmp, secure: true },
+    }),
+  ).toBe('rtmps://stream.example/live/channel.stream');
   expect(Network.func.getSRT(config)).toContain('mode:publish');
 });
 

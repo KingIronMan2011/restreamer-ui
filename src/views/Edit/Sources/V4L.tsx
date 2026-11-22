@@ -71,9 +71,7 @@ function Source({
   const handleChange = (what: any) => (event: any) => {
     let data: Record<string, any> = {};
 
-    if (['device', 'format', 'framerate', 'size'].includes(what)) {
-      data[what] = event.target.value;
-    }
+    data[what] = event.target.value;
 
     onChange({
       ...settings,

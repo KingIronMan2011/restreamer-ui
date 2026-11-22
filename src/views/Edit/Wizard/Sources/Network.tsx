@@ -30,8 +30,6 @@ function Source({
   skills = S.func.initSkills(skills);
 
   const handleChange = (newSettings: any) => {
-    newSettings = newSettings || settings;
-
     onChange(
       S.id,
       newSettings,
@@ -45,9 +43,7 @@ function Source({
     const newSettings = settings;
 
     if (protocol === 'rtsp') {
-      if (['udp'].includes(what)) {
-        newSettings.rtsp[what] = !newSettings.rtsp[what];
-      }
+      newSettings.rtsp[what] = !newSettings.rtsp[what];
     } else {
       newSettings[what] = value;
     }

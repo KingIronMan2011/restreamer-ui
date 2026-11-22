@@ -54,6 +54,30 @@ describe('UploadButton', () => {
     });
   });
 
+  it('rejects the wrong subtype when the accepted MIME type is exact', async () => {
+    const onError = vi.fn();
+    render(
+      <UploadButton
+        label="Upload PNG"
+        acceptTypes={[{ mimetype: 'image/png', extension: 'png', maxSize: 0 }]}
+        onError={onError}
+      />,
+    );
+
+    await userEvent
+      .setup({ applyAccept: false })
+      .upload(
+        screen.getByLabelText('Upload PNG'),
+        new File(['img'], 'photo.jpg', { type: 'image/jpeg' }),
+      );
+
+    expect(onError).toHaveBeenCalledWith({
+      type: 'mimetype',
+      actual: 'image/jpeg',
+      allowed: ['image/png'],
+    });
+  });
+
   it('reports files exceeding their size limit', async () => {
     const onError = vi.fn();
     render(
@@ -93,6 +117,26 @@ describe('UploadButton', () => {
     });
 
     expect(onError).toHaveBeenCalledWith({ type: 'nofiles' });
+  });
+
+  it('uploads a nonempty file list delivered by the input change event', () => {
+    const onUpload = vi.fn();
+    const input = render(
+      <UploadButton
+        label="Direct upload"
+        acceptTypes={imageTypes}
+        onUpload={onUpload}
+      />,
+    ).getByLabelText('Direct upload');
+    const file = new File(['img'], 'logo.png', { type: 'image/png' });
+    Object.defineProperty(input, 'files', {
+      configurable: true,
+      value: [file],
+    });
+
+    fireEvent.change(input);
+
+    expect(onUpload).toHaveBeenCalledWith(file, 'png', 'image/*');
   });
 
   it('does not start when disabled', async () => {

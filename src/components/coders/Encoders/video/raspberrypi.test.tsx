@@ -50,6 +50,18 @@ describe('Raspberry Pi H.264 encoders', () => {
     ).toEqual(expect.arrayContaining(['-fps_mode', 'cfr']));
   });
 
+  it('omits fps_mode for FFmpeg versions below 5', () => {
+    const onChange = vi.fn();
+    render(
+      <H264V4l2
+        onChange={onChange}
+        skills={{ ffmpeg: { version_major: 4 } }}
+      />,
+    );
+
+    expect(onChange.mock.lastCall?.[1].local).not.toContain('-fps_mode');
+  });
+
   it('covers OMX GOP and profile mappings', () => {
     const onChange = vi.fn();
     render(<H264Omx onChange={onChange} />);

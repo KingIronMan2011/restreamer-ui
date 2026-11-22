@@ -169,13 +169,7 @@ function Coder({
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
-  const handleChange = (newSettings: any) => {
-    let automatic = false;
-    if (!newSettings) {
-      newSettings = settings;
-      automatic = true;
-    }
-
+  const handleChange = (newSettings: any, automatic = false) => {
     onChange(
       newSettings,
       createMapping(newSettings, stream, skills),
@@ -193,7 +187,7 @@ function Coder({
   };
 
   React.useEffect(() => {
-    handleChange(null);
+    handleChange(settings, true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

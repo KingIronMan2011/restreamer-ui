@@ -129,4 +129,12 @@ describe('virtual video source', () => {
     render(<VirtualVideo.icon data-testid="virtual-video-icon" />);
     expect(screen.getByTestId('virtual-video-icon')).toBeInTheDocument();
   });
+
+  it('shows Game of Life controls for the life source', () => {
+    render(
+      <VirtualVideo.component settings={{ source: 'life', ...dimensions }} />,
+    );
+    expect(screen.getByLabelText('Rule')).toBeInTheDocument();
+    expect(screen.getByLabelText('Life color')).toBeInTheDocument();
+  });
 });

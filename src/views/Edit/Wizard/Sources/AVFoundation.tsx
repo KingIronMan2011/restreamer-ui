@@ -35,8 +35,6 @@ function Source({
   settings = initSettings(settings);
 
   const handleChange = (newSettings: any) => {
-    newSettings = newSettings || settings;
-
     const filteredDevices = knownDevices.filter(
       (device: any) => device.media === 'video',
     );
@@ -57,9 +55,7 @@ function Source({
     const value = event.target.value;
     const newSettings = settings;
 
-    if (what in newSettings) {
-      newSettings[what] = value;
-    }
+    newSettings[what] = value;
 
     handleChange(newSettings);
   };

@@ -106,8 +106,9 @@ describe('Restreamer config and metadata helpers', () => {
 
     await restreamer._initConfig();
 
-    expect(restreamer.config.hostname).toBe('core.example');
-    expect(restreamer.config.http.host).toBe('core.example:8443');
+    const config = restreamer.config!;
+    expect(config.hostname).toBe('core.example');
+    expect(config.http.host).toBe('core.example:8443');
   });
 
   it('derives public hosts, protocol ports, credentials, and endpoint settings', async () => {
@@ -295,11 +296,12 @@ describe('Restreamer config and metadata helpers', () => {
 
     await restreamer._initConfig();
 
-    expect(restreamer.config.http).toEqual({
+    const config = restreamer.config!;
+    expect(config.http).toEqual({
       secure: true,
       host: 'core.example',
     });
-    expect(restreamer.config.source.network.rtmp).toMatchObject({
+    expect(config.source.network.rtmp).toMatchObject({
       secure: true,
       host: 'core.example',
     });

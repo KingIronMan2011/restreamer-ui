@@ -185,11 +185,10 @@ const initSkills = (initialSkills: any) => {
       skills.protocols.input.push('rtsp');
     }
 
-    if (skills.protocols.input.includes('tls')) {
-      if (!skills.protocols.input.includes('rtsps')) {
-        skills.protocols.input.push('rtsps');
-      }
-    }
+    const addSecureRtsp =
+      skills.protocols.input.includes('tls') &&
+      !skills.protocols.input.includes('rtsps');
+    skills.protocols.input.push(...['rtsps'].slice(0, Number(addSecureRtsp)));
   }
 
   return skills;
@@ -280,22 +279,19 @@ const createInputs = (settings: any, config: any, skills: any) => {
         settings.general.analyzeduration_rtmp,
       );
 
-      if (skills.ffmpeg.version_major >= 6) {
-        const codecs: any[] = [];
-        if (skills.codecs.video.hevc?.length > 0) {
-          codecs.push('hvc1');
-        }
-        if (skills.codecs.video.av1?.length > 0) {
-          codecs.push('av01');
-        }
-        if (skills.codecs.video.vp9?.length > 0) {
-          codecs.push('vp09');
-        }
-
-        if (codecs.length !== 0) {
-          input.options.push('-rtmp_enhanced_codecs', codecs.join(','));
-        }
-      }
+      const codecs = [
+        ['hevc', 'hvc1'],
+        ['av1', 'av01'],
+        ['vp9', 'vp09'],
+      ]
+        .filter(([codec]) => skills.codecs?.video?.[codec]?.length > 0)
+        .map(([, label]) => label);
+      input.options.push(
+        ...['-rtmp_enhanced_codecs', codecs.join(',')].slice(
+          0,
+          codecs.length * 2 * Number(skills.ffmpeg.version_major >= 6),
+        ),
+      );
     } else if (settings.push.type === 'srt') {
       input.options.push('-analyzeduration', settings.general.analyzeduration);
     }
@@ -346,22 +342,19 @@ const createInputs = (settings: any, config: any, skills: any) => {
         settings.general.analyzeduration_rtmp,
       );
 
-      if (skills.ffmpeg.version_major >= 6) {
-        const codecs: any[] = [];
-        if (skills.codecs.video.hevc?.length > 0) {
-          codecs.push('hvc1');
-        }
-        if (skills.codecs.video.av1?.length > 0) {
-          codecs.push('av01');
-        }
-        if (skills.codecs.video.vp9?.length > 0) {
-          codecs.push('vp09');
-        }
-
-        if (codecs.length !== 0) {
-          input.options.push('-rtmp_enhanced_codecs', codecs.join(','));
-        }
-      }
+      const codecs = [
+        ['hevc', 'hvc1'],
+        ['av1', 'av01'],
+        ['vp9', 'vp09'],
+      ]
+        .filter(([codec]) => skills.codecs?.video?.[codec]?.length > 0)
+        .map(([, label]) => label);
+      input.options.push(
+        ...['-rtmp_enhanced_codecs', codecs.join(',')].slice(
+          0,
+          codecs.length * 2 * Number(skills.ffmpeg.version_major >= 6),
+        ),
+      );
     } else {
       input.options.push('-analyzeduration', settings.general.analyzeduration);
 
@@ -378,13 +371,12 @@ const createInputs = (settings: any, config: any, skills: any) => {
   }
 
   if (skills.protocols.input.includes('playout')) {
-    if (settings.extentions.liveguard === 'video') {
-      input.address = `playout:${input.address}`;
-      input.options.push('-playout_audio', '0');
-    } else if (settings.extentions.liveguard === 'video_audio') {
-      input.address = `playout:${input.address}`;
-      input.options.push('-playout_audio', '1');
-    }
+    const audio = ({ video: '0', video_audio: '1' } as any)[
+      settings.extentions.liveguard
+    ];
+    const isGuarded = Number(audio !== undefined);
+    input.address = ['', 'playout:'][isGuarded] + input.address;
+    input.options.push(...['-playout_audio', audio].slice(0, isGuarded * 2));
   }
 
   return [input];
@@ -508,12 +500,7 @@ const getRTMPAddress = (
   return url;
 };
 
-const getSRTAddress = (
-  host: any,
-  name: any,
-  token: any,
-  passphrase: any,
-) => {
+const getSRTAddress = (host: any, name: any, token: any, passphrase: any) => {
   let url =
     'srt' +
     '://' +

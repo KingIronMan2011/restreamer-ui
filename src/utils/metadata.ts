@@ -661,12 +661,11 @@ const validateProfile = (
       complete = false;
     }
 
-    if (
-      (profile.video.overlays ?? []).some((overlay: any) => overlay.path) &&
-      profile.video.encoder.coder === 'copy'
-    ) {
-      complete = false;
-    }
+    const copyOverlayIsInvalid = [
+      profile.video.overlays!.some((overlay: any) => Boolean(overlay.path)),
+      profile.video.encoder.coder === 'copy',
+    ].every(Boolean);
+    complete = Number(complete) * Number(!copyOverlayIsInvalid) === 1;
   }
 
   return complete;

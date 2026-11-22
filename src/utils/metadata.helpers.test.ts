@@ -468,6 +468,16 @@ describe('profile selection and validation', () => {
     expect(video.audio.encoder.coder).toBe('copy');
   });
 
+  it('leaves profiles unchanged for an unknown source type', () => {
+    const initial = profile();
+    expect(
+      Metadata.preselectProfile('unknown', [], initial, {
+        audio: [],
+        video: [],
+      }),
+    ).toEqual(initial);
+  });
+
   it('repairs implausible streams and selects the first available compatible encoders', () => {
     const profileWithUnsupportedStreams = profile({
       video: { source: 0, stream: 9, encoder: { coder: 'copy' } },
@@ -802,5 +812,136 @@ describe('generated stream and input output mappings', () => {
     expect(outputs[0].options).toContain('0:0');
     expect(outputs[0].options).toContain('0:1');
     expect(outputs[0].options).toContain('scale=640:360,format=yuv420p');
+  });
+
+  it('covers overlay validation, empty filters, and disabled output streams', () => {
+    const sources = [
+      {
+        inputs: [{ address: 'input', options: [] }],
+        streams: [
+          { index: 0, stream: 0, type: 'video', codec: 'h264' },
+          { index: 0, stream: 1, type: 'audio', codec: 'aac' },
+        ],
+      },
+    ];
+    const withOverlay = Metadata.initProfile({
+      video: {
+        source: 0,
+        stream: 0,
+        decoder: { coder: 'h264_cuvid' },
+        encoder: { coder: 'libx264', mapping: { filter: [] } },
+        filter: { graph: '' },
+        overlays: [{ path: '/logo.png', width: 0, height: 0, x: '', y: '' }],
+      },
+      audio: {
+        source: 0,
+        stream: 1,
+        encoder: { coder: 'aac', mapping: { filter: ['aresample=48000'] } },
+        filter: { graph: '' },
+      },
+    });
+    const copyWithOverlay = Metadata.initProfile({
+      video: {
+        source: 0,
+        stream: 0,
+        encoder: { coder: 'copy' },
+        overlays: [{ path: '/logo.png' }],
+      },
+    });
+    copyWithOverlay.video.overlays = [
+      { path: '/logo.png', width: 0, height: 0, x: '', y: '' },
+    ];
+    expect(copyWithOverlay.video.encoder.coder).toBe('copy');
+    expect(
+      copyWithOverlay.video.overlays.some((overlay: any) => overlay.path),
+    ).toBe(true);
+    expect(copyWithOverlay.video.source).toBe(0);
+    expect(copyWithOverlay.video.stream).toBe(0);
+    const copyWithoutOverlay = Metadata.initProfile({
+      video: {
+        source: 0,
+        stream: 0,
+        encoder: { coder: 'copy' },
+        overlays: [],
+      },
+    });
+    expect(
+      Metadata.validateProfile(sources as never, copyWithoutOverlay as never),
+    ).toBe(true);
+    const overlayPath = vi.fn(() => '/logo.png');
+    const overlayWithGetter = Metadata.initProfile({
+      video: {
+        source: 0,
+        stream: 0,
+        encoder: { coder: 'libx264' },
+        overlays: [
+          {
+            get path() {
+              return overlayPath();
+            },
+          },
+        ],
+      },
+    });
+    Metadata.validateProfile(sources as never, overlayWithGetter as never);
+    expect(overlayPath).toHaveBeenCalled();
+    expect(
+      Metadata.validateProfile(sources as never, copyWithOverlay as never),
+    ).toBe(false);
+    expect(
+      Metadata.validateProfile(
+        sources as never,
+        {
+          video: {
+            source: 0,
+            stream: 0,
+            encoder: { coder: 'copy' },
+            overlays: [{ path: '/logo.png' }],
+          },
+          audio: { source: -1, stream: -1, encoder: { coder: 'none' } },
+        } as never,
+      ),
+    ).toBe(false);
+    const withoutOverlays = Metadata.initProfile({
+      video: {
+        source: 0,
+        stream: 0,
+        encoder: {
+          coder: 'libx264',
+          mapping: { filter: ['format=yuv420p'] },
+        },
+        filter: { graph: '' },
+        overlays: [],
+      },
+      audio: { source: -1, stream: -1, encoder: { coder: 'none' } },
+    });
+    const noVideo = Metadata.initProfile({});
+    noVideo.video.overlays = undefined as never;
+    noVideo.video.source = 0;
+    noVideo.video.stream = 0;
+    noVideo.video.encoder.coder = 'libx264';
+    noVideo.audio.source = 0;
+    noVideo.audio.stream = 1;
+    noVideo.audio.encoder.coder = 'aac';
+
+    const [, , outputs] = Metadata.createInputsOutputs(
+      sources as never,
+      [withOverlay, copyWithOverlay, withoutOverlays, noVideo] as never,
+    );
+    expect(outputs).toHaveLength(3);
+    expect(outputs[0].options).toContain('-filter_complex');
+    expect(outputs[0].options.join(' ')).toContain('hwdownload,format=nv12');
+    expect(outputs[0].options.join(' ')).toContain('aresample=48000');
+    expect(outputs[2].options).not.toContain('-filter_complex');
+
+    noVideo.video.source = -1;
+    noVideo.video.stream = -1;
+    noVideo.video.encoder.coder = 'none';
+    noVideo.audio.source = -1;
+    noVideo.audio.stream = -1;
+    noVideo.audio.encoder.coder = 'none';
+    expect(
+      Metadata.createOutputStreams(sources as never, [noVideo] as never, false),
+    ).toEqual([]);
   });
 });

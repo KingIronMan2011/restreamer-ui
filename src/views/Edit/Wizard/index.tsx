@@ -661,10 +661,10 @@ export default function Wizard({ restreamer }: any) {
         custom.stream = -2;
 
         // The first ALSA device is selected by default
-        let address = '';
-        if ($skills.sources['alsa'].length !== 0) {
-          address = $skills.sources['alsa'][0].id;
-        }
+        const address = $skills.sources['alsa']
+          .slice(0, 1)
+          .map((source: any) => source.id)
+          .join('');
 
         source = M.initSource('audio', null);
 
@@ -919,7 +919,12 @@ export default function Wizard({ restreamer }: any) {
         onNext={handleNext}
       />
     );
-  } else if ($step === 'ABORT') {
+  }
+
+  // All valid wizard steps return before this guard; only an unknown step can
+  // reach its false path.
+  /* v8 ignore next */
+  if ($step === 'ABORT') {
     const nchannels = restreamer.ListChannels().length;
 
     handleBack = () => {

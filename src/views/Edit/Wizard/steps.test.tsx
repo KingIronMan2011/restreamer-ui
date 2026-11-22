@@ -45,6 +45,19 @@ describe('wizard steps', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Next' }));
     video.unmount();
 
+    render(<VideoStep sourceid="camera" status="error" />);
+    expect(
+      screen.getByText(
+        'Failed to verify the source. Please check the address.',
+      ),
+    ).toBeInTheDocument();
+    render(<VideoStep sourceid="rtmp" status="error" />);
+    expect(
+      screen.getByText(
+        /No live stream was detected. Please check the software that sends the stream./,
+      ),
+    ).toBeInTheDocument();
+
     render(<AbortStep nchannels={2} />);
     fireEvent.click(screen.getByRole('button', { name: 'Yes' }));
     fireEvent.click(screen.getByRole('button', { name: 'No' }));

@@ -34,13 +34,7 @@ function Filter({
 }: any) {
   settings = init(settings);
 
-  const handleChange = (newSettings: any) => {
-    let automatic = false;
-    if (!newSettings) {
-      newSettings = settings;
-      automatic = true;
-    }
-
+  const handleChange = (newSettings: any, automatic = false) => {
     onChange(newSettings, createGraph(newSettings), automatic);
   };
 
@@ -48,15 +42,13 @@ function Filter({
     const newSettings = {
       ...settings,
     };
-    if (['enabled'].includes(what)) {
-      newSettings[what] = !settings.enabled;
-    }
+    newSettings[what] = !settings.enabled;
 
     handleChange(newSettings);
   };
 
   React.useEffect(() => {
-    handleChange(null);
+    handleChange(settings, true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

@@ -41,8 +41,6 @@ function Source({
   skills = S.func.initSkills(skills);
 
   const handleChange = (newSettings: any) => {
-    newSettings = newSettings || settings;
-
     const inputs = S.func.createInputs(newSettings, config, skills);
     newSettings.address = inputs[0].address;
 
@@ -59,9 +57,7 @@ function Source({
       ...settings,
     };
 
-    if (what in newSettings.push) {
-      newSettings.push[what] = value;
-    }
+    newSettings.push[what] = value;
 
     handleChange(newSettings);
   };

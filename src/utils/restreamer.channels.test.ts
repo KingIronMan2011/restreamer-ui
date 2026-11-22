@@ -106,6 +106,7 @@ describe('Restreamer channel helpers', () => {
       http: { secure: true, host: 'public.example:8443' },
       source: { network: { hls: { host: 'public.example:8443' } } },
     } as any;
+    const config = restreamer.config!;
     restreamer.ConfigActive = vi.fn(() => restreamer.config);
 
     expect(restreamer.GetPublicHTTPAddress()).toBe(
@@ -133,8 +134,8 @@ describe('Restreamer channel helpers', () => {
       /^https:\/\/public\.example:8443\//,
     );
 
-    restreamer.config.http.secure = false;
-    restreamer.config.http.host = 'public.example';
+    config.http.secure = false;
+    config.http.host = 'public.example';
     expect(restreamer.GetPublicHTTPAddress()).toBe('http://public.example');
     for (const type of [
       'snapshot+memfs',

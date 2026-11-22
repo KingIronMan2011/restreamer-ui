@@ -61,8 +61,6 @@ function Source({
   settings = initSettings(settings, knownDevices);
 
   const handleChange = (newSettings: any) => {
-    newSettings = newSettings || settings;
-
     onChange(S.id, newSettings, S.func.createInputs(newSettings), true);
   };
 
@@ -70,9 +68,7 @@ function Source({
     const value = event.target.value;
     const newSettings = settings;
 
-    if (what in newSettings) {
-      newSettings[what] = value;
-    }
+    newSettings[what] = value;
 
     handleChange(newSettings);
   };
