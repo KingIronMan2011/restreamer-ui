@@ -1,6 +1,7 @@
 import React from 'react';
+import { vi } from 'vitest';
 
-import { render, fireEvent } from '../../../utils/testing';
+import { render, fireEvent, screen } from '../../../utils/testing';
 import * as Network from './Network';
 
 const $skills_ffmpeg6 = {
@@ -655,6 +656,148 @@ test('source:network push SRT', async () => {
   expect(getByText('Probe')).toBeInTheDocument();
 });
 
+test.each([
+  ['RTMP', 'rtmp', { id: 'rtmp-camera', name: 'RTMP camera', media: 'rtmp' }],
+  ['SRT', 'srt', { id: 'srt-camera', name: 'SRT camera', media: 'srt' }],
+])(
+  'source:network enabled %s push refreshes and selects discovered streams',
+  (label, type, device) => {
+    let settings: any = { mode: 'push', push: { type, name: 'external' } };
+    const onChange = (next: any) => {
+      settings = next;
+    };
+    const onRefresh = vi.fn();
+    const onProbe = vi.fn();
+    const props = {
+      config: $config,
+      skills: $skills_ffmpeg5,
+      knownDevices: [
+        device,
+        { id: 'ignored', name: 'Ignored device', media: 'other' },
+      ],
+      onChange,
+      onRefresh,
+      onProbe,
+    };
+    const view = render(<Network.component {...props} settings={settings} />);
+    fireEvent.click(screen.getByRole('button', { name: 'Refresh' }));
+    expect(onRefresh).toHaveBeenCalledOnce();
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[2]);
+    expect(
+      screen.getByRole('option', { name: device.name }),
+    ).toBeInTheDocument();
+    expect(screen.queryByRole('option', { name: 'Ignored device' })).toBeNull();
+    fireEvent.click(screen.getByRole('option', { name: device.name }));
+    expect(settings.push.name).toBe(device.id);
+    view.rerender(<Network.component {...props} settings={settings} />);
+    fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
+    expect(onProbe).toHaveBeenCalledWith(
+      settings,
+      Network.func.createInputs(settings, $config, $skills_ffmpeg5),
+    );
+  },
+);
+
+test.each([
+  ['RTMP', 'rtmp', 'Enable RTMP server ...'],
+  ['SRT', 'srt', 'Enable SRT server ...'],
+])(
+  'source:network %s disabled-server link navigates to its settings',
+  (_label, type, action) => {
+    render(
+      <Network.component
+        settings={{ mode: 'push', push: { type, name: 'external' } }}
+        skills={$skills_ffmpeg5}
+        knownDevices={[]}
+      />,
+    );
+    fireEvent.click(screen.getByRole('button', { name: action }));
+    expect(screen.queryByRole('button', { name: action })).toBeNull();
+  },
+);
+
+test.each([
+  ['RTMP', 'rtmp', 'rtmp://localhost/live/external.stream/foobar'],
+  ['SRT', 'srt', /mode:publish.*token:foobar/],
+])(
+  'source:network %s server output selection shows its publish address',
+  (_label, type, expectedAddress) => {
+    const settings = { mode: 'push', push: { type, name: 'external' } };
+    const view = render(
+      <Network.component
+        settings={settings}
+        config={$config}
+        skills={$skills_ffmpeg5}
+        knownDevices={[]}
+      />,
+    );
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[2]);
+    fireEvent.click(
+      screen.getByRole('option', { name: 'Send stream to address ...' }),
+    );
+    view.rerender(
+      <Network.component
+        settings={{ ...settings, push: { type, name: 'external' } }}
+        config={$config}
+        skills={$skills_ffmpeg5}
+        knownDevices={[]}
+      />,
+    );
+    expect(screen.getByText(expectedAddress)).toBeInTheDocument();
+  },
+);
+
+test('source:network protocol selection resets to the channel and edits SRT latency', () => {
+  let settings: any = {
+    mode: 'push',
+    push: { type: 'rtmp', name: 'rtmp-camera' },
+  };
+  const onChange = (next: any) => {
+    settings = next;
+  };
+  const props = {
+    config: $config,
+    skills: $skills_ffmpeg5,
+    onChange,
+    knownDevices: [],
+  };
+  const view = render(<Network.component {...props} settings={settings} />);
+  fireEvent.mouseDown(screen.getAllByRole('combobox')[1]);
+  fireEvent.click(screen.getByRole('option', { name: 'SRT' }));
+  expect(settings.push).toMatchObject({ type: 'srt', name: 'external' });
+  view.rerender(<Network.component {...props} settings={settings} />);
+  fireEvent.click(screen.getByText('Advanced settings'));
+  fireEvent.change(screen.getByLabelText('Latency (milliseconds)'), {
+    target: { value: '50' },
+  });
+  expect(settings.srt.latency).toBe('50');
+});
+
+test('source:network mode selector switches into push mode', () => {
+  let settings: any = { mode: 'pull', address: 'rtsp://camera/live' };
+  const onChange = (next: any) => {
+    settings = next;
+  };
+  const view = render(
+    <Network.component
+      settings={settings}
+      skills={$skills_ffmpeg5}
+      onChange={onChange}
+    />,
+  );
+  fireEvent.mouseDown(screen.getAllByRole('combobox')[0]);
+  fireEvent.click(screen.getByRole('option', { name: 'Receive Mode' }));
+  expect(settings.mode).toBe('push');
+  view.rerender(
+    <Network.component
+      settings={settings}
+      skills={$skills_ffmpeg5}
+      onChange={onChange}
+    />,
+  );
+  expect(screen.getAllByText('Protocol').length).toBeGreaterThan(0);
+});
+
 const pushmatrix: Record<string, any> = {
   settings: {
     mode: 'push',
@@ -831,3 +974,292 @@ test.each(pushmatrix.tests as any[])(
     expect($inputs[0]).toStrictEqual(data.input);
   },
 );
+
+test('source:network advanced RTSP controls call their change handlers', () => {
+  let settings: any = { mode: 'pull', address: 'rtsp://camera/live' };
+  const onChange = (next: any) => {
+    settings = next;
+  };
+  render(
+    <Network.component
+      settings={settings}
+      skills={$skills_ffmpeg5}
+      onChange={onChange}
+    />,
+  );
+  fireEvent.click(screen.getByText('Advanced settings'));
+  fireEvent.mouseDown(screen.getAllByRole('combobox')[1]);
+  fireEvent.click(screen.getByRole('option', { name: 'UDP' }));
+  expect(settings.rtsp.transport).toBe('udp');
+  fireEvent.change(screen.getByLabelText('thread_queue_size'), {
+    target: { value: '1024' },
+  });
+  expect(settings.general.thread_queue_size).toBe('1024');
+  fireEvent.click(screen.getByLabelText('copyts'));
+  expect(settings.general.copyts).toBe(true);
+});
+
+test('source:network advanced HTTP controls reveal and update the forced framerate', () => {
+  let settings: any = {
+    mode: 'pull',
+    address: 'https://example.test/stream.m3u8',
+  };
+  const onChange = (next: any) => {
+    settings = next;
+  };
+  const view = render(
+    <Network.component
+      settings={settings}
+      skills={$skills_ffmpeg5}
+      onChange={onChange}
+    />,
+  );
+  fireEvent.click(screen.getByText('Advanced settings'));
+  fireEvent.click(screen.getByLabelText('Force input framerate'));
+  view.rerender(
+    <Network.component
+      settings={settings}
+      skills={$skills_ffmpeg5}
+      onChange={onChange}
+    />,
+  );
+  expect(screen.getByLabelText('Framerate')).toBeInTheDocument();
+  fireEvent.change(screen.getByLabelText('Framerate'), {
+    target: { value: '30' },
+  });
+  expect(settings.http).toMatchObject({
+    forceFramerate: true,
+    framerate: '30',
+  });
+});
+
+test('source:network advanced controls toggle HTTP and general settings', () => {
+  let settings: any = {
+    mode: 'pull',
+    address: 'https://example.test/stream.m3u8',
+  };
+  const onChange = (next: any) => {
+    settings = next;
+  };
+  const view = render(
+    <Network.component
+      settings={settings}
+      skills={$skills_ffmpeg5}
+      onChange={onChange}
+    />,
+  );
+  fireEvent.click(screen.getByText('Advanced settings'));
+  fireEvent.click(screen.getByLabelText('Read input at native speed'));
+  fireEvent.click(screen.getByLabelText('copyts'));
+  fireEvent.click(screen.getByLabelText('start_at_zero'));
+  fireEvent.click(screen.getByLabelText('use_wallclock_as_timestamps'));
+  fireEvent.change(screen.getByLabelText('User-Agent'), {
+    target: { value: 'custom-agent' },
+  });
+  fireEvent.change(screen.getByLabelText('Referrer'), {
+    target: { value: 'https://referrer.test' },
+  });
+  fireEvent.change(screen.getByLabelText('Headers'), {
+    target: { value: 'X-One: 1\n\nX-Two: 2' },
+  });
+  fireEvent.change(screen.getByLabelText('HTTP proxy'), {
+    target: { value: 'http://proxy.test' },
+  });
+  fireEvent.change(screen.getByLabelText('max_probe_packets'), {
+    target: { value: '500' },
+  });
+  expect(settings.http).toMatchObject({
+    readNative: false,
+    userAgent: 'custom-agent',
+    referer: 'https://referrer.test',
+    headers: 'X-One: 1\n\nX-Two: 2',
+    http_proxy: 'http://proxy.test',
+  });
+  expect(settings.general).toMatchObject({
+    copyts: true,
+    start_at_zero: true,
+    use_wallclock_as_timestamps: true,
+    max_probe_packets: '500',
+  });
+  view.unmount();
+});
+
+test('source:network input builder handles HTTP headers, proxy, timestamps, and RTSP defaults', () => {
+  const settings = Network.func.initSettings(
+    {
+      mode: 'pull',
+      address: 'https://example.test/live',
+      http: {
+        readNative: false,
+        forceFramerate: true,
+        framerate: 30,
+        headers: 'X-One: 1\n\nX-Two: 2',
+        http_proxy: 'http://proxy.test',
+      },
+      general: {
+        fflags: [],
+        max_probe_packets: 500,
+        copyts: true,
+        start_at_zero: true,
+        use_wallclock_as_timestamps: true,
+        avoid_negative_ts: 'disabled',
+      },
+    },
+    { channelid: 'test' },
+  );
+  const input = Network.func.createInputs(
+    settings,
+    { channelid: 'test' },
+    $skills_ffmpeg5,
+  )[0];
+  expect(input.options).toEqual(
+    expect.arrayContaining([
+      '-max_probe_packets',
+      500,
+      '-copyts',
+      '-start_at_zero',
+      '-use_wallclock_as_timestamps',
+      '1',
+      '-headers',
+      'X-One: 1\r\nX-Two: 2\r\n',
+      '-http_proxy',
+      'http://proxy.test',
+      '-r',
+      30,
+    ]),
+  );
+  expect(
+    Network.func.initSettings({ rtsp: { udp: true } }, { channelid: 'test' })
+      .rtsp.transport,
+  ).toBe('udp');
+  const rtspSkills = Network.func.initSkills({
+    formats: { demuxers: ['rtsp'] },
+    protocols: { input: ['tls', 'rtsp'] },
+  });
+  expect(rtspSkills.protocols.input).toContain('rtsps');
+});
+
+test('source:network icon renders', () => {
+  const { container } = render(<Network.icon />);
+  expect(container.querySelector('svg')).toBeInTheDocument();
+});
+
+test('source:network HLS push replaces the none name with the channel ID', () => {
+  const inputs = Network.func.createInputs(
+    { mode: 'push', push: { type: 'hls', name: 'none' } },
+    { channelid: 'channel-1', hls: { local: 'localhost' } },
+    $skills_ffmpeg5,
+  );
+  expect(inputs[0].address).toBe('http://localhost/memfs/channel-1.m3u8');
+});
+
+test('source:network renders HLS push output and extension controls', () => {
+  const onProbe = vi.fn();
+  const onChange = vi.fn();
+  const settings = { mode: 'push', push: { type: 'hls', name: 'external' } };
+  const config = {
+    channelid: 'external',
+    hls: { secure: true, host: 'stream.example.test', credentials: 'token' },
+  };
+  const skills = {
+    ...$skills_ffmpeg5,
+    protocols: { input: [...$skills_ffmpeg5.protocols.input, 'playout'] },
+  };
+  render(
+    <Network.component
+      settings={settings}
+      config={config}
+      skills={skills}
+      onChange={onChange}
+      onProbe={onProbe}
+    />,
+  );
+  expect(screen.getByText('Send stream to this address:')).toBeInTheDocument();
+  expect(screen.getByText(/memfs\/external\.m3u8/)).toBeInTheDocument();
+  fireEvent.click(screen.getByText('Extention settings'));
+  fireEvent.mouseDown(screen.getAllByRole('combobox').at(-1)!);
+  fireEvent.click(
+    screen.getByRole('option', { name: 'Protect: Video channel' }),
+  );
+  fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
+  expect(onChange).toHaveBeenCalledWith(
+    expect.objectContaining({
+      extentions: expect.objectContaining({ liveguard: 'video' }),
+    }),
+  );
+  expect(onProbe).toHaveBeenCalledWith(
+    expect.objectContaining({
+      mode: 'push',
+      push: expect.objectContaining({ type: 'hls' }),
+    }),
+    Network.func.createInputs(onChange.mock.calls[0][0], config, skills),
+  );
+});
+
+test('source:network HLS push can protect video and audio', () => {
+  const onChange = vi.fn();
+  const settings = { mode: 'push', push: { type: 'hls', name: 'external' } };
+  const config = {
+    channelid: 'external',
+    hls: { secure: true, host: 'stream.example.test', credentials: 'token' },
+  };
+  const skills = {
+    ...$skills_ffmpeg5,
+    protocols: { input: [...$skills_ffmpeg5.protocols.input, 'playout'] },
+  };
+  render(
+    <Network.component
+      settings={settings}
+      config={config}
+      skills={skills}
+      onChange={onChange}
+    />,
+  );
+  fireEvent.click(screen.getByText('Extention settings'));
+  fireEvent.mouseDown(screen.getAllByRole('combobox').at(-1)!);
+  fireEvent.click(
+    screen.getByRole('option', { name: 'Protect: Video and audio channel' }),
+  );
+
+  const updatedSettings = onChange.mock.calls[0][0];
+  expect(updatedSettings.extentions.liveguard).toBe('video_audio');
+  expect(Network.func.createInputs(updatedSettings, config, skills)[0]).toEqual(
+    expect.objectContaining({
+      address: expect.stringMatching(/^playout:/),
+      options: expect.arrayContaining(['-playout_audio', '1']),
+    }),
+  );
+});
+
+test('source:network unsupported push type has no destination address', () => {
+  expect(
+    Network.func.createInputs(
+      { mode: 'push', push: { type: 'unsupported', name: 'external' } },
+      { channelid: 'external' },
+      $skills_ffmpeg5,
+    )[0].address,
+  ).toBe('');
+});
+
+test('source:network default pull callbacks handle address changes and probe', () => {
+  render(
+    <Network.component settings={{ mode: 'pull' }} skills={$skills_ffmpeg6} />,
+  );
+  const address = screen.getByLabelText('Address');
+  fireEvent.change(address, {
+    target: { value: 'https://example.test/live.m3u8' },
+  });
+  fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
+});
+
+test('source:network default push callbacks handle refresh and probe', () => {
+  render(
+    <Network.component
+      settings={{ mode: 'push', push: { type: 'rtmp', name: 'external' } }}
+      config={$config}
+      skills={$skills_ffmpeg6}
+    />,
+  );
+  fireEvent.click(screen.getByRole('button', { name: 'Refresh' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
+});

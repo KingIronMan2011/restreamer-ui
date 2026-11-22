@@ -77,7 +77,7 @@ function createMapping(settings: any, stream: any, skills: any) {
   return mapping;
 }
 
-function Preset({ value = '', onChange = function (event: any) {} }: any) {
+function Preset({ value = '', onChange }: any) {
   return (
     <Select label={<Trans>Preset</Trans>} value={value} onChange={onChange}>
       <MenuItem value="p1">fastest</MenuItem>
@@ -91,7 +91,7 @@ function Preset({ value = '', onChange = function (event: any) {} }: any) {
   );
 }
 
-function Tune({ value = '', onChange = function (event: any) {} }: any) {
+function Tune({ value = '', onChange }: any) {
   return (
     <Select label={<Trans>Tune</Trans>} value={value} onChange={onChange}>
       <MenuItem value="hq">High quality</MenuItem>
@@ -102,7 +102,7 @@ function Tune({ value = '', onChange = function (event: any) {} }: any) {
   );
 }
 
-function Profile({ value = '', onChange = function (event: any) {} }: any) {
+function Profile({ value = '', onChange }: any) {
   return (
     <Select label={<Trans>Profile</Trans>} value={value} onChange={onChange}>
       <MenuItem value="auto">auto</MenuItem>
@@ -113,7 +113,7 @@ function Profile({ value = '', onChange = function (event: any) {} }: any) {
   );
 }
 
-function Level({ value = '', onChange = function (event: any) {} }: any) {
+function Level({ value = '', onChange }: any) {
   return (
     <Select label={<Trans>Level</Trans>} value={value} onChange={onChange}>
       <MenuItem value="auto">auto</MenuItem>
@@ -141,7 +141,7 @@ function Level({ value = '', onChange = function (event: any) {} }: any) {
   );
 }
 
-function RateControl({ value = '', onChange = function (event: any) {} }: any) {
+function RateControl({ value = '', onChange }: any) {
   return (
     <Select
       label={<Trans>Rate control</Trans>}

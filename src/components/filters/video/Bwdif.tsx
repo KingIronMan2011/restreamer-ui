@@ -35,7 +35,7 @@ function createGraph(settings: any) {
   return mapping.join(',');
 }
 
-function Mode({ value = '', onChange = function (event: any) {} }: any) {
+function Mode({ value = '', onChange }: any) {
   return (
     <Select
       label={<Trans>Deinterlace mode</Trans>}
@@ -52,7 +52,7 @@ function Mode({ value = '', onChange = function (event: any) {} }: any) {
   );
 }
 
-function Parity({ value = '', onChange = function (event: any) {} }: any) {
+function Parity({ value = '', onChange }: any) {
   return (
     <Select
       label={<Trans>Deinterlace parity</Trans>}
@@ -72,7 +72,7 @@ function Parity({ value = '', onChange = function (event: any) {} }: any) {
   );
 }
 
-function Deint({ value = '', onChange = function (event: any) {} }: any) {
+function Deint({ value = '', onChange }: any) {
   return (
     <Select
       label={<Trans>Deinterlace deint</Trans>}

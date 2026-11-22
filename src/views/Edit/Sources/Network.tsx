@@ -592,10 +592,7 @@ const isValidURL = (address: any) => {
   return true;
 };
 
-function AdvancedSettings({
-  settings = {},
-  onChange = function (settings: any) {},
-}: any) {
+function AdvancedSettings({ settings = {}, onChange }: any) {
   let protocolClass = getProtocolClass(settings.address);
   if (settings.mode === 'push') {
     switch (settings.push.type) {
@@ -900,11 +897,7 @@ function AdvancedSettings({
   );
 }
 
-function ExtentionSettings({
-  settings = {},
-  skills = {},
-  onChange = function (settings: any) {},
-}: any) {
+function ExtentionSettings({ settings = {}, skills = {}, onChange }: any) {
   if (!skills.protocols.input.includes('playout')) return null;
   return (
     <Grid size={12}>
@@ -946,9 +939,8 @@ function Pull({
   settings = {},
   config = {},
   skills = null,
-  onChange = function (settings: any) {},
-  onProbe = function (settings: any, inputs: any) {},
-  onRefresh = function () {},
+  onChange,
+  onProbe,
 }: any) {
   const classes = useStyles();
   const authProtocol = isAuthProtocol(settings.address);
@@ -1075,9 +1067,9 @@ function Push({
   settings = {},
   config = {},
   skills = null,
-  onChange = function (settings: any) {},
-  onProbe = function (settings: any, inputs: any) {},
-  onRefresh = function () {},
+  onChange,
+  onProbe,
+  onRefresh,
 }: any) {
   const classes = useStyles();
 
@@ -1184,8 +1176,8 @@ function PushHLS({
   settings = {},
   config = {},
   skills = {},
-  onChange = function (settings: any) {},
-  onProbe = function (settings: any, inputs: any) {},
+  onChange,
+  onProbe,
 }: any) {
   const classes = useStyles();
 
@@ -1232,9 +1224,9 @@ function PushRTMP({
   settings = {},
   config = {},
   skills = {},
-  onChange = function (settings: any) {},
-  onProbe = function (settings: any, inputs: any) {},
-  onRefresh = function () {},
+  onChange,
+  onProbe,
+  onRefresh,
 }: any) {
   const { i18n } = useLingui();
   const classes = useStyles();
@@ -1367,9 +1359,9 @@ function PushSRT({
   settings = {},
   config = {},
   skills = {},
-  onChange = function (settings: any) {},
-  onProbe = function (settings: any, inputs: any) {},
-  onRefresh = function () {},
+  onChange,
+  onProbe,
+  onRefresh,
 }: any) {
   const { i18n } = useLingui();
   const classes = useStyles();
@@ -1505,9 +1497,6 @@ function Source({
   onChange = function (settings: any) {},
   onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
-  onStore = function (name: any, data: any) {
-    return '';
-  },
 }: any) {
   const classes = useStyles();
   const { i18n } = useLingui();

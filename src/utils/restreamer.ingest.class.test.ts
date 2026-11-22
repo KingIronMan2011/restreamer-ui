@@ -61,6 +61,8 @@ describe('Restreamer ingest and session methods', () => {
     expect(restreamer.HasIngest()).toBe(false);
     restreamer.channels.clear();
     expect(restreamer.HasIngest()).toBe(false);
+    (restreamer as any).channel = null;
+    expect(restreamer.HasIngest()).toBe(false);
 
     await expect(restreamer.GetIngest('unknown')).resolves.toBeNull();
     await expect(
@@ -86,7 +88,8 @@ describe('Restreamer ingest and session methods', () => {
     restreamer2._getProcess = vi.fn().mockResolvedValue({ id: 'process' });
     restreamer2._getProcessMetadata = vi
       .fn()
-      .mockResolvedValue({ meta: { name: '' } });
+      .mockResolvedValueOnce({ meta: { name: '' } })
+      .mockResolvedValueOnce({ meta: { name: 'Existing name' } });
     restreamer2._setProcessMetadata = vi.fn().mockResolvedValue(true);
     restreamer2._getProcessLog = vi.fn().mockResolvedValue('log');
     restreamer2.GetDebug = vi.fn().mockResolvedValue({ debug: true });
@@ -99,6 +102,9 @@ describe('Restreamer ingest and session methods', () => {
     await expect(
       restreamer2.GetIngestMetadata('channel'),
     ).resolves.toMatchObject({ meta: { name: 'Channel' } });
+    await expect(
+      restreamer2.GetIngestMetadata('channel'),
+    ).resolves.toMatchObject({ meta: { name: 'Existing name' } });
     await expect(
       restreamer2.SetIngestMetadata('channel', { meta: { name: 'Renamed' } }),
     ).resolves.toBe(true);
@@ -209,7 +215,9 @@ describe('Restreamer ingest and session methods', () => {
     restreamer._upsertProcess = vi
       .fn()
       .mockResolvedValueOnce([{ id: 'snapshot' }, new Error('snapshot failed')])
-      .mockResolvedValueOnce([{ id: 'preview' }, null]);
+      .mockResolvedValueOnce([{ id: 'preview' }, null])
+      .mockResolvedValueOnce([{ id: 'snapshot' }, null])
+      .mockResolvedValueOnce([{ id: 'preview' }, new Error('preview failed')]);
     const snapshotControl = {
       hls: { storage: 'diskfs' },
       snapshot: { enable: true, interval: '4' },
@@ -254,6 +262,30 @@ describe('Restreamer ingest and session methods', () => {
         reconnect: false,
         reconnect_delay_seconds: 2,
       }),
+    );
+
+    await expect(
+      restreamer.UpsertIngestSnapshot('channel', {
+        ...snapshotControl,
+        snapshot: { enable: false, interval: '0' },
+      }),
+    ).resolves.toEqual([{ id: 'snapshot' }, null]);
+    expect(restreamer._upsertProcess).toHaveBeenNthCalledWith(
+      3,
+      'restreamer-ui:ingest:channel_snapshot',
+      expect.objectContaining({ autostart: false, reconnect: false }),
+    );
+
+    await expect(
+      restreamer.UpsertIngestPreview('channel', {
+        ...previewControl,
+        preview: { ...previewControl.preview, enable: true },
+      }),
+    ).resolves.toEqual([{ id: 'preview' }, expect.any(Error)]);
+    expect(restreamer._upsertProcess).toHaveBeenNthCalledWith(
+      4,
+      'restreamer-ui:ingest:channel_h264',
+      expect.objectContaining({ autostart: true, reconnect: true }),
     );
   });
 

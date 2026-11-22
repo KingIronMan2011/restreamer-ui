@@ -25,12 +25,7 @@ const createInputs = (settings: any) => {
   return [input];
 };
 
-function Source({
-  knownDevices = [],
-  settings = {},
-  onChange = function (settings: any) {},
-  onProbe = function (settings: any, inputs: any) {},
-}: any) {
+function Source() {
   return null;
 }
 

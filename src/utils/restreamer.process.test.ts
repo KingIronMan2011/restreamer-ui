@@ -41,6 +41,18 @@ describe('Restreamer process and metadata adapters', () => {
     expect(restreamer._sanitizeProcess(populated).metadata).toEqual({});
   });
 
+  it('preserves a present process state while sanitizing the record', () => {
+    const restreamer = client();
+    const state = {
+      exec: 'running',
+      command: ['ffmpeg'],
+      progress: { bitrate_kbit: 1200, fps: 30, speed: 1 },
+      runtime_seconds: 15,
+    };
+
+    expect(restreamer._sanitizeProcess({ state }).state).toBe(state);
+  });
+
   it('sets and gets application metadata and handles Core errors', async () => {
     const restreamer = client();
     const call = vi

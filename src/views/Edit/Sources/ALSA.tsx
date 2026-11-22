@@ -64,9 +64,6 @@ function Source({
   onChange = function (settings: any) {},
   onProbe = function (settings: any, inputs: any) {},
   onRefresh = function () {},
-  onStore = function (name: any, data: any) {
-    return '';
-  },
 }: any) {
   const classes = useStyles();
   const { i18n } = useLingui();

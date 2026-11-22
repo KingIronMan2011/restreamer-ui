@@ -59,6 +59,7 @@ describe.each([
       const onProbe = vi.fn();
       const onStore = vi.fn(async (_name, _data, progress) => {
         progress(true, 0.5, 10);
+        progress(false, 0, 10);
         return address;
       });
       const view = render(
@@ -95,6 +96,27 @@ describe.each([
         expect.objectContaining({ address, mimetype: mime }),
         source.func.createInputs({ address, mimetype: mime }),
       );
+    });
+
+    it('supports file upload and probe with default callbacks', async () => {
+      const user = userEvent.setup();
+      const Icon = source.icon;
+      const { container } = render(
+        <>
+          <Icon />
+          <source.component settings={{ address, mimetype: mime }} />
+        </>,
+      );
+
+      fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
+      await user.upload(
+        screen.getByLabelText('Upload'),
+        new File(['media'], type === 'audio' ? 'default.mp3' : 'default.png', {
+          type: mime,
+        }),
+      );
+
+      expect(container.querySelector('svg')).toBeInTheDocument();
     });
   },
 );

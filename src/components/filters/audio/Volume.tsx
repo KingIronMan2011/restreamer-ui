@@ -38,7 +38,7 @@ function createGraph(settings: any) {
   return mapping.join(',');
 }
 
-function VolumeLevel({ value = '', onChange = function (event: any) {} }: any) {
+function VolumeLevel({ value = '', onChange }: any) {
   return (
     <Select label={<Trans>Volume</Trans>} value={value} onChange={onChange}>
       <MenuItem value="inherit">
@@ -60,11 +60,7 @@ function VolumeLevel({ value = '', onChange = function (event: any) {} }: any) {
   );
 }
 
-function VolumeDB({
-  value = '',
-  disabled = false,
-  onChange = function (event: any) {},
-}: any) {
+function VolumeDB({ value = '', disabled = false, onChange }: any) {
   return (
     <TextField
       variant="outlined"

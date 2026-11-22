@@ -288,4 +288,19 @@ describe('Restreamer debug and metrics helpers', () => {
     expect(restreamer.HasUpdates()).toBe(false);
     expect(restreamer.HasService()).toBe(false);
   });
+
+  it('schedules the next update check after the hourly timer fires', async () => {
+    vi.useFakeTimers();
+    const restreamer = client();
+    vi.mocked(Storage.Get).mockReturnValue('true');
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('offline')));
+    const check = vi.spyOn(restreamer, '_checkForUpdates');
+
+    await restreamer._checkForUpdates();
+    expect(check).toHaveBeenCalledOnce();
+
+    await vi.advanceTimersByTimeAsync(60 * 60 * 1000);
+    expect(check).toHaveBeenCalledTimes(2);
+    vi.clearAllTimers();
+  });
 });

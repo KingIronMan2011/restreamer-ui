@@ -97,3 +97,66 @@ describe.each([
     );
   });
 });
+
+it('ALSA source supports custom devices with default callbacks', () => {
+  const Icon = ALSA.icon;
+  const { container } = render(
+    <>
+      <Icon />
+      <ALSA.component
+        knownDevices={[
+          { id: 'hw:2,0', name: 'Microphone', media: 'audio' },
+          { id: '/dev/video0', name: 'Camera', media: 'video' },
+        ]}
+        settings={{ device: '1,0', sampling: '44100' }}
+      />
+    </>,
+  );
+
+  fireEvent.mouseDown(screen.getAllByRole('combobox')[0]);
+  fireEvent.click(screen.getByRole('option', { name: 'Custom ...' }));
+  fireEvent.change(
+    screen.getByRole('textbox', { name: 'Custom audio device' }),
+    {
+      target: { value: 'hw:4,0' },
+    },
+  );
+  fireEvent.change(screen.getByRole('textbox', { name: 'Channels' }), {
+    target: { value: '2' },
+  });
+  fireEvent.change(screen.getByRole('textbox', { name: 'Delay (ms)' }), {
+    target: { value: '10' },
+  });
+  fireEvent.click(screen.getByRole('button', { name: 'Refresh' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
+
+  expect(
+    screen.getByRole('textbox', { name: 'Custom audio device' }),
+  ).toHaveValue('hw:4,0');
+  expect(container.querySelector('svg')).toBeInTheDocument();
+});
+
+describe.each([
+  ['Raspberry Pi camera', Raspicam],
+  ['V4L camera', V4L],
+])('%s default callbacks', (_name, source) => {
+  it('handles device selection, refresh, and probe', () => {
+    const Icon = source.icon;
+    const { container } = render(
+      <>
+        <Icon />
+        <source.component
+          knownDevices={knownDevices}
+          settings={{ device: 'none', deviceCustom: '/dev/video0' }}
+        />
+      </>,
+    );
+
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[0]);
+    fireEvent.click(screen.getByRole('option', { name: /USB camera/ }));
+    fireEvent.click(screen.getByRole('button', { name: 'Refresh' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
+
+    expect(container.querySelector('svg')).toBeInTheDocument();
+  });
+});

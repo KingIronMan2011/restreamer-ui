@@ -1,6 +1,8 @@
 import React from 'react';
+import { vi } from 'vitest';
 
 import Wizard from '.';
+import NotifyContext from '../../../components/contexts/Notify';
 import { render, fireEvent, act, screen } from '../../../utils/testing';
 
 let lastUpsertIngest = null;
@@ -348,6 +350,111 @@ test('wizard', async () => {
   expect(screen.queryByText('SRT server')).toBeInTheDocument();
 });
 
+test('wizard opens help from the source selection step', async () => {
+  const open = vi.spyOn(window, 'open').mockImplementation(() => null);
+  render(
+    <Wizard restreamer={restreamer} />,
+    {},
+    '/wizard/test',
+    '/wizard/:channelid',
+  );
+
+  await screen.findByText(/Select whether you pull the stream from a/);
+  const headerButtons = screen.getAllByRole('button');
+  fireEvent.click(headerButtons[1]);
+  expect(open).toHaveBeenCalledOnce();
+  open.mockRestore();
+});
+
+test('wizard advanced setup navigates to channel editing', async () => {
+  render(
+    <Wizard restreamer={restreamer} />,
+    {},
+    '/wizard/test',
+    '/wizard/:channelid',
+  );
+
+  await screen.findByText(/Select whether you pull the stream from a/);
+  fireEvent.click(screen.getByRole('button', { name: 'Advanced setup' }));
+  expect(
+    screen.queryByText(/Select whether you pull the stream from a/),
+  ).not.toBeInTheDocument();
+});
+
+test('wizard lists hardware video sources reported by FFmpeg', async () => {
+  const getSkills = restreamer.Skills;
+  const originalRefreshSkills = restreamer.RefreshSkills;
+  restreamer.Skills = async () => ({
+    ...(await getSkills()),
+    sources: {
+      network: [],
+      video4linux2: [],
+      raspicam: [],
+      avfoundation: [],
+    },
+  });
+  try {
+    render(
+      <Wizard restreamer={restreamer} />,
+      {},
+      '/wizard/test',
+      '/wizard/:channelid',
+    );
+    expect(
+      await screen.findByRole('button', { name: 'Hardware device' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Raspberry Pi camera' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Connected device' }),
+    ).toBeInTheDocument();
+  } finally {
+    restreamer.Skills = getSkills;
+    restreamer.RefreshSkills = originalRefreshSkills;
+  }
+});
+
+test('wizard hardware source can refresh devices and return to source selection', async () => {
+  const getSkills = restreamer.Skills;
+  const originalRefreshSkills = restreamer.RefreshSkills;
+  const refreshSkills = vi.fn();
+  restreamer.RefreshSkills = refreshSkills;
+  restreamer.Skills = async () => ({
+    ...(await getSkills()),
+    sources: {
+      network: [],
+      video4linux2: [
+        { id: '/dev/video0', name: 'Camera', media: 'video', extra: '' },
+      ],
+    },
+  });
+
+  try {
+    render(
+      <Wizard restreamer={restreamer} />,
+      {},
+      '/wizard/test',
+      '/wizard/:channelid',
+    );
+    fireEvent.click(
+      await screen.findByRole('button', { name: 'Hardware device' }),
+    );
+    expect(await screen.findByText('Select a device:')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Refresh' }));
+    await vi.waitFor(() => expect(refreshSkills).toHaveBeenCalledOnce());
+
+    fireEvent.click(screen.getByRole('button', { name: 'Back' }));
+    expect(
+      await screen.findByRole('button', { name: 'Hardware device' }),
+    ).toBeInTheDocument();
+  } finally {
+    restreamer.Skills = getSkills;
+    restreamer.RefreshSkills = originalRefreshSkills;
+  }
+});
+
 test('wizard abort can be cancelled when it is the only channel', async () => {
   const view = render(
     <Wizard restreamer={restreamer} />,
@@ -487,6 +594,9 @@ test('wizard: rtmp source video h264-aac', async () => {
   });
 
   expect(screen.queryByText(/Metadata/)).toBeInTheDocument();
+  fireEvent.change(screen.getByLabelText('Name'), {
+    target: { value: 'Coverage test stream' },
+  });
 
   // Confirm metadata
   button = screen.getByRole('button', { name: 'Next' });
@@ -498,6 +608,12 @@ test('wizard: rtmp source video h264-aac', async () => {
 
   expect(screen.queryByText(/License/)).toBeInTheDocument();
 
+  fireEvent.mouseDown(screen.getByRole('combobox'));
+  fireEvent.click(screen.getByRole('option', { name: 'CC BY 4.0' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Back' }));
+  expect(await screen.findByText(/Metadata/)).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+
   // Confirm license
   button = screen.getByRole('button', { name: 'Save' });
   expect(button).toBeEnabled();
@@ -505,6 +621,216 @@ test('wizard: rtmp source video h264-aac', async () => {
   await act(async () => {
     fireEvent.click(button);
   });
+});
+
+test('wizard audio setup handles stream changes, silence, no audio, and back navigation', async () => {
+  render(
+    <Wizard restreamer={restreamer} />,
+    {},
+    '/wizard/test',
+    '/wizard/:channelid',
+  );
+
+  fireEvent.click(await screen.findByRole('button', { name: 'RTMP server' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+  fireEvent.click(await screen.findByRole('button', { name: 'Next' }));
+
+  expect(
+    await screen.findByRole('radio', { name: 'Silence Audio' }),
+  ).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('radio', { name: 'Silence Audio' }));
+  fireEvent.click(screen.getByRole('radio', { name: 'No audio' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+
+  expect(await screen.findByText('Metadata')).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: 'Back' }));
+  expect(await screen.findByText('Audio setup')).toBeInTheDocument();
+
+  fireEvent.click(screen.getByRole('button', { name: 'Back' }));
+  expect(
+    await screen.findByText(
+      /The video source is compatible. Select the desired resolution:/,
+    ),
+  ).toBeInTheDocument();
+});
+
+test('wizard selects a non-default audio stream', async () => {
+  const originalProbe = restreamer.Probe;
+  restreamer.Probe = async (...args: any[]) => {
+    const [result, error] = await originalProbe(...args);
+    const audio = result.streams.find((stream: any) => stream.type === 'audio');
+    return [
+      {
+        ...result,
+        streams: [
+          ...result.streams,
+          { ...audio, stream: 2, codec: 'opus', layout: 'stereo' },
+        ],
+      },
+      error,
+    ];
+  };
+
+  try {
+    render(
+      <Wizard restreamer={restreamer} />,
+      {},
+      '/wizard/test',
+      '/wizard/:channelid',
+    );
+    fireEvent.click(
+      await screen.findByRole('button', { name: 'Network source' }),
+    );
+    fireEvent.change(screen.getByLabelText('Address'), {
+      target: { value: 'rtsp://127.0.0.1/live/h264-aac' },
+    });
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Next' }));
+
+    expect(await screen.findByText('Audio setup')).toBeInTheDocument();
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    fireEvent.click(screen.getByRole('option', { name: /OPUS stereo/i }));
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+    expect(await screen.findByText('Metadata')).toBeInTheDocument();
+  } finally {
+    restreamer.Probe = originalProbe;
+  }
+});
+
+test('wizard updates video stream, decoder, and encoder and falls back to silence', async () => {
+  const originalProbe = restreamer.Probe;
+  const originalSkills = restreamer.Skills;
+  restreamer.Skills = async () => ({
+    ...(await originalSkills()),
+    decoders: {
+      audio: ['default'],
+      video: ['default', 'vp9_cuvid'],
+    },
+    encoders: {
+      audio: ['copy', 'none', 'aac'],
+      video: ['copy', 'none', 'libx264', 'h264_nvenc'],
+    },
+  });
+  restreamer.Probe = async (...args: any[]) => {
+    const [result, error] = await originalProbe(...args);
+    const video = result.streams.find((stream: any) => stream.type === 'video');
+    return [
+      {
+        streams: [
+          { ...video, codec: 'vp9', stream: 0 },
+          { ...video, codec: 'vp9', stream: 1, width: 640, height: 360 },
+        ],
+        log: result.log,
+      },
+      error,
+    ];
+  };
+
+  try {
+    render(
+      <Wizard restreamer={restreamer} />,
+      {},
+      '/wizard/test',
+      '/wizard/:channelid',
+    );
+    fireEvent.click(await screen.findByRole('button', { name: 'RTMP server' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+
+    expect(
+      await screen.findByText(/Your stream needs to be encoded/),
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Back' }));
+    expect(screen.getAllByText('Input stream').length).toBeGreaterThan(0);
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+    expect(
+      await screen.findByText(/Your stream needs to be encoded/),
+    ).toBeInTheDocument();
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[0]);
+    fireEvent.click(screen.getByRole('option', { name: /640x360, VP9/i }));
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[1]);
+    fireEvent.click(screen.getByRole('option', { name: /VP9 \(CUVID\)/i }));
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[2]);
+    fireEvent.click(screen.getByRole('option', { name: /H\.264 \(NVENC\)/i }));
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+
+    expect(
+      await screen.findByRole('radio', { name: 'Silence Audio' }),
+    ).toBeChecked();
+  } finally {
+    restreamer.Probe = originalProbe;
+    restreamer.Skills = originalSkills;
+  }
+});
+
+test('wizard uses a hardware video source with a selectable ALSA audio device', async () => {
+  const originalProbe = restreamer.Probe;
+  const originalSkills = restreamer.Skills;
+  restreamer.Skills = async () => ({
+    ...(await originalSkills()),
+    sources: {
+      network: [],
+      video4linux2: [
+        { id: '/dev/video0', name: 'USB camera', media: 'video', extra: 'UVC' },
+      ],
+      alsa: [
+        { id: 'hw:1,0', name: 'USB microphone', media: 'audio' },
+        { id: 'hw:2,0', name: 'Studio microphone', media: 'audio' },
+      ],
+    },
+  });
+  restreamer.Probe = async (_id: string, inputs: any[]) => {
+    const audioInput = inputs[0].options.includes('alsa');
+    return [
+      {
+        streams: [
+          {
+            index: 0,
+            stream: 0,
+            type: audioInput ? 'audio' : 'video',
+            codec: audioInput ? 'aac' : 'h264',
+            width: audioInput ? 0 : 1280,
+            height: audioInput ? 0 : 720,
+            channels: audioInput ? 2 : 0,
+            layout: audioInput ? 'stereo' : '',
+            sampling_hz: audioInput ? 44100 : 0,
+          },
+        ],
+        log: [],
+      },
+      null,
+    ];
+  };
+
+  try {
+    render(
+      <Wizard restreamer={restreamer} />,
+      {},
+      '/wizard/test',
+      '/wizard/:channelid',
+    );
+    fireEvent.click(
+      await screen.findByRole('button', { name: 'Hardware device' }),
+    );
+    fireEvent.click(await screen.findByRole('button', { name: 'Next' }));
+    expect(
+      await screen.findByText(
+        /The video source is compatible. Select the desired resolution:/,
+      ),
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+
+    expect(await screen.findByText('Audio setup')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('radio', { name: 'Audio from device' }));
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    fireEvent.click(
+      screen.getByRole('option', { name: /Studio microphone \(hw:2,0\)/i }),
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+    expect(await screen.findByText('Metadata')).toBeInTheDocument();
+  } finally {
+    restreamer.Probe = originalProbe;
+    restreamer.Skills = originalSkills;
+  }
 });
 
 test('wizard: srt source video h264-aac', async () => {
@@ -574,6 +900,8 @@ test('wizard: srt source video h264-aac', async () => {
   expect(screen.queryByText(/License/)).toBeInTheDocument();
 
   // Confirm license
+  fireEvent.mouseDown(screen.getByRole('combobox'));
+  fireEvent.click(screen.getByRole('option', { name: 'CC BY 4.0' }));
   button = screen.getByRole('button', { name: 'Save' });
   expect(button).toBeEnabled();
 
@@ -636,6 +964,79 @@ test('wizard: network source error', async () => {
       /The source doesn't provide any video streams. Please check the device./,
     ),
   ).toBeInTheDocument();
+});
+
+test('wizard displays a probe error response', async () => {
+  const originalProbe = restreamer.Probe;
+  restreamer.Probe = async () => [null, { message: 'probe failed' }];
+  try {
+    render(
+      <Wizard restreamer={restreamer} />,
+      {},
+      '/wizard/test',
+      '/wizard/:channelid',
+    );
+    await screen.findByRole('button', { name: 'Network source' });
+    fireEvent.click(screen.getByRole('button', { name: 'Network source' }));
+    fireEvent.change(screen.getByLabelText('Address'), {
+      target: { value: 'rtsp://127.0.0.1/live/test' },
+    });
+    await act(async () =>
+      fireEvent.click(screen.getByRole('button', { name: 'Next' })),
+    );
+    expect(
+      await screen.findByText(/Failed to verify the source/),
+    ).toBeInTheDocument();
+  } finally {
+    restreamer.Probe = originalProbe;
+  }
+});
+
+test('wizard shows an error when saving the ingest fails', async () => {
+  const originalUpsert = restreamer.UpsertIngest;
+  const dispatch = vi.fn();
+  restreamer.UpsertIngest = async () => [null, { message: 'save failed' }];
+  try {
+    render(
+      <NotifyContext.Provider value={{ Dispatch: dispatch }}>
+        <Wizard restreamer={restreamer} />
+      </NotifyContext.Provider>,
+      {},
+      '/wizard/test',
+      '/wizard/:channelid',
+    );
+    await screen.findByRole('button', { name: 'Network source' });
+    fireEvent.click(screen.getByRole('button', { name: 'Network source' }));
+    fireEvent.change(screen.getByLabelText('Address'), {
+      target: { value: 'rtsp://127.0.0.1/live/h264-aac' },
+    });
+    await act(async () =>
+      fireEvent.click(screen.getByRole('button', { name: 'Next' })),
+    );
+    await act(async () =>
+      fireEvent.click(screen.getByRole('button', { name: 'Next' })),
+    );
+    await act(async () =>
+      fireEvent.click(screen.getByRole('button', { name: 'Next' })),
+    );
+    await act(async () =>
+      fireEvent.click(screen.getByRole('button', { name: 'Next' })),
+    );
+    await act(async () =>
+      fireEvent.click(screen.getByRole('button', { name: 'Save' })),
+    );
+    expect(dispatch).toHaveBeenCalledWith(
+      'error',
+      'save:ingest',
+      'save failed',
+    );
+    fireEvent.click(await screen.findByRole('button', { name: 'Retry' }));
+    expect(
+      await screen.findByText(/Select whether you pull the stream from a/),
+    ).toBeInTheDocument();
+  } finally {
+    restreamer.UpsertIngest = originalUpsert;
+  }
 });
 
 test('wizard: network source video h264', async () => {
@@ -1144,6 +1545,8 @@ test('wizard: license', async () => {
   expect(screen.queryByText(/License/)).toBeInTheDocument();
 
   // Confirm license
+  fireEvent.mouseDown(screen.getByRole('combobox'));
+  fireEvent.click(screen.getByRole('option', { name: 'CC0 1.0' }));
   button = screen.getByRole('button', { name: 'Save' });
   expect(button).toBeEnabled();
 

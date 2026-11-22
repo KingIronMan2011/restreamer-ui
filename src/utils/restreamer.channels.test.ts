@@ -108,6 +108,7 @@ describe('Restreamer channel helpers', () => {
     const restreamer = client();
     restreamer.channels.set('one', channel('one'));
     restreamer.SelectChannel('one');
+    restreamer.SetChannelEgress('one', 'egress-1', { id: 'egress-1' });
     restreamer.StopAllEgresses = vi.fn().mockResolvedValue(undefined);
     restreamer.DeleteIngest = vi.fn().mockResolvedValue(undefined);
     restreamer.DeleteIngestSnapshot = vi.fn().mockResolvedValue(undefined);
@@ -118,6 +119,7 @@ describe('Restreamer channel helpers', () => {
     expect(restreamer.StopAllEgresses).toHaveBeenCalledWith('one');
     expect(restreamer.DeleteIngest).toHaveBeenCalledWith('one');
     expect(restreamer.DeleteIngestSnapshot).toHaveBeenCalledWith('one');
+    expect(restreamer.DeleteEgress).toHaveBeenCalledWith('one', 'egress-1');
     expect(restreamer.channels.size).toBe(1);
     expect(restreamer.GetCurrentChannelID()).toBe(
       [...restreamer.channels.keys()][0],
@@ -133,6 +135,11 @@ describe('Restreamer channel helpers', () => {
         id: 'restreamer-ui:egress:twitch:33333333-3333-3333-3333-333333333333',
         reference: id,
         metadata: { name: 'Twitch' },
+      },
+      {
+        id: 'restreamer-ui:egress:youtube:55555555-5555-5555-5555-555555555555',
+        reference: id,
+        metadata: { name: 'YouTube' },
       },
       { id: 'unsupported', reference: id, metadata: {} },
       {
@@ -172,8 +179,66 @@ describe('Restreamer channel helpers', () => {
     expect(restreamer.GetChannel(id)?.name).toBe('Main');
     expect(restreamer.GetChannel(id)?.egresses).toEqual([
       'restreamer-ui:egress:twitch:33333333-3333-3333-3333-333333333333',
+      'restreamer-ui:egress:youtube:55555555-5555-5555-5555-555555555555',
     ]);
     expect(restreamer.GetCurrentChannelID()).toBe(other);
+  });
+
+  it('lists player first and sorts egresses by name then index', async () => {
+    const restreamer = client();
+    const current = channel('one');
+    const alphaId = 'restreamer-ui:egress:youtube:alpha';
+    const secondId = 'restreamer-ui:egress:twitch:second';
+    const firstId = 'restreamer-ui:egress:twitch:first';
+    restreamer.channels.set('one', current);
+    restreamer.SetChannelEgress('one', alphaId, {
+      service: 'youtube',
+      index: '0',
+      name: 'Alpha',
+    });
+    restreamer.SetChannelEgress('one', secondId, {
+      service: 'twitch',
+      index: '2',
+      name: 'Same',
+    });
+    restreamer.SetChannelEgress('one', firstId, {
+      service: 'twitch',
+      index: '1',
+      name: 'Same',
+    });
+    restreamer._listProcesses = vi
+      .fn()
+      .mockResolvedValue([
+        { id: secondId },
+        { id: firstId },
+        { id: current.id },
+        { id: 'untracked-process' },
+        { id: alphaId },
+      ]);
+    restreamer.GetChannelEgress = vi.fn((channelid, id) => {
+      const lookup: Record<string, any> = {
+        [alphaId]: current.egresses.get(alphaId),
+        [secondId]: current.egresses.get(secondId),
+        [firstId]: current.egresses.get(firstId),
+      };
+      return lookup[id] ?? null;
+    });
+
+    const list = await restreamer.ListIngestEgresses('one');
+
+    expect(
+      list.map((process: any) => ({
+        id: process.id,
+        service: process.service,
+        index: process.index,
+        name: process.name,
+      })),
+    ).toEqual([
+      { id: current.id, service: 'player', index: '', name: 'one' },
+      { id: alphaId, service: 'youtube', index: '0', name: 'Alpha' },
+      { id: firstId, service: 'twitch', index: '1', name: 'Same' },
+      { id: secondId, service: 'twitch', index: '2', name: 'Same' },
+    ]);
   });
 
   it('creates a first channel when discovery returns no ingest and clears imported metadata', async () => {

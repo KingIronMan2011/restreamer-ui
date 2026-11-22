@@ -272,6 +272,38 @@ describe('Restreamer config and metadata helpers', () => {
     expect(restreamer.GetPublicAddress('unknown', 'channel-1')).toBe('');
   });
 
+  it('omits optional ports, tokens, and app paths for unsecured public addresses', () => {
+    const restreamer = client();
+    restreamer.channel = { channelid: 'channel' };
+    restreamer.config = {
+      hostname: 'stream.example',
+      http: { secure: false, host: 'stream.example' },
+      source: {
+        network: {
+          rtmp: { host: 'stream.example', secure: false, app: '', token: '' },
+          srt: { host: 'stream.example', token: '', passphrase: '' },
+          hls: { host: 'stream.example' },
+        },
+      },
+    };
+    restreamer.GetChannelPosterPath = vi.fn(() => 'memfs/channel.jpg');
+    restreamer.GetChannelManifestPath = vi.fn(() => 'channel.m3u8');
+    restreamer.GetChannelPlayerPath = vi.fn(() => 'channel.html');
+
+    expect(restreamer.GetPublicAddress('rtmp', 'channel')).toBe(
+      'rtmp://stream.example/channel.stream',
+    );
+    expect(restreamer.GetPublicAddress('srt', 'channel')).toBe(
+      'srt://stream.example/?mode=caller&transtype=live&streamid=channel,mode:request',
+    );
+    expect(restreamer.GetPublicAddress('snapshot+memfs', 'channel')).toBe(
+      'http://stream.example/memfs/channel.jpg',
+    );
+    expect(restreamer.GetPublicAddress('player', 'channel')).toBe(
+      'http://stream.example/channel.html',
+    );
+  });
+
   it('returns logs and resources with error fallbacks', async () => {
     const restreamer = client();
     restreamer._call = vi

@@ -139,4 +139,42 @@ describe('X11 screen source', () => {
       X11grab.func.createInputs(settings),
     );
   });
+
+  it('uses defaults for callbacks and supports a custom follow-mouse point', () => {
+    const Icon = X11grab.icon;
+    const { container } = render(
+      <>
+        <Icon />
+        <X11grab.component
+          knownDevices={[
+            { id: 'camera0', name: 'Camera', media: 'video' },
+            { id: 'mic0', name: 'Microphone', media: 'audio' },
+          ]}
+          settings={{
+            device: 'custom',
+            deviceCustom: ':99',
+            draw_mouse: true,
+            follow_mouse: 'centered',
+          }}
+        />
+      </>,
+    );
+
+    const comboboxes = screen.getAllByRole('combobox');
+    fireEvent.mouseDown(comboboxes[comboboxes.length - 1]);
+    const customOptions = screen.getAllByRole('option', {
+      name: 'Custom ...',
+    });
+    fireEvent.click(customOptions[customOptions.length - 1]);
+    fireEvent.change(screen.getByRole('textbox', { name: 'Follow mouse' }), {
+      target: { value: '120,80' },
+    });
+    fireEvent.click(screen.getByRole('button', { name: 'Refresh' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
+
+    expect(screen.getByRole('textbox', { name: 'Follow mouse' })).toHaveValue(
+      '120,80',
+    );
+    expect(container.querySelector('svg')).toBeInTheDocument();
+  });
 });

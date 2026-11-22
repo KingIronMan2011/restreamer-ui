@@ -38,7 +38,7 @@ function createGraph(settings: any) {
 }
 
 // filter
-function Pan({ value = '', onChange = function (event: any) {} }: any) {
+function Pan({ value = '', onChange }: any) {
   return (
     <React.Fragment>
       <Select label={<Trans>Pan</Trans>} value={value} onChange={onChange}>

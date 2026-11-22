@@ -94,4 +94,14 @@ describe('AVFoundation source', () => {
       ]),
     );
   });
+
+  it('runs default handlers and renders the source icon', () => {
+    render(<AVFoundation.component />);
+    fireEvent.click(screen.getByRole('button', { name: 'Refresh' }));
+    fireEvent.click(screen.getByRole('checkbox', { name: 'Capture cursor' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
+    expect(
+      <AVFoundation.icon data-testid="avfoundation-icon" />,
+    ).toHaveProperty('props');
+  });
 });

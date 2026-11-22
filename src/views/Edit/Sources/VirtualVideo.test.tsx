@@ -114,4 +114,13 @@ describe('virtual video source', () => {
       VirtualVideo.func.createInputs({ source: 'testsrc', ...dimensions }),
     );
   });
+
+  it('runs default handlers and renders the source icon', () => {
+    render(<VirtualVideo.component />);
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    fireEvent.click(screen.getByRole('option', { name: 'Test pattern' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Probe' }));
+    render(<VirtualVideo.icon data-testid="virtual-video-icon" />);
+    expect(screen.getByTestId('virtual-video-icon')).toBeInTheDocument();
+  });
 });

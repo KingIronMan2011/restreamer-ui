@@ -76,9 +76,13 @@ describe('Restreamer egress API', () => {
     await expect(
       restreamer.StartEgress('channel', 'unknown'),
     ).resolves.toBeNull();
+    await expect(restreamer.StartEgress('unknown', id)).resolves.toBeNull();
     await expect(restreamer.StartEgress('channel', id)).resolves.toBe(true);
     await expect(restreamer.StopEgress('channel', id)).resolves.toBe(true);
     await expect(restreamer.StopEgress('unknown', id)).resolves.toBeNull();
+    await expect(
+      restreamer.StopEgress('channel', 'unknown'),
+    ).resolves.toBeNull();
     await expect(
       restreamer.StopAllEgresses('unknown'),
     ).resolves.toBeUndefined();
@@ -92,6 +96,10 @@ describe('Restreamer egress API', () => {
       [],
       {},
     );
+    await expect(restreamer.DeleteEgress('unknown', id)).resolves.toBeNull();
+    await expect(
+      restreamer.DeleteEgress('channel', 'unknown'),
+    ).resolves.toBeNull();
     await expect(restreamer.DeleteEgress('channel', id)).resolves.toBe(true);
     expect(restreamer.GetChannelEgress('channel', id)).toBeNull();
   });

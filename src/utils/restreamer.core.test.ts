@@ -78,6 +78,20 @@ describe('Restreamer client basics', () => {
     expect(client._checkForUpdates).toHaveBeenCalledOnce();
   });
 
+  it('rejects invalid dates and parses fractional and timezone offsets', () => {
+    const client = createRestreamer();
+    expect(
+      client._initAbout({ created_at: 'not-a-date' }).created_at,
+    ).toBeNull();
+    expect(
+      client._initAbout({ created_at: '2024-03-04 05:06:07' }).created_at,
+    ).toEqual(new Date('2024-03-04T05:06:07Z'));
+    expect(
+      client._initAbout({ created_at: '2024-03-04T05:06:07.12+02:30' })
+        .created_at,
+    ).toBeInstanceOf(Date);
+  });
+
   it('adds, removes, and dispatches only supported event severities', () => {
     const client = createRestreamer();
     const first = vi.fn();
@@ -186,6 +200,58 @@ describe('Restreamer client basics', () => {
     await expect(client._call(request, 'input')).resolves.toEqual(['ok', null]);
     expect(request).toHaveBeenCalledTimes(2);
     expect(listener).not.toHaveBeenCalled();
+  });
+
+  it('dispatches network and auth errors returned by a retried request', async () => {
+    const client = createRestreamer();
+    const listener = vi.fn();
+    client.AddListener(listener);
+    const request = vi
+      .fn()
+      .mockResolvedValueOnce({
+        val: null,
+        err: { code: 401, message: 'expired' },
+      })
+      .mockResolvedValueOnce({
+        val: null,
+        err: { status: 'NETWORK_ERROR', message: 'offline' },
+      })
+      .mockResolvedValueOnce({
+        val: null,
+        err: { code: 401, message: 'expired again' },
+      })
+      .mockResolvedValueOnce({
+        val: null,
+        err: { code: 401, status: 'UNAUTHORIZED', message: 'expired again' },
+      })
+      .mockResolvedValueOnce({
+        val: null,
+        err: { code: 500, message: 'server error' },
+      });
+    client.api = {
+      RefreshToken: vi.fn(),
+      Login: vi.fn(),
+      LoginWithToken: vi.fn(),
+    } as never;
+    client.RefreshToken = vi.fn().mockResolvedValue(true);
+
+    await client._call(request);
+    expect(listener).toHaveBeenLastCalledWith({
+      severity: 'error',
+      type: 'network',
+      message: 'NETWORK_ERROR: offline',
+    });
+
+    await client._call(request);
+    expect(listener).toHaveBeenLastCalledWith({
+      severity: 'error',
+      type: 'auth',
+      message: 'UNAUTHORIZED: expired again',
+    });
+
+    const events = listener.mock.calls.length;
+    await client._call(request);
+    expect(listener).toHaveBeenCalledTimes(events);
   });
 
   it('sets and clears local auth tokens on logout', () => {

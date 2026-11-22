@@ -195,4 +195,26 @@ describe('filter editor controls', () => {
       }),
     );
   });
+
+  it('runs default handlers for pan and volume controls', () => {
+    const pan = render(React.createElement(Pan.component));
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    fireEvent.click(screen.getByRole('option', { name: 'Mute left' }));
+    pan.unmount();
+
+    render(React.createElement(Volume.component));
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    fireEvent.click(screen.getByRole('option', { name: 'Custom ...' }));
+    fireEvent.change(screen.getByLabelText('Decibels (dB)'), {
+      target: { value: '-6' },
+    });
+  });
+
+  it('runs default handlers for resample controls', () => {
+    render(React.createElement(Resample.component));
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[0]);
+    fireEvent.click(screen.getByRole('option', { name: '48000 Hz' }));
+    fireEvent.mouseDown(screen.getAllByRole('combobox')[1]);
+    fireEvent.click(screen.getByRole('option', { name: 'mono' }));
+  });
 });

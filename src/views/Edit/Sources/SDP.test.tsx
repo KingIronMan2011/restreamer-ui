@@ -2,7 +2,12 @@ import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
-import { fireEvent, render, screen } from '../../../utils/testing';
+import {
+  fireEvent,
+  render,
+  screen,
+  waitForElementToBeRemoved,
+} from '../../../utils/testing';
 import * as SDP from './SDP';
 
 describe('SDP source', () => {
@@ -57,5 +62,41 @@ describe('SDP source', () => {
       { address: '/uploads/input.sdp', mimetype: 'application/sdp' },
       SDP.func.createInputs({ address: '/uploads/input.sdp' }),
     );
+  });
+
+  it('uses default handlers when an SDP file is uploaded', async () => {
+    const user = userEvent.setup();
+    render(<SDP.component />);
+    await user.upload(
+      screen.getByLabelText('Upload'),
+      new File(['v=0'], 'input.sdp', { type: 'application/sdp' }),
+    );
+    expect(screen.getByLabelText('File path')).toHaveValue('');
+  });
+
+  it.each([
+    [
+      new File(['bad'], 'bad.txt', { type: 'text/plain' }),
+      'The selected file type',
+    ],
+    [
+      new File([new Uint8Array(2 * 1024 * 1024 + 1)], 'large.sdp', {
+        type: 'application/sdp',
+      }),
+      'The selected file is too big',
+    ],
+  ])('shows a closable dialog for an invalid upload', async (file, message) => {
+    const user = userEvent.setup();
+    render(<SDP.component />);
+    fireEvent.change(screen.getByLabelText('Upload'), {
+      target: { files: [file] },
+    });
+    expect(
+      await screen.findByText('Uploading the file failed'),
+    ).toBeInTheDocument();
+    expect(screen.getByText(new RegExp(message))).toBeInTheDocument();
+    const dialog = screen.getByRole('dialog');
+    await user.click(screen.getByRole('button', { name: 'OK' }));
+    await waitForElementToBeRemoved(dialog);
   });
 });

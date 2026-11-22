@@ -62,8 +62,7 @@ function Source({
   settings = {},
   onChange = function (settings: any) {},
   onProbe = function (settings: any, inputs: any) {},
-  onRefresh = function () {},
-  onStore = function (name: any, data: any) {
+  onStore = async function (name: any, data: any) {
     return '';
   },
 }: any) {

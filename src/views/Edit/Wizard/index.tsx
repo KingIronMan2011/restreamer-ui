@@ -258,8 +258,6 @@ export default function Wizard({ restreamer }: any) {
       setStep('VIDEO SETTINGS');
     };
 
-    handleBack = () => {};
-
     let knownSources: any[] = [];
     for (let s in $skills.sources) {
       if (s === 'network') {
@@ -877,7 +875,7 @@ export default function Wizard({ restreamer }: any) {
 
       const res = await handleDone();
 
-      if (res === false) {
+      if (res === true) {
         setStep('DONE');
       } else {
         setStep('ERROR');
@@ -914,7 +912,13 @@ export default function Wizard({ restreamer }: any) {
       setStep('TYPE');
     };
 
-    return <Error onAbort={handleAbort} onHelp={handleHelp('error')} />;
+    return (
+      <Error
+        onAbort={handleAbort}
+        onHelp={handleHelp('error')}
+        onNext={handleNext}
+      />
+    );
   } else if ($step === 'ABORT') {
     const nchannels = restreamer.ListChannels().length;
 
