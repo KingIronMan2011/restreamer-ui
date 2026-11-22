@@ -697,4 +697,38 @@ describe('Restreamer process progress conversion', () => {
       ),
     ).toMatchObject({ state: 'disconnected', reconnect: 8 });
   });
+
+  it('normalizes zero-valued connected metrics and explicit reconnect delays', () => {
+    const client = createRestreamer();
+    expect(
+      client._getProgressFromState(
+        state({
+          progress: {
+            bitrate_kbit: 0,
+            fps: 30,
+            speed: 0,
+            quality: 0,
+            frames: 0,
+            drop: 0,
+            dup: 0,
+          },
+          runtime_seconds: 20,
+        }),
+      ),
+    ).toMatchObject({
+      state: 'connected',
+      bitrate: 0,
+      speed: 0,
+      q: 0,
+      frames: 0,
+      drop: 0,
+      dup: 0,
+      time: 20,
+    });
+    expect(
+      client._getProgressFromState(
+        state({ exec: 'failed', reconnect_seconds: 0 }),
+      ),
+    ).toMatchObject({ state: 'error', reconnect: 0 });
+  });
 });

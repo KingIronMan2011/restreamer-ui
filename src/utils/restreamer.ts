@@ -596,6 +596,7 @@ class Restreamer {
         channel: [],
         noaudio: [],
         sdp: [],
+        raspicam: [],
       },
       sinks: {},
     };
@@ -714,9 +715,6 @@ class Restreamer {
       if (device.id === 'video4linux2') {
         for (let d of device.devices) {
           if (d.extra.match(/bcm2835[-_]v4l2/) !== null) {
-            if (!('raspicam' in skills.sources)) {
-              skills.sources['raspicam'] = [];
-            }
             skills.sources['raspicam'].push({ ...d });
           } else {
             skills.sources[device.id].push({ ...d });
@@ -890,7 +888,7 @@ class Restreamer {
       if (hostport.length === 3) {
         host = hostport[0];
         port = hostport[1];
-      } else if (hostport.length === 1) {
+      } else {
         port = hostport[0];
       }
 
@@ -2717,13 +2715,7 @@ class Restreamer {
       const currentVersion = findVersion(Version.UI);
       const announcedVersion = findVersion(value.latest_version);
 
-      if (currentVersion !== '0.0.0') {
-        if (SemverGt(announcedVersion, currentVersion)) {
-          this.hasUpdates = true;
-        } else {
-          this.hasUpdates = false;
-        }
-      }
+      this.hasUpdates = SemverGt(announcedVersion, currentVersion);
 
       const serviceVersion = findVersion(value.service_version);
       if (SemverGte(serviceVersion, '1.0.0')) {
@@ -3183,8 +3175,8 @@ class Restreamer {
 
     if (progress.state === 'connected') {
       progress.bitrate = state.progress.bitrate_kbit || 0;
-      progress.fps = state.progress.fps || 0;
-      progress.time = state.runtime_seconds || 0;
+      progress.fps = state.progress.fps;
+      progress.time = state.runtime_seconds;
       progress.speed = state.progress.speed || 0;
       progress.q =
         state.progress.quality === undefined ? -1 : state.progress.quality;
@@ -3253,7 +3245,7 @@ class Restreamer {
       return null;
     };
 
-    const getValue = (metrics: any, metric: any, labels: any = {}) => {
+    const getValue = (metrics: any, metric: any, labels: any = null) => {
       const m = getMetrics(metrics, metric, labels);
       if (m === null) {
         return 0;

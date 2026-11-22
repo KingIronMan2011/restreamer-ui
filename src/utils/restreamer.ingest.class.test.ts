@@ -416,8 +416,13 @@ describe('Restreamer ingest and session methods', () => {
       '/custom/poster.jpg',
     );
 
+    metadata.player.poster = '';
+    restreamer._updatePlayerEssentials = vi.fn().mockResolvedValue(true);
+    expect(await restreamer.UpdatePlayer('channel')).toBe(true);
+
     restreamer.UpdatePlayerConfig = Restreamer.prototype.UpdatePlayerConfig;
     restreamer._uploadAssetData = vi.fn().mockResolvedValue(true);
+    metadata.player.poster = '/custom/poster.jpg';
     await restreamer.UpdatePlayerConfig('channel', metadata);
     expect(restreamer._uploadAssetData).toHaveBeenCalledTimes(2);
     expect(restreamer._uploadAssetData).toHaveBeenCalledWith(

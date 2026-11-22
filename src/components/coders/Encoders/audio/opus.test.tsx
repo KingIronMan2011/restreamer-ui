@@ -60,4 +60,15 @@ describe('Opus encoder settings', () => {
       onChange.mock.calls.some(([, mapping]) => mapping.local.includes('40')),
     ).toBe(true);
   });
+
+  it('omits automatic and custom delay options when they are disabled', () => {
+    render(<Opus.Delay value="30" />);
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    expect(
+      screen.queryByRole('option', { name: 'auto' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('option', { name: 'Custom ...' }),
+    ).not.toBeInTheDocument();
+  });
 });

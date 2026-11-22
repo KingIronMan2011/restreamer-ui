@@ -513,7 +513,6 @@ const getSRTAddress = (
   name: any,
   token: any,
   passphrase: any,
-  publish: any,
 ) => {
   let url =
     'srt' +
@@ -521,8 +520,7 @@ const getSRTAddress = (
     host +
     '?mode=caller&transtype=live&streamid=' +
     name +
-    '.stream,mode:' +
-    (publish ? 'publish' : 'request') +
+    '.stream,mode:publish' +
     (token.length !== 0 ? ',token:' + encodeURIComponent(token) : '');
 
   if (passphrase.length !== 0) {
@@ -563,7 +561,6 @@ const getSRT = (config: any) => {
     config.channelid,
     config.srt.token,
     config.srt.passphrase,
-    true,
   );
 
   return url;

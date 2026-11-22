@@ -68,6 +68,11 @@ describe('Restreamer asset helpers', () => {
     await restreamer._removePublicEssentials();
     expect(restreamer._deleteAsset).toHaveBeenCalledTimes(8);
     expect(restreamer._uploadLocalAsset).toHaveBeenCalledTimes(15);
+
+    restreamer._getLocalAssetAsString = vi.fn().mockResolvedValue(null);
+    await expect(restreamer._updatePlayerEssentials('missing')).resolves.toBe(
+      true,
+    );
   });
 
   it('uploads and deletes assets and reports API failures safely', async () => {

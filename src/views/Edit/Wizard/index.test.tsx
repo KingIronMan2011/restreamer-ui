@@ -437,6 +437,54 @@ test('wizard lists hardware video sources reported by FFmpeg', async () => {
   }
 });
 
+test('wizard shows only network source types supported by available protocols', async () => {
+  const originalSkills = restreamer.Skills;
+  try {
+    restreamer.Skills = async () => ({
+      ...(await originalSkills()),
+      protocols: { input: ['http'], output: [] },
+    });
+    const httpView = render(
+      <Wizard restreamer={restreamer} />,
+      {},
+      '/wizard/test',
+      '/wizard/:channelid',
+    );
+    expect(
+      await screen.findByRole('button', { name: 'Network source' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: 'RTMP server' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: 'SRT server' }),
+    ).not.toBeInTheDocument();
+    httpView.unmount();
+
+    restreamer.Skills = async () => ({
+      ...(await originalSkills()),
+      protocols: { input: ['rtmp'], output: [] },
+    });
+    render(
+      <Wizard restreamer={restreamer} />,
+      {},
+      '/wizard/test',
+      '/wizard/:channelid',
+    );
+    expect(
+      await screen.findByRole('button', { name: 'RTMP server' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: 'HLS server' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: 'SRT server' }),
+    ).not.toBeInTheDocument();
+  } finally {
+    restreamer.Skills = originalSkills;
+  }
+});
+
 test('wizard hardware source can refresh devices and return to source selection', async () => {
   const getSkills = restreamer.Skills;
   const originalRefreshSkills = restreamer.RefreshSkills;

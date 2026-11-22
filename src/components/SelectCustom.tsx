@@ -86,7 +86,7 @@ export default function Component({
                 <FormControl variant={variant} fullWidth>
                   <InputLabel>{label}</InputLabel>
                   <Select
-                    value={$value.isCustom === false ? $value.value : customKey}
+                    value={customKey}
                     onChange={handleChange}
                     disabled={disabled}
                     label={label}
@@ -111,7 +111,7 @@ export default function Component({
               <FormControl variant={variant} fullWidth>
                 <InputLabel>{label}</InputLabel>
                 <Select
-                  value={$value.isCustom === false ? $value.value : customKey}
+                  value={$value.value}
                   onChange={handleChange}
                   disabled={disabled}
                   label={label}

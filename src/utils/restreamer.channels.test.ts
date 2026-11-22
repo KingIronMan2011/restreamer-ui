@@ -99,6 +99,55 @@ describe('Restreamer channel helpers', () => {
     expect(restreamer.GetChannelAddress('unsupported', 'one')).toBeUndefined();
   });
 
+  it('builds secure public addresses and preserves absolute paths', () => {
+    const restreamer = client();
+    restreamer.config = {
+      hostname: 'public.example',
+      http: { secure: true, host: 'public.example:8443' },
+      source: { network: { hls: { host: 'public.example:8443' } } },
+    } as any;
+    restreamer.ConfigActive = vi.fn(() => restreamer.config);
+
+    expect(restreamer.GetPublicHTTPAddress()).toBe(
+      'https://public.example:8443',
+    );
+    expect(restreamer.PrefixPublicHTTPAddress('player.html')).toBe(
+      'https://public.example:8443/player.html',
+    );
+    expect(restreamer.PrefixPublicHTTPAddress('/player.html')).toBe(
+      'https://public.example:8443/player.html',
+    );
+    expect(
+      restreamer.PrefixPublicHTTPAddress('https://cdn.example/player.html'),
+    ).toBe('https://cdn.example/player.html');
+    expect(restreamer.GetPublicAddress('snapshot+memfs', 'one')).toMatch(
+      /^https:\/\/public\.example:8443\//,
+    );
+    expect(restreamer.GetPublicAddress('snapshot+diskfs', 'one')).toMatch(
+      /^https:\/\/public\.example:8443\//,
+    );
+    expect(restreamer.GetPublicAddress('hls+memfs', 'one')).toMatch(
+      /^https:\/\/public\.example:8443\//,
+    );
+    expect(restreamer.GetPublicAddress('hls+diskfs', 'one')).toMatch(
+      /^https:\/\/public\.example:8443\//,
+    );
+
+    restreamer.config.http.secure = false;
+    restreamer.config.http.host = 'public.example';
+    expect(restreamer.GetPublicHTTPAddress()).toBe('http://public.example');
+    for (const type of [
+      'snapshot+memfs',
+      'snapshot+diskfs',
+      'hls+memfs',
+      'hls+diskfs',
+    ]) {
+      expect(restreamer.GetPublicAddress(type, 'one')).toMatch(
+        /^http:\/\/public\.example:8443\//,
+      );
+    }
+  });
+
   it('embeds an iframe for an existing channel and returns empty for a missing one', () => {
     const restreamer = client();
     expect(restreamer.GetPublicIframeCode('missing')).toBe('');

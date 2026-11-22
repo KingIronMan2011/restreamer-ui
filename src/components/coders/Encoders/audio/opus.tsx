@@ -167,6 +167,7 @@ export {
   codec,
   type,
   hwaccel,
+  Delay,
   summarize,
   defaults,
   Coder as component,

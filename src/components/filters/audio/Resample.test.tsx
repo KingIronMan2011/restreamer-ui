@@ -86,4 +86,28 @@ describe('aresample filter', () => {
     });
     expect(onChange.mock.lastCall?.[0].target.value).toBe('32000');
   });
+
+  it('uses the default layout and sampling options when optional modes are disabled', () => {
+    const onChange = vi.fn();
+    const layout = render(
+      <Resample.Layout value="stereo" onChange={onChange} />,
+    );
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    expect(
+      screen.queryByRole('option', { name: 'Inherit' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('option', { name: 'Custom ...' }),
+    ).not.toBeInTheDocument();
+    layout.unmount();
+
+    render(<Resample.Sampling value="44100" onChange={onChange} />);
+    fireEvent.mouseDown(screen.getByRole('combobox'));
+    expect(
+      screen.queryByRole('option', { name: 'Inherit' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('option', { name: 'Custom ...' }),
+    ).not.toBeInTheDocument();
+  });
 });

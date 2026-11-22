@@ -264,6 +264,47 @@ describe('Restreamer config and metadata helpers', () => {
     });
   });
 
+  it('uses the HTTPS default port when TLS bind address is empty', async () => {
+    const restreamer = client('https://core.example');
+    restreamer.Config = vi.fn().mockResolvedValue({
+      config: {
+        host: { name: [] },
+        tls: { enable: false, address: '' },
+        address: 'localhost',
+        rtmp: {
+          enable: true,
+          enable_tls: true,
+          token: '',
+          app: '',
+          address: 'localhost:1935',
+          address_tls: 'localhost:1935',
+        },
+        srt: {
+          enable: false,
+          passphrase: '',
+          token: '',
+          address: 'localhost:9000',
+        },
+        storage: {
+          memory: { auth: { enable: false, username: '', password: '' } },
+        },
+        api: { auth: { enable: false, username: '', password: '' } },
+      },
+      overrides: [],
+    });
+
+    await restreamer._initConfig();
+
+    expect(restreamer.config.http).toEqual({
+      secure: true,
+      host: 'core.example',
+    });
+    expect(restreamer.config.source.network.rtmp).toMatchObject({
+      secure: true,
+      host: 'core.example',
+    });
+  });
+
   it('returns config values, overrides, and a channel-scoped clone', () => {
     const restreamer = client();
     restreamer.channel = { channelid: 'channel-1' };

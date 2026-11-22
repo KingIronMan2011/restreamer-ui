@@ -74,6 +74,10 @@ describe('Restreamer egress API', () => {
     ).resolves.toBe(true);
     expect(restreamer.GetChannelEgress('channel', id)?.name).toBe('Renamed');
     await expect(
+      restreamer.SetEgressMetadata('channel', id, { name: '' }),
+    ).resolves.toBe(true);
+    expect(restreamer.GetChannelEgress('channel', id)?.name).toBe('');
+    await expect(
       restreamer.StartEgress('channel', 'unknown'),
     ).resolves.toBeNull();
     await expect(restreamer.StartEgress('unknown', id)).resolves.toBeNull();

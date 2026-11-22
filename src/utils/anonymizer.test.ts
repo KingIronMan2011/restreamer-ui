@@ -24,6 +24,9 @@ describe('anonymize_url', () => {
     expect(result).toContain('streamid=***');
     expect(result).toContain('passphrase=***');
     expect(anonymize_url('srt://localhost:9000')).toContain('localhost:9000');
+    expect(anonymize_url('http://localhost:8080/path')).toContain(
+      'http://localhost:8080/path',
+    );
   });
 });
 

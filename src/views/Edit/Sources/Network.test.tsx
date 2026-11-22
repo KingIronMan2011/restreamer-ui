@@ -1137,6 +1137,12 @@ test('source:network input builder handles HTTP headers, proxy, timestamps, and 
     protocols: { input: ['tls', 'rtsp'] },
   });
   expect(rtspSkills.protocols.input).toContain('rtsps');
+  expect(
+    Network.func.initSkills({
+      formats: { demuxers: ['rtsp'] },
+      protocols: { input: ['rtsp'] },
+    }).protocols.input,
+  ).not.toContain('rtsps');
 
   const emptyCodecSkills = Network.func.initSkills({
     ffmpeg: { version: '6.1.0', version_major: 6, version_minor: 1 },
@@ -1146,10 +1152,10 @@ test('source:network input builder handles HTTP headers, proxy, timestamps, and 
   });
   const rtmpInput = Network.func.createInputs(
     Network.func.initSettings(
-      { mode: 'pull', address: 'rtmp://example.test/live' },
-      { channelid: 'test' },
+      { mode: 'push', push: { type: 'rtmp', name: 'test' } },
+      $config,
     ),
-    { channelid: 'test' },
+    $config,
     emptyCodecSkills,
   )[0];
   expect(rtmpInput.options).not.toContain('-rtmp_enhanced_codecs');
@@ -1167,10 +1173,32 @@ test('classifies malformed, MMS, and unsupported network protocols', () => {
     'custom',
   );
   expect(Network.func.isAuthProtocol('custom://example.test/live')).toBe(false);
+  expect(Network.func.isAuthProtocol('amqp://example.test')).toBe(true);
+  expect(Network.func.isAuthProtocol('ftp://example.test')).toBe(true);
   expect(Network.func.isSupportedProtocol('invalid', ['http'])).toBe(false);
   expect(
     Network.func.isSupportedProtocol('https://example.test', ['https']),
   ).toBe(true);
+});
+
+test('source:network input builder omits disabled HTTP flags and supports password-only auth', () => {
+  const config = { channelid: 'test' };
+  const settings = Network.func.initSettings(
+    {
+      mode: 'pull',
+      address: 'https://example.test/live',
+      username: '',
+      password: 'secret',
+      http: { readNative: false, forceFramerate: false, userAgent: '' },
+    },
+    config,
+  );
+  const input = Network.func.createInputs(settings, config, $skills_ffmpeg6)[0];
+
+  expect(input.address).toBe('https://:secret@example.test/live');
+  expect(input.options).not.toContain('-re');
+  expect(input.options).not.toContain('-r');
+  expect(input.options).not.toContain('-user_agent');
 });
 
 test('initializes Network settings when no settings object is provided', () => {
@@ -1189,6 +1217,22 @@ test('source:network HLS push replaces the none name with the channel ID', () =>
     $skills_ffmpeg5,
   );
   expect(inputs[0].address).toBe('http://localhost/memfs/channel-1.m3u8');
+});
+
+test('source:network builds insecure RTMP, SRT, and HLS output addresses', () => {
+  const config = {
+    channelid: 'channel',
+    hls: { host: 'stream.example', credentials: '', secure: false },
+    rtmp: { host: 'stream.example', app: '/live', token: '', secure: false },
+    srt: { host: 'stream.example:9000', token: '', passphrase: '' },
+  };
+  expect(Network.func.getHLS(config)).toBe(
+    'http://stream.example/memfs/channel.m3u8',
+  );
+  expect(Network.func.getRTMP(config)).toBe(
+    'rtmp://stream.example/live/channel.stream',
+  );
+  expect(Network.func.getSRT(config)).toContain('mode:publish');
 });
 
 test('source:network renders HLS push output and extension controls', () => {
